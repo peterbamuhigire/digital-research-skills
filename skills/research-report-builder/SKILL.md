@@ -19,7 +19,21 @@ The end product of every project in `digital-research-engine` is a Word document
 
 ## Report-type schemas
 
-The project type determines the chapter sequence. Pick the best match.
+The project type determines the chapter sequence. Pick the best match. The engine supports research across many disciplines — schema choice is the most important upstream decision.
+
+| Schema | Research type | Use when |
+|---|---|---|
+| A | Pain-point research (multi-cohort) | Investigating problems across populations affected by a system |
+| B | Single-cohort deep-dive | One population studied exhaustively |
+| C | Market / industry landscape | Sizing a market, mapping operators, finding entry points |
+| D | Comparative / benchmarking | Comparing ≥2 jurisdictions, products, organisations, or operators |
+| E | Social-media / sentiment research | What is being said about X on Reddit, X, TikTok, Facebook, news comments |
+| F | Due diligence | Pre-investment, pre-partnership, pre-hire investigation of an entity |
+| G | OSINT (open-source intelligence) | Person / org / domain / infrastructure profiling from public sources |
+| H | Product research | Competitive intel + user pain + opportunity sizing for a single product hypothesis |
+| I | Historical research | Reconstruction of past events from primary + secondary sources |
+| J | Trends research | Forecasting, signal extraction, time-series patterns |
+| K | Policy / regulatory research | Statute / case-law / enforcement deep-dive across jurisdictions |
 
 ### Schema A — Pain-point research (multi-cohort)
 Used when researching pain points across one or more cohorts (e.g., East Africa Property/Hostel).
@@ -88,6 +102,125 @@ Used when comparing >2 jurisdictions or operators.
 7. References
 ```
 
+### Schema E — Social-media / sentiment research
+Used when surfacing what's being said about a topic on social platforms.
+
+```
+1. Executive Summary
+2. Methodology (platforms, queries, time-window, sample size)
+3. Volume & reach metrics
+4. Theme extraction
+5. Sentiment analysis (positive / negative / neutral)
+6. Key voices & influencers
+7. Notable threads / viral moments
+8. Cross-platform comparison
+9. Quote appendix (with platform context)
+10. Limitations (platform bias, ToS constraints)
+11. References
+```
+
+### Schema F — Due diligence
+Used pre-investment, pre-partnership, or pre-hire to investigate an entity (person, company, asset).
+
+```
+1. Executive Summary (red / amber / green flags)
+2. Subject identification & corroboration
+3. Legal & regulatory status (registration, licences, court records)
+4. Financial position (filings, audits, credit history)
+5. Reputational footprint (news, social, sanction lists)
+6. Beneficial-ownership trace
+7. Counterparty / network mapping
+8. Adverse-media findings
+9. Source-of-funds / source-of-wealth (for AML contexts)
+10. Risk assessment
+11. Remaining gaps & verification limits
+12. References (with confidence levels)
+```
+
+### Schema G — OSINT (open-source intelligence)
+Used for person / org / domain / infrastructure profiling from publicly available sources.
+
+```
+1. Executive Summary
+2. Subject scope & target list
+3. Identification & disambiguation
+4. Online footprint (domains, accounts, repositories)
+5. Geolocation / temporal pattern (where applicable)
+6. Network mapping (associates, organisations)
+7. Technical infrastructure (hosting, certificates, DNS)
+8. Cross-reference & corroboration
+9. Confidence ratings per finding
+10. Operational security caveats
+11. References
+```
+
+### Schema H — Product research
+Used to inform a product hypothesis with competitive + user + opportunity data.
+
+```
+1. Executive Summary
+2. Hypothesis & thesis
+3. Target user / customer profile
+4. Pain-point evidence (qualitative + quantitative)
+5. Competitive landscape
+6. Pricing & willingness-to-pay
+7. Market sizing (TAM / SAM / SOM)
+8. Distribution channels
+9. Risks & failure modes
+10. Recommended next experiments
+11. References
+```
+
+### Schema I — Historical research
+Used to reconstruct past events from primary and secondary sources.
+
+```
+1. Executive Summary
+2. Period & scope
+3. Primary-source inventory
+4. Secondary-source synthesis
+5. Chronology / timeline
+6. Key actors & their roles
+7. Causal analysis
+8. Historiographical debates
+9. Implications for the present
+10. Source appraisal (provenance, bias, gaps)
+11. References (Chicago / footnoted)
+```
+
+### Schema J — Trends research
+Used for forecasting, signal extraction, and time-series pattern identification.
+
+```
+1. Executive Summary
+2. Domain & time-horizon
+3. Methodology (signal sources, weighting)
+4. Quantitative trends (with charts)
+5. Qualitative signals
+6. Convergent / divergent factors
+7. Scenario analysis (best / base / worst)
+8. Leading indicators to watch
+9. Confidence intervals & assumptions
+10. Implications for stakeholders
+11. References
+```
+
+### Schema K — Policy / regulatory research
+Used for deep statute / case-law / enforcement work across jurisdictions.
+
+```
+1. Executive Summary
+2. Domain & jurisdictions covered
+3. Per-jurisdiction five-layer mapping (constitutional → enforcement)
+4. Cross-jurisdictional comparison
+5. Recent precedent & enforcement actions
+6. Gaps between law and enforcement
+7. Pending bills / reform momentum
+8. Stakeholder positions (industry, NGO, government)
+9. Recommendations
+10. References (case citations + statutes)
+```
+
 ## Pipeline
 
 1. **Read** all `<cohort>/research/*.md`, `<cohort>/analysis/*.md`, `<cohort>/opportunities/*.md` for the project
@@ -126,9 +259,14 @@ Used when comparing >2 jurisdictions or operators.
 
 ## See also
 
+- `research-type-router` — maps user intent to schema (use upstream of this skill)
 - `professional-word-output` — the rendering engine
 - `python-document-generation` — alternative pure-Python pipeline
 - `markdown-lint-cleanup` — pre-render cleanup
-- `pain-point-taxonomy` — supplies tables
-- `cross-cohort-synthesis` — supplies the synthesis chapter
-- `source-verification` — supplies the tiered bibliography
+- `pain-point-taxonomy` — supplies tables for Schema A / B
+- `cross-cohort-synthesis` — supplies the synthesis chapter for Schema A
+- `source-verification` — supplies the tiered bibliography for all schemas
+- `due-diligence-framework` — methodology for Schema F
+- `osint-methodology` — methodology for Schema G
+- `trend-analysis` — methodology for Schema J
+- `regulatory-landscape-mapping` — methodology for Schema K

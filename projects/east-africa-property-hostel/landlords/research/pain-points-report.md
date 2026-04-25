@@ -330,3 +330,172 @@ No clear legal framework. Police intervention required. Landlord liability uncer
 - Burundi / South Sudan — limited grey literature
 
 See `analysis/themes.md` for the operational taxonomy, `by-country.md` for the country slices, `proptech-landscape.md` for the platform map, and `opportunities/product-ideas.md` for hypotheses.
+
+---
+
+# Pass 2 — Gap-fill addendum (38 verified sources)
+
+Wave-2 pass with strict URL-citation discipline. Findings extend or correct Wave 1 — both are flagged below.
+
+## P2.1 Kenya court records — landlord-tenant precedent (kenyalaw.org)
+
+Two named cases retrieved with full citations. These confirm BPRT (Business Premises Rent Tribunal) procedural tightening in 2025.
+
+**Horientetertainment Limited v Maina** — Tribunal Case E1278 of 2024 [2025] KEBPRT 265 (KLR), 29 April 2025.
+- Property: Lavington, Nairobi (Kuria Close)
+- Rent escalated from KSh 65,000 (2018) → KSh 400,000 (2024)
+- Eviction struck down for "no evidence of Notice of Termination"
+- Tribunal ordered rent reconciliation with 60-day cure period before distress allowed
+- Source: [kenyalaw.org/akn/ke/judgment/kebprt/2025/265](https://new.kenyalaw.org/akn/ke/judgment/kebprt/2025/265/eng@2025-04-29)
+
+**Munyingi v Thuo** — Tribunal Case E105 of 2024 [2025] KEBPRT 425 (KLR), 9 October 2025.
+- Business premises, Nyeri
+- Landlord claimed KSh 1,010,480 arrears
+- Tribunal denied eviction; required parties to reconcile ledgers in 30 days, then 60-day pay-up before distress
+- Source: [kenyalaw.org/akn/ke/judgment/kebprt/2025/425](https://new.kenyalaw.org/akn/ke/judgment/kebprt/2025/425/eng@2025-10-09)
+
+**Pattern.** Q1–Q4 2025 BPRT decisions consistently strike down invalid termination notices and require reconciliation processes before eviction or distress. **Kenya eviction timeline is therefore likely longer than the 7–11 month Wave-1 estimate** — add reconciliation + cure periods (typically +60–90 days).
+
+## P2.2 Kenya eRITS — Electronic Rental Income Tax System (April 2025)
+
+The single largest new compliance burden surfaced in Wave 2. Not in Wave 1.
+
+- **Launched:** April 2025 by KRA
+- **Compliance deadline:** 26 September 2025
+- **Tax:** 7.5% Monthly Rental Income (MRI), final
+- **Threshold:** KSh 288,000–15M annual rent
+- **Filing:** Monthly, by the 20th of the following month
+- **Registration:** Properties + tenant PINs
+- **Penalties:** Fines, backdated claims, frozen bank accounts, court cases
+- **Tax-gap target:** KSh 17bn collected vs KSh 100bn+ potential
+- Sources: [EY Tax News](https://taxnews.ey.com/news/2025-1841-kenya-revenue-authority-kra-launches-erits-to-enhance-rental-income-tax-compliance), [erits.kra.go.ke](https://erits.kra.go.ke/)
+
+**Implication for landlords:** Monthly filing, audit-trail PII registration, frozen-account risk for non-compliers. Likely accelerates PropTech adoption for compliance reasons.
+
+## P2.3 Tanzania Use of Foreign Currency Regulations 2025
+
+Major macro change with direct landlord impact, not Wave-1 documented.
+
+- **GN No. 198, 28 March 2025**
+- All goods and services must now be priced in TZS
+- Existing foreign-currency contracts must be amended within 12 months or become void
+- Sources: [Clyde & Co](https://www.clydeco.com/en/insights/2025/03/new-regulations-on-foreign-currency-use-tanzania), [PwC Tanzania](https://www.pwc.co.tz/press-room/regulations-on-foreign-currency.html)
+
+**Implication for landlords:** USD-denominated leases (common in expat segments — Mikocheni, Masaki, Oyster Bay) face renegotiation or void risk. The Wave-1 search target of "dalali regulatory body announced March 2025" was not located — this Foreign Currency Regulation appears to have been the actual March 2025 development.
+
+## P2.4 NEMA Uganda Lubigi Wetland demolitions (2024–25) — environmental enforcement as landlord risk
+
+A new landlord-risk vector not in Wave 1.
+
+- 2024–25: NEMA conducted sweeping Lubigi Wetland demolitions
+- 37,000+ residents threatened in Katoogo Zone alone
+- Some held valid land titles but faced demolition without DEMC (District Environment Management Committee) process or 3-month notice
+- KCCA filed legal challenge alleging NEMA violated NEMA Act 2019 procedure
+- Sources: [Daily Monitor](https://www.monitor.co.ug/uganda/news/national/city-authorities-accuse-nema-of-unlawful-evictions-4667710), [allAfrica](https://allafrica.com/stories/202406240119.html)
+
+**Implication for landlords:** Environmental enforcement now sits alongside court eviction as a structural risk. Unlike court delays, NEMA demolitions can be summary (insufficient notice, no DEMC process). Holders of properties on or near wetlands face existential risk.
+
+## P2.5 Kenya National Building Code 2024
+
+LN 47 (March 1, 2024) — applies to all new construction:
+- Structural standards
+- Sanitation (water/sewerage)
+- Health ventilation
+- Accessibility (disability compliance)
+- Maintenance schedules with professional inspections required
+- Source: [Kenyalaw — LN 47/2024](https://new.kenyalaw.org/akn/ke/act/ln/2024/47/eng@2024-03-01)
+
+**Status for existing rental stock:** unclear — focus appears to be new construction. Retroactive application requires verification.
+
+## P2.6 Kenya 2025 mortgage rate compression
+
+| Bank | Rate (Nov 2025) | Notes |
+|---|---|---|
+| Stanbic | 12.0% (KMRC partnership: fixed 8.99%) | Most competitive |
+| Equity | 13–15% (post-Feb 2025 cuts) | 90% LTV; 20-year max |
+| KCB | Mi Vida partnership | Affordable Housing tie-in |
+| NCBA | "Easy-Build" — KSh 3M+, 25-year terms | Targets 68% self-build segment |
+| DTB | 14.9% (down from 16% March) | 105% LTV; 25-year |
+
+**KMRC (Kenya Mortgage Refinance Company):**
+- KSh 21.4bn disbursed by August 2025 (FY 24/25)
+- 4,500+ affordable home loans across 39 counties
+- Cumulative 5,148 mortgages refinanced by end-2025
+- 64.7% YoY increase in loan advances
+
+**Implication for landlords:** Mortgage affordability is **competing with rental-income landlords for the same tenant cohort**. Rental yields under pressure as owner-occupier path becomes accessible.
+
+## P2.7 Cytonn Q1 2026 — Acorn deleveraging via REITs
+
+Cytonn Q1 2026 outlook (published 18 Jan 2026):
+- Real estate sector expanded 7.6% to KSh 368.7bn (Q3'2025)
+- "Student accommodation developers like Acorn are transferring completed assets to investment REITs to deleverage amid elevated financing costs"
+- Stamp-duty exemptions declining (4% urban, 2% rural since Dec 2022) — increases transaction friction
+- Source: [Cytonn Q1 2026 Markets](https://cytonnreport.com/research/cytonn-q12026-markets-2)
+
+**Cytonn FY2024/25 Nairobi Metropolitan residential returns:**
+- Average total return: **5.8%** (down from 6.1% FY23/24)
+- Rental yield: 5.4%
+- Price appreciation: 0.4%
+- Average price/sqm: KSh 118,339
+- Top performers: Kahawa West (apartments) 12.0% total; Westlands (apartments) 10.6%; Kitengela (detached) 6.7%
+- Source: [Cytonn Topical](https://cytonnreport.com/topicals/nairobi-metropolitan-area-32)
+
+## P2.8 Real Muloodi (Uganda) — zero-commission model confirmed
+
+- Real Muloodi Advertising Ltd / The Property Network
+- Sellers / landlords keep 100% of sale or rent
+- First listing free for 30 days
+- Director Faith Sanyu noted overwhelming demand from developers and high-end property managers post-launch
+- Sources: [softpower.ug](https://softpower.ug/real-muloodi-launches-online-real-estate-marketplace-the-property-network/), [nilepost.co.ug](https://nilepost.co.ug/real-muloodi-advertising/168335/real-muloodi-launches-online-platform-for-buying-selling-renting-properties-in-uganda)
+
+## P2.9 Stanbic Uganda — Mortgage rate decline 2025
+
+- UGX mortgages: as low as **15%** (down from 16.5%)
+- USD mortgages: **9%**
+- Up to UGX 3.8bn (USD 1M)
+- 25-year terms
+- Pre-approved mortgages launched May 2025: UGX 500M, 10-day turnaround
+- Source: [Stanbic Uganda](https://www.stanbic.co.ug/uganda/personal/about-us/news/Stanbic-Bank-Uganda%E2%80%99s-new-mortgage-solution-breaks-financing-barrier-to-home-ownership)
+
+## P2.10 Uganda rental income tax detail (clarification)
+
+- Individuals: **12% flat tax on rent above UGX 2,820,000 annual threshold**
+- No expense deductions for individuals
+- Corporate: up to 50% expense deduction allowed; 30% tax on net
+- Source: [PwC Uganda Tax Summary](https://taxsummaries.pwc.com/uganda/individual/taxes-on-personal-income), [Real Muloodi rental-tax guide](https://realmuloodi.co.ug/wp-content/uploads/2021/04/RENTAL-INCOME-A-Simplified-Guide.pdf)
+
+Simpler than Kenya's eRITS but broader-base. Uganda lacks a digital filing platform equivalent to eRITS — annual return model only.
+
+## P2.11 PropTech ecosystem deepens
+
+- **Nyumba Zetu** — confirmed 500+ properties; M-Pesa rent collection; tenant portals; maintenance tracking; WhatsApp billing; eTIMS-compliant accounting
+- **Tingg** (Cellulant) — 85% of users report improved efficiency + reduced delays; multi-rail aggregation; T+1 settlement
+- **RentKaya (Nairobi, beta)** — listings + digital leases + move-out reports with photo evidence; addresses informal-tenancy gap
+- **RentScore (Kenya)** — pivots to affordable-homeownership financing; rental payments → equity via low-interest loans
+
+**Adoption gap:** PropTech is now standard for KSh 500M+ portfolios. Adoption among <5-unit landlords remains unquantified.
+
+## P2.12 GAPs that did not yield
+
+- **AREA Uganda MLS expansion** — search returned US Major League Soccer hits; if AREA Uganda has an MLS, the public footprint is invisible
+- **Hostelconnect / Katalyma residential expansion to Kenya/Uganda** — no verifiable sources; possibly defunct or rebranded
+- **Acorn Holdings direct CEO/founder interview / podcast** — public footprint thin beyond company-profile pages and NSE filings
+- **KNBS 2023/24 default-rate %** — survey exists but specific default percentages not extracted from search results; PDF download required
+
+## P2.13 Wave-2 corrections to Wave-1 claims
+
+- **Eviction timelines.** Wave 1 said Kenya 7–11 months. Wave 2 BPRT decisions show reconciliation + 60-day cure now standard, **stretching the realistic timeline beyond 11 months**. Mark Wave-1 figure with "(Wave-1 — does not include 2025 procedural tightening)".
+- **No "Tanzania dalali regulatory body" March 2025.** What did happen in March 2025: **Use of Foreign Currency Regulations 2025 (GN 198, 28 March)**. The Wave-1 reference appears to have conflated the announcements.
+- **Acorn institutional financials** — Acorn is **transferring assets to REITs to deleverage** (Cytonn Q1 2026). The Wave-1 framing of "Acorn as institutional ceiling" understated the **deleveraging signal** — reads as a defensive, not expansionary, posture.
+
+## P2.14 New strategic insights from Wave 2
+
+1. **Mortgage rate compression is shifting tenant→buyer competition.** Stanbic 12%, NCBA Easy-Build, KMRC liquidity. Middle-income rental demand may decline.
+2. **eRITS Kenya is a forcing function** for landlord PropTech adoption — manual filing is no longer viable for portfolios above the KSh 288k threshold.
+3. **Court procedural tightening (BPRT 2025)** lengthens eviction timelines materially.
+4. **Environmental enforcement (NEMA Uganda)** is a new structural risk class.
+5. **Tanzania foreign-currency regs** make USD-denominated leases obsolete within 12 months.
+6. **Acorn deleveraging** signals the institutional hostel model is under cap-cost pressure.
+
+These six insights collectively re-shape the Wave-1 picture from "structural friction with regulatory inertia" toward "active regulatory + financial repricing in 2024–2026".

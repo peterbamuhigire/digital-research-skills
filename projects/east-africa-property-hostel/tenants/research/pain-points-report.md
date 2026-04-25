@@ -94,7 +94,7 @@ Bedbugs and cockroaches are **endemic** in Nairobi (Eastlands, Kasarani, Kayole)
 
 - **Nairobi NCWSC:** 250 million litre / day supply deficit
 - **Kampala NWSC:** 60 million litre daily shortage
-- **Dar DAWASA:** 9 hours / day supply; 50% system loss
+- **Dar DAWASA:** **24-hour shutoffs on alternate days** (Wave-1 figure of "9 hr/day" corrected per *EastAfrican* current reporting); ~100M-litre/day deficit. Source: [The EastAfrican](https://www.theeastafrican.co.ke/tea/news/east-africa/water-crisis-dar-es-salaam-tanzania-3624990)
 - **Kigali WASAC:** intermittent, more reliable than peers but tightening
 
 Tenants pay full rent for half-service. No regulatory framework lets them claim rent reduction for utility failure.
@@ -147,7 +147,7 @@ The figure who manages the building day-to-day is a primary friction point for t
 
 ### Mass evictions — political dimension
 
-- **Nairobi 2024 riparian demolitions:** 20,000+ displaced from Kibera, Mathare, Mukuru. Compensation KSh 10,000 each. Pretext: flood mitigation; effect: forced relocation without due process.
+- **Nairobi 2024 riparian demolitions:** **40,000 households** affected (Interior Ministry directive May 2024; 30m river-corridor demolitions Nairobi/Ngong/Mathare). Compensation **KSh 10,000 per household** (≥25,000 received support by 27 May 2024; 40,000 households verified). Sources: [Africanews](https://www.africanews.com/2024/05/07/kenya-continues-forceful-demolition-of-nairobi-informal-settlements-near-rivers/), [Capital News](https://www.capitalfm.co.ke/news/2024/05/nearly-10000-households-on-riparian-corridors-receive-sh10000-stipend/). Pretext: flood mitigation; effect: forced relocation without due process. *(Wave-1 figure of 20,000 corrected to 40,000 per Wave-2 verification.)*
 - **Election-cycle mass evictions** — Nairobi 2022 informal settlements; Kampala 2021 Kasubi area. Landlords use election uncertainty as cover for legally questionable eviction.
 - **Kampala KCCA road / drainage projects** — ad-hoc demolitions with limited compensation.
 

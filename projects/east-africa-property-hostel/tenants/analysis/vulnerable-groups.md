@@ -4,7 +4,7 @@ Six cohorts whose pain stacks compoundingly on top of the general-tenant baselin
 
 ## 1. Single women
 
-- Estimated **~90% rejection rate** vs single men of similar income (Medium / Daily Nation research synthesis — single source; needs independent verification)
+- **VERIFIED: ~90% landlord preference for single men over single women** in competitive rentals. Source: [Daily Nation — "No kids, no bachelors: Is tenant gatekeeping the new discrimination?"](https://nation.africa/kenya/news/no-kids-no-bachelors-is-tenant-gatekeeping-the-new-discrimination--5409872). Corroborated: Kenya Tenants Welfare Union receives **8–10 marital-status discrimination complaints / month** ([The Standard](https://www.standardmedia.co.ke/article/2000108482))
 - Common landlord rationales: assumptions about morality, sex work, "noise from visitors," male-guarantor demands
 - Constitutional prohibition exists (Kenya Art. 27 — non-discrimination on sex / marital status) — enforcement reaches <10% of cases
 - Compounding: divorced or separated women carry an additional credit-stigma layer ("she'll default")
@@ -26,7 +26,7 @@ Six cohorts whose pain stacks compoundingly on top of the general-tenant baselin
 
 ## 3. Persons with disabilities
 
-- Estimated **~95% of EA rental stock is non-accessible**
+- **(Inference; primary survey not located)** EA rental stock is overwhelmingly non-accessible to PWDs. The Wave-1 "~95%" figure has no underlying survey — Wave-2 verification could not locate a primary source. Until a survey is found, treat as inference.
 - Legal frameworks (Kenya Persons with Disabilities Act; Uganda equivalent) exist but are unenforced
 - Housing eats **50–80% of disposable income** for tenants with disabilities, vs ~30% benchmark for the general population
 - The CNRSP Bujumbura 2024 expulsion of 26 disabled students (covered in `students/research/`) is illustrative of the broader pattern
