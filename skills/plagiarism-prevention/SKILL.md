@@ -90,6 +90,35 @@ If any check fails: rewrite, don't ship.
 | Off-the-shelf phrases ("In today's world", "Throughout history") | banned-phrase filter (roadmap) |
 | AI-template phrases ("delve into", "intricate tapestry") | banned-phrase filter (roadmap) |
 
+## Bailey's tri-technique paraphrase rule
+
+A true paraphrase MUST combine all three:
+
+1. **Vocabulary change** via synonyms (`argues → claims`, `wages → labour costs`)
+2. **Word-class change** (`explanation (n.) → explain (v.)`, `mechanical (adj.) → mechanise (v.)`)
+3. **Word-order change** (rearrange clauses; reverse subject/object position)
+
+Synonym swap alone, word-class change alone, or word-order change alone all fail validation. Run `paraphrase_distance` AND verify all three techniques applied.
+
+## Untouchable terms
+
+Some terms have no true synonym. Never paraphrase:
+- Historical events: Industrial Revolution, World War II, Great Depression
+- Economic indicators: GDP, GNP, CPI, PPP
+- Organisations: World Bank, IMF, OPEC, World Trade Organization
+- Named theories: invisible hand, comparative advantage
+- Statutes: Landlord and Tenant Act 2022, GDPR, Fair Credit Reporting Act
+
+Check `tools.academic.find_untouchables_in(text)` to see what must be preserved verbatim.
+
+## Banned-phrase scan
+
+Run `tools.academic.scan_banned_phrases(text)` to catch Bailey's cliché list + AI-template tells (delve into, intricate tapestry, navigate the complexities, in conclusion in body text, throughout history, etc.). Hard-fails the draft if any HARD_FAIL_CATEGORIES match.
+
+## Source-away gate (Trzeciak)
+
+The structural defence: extract notes from sources, then **remove the source text from the active context** before composition. Plagiarism becomes physically impossible because the source isn't there. See `note-discipline-source-away`.
+
 ## Anti-patterns
 
 - Synonym-swap paraphrasing (treats words; ignores structure)
@@ -98,6 +127,8 @@ If any check fails: rewrite, don't ship.
 - Reusing sentence structures across paraphrases of different sources
 - Skipping the originality check before submission
 - Treating "I changed three words" as paraphrase
+- Composing with the source text in the active context (Trzeciak)
+- Paraphrasing untouchable terms (Bailey)
 
 ## See also
 

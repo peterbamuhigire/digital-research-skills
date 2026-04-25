@@ -16,6 +16,9 @@ from .reporting_verbs import reporting_verb_variety, REPORTING_VERBS
 from .hedging import hedging_audit, HedgingReport, HEDGING_MARKERS
 from .quotes import canonicalize_quote, format_block_quote
 from .variation import seed_from_run, RunVariationKnobs
+from .banned_phrases import scan_banned_phrases, BannedPhraseReport, BannedPhraseHit, list_alternatives, BANNED_PHRASES
+from .untouchable_terms import is_untouchable, find_untouchables_in, all_untouchable, UNTOUCHABLE_TERMS
+from .note_card import NoteCard, NoteCardStore, validate_note_card
 
 __all__ = [
     "detect_overlap", "OverlapReport", "NGramHit",
@@ -25,4 +28,7 @@ __all__ = [
     "hedging_audit", "HedgingReport", "HEDGING_MARKERS",
     "canonicalize_quote", "format_block_quote",
     "seed_from_run", "RunVariationKnobs",
+    "scan_banned_phrases", "BannedPhraseReport", "BannedPhraseHit", "list_alternatives", "BANNED_PHRASES",
+    "is_untouchable", "find_untouchables_in", "all_untouchable", "UNTOUCHABLE_TERMS",
+    "NoteCard", "NoteCardStore", "validate_note_card",
 ]
