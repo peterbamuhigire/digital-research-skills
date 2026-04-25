@@ -34,6 +34,14 @@ The project type determines the chapter sequence. Pick the best match. The engin
 | I | Historical research | Reconstruction of past events from primary + secondary sources |
 | J | Trends research | Forecasting, signal extraction, time-series patterns |
 | K | Policy / regulatory research | Statute / case-law / enforcement deep-dive across jurisdictions |
+| **L** | **Academic thesis** | Master's / honours thesis written for examiners, peer-review-ready |
+| **M** | **Popular thesis** | Master's-level synthesis written for general / professional audience |
+| **N** | **Academic paper / journal article** | Conference / journal submission, full citation discipline |
+| **O** | **Popular paper / long-form** | Magazine, blog, or trade-publication adaptation of academic argument |
+| **P** | **Academic dissertation (PhD)** | Doctoral committee submission, full conventions |
+| **Q** | **Popular dissertation / book** | Trade-book adaptation of doctoral research |
+| **R** | **Academic essay** | Coursework or scholarly essay, formal style + citations |
+| **S** | **Popular essay** | Op-ed, longform essay, magazine essay, blog essay |
 
 ### Schema A — Pain-point research (multi-cohort)
 Used when researching pain points across one or more cohorts (e.g., East Africa Property/Hostel).
@@ -221,6 +229,166 @@ Used for deep statute / case-law / enforcement work across jurisdictions.
 10. References (case citations + statutes)
 ```
 
+### Schema L — Academic thesis (Master's / honours)
+Master's or honours thesis written for examiners. IMRAD for sciences/social sciences; humanities-essay structure for humanities. Full citation discipline.
+
+```
+- Title page (title, author, supervisor, institution, degree, date)
+- Declaration of originality
+- Acknowledgements
+- Abstract (200–300 words; structured)
+- Keywords (3–6)
+- Table of contents
+- List of figures / tables / abbreviations
+- Chapter 1: Introduction (problem, RQ/hypothesis, contribution, scope, structure)
+- Chapter 2: Literature Review
+- Chapter 3: Methodology (design, sample, instruments, ethics, analysis)
+- Chapter 4: Findings / Results
+- Chapter 5: Discussion
+- Chapter 6: Conclusion (contribution, limitations, future work)
+- References (per academic-citation-styles)
+- Appendices (instruments, transcripts, ethics approval)
+```
+
+### Schema M — Popular thesis
+Master's-level synthesis adapted for a general or professional audience. Maintains rigour without academic conventions.
+
+```
+- Cover (title, subtitle, author, date)
+- Foreword / preface
+- Introduction (the problem, why it matters)
+- Part 1: Background & context
+- Part 2: What the research found (thematic, narrative chapters)
+- Part 3: What it means (implications, recommendations)
+- Conclusion
+- Acknowledgements
+- Notes (endnotes with hyperlinked sources)
+- Selected further reading
+- About the author
+```
+
+### Schema N — Academic paper / journal article
+Single-argument paper for journal or conference submission. IMRAD for empirical work; argumentative essay structure for theoretical / humanities work.
+
+```
+- Title (concise, descriptive)
+- Authors + affiliations + ORCIDs + corresponding author
+- Abstract (150–300 words depending on journal)
+- Keywords (3–6)
+- Introduction (problem, gap, contribution, structure of paper)
+- Literature Review (often folded into Introduction for shorter papers)
+- Methodology (full essentials per academic-writing-conventions)
+- Results
+- Discussion
+- Conclusion
+- Acknowledgements
+- Funding statement
+- Conflict-of-interest declaration
+- Data availability statement
+- References (target-journal style)
+```
+
+### Schema O — Popular paper / long-form
+Long-form magazine, trade-publication, or blog adaptation of an academic argument. 1,500–8,000 words.
+
+```
+- Title + standfirst (subhead summarising argument)
+- Hook (opening anecdote, scene, or arresting fact)
+- Stakes (why the reader should care)
+- Body (narrative-led; argument woven into stories)
+- Counterargument acknowledgement
+- Resolution / where this leaves us
+- Author bio
+- Endnotes with source links (lighter than full academic citation)
+```
+
+### Schema P — Academic dissertation (PhD)
+Doctoral submission. Full conventions, 60,000–100,000 words typical.
+
+```
+- Title page
+- Declaration / statement of originality
+- Abstract (~350 words)
+- Acknowledgements
+- Dedication (optional)
+- Table of contents, lists of figures / tables / abbreviations
+- Chapter 1: Introduction (problem, research questions, contribution, scope, structure of dissertation)
+- Chapter 2: Literature Review
+- Chapter 3: Theoretical / Conceptual Framework
+- Chapter 4: Methodology
+- Chapters 5–8 (typically 3–4 empirical / analytical chapters)
+- Chapter 9: Discussion (synthesis across empirical chapters)
+- Chapter 10: Conclusion (contribution, implications, limitations, future research)
+- References (full academic citation style)
+- Appendices (instruments, ethics approvals, supplementary data, transcripts)
+```
+
+### Schema Q — Popular dissertation / book
+Trade-book adaptation of doctoral research. Narrative-driven; chapter structure follows the argument, not the dissertation chapters.
+
+```
+- Cover (title, subtitle, author)
+- Front matter (epigraph, contents, foreword)
+- Introduction (the question and why it matters)
+- Part I, Part II, Part III (thematic parts containing chapters)
+  - Each chapter: hook → stakes → body → resolution
+- Conclusion
+- Acknowledgements
+- Notes (endnotes; can be extensive)
+- Bibliography (selected further reading + cited works)
+- Index
+- About the author
+```
+
+### Schema R — Academic essay
+Coursework or scholarly essay. Tightly argued, single thesis, formal citation.
+
+```
+- Title
+- (Optional) abstract
+- Introduction (context + thesis statement + roadmap)
+- Body (paragraph-level argument structure; each paragraph one clear claim)
+- Counterargument + rebuttal
+- Conclusion (restated thesis + larger implication)
+- References (per chosen style)
+- (Optional) appendices
+```
+
+### Schema S — Popular essay
+Op-ed, magazine essay, longform essay, blog essay. 800–6,000 words.
+
+```
+- Title + standfirst
+- Lede (a single arresting paragraph)
+- Argument (woven through narrative, examples, voice)
+- Counterposition
+- Resolution / call to attention
+- Brief endnotes / source links inline (lighter touch)
+- Author bio
+```
+
+## Academic vs popular — variant choice rules
+
+When the user names a type without specifying variant, default to:
+
+- Thesis / dissertation → **academic** (these are nearly always degree submissions)
+- Paper → **academic** (unless target outlet is a magazine / blog)
+- Essay → ask. Could be either.
+
+If unsure, ask one question: **"Who reads this — examiners / peer reviewers, or general / professional readers?"**
+
+## Citation style selection (Schemas L, N, P, R)
+
+Academic schemas require a citation style. Default by discipline:
+
+- Sciences (incl. medical) → Vancouver or APA
+- Social sciences → APA 7
+- Business / management → APA 7 or Harvard
+- Humanities (history, philosophy, literature) → Chicago NB or MLA
+- East African universities (mixed) → Chicago Author-Date or Harvard (most common)
+
+Use the `academic-citation-styles` skill for the rules. For pandoc rendering, store citations in a `.bib` file and use `--citeproc --bibliography=refs.bib --csl=<style>.csl`.
+
 ## Pipeline
 
 1. **Read** all `<cohort>/research/*.md`, `<cohort>/analysis/*.md`, `<cohort>/opportunities/*.md` for the project
@@ -270,3 +438,5 @@ Used for deep statute / case-law / enforcement work across jurisdictions.
 - `osint-methodology` — methodology for Schema G
 - `trend-analysis` — methodology for Schema J
 - `regulatory-landscape-mapping` — methodology for Schema K
+- `academic-writing-conventions` — methodology for Schemas L, N, P, R (academic variants)
+- `academic-citation-styles` — citation discipline for Schemas L, N, P, R

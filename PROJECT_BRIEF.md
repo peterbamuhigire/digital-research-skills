@@ -21,10 +21,11 @@ The engine produces work for distinct audiences with distinct standards:
 
 Each audience has different tolerance for inference, different citation expectations, and different report shape requirements.
 
-## Research types supported (11)
+## Research types supported (15 types, 19 schemas)
 
-The engine supports — and selects between — eleven distinct research types:
+The engine supports — and selects between — fifteen distinct research types. Four of them come in academic + popular variants, yielding nineteen report schemas in total.
 
+### Investigative / analytical (11)
 1. Pain-point research (multi-cohort)
 2. Single-cohort deep-dive
 3. Market / industry landscape
@@ -37,7 +38,13 @@ The engine supports — and selects between — eleven distinct research types:
 10. Trends research
 11. Policy / regulatory research
 
-Each maps to a specific orchestration approach, methodology skill set, and report schema (A–K). The `research-type-router` skill handles selection upfront before any sub-agent fires.
+### Long-form scholarly outputs (4 types × 2 variants = 8 schemas)
+12. Master's / honours thesis (academic | popular)
+13. Paper / journal article (academic | popular long-form)
+14. PhD dissertation (academic | popular book)
+15. Essay (academic | popular)
+
+Each maps to a specific orchestration approach, methodology skill set, and report schema (A–S). The `research-type-router` skill handles selection upfront before any sub-agent fires.
 
 ## Non-negotiable
 
@@ -76,9 +83,11 @@ Each maps to a specific orchestration approach, methodology skill set, and repor
 - `osint-methodology` — for OSINT projects
 - `trend-analysis` — for trend research
 - `historical-research-methods` — for historical research
+- `academic-writing-conventions` — for theses, dissertations, papers, academic essays
+- `academic-citation-styles` — for any academic variant (Schemas L, N, P, R)
 
 ### Tier 3 — Final-output assembly
-- `research-report-builder` — markdown → designed Word doc with 11 schemas
+- `research-report-builder` — markdown → designed Word doc with 19 schemas (A–S)
 
 ## Repository
 

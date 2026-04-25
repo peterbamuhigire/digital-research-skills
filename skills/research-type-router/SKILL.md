@@ -14,7 +14,9 @@ metadata:
 
 Different research types need different orchestration, source mixes, methodologies, and report shapes. This skill picks the right combination upfront so the engine doesn't run a market-research playbook against an OSINT problem.
 
-## The 11 research types
+## The 15 research types
+
+### Investigative / analytical (11)
 
 | Type | Purpose | Audience | Primary skill | Report schema |
 |---|---|---|---|---|
@@ -29,6 +31,24 @@ Different research types need different orchestration, source mixes, methodologi
 | **Historical research** | Reconstruct past events from primary + secondary sources | Researchers, journalists, academics | `historical-research-methods` | I |
 | **Trends research** | Forecasting, signal extraction, time-series | Strategists, analysts, forecasters | `trend-analysis` | J |
 | **Policy / regulatory research** | Statute / case-law / enforcement deep-dive | Policy, legal, advocacy | `regulatory-landscape-mapping` | K |
+
+### Long-form scholarly outputs (4 types × 2 variants = 8)
+
+| Type | Variant | Audience | Primary skill | Report schema |
+|---|---|---|---|---|
+| **Thesis** (Master's / honours) | Academic | Examiners, advisor | `academic-writing-conventions` + `academic-citation-styles` | L |
+| **Thesis** | Popular | General / professional readers | `academic-writing-conventions` (relaxed) | M |
+| **Paper / journal article** | Academic | Peer reviewers, journal | `academic-writing-conventions` + `academic-citation-styles` | N |
+| **Paper / long-form** | Popular | Magazine, trade publication | `academic-writing-conventions` (relaxed) | O |
+| **PhD dissertation** | Academic | Doctoral committee, field | `academic-writing-conventions` + `academic-citation-styles` | P |
+| **Dissertation / book** | Popular | Trade-book audience | `academic-writing-conventions` (relaxed) | Q |
+| **Essay** | Academic | Coursework, scholarly outlet | `academic-writing-conventions` + `academic-citation-styles` | R |
+| **Essay** | Popular | Op-ed, magazine, blog | `writing-quality` + `content-writing` | S |
+
+**Default variant when not specified:**
+- Thesis / dissertation → academic (these are nearly always degree submissions)
+- Paper → academic (unless target outlet is a magazine / blog)
+- Essay → **ask the user.** Could be either.
 
 ## How to choose
 
@@ -49,6 +69,9 @@ The router asks four questions in order:
    - "What's coming next?" → trends (J)
    - "What does the law say?" → policy / regulatory (K)
    - "What hurts the people affected?" → pain-point (A or B)
+   - "Submit for examination / peer review" → thesis (L), paper (N), or dissertation (P)
+   - "Public-facing book or feature on existing research" → popular thesis (M), popular paper (O), popular dissertation (Q)
+   - "Make a single argument" → academic essay (R) or popular essay (S)
 
 3. **Subject shape** — Is the subject a system, an entity, an event, or a topic?
    - System with multiple stakeholders → multi-cohort pain-point (A)
@@ -125,6 +148,48 @@ methodology_skills: [due-diligence-framework, regulatory-landscape-mapping, sour
 out_of_scope: [non-Acorn EA student-housing operators]
 hard_constraints: [evidence-discipline, named-source-only, no inferred ownership]
 expected_waves: 3
+```
+
+### Example 3 — hypothetical Master's thesis
+
+```yaml
+project: ea-tenant-deposit-protection-thesis-2026
+research_type: thesis (Master's)
+variant: academic
+discipline: social_sciences (development studies)
+audience: thesis examiners, supervisor (Makerere)
+output_expectation: "Submit for examination, July 2026"
+subject: tenant deposit protection regimes in Uganda + Kenya
+time_horizon: present (with 5y backward)
+report_schema: L
+citation_style: Chicago Author-Date
+methodology_skills:
+  - academic-writing-conventions
+  - academic-citation-styles
+  - regulatory-landscape-mapping
+  - cross-cohort-synthesis
+ethics_required: false (secondary-source research)
+target_word_count: 25000
+hard_constraints: [evidence-discipline, primary-source-where-possible]
+expected_waves: 3
+```
+
+### Example 4 — popular essay derived from existing research
+
+```yaml
+project: ea-deposit-theft-essay-2026
+research_type: essay
+variant: popular
+audience: educated general readership (East African or pan-African outlet)
+output_expectation: "1,500-word op-ed for The EastAfrican / The Continent"
+subject: the 80% Uganda deposit-non-refund crisis
+time_horizon: present
+report_schema: S
+methodology_skills: [writing-quality, content-writing]
+draws_from_project: east-africa-property-hostel
+target_word_count: 1500
+hard_constraints: [evidence-discipline, hyperlink-citations-only, plain-language]
+expected_waves: 0 (research already done; this is adaptation)
 ```
 
 ## See also

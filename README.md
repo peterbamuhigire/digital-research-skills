@@ -82,7 +82,7 @@ digital-research-engine/
         └── tenants/               cohort sub-project
 ```
 
-## The 16 engine skills
+## The 18 engine skills
 
 ### Tier 1 — Always loaded
 | # | Skill | Purpose |
@@ -106,14 +106,17 @@ digital-research-engine/
 | 12 | osint-methodology | OSINT projects |
 | 13 | trend-analysis | Trend research |
 | 14 | historical-research-methods | Historical research |
+| 15 | academic-writing-conventions | Theses, dissertations, papers, academic essays |
+| 16 | academic-citation-styles | Schemas L, N, P, R (academic variants) |
 
 ### Tier 3 — Final assembly
 | # | Skill | Purpose |
 |---|---|---|
-| 15 | research-report-builder | Markdown → designed Word doc with 11 report schemas |
+| 17 | research-report-builder | Markdown → designed Word doc with 19 report schemas |
 
-## 11 research types supported
+## 15 research types supported (19 schemas — 4 types come in academic + popular variants)
 
+### Investigative / analytical (11)
 1. Pain-point research (multi-cohort) → Schema A
 2. Single-cohort deep-dive → Schema B
 3. Market / industry landscape → Schema C
@@ -125,6 +128,14 @@ digital-research-engine/
 9. Historical research → Schema I
 10. Trends research → Schema J
 11. Policy / regulatory research → Schema K
+
+### Long-form scholarly outputs (4 types × 2 variants = 8 schemas)
+12. Master's / honours **thesis** — academic (L) | popular (M)
+13. **Paper** / journal article — academic (N) | popular long-form (O)
+14. PhD **dissertation** — academic (P) | popular book (Q)
+15. **Essay** — academic (R) | popular (S)
+
+Variant rules: thesis / dissertation default to academic; paper defaults to academic; essay must be specified by the user.
 
 ## Cross-tool compatibility
 
