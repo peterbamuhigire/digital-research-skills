@@ -84,8 +84,9 @@ digital-research-engine/
 
 ## Research-craft foundations
 
-The engine's design draws on six canonical works on research, search, and knowledge:
+The engine's design draws on twelve canonical works on research, search, knowledge management, scraping, and verification:
 
+**Pass 1 (research methodology):**
 1. *Internet Research with Google* — Amanda Deason
 2. *Essentials of Knowledge Management* — Bryan Bergeron
 3. *Librarian's Guide to Online Searching* (4th ed.) — Suzanne S. Bell
@@ -93,9 +94,34 @@ The engine's design draws on six canonical works on research, search, and knowle
 5. *The Handbook of Online and Social Media Research* — Ray Poynter
 6. *The Creative Guide to Research* — Robin Rowland
 
+**Pass 2 (scraping + verification):**
+7. *Harnessing the Power of Google* — Christopher C. Brown
+8. *Verification Handbook for Investigative Reporting* — Craig Silverman et al.
+9. *Web Scraping with Python* — Richard Lawson
+10. *The Ultimate Guide to Web Scraping* — Hartley Brody
+11. *Hands-On Website Scraping with Python*
+12. *Python Web Scraping for Developers* — Oxylabs
+
 See `RESEARCH_CRAFT_INTEGRATION.md` for the mapping of each book's findings to engine skills.
 
-## The 33 engine skills
+## Runtime tools (`tools/`)
+
+The engine ships actual Python utilities, not just skill documentation:
+
+```
+tools/
+├── scraping/        HTTP client, throttle, robots, retry, cache, pagination, headless,
+│                    extractors (BS4 / JSON-LD / OG / feeds / sitemap), cleaning
+├── google/          Custom Search JSON + SerpAPI client, stakeholder enumeration,
+│                    TLD / state-domain / IGO atlas
+├── verification/    EXIF, archive resurrection, provenance tracing
+└── datasets/        Federated dataset search across 30+ public hosts, retrieval
+                     with SHA-256 integrity, Segnini-style profiling
+```
+
+See `tools/README.md` for full layout + dependency baseline.
+
+## The 41 engine skills
 
 ### Tier 1 — Always loaded
 | # | Skill | Purpose |
@@ -165,6 +191,25 @@ See `RESEARCH_CRAFT_INTEGRATION.md` for the mapping of each book's findings to e
 | # | Skill | Source book | Purpose |
 |---|---|---|---|
 | 32 | mroc-design-and-management | Poynter | Market Research Online Communities |
+
+### Tier 0 — Scraping & search craft (Pass 2 — books 7–12)
+| # | Skill | Source | Purpose |
+|---|---|---|---|
+| 34 | web-scraping-foundations | Lawson + Brody + Oxylabs + Hands-On | Decision tree, parser choice, structured-data shortcuts, error taxonomy |
+| 35 | browser-automation-playwright | Same | Playwright-first headless with auto-waits, contexts, network capture |
+| 36 | scraping-politeness-and-ratelimiting | Same | robots.txt + per-host throttle + backoff + identification |
+| 37 | google-search-api-operator | Brown | Programmatic CSE / SerpAPI / Brave |
+| 38 | google-stakeholder-recon | Brown | Topic → stakeholder list → query bundle |
+
+### Tier 6 — Investigation
+| # | Skill | Source | Purpose |
+|---|---|---|---|
+| 39 | media-forensics-verification | Silverman | EXIF / reverse image / geolocation / shadow-time / archive / provenance |
+
+### Tier 7 — Datasets
+| # | Skill | Source | Purpose |
+|---|---|---|---|
+| 40 | dataset-discovery-and-analysis | This pass | Public dataset search / retrieve / profile (Segnini's 5-step) |
 
 ### Plus copied from `~/.claude/skills` and `business-plan-skills`
 Skill-building (skill-writing, skill-composition-standards, skill-safety-audit, validation-contract, capability-matrix), project-documentation (doc-architect, update-claude-documentation, project-requirements, spec-architect, manual-guide, markdown-lint-cleanup, professional-word-output, python-document-generation, excel-spreadsheets), and language (east-african-english, language-standards, content-writing, writing-quality, blog-writer).
