@@ -82,7 +82,20 @@ digital-research-engine/
         └── tenants/               cohort sub-project
 ```
 
-## The 18 engine skills
+## Research-craft foundations
+
+The engine's design draws on six canonical works on research, search, and knowledge:
+
+1. *Internet Research with Google* — Amanda Deason
+2. *Essentials of Knowledge Management* — Bryan Bergeron
+3. *Librarian's Guide to Online Searching* (4th ed.) — Suzanne S. Bell
+4. *Digital Paper* — Andrew Abbott
+5. *The Handbook of Online and Social Media Research* — Ray Poynter
+6. *The Creative Guide to Research* — Robin Rowland
+
+See `RESEARCH_CRAFT_INTEGRATION.md` for the mapping of each book's findings to engine skills.
+
+## The 33 engine skills
 
 ### Tier 1 — Always loaded
 | # | Skill | Purpose |
@@ -113,6 +126,48 @@ digital-research-engine/
 | # | Skill | Purpose |
 |---|---|---|
 | 17 | research-report-builder | Markdown → designed Word doc with 19 report schemas |
+
+### Tier 0 — Search & retrieval craft (added from research-craft books)
+| # | Skill | Source book | Purpose |
+|---|---|---|---|
+| 18 | web-search-operator-grammar | Deason | Operator stack (punctuation × field × refinement × Boolean) |
+| 19 | pearl-growing-iteration | Bell | Two-pass broad → harvest → refined search |
+| 20 | citation-brachiation | Abbott + Bell + Rowland | Bidirectional citation-graph traversal |
+| 21 | discipline-router | Bell | Strategy template per academic discipline |
+| 22 | reading-mode-router | Abbott | 5 reading modes with algorithms |
+
+### Tier 1.5 — Project design discipline
+| # | Skill | Source book | Purpose |
+|---|---|---|---|
+| 23 | research-design-document | Abbott + Rowland + Bergeron | The north-star project artefact |
+| 24 | minianalysis-engine | Abbott | ≤1-week atomic units of progress |
+| 25 | crosswalk-matrix | Abbott | Question × source matrix |
+| 26 | controlled-vocabulary-builder | Bergeron + Bell + Abbott | Project-scoped evolving ontology |
+
+### Tier 2.5 — Source engagement
+| # | Skill | Source book | Purpose |
+|---|---|---|---|
+| 27 | reference-interview | Bell + Rowland | Intent elicitation upstream |
+| 28 | five-term-source-doubt | Abbott | Burke pentad on every primary doc |
+| 29 | tudor-twelve-point-evaluation | Rowland | 12-criterion source rubric |
+
+### Tier 3.5 — Investigation
+| # | Skill | Source book | Purpose |
+|---|---|---|---|
+| 30 | chronology-construction | Rowland + Abbott | Timeline as gap-detector |
+
+### Tier 4 — Knowledge management & monetisation
+| # | Skill | Source book | Purpose |
+|---|---|---|---|
+| 31 | knowledge-lifecycle-pipeline | Bergeron | 8-stage artefact state machine |
+
+### Tier 5 — Market research methods
+| # | Skill | Source book | Purpose |
+|---|---|---|---|
+| 32 | mroc-design-and-management | Poynter | Market Research Online Communities |
+
+### Plus copied from `~/.claude/skills` and `business-plan-skills`
+Skill-building (skill-writing, skill-composition-standards, skill-safety-audit, validation-contract, capability-matrix), project-documentation (doc-architect, update-claude-documentation, project-requirements, spec-architect, manual-guide, markdown-lint-cleanup, professional-word-output, python-document-generation, excel-spreadsheets), and language (east-african-english, language-standards, content-writing, writing-quality, blog-writer).
 
 ## 15 research types supported (19 schemas — 4 types come in academic + popular variants)
 
