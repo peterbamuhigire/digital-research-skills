@@ -13,6 +13,8 @@ metadata:
 
 Library of named research techniques the engine applies on demand. The orchestrator (`research-orchestration`) decides *what kind* of research is being run; this skill provides the *specific tools* used inside the waves.
 
+Whenever a technique produces a mini-conclusion, synthesis, gap claim, taxonomy interpretation, cross-cohort inference, or recommendation, run `critical-reasoning-and-argument` before the artifact is considered complete.
+
 ## When to use
 
 The orchestrator (or another skill) tells you the project needs a named technique. Load only the matching reference. Do not load all references by default.
@@ -68,6 +70,8 @@ Every technique in this skill produces an artifact the orchestrator can consume:
 - pain-point taxonomy → coded clusters with exemplar quotes and counts.
 - search query → operator-rich string + estimated result-set characteristics.
 
+Any artifact with a conclusion also includes the evidence-to-claim link, countercase, and confidence limit from `critical-reasoning-and-argument`.
+
 A technique that does not produce a structured artifact has been used incorrectly.
 
 ## Anti-patterns
@@ -77,10 +81,12 @@ A technique that does not produce a structured artifact has been used incorrectl
 - Inventing pain points; the taxonomy must be built from coded raw data only.
 - Synthesizing across cohorts before each cohort has its own complete corpus.
 - Treating gap analysis as "things I haven't read yet"; gap analysis names what the *literature* has not answered.
+- Technique output that lists evidence but does not test the inference drawn from it.
 
 ## Companion skills
 
 - `research-orchestration` — the dispatcher; this skill is its toolbox.
+- `critical-reasoning-and-argument` — mandatory for mini-conclusions, gap claims, cross-cohort synthesis, taxonomy interpretation, and recommendations.
 - `research-design` — formal research design (historical, trend, MROC, knowledge lifecycle, design document, report builder).
 - `source-evaluation` — mandatory pairing whenever sources are involved.
 - `academic-writing`, `report-and-proposal-craft`, `business-writing` — output containers.

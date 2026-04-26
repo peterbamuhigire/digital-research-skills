@@ -1,0 +1,4 @@
+interface:
+  display_name: "Critical Reasoning"
+  short_description: "Reasoning and argument discipline"
+  default_prompt: "Use the critical reasoning and argument skill to test claims, structure reasoning, expose assumptions, and produce convincing, actionable analysis."

@@ -13,6 +13,8 @@ metadata:
 
 Single entry skill for the engine's long-form business persuasion artifacts. For shorter forms (email, memo, blog, web copy), load `business-writing` instead.
 
+Long-form reports and proposals must persuade by reasoning, not by arrangement. Before drafting findings, conclusions, recommendations, options, risks, or objections, run `critical-reasoning-and-argument` so the evidence-to-claim chain, countercase, and certainty level are explicit.
+
 ## Artifact router
 
 | Artifact | Reference | Distinguishing feature |
@@ -63,7 +65,11 @@ Building the case: state answer first → 3–5 MECE reasons → evidence per re
 
 If X/Y/Z is vague, planning is incomplete. Do not draft.
 
-### 3. White-paper mantra (Graham)
+### 3. Critical reasoning gate
+
+Load `critical-reasoning-and-argument` before drafting the body. Each finding, conclusion, recommendation, and option must have an argument map, strongest objection, implementation constraint, and confidence limit.
+
+### 4. White-paper mantra (Graham)
 
 For any white paper, the mantra test gates every section:
 
@@ -126,6 +132,7 @@ For any report >10 pages, the executive summary stands alone. Stand-alone test: 
 - [ ] Artifact type identified; structure matches.
 - [ ] Audience grid filled (decider, influencer, blocker, user, gatekeeper).
 - [ ] Purpose statement (X/Y/Z) written and met.
+- [ ] `critical-reasoning-and-argument` run on findings, conclusions, recommendations, options, risks, and objections.
 - [ ] Lead on page 1 — recommendation/proposition not buried.
 - [ ] Three-way discipline observed: findings, conclusions, recommendations strictly separated.
 - [ ] Recommendations specific, owned, dated, costed, ranked.
@@ -147,6 +154,7 @@ For any report >10 pages, the executive summary stands alone. Stand-alone test: 
 ## Companion skills
 
 - `business-writing` — short-form prose (email, memo, blog, web).
+- `critical-reasoning-and-argument` — mandatory for every analytical finding, conclusion, recommendation, option, objection, risk, and implementation implication.
 - `academic-writing` — papers, essays, theses, dissertations.
 - `data-quality-assessment` — score the data behind report findings.
 - `dataset-discovery-and-analysis` — for evidence-driven reports.

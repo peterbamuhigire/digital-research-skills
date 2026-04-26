@@ -13,6 +13,8 @@ metadata:
 
 Formal research-design layer. The orchestrator (`research-orchestration`) decides what kind of research is being run; this skill governs how that research is *designed* from question to artifact, when the project demands a formal design rather than an opportunistic sweep.
 
+Research design starts with reasoning discipline. Use `critical-reasoning-and-argument` when framing empirical puzzles, theoretical puzzles, research questions, hypotheses, case-selection logic, method justification, and expected contribution.
+
 ## When to load
 
 | Situation | Reference |
@@ -34,6 +36,7 @@ For any project longer than a one-day sweep, load `references/research-design-do
 - **Theoretical puzzle** — which existing frame breaks down here?
 - **Research questions** — concrete, answerable, derived from the puzzles.
 - **Action list** — sub-agent waves, methods, evidence targets.
+- **Argument logic** — the puzzle-question-method-contribution chain tested through `critical-reasoning-and-argument`.
 
 The document is the engine's north-star artefact. Every sub-agent reads it and may update it.
 
@@ -81,10 +84,12 @@ new long-running research project
 - Mixing knowledge-lifecycle stages in the same artifact (capture vs curation vs application have different rules).
 - Building the final Word document by hand-stitching files; use the report-builder pipeline.
 - Letting the design document drift; it must be updated as the project evolves, not snapshot at kickoff.
+- Research question, method, or case selection that is plausible but not argued.
 
 ## Companion skills
 
 - `research-orchestration` — the dispatcher; this skill is its formal-design layer.
+- `critical-reasoning-and-argument` — mandatory for puzzle framing, research questions, hypotheses, method justification, case selection, and contribution logic.
 - `research-techniques` — specific named techniques applied inside design phases.
 - `source-evaluation` — every source consulted.
 - `academic-writing`, `report-and-proposal-craft` — output containers.

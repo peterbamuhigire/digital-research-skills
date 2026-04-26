@@ -13,6 +13,8 @@ metadata:
 
 Single entry skill for any non-academic prose artifact. For reports, proposals, and white papers (longer-form persuasion artifacts with structural conventions of their own), load **`report-and-proposal-craft`** instead.
 
+If the artifact explains, argues, persuades, recommends, evaluates, or interprets, run `critical-reasoning-and-argument` before drafting. This applies to market notes, strategy memos, intelligence-style updates, internal comms, speeches, fundraising letters, and executive briefings.
+
 ## Channel router
 
 | Channel | Right reference | Process spine |
@@ -79,6 +81,7 @@ Every sentence carries its point at full volume. Hedge soup, Latinate fog, and b
 
 - [ ] Channel identified; right reference loaded.
 - [ ] Step 1 purpose statement written.
+- [ ] `critical-reasoning-and-argument` run where the artifact contains a claim, recommendation, interpretation, or persuasive ask.
 - [ ] Outline approved before drafting.
 - [ ] Lead carries the news; nothing buried.
 - [ ] Average sentence ≤20 words; max 30; varied length.
@@ -95,5 +98,6 @@ Every sentence carries its point at full volume. Hedge soup, Latinate fog, and b
 ## Companion skills
 
 - `report-and-proposal-craft` — long-form persuasion (reports, proposals, white papers).
+- `critical-reasoning-and-argument` — mandatory for non-academic prose that argues, recommends, evaluates, interprets, or persuades.
 - `academic-writing` — papers, essays, theses, dissertations.
 - `web-scraping-foundations` — for pulling source material when needed.

@@ -57,6 +57,8 @@ metadata:
 
 This skill turns a research corpus into a consulting-grade decision process. It is about how to structure the problem, sequence the analysis, manage the client interface, and carry recommendations into implementation.
 
+Consulting output must be more than polished slides. Run `critical-reasoning-and-argument` before finalizing issue trees, hypotheses, options, recommendations, value cases, risks, or implementation logic.
+
 ## When to use
 
 - Strategy, market-entry, growth, transformation, or operating-model work
@@ -71,6 +73,7 @@ This skill turns a research corpus into a consulting-grade decision process. It 
 3. **Quantify the value and the risk.** A recommendation without upside, downside, and assumptions is unfinished.
 4. **Manage stakeholders explicitly.** Good analysis fails when the buyer, blocker, and user were treated as the same person.
 5. **Implementation begins in the diagnosis.** Recommendations must name who does what, in what sequence, and what proves progress.
+6. **Reason before recommendation.** Every recommendation must pass `critical-reasoning-and-argument`: argument map, strongest objection, alternatives, evidence sufficiency, and implementation constraints.
 
 ## Router
 
@@ -93,6 +96,7 @@ This skill turns a research corpus into a consulting-grade decision process. It 
 
 - [ ] Decision owner, question, and time horizon named
 - [ ] Issue tree or equivalent decomposition exists
+- [ ] Critical-reasoning gate passed for hypotheses, options, recommendations, risks, and implementation implications
 - [ ] Hypotheses are testable, not slogans
 - [ ] Analyses are tied to decisions, not curiosity
 - [ ] Stakeholders mapped beyond the formal sponsor
@@ -110,6 +114,7 @@ This skill turns a research corpus into a consulting-grade decision process. It 
 ## Companion skills
 
 - `research-orchestration` — drives the research waves
+- `critical-reasoning-and-argument` — validates hypotheses, issue trees, options, recommendations, value cases, and implementation logic
 - `analytic-tradecraft` — for uncertainty, alternatives, and confidence
 - `executive-communication` — for answer-first client delivery
 - `report-and-proposal-craft` — for the long-form report or proposal shell

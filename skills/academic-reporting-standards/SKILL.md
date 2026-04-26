@@ -12,7 +12,7 @@ metadata:
 
 # Academic Reporting Standards
 
-Single entry skill for any academic artefact intended for an examination committee, a peer-reviewed journal, or an institutional review at Ivy-League / Oxbridge / LSE quality. The skill operates **alongside** `academic-writing` (which handles citation styles, plagiarism prevention, and originality) and **above** `report-and-proposal-craft` (which handles long-form scaffolding for non-academic outputs).
+Single entry skill for any academic artefact intended for an examination committee, a peer-reviewed journal, or an institutional review at Ivy-League / Oxbridge / LSE quality. The skill operates **alongside** `academic-writing` (which handles citation styles, plagiarism prevention, and originality), **through** `critical-reasoning-and-argument` (which tests the claim-gap-method-contribution logic), and **above** `report-and-proposal-craft` (which handles long-form scaffolding for non-academic outputs).
 
 This skill has three layers, all load-bearing:
 
@@ -43,6 +43,7 @@ Do **not** use on: executive summaries (use `executive-communication`), business
 3. **Methodology justified, not described.** Every methodological choice carries its rationale, tied back to the theory or phenomenon under investigation. Reference: `references/methodology-justification-checklist.md`.
 4. **Reporting-standard compliance.** The artefact ships with the appropriate EQUATOR-network checklist completed and submitted. Reference: `references/equator-decision-tree.md`.
 5. **Examiner-defensible.** Every paragraph must be defensible at viva. Apprentice-level statements ship without hedge; expert-level statements require evidence; original-contribution statements require the gap-evidence-fit chain. Reference: `references/viva-defense-preparation.md`.
+6. **Argument defensible.** Every literature gap, original-contribution claim, methodology choice, interpretation, implication, and recommendation passes `critical-reasoning-and-argument` before the manuscript is treated as examinable.
 
 ## Decision router — load the matching reference
 
@@ -83,6 +84,7 @@ Before any academic artefact ships, every box must be ticked:
 - [ ] **Discussion** acknowledges biases, the bases for them, and other perspectives; avoids polemics.
 - [ ] **Conclusion** has four sub-sections: summary, conclusions, implications, recommendations.
 - [ ] **Original-contribution claim** is explicit in the abstract and chapter 1; defensible by the gap-evidence-fit chain.
+- [ ] **Critical-reasoning gate** passed: argument map, countercase, fallacy audit, and certainty calibration completed for the contribution, method, findings interpretation, and recommendations.
 - [ ] **Institution-specific regulation check** completed: exact institution, school/department, degree, format, word-count inclusions/exclusions, and viva/defense rules recorded. If no published central cap exists, the gap is stated rather than filled with a guessed number.
 - [ ] **Reporting-standard checklist** for the study type is completed and submitted with the artefact.
 - [ ] **Citation style** matches the institution / journal: Bluebook / OSCOLA / Chicago / APA / AMA / Vancouver / MLA.
@@ -104,6 +106,7 @@ Before any academic artefact ships, every box must be ticked:
 ## Companion skills
 
 - `academic-writing` — citation styles, plagiarism prevention, originality, hedging discipline. Runs alongside this skill.
+- `critical-reasoning-and-argument` — mandatory for examiner-defensible claim, gap, methodology, interpretation, contribution, and countercase logic.
 - `analytic-tradecraft` — for any forward-looking judgment inside the discussion section, the Heuer/Pherson SATs apply (KAC, ACH for contested findings).
 - `source-evaluation` — every source in the literature review carries a tier and verification trail.
 - `uganda-academic-research`, `kenya-academic-research` — institution-specific East African proposal, thesis, dissertation, viva, ethics, and formatting rules.

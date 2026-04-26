@@ -14,7 +14,7 @@ metadata:
 
 Single entry skill for turning a research corpus into an executive-grade artefact. The engine's research outputs are dense and source-disciplined; this skill makes them **read like a McKinsey, Bain, or BCG deliverable** — answer first, MECE-structured, action-titled, one-message-per-page, chart-selection-disciplined.
 
-This skill does not invent claims. It restructures and surfaces claims the upstream research already produced. **Evidence-discipline applies in full**: every load-bearing fact in the executive output traces back to the upstream research's source manifest.
+This skill does not invent claims. It restructures and surfaces claims the upstream research already produced. **Evidence-discipline applies in full**: every load-bearing fact in the executive output traces back to the upstream research's source manifest. The governing thought must come from a tested argument map produced through `critical-reasoning-and-argument`.
 
 ## When to use
 
@@ -69,6 +69,7 @@ Gene Zelazny, McKinsey's longtime Director of Visual Communications, reduced bus
 Before any executive artefact ships, every box must be ticked:
 
 - [ ] **Governing thought** stated as a single sentence in the first 50 words.
+- [ ] **Critical-reasoning gate** passed before restructuring: governing thought, 3-5 support points, objections, and implications are tested.
 - [ ] **SCQA opener** present (or a defensible variant: "Answer / Situation" if the audience is decision-ready).
 - [ ] Support is **MECE** at the top level (no overlap; no obvious gap).
 - [ ] Every section title is an **action title** — a complete declarative sentence.
@@ -92,6 +93,7 @@ Before any executive artefact ships, every box must be ticked:
 ## Companion skills
 
 - `report-and-proposal-craft` — long-form scaffolding (headers, sections, tone) — feeds into this skill's restructuring pass.
+- `critical-reasoning-and-argument` — runs before this skill; supplies the tested governing thought, support chain, countercase, limits, and action implications.
 - `professional-word-output` / `python-document-generation` — the rendering layer below this skill.
 - `academic-writing` + `academic-reporting-standards` — for academic artefacts where a thesis examiner expects literature-review structure rather than answer-first.
 - `analytic-tradecraft` — preserves estimative-probability language and competing-hypothesis discipline through the restructuring.

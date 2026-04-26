@@ -12,6 +12,8 @@ metadata:
 
 # Academic Writing
 
+Academic prose must be reasoned, not merely cited. Before drafting any thesis statement, literature gap, interpretation, methodology justification, discussion, conclusion, or recommendation, load `critical-reasoning-and-argument` and run its argument map, countercase, fallacy, and certainty-calibration gates.
+
 The single entry skill for any academic artifact: **paper, essay, thesis, dissertation** — in either the academic (peer-reviewed audience, strict conventions) or popular (general audience, conventions relaxed but rigor preserved) variant. Detail lives in `references/`; load only what the situation needs.
 
 ## Output-type router
@@ -74,6 +76,8 @@ This pipeline is what makes the engine's "same prompt, three runs, three differe
 | `references/plagiarism-prevention.md` | Pre-delivery five-rule audit (verbatim, structure, citation, quote-density, paraphrase fidelity) |
 | `references/morley-rhetorical-moves.md` | Need a phrase for a rhetorical move (introducing work, citing literature, describing methods, reporting results, discussing findings, writing conclusions, hedging, comparing, signposting). Morley *Academic Phrasebank* (Tier 1). |
 | `references/morley-reporting-verbs-and-hedges.md` | Choosing a reporting verb by stance (neutral / tentative / strong / critical) or selecting a hedge calibrated to evidence strength. Includes the Davis & Morley reuse-acceptability rule as a plagiarism-prevention guardrail. |
+| `references/critical-literature-review.md` | Hardening a literature review so it synthesizes disputes, gaps, methods, and implications rather than listing sources |
+| `references/thesis-production-hardening.md` | Thesis/dissertation planning, chapter logic, proposal checks, methodology justification, milestone and version discipline |
 
 ## Universal structural conventions
 
@@ -108,6 +112,8 @@ The references and findings are the same. The argument, voice, and structure are
 
 - Drafting before the source-away gate has fired (sources still in context).
 - Synonym-swap "paraphrase" — load `references/paraphrase-discipline.md` and follow the four-step technique.
+- Literature review as annotated bibliography — load `references/critical-literature-review.md` and `critical-reasoning-and-argument/references/literature-review-and-thesis-hardening.md`.
+- Thesis or dissertation chapter that cites heavily but does not expose the research question, gap, method logic, contribution, and counter-literature.
 - Verbatim 7-word runs from any single source — load `references/plagiarism-prevention.md`.
 - Mixing citation styles within one document.
 - One-source paragraphs — synthesize across three or more (`references/source-synthesis.md`).
@@ -120,6 +126,7 @@ The references and findings are the same. The argument, voice, and structure are
 ## Universal ship gate
 
 - [ ] Output type and variant declared (paper / essay / thesis / dissertation × academic / popular).
+- [ ] `critical-reasoning-and-argument` run on the central thesis, literature gap, methodology justification, interpretation, and conclusion.
 - [ ] Citation style declared and applied consistently.
 - [ ] Source-away gate fired before composition.
 - [ ] Notes are fragments, not sentences (Trzeciak rule).
@@ -130,11 +137,13 @@ The references and findings are the same. The argument, voice, and structure are
 - [ ] Reference list complete; every cited work is in the list, every list entry is cited at least once.
 - [ ] DOI / persistent identifier captured where available.
 - [ ] If thesis or dissertation: Eco's topic-gate, secret-title, provisional-TOC discipline applied.
+- [ ] If thesis or dissertation: chapter logic, methodology justification, contribution-to-knowledge claim, limitations, and viva-defensible countercase are explicit.
 - [ ] If popular variant: form relaxed, but accuracy and attribution preserved.
 
 ## Companion skills
 
 - `dataset-discovery-and-analysis` — for empirical papers / theses, the data-finding layer.
+- `critical-reasoning-and-argument` — mandatory for the argument, gap, method, interpretation, contribution, and countercase logic in every academic artifact.
 - `data-quality-assessment` — score the data behind empirical claims on the four-axis model.
 - `web-scraping-foundations` — when sources include web data.
 - `business-writing` (planned) — for non-academic writing artifacts.

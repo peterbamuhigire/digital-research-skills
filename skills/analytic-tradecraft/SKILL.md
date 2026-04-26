@@ -14,7 +14,7 @@ metadata:
 
 Single entry skill for any judgment that ships under uncertainty. Every output of every cohort agent that contains a forward-looking claim, a contested-evidence call, or a "we conclude / we estimate / we assess" statement must pass this skill's discipline before shipping.
 
-This skill operates **after** `source-evaluation` (which establishes whether a source is trustworthy) and **before** `executive-communication` (which restructures the judgment for an executive reader). It is the layer that makes the engine's outputs estimative-grade, not merely sourced.
+This skill operates **after** `source-evaluation` (which establishes whether a source is trustworthy) and `critical-reasoning-and-argument` (which tests whether the evidence supports the conclusion), and **before** `executive-communication` (which restructures the judgment for an executive reader). It is the layer that makes the engine's outputs estimative-grade, not merely sourced.
 
 ## When to use
 
@@ -68,6 +68,7 @@ Sherman Kent (Office of National Estimates, 1951–1973) observed that vague ver
 Before any estimative output ships, every box must be ticked:
 
 - [ ] **ICD 203 nine standards** all satisfied (run the checklist in `references/icd-203-and-tradecraft-standards.md`).
+- [ ] **Critical-reasoning gate** passed: argument map, countercase, inference audit, and fallacy/coherence audit completed before estimative language is applied.
 - [ ] **At least one alternative hypothesis** considered — even if rejected. ACH matrix attached for any high-stakes judgment.
 - [ ] **Key Assumptions Check** run — every load-bearing assumption listed and challenged.
 - [ ] **Confidence vocabulary** drawn from the Kent / ODNI lexicon, with numeric band attached.
@@ -93,6 +94,7 @@ Before any estimative output ships, every box must be ticked:
 ## Companion skills
 
 - `source-evaluation` — runs first; establishes whether each source is trustworthy and at what tier.
+- `critical-reasoning-and-argument` — runs before this skill; establishes claim logic, countercase, and evidence-to-conclusion validity for any intelligence, market, risk, or uncertainty judgment.
 - `research-orchestration` — wave dispatch; this skill plugs into Wave 2 (gap-fill triggers ACH if a contested judgment emerges) and Wave 3 (verification triggers Key Assumptions Check + cognitive-bias audit).
 - `executive-communication` — runs after; restructures the estimative judgment for the senior reader. **Estimative discipline survives the restructuring**: the Kent lexicon and the dissent footnotes do not get smoothed away.
 - `academic-reporting-standards` — for academic outputs, the equivalent quality controls are GRADE (evidence quality), TOP (transparency), Cochrane RoB (risk of bias). The Heuer/Pherson SATs and ICD 203 are the intelligence-side analogue.

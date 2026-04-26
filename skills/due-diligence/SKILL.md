@@ -13,6 +13,8 @@ metadata:
 
 Single entry skill for corporate, financial, sanctions, regulatory, and background-check diligence. For broader open-source investigations, load `osint-investigation`. For licensed-PI workflows, load `pi-investigation`.
 
+Diligence conclusions are high-stakes judgments. Run `critical-reasoning-and-argument` before classifying a red flag, resolving an allegation, weighing a pattern, or recommending proceed / conditions / decline / escalate.
+
 ## Workflow router
 
 | Diligence goal | Load |
@@ -47,6 +49,7 @@ Detail in `references/dd-report-architecture.md`. Every formal DD report uses:
 ## Mandatory pairings
 
 - **`source-evaluation`** — every claim in a DD report rides the 5-tier ladder + Burke/Tudor/Silverman audits.
+- **`critical-reasoning-and-argument`** — every allegation, pattern, CARA resolution, and recommendation must pass an argument map, countercase, inference audit, and certainty calibration.
 - **`web-scraping-foundations`** — when collection automates registry pulls.
 - **`report-and-proposal-craft`** — for the formal report container (front matter, exec summary, three-way discipline).
 
@@ -97,6 +100,7 @@ A finding without those fields does not ship.
 - [ ] UBO trace pursued to the natural person or to a flagged opacity barrier.
 - [ ] Adverse-media items each tier-evaluated and triangulated where required.
 - [ ] CARA verdicts (refuted / partial / substantiated / unresolved) per allegation.
+- [ ] Critical-reasoning gate passed for red flags, patterns, CARA resolutions, and recommendations.
 - [ ] Recommendations specific (proceed / conditions / decline / escalate).
 - [ ] Engine-level guardrail (`source-evaluation/references/evidence-discipline.md`) run.
 - [ ] No legal advice; counsel boundary respected.
@@ -105,6 +109,7 @@ A finding without those fields does not ship.
 ## Companion skills
 
 - `source-evaluation` — mandatory pairing.
+- `critical-reasoning-and-argument` — mandatory for allegation resolution, red-flag weighting, pattern analysis, and action recommendation.
 - `osint-investigation` — when DD requires broader open-source recon.
 - `pi-investigation` — when licensed-PI evidence collection is needed.
 - `web-scraping-foundations` — for registry automation.
