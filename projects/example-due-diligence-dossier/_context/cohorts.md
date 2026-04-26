@@ -1,0 +1,3 @@
+# Cohorts
+
+Single example cohort.

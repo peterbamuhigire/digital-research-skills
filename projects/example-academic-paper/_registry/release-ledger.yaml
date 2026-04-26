@@ -1,0 +1,7 @@
+releases:
+- id: REL-FIXTURE-0001
+  version: "fixture"
+  date: "2026-04-26"
+  artifacts:
+    - "05-output"
+  validation_report: "fixture"

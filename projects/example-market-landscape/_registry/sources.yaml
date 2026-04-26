@@ -1,0 +1,8 @@
+sources:
+- id: SRC-0001
+  title: "Fixture source"
+  ref: "local fixture"
+  tier: "fixture"
+  accessed: "2026-04-26"
+  verification: "local-test-fixture"
+  confidence: "high"

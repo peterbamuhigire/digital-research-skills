@@ -1,0 +1,6 @@
+quotes:
+- id: QTE-0001
+  quote: "Fixture quote"
+  source_id: SRC-0001
+  locator: "local fixture"
+  verified: true

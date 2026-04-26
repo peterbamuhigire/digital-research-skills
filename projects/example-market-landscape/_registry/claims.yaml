@@ -1,0 +1,7 @@
+claims:
+- id: CLM-0001
+  claim: "The example workspace exercises the project kernel."
+  source_ids:
+    - SRC-0001
+  confidence: "high"
+  status: "fixture"

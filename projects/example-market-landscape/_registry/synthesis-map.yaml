@@ -1,0 +1,6 @@
+synthesis_map:
+- id: SYN-0001
+  synthesis: "The kernel supports scaffold, validate, assemble, and pack flows."
+  claim_ids:
+    - CLM-0001
+  status: "fixture"
