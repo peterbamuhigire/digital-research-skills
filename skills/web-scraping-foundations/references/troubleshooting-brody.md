@@ -1,14 +1,3 @@
----
-name: scraping-troubleshooting-brody
-description: Use when a scraper fails, returns empty/different content, or needs to behave more like a real browser — encodes Hartley Brody's *Ultimate Guide to Web Scraping* as operational rules (header spoofing, session cookies, hidden CSRF tokens, robots.txt, polite request distribution, network-error handling, troubleshooting workflow).
-metadata:
-  portable: true
-  compatible_with:
-    - claude-code
-    - codex
-    - generic-agent
----
-
 # Scraping Troubleshooting & Etiquette (Brody)
 
 Encodes Hartley Brody's *The Ultimate Guide to Web Scraping* (Leanpub, 2017) as the engine's operational layer for making scrapers reliable, polite, and debuggable. Pair with `web-scraping-foundations`, `scraping-politeness-and-ratelimiting`, and `scraping-engineering-python`.

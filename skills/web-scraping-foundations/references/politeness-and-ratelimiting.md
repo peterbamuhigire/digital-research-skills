@@ -1,14 +1,3 @@
----
-name: scraping-politeness-and-ratelimiting
-description: Use on every scrape — robots.txt parsing, per-host throttling, exponential backoff, identification headers, off-hours scheduling. The discipline layer that keeps scrapers ethical AND lawful AND unblocked. Backed by tools/scraping/.
-metadata:
-  portable: true
-  compatible_with:
-    - claude-code
-    - codex
-    - generic-agent
----
-
 # Scraping politeness and rate limiting
 
 A polite scraper is rarely blocked. Rude scrapers get rate-limited, IP-banned, or sued. Lawson, Brody, Oxylabs, and Hands-On all converge on the same discipline.

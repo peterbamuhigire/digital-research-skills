@@ -1,14 +1,3 @@
----
-name: browser-automation-playwright
-description: Use when scraping requires JS rendering or interaction (clicks, hovers, multi-step forms). Playwright-first; Selenium covered as legacy. Auto-waits, browser contexts, storage_state, network interception, codegen. Backed by tools/scraping/headless.py.
-metadata:
-  portable: true
-  compatible_with:
-    - claude-code
-    - codex
-    - generic-agent
----
-
 # Browser automation — Playwright
 
 Playwright supersedes Selenium for new work. Auto-waiting, browser contexts, network interception, codegen.
