@@ -75,6 +75,10 @@ def create_project(options: ScaffoldOptions) -> Workspace:
     (root / "export" / "README.md").write_text("# Export\n\nRelease packs and rendered deliverables live here.\n", encoding="utf-8")
 
     workspace = Workspace(root.resolve())
+    from .output import DEFAULT_OUTPUT_FAMILIES, seed_output_family
+
+    for family in DEFAULT_OUTPUT_FAMILIES:
+        seed_output_family(workspace, family)
     workspace.validate()
     return workspace
 

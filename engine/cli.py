@@ -8,6 +8,7 @@ from pathlib import Path
 from .scaffold import ScaffoldOptions, create_project
 from .registry import sync_workspace
 from .gates import run_all_gates
+from .output import assemble_output, seed_output_family
 from .status import format_status, inspect_status
 from .workspace import Workspace, WorkspaceError
 
@@ -35,6 +36,15 @@ def build_parser() -> argparse.ArgumentParser:
     status = subcommands.add_parser("status", help="show project operating status")
     status.add_argument("project", help="project id or path")
 
+    init_output = subcommands.add_parser("init-output", help="create an output family manifest")
+    init_output.add_argument("project", help="project id or path")
+    init_output.add_argument("family", help="output family name")
+
+    assemble = subcommands.add_parser("assemble", help="assemble markdown from an output manifest")
+    assemble.add_argument("project", help="project id or path")
+    assemble.add_argument("family", help="output family name")
+    assemble.add_argument("--out", help="optional output markdown path")
+
     return parser
 
 
@@ -52,6 +62,10 @@ def main(argv: list[str] | None = None) -> int:
         return _validate(args.project)
     if args.command == "status":
         return _status(args.project)
+    if args.command == "init-output":
+        return _init_output(args.project, args.family)
+    if args.command == "assemble":
+        return _assemble(args.project, args.family, args.out)
 
     parser.print_help()
     return 0
@@ -115,6 +129,28 @@ def _status(project: str) -> int:
         print(f"Workspace invalid: {exc}")
         return 1
     print(format_status(inspect_status(workspace)))
+    return 0
+
+
+def _init_output(project: str, family: str) -> int:
+    try:
+        workspace = Workspace.load(project)
+    except WorkspaceError as exc:
+        print(f"Workspace invalid: {exc}")
+        return 1
+    manifest = seed_output_family(workspace, family)
+    print(f"Output manifest ready: {manifest}")
+    return 0
+
+
+def _assemble(project: str, family: str, out: str | None) -> int:
+    try:
+        workspace = Workspace.load(project)
+        out_path = assemble_output(workspace, family, out)
+    except (WorkspaceError, FileNotFoundError, ValueError) as exc:
+        print(f"Could not assemble output: {exc}")
+        return 1
+    print(f"Assembled output: {out_path}")
     return 0
 
 
