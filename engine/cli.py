@@ -8,6 +8,7 @@ from pathlib import Path
 from .scaffold import ScaffoldOptions, create_project
 from .registry import sync_workspace
 from .gates import run_all_gates
+from .status import format_status, inspect_status
 from .workspace import Workspace, WorkspaceError
 
 
@@ -31,6 +32,9 @@ def build_parser() -> argparse.ArgumentParser:
     validate = subcommands.add_parser("validate", help="run deterministic project gates")
     validate.add_argument("project", help="project id or path")
 
+    status = subcommands.add_parser("status", help="show project operating status")
+    status.add_argument("project", help="project id or path")
+
     return parser
 
 
@@ -46,6 +50,8 @@ def main(argv: list[str] | None = None) -> int:
         return _sync(args.project)
     if args.command == "validate":
         return _validate(args.project)
+    if args.command == "status":
+        return _status(args.project)
 
     parser.print_help()
     return 0
@@ -100,6 +106,16 @@ def _validate(project: str) -> int:
             if finding.severity == "blocker":
                 blockers += 1
     return 1 if blockers else 0
+
+
+def _status(project: str) -> int:
+    try:
+        workspace = Workspace.load(project)
+    except WorkspaceError as exc:
+        print(f"Workspace invalid: {exc}")
+        return 1
+    print(format_status(inspect_status(workspace)))
+    return 0
 
 
 def _doctor(project: str | None) -> int:
