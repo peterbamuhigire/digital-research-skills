@@ -1,6 +1,6 @@
 ---
 name: academic-reporting-standards
-description: Academic-output discipline at Ivy / Oxford / Cambridge / LSE quality. Two layers — practical-craft (Brause's "invisible rules", chapter-by-chapter dissertation template, viva preparation, examiner expectations) and formal-reporting (PRISMA 2020, CONSORT 2025, STROBE, MOOSE, GRADE, Cochrane Handbook, TOP Guidelines, EQUATOR Network). Use on any thesis, dissertation, journal article, systematic review, or examinable academic artefact. Five references; load only what the artefact demands.
+description: Academic-output discipline at Ivy / Oxford / Cambridge / LSE quality. Three layers — practical-craft (Brause's "invisible rules", chapter-by-chapter dissertation template, viva preparation, examiner expectations), institution-specific examination conventions (Cambridge, Oxford, LSE, Harvard, Yale, Princeton), and formal-reporting (PRISMA 2020, CONSORT 2025, STROBE, MOOSE, GRADE, Cochrane Handbook, TOP Guidelines, EQUATOR Network). Use on any thesis, dissertation, journal article, systematic review, or examinable academic artefact. Load only what the artefact demands.
 metadata:
   portable: true
   compatible_with:
@@ -14,12 +14,13 @@ metadata:
 
 Single entry skill for any academic artefact intended for an examination committee, a peer-reviewed journal, or an institutional review at Ivy-League / Oxbridge / LSE quality. The skill operates **alongside** `academic-writing` (which handles citation styles, plagiarism prevention, and originality) and **above** `report-and-proposal-craft` (which handles long-form scaffolding for non-academic outputs).
 
-This skill has two layers, both load-bearing:
+This skill has three layers, all load-bearing:
 
 - **Practical craft** — the "invisible rules" Rita Brause articulates: dissertation as apprenticeship, chair-as-quasi-parental relationship, parallel work, pilot everything, recursive process. The unwritten conventions every examination committee assumes the candidate knows. Reference: `references/brause-dissertation-craft.md`.
+- **Institutional examination conventions** — current published rules for Cambridge, Oxford, LSE, Harvard, Yale, and Princeton. This layer encodes word-count discipline, thesis-by-papers structures, original-contribution language, viva/defense procedures, examiner criteria, and explicit gaps where no central word-count cap is published. Reference: `references/oxbridge-ivy-examination-conventions.md`.
 - **Formal reporting** — the published study-type-specific checklists (PRISMA / CONSORT / STROBE / MOOSE / GRADE / Cochrane / TOP) hosted by the EQUATOR Network. The conventions every top journal and every doctoral committee require. Reference: `references/equator-decision-tree.md`.
 
-A thesis or paper that satisfies only one layer fails. Examiners look for both.
+A thesis or paper that satisfies only one layer fails. Examiners look for all applicable layers.
 
 ## When to use
 
@@ -47,7 +48,8 @@ Do **not** use on: executive summaries (use `executive-communication`), business
 
 | Artefact type | Load |
 |---|---|
-| **Doctoral dissertation** | `references/brause-dissertation-craft.md` (always) + `references/methodology-justification-checklist.md` + `references/originality-claim.md` + `references/viva-defense-preparation.md` |
+| **Doctoral dissertation** | `references/brause-dissertation-craft.md` (always) + `references/oxbridge-ivy-examination-conventions.md` + `references/methodology-justification-checklist.md` + `references/originality-claim.md` + `references/viva-defense-preparation.md` |
+| **Master's research thesis / dissertation** | `references/oxbridge-ivy-examination-conventions.md` + `references/methodology-justification-checklist.md` + `references/originality-claim.md` where original research is required |
 | **Systematic review** | `references/equator-decision-tree.md` (PRISMA 2020 + Cochrane Handbook) + GRADE for evidence quality |
 | **Randomised controlled trial paper** | `references/equator-decision-tree.md` (CONSORT 2025) + GRADE |
 | **Observational study paper** | `references/equator-decision-tree.md` (STROBE) + GRADE |
@@ -64,6 +66,10 @@ Rita S. Brause's *Writing Your Doctoral Dissertation: Invisible Rules for Succes
 
 The EQUATOR Network (Enhancing the QUAlity and Transparency Of health Research, https://www.equator-network.org/) hosts the master decision tree of 250+ published reporting guidelines. The engine encodes the most consequential: **PRISMA 2020** (27-item checklist for systematic reviews); **CONSORT 2025** (30-item checklist for randomised controlled trials, endorsed by 600+ journals including Lancet, BMJ, JAMA, NEJM); **STROBE** (cohort, case-control, cross-sectional studies); **MOOSE** (meta-analyses of observational studies, 35-item); **GRADE** (4-level evidence quality with 5 downgrade and 3 upgrade factors); **Cochrane Handbook** (systematic-review gold standard, includes RoB 2 and ROBINS-I tools); **TOP Guidelines** (Transparency and Openness Promotion — 8 modular standards × 3 implementation levels). For style, the engine routes: Bluebook (US legal), OSCOLA (Oxford legal), Chicago / Turabian (humanities), APA (social sciences), AMA / Vancouver (medicine), MLA (literature). Reference: `references/equator-decision-tree.md`.
 
+## The institution-specific layer — one-paragraph summary
+
+The named institutions do not share one universal dissertation word count. Cambridge and Oxford require the exact Degree Committee / Examination Regulation because word limits vary by subject. LSE publishes a school-wide PhD limit of 100,000 words including footnotes and excluding bibliography and appendices. Harvard, Yale, and Princeton central guidance reviewed in the Wave-2 mining pass did not publish a universal PhD dissertation word-count cap; their enforceable requirements are programme/department format, original-contribution standards, committee/reader reports, and defense/FPO procedures. Reference: `references/oxbridge-ivy-examination-conventions.md`.
+
 ## Universal output ship-gate
 
 Before any academic artefact ships, every box must be ticked:
@@ -77,6 +83,7 @@ Before any academic artefact ships, every box must be ticked:
 - [ ] **Discussion** acknowledges biases, the bases for them, and other perspectives; avoids polemics.
 - [ ] **Conclusion** has four sub-sections: summary, conclusions, implications, recommendations.
 - [ ] **Original-contribution claim** is explicit in the abstract and chapter 1; defensible by the gap-evidence-fit chain.
+- [ ] **Institution-specific regulation check** completed: exact institution, school/department, degree, format, word-count inclusions/exclusions, and viva/defense rules recorded. If no published central cap exists, the gap is stated rather than filled with a guessed number.
 - [ ] **Reporting-standard checklist** for the study type is completed and submitted with the artefact.
 - [ ] **Citation style** matches the institution / journal: Bluebook / OSCOLA / Chicago / APA / AMA / Vancouver / MLA.
 - [ ] **Plagiarism check** run via `academic-writing` skill.
@@ -91,6 +98,7 @@ Before any academic artefact ships, every box must be ticked:
 - **Over-claiming or under-claiming findings.** Both are examiner red flags. Findings are calibrated to the data.
 - **Action titles in academic chapters.** The convention is neutral topic headings. Reserve action titles for the executive-summary version of the work (use `executive-communication` for that).
 - **Skipping the EQUATOR checklist.** Every top-tier journal requires the relevant reporting-standard checklist. Submitting without it signals amateur.
+- **Inventing a universal Ivy/Oxbridge word count.** Cambridge and Oxford vary by subject; Harvard/Yale/Princeton central guidance does not supply a universal cap in the mined sources. Use the exact department/programme rule or state the gap.
 - **Polemics in the discussion.** Brause Ch 14: "acknowledge biases and the bases for these, while recognising the possibility of other perspectives. Avoid polemics."
 
 ## Companion skills
@@ -112,9 +120,10 @@ Before any academic artefact ships, every box must be ticked:
 - GRADE Working Group. https://www.gradeworkinggroup.org/. Tier 1.
 - Cochrane Handbook. https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current. Tier 1.
 - TOP Guidelines (Center for Open Science). https://www.cos.io/initiatives/top-guidelines. Tier 1.
+- Cambridge, Oxford, LSE, Harvard, Yale, Princeton institutional examination and dissertation guidance. See `references/oxbridge-ivy-examination-conventions.md`. Tier 1.
 
 The verbatim attribution discipline applies. References to Brause carry chapter; references to PRISMA / CONSORT / GRADE etc. carry the canonical institutional URL.
 
 ## Wave-2 task: institution-specific examination conventions
 
-This skill ships with the universal Brause + EQUATOR layer. A separate Wave-2 task remains: mine the published examination regulations of Cambridge ("Special Regulations for the Degree of PhD"), Oxford ("Examination Regulations"), LSE ("Code of Practice for Research Degrees"), Harvard, Yale, Princeton — and encode the institution-specific word-counts, viva conventions, examiner-report formats, and original-contribution requirements into a future reference `references/oxbridge-ivy-examination-conventions.md`. Until that reference ships, the engine treats the Brause practical-craft layer as the institution-agnostic baseline; institution-specific deltas are flagged for the user to confirm.
+Completed in `references/oxbridge-ivy-examination-conventions.md`. Refresh this reference before high-stakes use because institutional regulations can change annually. The refresh must use current institutional primary sources and preserve the rule that missing word-count rules are marked as gaps, not inferred.
