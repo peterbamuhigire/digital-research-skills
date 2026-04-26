@@ -29,20 +29,23 @@ The engine's skills compose into four layers:
 Layer 4 — OUTPUT CRAFT
           executive-communication (Pyramid + Zelazny)
           academic-reporting-standards (Brause + EQUATOR)
+          data-visualization (perceptual rankings + style guide + redesign)
           report-and-proposal-craft, business-writing
           professional-word-output, python-document-generation
 
 Layer 3 — ANALYTIC DISCIPLINE
           analytic-tradecraft (ICD 203 + Heuer/Pherson SATs + Kent estimative + biases)
           academic-writing (citation, originality, plagiarism)
+          consulting-delivery (issue trees + workplans + stakeholder handling)
 
 Layer 2 — INVESTIGATION & METHOD
           due-diligence, osint-investigation, pi-investigation
-          research-design, research-techniques
+          research-design, research-techniques, primary-research
 
 Layer 1 — DISCIPLINE FOUNDATION
           source-evaluation (5-tier ladder, Burke pentad, Tudor 12-pt, Silverman)
           research-orchestration (wave dispatch)
+          knowledge-productization (knowledge audit + asset ladder + audience variants)
           data-quality-pipeline, dataset-discovery-and-analysis
           web-scraping-foundations, scraping-engineering-python
 ```
@@ -55,6 +58,7 @@ skills/
 ├── research-orchestration/             Layer 1 — wave dispatch, multi-agent coordination
 ├── research-techniques/                Layer 1 — search craft (incl. MacLeod + Russell references)
 ├── research-design/                    Layer 1 — historical, trend, MROC, design-doc, report-builder
+├── knowledge-productization/           Layer 1 — knowledge audit, asset ladder, monetization
 ├── data-quality-pipeline/              Layer 1 — Walker 4-axis quality scoring
 ├── dataset-discovery-and-analysis/     Layer 1 — Segnini 5-step + 30+ dataset hosts
 ├── web-scraping-foundations/           Layer 1 — decision tree, parser choice, error taxonomy
@@ -63,12 +67,15 @@ skills/
 ├── due-diligence/                      Layer 2 — CRAWL + CARA, FATF EDD/CDD framework
 ├── osint-investigation/                Layer 2 — civilian lawful OSINT (incl. MacLeod investigative)
 ├── pi-investigation/                   Layer 2 — licensed PI workflows
+├── primary-research/        [NEW]      Layer 2 — interviews, observation, coding, credibility
 │
 ├── analytic-tradecraft/    [NEW]       Layer 3 — ICD 203 + Heuer/Pherson SATs + Kent estimative
 ├── academic-writing/                   Layer 3 — citation, originality, plagiarism, hedging
+├── consulting-delivery/     [NEW]      Layer 3 — issue trees, workplans, clients, implementation
 │
 ├── executive-communication/  [NEW]     Layer 4 — Pyramid + SCQA + action titles + Zelazny
 ├── academic-reporting-standards/ [NEW] Layer 4 — Brause + PRISMA/CONSORT/STROBE/MOOSE/GRADE/Cochrane/TOP
+├── data-visualization/      [NEW]      Layer 4 — chart selection, perceptual ranking, redesign
 ├── report-and-proposal-craft/          Layer 4 — long-form scaffolding
 ├── business-writing/                   Layer 4 — email, memo, letter, blog, proposal
 ├── professional-word-output/           Layer 4 — .docx generation + branding
@@ -135,13 +142,26 @@ The engine's design is grounded in canonical works on research, search, knowledg
 20. *Doing Case Study Research* — Hancock & Algozzine
 21. *No More Secrets: Open Source Information and the Reshaping of U.S. Intelligence* — Hamilton Bean
 
+**Pass 4 — primary research, consulting craft, knowledge productization, visualization**
+22. *Qualitative Research & Evaluation Methods* — Michael Quinn Patton
+23. *Intelligence Analysis for Tomorrow* — National Research Council
+24. *True or False: A CIA Analyst's Guide to Spotting Fake News* — Cindy L. Otis
+25. *Complete Guide to Knowledge Management* — JoAnn T. Hackos
+26. *Knowledge Management and Business Strategies*
+27. *Essential Tools for Management Consulting* — Simon Burtonshaw-Gunn
+28. *Inside the Minds: Leading Consultants*
+29. *McKinsey Mind* — Rasiel & Friga
+30. *The McKinsey Edge* — Shu Hattori
+31. *Better Data Visualizations* — Jonathan Schwabish
+32. *Rewired* — McKinsey
+
 See `RESEARCH_CRAFT_INTEGRATION.md` for the per-book → engine-skill mapping.
 
 ## Initial evaluation (2026-04-26)
 
 The engine ran a self-evaluation — dogfooding the orchestration model on itself — comparing its current capabilities against the published standards of McKinsey / Bain / BCG, Big 4 + Gartner / Forrester / IDC, U.S. intelligence-community analytic tradecraft (ICD 203, Heuer/Pherson SATs), PI / investigative-journalism / academic-reporting standards (ASIS, ICIJ, OCCRP, PRISMA, CONSORT, STROBE, MOOSE, GRADE, Cochrane, TOP).
 
-Result: **62 / 100 baseline → 65 / 100 after the 2026-04-26 build session** that shipped `executive-communication`, `analytic-tradecraft`, `academic-reporting-standards` (full skills) plus enhancements to `research-techniques` and `osint-investigation`. Projected ~89 / 100 after the 6-month roadmap completes (quantitative modelling, primary-research, knowledge-base, DD operational tooling, multi-language).
+Result: **62 / 100 baseline → 65 / 100 after the 2026-04-26 build session** that shipped `executive-communication`, `analytic-tradecraft`, `academic-reporting-standards` (full skills) plus enhancements to `research-techniques` and `osint-investigation`. This repository revision extends that path with `primary-research`, `consulting-delivery`, `knowledge-productization`, and `data-visualization`.
 
 See `docs/analysis/initial-evaluation/` — eight documents:
 - `00-executive-summary.md`, `01-methodology.md`, `02-benchmark-standards.md`, `03-engine-current-state.md`, `04-recommendations.md`, `05-implementation-roadmap.md`, `06-scorecard.md`, `99-sources.md`, plus `research-inputs/` for traceability.

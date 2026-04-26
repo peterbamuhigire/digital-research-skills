@@ -6,7 +6,7 @@ Operating instructions for Claude Code working inside this engine.
 
 **Do not hallucinate.** No statistic, quote, name, court case, statute, organisation, or URL appears in any output unless traceable to a real source.
 
-This is enforced by the `evidence-discipline` skill — read `skills/evidence-discipline/SKILL.md` before doing any research work. The hard-constraint clause from that skill **must appear verbatim** in every sub-agent prompt you dispatch.
+This is enforced by the `source-evaluation` skill — read `skills/source-evaluation/SKILL.md` and `skills/source-evaluation/references/evidence-discipline.md` before doing any research work. The hard-constraint clause from that reference **must appear verbatim** in every sub-agent prompt you dispatch.
 
 If a sub-agent returns content that violates evidence discipline, strike it. Do not paper over with fixes — log it in the project's `EVIDENCE-AUDIT.md` and adjust the next agent prompt.
 
@@ -20,7 +20,7 @@ Triggered by user requests like "research X", "find pain points of Y", "do anoth
    - Themes to cover (numbered)
    - Sources to mine (named)
    - Deliverable shape
-   - **Verbatim** hard-constraint clause from `evidence-discipline/SKILL.md`
+   - **Verbatim** hard-constraint clause from `source-evaluation/references/evidence-discipline.md`
 3. **Run in parallel where independent.** Multiple `Agent` tool calls in one message.
 4. **Use background mode (`run_in_background: true`)** for waves >2 minutes.
 5. **Never read sub-agent transcripts directly with the shell tool** — they overflow context. Use the structured `<result>` block in the completion notification.
@@ -86,4 +86,4 @@ Default reflex: find a new source. Acceptable alternatives: restate existing sou
 
 - `AGENTS.md` — Codex / generic-agent equivalent of this file
 - `PROJECT_BRIEF.md` — engine mission & direction
-- `skills/evidence-discipline/SKILL.md` — the rule that precedes everything else
+- `skills/source-evaluation/SKILL.md` + `skills/source-evaluation/references/evidence-discipline.md` — the rule that precedes everything else

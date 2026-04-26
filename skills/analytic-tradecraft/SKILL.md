@@ -48,6 +48,7 @@ If the output is purely descriptive ("the regulator filed X on date Y"), this sk
 | **Inherited assumptions or "everyone knows" claim** | `references/heuer-pherson-sats.md` (Key Assumptions Check) |
 | **Adversary / competitor reasoning** | `references/heuer-pherson-sats.md` (Red Cell) + `references/sourcing-and-deception.md` (mirror-imaging, D&D) |
 | **Single source / contested source** | `references/sourcing-and-deception.md` |
+| **Team design / analyst development / collaboration or communication breakdown** | `references/behavioral-science-for-analysis.md` |
 | **Pre-publication self-audit** | `references/cognitive-bias-checklist.md` |
 
 ## ICD 203 — one-paragraph summary
@@ -76,6 +77,7 @@ Before any estimative output ships, every box must be ticked:
 - [ ] **Change explanation** — if this judgment differs from a prior judgment by the engine, the change is explained and the trigger evidence cited.
 - [ ] **Dissents footnoted** — any minority view inside the analytic team or against an external SME is recorded as a footnote, NIE-style.
 - [ ] Manifest entry attached: `{judgment, hypothesis-set, evidence, biases-considered, confidence-judgment, confidence-source, indicators}`.
+- [ ] If the failure mode was organizational rather than evidential, the collaboration / communication note from `behavioral-science-for-analysis.md` is attached.
 
 ## Universal anti-patterns
 
@@ -95,6 +97,7 @@ Before any estimative output ships, every box must be ticked:
 - `executive-communication` — runs after; restructures the estimative judgment for the senior reader. **Estimative discipline survives the restructuring**: the Kent lexicon and the dissent footnotes do not get smoothed away.
 - `academic-reporting-standards` — for academic outputs, the equivalent quality controls are GRADE (evidence quality), TOP (transparency), Cochrane RoB (risk of bias). The Heuer/Pherson SATs and ICD 203 are the intelligence-side analogue.
 - `due-diligence` — DD outputs are estimative judgments by another name; this skill applies in full.
+- `consulting-delivery` — for turning the judgment into a client-ready problem-solving recommendation.
 
 ## Sources for this skill
 
@@ -105,5 +108,6 @@ Before any estimative output ships, every box must be ticked:
 - Kent, Sherman. *Words of Estimative Probability* (1964; declassified). https://www.cia.gov/resources/csi/static/Words-of-Estimative-Probability.pdf. Tier 1.
 - NATO Admiralty Code (STANAG 2511 / AJP-2.1) — Source Reliability A–F × Information Credibility 1–6. Tier 1.
 - Silberman-Robb WMD Commission Report, 2005. Tier 1.
+- National Research Council. *Intelligence Analysis for Tomorrow: Advances from the Behavioral and Social Sciences*. National Academies Press, 2011. Tier 1.
 
 The verbatim attribution discipline applies in full: claims in the references that paraphrase George/Bruce, Heuer, Pherson, Kent are labelled as paraphrase and tied back to the canonical source. Quotations carry chapter/page where the source allows.

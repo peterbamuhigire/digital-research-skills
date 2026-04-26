@@ -25,6 +25,7 @@ Always load `references/evidence-discipline.md`. The engine's first rule: **no c
 | **Any source — the universal floor** | `references/evidence-discipline.md` (always) + `references/credibility-ladder.md` |
 | **Primary document** (archival record, legal filing, government publication, leaked file, manuscript) | `references/burke-five-term-doubt.md` |
 | **Media, journalism, analyst report, think-tank publication** | `references/tudor-twelve-points.md` |
+| **Misinformation-prone news / viral information stream** | `references/tudor-twelve-points.md` + `references/misinformation-and-bias-checks.md` |
 | **Image, video, audio, screenshot, suspect document** | `references/silverman-media-forensics.md` |
 | **Encyclopaedic / reference work** | `references/credibility-ladder.md` (tier 4: tertiary) |
 | **Social media post / forum / comment** | `references/tudor-twelve-points.md` + `references/silverman-media-forensics.md` (provenance) |
@@ -63,6 +64,16 @@ Detail in `references/tudor-twelve-points.md`. Twelve criteria:
 1. Recency · 2. Relevancy · 3. Authority · 4. Completeness · 5. Accuracy · 6. Clarity · 7. Verifiability · 8. Statistical validity · 9. Internal consistency · 10. External consistency · 11. Context · 12. Comparative quality
 
 Apply when a media or analyst source carries a load-bearing claim. The audit produces a one-line verdict that the engine logs in the manifest.
+
+## Misinformation and bias checks (viral / politicized / contested claims)
+
+Detail in `references/misinformation-and-bias-checks.md`. Before a contested or viral claim enters the corpus:
+
+1. Separate **fact**, **opinion**, and **interpretation**.
+2. Check the claim against the **original source**, not just reposts or reactions.
+3. Identify the likely **biases** in the source and in the analyst.
+4. Treat **virality** as a warning sign, not corroboration.
+5. Downgrade any claim whose chain leads only to commentary, screenshots, or clipped excerpts.
 
 ## Silverman / Bellingcat media-forensics (images, video, documents)
 
@@ -121,3 +132,4 @@ If any of those is missing, the claim does not ship.
 - `web-scraping-foundations` — when you collect the source yourself.
 - `osint-investigation` — when sources sit inside a broader investigation.
 - `academic-writing` — when sources feed an academic artifact (citation styles in references).
+- `analytic-tradecraft` — when source disputes become estimative judgments.

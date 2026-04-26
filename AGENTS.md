@@ -6,11 +6,11 @@ Operating instructions for Codex and other agent runtimes that load skills via `
 
 **Do not hallucinate.** No claim, statistic, quote, name, court case, statute, organisation, or URL appears in any output unless it can be traced to a real source.
 
-Read `skills/evidence-discipline/SKILL.md` and `skills/evidence-discipline/AGENTS.md` before any research work. The hard-constraint clause from that skill **must appear verbatim** in every sub-task agent prompt you dispatch.
+Read `skills/source-evaluation/SKILL.md` and `skills/source-evaluation/references/evidence-discipline.md` before any research work. The hard-constraint clause from that reference **must appear verbatim** in every sub-task agent prompt you dispatch.
 
 ## Standard workflow
 
-1. Load `skills/evidence-discipline/SKILL.md` → enforce throughout
+1. Load `skills/source-evaluation/SKILL.md` + `skills/source-evaluation/references/evidence-discipline.md` → enforce throughout
 2. Load `skills/research-orchestration/SKILL.md` → drives wave planning
 3. For each cohort: dispatch a research sub-task with the standard brief structure
 4. After each wave: run `source-verification` and `gap-analysis`

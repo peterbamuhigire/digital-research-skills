@@ -258,3 +258,19 @@ When starting any new project:
 10. `evidence-discipline` enforces throughout
 
 The result: a research operating system that works the way world-class researchers actually work, not the way pipelines pretend they work.
+
+## Pass 4 — primary research, consulting craft, knowledge productization, visualization (2026-04-26)
+
+| # | Book | What it adds | Skill / reference |
+|---|---|---|---|
+| 22 | *Qualitative Research & Evaluation Methods* | Qualitative design, fieldwork, interviewing, coding, credibility tests, actionable reporting | NEW skill `primary-research` |
+| 23 | *Intelligence Analysis for Tomorrow* | Behavioral-science contribution to analyst learning, evaluation, collaboration, and communication | `analytic-tradecraft/references/behavioral-science-for-analysis.md` |
+| 24 | *True or False* | Facts-vs-opinions discipline, personal-bias checks, media-bias scrutiny, fake-news detection heuristics | `source-evaluation/references/misinformation-and-bias-checks.md` |
+| 25 | *Complete Guide to Knowledge Management* | Business case for KM, culture, knowledge workers, capture/reuse, measurement, implementation | NEW skill `knowledge-productization` |
+| 26 | *Knowledge Management and Business Strategies* | External search, transfer strategy, alignment between KM and business strategy | NEW skill `knowledge-productization` |
+| 27 | *Essential Tools for Management Consulting* | Consulting project methodology, research, problem solving, workshops, reporting, implementation continuity | NEW skill `consulting-delivery` |
+| 28 | *Inside the Minds: Leading Consultants* | Client value, tailoring solutions, results orientation, technology/business interface | NEW skill `consulting-delivery` |
+| 29 | *McKinsey Mind* | Problem framing, analysis design, data gathering, interpretation, team/client/self management | NEW skill `consulting-delivery` |
+| 30 | *The McKinsey Edge* | Personal operating standards, collaboration, process management, writing/thinking discipline | NEW skill `consulting-delivery` |
+| 31 | *Better Data Visualizations* | Perceptual rankings, five practical guidelines, chart families, tables, maps, style guides, redesign | NEW skill `data-visualization` |
+| 32 | *Rewired* | Domain-based transformation, pod design, capability building, KPI trees, transformation governance | `consulting-delivery/references/implementation-and-transformation.md` |

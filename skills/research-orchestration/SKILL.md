@@ -32,6 +32,10 @@ Skipping these is the most common cause of research that produces volume but not
 | Output is a paper / essay / thesis / dissertation | `academic-writing` |
 | Output is a report / proposal / white paper | `report-and-proposal-craft` |
 | Output is a short business artifact | `business-writing` |
+| Output must read like consulting-grade problem solving | `consulting-delivery` + `executive-communication` |
+| Research includes interviews, observation, focus groups, or coded qualitative evidence | `primary-research` |
+| Research must be reused across multiple deliverables or monetized into offers / IP | `knowledge-productization` |
+| Output depends on charts, tables, maps, or dashboards carrying part of the argument | `data-visualization` |
 | Open-source recon | `osint-investigation` |
 | Corporate / financial vetting | `due-diligence` |
 | Licensed-PI workflow | `pi-investigation` |
@@ -77,11 +81,12 @@ Every research-agent prompt should contain:
 
 1. **Goal** — one sentence
 2. **Scope** — geography, cohort, time-window
-3. **Out-of-scope** — what NOT to research (avoids duplicate work)
-4. **Themes to cover** — explicit numbered list
-5. **Sources to mine** — named outlets, repositories, platforms
-6. **Deliverable shape** — markdown sections, source-count target, quote requirements
-7. **Hard constraints** — exclusions (e.g., "do NOT cover topic X"), language, format
+3. **Audience / decision context** — who will use it and what decision it must support
+4. **Out-of-scope** — what NOT to research (avoids duplicate work)
+5. **Themes to cover** — explicit numbered list
+6. **Sources to mine** — named outlets, repositories, platforms
+7. **Deliverable shape** — markdown sections, source-count target, quote requirements
+8. **Hard constraints** — exclusions (e.g., "do NOT cover topic X"), language, format
 
 If the brief is missing any of those, the output will be uneven.
 
