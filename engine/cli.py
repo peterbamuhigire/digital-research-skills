@@ -6,6 +6,7 @@ import argparse
 from pathlib import Path
 
 from .scaffold import ScaffoldOptions, create_project
+from .registry import sync_workspace
 from .workspace import Workspace, WorkspaceError
 
 
@@ -23,6 +24,9 @@ def build_parser() -> argparse.ArgumentParser:
     new_project.add_argument("--variant", default="standard", help="output variant")
     new_project.add_argument("--projects-dir", default="projects", help="target projects directory")
 
+    sync = subcommands.add_parser("sync", help="repair or seed project registries")
+    sync.add_argument("project", help="project id or path")
+
     return parser
 
 
@@ -34,6 +38,8 @@ def main(argv: list[str] | None = None) -> int:
         return _doctor(args.project)
     if args.command == "new-project":
         return _new_project(args)
+    if args.command == "sync":
+        return _sync(args.project)
 
     parser.print_help()
     return 0
@@ -54,6 +60,20 @@ def _new_project(args: argparse.Namespace) -> int:
         return 1
 
     print(f"Created project workspace: {workspace.root}")
+    return 0
+
+
+def _sync(project: str) -> int:
+    try:
+        workspace = Workspace.load(project)
+    except WorkspaceError as exc:
+        print(f"Workspace invalid: {exc}")
+        return 1
+    result = sync_workspace(workspace)
+    print(f"Registry sync complete: {workspace.project_id}")
+    print(f"- created: {len(result.created)}")
+    print(f"- repaired: {len(result.repaired)}")
+    print(f"- imported sources: {result.imported_sources}")
     return 0
 
 

@@ -1,0 +1,7 @@
+root: waivers
+required_fields:
+  - id
+  - gate
+  - reason
+  - approved_by
+  - expires

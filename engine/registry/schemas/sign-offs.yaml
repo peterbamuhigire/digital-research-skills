@@ -1,0 +1,7 @@
+root: sign_offs
+required_fields:
+  - id
+  - gate
+  - signed_by
+  - date
+  - status

@@ -1,0 +1,7 @@
+root: claims
+required_fields:
+  - id
+  - claim
+  - source_ids
+  - confidence
+  - status

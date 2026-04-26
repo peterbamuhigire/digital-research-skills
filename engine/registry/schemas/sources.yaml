@@ -1,0 +1,9 @@
+root: sources
+required_fields:
+  - id
+  - title
+  - ref
+  - tier
+  - accessed
+  - verification
+  - confidence

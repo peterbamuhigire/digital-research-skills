@@ -1,0 +1,6 @@
+root: synthesis_map
+required_fields:
+  - id
+  - synthesis
+  - claim_ids
+  - status

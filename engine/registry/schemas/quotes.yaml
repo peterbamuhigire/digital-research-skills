@@ -1,0 +1,7 @@
+root: quotes
+required_fields:
+  - id
+  - quote
+  - source_id
+  - locator
+  - verified

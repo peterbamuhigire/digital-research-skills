@@ -1,0 +1,7 @@
+root: releases
+required_fields:
+  - id
+  - version
+  - date
+  - artifacts
+  - validation_report
