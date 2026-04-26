@@ -1,6 +1,6 @@
 ---
 name: research-orchestration
-description: Use when running multi-pass, multi-agent web research on a topic — coordinating parallel sub-agent dispatch, planning gap-fill passes, consolidating outputs into a unified corpus. Default driver for any /research, "find pain points of X", or systematic literature surfacing task.
+description: Use as the FIRST step on any new research project — picks the research type, the discipline strategy, the reading mode, and the wave dispatch. Carries the multi-agent orchestrator (planned waves), the type/discipline/reading routers as references, and the orchestrator-output contract. Routes to companion skills (academic-writing, source-evaluation, web-scraping-foundations, research-techniques, research-design) as needed.
 metadata:
   portable: true
   compatible_with:
@@ -9,7 +9,39 @@ metadata:
     - generic-agent
 ---
 
-# Research orchestration
+# Research Orchestration
+
+The first skill loaded on any research project. Decides what kind of research is being run, what discipline its language and sources come from, what reading mode each retrieved source warrants, and how to dispatch the work as planned waves.
+
+## Step 0 — pick the type, the discipline, the reading mode
+
+Before any wave fires, run three routers (each lives in `references/`):
+
+| Router | Reference | What it returns |
+|---|---|---|
+| **Research type** | `references/research-type-router.md` | Type (market, OSINT, DD, academic, historical, trend, social, product, policy …), the report schema, and which other skills to load |
+| **Discipline** | `references/discipline-router.md` | Discipline strategy (sciences / medicine / social sciences / humanities / numerical / law) — vocabulary, databases, citation behaviour, date semantics |
+| **Reading mode** | `references/reading-mode-router.md` | Per source: narrative / meditative / scan / mastery / partial-mastery — prevents over-reading low-density sources and under-reading core ones |
+
+Skipping these is the most common cause of research that produces volume but not insight.
+
+## Companion-skill router (load in addition to this skill)
+
+| Trigger | Load |
+|---|---|
+| Output is a paper / essay / thesis / dissertation | `academic-writing` |
+| Output is a report / proposal / white paper | `report-and-proposal-craft` |
+| Output is a short business artifact | `business-writing` |
+| Open-source recon | `osint-investigation` |
+| Corporate / financial vetting | `due-diligence` |
+| Licensed-PI workflow | `pi-investigation` |
+| Source vetting (always) | `source-evaluation` |
+| Web data needed | `web-scraping-foundations` |
+| Specific technique (gap analysis, brachiation, pearl-growing, crosswalk, mini-analysis, search-operator grammar, controlled vocabulary, etc.) | `research-techniques` |
+| Formal research design (historical method, trend analysis, MROC, knowledge-lifecycle, design document, report builder) | `research-design` |
+| Dataset discovery / quality | `data-quality-pipeline`, `dataset-discovery-and-analysis` |
+
+## The wave model
 
 A research engine never runs as a single search. It runs as **planned waves**:
 
@@ -75,7 +107,7 @@ Wave 2 outputs append a `# Pass 2 — Gap-fill addendum` section to the existing
 
 ## See also
 
-- `gap-analysis` — feeds Wave-2 brief construction
-- `source-verification` — Wave 3 verification logic
-- `cross-cohort-synthesis` — Wave 4 work
-- `research-report-builder` — final Word-document assembly
+- `research-techniques` — gap analysis, mini-analysis, crosswalk matrix, cross-cohort synthesis, reference interview, controlled vocabulary, search-operator grammar, pearl-growing, brachiation, etc. (load when a Wave needs a specific technique)
+- `research-design` — historical methods, trend analysis, MROC, knowledge lifecycle, research design document, report builder (load when the project needs formal design or a final assembled report)
+- `source-evaluation` — Wave-3 verification logic; mandatory pairing for every source
+- `academic-writing`, `report-and-proposal-craft`, `business-writing` — output containers
