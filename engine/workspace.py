@@ -10,7 +10,7 @@ class WorkspaceError(ValueError):
     """Raised when a project workspace cannot be resolved or validated."""
 
 
-REQUIRED_ROOT_FILES = ("README.md", "EVIDENCE-AUDIT.md")
+REQUIRED_ROOT_FILES = ("README.md", "PROJECT-STATUS.md", "EVIDENCE-AUDIT.md")
 REQUIRED_DIRECTORIES = (
     "_context",
     "_registry",
