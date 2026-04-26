@@ -1,14 +1,3 @@
----
-name: tidy-data-craft
-description: Use to detect and fix tidy-data violations (Wickham) — columns-as-values, multiple-vars-per-column, vars-split-rows-cols. Tidy form is the prerequisite for groupby/agg/plot/model. Backed by tools/data/tidy_check.py. From Chen (Pandas for Everyone).
-metadata:
-  portable: true
-  compatible_with:
-    - claude-code
-    - codex
-    - generic-agent
----
-
 # Tidy data craft — Wickham's three rules
 
 1. Each **variable** in a column

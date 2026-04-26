@@ -1,14 +1,3 @@
----
-name: merge-discipline
-description: Use whenever joining two or more DataFrames — Walker's checkmerge anti-join + Chen's validate= cardinality assertion. Mandatory before any merge in research-grade work. Backed by tools/data/checkmerge.py.
-metadata:
-  portable: true
-  compatible_with:
-    - claude-code
-    - codex
-    - generic-agent
----
-
 # Merge discipline
 
 Silent row loss / explosion is the most common merge bug. Walker (Python Data Cleaning Cookbook, Ch. 8) + Chen (Pandas for Everyone, Ch. 6) both insist: **never merge without an audit**.

@@ -1,14 +1,3 @@
----
-name: data-cleaning-pandas
-description: Use to clean tabular data — missing values, duplicates, outliers, type coercion, encoding, datetime, strings, categoricals. Walker's recipe library + Chen's pandas idioms. Backed by tools/data/.
-metadata:
-  portable: true
-  compatible_with:
-    - claude-code
-    - codex
-    - generic-agent
----
-
 # Data cleaning — pandas recipes
 
 Walker (Python Data Cleaning Cookbook) + Chen (Pandas for Everyone) converge on a stable recipe set. Each recipe specifies failure mode + correct fix.

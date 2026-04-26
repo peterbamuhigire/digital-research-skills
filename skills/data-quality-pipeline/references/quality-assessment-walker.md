@@ -1,15 +1,3 @@
----
-name: data-quality-assessment
-description: Use whenever the engine retrieves a dataset before any analysis runs — scores it on four axes (completeness / usefulness / reliability / relevance) and gates analysis on threshold. Backed by tools/data/dq_score.py + profiler.py. The bridge between dataset retrieval and knowledge production.
-metadata:
-  portable: true
-  compatible_with:
-    - claude-code
-    - codex
-    - generic-agent
-  priority: high
----
-
 # Data quality assessment — the four axes
 
 The user's specification: every dataset must be assessed for **completeness, usefulness, reliability, relevance** before the engine uses it. This skill enforces that gate.

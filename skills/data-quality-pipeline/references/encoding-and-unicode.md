@@ -1,14 +1,3 @@
----
-name: encoding-and-unicode
-description: Use whenever a text file enters the engine — detect charset, strip BOM, repair mojibake, write canonical UTF-8. Walker's gap closed via charset-normalizer + ftfy. Backed by tools/data/encoding_repair.py.
-metadata:
-  portable: true
-  compatible_with:
-    - claude-code
-    - codex
-    - generic-agent
----
-
 # Encoding and Unicode
 
 Walker's *Python Data Cleaning Cookbook* notes encoding only in passing. Modern web-scraped data is full of:

@@ -1,14 +1,3 @@
----
-name: anomaly-detection
-description: Use to detect outliers across univariate / multivariate / time-series methods. IQR + z-score + Cook's + KNN + Isolation Forest panel. Walker's discipline: outliers are not errors by default. Backed by tools/data/outlier_panel.py.
-metadata:
-  portable: true
-  compatible_with:
-    - claude-code
-    - codex
-    - generic-agent
----
-
 # Anomaly detection
 
 Walker: **distinguish *implausible* from *unusual***. The 7'4" person is unusual; the 7'4" 10-year-old is implausible. The panel approach gives multiple perspectives so the analyst can decide.
