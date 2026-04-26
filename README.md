@@ -210,6 +210,33 @@ Every skill ships with:
 8. Generate the final document via `professional-word-output` or `python-document-generation`
 9. End product: `projects/<project-id>/report-v<N>-<date>.docx`
 
+## Kernel workflow
+
+New projects are managed as kernel workspaces under `projects/<project-id>/`.
+
+Golden path:
+
+1. `python -m engine doctor`
+2. `python -m engine new-project "<name>" --type "<research-type>" --audience "<audience>" --variant "<variant>"`
+3. Run `00-meta-initialization` and complete `_context/`
+4. Execute research waves under evidence discipline
+5. `python -m engine sync <project-id>`
+6. `python -m engine status <project-id>`
+7. `python -m engine validate <project-id>`
+8. `python -m engine assemble <project-id> <output-family>`
+9. `python -m engine pack <project-id> --out export/<project-id>.zip`
+
+The canonical workspace contract is documented in `docs/pathing-model.md`.
+Output manifests are documented in `docs/output-manifests.md`. Release packs are
+documented in `docs/release-pack-spec.md`. Legacy migration notes are in
+`docs/migration-notes.md`.
+
+Repo-level validation:
+
+```powershell
+python scripts\validate_engine.py
+```
+
 ## Current projects
 
 - **`projects/east-africa-property-hostel/`** — pain points across students, hostel owners, residential landlords, and ordinary tenants in Uganda, Kenya, Tanzania, Rwanda, Burundi, South Sudan. 250+ sources across 4 cohorts; first project to ship at engine-grade evidence discipline.
@@ -217,5 +244,13 @@ Every skill ships with:
 ## Status
 
 Engine v0.2 — initial self-evaluation complete; analytic + output + academic-reporting layers shipped. First project complete through Wave 2 on student & owner cohorts; Wave 1 on landlord & tenant cohorts. Final Word document not yet generated. See `docs/analysis/initial-evaluation/05-implementation-roadmap.md` for the next-six-months build plan.
+
+## Kernel status
+
+Engine v0.3 - project kernel implemented. The repo now has workspace
+scaffolding, `_context/` and `_registry/` contracts, deterministic validation
+gates, manifest-driven output assembly, evidence-pack export, three example
+projects, and a repo-level validator. See
+`docs/plans/engine-tune/01-project-kernel-implementation-plan.md`.
 
 Maintained by Peter Bamuhigire.

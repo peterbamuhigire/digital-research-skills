@@ -78,9 +78,22 @@ Default reflex: find a new source. Acceptable alternatives: restate existing sou
 ## Project structure invariants
 
 - Every project lives under `projects/<project-id>/`
-- Every project has `README.md`, `CLAUDE.md`, `EVIDENCE-AUDIT.md`
+- Every kernel project has `README.md`, `CLAUDE.md`, `PROJECT-STATUS.md`, `EVIDENCE-AUDIT.md`, `_context/`, `_registry/`, `01-initiation/` through `06-governance/`, and `export/`
 - Every cohort sub-project has `README.md`, `CLAUDE.md`, plus `research/`, `analysis/`, `opportunities/`
 - Final report is `projects/<project-id>/report-v<N>-<date>.docx`
+
+## Kernel workflow
+
+Use these commands for project-managed work:
+
+1. `python -m engine doctor`
+2. `python -m engine new-project "<name>" --type "<research-type>" --audience "<audience>" --variant "<variant>"`
+3. Run `00-meta-initialization` and complete `_context/`
+4. `python -m engine sync <project-id>`
+5. `python -m engine status <project-id>`
+6. `python -m engine validate <project-id>`
+7. `python -m engine assemble <project-id> <output-family>`
+8. `python -m engine pack <project-id> --out export/<project-id>.zip`
 
 ## See also
 

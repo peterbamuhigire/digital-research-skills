@@ -131,3 +131,11 @@ Target: **≥ 85 / 100** by end of 6-month roadmap. See `docs/analysis/initial-e
 | Git | Initialised + committed; pushed to GitHub. v0.2 commit pending. |
 
 Maintained by Peter Bamuhigire.
+
+## Project kernel update (2026-04-26)
+
+Engine v0.3 ships the project kernel described in
+`docs/plans/engine-tune/01-project-kernel-implementation-plan.md`: workspace
+scaffolding, `_context/` and `_registry/` contracts, deterministic validation
+gates, status reporting, manifest-driven output assembly, evidence-pack export,
+example projects, and `scripts/validate_engine.py`.

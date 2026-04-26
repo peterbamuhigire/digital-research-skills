@@ -38,6 +38,10 @@ If parallel sub-task dispatch is not available, run waves sequentially:
 ## Output paths
 
 ```
+projects/<project-id>/_context/
+projects/<project-id>/_registry/
+projects/<project-id>/05-output/<output-family>/manifest.md
+projects/<project-id>/export/
 projects/<project-id>/<cohort>/research/
 projects/<project-id>/<cohort>/analysis/
 projects/<project-id>/<cohort>/opportunities/
@@ -46,8 +50,18 @@ projects/<project-id>/report-v<N>-<date>.docx
 
 ## Project structure invariants
 
-- Every project: `README.md`, `CLAUDE.md`, `EVIDENCE-AUDIT.md`
+- Every kernel project: `README.md`, `CLAUDE.md`, `PROJECT-STATUS.md`, `EVIDENCE-AUDIT.md`, `_context/`, `_registry/`, `01-initiation/` through `06-governance/`, `export/`
 - Every cohort sub-project: `README.md`, `CLAUDE.md`, `research/`, `analysis/`, `opportunities/`
+
+## Kernel commands
+
+1. `python -m engine doctor`
+2. `python -m engine new-project "<name>" --type "<research-type>" --audience "<audience>" --variant "<variant>"`
+3. `python -m engine sync <project-id>`
+4. `python -m engine status <project-id>`
+5. `python -m engine validate <project-id>`
+6. `python -m engine assemble <project-id> <output-family>`
+7. `python -m engine pack <project-id> --out export/<project-id>.zip`
 
 ## See also
 
