@@ -1,6 +1,8 @@
 # Research-Craft Integration
 
-How six canonical books on research, search, knowledge management, and market research informed the engine's skill set. Compiled 2026-04-25 from full-text digests of:
+How twenty-one canonical books on research, search, knowledge management, scraping, verification, intelligence analysis, output craft, and academic discipline informed the engine's skill set.
+
+## Pass 1 — research methodology (compiled 2026-04-25)
 
 | # | Book | Author | Year | What it brings |
 |---|---|---|---|---|
@@ -11,7 +13,36 @@ How six canonical books on research, search, knowledge management, and market re
 | 5 | *The Handbook of Online and Social Media Research* | Ray Poynter | 2010 | MROC design, panel quality, listening pipeline, MR ethics |
 | 6 | *The Creative Guide to Research* | Robin Rowland | 2000 | Investigative-journalism craft, FOIA, chronology-as-gap-detector |
 
-## High-convergence findings (recommended by 2+ books)
+## Pass 2 — scraping and verification (2026-04)
+
+| # | Book | Author | Year | What it brings |
+|---|---|---|---|---|
+| 7 | *Harnessing the Power of Google* | Christopher C. Brown | 2017 | Programmatic CSE / SerpAPI; stakeholder enumeration |
+| 8 | *Verification Handbook for Investigative Reporting* | Craig Silverman et al. | 2015 | Media-forensics workflow (EXIF, reverse-image, geolocation, archive) |
+| 9 | *Web Scraping with Python* | Richard Lawson | 2015 | Concurrent download, caching, form interaction, Playwright |
+| 10 | *The Ultimate Guide to Web Scraping* | Hartley Brody | 2017 | Decision tree, parser choice, error taxonomy |
+| 11 | *Hands-On Website Scraping with Python* | — | recent | Recipes; structured-data shortcuts |
+| 12 | *Python Web Scraping for Developers* | Oxylabs | 2024 | Distributed crawling, CAPTCHA discipline |
+
+## Pass 3 — analytic tradecraft, output craft, academic discipline, search mastery (2026-04-26)
+
+| # | Book | Author | Year | What it brings | Skill / reference |
+|---|---|---|---|---|---|
+| 13 | *Analyzing Intelligence: Origins, Obstacles, and Innovations* | Roger Z. George & James B. Bruce (eds.) | 2008 | ICD 203 lineage; Heuer/Pherson SATs; Sherman Kent estimative practice; cognitive-bias catalog; sourcing & deception (Curveball case); IC quality control | NEW skill `analytic-tradecraft` (5 references) |
+| 14 | *The Minto Pyramid Principle* | Barbara Minto | 1985 / 1996 | MECE decomposition; governing thought; SCQA opener; skim-path discipline | NEW skill `executive-communication` — `references/pyramid-principle.md` + `scqa-opener.md` |
+| 15 | *Say It With Charts* (4e) | Gene Zelazny | 2001 | Five chart families; one-message-per-slide; ink-to-data discipline | NEW skill `executive-communication` — `references/zelazny-chart-selection.md` |
+| 16 | *How to Find Out Anything* | Don MacLeod | 2012 | Google operator catalog; deep-web heuristics; FOIA / PACER / EDGAR / public-records aggregator workflow; people-finding with legal sensitivities (DPPA, FCRA, GLBA, HIPAA) | `research-techniques/references/macleod-search-mastery.md` + `osint-investigation/references/macleod-investigative-search.md` |
+| 17 | *The Joy of Search* | Daniel M. Russell | 2019 | Search literacy; metacognition; clarify-the-question discipline; lateral reading; triangulation standards; leading-question lint; `tools/google/` design recommendations | `research-techniques/references/russell-search-literacy.md` |
+| 18 | *Writing Your Doctoral Dissertation: Invisible Rules for Success* | Rita S. Brause | 1999 | Dissertation as apprenticeship; chair-as-quasi-parental; chapter-by-chapter template; original-contribution claim; methodology-justification chain; Brause's five tests for findings; viva preparation. Foundation of the **Ivy / Oxbridge / LSE bar**. | NEW skill `academic-reporting-standards` — `references/brause-dissertation-craft.md` + `originality-claim.md` + `methodology-justification-checklist.md` + `findings-interpretation-criteria.md` + `viva-defense-preparation.md` |
+| 19 | *The Academic Phrasebank* (4e) | John Morley | 2017 | Rhetorical-move catalog (introducing work / referring to literature / methods / results / discussion / conclusions); reporting-verb register (neutral / tentative / strong / critical); hedging device catalog; Davis & Morley reuse-acceptability rule | `academic-writing/references/morley-rhetorical-moves.md` + `morley-reporting-verbs-and-hedges.md` |
+| 20 | *Doing Case Study Research: A Practical Guide* | Hancock & Algozzine | 2006 | Case-study definition; intrinsic / instrumental / collective × exploratory / explanatory / descriptive typologies; purposeful sampling; gatekeeper protocol; interview protocol; Berg's content-analysis stage model; member checking; Stake-derived narrative checklist | `research-design/references/case-study-method.md` + `case-selection-and-analysis.md` |
+| 21 | *No More Secrets: Open Source Information and the Reshaping of U.S. Intelligence* | Hamilton Bean | 2011 | OSINT institutional lineage (FBIS → OSC); four competing definitions; speed-vs-verification / volume-vs-signal / over-classification tensions; SARS and Aspin-Brown Burundi positive cases; over-classification and "Googlification" anti-patterns | `osint-investigation/references/osint-doctrine-and-history.md` + `osint-validation-and-anti-patterns.md` |
+
+## Pass 3 — formal-reporting standards (not books, but encoded into `academic-reporting-standards`)
+
+EQUATOR Network routing tree: PRISMA 2020 (systematic reviews); CONSORT 2025 (RCTs); STROBE (observational); MOOSE (meta-analysis of observational); GRADE (evidence-quality rating); Cochrane Handbook (systematic-review gold standard); TOP Guidelines (transparency); style-guide router (Bluebook / OSCOLA / Chicago / APA / AMA / Vancouver / MLA / Harvard / IEEE / ACS). Reference: `academic-reporting-standards/references/equator-decision-tree.md`.
+
+## Pass 1 — high-convergence findings (recommended by 2+ books)
 
 These are the highest-leverage additions because multiple authoritative sources independently identified them as load-bearing:
 

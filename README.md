@@ -13,80 +13,102 @@ Given a research question, the engine runs:
 1. **Wave 1** — broad sweep (multiple parallel sub-agents, one per cohort)
 2. **Wave 2** — targeted gap-fill on what Wave 1 missed
 3. **Wave 3** — verification (URL liveness, statistic re-check, quote confirmation)
-4. **Wave 4** — cross-cohort synthesis and product-opportunity mapping
-
-The end product of every project is a **structured Word document** generated from versioned markdown source.
+4. **Wave 3.5** — peer-review / structured analytic technique pass (ACH, KAC, Pre-Mortem) where a forward-looking judgment ships
+5. **Wave 4** — cross-cohort synthesis and product-opportunity mapping
+6. **Output** — Pyramid-Principle-structured executive artefact OR EQUATOR-compliant academic artefact, generated from versioned markdown source
 
 ## Non-negotiable rule
 
-> **The AI agents in this engine MUST NOT hallucinate.** No statistic, quote, name, court case, statute, organisation, or URL appears in any output unless traceable to a real, verified source. See `skills/evidence-discipline/SKILL.md` — that skill takes precedence over every other skill in the engine.
+> **The AI agents in this engine MUST NOT hallucinate.** No statistic, quote, name, court case, statute, organisation, or URL appears in any output unless traceable to a real, verified source. See `skills/source-evaluation/SKILL.md` — the engine's evidence-discipline clause. It precedes every other skill.
 
-## Directory structure
+## The four operating layers
+
+The engine's skills compose into four layers:
 
 ```
-digital-research-engine/
-├── README.md             this file
-├── CLAUDE.md             Claude Code operating instructions
-├── AGENTS.md             Codex / generic-agent operating instructions
-├── PROJECT_BRIEF.md      mission and direction
-│
-├── skills/               the skills library
-│   ├── evidence-discipline/      NON-NEGOTIABLE anti-hallucination guardrail
-│   ├── research-orchestration/   multi-wave agent coordination
-│   ├── source-verification/      credibility tiering + triangulation
-│   ├── quote-extraction/         verbatim attribution discipline
-│   ├── gap-analysis/             corpus-coverage audit + Wave-2 briefing
-│   ├── pain-point-taxonomy/      structured prevalence × severity tagging
-│   ├── cross-cohort-synthesis/   shared / cascade / symmetric pain mapping
-│   ├── regulatory-landscape-mapping/  five-layer legal mapping
-│   ├── academic-source-mining/   peer-reviewed + dissertation pipeline
-│   ├── social-source-extraction/ Reddit (PRAW + Apify) / X / TikTok
-│   ├── research-report-builder/  markdown → Word doc with schema selection
-│   │
-│   ├── (skill-building skills, copied)
-│   ├── skill-writing/
-│   ├── skill-composition-standards/
-│   ├── skill-safety-audit/
-│   ├── validation-contract/
-│   ├── capability-matrix/
-│   │
-│   ├── (project-documentation skills, copied)
-│   ├── doc-architect/
-│   ├── update-claude-documentation/
-│   ├── project-requirements/
-│   ├── spec-architect/
-│   ├── manual-guide/
-│   ├── markdown-lint-cleanup/
-│   ├── professional-word-output/
-│   ├── python-document-generation/
-│   ├── excel-spreadsheets/
-│   │
-│   ├── (language / writing skills, copied)
-│   ├── east-african-english/
-│   ├── language-standards/
-│   ├── content-writing/
-│   ├── writing-quality/
-│   ├── blog-writer/
-│   │
-│   └── doc-standards.md
-│   └── encoding-patterns-into-skills.md
-│
-└── projects/             every research project lives here
-    └── east-africa-property-hostel/
-        ├── README.md
-        ├── CLAUDE.md
-        ├── EVIDENCE-AUDIT.md      hallucination-catch log
-        ├── students/              cohort sub-project
-        ├── owners/                cohort sub-project
-        ├── landlords/             cohort sub-project
-        └── tenants/               cohort sub-project
+Layer 4 — OUTPUT CRAFT
+          executive-communication (Pyramid + Zelazny)
+          academic-reporting-standards (Brause + EQUATOR)
+          report-and-proposal-craft, business-writing
+          professional-word-output, python-document-generation
+
+Layer 3 — ANALYTIC DISCIPLINE
+          analytic-tradecraft (ICD 203 + Heuer/Pherson SATs + Kent estimative + biases)
+          academic-writing (citation, originality, plagiarism)
+
+Layer 2 — INVESTIGATION & METHOD
+          due-diligence, osint-investigation, pi-investigation
+          research-design, research-techniques
+
+Layer 1 — DISCIPLINE FOUNDATION
+          source-evaluation (5-tier ladder, Burke pentad, Tudor 12-pt, Silverman)
+          research-orchestration (wave dispatch)
+          data-quality-pipeline, dataset-discovery-and-analysis
+          web-scraping-foundations, scraping-engineering-python
 ```
+
+## Skills inventory (current)
+
+```
+skills/
+├── source-evaluation/                  Layer 1 — anti-hallucination + 5-tier credibility
+├── research-orchestration/             Layer 1 — wave dispatch, multi-agent coordination
+├── research-techniques/                Layer 1 — search craft (incl. MacLeod + Russell references)
+├── research-design/                    Layer 1 — historical, trend, MROC, design-doc, report-builder
+├── data-quality-pipeline/              Layer 1 — Walker 4-axis quality scoring
+├── dataset-discovery-and-analysis/     Layer 1 — Segnini 5-step + 30+ dataset hosts
+├── web-scraping-foundations/           Layer 1 — decision tree, parser choice, error taxonomy
+├── scraping-engineering-python/        Layer 1 — concurrent, caching, Playwright
+│
+├── due-diligence/                      Layer 2 — CRAWL + CARA, FATF EDD/CDD framework
+├── osint-investigation/                Layer 2 — civilian lawful OSINT (incl. MacLeod investigative)
+├── pi-investigation/                   Layer 2 — licensed PI workflows
+│
+├── analytic-tradecraft/    [NEW]       Layer 3 — ICD 203 + Heuer/Pherson SATs + Kent estimative
+├── academic-writing/                   Layer 3 — citation, originality, plagiarism, hedging
+│
+├── executive-communication/  [NEW]     Layer 4 — Pyramid + SCQA + action titles + Zelazny
+├── academic-reporting-standards/ [NEW] Layer 4 — Brause + PRISMA/CONSORT/STROBE/MOOSE/GRADE/Cochrane/TOP
+├── report-and-proposal-craft/          Layer 4 — long-form scaffolding
+├── business-writing/                   Layer 4 — email, memo, letter, blog, proposal
+├── professional-word-output/           Layer 4 — .docx generation + branding
+├── python-document-generation/         Layer 4 — programmatic .docx/.xlsx/.pdf
+├── excel-spreadsheets/                 Layer 4 — worksheet construction
+├── markdown-lint-cleanup/              Layer 4 — style-guide enforcement
+├── east-african-english/               Layer 4 — regional style
+│
+├── (skill-building meta-skills)
+├── skill-writing/, skill-composition-standards/, skill-safety-audit/
+├── validation-contract/, capability-matrix/
+│
+└── (project-documentation meta-skills)
+    doc-architect/, spec-architect/, manual-guide/, project-requirements/
+    update-claude-documentation/
+```
+
+## Tools (`tools/`)
+
+```
+tools/
+├── scraping/        HTTP client, throttle, robots, retry, cache, pagination, headless
+├── data/            dq_score (Walker 4-axis), profiler, outlier panel, tidy check, encoding repair
+├── academic/        citation density, originality, plagiarism, hedging, paraphrase
+├── google/          CSE / SerpAPI client, stakeholder enumeration, TLD atlas (scaffolded)
+├── verification/    EXIF, archive, reverse-image, provenance (mostly stub — Month-2 build)
+├── dd/              Adverse media, UBO, registry atlas, identity triangulator (scaffolded)
+├── pi/              Chain of custody, photo log, surveillance log
+├── sanctions/       OFAC/UN/EU watchlists (Month-4 build)
+├── registry/        Jurisdiction registry connectors (Month-4 build)
+└── datasets/        Federated dataset search across 30+ public hosts
+```
+
+See `tools/README.md` for full layout and dependency baseline.
 
 ## Research-craft foundations
 
-The engine's design draws on twelve canonical works on research, search, knowledge management, scraping, and verification:
+The engine's design is grounded in canonical works on research, search, knowledge management, scraping, verification, intelligence analysis, and academic writing:
 
-**Pass 1 (research methodology):**
+**Pass 1 — research methodology**
 1. *Internet Research with Google* — Amanda Deason
 2. *Essentials of Knowledge Management* — Bryan Bergeron
 3. *Librarian's Guide to Online Searching* (4th ed.) — Suzanne S. Bell
@@ -94,7 +116,7 @@ The engine's design draws on twelve canonical works on research, search, knowled
 5. *The Handbook of Online and Social Media Research* — Ray Poynter
 6. *The Creative Guide to Research* — Robin Rowland
 
-**Pass 2 (scraping + verification):**
+**Pass 2 — scraping + verification**
 7. *Harnessing the Power of Google* — Christopher C. Brown
 8. *Verification Handbook for Investigative Reporting* — Craig Silverman et al.
 9. *Web Scraping with Python* — Richard Lawson
@@ -102,117 +124,27 @@ The engine's design draws on twelve canonical works on research, search, knowled
 11. *Hands-On Website Scraping with Python*
 12. *Python Web Scraping for Developers* — Oxylabs
 
-See `RESEARCH_CRAFT_INTEGRATION.md` for the mapping of each book's findings to engine skills.
+**Pass 3 — analytic tradecraft, output craft, academic discipline, search mastery**
+13. *Analyzing Intelligence: Origins, Obstacles, and Innovations* — Roger Z. George & James B. Bruce (eds.)
+14. *The Minto Pyramid Principle* — Barbara Minto
+15. *Say It With Charts* — Gene Zelazny
+16. *How to Find Out Anything* — Don MacLeod
+17. *The Joy of Search* — Daniel M. Russell
+18. *Writing Your Doctoral Dissertation: Invisible Rules for Success* — Rita S. Brause
+19. *The Academic Phrasebank* (4e) — John Morley
+20. *Doing Case Study Research* — Hancock & Algozzine
+21. *No More Secrets: Open Source Information and the Reshaping of U.S. Intelligence* — Hamilton Bean
 
-## Runtime tools (`tools/`)
+See `RESEARCH_CRAFT_INTEGRATION.md` for the per-book → engine-skill mapping.
 
-The engine ships actual Python utilities, not just skill documentation:
+## Initial evaluation (2026-04-26)
 
-```
-tools/
-├── scraping/        HTTP client, throttle, robots, retry, cache, pagination, headless,
-│                    extractors (BS4 / JSON-LD / OG / feeds / sitemap), cleaning
-├── google/          Custom Search JSON + SerpAPI client, stakeholder enumeration,
-│                    TLD / state-domain / IGO atlas
-├── verification/    EXIF, archive resurrection, provenance tracing
-└── datasets/        Federated dataset search across 30+ public hosts, retrieval
-                     with SHA-256 integrity, Segnini-style profiling
-```
+The engine ran a self-evaluation — dogfooding the orchestration model on itself — comparing its current capabilities against the published standards of McKinsey / Bain / BCG, Big 4 + Gartner / Forrester / IDC, U.S. intelligence-community analytic tradecraft (ICD 203, Heuer/Pherson SATs), PI / investigative-journalism / academic-reporting standards (ASIS, ICIJ, OCCRP, PRISMA, CONSORT, STROBE, MOOSE, GRADE, Cochrane, TOP).
 
-See `tools/README.md` for full layout + dependency baseline.
+Result: **62 / 100 baseline → 65 / 100 after the 2026-04-26 build session** that shipped `executive-communication`, `analytic-tradecraft`, `academic-reporting-standards` (full skills) plus enhancements to `research-techniques` and `osint-investigation`. Projected ~89 / 100 after the 6-month roadmap completes (quantitative modelling, primary-research, knowledge-base, DD operational tooling, multi-language).
 
-## The 41 engine skills
-
-### Tier 1 — Always loaded
-| # | Skill | Purpose |
-|---|---|---|
-| 0 | **evidence-discipline** | Non-negotiable anti-hallucination rule. Precedes every other skill. |
-| 1 | research-type-router | Picks research type + report schema before any sub-agent fires |
-| 2 | research-orchestration | Multi-wave, multi-agent research coordination |
-| 3 | source-verification | 5-tier credibility ladder + triangulation |
-| 4 | quote-extraction | Verbatim attribution discipline |
-| 5 | gap-analysis | Classifies search vs structural vs scope gaps |
-
-### Tier 2 — Loaded per research type
-| # | Skill | Used for |
-|---|---|---|
-| 6 | pain-point-taxonomy | Pain-point / product research |
-| 7 | cross-cohort-synthesis | Multi-cohort projects |
-| 8 | regulatory-landscape-mapping | Policy / regulatory research |
-| 9 | academic-source-mining | Any project needing tier-1 academic sources |
-| 10 | social-source-extraction | Social-media / sentiment research |
-| 11 | due-diligence-framework | Due-diligence projects |
-| 12 | osint-methodology | OSINT projects |
-| 13 | trend-analysis | Trend research |
-| 14 | historical-research-methods | Historical research |
-| 15 | academic-writing-conventions | Theses, dissertations, papers, academic essays |
-| 16 | academic-citation-styles | Schemas L, N, P, R (academic variants) |
-
-### Tier 3 — Final assembly
-| # | Skill | Purpose |
-|---|---|---|
-| 17 | research-report-builder | Markdown → designed Word doc with 19 report schemas |
-
-### Tier 0 — Search & retrieval craft (added from research-craft books)
-| # | Skill | Source book | Purpose |
-|---|---|---|---|
-| 18 | web-search-operator-grammar | Deason | Operator stack (punctuation × field × refinement × Boolean) |
-| 19 | pearl-growing-iteration | Bell | Two-pass broad → harvest → refined search |
-| 20 | citation-brachiation | Abbott + Bell + Rowland | Bidirectional citation-graph traversal |
-| 21 | discipline-router | Bell | Strategy template per academic discipline |
-| 22 | reading-mode-router | Abbott | 5 reading modes with algorithms |
-
-### Tier 1.5 — Project design discipline
-| # | Skill | Source book | Purpose |
-|---|---|---|---|
-| 23 | research-design-document | Abbott + Rowland + Bergeron | The north-star project artefact |
-| 24 | minianalysis-engine | Abbott | ≤1-week atomic units of progress |
-| 25 | crosswalk-matrix | Abbott | Question × source matrix |
-| 26 | controlled-vocabulary-builder | Bergeron + Bell + Abbott | Project-scoped evolving ontology |
-
-### Tier 2.5 — Source engagement
-| # | Skill | Source book | Purpose |
-|---|---|---|---|
-| 27 | reference-interview | Bell + Rowland | Intent elicitation upstream |
-| 28 | five-term-source-doubt | Abbott | Burke pentad on every primary doc |
-| 29 | tudor-twelve-point-evaluation | Rowland | 12-criterion source rubric |
-
-### Tier 3.5 — Investigation
-| # | Skill | Source book | Purpose |
-|---|---|---|---|
-| 30 | chronology-construction | Rowland + Abbott | Timeline as gap-detector |
-
-### Tier 4 — Knowledge management & monetisation
-| # | Skill | Source book | Purpose |
-|---|---|---|---|
-| 31 | knowledge-lifecycle-pipeline | Bergeron | 8-stage artefact state machine |
-
-### Tier 5 — Market research methods
-| # | Skill | Source book | Purpose |
-|---|---|---|---|
-| 32 | mroc-design-and-management | Poynter | Market Research Online Communities |
-
-### Tier 0 — Scraping & search craft (Pass 2 — books 7–12)
-| # | Skill | Source | Purpose |
-|---|---|---|---|
-| 34 | web-scraping-foundations | Lawson + Brody + Oxylabs + Hands-On | Decision tree, parser choice, structured-data shortcuts, error taxonomy |
-| 35 | browser-automation-playwright | Same | Playwright-first headless with auto-waits, contexts, network capture |
-| 36 | scraping-politeness-and-ratelimiting | Same | robots.txt + per-host throttle + backoff + identification |
-| 37 | google-search-api-operator | Brown | Programmatic CSE / SerpAPI / Brave |
-| 38 | google-stakeholder-recon | Brown | Topic → stakeholder list → query bundle |
-
-### Tier 6 — Investigation
-| # | Skill | Source | Purpose |
-|---|---|---|---|
-| 39 | media-forensics-verification | Silverman | EXIF / reverse image / geolocation / shadow-time / archive / provenance |
-
-### Tier 7 — Datasets
-| # | Skill | Source | Purpose |
-|---|---|---|---|
-| 40 | dataset-discovery-and-analysis | This pass | Public dataset search / retrieve / profile (Segnini's 5-step) |
-
-### Plus copied from `~/.claude/skills` and `business-plan-skills`
-Skill-building (skill-writing, skill-composition-standards, skill-safety-audit, validation-contract, capability-matrix), project-documentation (doc-architect, update-claude-documentation, project-requirements, spec-architect, manual-guide, markdown-lint-cleanup, professional-word-output, python-document-generation, excel-spreadsheets), and language (east-african-english, language-standards, content-writing, writing-quality, blog-writer).
+See `docs/analysis/initial-evaluation/` — eight documents:
+- `00-executive-summary.md`, `01-methodology.md`, `02-benchmark-standards.md`, `03-engine-current-state.md`, `04-recommendations.md`, `05-implementation-roadmap.md`, `06-scorecard.md`, `99-sources.md`, plus `research-inputs/` for traceability.
 
 ## 15 research types supported (19 schemas — 4 types come in academic + popular variants)
 
@@ -235,7 +167,7 @@ Skill-building (skill-writing, skill-composition-standards, skill-safety-audit, 
 14. PhD **dissertation** — academic (P) | popular book (Q)
 15. **Essay** — academic (R) | popular (S)
 
-Variant rules: thesis / dissertation default to academic; paper defaults to academic; essay must be specified by the user.
+Variant rules: thesis / dissertation default to academic; paper defaults to academic; essay must be specified by the user. Academic outputs (L–S academic variants) are subject to the **Ivy / Oxford / Cambridge / LSE bar** encoded in `academic-reporting-standards`.
 
 ## Cross-tool compatibility
 
@@ -244,7 +176,7 @@ Every skill ships with:
 - `README.md` — human-readable overview
 - `CLAUDE.md` — Claude-Code-specific notes
 - `AGENTS.md` — Codex / generic-agent notes
-- `references/` — deep-dive references (placeholders to be expanded)
+- `references/` — deep-dive references
 
 ## How to start a new project
 
@@ -252,15 +184,18 @@ Every skill ships with:
 2. Add `README.md`, `CLAUDE.md`, `EVIDENCE-AUDIT.md` to the project
 3. Define cohorts (sub-projects) — typically 1–4 named populations being researched
 4. For each cohort, run `research-orchestration` Wave 1
-5. After waves complete, run `cross-cohort-synthesis` and `research-report-builder`
-6. End product: `projects/<project-id>/report-v<N>-<date>.docx`
+5. After waves complete, run cross-cohort synthesis
+6. Apply `analytic-tradecraft` to any forward-looking judgment in the synthesis
+7. Apply `executive-communication` (executive deliverable) or `academic-reporting-standards` (thesis / paper)
+8. Generate the final document via `professional-word-output` or `python-document-generation`
+9. End product: `projects/<project-id>/report-v<N>-<date>.docx`
 
 ## Current projects
 
-- **`east-africa-property-hostel/`** — pain points across students, hostel owners, residential landlords, and ordinary tenants in Uganda, Kenya, Tanzania, Rwanda, Burundi, South Sudan. 250+ sources across 4 cohorts.
+- **`projects/east-africa-property-hostel/`** — pain points across students, hostel owners, residential landlords, and ordinary tenants in Uganda, Kenya, Tanzania, Rwanda, Burundi, South Sudan. 250+ sources across 4 cohorts; first project to ship at engine-grade evidence discipline.
 
 ## Status
 
-Engine v0.1 — first project complete through Wave 2 on student & owner cohorts; Wave 1 on landlord & tenant cohorts. Final Word document not yet generated.
+Engine v0.2 — initial self-evaluation complete; analytic + output + academic-reporting layers shipped. First project complete through Wave 2 on student & owner cohorts; Wave 1 on landlord & tenant cohorts. Final Word document not yet generated. See `docs/analysis/initial-evaluation/05-implementation-roadmap.md` for the next-six-months build plan.
 
 Maintained by Peter Bamuhigire.

@@ -63,31 +63,38 @@ Each maps to a specific orchestration approach, methodology skill set, and repor
 9. **Skill priority is fixed.** `evidence-discipline` first, always.
 10. **Audience drives tone.** Internal-design tone is direct; client-deliverable tone is formal; due-diligence tone is legalistic; advocacy tone is evidence-heavy.
 
-## Skill inventory (engine-native)
+## Skill inventory (engine-native, post-consolidation)
 
-### Tier 1 — Always loaded
-- `evidence-discipline` — anti-hallucination guardrail (precedes everything)
-- `research-type-router` — selects research type and report schema
-- `research-orchestration` — coordinates multi-wave dispatch
-- `source-verification` — credibility tiers + triangulation
-- `quote-extraction` — verbatim attribution discipline
-- `gap-analysis` — corpus-coverage audit + Wave-2 briefing
+The skills library has been consolidated since the original brief — see `README.md` for the current four-layer architecture and `docs/analysis/initial-evaluation/03-engine-current-state.md` for the inventory. Headline:
 
-### Tier 2 — Loaded per research type
-- `pain-point-taxonomy` — for pain-point and product research
-- `cross-cohort-synthesis` — for multi-cohort projects
-- `regulatory-landscape-mapping` — for policy / regulatory research
-- `academic-source-mining` — for any project needing tier-1 academic sources
-- `social-source-extraction` — for social-media / sentiment research
-- `due-diligence-framework` — for due-diligence projects
-- `osint-methodology` — for OSINT projects
-- `trend-analysis` — for trend research
-- `historical-research-methods` — for historical research
-- `academic-writing-conventions` — for theses, dissertations, papers, academic essays
-- `academic-citation-styles` — for any academic variant (Schemas L, N, P, R)
+### Layer 1 — Discipline foundation
+- `source-evaluation` — anti-hallucination clause + 5-tier credibility ladder + Burke pentad + Tudor twelve points + Silverman/Bellingcat
+- `research-orchestration` — multi-wave dispatch
+- `research-techniques` — search-craft library (mini-analysis, crosswalk, gap-analysis, controlled-vocabulary, pain-point taxonomy, search-operator grammar; **plus** MacLeod search-mastery + Russell search-literacy references)
+- `research-design` — historical methods, trend analysis, MROC, knowledge-lifecycle, design-document, report-builder; **plus** case-study method (Hancock & Algozzine + Yin + Stake)
+- `data-quality-pipeline` — Walker 4-axis quality scoring
+- `dataset-discovery-and-analysis` — Segnini 5-step + 30+ dataset hosts
+- `web-scraping-foundations` + `scraping-engineering-python`
 
-### Tier 3 — Final-output assembly
-- `research-report-builder` — markdown → designed Word doc with 19 schemas (A–S)
+### Layer 2 — Investigation & method
+- `due-diligence` — CRAWL + CARA, FATF EDD/CDD framework
+- `osint-investigation` — civilian lawful OSINT (incl. MacLeod investigative-search; Bean OSINT doctrine + validation/anti-patterns)
+- `pi-investigation` — licensed-PI workflows
+
+### Layer 3 — Analytic discipline
+- `analytic-tradecraft` **[NEW]** — ICD 203 + Heuer/Pherson SATs + Kent estimative + cognitive biases + sourcing & deception
+- `academic-writing` — citation styles, originality, plagiarism, hedging; **plus** Morley *Academic Phrasebank* (rhetorical moves + reporting verbs + hedging device catalog)
+
+### Layer 4 — Output craft
+- `executive-communication` **[NEW]** — Pyramid Principle + SCQA opener + action titles + ghost deck + Zelazny chart selection + executive-summary template
+- `academic-reporting-standards` **[NEW]** — Brause practical-craft layer (invisible rules, chapter template, viva preparation) + EQUATOR formal-reporting layer (PRISMA/CONSORT/STROBE/MOOSE/GRADE/Cochrane/TOP). Built explicitly to the **Ivy / Oxford / Cambridge / LSE bar**.
+- `report-and-proposal-craft`, `business-writing`, `professional-word-output`, `python-document-generation`, `excel-spreadsheets`, `markdown-lint-cleanup`, `east-african-english`
+
+Plus meta-skills (skill-writing, skill-composition-standards, skill-safety-audit, validation-contract, capability-matrix) and project-doc skills (doc-architect, spec-architect, manual-guide, project-requirements, update-claude-documentation).
+
+### Initial self-evaluation (2026-04-26)
+
+The engine ran a self-evaluation comparing its capabilities against the published standards of MBB consulting, Big 4 + analyst houses, U.S. IC tradecraft (ICD 203, Heuer/Pherson SATs, Sherman Kent), PI / investigative-journalism / academic-reporting standards. Result: 62/100 baseline → 65/100 after the 2026-04-26 build session shipped `executive-communication`, `analytic-tradecraft`, `academic-reporting-standards` (full skills) plus enhancements to `research-techniques`, `osint-investigation`, `academic-writing`, `research-design`. Projected ~89/100 after the 6-month roadmap. See `docs/analysis/initial-evaluation/`.
 
 ## Repository
 
@@ -95,22 +102,28 @@ https://github.com/peterbamuhigire/digital-research-skills
 
 ## Roadmap
 
-- v0.1 (current) — engine scaffolded; first project (`east-africa-property-hostel`) complete through Wave 2 on all four cohorts; cross-cohort synthesis written; EVIDENCE-AUDIT framework live
-- v0.2 — generate the first Word-document report for the active project; close the markdown→docx loop
-- v0.3 — second project to validate the engine generalises beyond the property/hostel domain (likely a due-diligence or trend project to stress-test type variety)
-- v0.4 — fill in `references/` deep-dives for the 11 new methodology skills
-- v0.5 — formalise the `EVIDENCE-AUDIT.md` review-loop discipline; add automated URL-liveness CI check
-- v0.6 — open the engine to additional AI runtimes beyond Claude Code and Codex; verify portability claim
+- **v0.1** — engine scaffolded; first project (`east-africa-property-hostel`) complete through Wave 2; cross-cohort synthesis; EVIDENCE-AUDIT framework live.
+- **v0.2** (current, 2026-04-26) — initial self-evaluation complete; analytic + output + academic-reporting layers shipped (`analytic-tradecraft`, `executive-communication`, `academic-reporting-standards`). Score: 65/100. See `docs/analysis/initial-evaluation/`.
+- **v0.3** — Month-2 of roadmap: complete `tools/verification/`; institution-specific examination conventions (Cambridge / Oxford / LSE / Harvard / Yale / Princeton) into `academic-reporting-standards`.
+- **v0.4** — Month-3 of roadmap: build `quantitative-modelling` skill + `tools/quant/` (Bain market-sizing triangulation, sensitivity, scenario, financial models).
+- **v0.5** — Month-4 of roadmap: build `primary-research` skill + complete `tools/sanctions/` + stand up second project.
+- **v0.6** — Month-5 of roadmap: build `knowledge-base` reuse layer + `peer-review-loop` skill + URL-liveness CI.
+- **v0.7** — Month-6 of roadmap: deferred-tier skills (competitive-intel, viz, multi-language, paywalled-database, cost-control); bake-off vs. McKinsey-style manual pass.
 
-## Engine status
+Target: **≥ 85 / 100** by end of 6-month roadmap. See `docs/analysis/initial-evaluation/05-implementation-roadmap.md` for sequencing.
+
+## Engine status (2026-04-26)
 
 | Aspect | Status |
 |---|---|
-| 16 engine skills | scaffolded with SKILL/README/CLAUDE/AGENTS |
-| 14 supporting skills (skill-building, doc, language) | imported from `~/.claude/skills` and `business-plan-skills` |
+| Engine skills | 30+ skills, consolidated into 4-layer architecture (foundation / investigation / analytic / output) |
+| Three new skills shipped this session | `executive-communication`, `analytic-tradecraft`, `academic-reporting-standards` (full skills with references) |
+| Skill enhancements this session | `research-techniques` (MacLeod + Russell), `osint-investigation` (MacLeod investigative + Bean doctrine + Bean validation), `academic-writing` (Morley rhetorical moves + reporting verbs/hedges), `research-design` (Hancock & Algozzine case-study method + selection/analysis) |
+| Initial self-evaluation | Complete; 8 documents in `docs/analysis/initial-evaluation/`. Score 62 → 65 / 100. |
 | First project | 4 cohorts × Wave 1 + Wave 2 (students/owners), Wave 1 + Wave 2 (landlords/tenants) |
-| Word-document export | not yet generated |
-| Evidence audit | active; 8 verified items, 4 corrections applied, 7 gaps remaining |
-| Git | initialised + committed; pushed to GitHub |
+| Word-document export | First draft generated (v1); next refresh after analytic + output + academic layers integration test |
+| Evidence audit | Active; 0 hallucinations shipped; 4 corrections applied; 10 gaps logged |
+| Books extracted into engine | 21 (Pass 1: 6; Pass 2: 6; Pass 3: 9 incl. Analyzing Intelligence, Pyramid Principle, MacLeod, Russell, Brause, Morley, Hancock & Algozzine, Bean) |
+| Git | Initialised + committed; pushed to GitHub. v0.2 commit pending. |
 
 Maintained by Peter Bamuhigire.

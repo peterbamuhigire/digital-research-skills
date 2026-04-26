@@ -72,6 +72,8 @@ This pipeline is what makes the engine's "same prompt, three runs, three differe
 | `references/voice-and-register.md` | Hedging, modality, reporting verbs, signposting, register audit |
 | `references/originality-engine.md` | Pre-delivery N-gram overlap audit |
 | `references/plagiarism-prevention.md` | Pre-delivery five-rule audit (verbatim, structure, citation, quote-density, paraphrase fidelity) |
+| `references/morley-rhetorical-moves.md` | Need a phrase for a rhetorical move (introducing work, citing literature, describing methods, reporting results, discussing findings, writing conclusions, hedging, comparing, signposting). Morley *Academic Phrasebank* (Tier 1). |
+| `references/morley-reporting-verbs-and-hedges.md` | Choosing a reporting verb by stance (neutral / tentative / strong / critical) or selecting a hedge calibrated to evidence strength. Includes the Davis & Morley reuse-acceptability rule as a plagiarism-prevention guardrail. |
 
 ## Universal structural conventions
 

@@ -55,6 +55,9 @@ A single-tier-5 OSINT report is not an OSINT report; it is a rumour log.
 | `references/adverse-media-investigation.md` | Building an adverse-media file on an individual or entity (allegations, prosecutions, lawsuits, sanctions, regulator actions, scandals) |
 | `references/skip-tracing-craft.md` | Locating a person whose last-known contact details are stale — civilian/lawful skip tracing only |
 | `references/chronology-construction.md` | Building a timeline from heterogeneous sources, with confidence per event and gaps named explicitly |
+| `references/macleod-investigative-search.md` | Government-records / FOIA / court-docket / public-records-aggregator workflow + people-finding with legal sensitivities (DPPA, FCRA, GLBA, HIPAA flags). MacLeod, *How to Find Out Anything* (Tier 1). |
+| `references/osint-doctrine-and-history.md` | Institutional lineage (FBIS → OSC), four competing definitions of OSINT (OSC / Congress-Simmons / NATO-Steele / historical), distinctions vs. clandestine INTs / journalism / SOCMINT, the engine's adopted definition. Bean, *No More Secrets* (Tier 1). |
+| `references/osint-validation-and-anti-patterns.md` | OSINT validation cycle, six named tensions (speed/verification, volume/signal, secret/open, commercial/analytic, privacy, tradecraft/scientific), source-vetting standards, positive cases (SARS / Burundi), anti-patterns (over-classification, "Googlification", factory-line outsourcing, single-advocate evidence gaps). Bean, *No More Secrets* (Tier 1). |
 
 ## Lawful / unlawful boundary (engine refuses)
 

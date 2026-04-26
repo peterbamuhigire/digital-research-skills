@@ -23,6 +23,7 @@ Formal research-design layer. The orchestrator (`research-orchestration`) decide
 | Modelling research artifacts as a state machine across the 8 lifecycle stages | `references/knowledge-lifecycle-pipeline.md` |
 | Authoring or maintaining the canonical research-design document (Abbott "north-star artefact") | `references/research-design-document.md` |
 | Assembling the final structured Word document from completed research | `references/research-report-builder.md` |
+| Designing or executing a case study (single, multiple, intrinsic, instrumental, collective; exploratory, explanatory, descriptive) | `references/case-study-method.md` (definitions, typologies, validity, reporting) + `references/case-selection-and-analysis.md` (operating discipline) |
 
 ## The canonical design document (always for projects ≥1 week)
 
