@@ -9,6 +9,7 @@ from .scaffold import ScaffoldOptions, create_project
 from .registry import sync_workspace
 from .gates import run_all_gates
 from .output import assemble_output, seed_output_family
+from .pack import build_pack
 from .status import format_status, inspect_status
 from .workspace import Workspace, WorkspaceError
 
@@ -45,6 +46,10 @@ def build_parser() -> argparse.ArgumentParser:
     assemble.add_argument("family", help="output family name")
     assemble.add_argument("--out", help="optional output markdown path")
 
+    pack = subcommands.add_parser("pack", help="build an audit-ready evidence pack")
+    pack.add_argument("project", help="project id or path")
+    pack.add_argument("--out", required=True, help="zip path to write")
+
     return parser
 
 
@@ -66,6 +71,8 @@ def main(argv: list[str] | None = None) -> int:
         return _init_output(args.project, args.family)
     if args.command == "assemble":
         return _assemble(args.project, args.family, args.out)
+    if args.command == "pack":
+        return _pack(args.project, args.out)
 
     parser.print_help()
     return 0
@@ -151,6 +158,19 @@ def _assemble(project: str, family: str, out: str | None) -> int:
         print(f"Could not assemble output: {exc}")
         return 1
     print(f"Assembled output: {out_path}")
+    return 0
+
+
+def _pack(project: str, out: str) -> int:
+    try:
+        workspace = Workspace.load(project)
+        result = build_pack(workspace, out)
+    except (WorkspaceError, OSError, ValueError) as exc:
+        print(f"Could not build pack: {exc}")
+        return 1
+    print(f"Release pack: {result.path}")
+    print(f"- files: {result.files}")
+    print(f"- validation blockers: {result.blockers}")
     return 0
 
 
