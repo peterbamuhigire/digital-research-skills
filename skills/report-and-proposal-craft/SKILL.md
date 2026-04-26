@@ -15,6 +15,8 @@ Single entry skill for the engine's long-form business persuasion artifacts. For
 
 Long-form reports and proposals must persuade by reasoning, not by arrangement. Before drafting findings, conclusions, recommendations, options, risks, or objections, run `critical-reasoning-and-argument` so the evidence-to-claim chain, countercase, and certainty level are explicit.
 
+When a report or proposal describes a system, process, workflow, operating model, requirements set, interface, data architecture, or design system, also load `systems-process-requirements` before drafting the body.
+
 ## Artifact router
 
 | Artifact | Reference | Distinguishing feature |
@@ -133,6 +135,7 @@ For any report >10 pages, the executive summary stands alone. Stand-alone test: 
 - [ ] Audience grid filled (decider, influencer, blocker, user, gatekeeper).
 - [ ] Purpose statement (X/Y/Z) written and met.
 - [ ] `critical-reasoning-and-argument` run on findings, conclusions, recommendations, options, risks, and objections.
+- [ ] `systems-process-requirements` run where the artifact describes systems, processes, workflows, scope, interfaces, data, requirements, or design systems.
 - [ ] Lead on page 1 — recommendation/proposition not buried.
 - [ ] Three-way discipline observed: findings, conclusions, recommendations strictly separated.
 - [ ] Recommendations specific, owned, dated, costed, ranked.
@@ -155,6 +158,7 @@ For any report >10 pages, the executive summary stands alone. Stand-alone test: 
 
 - `business-writing` — short-form prose (email, memo, blog, web).
 - `critical-reasoning-and-argument` — mandatory for every analytical finding, conclusion, recommendation, option, objection, risk, and implementation implication.
+- `systems-process-requirements` — for system/process descriptions, requirements sets, scope, workflows, interfaces, data architecture, and design-system documentation.
 - `academic-writing` — papers, essays, theses, dissertations.
 - `data-quality-assessment` — score the data behind report findings.
 - `dataset-discovery-and-analysis` — for evidence-driven reports.

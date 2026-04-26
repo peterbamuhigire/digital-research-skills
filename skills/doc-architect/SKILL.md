@@ -70,6 +70,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 <!-- dual-compat-end -->
 Design and generate a portable Triple-Layer AGENTS.md documentation set that reflects the project’s real structure and constraints.
 
+When generated documentation must describe system boundaries, workflows, requirements, data architecture, interfaces, states, business rules, or design-system conventions, load `systems-process-requirements` and use its artifact router before writing the docs.
+
 **Modularize Instructions (Token Economy):** Avoid consolidating all AI/dev guidance into a single CLAUDE.md. Prefer smaller, focused docs (e.g., docs/setup.md, docs/api.md, docs/workflows.md) and reference them only when needed.
 
 **Documentation Standards (MANDATORY):** ALL generated markdown files must follow strict formatting rules:
@@ -164,6 +166,7 @@ When generating AGENTS.md files, be aware of the complete SDLC documentation eco
 | Skill | Purpose | Relationship |
 |-------|---------|-------------|
 | `project-requirements` | Raw requirements interview | Input source for SDLC planning docs |
+| `systems-process-requirements` | Systems/process/requirements modeling | Supplies boundary, workflow, state, interface, data, business-rule, and traceability discipline for documentation |
 | `feature-planning` | Feature-level specs + implementation plans | Stored in `docs/plans/` (planning directory) |
 | `manual-guide` | End-user manuals and guides | Stored in `/manuals/` (separate from AGENTS.md) |
 | `update-claude-documentation` | Keep project docs (README, CLAUDE.md) updated | Maintains project-level docs after changes |

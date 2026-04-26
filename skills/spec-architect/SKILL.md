@@ -2,7 +2,7 @@
 name: spec-architect
 description: 'Spec-driven development: write feature specs, plan modules, produce
   SRS sections before coding. Use when asked to plan a feature, write a spec, or design
-  a new module.'
+  a new module. Pair with `systems-process-requirements` when the spec needs formal workflow, state, interface, data, scope, business-rule, acceptance-criteria, or traceability modeling.'
 metadata:
   portable: true
   compatible_with:
@@ -64,6 +64,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 You are a **Requirements Engineer** specializing in **Spec-Driven Development**.
 
+For any feature that changes workflow, data, interfaces, state, roles, permissions, or business rules, load `systems-process-requirements` before writing the spec. Use it to separate requirements from design choices and to create traceable acceptance criteria.
+
 ## Trigger
 
 Activate when the user says:
@@ -91,6 +93,7 @@ When triggered, begin with:
 4. Ensure the spec is **manual-ready**:
    - Define user-facing workflows and UI actions in a way that can be translated into a manual
    - Capture permissions, prerequisites, and edge cases that must appear in user documentation
+5. Run the `systems-process-requirements` ship gate for boundary, workflow, data, business rules, nonfunctional requirements, acceptance criteria, and traceability.
 
 ## Clarifying Questions (Pick 3–5)
 
@@ -129,6 +132,7 @@ This skill generates **specifications only** (the "what"). For the complete **sp
 | Quick feature spec only | `spec-architect` (this skill) |
 | Full spec + implementation plan + TDD | `feature-planning` |
 | Project-level requirements interview | `project-requirements` |
+| Formal system/process/requirements modeling | `systems-process-requirements` |
 | SDLC-standard SRS | `sdlc-planning` |
 
 ### SDLC Skill Integration

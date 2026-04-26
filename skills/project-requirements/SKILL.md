@@ -2,7 +2,7 @@
 name: project-requirements
 description: Guided interview to create comprehensive project requirements documentation
   (requirements.md, business-rules.md, user-types.md, workflows.md) for a new SaaS
-  project. Use before bootstrapping the SaaS Seeder Template.
+  project. Use before bootstrapping the SaaS Seeder Template. Pair with `systems-process-requirements` when requirements need formal scope, workflow, data, interface, state, traceability, or acceptance-criteria discipline.
 metadata:
   portable: true
   compatible_with:
@@ -67,6 +67,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Use the links and companion skills already referenced in this file when deeper context is needed.
 <!-- dual-compat-end -->
 Create comprehensive requirements documentation for a new SaaS project through a guided AI-assisted interview process.
+
+For any non-trivial system, load `systems-process-requirements` before finalizing requirements. This adds requirements classification, scope control, context/system boundaries, workflow/state modeling, data architecture extraction, business-rule separation, acceptance criteria, and traceability.
 
 ## When to Use
 
@@ -374,6 +376,7 @@ AI: "Excellent! I've created your requirements.md.
 Before completing, verify:
 
 - [ ] All four core files created
+- [ ] `systems-process-requirements` gate passed for system boundary, scope, workflows, data entities, business rules, and traceability
 - [ ] Each feature has acceptance criteria
 - [ ] User types clearly defined
 - [ ] Key workflows documented step-by-step
@@ -444,6 +447,7 @@ Ready to bootstrap? Use:
 | Skill | Relationship |
 |-------|-------------|
 | `sdlc-planning` | Takes this skill's output (requirements.md, business-rules.md, user-types.md, workflows.md) as input for Feasibility Study, Vision & Scope, SRS, and other planning documents. **This is the primary next step.** |
+| `systems-process-requirements` | Formal requirements engineering, workflow/state/process modeling, data architecture, scope, and traceability discipline used inside this skill. |
 | `sdlc-design` | Uses the SRS (produced via `sdlc-planning`) to generate System Design Document, Database Design, API Documentation, and Technical Specifications. |
 | `sdlc-testing` | Uses the SRS and SDD to create test plans, test cases, and V&V documentation. |
 | `sdlc-user-deploy` | Uses all prior SDLC outputs to create user manuals, deployment guides, training materials, and release notes. |

@@ -15,6 +15,8 @@ Single entry skill for any non-academic prose artifact. For reports, proposals, 
 
 If the artifact explains, argues, persuades, recommends, evaluates, or interprets, run `critical-reasoning-and-argument` before drafting. This applies to market notes, strategy memos, intelligence-style updates, internal comms, speeches, fundraising letters, and executive briefings.
 
+If the artifact describes how a system, process, workflow, operating model, interface, data architecture, requirements set, or design system works, run `systems-process-requirements` before drafting.
+
 ## Channel router
 
 | Channel | Right reference | Process spine |
@@ -82,6 +84,7 @@ Every sentence carries its point at full volume. Hedge soup, Latinate fog, and b
 - [ ] Channel identified; right reference loaded.
 - [ ] Step 1 purpose statement written.
 - [ ] `critical-reasoning-and-argument` run where the artifact contains a claim, recommendation, interpretation, or persuasive ask.
+- [ ] `systems-process-requirements` run where the artifact describes systems, processes, requirements, scope, workflow, data, interfaces, or design systems.
 - [ ] Outline approved before drafting.
 - [ ] Lead carries the news; nothing buried.
 - [ ] Average sentence ≤20 words; max 30; varied length.
@@ -99,5 +102,6 @@ Every sentence carries its point at full volume. Hedge soup, Latinate fog, and b
 
 - `report-and-proposal-craft` — long-form persuasion (reports, proposals, white papers).
 - `critical-reasoning-and-argument` — mandatory for non-academic prose that argues, recommends, evaluates, interprets, or persuades.
+- `systems-process-requirements` — for process notes, operating-model descriptions, requirements summaries, workflow explanations, and system/data/interface descriptions.
 - `academic-writing` — papers, essays, theses, dissertations.
 - `web-scraping-foundations` — for pulling source material when needed.

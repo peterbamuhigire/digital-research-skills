@@ -26,6 +26,7 @@ Research design starts with reasoning discipline. Use `critical-reasoning-and-ar
 | Authoring or maintaining the canonical research-design document (Abbott "north-star artefact") | `references/research-design-document.md` |
 | Assembling the final structured Word document from completed research | `references/research-report-builder.md` |
 | Designing or executing a case study (single, multiple, intrinsic, instrumental, collective; exploratory, explanatory, descriptive) | `references/case-study-method.md` (definitions, typologies, validity, reporting) + `references/case-selection-and-analysis.md` (operating discipline) |
+| Describing a system, process, workflow, operating model, interface, scope boundary, data architecture, or requirements set | `systems-process-requirements` |
 | Designing a Uganda- or Kenya-facing university proposal / thesis / dissertation | Load this skill for design logic, then load `uganda-academic-research` or `kenya-academic-research` for institution-specific format, ethics, viva, and examination rules |
 
 ## The canonical design document (always for projects ≥1 week)
@@ -60,6 +61,9 @@ The 3–4 page artefact that names the empirical puzzle, theoretical puzzle, res
 ### 6. Research report builder
 The pipeline that pulls from `research/`, `analysis/`, and `opportunities/` files, applies a topic-appropriate report schema, and emits a designed `.docx` via the engine's professional-word-output layer.
 
+### 7. Systems and process description
+For research that studies how a system, institution, market process, workflow, data architecture, or operating model works, load `systems-process-requirements`. It supplies boundary discipline, process maps, state/event tables, requirements catalogues, data dictionaries, and traceability.
+
 ## Orchestration
 
 ```
@@ -91,6 +95,7 @@ new long-running research project
 - `research-orchestration` — the dispatcher; this skill is its formal-design layer.
 - `critical-reasoning-and-argument` — mandatory for puzzle framing, research questions, hypotheses, method justification, case selection, and contribution logic.
 - `research-techniques` — specific named techniques applied inside design phases.
+- `systems-process-requirements` — systems, processes, workflows, scope boundaries, requirements, interfaces, state models, data architecture, and design-system descriptions.
 - `source-evaluation` — every source consulted.
 - `academic-writing`, `report-and-proposal-craft` — output containers.
 - `uganda-academic-research`, `kenya-academic-research` — East African institutional research-handbook requirements.

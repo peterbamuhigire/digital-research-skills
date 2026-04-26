@@ -114,6 +114,7 @@ Some verticals add a small set of skills on top of whatever rows apply:
 - **Real-time features** → add `realtime-systems`.
 - **PDF / document generation** → add `report-print-pdf`, `python-document-generation`, `ios-pdf-export`, `android-pdf-export`, `professional-word-output`, `excel-spreadsheets` as needed.
 - **Spec / SDLC docs** → add `spec-architect`, `sdlc-design`, `sdlc-planning`, `sdlc-testing`, `sdlc-user-deploy`, `sdlc-maintenance`, `sdlc-post-deployment`.
+- **Systems / process / requirements description** → add `systems-process-requirements` when work needs system boundaries, workflows, scope, interfaces, data architecture, business rules, states, traceability, or design-system documentation.
 
 ## Evidence-contract note
 

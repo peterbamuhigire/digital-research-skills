@@ -64,6 +64,7 @@ Every output using this skill must be:
 | Market analysis | Decision criteria, segmentation logic, causal drivers, evidence currency, commercial implications | `business-writing`, `report-and-proposal-craft`, `executive-communication` |
 | History essay | Chronology, causation, source limits, historiography, alternative interpretations | `academic-writing` |
 | Business report/proposal | Finding-conclusion-recommendation separation, options, objections, risk, implementation | `report-and-proposal-craft` |
+| Systems/process description | Boundary, actors, workflow, data, rules, requirements, scope, traceability, and change logic | `systems-process-requirements` |
 | Executive brief | Governing thought, 3-5 tested reasons, implications, decision ask | `executive-communication` |
 | Due diligence | Claim substantiation, red flags, downside cases, confirmatory tests | `due-diligence`, `analytic-tradecraft` |
 | Policy/legal/technical argument | Definitions, authority, standards, burdens, feasibility, tradeoffs | relevant domain skill plus `source-evaluation` |
@@ -108,3 +109,4 @@ Every output using this skill must be:
 - `executive-communication` - executive summaries, board briefs, and top-down communication.
 - `research-design` - research questions, methods, and contribution logic.
 - `research-techniques` - source mining, gap analysis, synthesis, and verification workflows.
+- `systems-process-requirements` - systems, processes, workflows, requirements, scope, interfaces, data architecture, and design-system descriptions.

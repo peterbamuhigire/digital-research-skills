@@ -1,0 +1,4 @@
+interface:
+  display_name: "Systems Process Requirements"
+  short_description: "Model systems, processes, scope, and requirements"
+  default_prompt: "Use the systems process requirements skill to describe systems, workflows, requirements, scope, data architecture, interfaces, and design-system structures in clear, testable, traceable form."
