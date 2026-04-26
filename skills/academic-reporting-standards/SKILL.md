@@ -48,8 +48,8 @@ Do **not** use on: executive summaries (use `executive-communication`), business
 
 | Artefact type | Load |
 |---|---|
-| **Doctoral dissertation** | `references/brause-dissertation-craft.md` (always) + `references/oxbridge-ivy-examination-conventions.md` + `references/methodology-justification-checklist.md` + `references/originality-claim.md` + `references/viva-defense-preparation.md` |
-| **Master's research thesis / dissertation** | `references/oxbridge-ivy-examination-conventions.md` + `references/methodology-justification-checklist.md` + `references/originality-claim.md` where original research is required |
+| **Doctoral dissertation** | `references/brause-dissertation-craft.md` (always) + `references/oxbridge-ivy-examination-conventions.md` for Oxbridge/Ivy/LSE targets or the relevant regional skill (`uganda-academic-research`, `kenya-academic-research`) + `references/methodology-justification-checklist.md` + `references/originality-claim.md` + `references/viva-defense-preparation.md` |
+| **Master's research thesis / dissertation** | `references/oxbridge-ivy-examination-conventions.md` for Oxbridge/Ivy/LSE targets or the relevant regional skill (`uganda-academic-research`, `kenya-academic-research`) + `references/methodology-justification-checklist.md` + `references/originality-claim.md` where original research is required |
 | **Systematic review** | `references/equator-decision-tree.md` (PRISMA 2020 + Cochrane Handbook) + GRADE for evidence quality |
 | **Randomised controlled trial paper** | `references/equator-decision-tree.md` (CONSORT 2025) + GRADE |
 | **Observational study paper** | `references/equator-decision-tree.md` (STROBE) + GRADE |
@@ -106,6 +106,7 @@ Before any academic artefact ships, every box must be ticked:
 - `academic-writing` — citation styles, plagiarism prevention, originality, hedging discipline. Runs alongside this skill.
 - `analytic-tradecraft` — for any forward-looking judgment inside the discussion section, the Heuer/Pherson SATs apply (KAC, ACH for contested findings).
 - `source-evaluation` — every source in the literature review carries a tier and verification trail.
+- `uganda-academic-research`, `kenya-academic-research` — institution-specific East African proposal, thesis, dissertation, viva, ethics, and formatting rules.
 - `executive-communication` — for the executive-summary version of the work that ships to non-academic audiences alongside the dissertation.
 - `python-document-generation` / `professional-word-output` — rendering layer for the final manuscript.
 

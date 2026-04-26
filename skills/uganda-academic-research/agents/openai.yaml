@@ -1,0 +1,4 @@
+interface:
+  display_name: "Uganda Academic Research"
+  short_description: "Uganda research handbook standards"
+  default_prompt: "Use the Uganda academic research skill to structure, review, or format this academic research artefact against Ugandan institutional handbook requirements."

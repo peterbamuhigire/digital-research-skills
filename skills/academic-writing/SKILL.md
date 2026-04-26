@@ -140,6 +140,8 @@ The references and findings are the same. The argument, voice, and structure are
 - `business-writing` (planned) — for non-academic writing artifacts.
 - `report-and-proposal-craft` (planned) — for business reports.
 
+- `uganda-academic-research`, `kenya-academic-research` - local university documentation-style defaults, plagiarism thresholds, and proposal/thesis format rules.
+
 ## See also (within this skill)
 
 The thirteen `references/` files together encode the body of academic-writing craft from Eco, Bailey, Trzeciak, and the engine's own discipline. Load only what the current task requires; do not load the entire references set by default.

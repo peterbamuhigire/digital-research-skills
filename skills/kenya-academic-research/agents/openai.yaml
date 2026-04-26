@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kenya Academic Research"
+  short_description: "Kenya research handbook standards"
+  default_prompt: "Use the Kenya academic research skill to structure, review, or format this academic research artefact against Kenyan institutional handbook requirements."

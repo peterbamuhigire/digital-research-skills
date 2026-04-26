@@ -24,6 +24,7 @@ Formal research-design layer. The orchestrator (`research-orchestration`) decide
 | Authoring or maintaining the canonical research-design document (Abbott "north-star artefact") | `references/research-design-document.md` |
 | Assembling the final structured Word document from completed research | `references/research-report-builder.md` |
 | Designing or executing a case study (single, multiple, intrinsic, instrumental, collective; exploratory, explanatory, descriptive) | `references/case-study-method.md` (definitions, typologies, validity, reporting) + `references/case-selection-and-analysis.md` (operating discipline) |
+| Designing a Uganda- or Kenya-facing university proposal / thesis / dissertation | Load this skill for design logic, then load `uganda-academic-research` or `kenya-academic-research` for institution-specific format, ethics, viva, and examination rules |
 
 ## The canonical design document (always for projects ≥1 week)
 
@@ -87,4 +88,5 @@ new long-running research project
 - `research-techniques` — specific named techniques applied inside design phases.
 - `source-evaluation` — every source consulted.
 - `academic-writing`, `report-and-proposal-craft` — output containers.
+- `uganda-academic-research`, `kenya-academic-research` — East African institutional research-handbook requirements.
 - `data-quality-pipeline`, `dataset-discovery-and-analysis` — for empirical projects.
