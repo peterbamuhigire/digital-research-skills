@@ -1,15 +1,3 @@
----
-name: evidence-discipline
-description: NON-NEGOTIABLE GUARDRAIL — use on every research output to prevent AI hallucination, fabricated statistics, invented quotes, plausible-sounding fiction, or unattributed claims from reaching final reports. Applies to every skill, every wave, every report in this engine.
-metadata:
-  portable: true
-  compatible_with:
-    - claude-code
-    - codex
-    - generic-agent
-  priority: critical
----
-
 # Evidence discipline — anti-hallucination guardrail
 
 **This is the most important rule in the engine.** Every other skill defers to it.

@@ -1,14 +1,3 @@
----
-name: source-verification
-description: Use when ranking, triangulating, or auditing the credibility of sources in a research corpus. Defines a 5-tier credibility ladder, URL-liveness checks, fact triangulation rules, and quote-attribution discipline.
-metadata:
-  portable: true
-  compatible_with:
-    - claude-code
-    - codex
-    - generic-agent
----
-
 # Source verification
 
 Not all sources are equal. This skill tags every source with a credibility tier and enforces triangulation for high-impact claims.

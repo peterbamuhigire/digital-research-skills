@@ -1,14 +1,3 @@
----
-name: media-forensics-verification
-description: Use to verify image / video / document authenticity in investigative work — EXIF extraction, reverse image search, geolocation by landmark, shadow-time computation, archive recovery, provenance tracing. Adapted from Silverman's Verification Handbook for Investigative Reporting + Bellingcat methods. Backed by tools/verification/.
-metadata:
-  portable: true
-  compatible_with:
-    - claude-code
-    - codex
-    - generic-agent
----
-
 # Media forensics verification
 
 Silverman + Bellingcat: the difference between investigative journalism and rumour amplification is **systematic forensic checks** on every claimed primary source.

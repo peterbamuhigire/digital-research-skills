@@ -1,14 +1,3 @@
----
-name: tudor-twelve-point-evaluation
-description: Use to evaluate media, journalism, and analyst sources beyond the 5-tier credibility ladder. Twelve-criterion rubric covering recency, relevancy, authority, completeness, accuracy, clarity, verifiability, statistical validity, internal consistency, external consistency, context, comparative quality. From Robin Rowland citing Dean Tudor.
-metadata:
-  portable: true
-  compatible_with:
-    - claude-code
-    - codex
-    - generic-agent
----
-
 # Tudor's twelve-point evaluation
 
 Where `source-verification` tiers a source by class and `five-term-source-doubt` situates a primary document, Tudor's rubric scores any source — especially journalism, analyst reports, and grey literature — across twelve dimensions. From Dean Tudor via Robin Rowland's *Creative Guide to Research*.

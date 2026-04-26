@@ -1,14 +1,3 @@
----
-name: five-term-source-doubt
-description: Use on every primary document to apply the Burke pentad — author, provenance, production, mechanics, aims. The source-skepticism checklist that turns a document from "evidence" into "evidence with known limits". Adapted from Andrew Abbott, Digital Paper.
-metadata:
-  portable: true
-  compatible_with:
-    - claude-code
-    - codex
-    - generic-agent
----
-
 # Five-term source doubt
 
 Abbott: *"You are the reader's agent, and you must be worthy of that trust."* Every primary document must answer five questions before it earns the right to be cited as evidence.
