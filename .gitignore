@@ -14,6 +14,7 @@ Thumbs.db
 .idea/
 *.swp
 extracted-books/
+skills/_extraction-cache/
 
 # Project workspaces — kept local, never pushed.
 # Engine code, skills, docs/plans, scripts, etc. are pushed as the shared engine.

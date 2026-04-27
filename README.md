@@ -72,6 +72,9 @@ skills/
 ├── analytic-tradecraft/    [NEW]       Layer 3 — ICD 203 + Heuer/Pherson SATs + Kent estimative
 ├── academic-writing/                   Layer 3 — citation, originality, plagiarism, hedging
 ├── consulting-delivery/     [NEW]      Layer 3 — issue trees, workplans, clients, implementation
+├── online-legal-research/   [NEW]      Layer 3 — primary/secondary authority, IRAC, citators, EA overlay
+├── systems-thinking-and-mental-models/ [NEW] Layer 3 — systemigrams, causal loops, mental models, decision science
+├── mind-mapping-and-synthesis/ [NEW]   Layer 3 — Buzan method + Mermaid mindmap patterns for synthesis
 │
 ├── executive-communication/  [NEW]     Layer 4 — Pyramid + SCQA + action titles + Zelazny
 ├── academic-reporting-standards/ [NEW] Layer 4 — Brause + PRISMA/CONSORT/STROBE/MOOSE/GRADE/Cochrane/TOP
