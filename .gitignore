@@ -14,3 +14,9 @@ Thumbs.db
 .idea/
 *.swp
 extracted-books/
+
+# Project workspaces — kept local, never pushed.
+# Engine code, skills, docs/plans, scripts, etc. are pushed as the shared engine.
+# Per-project research, drafts, evidence, and outputs live under projects/<id>/
+# and stay on the operator's machine.
+projects/
