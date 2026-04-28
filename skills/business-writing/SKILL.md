@@ -31,6 +31,14 @@ If the artifact describes how a system, process, workflow, operating model, inte
 | Resume / cover letter | `references/roman-raphaelson-principles.md` § resumes | Customised; achievements with numbers |
 | Internal comms (status, updates, FAQs) | `references/roman-raphaelson-principles.md` § memos · `references/persuasion-and-narrative.md` | Lead with the news; numbered structure |
 | Multi-language artifacts (EN / FR / SW) | `references/language-standards-en-fr-sw.md` | Apply per-language register rules |
+| Hard scenario (bad news, decline, apology, discourteous reply, policy change) | `references/scenario-playbooks.md` | Resolve the four axes before drafting; pick named scenario |
+| Pitch deck (investor / VC) | `references/extended-channels.md` § Pitch decks | Three critical questions; four-part structure; one visual per slide |
+| One-pager / capability statement | `references/extended-channels.md` § One-pagers | Headline + CTA + testimonial; Think/Feel/Do test |
+| Training material / instruction manual / course | `references/extended-channels.md` § Training material | Five learning principles; tools, not just text |
+| Business plan (for lender / angel) | `references/extended-channels.md` § Business plans | Argument hierarchy first; story supports; meet lender early |
+| Grant proposal (foundation / agency) | `references/extended-channels.md` § Grant proposals · `report-and-proposal-craft` | Read the call; budget reconciles to methodology |
+| Performance appraisal | `references/extended-channels.md` § Performance appraisals | Behaviour → calibrated phrase → specific action |
+| AI-assisted draft of any of the above | `references/ai-assisted-writing.md` | WI before AI; embed evidence-discipline clause in every prompt |
 
 ## The seven-step process (load `references/maxwell-7-steps.md`)
 
@@ -62,6 +70,9 @@ Every sentence carries its point at full volume. Hedge soup, Latinate fog, and b
 | `references/web-copywriting.md` | Web pages, marketing copy, landing pages, blog post structure |
 | `references/blog-publishing-workflow.md` | Producing a full blog article (topic dev, drafting, on-page structure, image prep, site integration) |
 | `references/language-standards-en-fr-sw.md` | Multi-language artifacts: English (British/East African), French (Francophone African), Kiswahili (East African) |
+| `references/ai-assisted-writing.md` | Any deliverable where an LLM is in the production chain — WI/AI division of labour, prompt design, fact-check discipline (Lindsell-Roberts) |
+| `references/scenario-playbooks.md` | One-off communication artefacts where the message is hard — bad news, decline, apology, discourteous reply, policy change (Ramsey four-axis frame) |
+| `references/extended-channels.md` | Pitch decks, one-pagers, training material, business plans, grant proposals, performance appraisals (Henwood / Lindsell-Roberts / Garner) |
 
 ## Universal anti-patterns
 

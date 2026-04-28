@@ -223,9 +223,52 @@ Replace passive-voice constructions. Replace hedging language. Replace abstract 
 
 ---
 
+## Lindsell-Roberts — the four pillars of storytelling
+
+For any persuasive narrative woven into a business document (pitches, proposals, fund-raising letters, internal change-management comms), Sheryl Lindsell-Roberts (*Business Writing with AI for Dummies*, 2024, ch. 5) gives a tight scaffold:
+
+1. **Setting** — anchor the reader in a time, place, or context they recognise. Setting comes early because it gives the conflict a stage. *"It was Monday morning at the Mukono branch …"* not "in today's fast-paced environment".
+2. **Characters** — give them names, roles, and motivations. *Harry Potter* would not work as *boy wizard*. The same applies to your customer "Aisha Nakato, head of procurement at Roofings".
+3. **Conflict** — the *what is*. The pain point, the friction, the system failure. Without conflict the story is decorative.
+4. **Resolution** — the *what could be*. Memorable, concrete, specific, achievable. The resolution must align with your call to action; if it does not, the story is working against you.
+
+### Story arc
+
+Beginning → rising tension → climax → resolution. In a business setting:
+
+- **Beginning** — introduce a character with the same problem your reader is facing. They are hooked because they feel kinship. *"One of my customers was dealing with your exact situation."*
+- **Middle** — escalation: power struggles, ethical dilemmas, low sales, management changes. Long-cuts and short-cuts make the journey relatable.
+- **End** — tie back to the call to action. Even a negative outcome is acceptable if it carries a lesson.
+
+### First person, present tense
+
+For maximum immediacy, tell stories in the **first person, present tense**. *"Kate walks onto the stage. There is a power failure. What can she do?"* — the reader plunges in. Past tense / third person ("Kate walked onto the stage. There was a power failure.") creates distance. Use the present tense for testimonials, founder stories, and any narrative meant to put the reader in the protagonist's shoes.
+
+### Embellishment vs fabrication
+
+Lindsell-Roberts permits embellishment — adding sensory detail, dialogue, mood — but draws a hard line at invention of facts. A weather description can be heightened; a customer's reported saving cannot. The engine's evidence-discipline rule (`source-evaluation`) is stricter than Lindsell-Roberts on this point: **never embellish a number, a quote, a name, or a citable claim, even where the genre invites colour.** Story texture is fair game; load-bearing facts are not.
+
+## Henwood — story is *not* argument
+
+The most useful single distinction from Henwood (*Business Writing for Innovators and Change-Makers*, 2020, ch. 9): a **business plan, a pitch, a proposal, or a feasibility study is an argument, not a story**. Story can decorate an argument; story cannot replace one.
+
+| Mode | Structure | Use for |
+|---|---|---|
+| **Story** | Linear: situation → escalating events → crisis → resolution | Founder narrative, customer testimonial, change-management vignette, fund-raising appeal |
+| **Argument** | Hierarchical: single main claim → sub-claims → evidence under each | Business plan, pitch deck (the analysis sections), proposal, feasibility study, white paper |
+
+Common failure: a writer uses "storytelling" as the excuse to skip the work of building a hierarchy of claims. The pitch deck has a story arc *around* the argument (problem → solution → traction → ROI), but inside each section the structure is hierarchical. Mistaking the two leaves the document feeling vivid but unconvincing.
+
+When a deliverable is on this boundary, run `critical-reasoning-and-argument` *before* applying the storytelling pillars. The argument carries the load; the story makes it memorable.
+
+---
+
 ## References
 
 - `references/words-at-work-hood.md`  Plain English checklist, reversed triangle, document structure, common mistakes table, editing checklists (Hood, *Words at Work*)
 - `references/essay-writing-shiach.md`  Argument structure, introduction/conclusion formulas, transitions master list, waffle diagnosis test (Shiach, *How to Write Essays*)
 - `references/business-english-geffner.md`  Four Cs, parallelism rules, business document conventions, positive framing, expressions to avoid, report/proposal structure (Geffner, *Business English*)
 - `references/storytelling-rubie-provost.md`  Provost Paragraph, high-concept hook, scene-writing, conflict mechanics, book proposal structure applicable to business proposals (Rubie & Provost, *How to Tell a Story*)
+- Lindsell-Roberts, *Business Writing with AI for Dummies*, Wiley, 2024 — chs. 4–5 (audience and storytelling), ch. 8 (tone)
+- Henwood, *Business Writing for Innovators and Change-Makers*, Business Expert Press, 2020 — ch. 9 (story vs argument), ch. 8 (pitch decks)
+- Gottschall, *The Storytelling Animal: How Stories Make Us Human*, Mariner Books, 2013

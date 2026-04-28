@@ -123,8 +123,133 @@ Roman/Raphaelson's editing pipeline:
 - [ ] Channel rule applied (email, memo, letter, plan, presentation, proposal, resume).
 - [ ] Names spelled correctly; numbers reconcile; one factual proof pass.
 
+## Garner / HBR — bizspeak blacklist
+
+Bryan Garner's *HBR Guide to Better Business Writing* (2013), ch. 11, gives the canonical bizspeak blacklist. **Default rule: cut every entry on this list when you can.** They signal autopilot writing — the reader assumes you have no real thought to share.
+
+| Avoid | Why / what to use instead |
+|---|---|
+| *actionable* (outside legal action) | "useful", "we can act on" |
+| *agreeance* | "agreement" |
+| *as per* | "as you asked", "according to" |
+| *at the end of the day* | strike entirely |
+| *bandwidth* (outside electronics) | "capacity", "time" |
+| *bring our A game* | strike |
+| *core competency* | "what we do well" |
+| *drill down* | "look closely at" |
+| *going forward* | "from now", or strike |
+| *guesstimate* | "estimate" |
+| *hit the ground running* | "start producing immediately" |
+| *impact* (verb) | "affect", "change" |
+| *incent / incentivize / impactful* | "motivate", "encourage", "important" |
+| *leverage* (verb) | "use", "rely on" |
+| *liaise* | "talk to", "work with" |
+| *mission-critical* | "essential" |
+| *monetize* | "earn from" |
+| *operationalize* | "put into practice" |
+| *optimize / utilize / utilization* | "improve", "use" |
+| *paradigm shift* | "major change" |
+| *pursuant to* | "as you asked", "under" |
+| *push the envelope* | strike |
+| *recontextualize / repurpose* | "reuse", "adapt" |
+| *rightsized / smartsized* | "downsized", or just "we cut staff" |
+| *sacred cow* | "protected practice" |
+| *scalable / strategic alliance* | "grows with demand", "partnership" |
+| *seamless integration* | "works together" |
+| *seismic shift* (outside earthquakes) | "big change" |
+| *strategic dynamism* | strike |
+| *synergize / synergy* | "work together" |
+| *think outside the box* | strike |
+| *throw under the bus / kick the can down the road* | strike |
+| *turnkey / under the radar* | "ready to use", "unnoticed" |
+| *value-added* | strike or be specific |
+| *win-win* | strike, name the gain for each side |
+| *Attached please find* | "Here is", "I've attached" |
+| *Please be advised that* | strike, just state the fact |
+| *Pursuant to your instructions* | "As you asked" |
+| *In light of the fact that* | "because" |
+| *We are in receipt of* | "We've received" |
+| *At your earliest convenience* | "as soon as you can", or give a date |
+
+The Warren Buffett Test: take any paragraph and rewrite it the way Buffett would in a Berkshire Hathaway letter. If your rewrite is materially shorter and clearer, ship the rewrite. (HBR Guide, ch. 11, runs an FRE comparison: a 136-word prospectus paragraph at FRE 8.2 becomes 74 words at FRE 60.1 in Buffett's hand.)
+
+## Garner / HBR — tone
+
+From *HBR Guide*, ch. 17 ("Watch your tone"):
+
+- **Avoid hyperformality.** Write more or less as you would speak. *How may I help you?* not *How may I be of assistance?* *David Green*, not *the above-mentioned patient*. *We recommend*, not *it is recommended by the undersigned*.
+- **Be collegial.** Imagine the message paraded in a contentious lawsuit; you want the jury to think you behaved admirably. Aggressive stance only as a last resort, on advice of counsel.
+- **Match register to the relationship.** "How would I say this if she were right here with me?" Not chummy with strangers; not distant with close colleagues.
+- **Drop sarcasm.** Sarcasm doesn't shame readers into compliance — it irritates and alienates. There is no professional context where sarcasm helps.
+- **Never make the reader admit they are in the wrong.** Strike *you labor under a delusion*, *fail to understand*, *erroneously assert*, *distort*. They breed ill will and rarely change a mind.
+
+## Garner / HBR — chronology
+
+From ch. 12. When you give a factual account, **plot a chronology of relevant events first, then string it into prose**. Common failure mode: the writer dives into the middle of the story and the reader has to back-fill. The fix is mechanical:
+
+```
+Last week — Sarah asked me to gauge X's interest.
+Today    — I spoke with Jim Martinez.
+Tuesday  — Jim and I meet at his office.
+Two weeks — If interested, NDA → sample app → demo.
+```
+
+Once the chronology is on paper, the email or memo is just an act of stringing.
+
+## Garner / HBR — letters
+
+From ch. 19. Three patterns the engine will use repeatedly.
+
+**Open with you, not I.** *What a wonderful host you were last week*, not *I just thought I'd drop you a note*. The reader's interest holds the reader's attention.
+
+**Ease into bad news.** When the answer is "no", sandwich it: positive opening → reason → decision → forward-looking close. Never start with the rejection. Never overexplain.
+
+```
+NOT: We regret to inform you that we cannot supply the 500 copies at the 60 % discount you requested. No one — not even our authors — receives such a hefty discount. If you would care to resubmit at the more modest figure of 30 %, we will gladly consider...
+
+BUT: How rewarding to hear that you intend to use Negotiate It Now! as part of your business summit. You've chosen the best book on the subject. Although you've requested a 60 % discount, the most we can offer is 30 % — that's the largest discount available to anyone, and we're happy to extend it to you with a purchase of 500 copies.
+```
+
+**Don't write in anger.** A combative letter loses customers; rejection rarely needs the prosecution's voice. *Please* and *thank you* are mandatory in complaint replies.
+
+**Fund-raising letters** must (1) appeal directly from one person to another, (2) frame an opportunity for the recipient to satisfy personal needs by supporting a worthwhile aim, and (3) prompt one specific, decisive action. The eight donor motivations to weave in: belief in impact, belief in your kind of organisation, recognition, association with respected figures, sense of belonging, relief of fear or guilt, sense of duty, tax benefits.
+
+## Garner / HBR — memos and short reports
+
+From ch. 20.
+
+**Subject lines do work, or they don't.** *"Approval of Siegelson Acquisition"* beats *"Siegelson"*. *"Why We Should Reject Frost's Settlement Offer"* beats *"Settlement"*. The subject promises either a status update or a recommendation — never a riddle.
+
+**Summary block at the top.** For each main issue (no more than three):
+
+```
+Issue:           [the problem in one sentence anyone can understand]
+Proposed Solution: [your recommendation]
+Reason:          [why it works, or why it beats the alternatives]
+```
+
+This three-line summary is the executive's read; the body unpacks it for fact-checkers and future readers, who are also legitimate audiences.
+
+**Recommendations spell out:** what needs to be done, who should do it, when and where, why, and how.
+
+## Garner / HBR — performance appraisals
+
+From ch. 21. Appraisals follow a fixed scaffold: **specific behaviour → calibrated phrase → particular consequence**. Garner's Superb / Good / Acceptable / Needs Improvement / Poor scale gives you the calibrated phrase. The discipline is to anchor each phrase to a named behaviour:
+
+> *"When we had several layoffs last June, Lauren remained utterly calm and collected while demonstrating keen sensitivity to those who lost their jobs. She [specific action]."*
+
+Calibrated phrase + specific action protects the appraisal against both performative kindness ("she's wonderful") and performative criticism ("she struggles"). Seven aspects of work covered: attitude, efficiency, human relations, judgment, knowledge, reliability, communication skills.
+
+## Source books
+
+- Roman & Raphaelson, *Writing That Works*, 3rd ed., HarperBusiness, 2000.
+- Garner, *HBR Guide to Better Business Writing*, Harvard Business Review Press, 2013.
+- *The HBR Guide* index expurgatorius (ch. 11) is the canonical bizspeak blacklist; the table above is reproduced from it.
+
 ## See also
 
 - `business-writing-7-steps` — process pairing
 - `reports-proposals-craft` — structural pairing
 - `white-paper-craft` — long-form persuasion
+- `references/scenario-playbooks.md` — Ramsey-style scenario library that puts these tone and bad-news rules into practice
+- `references/extended-channels.md` — performance appraisals, business plans, pitch decks, one-pagers, training material

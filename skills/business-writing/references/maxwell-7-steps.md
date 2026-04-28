@@ -2,6 +2,8 @@
 
 Encodes Charles Maxwell's *7 Steps to Better Writing: How to write better reports, proposals, email, blogs, and web content* (Towering Skills, 2020) as the engine's default workflow for any non-academic prose artifact. Pair with `writing-that-works` for principles and `reports-proposals-craft` for structural depth.
 
+The 7-step process compresses cleanly onto Bryan Garner's **four-task model** (HBR Guide to Better Business Writing, 2013) and Mary Pipher's **accordion method** (popularised in Henwood, *Business Writing for Innovators and Change-Makers*, 2020). Use whichever framing is closer at hand — the underlying discipline is the same.
+
 ## The 7-step process
 
 | Step | Name | Goal | Artifact produced | Gate to next step |
@@ -131,9 +133,51 @@ Avoid combining passes — combining is what produces "rewriting in circles."
 6. Revise in passes; do not combine them.
 7. Proof on paper. Trust no tool. Two eyes minimum.
 
+## Garner / Flowers MACJ — the four-task compression
+
+Bryan Garner (*HBR Guide to Better Business Writing*, 2013, ch. 3) borrows Betty Sue Flowers's framing of the writer's four internal characters — **Madman, Architect, Carpenter, Judge** — and treats them as discrete, sequential tasks. The mapping is exact:
+
+| MACJ task | Maxwell step(s) | Hard rule |
+|---|---|---|
+| **Madman** — gather material, generate ideas | Steps 2 + 3 (collect + brainstorm) | Capture more than you'll use; mark quotations and sources at capture time |
+| **Architect** — organise into an outline | Step 4 (organise) | Distil into **three main points written as full sentences** before drafting |
+| **Carpenter** — write the prose | Step 5 (draft) | Write fast, against a clock; lock the Judge away |
+| **Judge** — improve, polish, correct | Steps 6 + 7 (revise + proof) | Multiple separate passes; one element per pass |
+
+When Maxwell's 7 steps feel ceremonious, MACJ is the working name for the same loop. Use MACJ in conversation; use the 7 steps as the formal checklist.
+
+### The "three main points" rule
+
+Garner's chapter 4: **before drafting, write down three main points as complete sentences, in the order the reader needs them.** Not topics — propositions. Not bullet labels — full sentences with subject, verb, and the logic spelled out.
+
+- Four points is one too many; one or two leaves the document feeling underdeveloped.
+- The order in which you brainstormed the points is rarely the order the reader needs.
+- If a fourth or fifth category emerges during drafting, accept it — but you would not have seen the gap without committing to three first.
+
+This is the single most reliable cure for blank-page paralysis in memos, emails, briefs, and short reports.
+
+## Pipher / Henwood accordion method — for content development
+
+When the structural pattern is fixed but the content is sprawling (pitch decks, one-pagers, business plans, white papers), expand-then-contract iteratively:
+
+1. **Fill the accordion with air.** Draft expansively — every detail you might need.
+2. **Squeeze the accordion.** Pare each section back to its lean essence.
+3. **Open it again.** Reread; restore details that were load-bearing.
+4. **Squeeze again.** Repeat until the document is comprehensive *and* concise.
+
+Henwood (*Business Writing for Innovators and Change-Makers*, 2020) recommends this for any short, dense format where Maxwell's single-pass revision is not enough. The accordion does not replace the multi-pass revise step (Step 6) — it precedes it.
+
 ## See also
 
 - `writing-that-works` — Roman/Raphaelson principles
 - `reports-proposals-craft` — structural templates
 - `white-paper-craft` — long-form persuasion
 - `source-synthesis-craft` — note-card discipline
+
+## Source books
+
+- Maxwell, *7 Steps to Better Writing*, Towering Skills, 2020.
+- Garner, *HBR Guide to Better Business Writing*, Harvard Business Review Press, 2013 — chs. 1–7 (the four-task model and three-points rule), appendix A (four-stage checklist).
+- Flowers, "Madman, Architect, Carpenter, Judge: Roles and the Writing Process", *Proceedings of the Conference of College Teachers of English* 44 (1979): 7–10.
+- Henwood, *Business Writing for Innovators and Change-Makers*, Business Expert Press, 2020 — ch. 1 (the change-maker writing process), ch. 8 (accordion method, citing Pipher).
+- Pipher, *Writing to Change the World*, Penguin, 2006 — origin of the accordion image.
