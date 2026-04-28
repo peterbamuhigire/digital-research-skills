@@ -13,6 +13,7 @@ Channel router, seven-step process (compresses to Garner / Flowers MACJ), "don't
 - `ai-assisted-writing.md` — Lindsell-Roberts WI/AI division, prompt design, evidence-discipline overlay
 - `scenario-playbooks.md` — Ramsey four-axis frame, scenario library, twelve negative-news pitfalls
 - `extended-channels.md` — Henwood / Lindsell-Roberts / Garner channels: pitch decks, one-pagers, training material, business plans, grant proposals, performance appraisals
+- `long-form-business-journalism.md` — Starkman *Best Business Writing 2014* exemplars across four families (essay / investigative / profile / explainer) with cross-cutting craft lessons
 
 For reports, proposals, and white papers, see `report-and-proposal-craft`.
 

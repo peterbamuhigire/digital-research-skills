@@ -23,6 +23,8 @@ Single entry skill for open-source intelligence work — civilian, lawful, defen
 | General OSINT methodology (planning, collection, analysis, dissemination) | `references/osint-methodology.md` |
 | Build a chronology of events from heterogeneous sources | `references/chronology-construction.md` |
 | Verify images / videos / documents | load `source-evaluation` skill, `references/silverman-media-forensics.md` |
+| Run a phased investigation with client-facing cost / consent gates | `references/osint-methodology.md` § Hetherington Phased Approach |
+| Reach for a technique not covered by the standard references (deep / dark web, geospatial, email tracing, metadata, crypto, IoT, ML, disinformation) | `references/advanced-osint-techniques.md` |
 
 ## The OSINT cycle (universal)
 
@@ -58,6 +60,7 @@ A single-tier-5 OSINT report is not an OSINT report; it is a rumour log.
 | `references/macleod-investigative-search.md` | Government-records / FOIA / court-docket / public-records-aggregator workflow + people-finding with legal sensitivities (DPPA, FCRA, GLBA, HIPAA flags). MacLeod, *How to Find Out Anything* (Tier 1). |
 | `references/osint-doctrine-and-history.md` | Institutional lineage (FBIS → OSC), four competing definitions of OSINT (OSC / Congress-Simmons / NATO-Steele / historical), distinctions vs. clandestine INTs / journalism / SOCMINT, the engine's adopted definition. Bean, *No More Secrets* (Tier 1). |
 | `references/osint-validation-and-anti-patterns.md` | OSINT validation cycle, six named tensions (speed/verification, volume/signal, secret/open, commercial/analytic, privacy, tradecraft/scientific), source-vetting standards, positive cases (SARS / Burundi), anti-patterns (over-classification, "Googlification", factory-line outsourcing, single-advocate evidence gaps). Bean, *No More Secrets* (Tier 1). |
+| `references/advanced-osint-techniques.md` | Topic atlas for techniques beyond the standard references — deep/dark web, geospatial intelligence, email tracing, metadata/forensics, cryptocurrency / blockchain, IoT, ML-augmented OSINT, disinformation analysis, big-data sources. Botwright, *Advanced OSINT Strategies* (4-volume bundle), with engine guardrails. |
 
 ## Lawful / unlawful boundary (engine refuses)
 
