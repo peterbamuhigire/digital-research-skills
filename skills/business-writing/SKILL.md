@@ -40,6 +40,7 @@ If the artifact describes how a system, process, workflow, operating model, inte
 | Performance appraisal | `references/extended-channels.md` § Performance appraisals | Behaviour → calibrated phrase → specific action |
 | AI-assisted draft of any of the above | `references/ai-assisted-writing.md` | WI before AI; embed evidence-discipline clause in every prompt |
 | Long-form magazine piece — essay, criticism, investigative, profile, explainer | `references/long-form-business-journalism.md` | Pick the family (essay / investigative / profile / explainer) before choosing length |
+| Growth strategy / commercial memo | `../../extracted-books/growth-profit-disruption-research-notes.txt` · `references/persuasion-and-narrative.md` | Growth engine first; metrics and experiments support |
 
 ## The seven-step process (load `references/maxwell-7-steps.md`)
 
@@ -75,6 +76,7 @@ Every sentence carries its point at full volume. Hedge soup, Latinate fog, and b
 | `references/scenario-playbooks.md` | One-off communication artefacts where the message is hard — bad news, decline, apology, discourteous reply, policy change (Ramsey four-axis frame) |
 | `references/extended-channels.md` | Pitch decks, one-pagers, training material, business plans, grant proposals, performance appraisals (Henwood / Lindsell-Roberts / Garner) |
 | `references/long-form-business-journalism.md` | Long-form magazine writing — essay, investigative, profile, explainer — with craft lessons drawn from *The Best Business Writing 2014* (Starkman et al.) |
+| `../../extracted-books/growth-profit-disruption-research-notes.txt` | Business growth, product-led growth, profit improvement, disruption, creativity, and commercial research productization |
 
 ## Universal anti-patterns
 

@@ -29,6 +29,7 @@ When a report or proposal describes a system, process, workflow, operating model
 | Audit / compliance report | `references/clippinger-business-reports.md` | Findings ranked by severity; remediation plan |
 | Formal research report | `references/clippinger-business-reports.md` (full template) | Methodology section; replicability standard |
 | Business plan | `references/clippinger-business-reports.md` § business plan | Market analysis + financial projections + sensitivity |
+| Growth strategy report | `../../extracted-books/growth-profit-disruption-research-notes.txt` · `references/forsyth-reports-proposals.md` | Growth engine + constraints + experiments + KPI tree |
 | Internal proposal / business case | `references/forsyth-reports-proposals.md` § internal proposal | Recommendation upfront; options considered |
 | Formal external proposal | `references/forsyth-reports-proposals.md` § external proposal | Cover letter + situation + approach + price + risks |
 | Bid response (RFP) | `references/forsyth-reports-proposals.md` § bid | Mirror RFP order; compliance matrix as section 1 |
@@ -150,6 +151,7 @@ For any report >10 pages, the executive summary stands alone. Stand-alone test: 
 - [ ] If white paper: flavor labeled; mantra passes; vendor named no earlier than the flavor allows; single CTA.
 - [ ] If formal research report: methodology replicable.
 - [ ] If business plan: sensitivity analysis on financials.
+- [ ] If growth strategy: growth engine, profit lever, experiment plan, dashboard owner, and retention logic are explicit.
 - [ ] Format/template compliance verified.
 - [ ] No client/competitor leftovers from prior boilerplate.
 - [ ] Required signatures secured before despatch.

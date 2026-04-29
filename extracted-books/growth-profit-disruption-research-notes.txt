@@ -1,0 +1,90 @@
+Growth, Profit, Disruption, and Deeper Thinking - research notes
+
+Source set: Growth Engineering; Remarkable Business Growth; Make Phenomenal Profits; Dare to Disrupt; Think Deeper.
+
+Use these notes for business-facing research outputs, commercial white papers, business plans, growth strategy reports, knowledge products, and proposal-style recommendations.
+
+1. Growth as a system
+
+Growth should be analysed as a system, not a channel list. The system connects target customer, problem, positioning, offer, acquisition, activation, retention, referral, revenue, service delivery, data, and management cadence.
+
+For research outputs, ask:
+- What is the growth engine?
+- Which behaviour or metric proves customer value?
+- Which constraint blocks growth: demand, conversion, retention, price, delivery, trust, data, or execution?
+- Who owns each growth lever?
+- Which dashboard shows whether the system is improving?
+
+2. Growth engineering for digital products
+
+For SaaS, platforms, AI products, marketplaces, and apps, growth is partly an engineering discipline. Research should inspect event data, cohort behaviour, experiments, activation, conversion, retention, product-qualified leads, and revenue expansion.
+
+Useful output elements:
+- event taxonomy;
+- activation definition;
+- retention cohort view;
+- experiment backlog;
+- KPI tree;
+- growth loop diagram;
+- product analytics gaps.
+
+3. Remarkable business growth
+
+Remarkable businesses systemise before they optimise. Research should connect strategy, marketing, sales, delivery, service, systems, people, and metrics. Specialist positioning is stronger than broad "we serve everyone" positioning.
+
+Business research should evaluate:
+- positioning clarity;
+- sales process repeatability;
+- lead generation system;
+- service and support as retention levers;
+- dashboard coverage for revenue, marketing, sales, service, and customer success.
+
+4. Profit improvement
+
+Profit improves through multiple compounding levers: price, packaging, offer mix, conversion, retention, purchase frequency, margin, cost-to-serve, and customer experience. A 15 percent improvement across several levers is often more credible than one dramatic breakthrough.
+
+Research outputs should separate:
+- revenue growth from profit growth;
+- gross margin from contribution margin;
+- acquisition economics from retention economics;
+- price tests from price opinions;
+- cost reduction from value improvement.
+
+5. Disruption and transformation
+
+Disruption changes the basis of competition. It may change access, delivery, pricing, customer journey, service model, ownership, speed, convenience, or operating model. Research should distinguish true transformation from incremental improvement.
+
+Transformation assessment areas:
+- leadership readiness;
+- culture and incentives;
+- talent and execution capability;
+- systems and data;
+- customer experience;
+- technology;
+- milestone discipline;
+- metrics and feedback loops.
+
+6. Deeper thinking and creativity
+
+Creative business research should not stop at the first plausible answer. It should challenge assumptions and force role reversal.
+
+Use prompts such as:
+- What assumption would make this recommendation fail?
+- What would a competitor do if they read this?
+- What would a customer reject as inconvenient or risky?
+- What would a regulator, supplier, investor, or employee notice?
+- What would we recommend with half the budget?
+- What would make the current model obsolete?
+
+7. Research productization
+
+When turning research into sellable knowledge products, package the smallest useful decision aid first. Strong candidates include:
+- growth engine diagnostic;
+- revenue leak audit;
+- product-led growth scorecard;
+- pricing and packaging experiment plan;
+- disruption readiness assessment;
+- customer retention dashboard;
+- growth experiment backlog.
+
+Each product should define audience, pain, decision supported, data required, output format, refresh cadence, and follow-on offer.
