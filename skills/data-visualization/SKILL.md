@@ -71,6 +71,8 @@ This skill governs the visual expression of evidence in reports, decks, proposal
 3. **Choose the chart for the task.** Comparison, time, distribution, geospatial, relationship, part-to-whole, qualitative, and table displays do different jobs.
 4. **One visual language per artifact.** Color, typography, annotation, and labeling follow a deliberate style guide.
 5. **Redesign is part of analysis.** If the message is unclear, revise the visual, not just the caption.
+6. **Uncertainty is part of the visual.** Forecasts, samples, model outputs, and estimates
+   need intervals, caveats, or confidence labels where the data warrants them.
 
 ## Router
 
@@ -85,6 +87,7 @@ This skill governs the visual expression of evidence in reports, decks, proposal
 - [ ] Takeaway sentence exists before the visual
 - [ ] Chart family matches the analytic task
 - [ ] Labels, units, and source line are present
+- [ ] Forecasts, estimates, or model outputs show uncertainty or limitation notes
 - [ ] Color is used intentionally, not decoratively
 - [ ] Visual can be understood without narration alone, but not without context
 - [ ] If part of a set, it matches the artifact's style guide

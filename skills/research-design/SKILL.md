@@ -6,10 +6,45 @@ metadata:
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
 ---
 
 # Research Design
+
+<!-- dual-compat-start -->
+## Use When
+
+- Use when a research project needs formal design, research questions, method selection,
+  case logic, trend analysis, MROC design, or report assembly.
+
+## Do Not Use When
+
+- Do not use for a quick source lookup that does not need formal research design.
+
+## Required Inputs
+
+- Research topic, intended output, timeframe, audience, evidence types, and constraints.
+
+## Workflow
+
+- Select the relevant design layer below and pair with research-orchestration for
+  long-running projects.
+
+## Quality Standards
+
+- Research questions, methods, evidence, and contribution must be explicitly connected.
+
+## Anti-Patterns
+
+- Do not skip the design document on multi-week projects or overclaim from weak data.
+
+## Outputs
+
+- Research design document, method plan, case-selection logic, trend-analysis design, or
+  report-builder route.
+
+## References
+
+- Use the routing table below to load only the relevant design reference.
 
 Formal research-design layer. The orchestrator (`research-orchestration`) decides what kind of research is being run; this skill governs how that research is *designed* from question to artifact, when the project demands a formal design rather than an opportunistic sweep.
 
@@ -21,6 +56,7 @@ Research design starts with reasoning discipline. Use `critical-reasoning-and-ar
 |---|---|
 | Reconstructing past events from primary and secondary sources | `references/historical-research-methods.md` |
 | Forecasting, time-series signal extraction, weak-signal surfacing | `references/trend-analysis.md` |
+| Quantitative dataset analysis, dashboard evidence, forecasts, or model-backed findings | `../extracted-books/data-analytics-research-method-extraction.md` plus `data-quality-pipeline/references/analytics-quality-method-gate.md` |
 | Recruiting and running a Market Research Online Community for 3+ days | `references/mroc-design-and-management.md` |
 | Modelling research artifacts as a state machine across the 8 lifecycle stages | `references/knowledge-lifecycle-pipeline.md` |
 | Authoring or maintaining the canonical research-design document (Abbott "north-star artefact") | `references/research-design-document.md` |
@@ -100,3 +136,5 @@ new long-running research project
 - `academic-writing`, `report-and-proposal-craft` — output containers.
 - `uganda-academic-research`, `kenya-academic-research` — East African institutional research-handbook requirements.
 - `data-quality-pipeline`, `dataset-discovery-and-analysis` — for empirical projects.
+
+<!-- dual-compat-end -->

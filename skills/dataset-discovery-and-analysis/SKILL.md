@@ -6,10 +6,48 @@ metadata:
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
 ---
 
 # Dataset discovery and analysis
+
+<!-- dual-compat-start -->
+## Use When
+
+- Use when a research project needs public datasets, official statistics, replication
+  data, ML datasets, or dataset profiling.
+
+## Do Not Use When
+
+- Do not use when the task only needs literature or narrative sources.
+
+## Required Inputs
+
+- Research question, geography, period, discipline, preferred source types, and required
+  output.
+
+## Workflow
+
+- Discover, retrieve, profile, cite, and hand off datasets using the three-step process
+  below.
+
+## Quality Standards
+
+- Prefer official or primary datasets, record version/licence/SHA-256, and profile before
+  analysis.
+
+## Anti-Patterns
+
+- Do not cite a chart without tracing the underlying dataset.
+
+## Outputs
+
+- Dataset shortlist, retrieved dataset, profile, quality notes, or citation-ready source
+  record.
+
+## References
+
+- Use the tools and companion skills listed below for retrieval, profiling, and evidence
+  discipline.
 
 The engine should treat **public datasets as a first-class source type** alongside academic papers and journalism. Most research projects can be sharpened with a directly-cited dataset.
 
@@ -76,6 +114,10 @@ The profile applies Segnini's **five-step verification** (Verification Handbook)
 - **License is part of the source citation.** Note CC-BY-4.0 / OGL / etc. in `<cohort>/research/sources.md`.
 - **When the dataset is large and you only need a slice**, pull the slice via API rather than downloading the full dataset.
 - **Cite the dataset, not the visualisation.** A chart in a news article cites the underlying dataset; trace it.
+- **Classify the analytics question before analysis.** Name whether the dataset is being
+  used for descriptive, diagnostic, predictive, or prescriptive claims, then pair with
+  `data-quality-pipeline/references/analytics-quality-method-gate.md` before modelling or
+  publishing figures.
 
 ## Integration with other skills
 
@@ -114,3 +156,5 @@ The profile applies Segnini's **five-step verification** (Verification Handbook)
 - `tools/datasets/retrieve.py` — download with integrity
 - `tools/datasets/analyse.py` — profiling
 - `evidence-discipline` — every dataset citation must include version + URL + license + access date
+
+<!-- dual-compat-end -->

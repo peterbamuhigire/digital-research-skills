@@ -6,11 +6,47 @@ metadata:
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
   priority: critical
 ---
 
 # Data Quality Pipeline
+
+<!-- dual-compat-start -->
+## Use When
+
+- Use when tabular data must be cleaned, profiled, joined, scored, or prepared for
+  research analysis.
+
+## Do Not Use When
+
+- Do not use when the task is pure prose and no dataset is involved.
+
+## Required Inputs
+
+- Raw dataset path or source, intended claim or decision, expected grain, and source
+  reliability context.
+
+## Workflow
+
+- Run the pipeline below in order and load only the reference needed for the current
+  stage.
+
+## Quality Standards
+
+- Every dataset must preserve provenance, row-count changes, quality scores, and
+  analysis limitations.
+
+## Anti-Patterns
+
+- Do not skip encoding, tidy checks, merge validation, or manifest creation.
+
+## Outputs
+
+- Clean dataset, profile, quality score, manifest, or blocker report.
+
+## References
+
+- Use the reference index below for stage-specific guidance.
 
 Single entry skill for any tabular data passing through the engine. Detail in `references/`; SKILL.md is the orchestrator. For finding datasets in the first place, load `dataset-discovery-and-analysis`.
 
@@ -46,6 +82,7 @@ Skipping a step produces silent data quality failures downstream.
 | 4. Anomaly detection | `references/anomaly-detection.md` | IQR + z-score + Isolation Forest panel; skew-aware method selection |
 | 5. Merge audit | `references/merge-discipline.md` | Walker checkmerge + Chen `validate=` cardinality; mandatory before any join |
 | 6. Quality score | `references/quality-assessment-walker.md` | Four-axis composite (completeness · usefulness · reliability · relevance), default weights (0.25, 0.25, 0.30, 0.20), `passes(threshold=0.7)` gate |
+| Analytics method gate | `references/analytics-quality-method-gate.md` | Descriptive / diagnostic / predictive / prescriptive method-fit gate before quantitative claims, forecasts, dashboards, or models |
 | Cross-cutting | `tools/data/profiler.py` | Profile DataFrame: dtypes, distributions, cardinality, skew/kurt hints |
 
 ## The four-axis quality score (engine's gate)
@@ -84,6 +121,9 @@ Without the manifest, the data is not shippable.
 4. **Outlier panel, not single test.** Load `references/anomaly-detection.md`. IQR for skewed; z-score for normal; Isolation Forest for high-dimensional. Consensus across 2+ methods before flag.
 5. **Score before ship.** Load `references/quality-assessment-walker.md`. Composite ≥ 0.70 default; sub-axis ≥ 0.50 each.
 6. **Manifest always.** No dataset ships without the provenance packet.
+7. **Method fit before claims.** Load `references/analytics-quality-method-gate.md`
+   before statistical tests, forecasts, dashboards, or ML models. Downgrade the claim if
+   the data only supports a simpler analytics type.
 
 ## Universal anti-patterns
 
@@ -114,3 +154,5 @@ Without the manifest, the data is not shippable.
 - `web-scraping-foundations` — when the data has to be scraped.
 - `research-orchestration` — when the data is feeding a research project.
 - `report-and-proposal-craft`, `academic-writing` — when the data feeds a written artifact.
+
+<!-- dual-compat-end -->
