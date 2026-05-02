@@ -14,8 +14,9 @@ Read `skills/source-evaluation/SKILL.md` and `skills/source-evaluation/reference
 2. Load `skills/research-orchestration/SKILL.md` → drives wave planning
 3. For each cohort: dispatch a research sub-task with the standard brief structure
 4. After each wave: run `source-verification` and `gap-analysis`
-5. After all waves: run `cross-cohort-synthesis` (orchestrator only)
-6. Generate Word doc via `research-report-builder` → `python-document-generation`
+5. Before synthesis or final drafting: run `skills/critical-reasoning-and-argument/SKILL.md` so claims, warrants, assumptions, countercases, implications, and business-sense checks are visible
+6. After all waves: run `cross-cohort-synthesis` (orchestrator only)
+7. Generate Word doc via `research-report-builder` → `python-document-generation`
 
 ## Skill loading
 

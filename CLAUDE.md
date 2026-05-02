@@ -25,9 +25,10 @@ Triggered by user requests like "research X", "find pain points of Y", "do anoth
 4. **Use background mode (`run_in_background: true`)** for waves >2 minutes.
 5. **Never read sub-agent transcripts directly with the shell tool** — they overflow context. Use the structured `<result>` block in the completion notification.
 6. **Verify before merging.** Spot-check 10% of stats, 5 quotes, all court cases / statute citations.
-7. **Write outputs** to `projects/<project-id>/<cohort>/research/`, `analysis/`, `opportunities/` — append (don't overwrite) when merging Wave-2 findings.
-8. **After all cohorts complete**, run `cross-cohort-synthesis` (orchestrator does this — never delegate).
-9. **Generate the Word doc** via `research-report-builder` → `professional-word-output` or `python-document-generation`.
+7. **Run critical reasoning before synthesis or final drafting.** Use `skills/critical-reasoning-and-argument/SKILL.md` to make claims, warrants, assumptions, countercases, implications, and business-sense checks visible.
+8. **Write outputs** to `projects/<project-id>/<cohort>/research/`, `analysis/`, `opportunities/` — append (don't overwrite) when merging Wave-2 findings.
+9. **After all cohorts complete**, run `cross-cohort-synthesis` (orchestrator does this — never delegate).
+10. **Generate the Word doc** via `research-report-builder` → `professional-word-output` or `python-document-generation`.
 
 ## Skill priority order
 
@@ -37,10 +38,11 @@ For any non-trivial task:
 2. `research-orchestration` — coordinates the rest
 3. The specialist skill matching the task (e.g., `regulatory-landscape-mapping` for legal research)
 4. `source-verification` + `quote-extraction` after every wave
-5. `gap-analysis` before any "is this complete?" claim
-6. `pain-point-taxonomy` after evidence is gathered
-7. `cross-cohort-synthesis` only when ≥2 cohorts complete
-8. `research-report-builder` last
+5. `critical-reasoning-and-argument` before synthesis, recommendation, business analysis, or final output
+6. `gap-analysis` before any "is this complete?" claim
+7. `pain-point-taxonomy` after evidence is gathered
+8. `cross-cohort-synthesis` only when ≥2 cohorts complete
+9. `research-report-builder` last
 
 ## File-write conventions
 

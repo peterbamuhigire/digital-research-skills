@@ -6,15 +6,31 @@ metadata:
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
   priority: critical
 ---
 
 # Critical Reasoning And Argument
 
+<!-- dual-compat-start -->
+
 This is the engine's universal thinking layer. It prevents the engine from merely collecting information and arranging it into plausible prose: every serious output must expose its question, terms, evidence, assumptions, inference chain, countercase, limits, and action implications.
 
+## Use When
+
 Use this skill for all forms of writing and reporting that contain a claim or conclusion: academic essays, theses, dissertations, literature reviews, systematic reviews, intelligence products, market analyses, history essays, business reports, proposals, board briefs, due diligence, policy analysis, legal argument, technical recommendations, and executive communication.
+
+## Do Not Use When
+
+- The task is purely formatting, file movement, or mechanical conversion.
+- The output contains no claim, recommendation, interpretation, evaluation, forecast, or decision support.
+- A domain skill already handles a narrow factual extraction and no conclusion is being drawn.
+
+## Required Inputs
+
+- The user's real question, decision, audience, and output type.
+- Available sources, data, notes, or draft text.
+- Known constraints, scope boundaries, definitions, and country or domain context.
+- Any required confidence, citation, or evidence standard.
 
 ## Non-negotiable rule
 
@@ -22,7 +38,7 @@ No conclusion ships until it has passed the reasoning protocol in `references/re
 
 For research work, this skill operates after `source-evaluation`: source quality determines what can be used as evidence; this skill determines whether the evidence supports the conclusion. For intelligence or forward-looking work, run `analytic-tradecraft` after this skill to add probability language, hypothesis handling, and uncertainty discipline.
 
-## Universal reasoning workflow
+## Workflow
 
 1. **Frame the real question.** Convert the prompt into a precise question the output must answer. If the prompt asks for "a report", infer the decision, controversy, interpretation, or action the report is meant to support.
 2. **Define scope and terms.** Identify key terms, boundaries, jurisdiction, time period, population, market, method, or discipline. Flag ambiguous or loaded language.
@@ -33,9 +49,10 @@ For research work, this skill operates after `source-evaluation`: source quality
 7. **Audit inference quality.** Test causal claims, generalisations, analogies, statistics, definitions, conditionals, necessity/sufficiency, and certainty calibration.
 8. **Check coherence and fallacies.** Look for contradiction, circular reasoning, equivocation, straw-manning, false alternatives, hasty generalisation, post hoc causation, appeal to authority, appeal to majority, and unsupported value leaps.
 9. **Choose the action form.** Route the tested reasoning into the right structure and tone using `references/audience-action-forms.md`.
-10. **Ship with limits.** State what the conclusion means, what it does not mean, confidence limits, operational implications, and next actions.
+10. **Run the serious-analysis overlay.** Use `references/essential-questions-mental-models-strategic-logic.md` when the output must show deeper thought, business sense, feasibility, strategic judgment, or problem-solving logic.
+11. **Ship with limits.** State what the conclusion means, what it does not mean, confidence limits, operational implications, and next actions.
 
-## Output Standards
+## Quality Standards
 
 Every output using this skill must be:
 
@@ -45,11 +62,12 @@ Every output using this skill must be:
 - **Actionable:** the reader knows what decision, interpretation, next step, or research move follows.
 - **Proportionate:** claim strength matches evidence strength; uncertainty is not hidden.
 
-## Reference Router
+## References
 
 | Reference | Load when |
 |---|---|
 | `references/reasoning-protocol.md` | Always; universal argument map, inference tests, fallacy audit, and ship gate |
+| `references/essential-questions-mental-models-strategic-logic.md` | High-stakes research, business analysis, proposals, plans, recommendations, strategy, design thinking, feasibility, and any output that must show serious analysis |
 | `references/audience-action-forms.md` | Choosing structure, tone, and delivery form for academic, intelligence, market, history, business, policy, legal, technical, or executive outputs |
 | `references/literature-review-and-thesis-hardening.md` | Academic writing, literature reviews, proposals, theses, dissertations, and postgraduate research design |
 | `references/source-register.md` | Need provenance for the user-supplied books mined into this skill |
@@ -69,7 +87,7 @@ Every output using this skill must be:
 | Due diligence | Claim substantiation, red flags, downside cases, confirmatory tests | `due-diligence`, `analytic-tradecraft` |
 | Policy/legal/technical argument | Definitions, authority, standards, burdens, feasibility, tradeoffs | relevant domain skill plus `source-evaluation` |
 
-## Universal Anti-Patterns
+## Anti-Patterns
 
 - Data dump with no conclusion or decision logic.
 - Confident conclusion with no visible evidence-to-inference chain.
@@ -83,6 +101,14 @@ Every output using this skill must be:
 - Counterargument dismissed by tone instead of defeated by evidence and reasoning.
 - "It is clear that" language where evidence is partial, contested, stale, or indirect.
 
+## Outputs
+
+- A precise core question and scope.
+- Argument map for each load-bearing conclusion.
+- Evidence, assumptions, warrants, countercase, limits, and implications.
+- Calibrated conclusion or recommendation.
+- Revision notes where the reasoning does not yet support the intended output.
+
 ## Universal Ship Gate
 
 - [ ] Core question stated.
@@ -92,11 +118,14 @@ Every output using this skill must be:
 - [ ] Source quality checked through `source-evaluation`.
 - [ ] Evidence relevance, sufficiency, representativeness, independence, and currency checked.
 - [ ] Strongest objection or alternative explanation addressed.
+- [ ] Essential questions, mental models, feasibility, and strategic-fit checks applied where stakes require them.
 - [ ] Causal, analogical, statistical, generalisation, and definition claims audited where present.
 - [ ] Fallacy/coherence audit completed.
 - [ ] Certainty calibrated to evidence strength.
 - [ ] Output form selected for audience and action.
 - [ ] Limits, risks, implications, and next actions stated.
+
+<!-- dual-compat-end -->
 
 ## Companion Skills
 
