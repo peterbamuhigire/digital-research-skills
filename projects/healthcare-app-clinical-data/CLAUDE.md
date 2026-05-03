@@ -81,9 +81,23 @@ Every sub-agent must report back with:
 
 `PROJECT-STATUS.md` is the single source of truth. On a new session: read it first, find the last completed task, resume from the next.
 
+## Phase 5 Word-report requirement (user instruction 2026-05-03)
+
+Every cohort's Word `.docx` report MUST include a §1 — Coding Standards section that:
+
+1. Lists every standard used in that cohort (primary + bridge + adjunct)
+2. Names the body that maintains each standard (with link)
+3. Names the body that enforces each (regulator, MoH, accreditation, statutory) where any does
+4. States the edition cited and why we use it for this cohort
+5. Flags licensing constraints (CDT/ADA, GMDN paywall, SNOMED CT membership)
+6. References `_context/standards-and-bodies.md` as the canonical inventory
+
+The bar: reports must NOT just say "we use ICD-10". They must say what / who / enforced where / why / limits, in that style. See `_context/standards-and-bodies.md` for the exemplar.
+
 ## See also
 
 - Repo root `CLAUDE.md`
 - `skills/source-evaluation/SKILL.md` and `references/evidence-discipline.md`
+- `_context/standards-and-bodies.md` — canonical standards + bodies inventory (drives every Word report's §1)
 - `docs/plans/2026-05-03-healthcare-clinical-data-design.md`
 - `docs/plans/2026-05-03-healthcare-clinical-data-plan.md`
