@@ -29,6 +29,8 @@ The clusters are ordered by approximate Uganda DALY contribution; for the cancer
 
 ## 1. Malaria (Uganda DALY rank 1, all-ages)
 
+- **Consumables:** mRDT kits; microscopy slides and stains; lancets; EDTA tubes; IV cannulae/giving sets; LP needles when CNS differential is live.
+
 Falciparum malaria dominates; parasitaemia drives clinical course. Severe malaria is a paediatric and obstetric emergency.
 
 - **Conditions:** B54 unspecified; B50 falciparum; B51 vivax; B50.0 cerebral; B50.8 severe; obstetric malaria (O98.6 plus B50/B54)
@@ -40,6 +42,8 @@ Falciparum malaria dominates; parasitaemia drives clinical course. Severe malari
 - **Gap:** mRDT-variant LOINC codes; primaquine paediatric dose roster.
 
 ## 2. Tuberculosis
+
+- **Consumables:** sputum cups; AFB slides and Ziehl-Neelsen stains; GeneXpert cartridges; masks/PPE; specimen bags.
 
 Pulmonary TB is HMIS-reportable and IDSR-notifiable. Drug-resistant TB rising. HIV co-infection is the rule.
 
@@ -53,6 +57,8 @@ Pulmonary TB is HMIS-reportable and IDSR-notifiable. Drug-resistant TB rising. H
 
 ## 3. HIV / AIDS
 
+- **Consumables:** HIV rapid test kits; EDTA tubes for VL/CD4; CrAg kits; LP consumables; condoms and VMMC supplies.
+
 Generalised epidemic; PMTCT, paediatric, and adolescent HIV all need separate care plans.
 
 - **Conditions:** B20–B24 series (HIV with various outcomes); Z21 asymptomatic HIV; opportunistic infections by code (B59 PCP, B58 toxoplasmosis, A07.1 cryptosporidiosis, B45.x cryptococcosis, B37 candidiasis)
@@ -64,6 +70,8 @@ Generalised epidemic; PMTCT, paediatric, and adolescent HIV all need separate ca
 - **Gap:** CrAg-LOINC variant for serum vs CSF; paediatric ART liquid-formulation rows.
 
 ## 4. Maternal and obstetric
+
+- **Consumables:** IV cannulae; giving sets; crossmatch tubes; urine protein strips; sterile delivery packs; sutures; catheters.
 
 Maternal mortality remains high; PPH, eclampsia, obstructed labour, sepsis dominate causes.
 
@@ -77,6 +85,8 @@ Maternal mortality remains high; PPH, eclampsia, obstructed labour, sepsis domin
 
 ## 5. Neonatal
 
+- **Consumables:** neonatal bags/masks; suction catheters; umbilical catheter kits; glucose strips; bilirubin tubes; paediatric burette sets.
+
 Birth asphyxia, prematurity, sepsis, jaundice. Neonatal CPOE is the highest-risk paeds context (Coiera 3e ch. 13, Pittsburgh PICU lesson).
 
 - **Conditions:** P21 birth asphyxia; P22 RDS; P36 neonatal sepsis; P59 neonatal jaundice; P05 IUGR; P07 prematurity-related; P92 feeding problems
@@ -88,6 +98,8 @@ Birth asphyxia, prematurity, sepsis, jaundice. Neonatal CPOE is the highest-risk
 - **Gap:** International Neonatal Consortium (INC) preterm-specific critical-value thresholds — flagged in lab Wave 1 findings as Phase 2 outreach item.
 
 ## 6. Pneumonia (paediatric and adult)
+
+- **Consumables:** pulse-ox probes; oxygen masks/prongs; nebuliser masks/tubing; blood-culture bottles; sputum cups; chest-drain kits.
 
 Major cause of paediatric admission and mortality. Atypical and TB co-presentation.
 
@@ -101,6 +113,8 @@ Major cause of paediatric admission and mortality. Atypical and TB co-presentati
 
 ## 7. Diarrhoeal disease
 
+- **Consumables:** ORS/zinc dispensing packs; stool containers; cholera RDT/transport media; IV cannulae/giving sets; NG tubes.
+
 Paediatric mortality driver. ORS + zinc is the WHO standard.
 
 - **Conditions:** A09 unspecified gastroenteritis; A00 cholera; A01 typhoid; A02 salmonellosis; A03 shigellosis; A06 amoebiasis; A07.1 cryptosporidiosis; B82.0 helminth-associated
@@ -111,6 +125,8 @@ Paediatric mortality driver. ORS + zinc is the WHO standard.
 - **App surfacing note:** A09 paeds selection auto-bundles ORS + zinc + dehydration assessment. Cholera reportable flag → IDSR notification.
 
 ## 8. Malnutrition (under-fives)
+
+- **Consumables:** MUAC tapes; weighing/height equipment; feeding cups; NG tubes; glucose strips; RUTF/micronutrient dispensing materials.
 
 SAM (severe acute malnutrition) and stunting. Therapeutic-feeding programme integration.
 
@@ -123,6 +139,8 @@ SAM (severe acute malnutrition) and stunting. Therapeutic-feeding programme inte
 
 ## 9. Hypertension and ischaemic heart disease (NCD spike)
 
+- **Consumables:** BP cuffs; ECG electrodes/paper; troponin/BNP tubes; urine strips; oxygen and IV access supplies.
+
 NCD shift in epidemiology — middle-aged adults dominate.
 
 - **Conditions:** I10 essential HTN; I11 hypertensive heart disease; I20 angina; I21 acute MI; I50 heart failure; I63 ischaemic stroke; I64 stroke unspecified; I05 rheumatic mitral; I50.0 LV failure
@@ -134,6 +152,8 @@ NCD shift in epidemiology — middle-aged adults dominate.
 
 ## 10. Diabetes mellitus
 
+- **Consumables:** glucometer strips; lancets; ketone strips; insulin syringes/pens; sharps boxes; HbA1c consumables.
+
 Type 1 paediatric and Type 2 adult both rising in Uganda.
 
 - **Conditions:** E10 T1DM; E11 T2DM; E13 other specified; E14 unspecified; E16 hypoglycaemia; E11.5 with peripheral circulatory complications
@@ -144,6 +164,8 @@ Type 1 paediatric and Type 2 adult both rising in Uganda.
 - **App surfacing note:** E11 selection bundles HbA1c every 3-6 months, annual eye + foot + creatinine schedules. Insulin selection requires cold-chain flag confirmation.
 
 ## 11. Mental health
+
+- **Consumables:** screening forms/cards; ECG electrodes; serum drug-level tubes; CBC tubes for clozapine monitoring.
 
 Fully in scope across all cohorts.
 
@@ -157,6 +179,8 @@ Fully in scope across all cohorts.
 
 ## 12. Cancer (RRH scope)
 
+- **Consumables:** Pap/cytology brushes and slides; biopsy needles; specimen pots; sutures; IV chemotherapy access supplies.
+
 Cervical, breast, prostate, Kaposi, paediatric leukaemia/lymphoma dominate. Specialist surgical oncology beyond RRH excluded.
 
 - **Conditions:** C53 cervical; C50 breast; C61 prostate; C46 Kaposi; C81 Hodgkin; C82–C85 NHL; C91 ALL; C92 AML; C18 colon; C16 stomach; C22 liver (HepB-driven); C73 thyroid
@@ -169,6 +193,8 @@ Cervical, breast, prostate, Kaposi, paediatric leukaemia/lymphoma dominate. Spec
 
 ## 13. Mental ↔ Neurology overlap: Epilepsy
 
+- **Consumables:** IV cannulae; airway adjuncts; oxygen masks; glucose strips; anti-epileptic drug monitoring tubes.
+
 - **Conditions:** G40.x epilepsy variants (focal, generalised, status epilepticus G41)
 - **Drugs:** N03AA02 phenobarbital; N03AB02 phenytoin; N03AG01 valproate; N03AF01 carbamazepine; N03AX09 lamotrigine; N03AX14 levetiracetam; N03AE01 clonazepam; emergency: N05BA01 diazepam IV/PR; N05CD08 midazolam buccal
 - **Lab:** Anti-epileptic drug levels; LFTs; CBC (carbamazepine); HCG (women of childbearing age — valproate teratogenicity)
@@ -179,6 +205,8 @@ Cervical, breast, prostate, Kaposi, paediatric leukaemia/lymphoma dominate. Spec
 
 ## 14. Injury and trauma (RTA + burns + snake bite)
 
+- **Consumables:** cervical collars; IV cannulae; pressure dressings; sutures; chest-drain kits; splints; FAST ultrasound gel.
+
 - **Conditions:** S00–T98 series (specific anatomical injuries); T07 multiple injuries; T20–T32 burns by region/depth; T63 venomous bite (snake, scorpion); T78 anaphylaxis; X00–X99 external causes
 - **Drugs:** Tetanus immunoglobulin (J06BB02); tetanus toxoid (J07AM01); antivenom (V03AB — specific products); IV fluids (B05); ketamine (N01AX03 anaesthesia and analgesia); morphine (N02AA01); paracetamol (N02BE01); local anaesthetic (N01BB02 lignocaine)
 - **Lab:** Type + crossmatch; CBC; coagulation; lactate; ABG; venom-related (snake bite — clotting time)
@@ -187,6 +215,8 @@ Cervical, breast, prostate, Kaposi, paediatric leukaemia/lymphoma dominate. Spec
 - **App surfacing note:** Trauma triage module (ABC, Glasgow, mechanism, field-triage). RTA = IDSR-reportable.
 
 ## 15. Dental and oral health
+
+- **Consumables:** dental mirrors/probes; intraoral film/sensors; fluoride varnish; restorative materials; dental needles/syringes.
 
 Explicitly in-scope. CDT codes carry ADA licensing constraint flagged for app team's commercial rollout.
 
@@ -198,6 +228,8 @@ Explicitly in-scope. CDT codes carry ADA licensing constraint flagged for app te
 - **App surfacing note:** Dental module separate UI track from medical. CDT selection must show licensing flag for commercial deployment. Bundle exam → radiograph → treatment-plan flow.
 
 ## 16. Eye care
+
+- **Consumables:** visual-acuity charts; fluorescein strips; tonometer tips; sterile eye pads; ophthalmic sutures and drapes.
 
 Cataract is the largest single intervention by volume nationally (per WHO).
 
@@ -211,6 +243,8 @@ Cataract is the largest single intervention by volume nationally (per WHO).
 
 ## 17. Sexual and reproductive health
 
+- **Consumables:** implant/IUD kits; pregnancy tests; condoms; speculums; swabs; STI rapid tests; syringes.
+
 - **Conditions:** A50–A53 syphilis; A54 gonorrhoea; A56 chlamydia; B97.7 HPV-related; N76 vaginitis; N70 PID; Z30 contraception encounter
 - **Drugs:** Family planning — G03AA07 levonorgestrel/EE; G03AA12 desogestrel; G02BA02 IUS-LNG; G02BB01 IUD-Cu; G03AC03 medroxyprogesterone depot (DMPA); G03BA03 testosterone; oxytocics (above); J01CR02 amoxiclav; J01FA10 azithromycin; J01XD01 metronidazole (BV); J02AB02 ketoconazole (vaginal); benzathine penicillin (J01CE08) syphilis; ceftriaxone (gonorrhoea)
 - **Lab:** Syphilis serology (RPR + treponemal); urine NAAT for GC/CT (LOINC partial); HIV; Hep B; Pap/HPV
@@ -219,6 +253,8 @@ Cataract is the largest single intervention by volume nationally (per WHO).
 - **App surfacing note:** FP module presents methods by patient profile (parity, breastfeeding, contraindications). Counselling steps tracked.
 
 ## 18. Skin and dermatology
+
+- **Consumables:** swabs; dressing packs; biopsy sets; KOH/microscopy slides; gloves and wound-care materials.
 
 Burden mostly tinea, scabies, eczema, leprosy (residual), Kaposi (HIV-associated, see Cancer cluster), pyoderma.
 
@@ -231,6 +267,8 @@ Burden mostly tinea, scabies, eczema, leprosy (residual), Kaposi (HIV-associated
 
 ## 19. ENT
 
+- **Consumables:** otoscope specula; ear syringes; nasal packs; swabs; suction catheters; minor-procedure dressing sets.
+
 - **Conditions:** H66 otitis media; H65 otitis media non-suppurative; J03 acute tonsillitis; J32 chronic sinusitis; J35.x adenoid/tonsil; J37 chronic laryngitis; H81 vestibular
 - **Drugs:** J01CA04 amoxicillin; J01CR02 amoxiclav; topical S02 (otitis externa); R01AA series (decongestant nasal); R01AC antihistamine nasal; H02 systemic steroid where indicated
 - **Lab:** Audiology assessment (Wave 1 procedures); throat swab + culture
@@ -239,6 +277,8 @@ Burden mostly tinea, scabies, eczema, leprosy (residual), Kaposi (HIV-associated
 - **App surfacing note:** Paeds otitis follows IMCI watch-and-wait + Day-3 review default.
 
 ## 20. Anaesthesia
+
+- **Consumables:** airway adjuncts; endotracheal tubes; laryngoscope blades; spinal/epidural needles; syringes; monitoring electrodes.
 
 Cross-cutting cohort underpinning Procedures.
 
@@ -249,6 +289,8 @@ Cross-cutting cohort underpinning Procedures.
 - **App surfacing note:** Pre-op assessment bundles fasting status, allergies, last meal, ASA grade, airway predictors, drug history.
 
 ## 21. Imaging-led emergency workflows
+
+- **Consumables:** ultrasound gel; ECG electrodes/paper; IV cannulae and contrast lines; specimen tubes; procedure kits as indicated.
 
 Workflows the app should treat as orderable bundles:
 
@@ -298,6 +340,7 @@ These are derived from the cohort findings files:
 1. **Late-binding pattern (Systems Perspective 2e ch. 13)** — population qualifier (`population` column) is a first-class filter across labs, drugs, procedures. The app must default ranges/doses by patient population, not by single column.
 2. **Connectivity-tolerance flag** — every cohort carries `connectivity_tolerance` ∈ {offline-OK, online-required}. The app must degrade gracefully at HC II/III where connectivity is intermittent.
 3. **Paper-form equivalents** — Uganda HMIS forms 105 / 108 / 098 / 033b are partially mapped per row. The app should emit reports in HMIS format for facility-level statisticians.
+   - **Standard Forms cohort addendum:** `standard-forms/research/wave1-data.md` now normalizes the form/tool catalogue found in the local corpus: HMIS 105, 106A, 107, 108, 033A/B/C, HIV programme registers/cards, commodity tools, IDSR case-investigation/contact-tracing tools, and explicit TBD/gap rows where the source did not give a current form code.
 4. **Cadre-min and level-of-care-min** — every applicable row carries these. The app should hide items the current user's cadre/facility cannot perform.
 5. **Code-system version + access date** — every code has `code_system_version` and `code_accessed_date`. The app must surface "last updated" so the team can plan annual refresh (Coiera 3e ch. 23 — terminology maintenance dominates lifetime cost).
 6. **LASA / tall-man rendering** — drugs with confused names carry the ISMP-style rendering in `lasa_tallman_form`. The app's prescribing UI must use that rendering, not the plain INN, for these drugs.
@@ -328,3 +371,75 @@ These steps are deferred to a separate session to keep this orchestration sessio
 - `_context/book-derived-recommendations.md` — informatics-textbook-derived data-model decisions
 - `_registry/sources.bib` — full bibliography across all waves
 - `<cohort>/research/wave[1|2|3]-{data,findings}*.md` — per-cohort source-of-truth corpora
+- `standard-forms/research/wave1-data.md` — Uganda paper forms/registers/cards/reports found in the local corpus; use as lookup for `paper_form_equivalent`
+
+---
+
+# Phase 6 — Tenant-setup synthesis (added 2026-05-03)
+
+The original 7 cohorts above (conditions, drugs A–J, drugs L–V, lab-tests, imaging, procedures, consumables, standard-forms) are the **clinical-data corpus**: what items exist, how they're coded, and what populations they apply to.
+
+Phase 6 added 7 **tenant-setup cohorts** that turn the clinical-data corpus into a runnable multi-tenant deployment: facilities, roles-permissions, workflows, country-packs, billing-tariffs, reporting-kpis, tenant-blueprints. Together the 14 cohorts let a new healthcare tenant be configured in minutes by selecting country + facility type + operating model.
+
+## Phase 6 corpus-level coverage
+
+| # | Cohort | Wave-1 items | Discipline patches applied |
+|---|---|---|---|
+| 2 | Facilities | 28 rows × 22 cols (14 UG + 14 KE) | Wikipedia citations stripped from 4 flagship-hospital rows |
+| 3 | Roles-permissions | 18 rows × 23 cols | 8 cells corrected (UMDPC ≠ clinical officers; PSU ≠ registration council; AHPC for lab/clinical-officer/radiographer; "Class A/B/C" replaced with POM where used as prescribing schedule) |
+| 4 | Workflows | 18 rows × 17 cols | 4 residual "Class A/B/C" prescribing-scope references in WF-RX-001 patched to "controlled / scheduled medicine — POM" with `[T1 verification pending]` |
+| 5 | Country packs | 9 rows × 24 cols (UG+KE full; TZ/RW/GH/NG/ZA/IN/PH stub) | Wikipedia stripped from 9 `source_citations` cells |
+| 6 | Billing-tariffs | 58 charge-items + 16 payer mappings | clean (no patch needed) |
+| 7 | Reporting-KPIs | 55 indicators × 19 cols across 16 domains | clean (no patch needed) |
+| 1 | Tenant blueprints | 6 canonical blueprints × 14 cols | clean (orchestrator-assembled integration cohort) |
+
+## Phase 6 evidence-discipline lessons (logged in EVIDENCE-AUDIT.md)
+
+Each cohort's brief carried the cumulative discipline clauses learned from earlier cohorts in the phase. The accumulating clauses:
+
+1. **Hard-constraint clause (no hallucination)** — verbatim from project root `CLAUDE.md`, every brief.
+2. **Wikipedia-discipline clause — two halves** — added after cohort 2 (facilities) had Wikipedia in flagship-hospital `source_citations`. Refined after cohort 5 (country-packs) tagged "T3 corroboration: Wikipedia" inside cells thinking it was compliant. Final form: (a) Wikipedia may NEVER appear in `source_citations` cells, even when tagged T3; (b) Wikipedia entries belong only in the bottom `## Sources — T3` block of findings; (c) self-audit step: grep for `[Ww]ikipedia` and confirm zero hits in any data cell before reporting completion.
+3. **Cadre→council lookup table** — added after cohort 3 (roles-permissions) confused UMDPC (medical & dental) with AHPC (clinical officers / lab cadres / radiographers) and listed PSU (a professional society) as a registration council. Final form: a verbatim lookup table in every brief that names the correct regulator per cadre per country.
+4. **Uganda prescribing-schedule warning** — added after cohort 3 used "NDA Class A/B/C" as a prescribing schedule. Class A/B/C are drug-shop license tiers under NDA, NOT prescribing schedules. Final form: explicit warning + instruction to use "POM (Prescription Only Medicines) under NDA framework" or flag `[T1 verification pending]`.
+5. **Pricing-evidence rules** — added for cohort 6 (billing-tariffs). Public Uganda tier rows must say `0 UGX (abolished 2001)` with citation, never invented fees. Private-tier prices must be ranges with named hospital anchors, never point values. Year and currency mandatory on every price quote. Kenya post-1-Oct-2024 financing must cite SHA, never NHIF.
+
+The discipline clauses are reusable: any future research wave (Wave-2 gap-fill, Phase-7 new countries) should inherit clauses 1–5 verbatim.
+
+## Cross-phase integration map
+
+How the Phase-6 cohorts plug into the Phase-1–5 clinical-data corpus:
+
+| Phase-6 cohort | Plugs into Phase-1–5 corpus via |
+|---|---|
+| facilities | every clinical row's `level_of_care_min` resolves to a facility-type ID; referral pathways across condition / procedure cohorts route between facility tiers |
+| roles-permissions | every clinical row's `cadre_min` resolves to a role_id; deny-by-default rules gate access to controlled drugs, lab verification, prescribing |
+| workflows | every clinical pathway (ANC, ART, TB, IDSR, immunisation) references conditions, drugs, lab-tests, imaging, procedures, consumables artefacts |
+| country-packs | every cohort's `country_applicability` resolves to a country code; mandatory-reports field references HMIS-107 / KHIS forms in standard-forms |
+| billing-tariffs | every charge-item's `linked_clinical_item` references conditions / drugs / lab-tests / imaging / procedures / consumables IDs |
+| reporting-kpis | every KPI's `numerator_data_source` and `denominator_data_source` references standard-forms entries; programme KPIs (HIV/TB/malaria) reference conditions and drugs |
+| tenant-blueprints | aggregates references from all 6 above plus standard-forms; one blueprint = one curated tenant configuration |
+
+## Phase 6 — what's NOT done
+
+- **Wave-2 gap-fill** — known gaps logged in each cohort's findings file; not yet researched.
+  - facilities: Mulago/Gulu/Mbarara bed counts pending T1 verification (currently `[T1 verification pending]` after Wikipedia patch); Uganda Service Standards 2016 PDF unreachable; KMHFL 2020 implementation guide inaccessible.
+  - roles-permissions: Uganda enrolled-nurse + radiographer scope-of-practice documents not retrieved; Kenya CHV statutory scope (no independent Act); exact NDA prescriber-schedule reference pending.
+  - workflows: Kenya clinical-guideline cache (NCK / KMPDC) not yet sourced; NDA prescriber-schedule still pending in WF-RX-001.
+  - country-packs: 7 stub countries (TZ/RW/GH/NG/ZA/IN/PH) at 5–6 columns each; full pack research deferred (estimated 2–3 days per country).
+  - billing-tariffs: PNFP per-facility tariffs (Uganda) not centrally published; SHA specialist-consultation tariff PDF binary; private hospital price-lists for 5–10 named facilities pending retrieval.
+  - reporting-kpis: 15 `[form-cohort gap]` markers awaiting standard-forms Wave-2; alert thresholds for 8 KPIs unsourced.
+  - tenant-blueprints: domain-level KPI references need pinning to literal IDs; setup_steps need formalising as machine-executable JSON/YAML; pharmacy licence-tier parameter not yet implemented; 4 specialty blueprints deferred.
+
+- **Phase-6 deliverable assembly** — Word + Excel reports for the 7 new cohorts not yet generated. The Phase-1–5 pipeline used `scripts/generate_healthcare_app_clinical_data_outputs.py` to emit per-cohort DOCX + grouped XLSX. The script needs extension for the 7 new cohorts before this phase has finalised deliverables. Each cohort's Word `.docx` must include a §1 Coding Standards section per the project's standing requirement (see `_context/standards-and-bodies.md`).
+
+- **Critical-reasoning pass** over the 7 new cohorts — `skills/critical-reasoning-and-argument` not yet applied. The clinical-data cohorts had this pass in Phase-4; the operational cohorts have not.
+
+## Phase 6 readiness for next session
+
+The corpus is ready for:
+1. Wave-2 gap-fill — dispatch sub-agents per the Wave-2 list above; each cohort's gap list is short and well-bounded.
+2. Phase-6 deliverable assembly — extend the existing Python output script to handle the 7 new cohort folders; emit per-cohort DOCX + XLSX; include §1 Coding Standards section.
+3. Critical-reasoning pass — apply `skills/critical-reasoning-and-argument` over each new cohort's findings before final-report drafting.
+4. Updated cross-cohort master Word generation — re-run with the Phase-6 sections appended.
+
+`PROJECT-STATUS.md` Phase-6 table is the resumption anchor.
