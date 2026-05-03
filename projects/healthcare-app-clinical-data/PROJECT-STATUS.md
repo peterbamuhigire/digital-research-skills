@@ -1,6 +1,6 @@
 # PROJECT-STATUS — healthcare-app-clinical-data
 
-**Last updated:** 2026-05-03 (Wave 1.5/2 returned — 6 agents, all row-counts verified by orchestrator; Conditions hit 220 target; Imaging/Procedures near target; Drugs and Lab still short)
+**Last updated:** 2026-05-03 (Wave 3 returned — 3 cohorts at/above target [Conditions 220, Imaging 255, Procedures 254]; 3 cohorts source-access-limited [Drugs A-J 141, Drugs L-V 189, Lab 177 distinct]; cross-cohort synthesis next)
 
 This is the multi-session resumption anchor. On a new session: read this first, find the last completed task in the table, resume from the next.
 
@@ -9,7 +9,7 @@ This is the multi-session resumption anchor. On a new session: read this first, 
 | Phase | Conditions | Drugs (A–J) | Drugs (L–V) | Lab tests | Imaging | Procedures | Cross-cohort |
 |---|---|---|---|---|---|---|---|
 | 0 — Scaffold | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
-| 1 — Wave 1 research | combined 220/220 ✓ | retry: 73/250 | combined 122/280 | combined 133/220 (118 distinct) | combined 213/220 | combined 193/220 | n/a |
+| 1 — Wave 1 research | 220/220 ✓ | 141/250 (W1retry+W3) | 189/280 (W1+W2+W3) | 202/220 rows (177 distinct LOINC) | 255/220 ✓ | 254/220 ✓ | n/a |
 | 2 — QA loop | pending | pending | pending | pending | pending | pending | n/a |
 | 3 — Wave 2 gap-fill | pending | pending | pending | pending | pending | pending | n/a |
 | 4 — Critical reasoning | pending | pending | pending | pending | pending | pending | pending |
