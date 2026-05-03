@@ -33,6 +33,21 @@ The drugs cohort is dispatched as two parallel sub-agents (ATC A–J and ATC L�
 
 **Phase 0 complete 2026-05-03. Ready for Phase 1 — Wave 1 dispatch.**
 
+## Phase 0 addendum — book-derived recommendations (2026-05-03)
+
+A research agent studied five health-informatics textbooks (Coiera 3e; HIS-Progress; HIS-RP; Systems Perspective 2e; Multidisciplinary). Findings saved at `_context/book-derived-recommendations.md`. **All Wave 1 sub-agent briefs must reference this file.**
+
+Material data-model changes from the addendum (apply when drafting Wave 1 briefs — design doc §4 is now superseded for these columns):
+
+- **Conditions:** add `snomed_ct_concept_id`, `snomed_ct_description_id`, `icd11_candidate_code`, `granularity_caveat`, `coding_rule`
+- **Drugs:** add `atc_ddd_value`, `atc_ddd_unit`, `rxnorm_rxcui`, `lasa_tallman_form`, structured DDI sub-table; do NOT use a free-text interactions column
+- **Lab:** PHII-19 columns enforced (specimen type/container/volume_min, TAT routine/stat, critical low/high, interferences, delta-check); reference ranges split into population-keyed row variants rather than single column with sub-fields; add `snomed_ct_concept`
+- **Imaging:** add `dicom_sr_template_ref`, `radlex_anatomy_id`, `radlex_finding_id`; convert `key_measurements` to structured array `[{name, loinc_id, units}, …]`
+- **Procedures:** ICHI promoted to primary, ICD-10-PCS secondary (column rename — `ichi_code` is now the lead, `icd10_pcs_code` is now secondary)
+- **Universal:** `code_system_version`, `code_accessed_date`, `level_of_care_min`, `cadre_min`, `connectivity_tolerance`, `paper_form_equivalent`
+
+Wave 1 sub-agent briefs must include the 7 additional clauses listed in `_context/book-derived-recommendations.md` §6.
+
 ## Decisions log
 
 - 2026-05-03 — Approach approved by client (internal team). 5 cohorts, drugs cohort split A–J / L–V for Wave 1 dispatch. Geography: Uganda + Kenya + Tanzania. Ranking: IHME GBD. Coding standards per cohort (ICD-10 / ATC / LOINC / RadLex / ICD-10-PCS + CDT).
