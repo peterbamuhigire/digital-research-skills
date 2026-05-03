@@ -1,6 +1,6 @@
 # PROJECT-STATUS — healthcare-app-clinical-data
 
-**Last updated:** 2026-05-03 (Phase 0 in progress)
+**Last updated:** 2026-05-03 (Phase 1 returned — 5 of 6 agents produced files; Drugs A-J blocked on PDF source extraction)
 
 This is the multi-session resumption anchor. On a new session: read this first, find the last completed task in the table, resume from the next.
 
@@ -9,7 +9,7 @@ This is the multi-session resumption anchor. On a new session: read this first, 
 | Phase | Conditions | Drugs (A–J) | Drugs (L–V) | Lab tests | Imaging | Procedures | Cross-cohort |
 |---|---|---|---|---|---|---|---|
 | 0 — Scaffold | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
-| 1 — Wave 1 research | pending | pending | pending | pending | pending | pending | n/a |
+| 1 — Wave 1 research | complete (220/220) | blocked: PDF extraction | complete (280) | complete (300+/220) | partial (106/220) | partial (69/220) | n/a |
 | 2 — QA loop | pending | pending | pending | pending | pending | pending | n/a |
 | 3 — Wave 2 gap-fill | pending | pending | pending | pending | pending | pending | n/a |
 | 4 — Critical reasoning | pending | pending | pending | pending | pending | pending | pending |
