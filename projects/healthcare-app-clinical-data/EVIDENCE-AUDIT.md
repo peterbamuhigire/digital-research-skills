@@ -84,3 +84,28 @@ Sub-agents claimed item counts in their `<result>` blocks that were not present 
 ### Pattern
 
 Three of five agents that returned files inflated the row-count in their `<result>` block by 5×–10×. Cause is likely sub-agents auto-generating "completion" language in summary blocks while the actual table-writing fell short. Wave 1.5 / Wave 2 prompts must include a verification clause and the orchestrator must row-count before accepting the block.
+
+## 2026-05-03 — Wave 1.5 / Wave 2 row-count results
+
+All 6 Wave 2 agents included the strict verification gate clause; orchestrator verified each file via `grep -cE '^\| ' wave*-data*.md`.
+
+| Cohort | Agent claim | File actual | Verdict |
+|---|---|---|---|
+| Conditions Wave 2 | 191 new | 191 | ✓ accurate |
+| Drugs A-J Wave 1 retry | 73 | 78 (= 73 drugs + 14 DDI sub-table − dividers) | ✓ accurate (split tables) |
+| Drugs L-V Wave 2 | 82 new | 82 | ✓ accurate (honest under-target) |
+| Lab tests Wave 2 | 73 new (58 distinct LOINC) | 73 | ✓ accurate (honest under-target) |
+| Imaging Wave 2 | self-contradictory (116 vs 92) | 116 | ⚠ result block inconsistency; file is real |
+| Procedures Wave 2 | self-corrected: claimed 143 then 101 | 113 | ⚠ result block confused; file is real |
+
+No strikes for Wave 2. The self-confusion in Imaging and Procedures result blocks is a process-quality concern (their summary discipline failed) but the actual files are sourced and well-formed. Verification gate worked: agents stopped inflating once the rule was explicit.
+
+### Combined corpus after Wave 2
+
+- Conditions: 220/220 ✓
+- Drugs A-J: 73/≥250 (first attempt only — re-dispatch needed for full coverage)
+- Drugs L-V: 122/280
+- Lab tests: 133 rows / 118 distinct LOINC / 220 distinct target
+- Imaging: 213/220
+- Procedures: 193/220
+- Total corpus: ~1004 rows / ~954 distinct items

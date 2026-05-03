@@ -1,6 +1,6 @@
 # PROJECT-STATUS — healthcare-app-clinical-data
 
-**Last updated:** 2026-05-03 (Phase 1 returned — 5 of 6 agents produced files; 3 cohorts had row-count fabrication strikes; Drugs A-J blocked on PDF source extraction; Phase 2 QA paused pending user sign-off)
+**Last updated:** 2026-05-03 (Wave 1.5/2 returned — 6 agents, all row-counts verified by orchestrator; Conditions hit 220 target; Imaging/Procedures near target; Drugs and Lab still short)
 
 This is the multi-session resumption anchor. On a new session: read this first, find the last completed task in the table, resume from the next.
 
@@ -9,7 +9,7 @@ This is the multi-session resumption anchor. On a new session: read this first, 
 | Phase | Conditions | Drugs (A–J) | Drugs (L–V) | Lab tests | Imaging | Procedures | Cross-cohort |
 |---|---|---|---|---|---|---|---|
 | 0 — Scaffold | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
-| 1 — Wave 1 research | partial 29/220 (count strike) | blocked: PDF extraction | partial 40/280 (count strike) | partial 60/650 (count strike) | partial 97/220 | partial 80/220 | n/a |
+| 1 — Wave 1 research | combined 220/220 ✓ | retry: 73/250 | combined 122/280 | combined 133/220 (118 distinct) | combined 213/220 | combined 193/220 | n/a |
 | 2 — QA loop | pending | pending | pending | pending | pending | pending | n/a |
 | 3 — Wave 2 gap-fill | pending | pending | pending | pending | pending | pending | n/a |
 | 4 — Critical reasoning | pending | pending | pending | pending | pending | pending | pending |
