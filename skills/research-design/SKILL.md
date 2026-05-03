@@ -1,6 +1,6 @@
 ---
 name: research-design
-description: Use when a research project needs formal design discipline — historical research methods, trend analysis, MROC (Market Research Online Community), knowledge-lifecycle modelling, the canonical research-design document, or the final structured report-builder pipeline. Companion to research-orchestration; load only the design layer the project demands.
+description: Use when a research project needs formal design discipline, method selection, design-research methods, historical research, trend analysis, MROC (Market Research Online Community), knowledge-lifecycle modelling, the canonical research-design document, or the final structured report-builder pipeline. Companion to research-orchestration; load only the design layer the project demands.
 metadata:
   portable: true
   compatible_with:
@@ -15,6 +15,9 @@ metadata:
 
 - Use when a research project needs formal design, research questions, method selection,
   case logic, trend analysis, MROC design, or report assembly.
+- Use when the project should draw from design-research methods for complex problems,
+  innovation, service design, product discovery, usability, journey mapping, or evidence-backed
+  recommendation design.
 
 ## Do Not Use When
 
@@ -56,6 +59,7 @@ Research design starts with reasoning discipline. Use `critical-reasoning-and-ar
 |---|---|
 | Reconstructing past events from primary and secondary sources | `references/historical-research-methods.md` |
 | Forecasting, time-series signal extraction, weak-signal surfacing | `references/trend-analysis.md` |
+| Selecting among the 100 Universal Methods of Design for complex problems, innovation, service design, product discovery, usability, journey mapping, or effective design recommendations | `references/universal-methods-of-design-router.md` |
 | Quantitative dataset analysis, dashboard evidence, forecasts, or model-backed findings | `../extracted-books/data-analytics-research-method-extraction.md` plus `data-quality-pipeline/references/analytics-quality-method-gate.md` |
 | Recruiting and running a Market Research Online Community for 3+ days | `references/mroc-design-and-management.md` |
 | Modelling research artifacts as a state machine across the 8 lifecycle stages | `references/knowledge-lifecycle-pipeline.md` |
@@ -100,6 +104,9 @@ The pipeline that pulls from `research/`, `analysis/`, and `opportunities/` file
 ### 7. Systems and process description
 For research that studies how a system, institution, market process, workflow, data architecture, or operating model works, load `systems-process-requirements`. It supplies boundary discipline, process maps, state/event tables, requirements catalogues, data dictionaries, and traceability.
 
+### 8. Universal design methods
+For complex problems, innovation, service design, product discovery, usability, journey mapping, and recommendation design, load `references/universal-methods-of-design-router.md`. It routes among Hanington and Martin's 100 methods and forces a method plan that names the question answered, required participants or artifacts, output artifact, triangulation partner, and limitation.
+
 ## Orchestration
 
 ```
@@ -110,6 +117,7 @@ new long-running research project
 ├─ during waves: load matching design layer
 │   ├─ historical → references/historical-research-methods.md
 │   ├─ forecasting → references/trend-analysis.md
+│   ├─ design-method selection → references/universal-methods-of-design-router.md
 │   ├─ panel-based → references/mroc-design-and-management.md
 │   └─ artefact-flow modelling → references/knowledge-lifecycle-pipeline.md
 └─ at finish
@@ -121,6 +129,7 @@ new long-running research project
 - Skipping the design document; running a multi-week project as if it were a single sweep.
 - Treating a trend analysis as "list of things happening recently" without leading-vs-coincident discipline.
 - Running an MROC as a focus group; it is longitudinal and qualitative + quantitative.
+- Selecting design methods because they sound impressive rather than because they answer a specific research question.
 - Mixing knowledge-lifecycle stages in the same artifact (capture vs curation vs application have different rules).
 - Building the final Word document by hand-stitching files; use the report-builder pipeline.
 - Letting the design document drift; it must be updated as the project evolves, not snapshot at kickoff.

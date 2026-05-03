@@ -57,6 +57,8 @@ Use for solutions, services, programmes, products, workflows, or policy recommen
 5. **Prototype logic:** What small test can validate the riskiest assumption?
 6. **Adoption friction:** What makes the solution hard to adopt, sustain, pay for, or govern?
 
+When the work requires formal method selection, load `research-design/references/universal-methods-of-design-router.md` and select a small set of Universal Methods of Design that answer distinct questions across discovery, synthesis, prototyping, evaluation, and prioritisation.
+
 ## Strategic-Thinking Pass
 
 Use for market, business, policy, organisational, competitive, or investment work.
