@@ -1,6 +1,6 @@
 # PROJECT-STATUS — healthcare-app-clinical-data
 
-**Last updated:** 2026-05-03 (Wave 3 returned — 3 cohorts at/above target [Conditions 220, Imaging 255, Procedures 254]; 3 cohorts source-access-limited [Drugs A-J 141, Drugs L-V 189, Lab 177 distinct]; cross-cohort synthesis next)
+**Last updated:** 2026-05-03 (Wave 3 + cross-cohort synthesis complete — `00-cross-cohort-master.md` written; Phase 4 critical-reasoning + Phase 5 Word/Excel deliverable assembly deferred to next session per kick-start scope)
 
 This is the multi-session resumption anchor. On a new session: read this first, find the last completed task in the table, resume from the next.
 
