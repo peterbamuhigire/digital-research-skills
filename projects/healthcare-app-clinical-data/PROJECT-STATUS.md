@@ -1,6 +1,6 @@
 # PROJECT-STATUS — healthcare-app-clinical-data
 
-**Last updated:** 2026-05-03 (Wave 3 + cross-cohort synthesis complete — `00-cross-cohort-master.md` written; Phase 4 critical-reasoning + Phase 5 Word/Excel deliverable assembly deferred to next session per kick-start scope)
+**Last updated:** 2026-05-03 (Wave 4 with local-source files complete; new Consumables cohort opened at 138 items; Wave 5 dispatched to close drug cohorts to slightly-above-target and push Consumables to 300)
 
 This is the multi-session resumption anchor. On a new session: read this first, find the last completed task in the table, resume from the next.
 
@@ -9,7 +9,8 @@ This is the multi-session resumption anchor. On a new session: read this first, 
 | Phase | Conditions | Drugs (A–J) | Drugs (L–V) | Lab tests | Imaging | Procedures | Cross-cohort |
 |---|---|---|---|---|---|---|---|
 | 0 — Scaffold | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
-| 1 — Wave 1 research | 220/220 ✓ | 141/250 (W1retry+W3) | 189/280 (W1+W2+W3) | 202/220 rows (177 distinct LOINC) | 255/220 ✓ | 254/220 ✓ | n/a |
+| 1 — Wave 1 research | 220/220 ✓ | 218/250 (W1+W3+W4) | 266/280 (W1+W2+W3+W4) | 249 rows / 217 distinct LOINC | 255/220 ✓ | 254/220 ✓ | n/a |
+| Cohort 6 — Consumables | n/a | n/a | n/a | n/a | n/a | n/a | 138/300 (W1) |
 | 2 — QA loop | pending | pending | pending | pending | pending | pending | n/a |
 | 3 — Wave 2 gap-fill | pending | pending | pending | pending | pending | pending | n/a |
 | 4 — Critical reasoning | pending | pending | pending | pending | pending | pending | pending |
