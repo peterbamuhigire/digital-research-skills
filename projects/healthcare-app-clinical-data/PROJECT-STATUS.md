@@ -126,3 +126,42 @@ All 7 tenant-setup cohorts have Wave-1 markdown data + findings deliverables. Pa
 5. Engine validation across the 7 new cohort folders.
 
 **Resumption anchor:** read `00-cross-cohort-master.md` "Phase 6 — Tenant-setup synthesis" section and the per-cohort `wave1-findings.md` files for context, then start with whichever of the 5 deferred work items above the user prioritises.
+
+## Phase 7 — Wave-3 cohorts for automated onboarding (added 2026-05-04)
+
+Goal: commission 7 new research cohorts + extend country-packs + confirm specimen/container coverage so the automated-onboarding pipeline (designed in `docs/plans/2026-05-04-automated-onboarding-design.md`) has the full seed corpus it needs.
+
+**Driver:** every catalogue Medic8's onboarding pipeline seeds must have a research cohort producing both a Word document explaining it in detail AND an Excel sheet of all the seed values (user instruction 2026-05-04).
+
+**Sequencing decision (user-confirmed 2026-05-04):**
+- A1.1 scaffold all 7 folders first (done in this session — README.md per cohort).
+- A1.2 vaccines dispatched as foreground validation cohort.
+- A1.3–A1.9 fanned out in parallel (background) once vaccines brief shape verified.
+- A1.10 specimen/container confirmation pass.
+
+| # | Cohort | Status | Folder |
+|---|---|---|---|
+| 1 | Vaccines (ATC J07, EPI schedules, MDVP, AEFI Brighton) | Wave-1 complete (48 rows incl. Pass-2 gap-fill: HPV, OPV/IPV splits, COVID-19, Tdap, MenAfriVac, Yellow Fever fractional) | `vaccines/` |
+| 2 | BOMs (default kits per service / lab / imaging / vaccine / pack) | Wave-1 complete (85 BOMs / 433 line items incl. Pass-2 gap-fill: MRI, endoscopy, cervical-screening, FP-implant) | `boms/` |
+| 3 | Drug-drug interactions (≥1,500 EAC + DDInter bulk) | Wave-1 complete (17,304 pairs: 52 EAC enumerated + 17,252 DDInter v2 bulk filtered to in-cohort ATCs) | `drug-interactions/` |
+| 4 | Allergens (RxNorm + SNOMED + food/environmental) | Wave-1 complete (62 allergens × 11 cols) | `allergens/` |
+| 5 | Paediatric dosing (WHO Children's Formulary + EMLc) | Wave-1 complete (167 dosing rules incl. Pass-2 gap-fill: ampicillin, MDR-TB, neonatal antiepileptics, paediatric cardiology) | `paediatric-dosing/` |
+| 6 | UCUM units of measure (canonical + conversions) | Wave-1 complete (95 UOMs + 72 conversion edges; 0 cross-cohort orphans) | `ucum/` |
+| 7 | Holiday calendars (UG/KE/TZ/RW/CD/NG, 5-year window) | Wave-1 complete (380 holiday rows × 6 countries × 5 years) | `holiday-calendars/` |
+| ext | Country-packs full extension (TZ/RW/CD/NG) | in progress (4 parallel sub-agents dispatched 2026-05-04) | `country-packs/` |
+| confirm | Specimen/container coverage in lab-tests | confirmed: PHII-19 specimen_type/container/volume_min populated across all 4 wave files (sample audit 2026-05-04); see EVIDENCE-AUDIT.md | `lab-tests/` |
+
+**Definition of done per cohort:** Wave-1 markdown data + findings, gap-marked, sources-tiered, cross-links to existing cohorts noted, EVIDENCE-AUDIT.md updated for any discipline patches. Word/Excel deliverables follow in Phase 8 (enriched-report extension of `scripts/generate_healthcare_app_clinical_data_outputs.py`).
+
+**Resumption anchor for Phase 7:** read this section + `docs/plans/2026-05-04-automated-onboarding-plan.md` Section A1, then dispatch sub-agents per the Phase A task numbering.
+
+## Phase 7 — Wave-3 completion summary (2026-05-04)
+
+All 7 new cohorts at or above Wave-1 floor. `_registry/sources.bib` grew from 2,262 → ~3,300 lines (~1,030 new lines / ~150 BibTeX entries across all cohorts). Country-packs extension (A1.9) launched as 4 parallel sub-agents — TZ/RW/CD/NG full packs being appended to `country-packs/research/wave1-data.md`.
+
+**Self-audit results (orchestrator spot-check 2026-05-04):**
+- Wikipedia discipline: zero hits in any data table cell across all 7 cohorts (the only `wikipedia` strings in the corpus are inside self-audit checklist text in vaccines/data, drug-interactions/data; both in meta-footer not citations).
+- BibTeX append: enforced; two cohorts (paediatric-dosing pass-1, allergens pass-1) initially wrote stray `.bib` files which were merged into `sources.bib` by the orchestrator and removed.
+- Two row-count shortfalls flagged and gap-filled in same session: vaccines (22→48), drug-interactions (52→17,304), paediatric-dosing (120→167), BOMs (73→85).
+
+**Drug-interactions caveat:** 17,252 of the 17,304 pairs use placeholder text `[DDInter — see dataset for mechanism narrative]` for mechanism / consequence / management / monitoring columns. This is per-brief — the agent was authorised to use faithful dataset pointers rather than fabricate narratives. Backfilling these to human-readable strings is Wave-2 work; until then, Medic8 CDS must dereference DDInter v2 at query time.

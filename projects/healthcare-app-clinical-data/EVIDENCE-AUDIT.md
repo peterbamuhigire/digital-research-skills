@@ -152,3 +152,58 @@ No strikes for Wave 2. The self-confusion in Imaging and Procedures result block
 - Action: replace — each Wikipedia mention in a `source_citations` cell replaced with `[Wikipedia consulted for triangulation only — listed in findings under T3 references block; never sole source for any cell]`. Wikipedia is now ONLY a commentary disclaimer within cells, not a citation.
 - Reason: misread of discipline clause — agent self-audited as "compliant" because Wikipedia was tagged T3, missing that the rule is location-based (cells vs references list), not tier-based.
 - Lesson: future briefs must phrase the Wikipedia rule with **two explicit halves**: (1) "Wikipedia may NEVER appear in `source_citations` cells, even when tagged T3"; (2) "Wikipedia entries belong only in the bottom `## Sources — T3` block of the findings file, with each entry prefixed `(T3 — corroboration only, never sole source)`." The agent's self-audit checklist must include "grep your data file for `[Ww]ikipedia` and confirm zero matches in any table cell."
+
+## 2026-05-04 — Phase-7 Wave-3 cohort dispatch (orchestrator entries)
+
+### A1.10 — lab-tests specimen/container confirmation pass
+
+- Cohort: lab-tests
+- Wave: confirmation (no new dispatch needed)
+- Item: PHII-19 specimen columns (`specimen_type`, `specimen_container`, `specimen_volume_min`)
+- Claim: per Phase-0 addendum, specimen_type/container/volume_min must be populated for every lab-test row
+- Caught by: orchestrator sample audit across `lab-tests/research/wave1-data.md` … `wave4-data.md`
+- Severity: n/a — confirmation pass
+- Action: retain. Sample audit confirms all 239 distinct test/population rows across the 4 wave files carry populated values for specimen_type (column 7), specimen_container (column 8), specimen_volume_min (column 9). The 243 `[GAP]` markers across the four files cluster in OTHER columns (snomed_ct_concept, ref_range_low/high, critical thresholds, TAT, delta_check, connectivity_tolerance, paper_form_equivalent). PHII-19 specimen-side coverage is therefore complete; no targeted dispatch required.
+- Reason: n/a
+- Lesson: when a confirmation pass is requested and the sample audit shows the field is populated, log here rather than dispatching a sub-agent only to confirm the existing state.
+
+### A1.2 — vaccines Wave-1 row-count shortfall (gap-filled same session)
+
+- Cohort: vaccines
+- Wave: 1 (initial dispatch + Pass-2 gap-fill)
+- Item: cohort row count
+- Claim: initial dispatch returned 22 rows vs ≥45 row-count floor in the brief
+- Caught by: orchestrator post-completion verification against the per-cohort floor
+- Severity: medium (no false claim — the agent consolidated rather than splitting per-presentation; HPV was simply absent)
+- Action: dispatched a Pass-2 gap-fill brief with explicit per-presentation enumeration (HPV, OPV/IPV splits, COVID-19, Tdap, MenAfriVac, Yellow Fever fractional, Cholera Euvichol-Plus, Hib monovalent, Influenza TIV/QIV, Rotasiil, fIPV). Pass-2 added 26 rows; final cohort total 48.
+- Reason: under-enumeration; no fabrication
+- Lesson: row-count floors must be made literal in the brief and the agent must be told NOT to consolidate per-presentation rows. Future cohort briefs include explicit "do not consolidate" language plus a numbered enumeration list of expected splits.
+
+### A1.4 — drug-interactions Wave-1 row-count shortfall (gap-filled same session)
+
+- Cohort: drug-interactions
+- Wave: 1 (EAC enumeration + Pass-2 DDInter v2 bulk import)
+- Item: cohort row count
+- Claim: initial dispatch returned 52 enumerated EAC pairs vs ≥1,500 floor; agent explicitly deferred the DDInter bulk import to "Phase 2 — pending"
+- Caught by: orchestrator post-completion verification
+- Severity: high (cohort was 3.5% of floor without the bulk import)
+- Action: dispatched a Pass-2 bulk-import brief that built the in-cohort ATC universe (522 codes from drugs cohort waves 1–5), downloaded all 11 DDInter v2 CSV category files, filtered to in-cohort ATC pairs, deduped against the 52 EAC pairs, appended 17,252 new pairs (IDs ddi-0053 – ddi-17304). Final total 17,304.
+- Reason: scope overrun — agent split execution into "phase 1 enumerated" and "phase 2 bulk" but only completed phase 1 in a single dispatch.
+- Caveat: 17,252 of the 17,304 pairs use placeholder `[DDInter — see dataset for mechanism narrative]` for mechanism / consequence / management / monitoring per the brief's authorisation (faithful pointer over fabricated narrative). Backfilling those columns with human-readable strings is Wave-2 work; until then, Medic8 CDS must dereference DDInter v2 at query time.
+- Lesson: when a brief carries a row-count floor of ≥1,500 and the source is a bulk dataset, the brief MUST mandate that the bulk import is in-scope for the same dispatch — split execution is otherwise tempting and wastes a round-trip.
+
+### A1.3 / A1.6 — paediatric-dosing + BOMs row-count shortfalls (gap-filled same session)
+
+- Cohorts: paediatric-dosing (120 → 167); BOMs (73 → 85)
+- Wave: 1 (initial + Pass-2 gap-fill)
+- Severity: medium (paediatric 80% of floor; BOMs 91% of floor)
+- Action: Pass-2 gap-fill with explicit per-row enumeration (paediatric: ampicillin neonatal, ceftazidime, vancomycin, meropenem, MDR-TB second-line, antiepileptics, paediatric cardiology; BOMs: MRI brain ±gadolinium, OGD/colonoscopy, cervical-cancer screening VIA/VILI/Pap/HPV, FP subdermal implant).
+- Lesson: a 75–95%-of-floor delivery is the most common shortfall pattern; a brief that pre-enumerates every required row to minimum row count is reliable.
+
+### Cohort-level discipline observation — stray BibTeX files
+
+- Cohorts: paediatric-dosing (Pass-1), allergens (Pass-1)
+- Severity: low (cleanup overhead, no data loss)
+- Issue: both agents wrote BibTeX entries to a fresh per-cohort `.bib` file (`paed-dosing-sources-wave1.bib`, `sources_allergens_wave1.bib`) instead of appending to the canonical `_registry/sources.bib` as the brief required. Both agents reported "file lock encountered" or similar.
+- Action: orchestrator merged stray files into `sources.bib` and removed them. Pass-2 gap-fill briefs added an explicit "DO NOT WRITE A SEPARATE BIB FILE" clause and the second dispatches honoured it.
+- Lesson: append-to-canonical-bib is the default; future briefs must include the negative instruction "do NOT create a separate `.bib` file" because file-lock or write-conflict is a tempting reason to fork.
