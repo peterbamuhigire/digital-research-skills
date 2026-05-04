@@ -384,6 +384,173 @@ def build_docx(cohort: Cohort, rows: list[dict[str, str]], reasoning: Path) -> P
     return out
 
 
+def build_enriched_docx(
+    cohort: Cohort,
+    rows: list[dict[str, str]],
+    reasoning: Path | None = None,
+    cross_cohort_links: dict | None = None,
+    onboarding_workflow: dict | None = None,
+) -> Document:
+    """Build the enriched §0–§9 cohort report (returns Document, does not save).
+
+    Per docs/plans/2026-05-04-automated-onboarding-plan.md A2.1.
+
+    Skeleton bodies for §0, §3, §4, §5, §6, §7, §9 are placeholders pending
+    A2.2 (explainer prose), A2.3 (cross-cohort graph), A2.4 (workflow renderer).
+    """
+    doc = Document()
+    configure_doc(doc)
+    title = doc.add_paragraph()
+    title.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    run = title.add_run(f"{cohort.title} Cohort Report")
+    run.bold = True
+    run.font.size = Pt(20)
+    run.font.color.rgb = RGBColor(31, 78, 121)
+    doc.add_paragraph(f"Project: healthcare-app-clinical-data")
+    doc.add_paragraph(f"Generated: {TODAY}")
+    doc.add_paragraph(
+        "Evidence rule: no claim, form code, statistic, or standard is used unless it is "
+        "traceable to the local corpus or project context."
+    )
+
+    # §0 Executive summary
+    doc.add_heading("0. Executive summary", level=1)
+    doc.add_paragraph(
+        f"This catalogue contains {len(rows)} entries grouped by `{cohort.category_field}`, "
+        f"keyed on `{cohort.primary_key}`. It feeds the Medic8 onboarding seed bundle and the "
+        "tenant-specific intake workbooks generated against it. Coding standards, dataset "
+        "summary, per-entity reference, cross-cohort dependencies, onboarding workflow, "
+        "acceptance criteria, open gaps, critical reasoning, and change log follow."
+    )
+
+    # §1 Standards (existing)
+    doc.add_heading("1. Standards and enforcing bodies", level=1)
+    doc.add_paragraph(
+        "This section satisfies the project requirement that each report explain the "
+        "standards used and the bodies that maintain or enforce them."
+    )
+    std_rows = []
+    for standard in cohort.standards:
+        maintainer, enforcement, edition, reason = STANDARDS[standard]
+        std_rows.append([standard, maintainer, enforcement, edition, reason])
+    add_table(
+        doc,
+        ["Standard", "Maintainer", "Enforcement / force", "Edition cited", "Why used"],
+        std_rows,
+    )
+
+    # §2 Dataset summary (existing)
+    doc.add_heading("2. Dataset summary", level=1)
+    doc.add_paragraph(f"Rows parsed for this export: {len(rows)}.")
+    doc.add_paragraph(
+        f"Primary key: `{cohort.primary_key}`. Grouped by: `{cohort.category_field}`."
+    )
+    add_table(
+        doc,
+        ["Group", "Rows"],
+        [[k, str(v)] for k, v in counts(rows, cohort.category_field).most_common(20)],
+    )
+    add_table(
+        doc,
+        ["Source tier", "Rows"],
+        [[k, str(v)] for k, v in counts(rows, "source_tier").most_common()],
+    )
+    doc.add_paragraph(f"Explicit gap cells retained: {gap_cells(rows)}.")
+
+    # §3 Per-entity reference (skeleton — populated in A2.2 with explainer prose)
+    doc.add_heading("3. Per-entity reference", level=1)
+    doc.add_paragraph(
+        "Per-entity rows below; explainer prose for each row is added during A2.2 "
+        "(Claude-API-driven generation, capped at 2–4 sentences, citing only sourced data)."
+    )
+    fields = representative_fields(cohort, rows)
+    add_table(doc, fields, [[row.get(field, "") for field in fields] for row in rows[:30]])
+
+    # §4 Cross-cohort dependencies (skeleton — populated in A2.3)
+    doc.add_heading("4. Cross-cohort dependencies", level=1)
+    if cross_cohort_links:
+        inbound = cross_cohort_links.get("inbound") or []
+        outbound = cross_cohort_links.get("outbound") or []
+        if inbound:
+            doc.add_paragraph("Inbound (cohorts that reference this one):")
+            for link in inbound:
+                doc.add_paragraph(str(link), style="List Bullet")
+        if outbound:
+            doc.add_paragraph("Outbound (cohorts this one references):")
+            for link in outbound:
+                doc.add_paragraph(str(link), style="List Bullet")
+    else:
+        doc.add_paragraph(
+            "Cross-cohort link graph is extracted from `00-cross-cohort-master.md` by "
+            "`scripts/lib/cross_cohort_links.py` (A2.3). Skeleton placeholder."
+        )
+
+    # §5 Onboarding workflow (skeleton — populated in A2.4)
+    doc.add_heading("5. Onboarding workflow for this catalogue", level=1)
+    if onboarding_workflow:
+        for label, value in onboarding_workflow.items():
+            doc.add_paragraph(f"{label}: {value}")
+    else:
+        doc.add_paragraph(
+            "Workbook name, pre-fill scope, AI/dropdown/free-text rules, and "
+            "signer-must-verify fields are rendered from `_context/onboarding-workflow-specs.md` "
+            "by `scripts/lib/onboarding_workflow_stub.py` (A2.4). Skeleton placeholder."
+        )
+
+    # §6 Acceptance criteria
+    doc.add_heading("6. Acceptance criteria", level=1)
+    for item in (
+        f"All {len(rows)} rows ingest cleanly into Medic8 staging without schema mismatch.",
+        f"`{cohort.primary_key}` is unique across the import set.",
+        "Every gap cell remains visible and queryable; no silent fill.",
+        "Source-tier distribution matches the §2 summary.",
+        "Cross-cohort foreign-key references resolve against the sibling cohorts.",
+    ):
+        doc.add_paragraph(item, style="List Bullet")
+
+    # §7 Open gaps
+    doc.add_heading("7. Open gaps", level=1)
+    gap_count = gap_cells(rows)
+    doc.add_paragraph(
+        f"{gap_count} cells are explicitly marked as gaps in this dataset. They MUST NOT be "
+        "filled with plausible-sounding values during ingest. Wave-2 patches are tracked in "
+        "the cohort's `wave1-findings.md` and the project EVIDENCE-AUDIT.md."
+    )
+    for item in (
+        "Do not suppress `[GAP]` or `[unverified]` values during import.",
+        "Keep code-system version and access-date fields visible in the admin workflow.",
+        "Run annual terminology and Uganda MoH form/tool refresh.",
+        "Treat SNOMED CT and CDT as licensing-sensitive before commercial deployment.",
+    ):
+        doc.add_paragraph(item, style="List Bullet")
+
+    # §8 Critical reasoning pass (existing — was §3 in legacy build_docx)
+    doc.add_heading("8. Critical reasoning pass", level=1)
+    if reasoning is not None:
+        doc.add_paragraph(f"Full note: {reasoning.relative_to(PROJECT).as_posix()}.")
+    else:
+        doc.add_paragraph(
+            "Full critical-reasoning note is built by `build_reasoning(cohort, rows)` and "
+            "linked here when invoked through `main()`."
+        )
+    doc.add_paragraph(
+        "The corpus is suitable as a traceable Phase 5 deliverable. It is not a substitute "
+        "for final clinical, regulatory, or licensing sign-off."
+    )
+
+    # §9 Change log
+    doc.add_heading("9. Change log", level=1)
+    add_table(
+        doc,
+        ["Date", "Version", "Change"],
+        [
+            [TODAY, "v1.0-enriched", "Initial §0–§9 enriched structure (A2.1 skeleton)."],
+        ],
+    )
+
+    return doc
+
+
 def build_xlsx(cohort: Cohort, rows: list[dict[str, str]]) -> Path:
     out = OUTPUT / f"{cohort.slug}-data-v1-{TODAY}.xlsx"
     out.parent.mkdir(parents=True, exist_ok=True)
