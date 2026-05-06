@@ -207,3 +207,49 @@ No strikes for Wave 2. The self-confusion in Imaging and Procedures result block
 - Issue: both agents wrote BibTeX entries to a fresh per-cohort `.bib` file (`paed-dosing-sources-wave1.bib`, `sources_allergens_wave1.bib`) instead of appending to the canonical `_registry/sources.bib` as the brief required. Both agents reported "file lock encountered" or similar.
 - Action: orchestrator merged stray files into `sources.bib` and removed them. Pass-2 gap-fill briefs added an explicit "DO NOT WRITE A SEPARATE BIB FILE" clause and the second dispatches honoured it.
 - Lesson: append-to-canonical-bib is the default; future briefs must include the negative instruction "do NOT create a separate `.bib` file" because file-lock or write-conflict is a tempting reason to fork.
+
+## 2026-05-06 - Wave 8 one-hour onboarding hardening
+
+- Cohorts: all active cohorts (`tenant-blueprints`, `country-packs`, `facilities`, `roles-permissions`, `workflows`, `standard-forms`, `reporting-kpis`, `billing-tariffs`, `conditions`, `drugs`, `drug-interactions`, `paediatric-dosing`, `allergens`, `lab-tests`, `ucum`, `imaging`, `procedures`, `consumables`, `boms`, `vaccines`, `holiday-calendars`)
+- Wave: 8, cross-cohort onboarding-promise hardening
+- Item: marketing claim boundary and product-readiness gate
+- Claim tested: Medic8 can be marketed as shipping with every preconfigurable default preconfigured, enabling onboarding and first use in one hour or less.
+- Caught by: orchestrator source review against local Medic8 app files and official standards sources.
+- Severity: high if misstated. The unconditional version of the claim would overstate the current product, because local Medic8 code still defers several onboarding domains and brownfield migration cannot be truthfully compressed into a one-hour setup without pre-cleaned inputs.
+- Action: added `04-synthesis/wave8-one-hour-onboarding-hardening.md`, updated `PROJECT-STATUS.md`, added source IDs to `_registry/sources.yaml`, and added claims to `_registry/claims.yaml`.
+- Verification update: archive capture was rerun in small batches on 2026-05-06. 9 of 11 web sources now have Wayback archive URLs recorded in `04-synthesis/wave8-source-archive-manifest.md`. Tanzania HFR and Kenya MFL docs were live on 2026-05-06 but resisted automated Wayback capture; they remain explicit archive exceptions before final DOCX/export.
+- Lesson: future Medic8 research waves must distinguish `preconfigurable default`, `facility-confirmed input`, and `not safely guessable`. The one-hour claim should be treated as a timed product acceptance test, not only a research conclusion.
+
+## 2026-05-06 - Phase 9 global-settings closeout regeneration
+
+- Cohorts: all active Medic8 default-setting cohorts.
+- Wave: closeout artifact regeneration for development/database handoff.
+- Item: DOCX/XLSX package defining global defaults, standards, import targets, curator status, and facility-confirmation boundaries.
+- Caught by: orchestrator review of generated row counts against source tables.
+- Severity: medium before correction. The initial generator parsed blank-separated continuation tables as separate markdown fragments without repeated headers, which undercounted holiday calendars at 125 rows despite 380 source rows.
+- Action: patched `scripts/generate_medic8_global_settings_outputs.py` to tolerate blank-separated continuation blocks under the same header, regenerated `05-output/medic8-global-settings/`, mirrored the package to `export/medic8-global-settings/`, and verified Office ZIP integrity during generation.
+- Verification: final manifest reports holiday-calendars 380 rows, consumables 327 rows, country-packs 10 rows, and all other cohort counts from parsed source tables. `python -m engine validate healthcare-app-clinical-data` passed GATE-01 through GATE-09 after regeneration.
+- Lesson: source tables may contain visually separated country or category blocks without repeated headers. Closeout exporters must compare parsed counts with cohort status/audit counts before release.
+
+## 2026-05-06 - LOINC tables/value-sets conformance addendum
+
+- Cohort/domain: lab-tests, imaging, standard-forms, reporting-kpis, and any Medic8 output that carries observations, panels, documents, coded answers, or units.
+- Wave: targeted LOINC hardening addendum.
+- Item: user redirected scope away from access mechanisms toward tables, value sets, and global-standard output conformance.
+- Claim tested: Medic8 output can be made compatible with global standards if the database stores LOINC as a versioned terminology model rather than as display text.
+- Sources: official LOINC/Regenstrief pages for LOINC 2.82 downloads, licence, term model, answer file, panels/forms, groups, document ontology, FHIR terminology, common UCUM units, and official HL7 FHIR R4 pages for Observation, DiagnosticReport, Questionnaire, and DiagnosticReport code value set.
+- Action: added `04-synthesis/loinc-tables-valuesets-output-conformance-2026-05-06.md` and `05-output/medic8-global-settings/loinc-tables-valuesets-output-conformance-v2-2026-05-06.xlsx`. The workbook contains 25 required tables, 11 value-set/canonical universes, 15 output rules, and a source register.
+- Verification: generated workbook ZIP integrity checked successfully in both output and export folders.
+- Caveat: several official LOINC pages and HL7 pages were live and opened on 2026-05-06 but resisted automated archive capture in this pass; archive exceptions are logged in the source register instead of silently omitting the problem.
+- Lesson: for global compatibility, Medic8 must store code system URI, code, display, version, status, value-set membership, answer binding, panel hierarchy, UCUM units, and alternate codings. A single `loinc_code` column is not enough for standards-compliant output.
+
+## 2026-05-06 - All-cohort standards repopulation
+
+- Cohorts: all active Medic8 cohorts.
+- Wave: standards-shaped repopulation for development/database import.
+- Item: convert every parsed cohort row into a standards-compatible import row without altering source research tables.
+- Claim tested: all cohorts can be handed to the development/database team in a common standards model while preserving evidence gaps.
+- Action: added `scripts/repopulate_medic8_standards_conformance.py`, `04-synthesis/standards-repopulation-manifest-2026-05-06.md`, `05-output/medic8-global-settings/medic8-all-cohorts-standards-repopulated-v3-2026-05-06.xlsx`, and 21 per-cohort `analysis/standards-repopulation.md` notes.
+- Verification: final repopulation covers 20,501 parsed rows. The workbook includes cohort summary, standards profiles, all standardized rows, curator worklist, and one sheet per cohort. Office ZIP integrity passed in output and export folders.
+- No-guesswork rule: missing standard codes, unverified mappings, and ambiguous fields were not filled. They remain marked as `requires curator mapping` or `standards-shaped with gaps` and are carried into the workbook Curator Worklist.
+- Lesson: standards conformance is not only code presence. It requires a row-level model containing code-system URI, code, display/version where available, value-set URI, target resource, output rule, alternate codings, source file, conformance status, blocker flag, and facility confirmation boundary.

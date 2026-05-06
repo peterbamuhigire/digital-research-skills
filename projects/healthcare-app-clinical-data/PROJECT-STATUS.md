@@ -165,3 +165,42 @@ All 7 new cohorts at or above Wave-1 floor. `_registry/sources.bib` grew from 2,
 - Two row-count shortfalls flagged and gap-filled in same session: vaccines (22→48), drug-interactions (52→17,304), paediatric-dosing (120→167), BOMs (73→85).
 
 **Drug-interactions caveat:** 17,252 of the 17,304 pairs use placeholder text `[DDInter — see dataset for mechanism narrative]` for mechanism / consequence / management / monitoring columns. This is per-brief — the agent was authorised to use faithful dataset pointers rather than fabricate narratives. Backfilling these to human-readable strings is Wave-2 work; until then, Medic8 CDS must dereference DDInter v2 at query time.
+## Phase 8 - One-hour onboarding promise hardening (added 2026-05-06)
+
+**Goal:** harden every cohort against the Medic8 marketing promise that a supported facility can be onboarded and start using the product in one hour or less, with every preconfigurable default already preconfigured.
+
+**Output added:** `04-synthesis/wave8-one-hour-onboarding-hardening.md`
+
+**Conclusion:** conditional yes, not unconditional. The claim is defensible only for a pre-qualified facility that has supplied non-guessable inputs before kickoff, selects a supported country pack and tenant blueprint, and accepts Medic8 starter catalogues with review-level edits. It is not defensible for brownfield migration, uncleansed opening balances, unresolved licence evidence, unsupplied staff lists, missing bank/payment details, or custom insurer tariffs.
+
+**Main app-facing blocker found from `C:\wamp64\www\Medic8`:**
+- Current onboarding code registers steps 1, 2, 3, 5, 6, 7, 8, 13, 15, and 17.
+- Steps 4, 9, 10, 11, 12, 14, 16, 18, and 19 remain deferred in `src/Onboarding/Services/Steps/StepRegistry.php`.
+- Therefore, the research corpus is strong enough to support the promise, but the promise is not product-proven until a provisioner/importer covers the deferred domains or the screens ship.
+
+**All-cohort hardening requirement:** convert the corpus from research artifacts into importable setup defaults:
+- `tenant-blueprints`: machine-readable setup scripts.
+- `country-packs`: fail-closed country selectors for stubs.
+- `facilities`, `roles-permissions`, `workflows`: direct wizard/importer mappings.
+- clinical cohorts (`conditions`, `drugs`, `lab-tests`, `imaging`, `procedures`, `consumables`, `boms`, `vaccines`, `allergens`, `paediatric-dosing`, `drug-interactions`, `ucum`): blueprint-specific starter subsets plus go-live blocker checks.
+- operational cohorts (`billing-tariffs`, `standard-forms`, `reporting-kpis`, `holiday-calendars`): preloaded defaults plus explicit facility-confirmation fields.
+
+**Verification update:** archive capture was rerun in small batches on 2026-05-06. 9 of 11 web sources now have Wayback archive URLs recorded in `04-synthesis/wave8-source-archive-manifest.md`. Tanzania HFR and Kenya MFL docs were live on 2026-05-06 but resisted automated Wayback capture; they remain explicit final-export exceptions.
+
+**Next work:** build or specify the Medic8 provisioning runner, then run timer-based acceptance tests for all six canonical blueprints.
+
+## Phase 9 - Closeout deliverables for development/database handoff (added 2026-05-06)
+
+**Output family:** `05-output/medic8-global-settings/`
+
+**Purpose:** regenerate Word and Excel artifacts as a v2 closeout package that clearly defines global defaults, standards, import targets, facility-confirmation boundaries, curator worklists, and source/gap discipline for Medic8 development and database teams.
+
+**Artifacts:** per-cohort DOCX/XLSX files for all active cohorts, plus `medic8-global-defaults-master-v2-2026-05-06.docx`, `medic8-global-defaults-import-workbook-v2-2026-05-06.xlsx`, and `manifest.md`.
+
+**Handoff rule:** these files define staging/default candidates. Development must preserve source/gap fields, fail closed for stubs/placeholders, and require curator sign-off before production activation.
+
+**Regeneration verification (2026-05-06):** regenerated after parser hardening for blank-separated continuation tables. Final package includes 45 DOCX/XLSX/manifest files in `05-output/medic8-global-settings/` and mirrored in `export/medic8-global-settings/`. Holiday calendars now parse all 380 source rows; consumables now parse 327 source rows. `python -m engine validate healthcare-app-clinical-data` passes GATE-01 through GATE-09.
+
+**LOINC table/value-set addendum (2026-05-06):** added `04-synthesis/loinc-tables-valuesets-output-conformance-2026-05-06.md` and `05-output/medic8-global-settings/loinc-tables-valuesets-output-conformance-v2-2026-05-06.xlsx` for database-team use. This narrower addendum intentionally excludes access mechanisms and focuses on importable tables, value sets, and output conformance rules: 25 required tables, 11 value-set/canonical universes, and 15 acceptance rules for FHIR/HL7-compatible observation, panel, document, answer, unit, and diagnostic-report output.
+
+**All-cohort standards repopulation (2026-05-06):** added `04-synthesis/standards-repopulation-manifest-2026-05-06.md` and `05-output/medic8-global-settings/medic8-all-cohorts-standards-repopulated-v3-2026-05-06.xlsx`. The workbook repopulates all 20,501 parsed cohort rows into a standards-shaped import model with primary code system URI, primary code, value-set URI, FHIR/resource target, output rule, alternate coding JSON, source file, conformance status, blocker flag, and facility-confirmation boundary. Source research tables were not overwritten; any row without enough evidence remains flagged for curator mapping.
