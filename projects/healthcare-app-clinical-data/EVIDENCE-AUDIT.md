@@ -253,3 +253,27 @@ No strikes for Wave 2. The self-confusion in Imaging and Procedures result block
 - Verification: final repopulation covers 20,501 parsed rows. The workbook includes cohort summary, standards profiles, all standardized rows, curator worklist, and one sheet per cohort. Office ZIP integrity passed in output and export folders.
 - No-guesswork rule: missing standard codes, unverified mappings, and ambiguous fields were not filled. They remain marked as `requires curator mapping` or `standards-shaped with gaps` and are carried into the workbook Curator Worklist.
 - Lesson: standards conformance is not only code presence. It requires a row-level model containing code-system URI, code, display/version where available, value-set URI, target resource, output rule, alternate codings, source file, conformance status, blocker flag, and facility confirmation boundary.
+
+## 2026-05-06 - v3 implementation package generated from implementation brief
+
+- Cohorts: all existing cohorts plus new-cohort placeholders 22-33 from the implementation-team brief.
+- Wave: v3 package implementation.
+- Item: user supplied a detailed v3 scope brief and requested implementation artifacts for the development team.
+- Evidence status: the v3 brief itself is implementation-supplied scope, not verified legal/clinical/tariff evidence. Examples in the brief are treated as fields to verify, not as facts to import.
+- Action: added `01-initiation/medic8-global-defaults-v3-brief.md` and `scripts/generate_medic8_v3_artifacts.py`; generated `05-output/medic8-global-settings-v3/` and mirrored it to `export/medic8-global-settings-v3/`.
+- Artifact coverage: 141 files total, including 21 existing-cohort DOCX/XLSX pairs, 21 curator-worklist JSON files, 12 new-cohort skeleton XLSX files, 60 synthetic blueprint fixtures, `cross-references.json`, translation worklist JSON, v2-to-v3 change-log MD/XLSX, acceptance report, and manifest.
+- Verification: generator validates Office ZIP integrity during build. `python -m engine validate healthcare-app-clinical-data` passed GATE-01 through GATE-09 after generation.
+- Acceptance status: `acceptance-report-v3-2026-05-06.md` shows Office ZIP integrity PASS, schema generation PASS, no-guesswork PASS, P0 curator queue FAIL with 800 source-blocked P0 rows, and cross-reference resolution FAIL with 3,158 unresolved reference tokens. This is a correct fail-closed release state for implementation and curator tooling, not a go-live data sign-off.
+- No-guesswork rule: missing legal, tariff, clinical, licence, translation, and external-standard values remain explicit gaps. The package is implementation-usable for schema/import/curator UI work; it is not final active global data until P0 research verification clears.
+- Lesson: v3 implementation must distinguish artifact completeness from source completeness. It is acceptable to ship a structurally complete package with machine-readable blockers; it is not acceptable to mark unsourced values as active.
+
+## 2026-05-06 - v3 P0 overlay wave integration
+
+- Cohorts: country-packs, drug-interactions, drugs, imaging, lab-tests, billing-tariffs, roles-permissions.
+- Wave: P0 overlay integration using sub-agent research outputs plus local roles-permissions matrix generation.
+- Item: convert source-backed P0 research tables into non-breaking workbook sheets and promote only safely keyed values into the v3 `Data` sheets.
+- Action: patched `scripts/generate_medic8_v3_artifacts.py` to ingest the P0 markdown research tables, embed 31 source-backed overlay sheets, promote keyed DDI narrative fills, imaging safety/RadLex/DICOM fields, drugs source-backed safety status fields, billing tariff rows, and country activation overlays, and emit `v3-p0-wave-overlay-summary-2026-05-06.json`.
+- Verification: generator rebuilt 142 files in `05-output/medic8-global-settings-v3/`, mirrored 142 files to `export/medic8-global-settings-v3/`, and produced transfer archive `export/medic8-global-settings-v3-2026-05-06.zip`. Office ZIP integrity passed during generation. Direct workbook XML inspection confirmed P0 overlay sheets in drug-interactions, imaging, billing-tariffs, country-packs, and roles-permissions workbooks. `python -m engine validate healthcare-app-clinical-data` passed GATE-01 through GATE-09.
+- Acceptance status: `acceptance-report-v3-2026-05-06.md` now reports P0 overlay integration PASS with promoted rows: drug-interactions 6, imaging 50, drugs 63, billing-tariffs 62 new rows, and country-packs 10. P0 curator queue still FAILS with 904 source-blocked items; cross-reference resolution still FAILS with 3,189 unresolved reference tokens.
+- No-guesswork rule: country-pack legal/regulatory gaps, tariff claim-code/effective-date gaps, lab range gaps without direct row mapping, and other unsourced facts remain explicit blockers. No qualitative legal timing such as "immediately" was converted into numeric SLA hours unless a source provided a numeric value.
+- Lesson: sub-agent fills must be integrated as evidence overlays first. Promotion into importable active fields requires stable row keys and exact source support; otherwise the correct deliverable is a curator-blocking sheet, not an invented default.

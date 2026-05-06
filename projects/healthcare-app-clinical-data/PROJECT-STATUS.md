@@ -204,3 +204,41 @@ All 7 new cohorts at or above Wave-1 floor. `_registry/sources.bib` grew from 2,
 **LOINC table/value-set addendum (2026-05-06):** added `04-synthesis/loinc-tables-valuesets-output-conformance-2026-05-06.md` and `05-output/medic8-global-settings/loinc-tables-valuesets-output-conformance-v2-2026-05-06.xlsx` for database-team use. This narrower addendum intentionally excludes access mechanisms and focuses on importable tables, value sets, and output conformance rules: 25 required tables, 11 value-set/canonical universes, and 15 acceptance rules for FHIR/HL7-compatible observation, panel, document, answer, unit, and diagnostic-report output.
 
 **All-cohort standards repopulation (2026-05-06):** added `04-synthesis/standards-repopulation-manifest-2026-05-06.md` and `05-output/medic8-global-settings/medic8-all-cohorts-standards-repopulated-v3-2026-05-06.xlsx`. The workbook repopulates all 20,501 parsed cohort rows into a standards-shaped import model with primary code system URI, primary code, value-set URI, FHIR/resource target, output rule, alternate coding JSON, source file, conformance status, blocker flag, and facility-confirmation boundary. Source research tables were not overwritten; any row without enough evidence remains flagged for curator mapping.
+
+## Phase 10 - v3 implementation package from implementation-team brief (added 2026-05-06)
+
+**Canonical brief:** `01-initiation/medic8-global-defaults-v3-brief.md`
+
+**Output family:** `05-output/medic8-global-settings-v3/`, mirrored to `export/medic8-global-settings-v3/`
+
+**Purpose:** implement the v3 deliverable contract without breaking the v2 workbook layout. The package adds v3 columns/sheets/artifacts, machine-readable worklists, fixtures, translations worklist, cross-reference scan, change log, and acceptance report.
+
+**Artifacts generated:** 141 files total in both output and export trees, including:
+- 21 existing-cohort DOCX files and 21 existing-cohort XLSX files named `medic8-global-defaults-<cohort>-v3-2026-05-06.*`
+- 21 `curator-worklist-<cohort>-v3-2026-05-06.json` files
+- 12 new-cohort skeleton XLSX files for cohorts 22-33
+- `cross-references.json`
+- 60 synthetic fixture JSON files under `fixtures/`
+- `translations/translation-worklist-v3-2026-05-06.json`
+- `change-log-v2-to-v3-2026-05-06.md`
+- `change-log-v2-to-v3-2026-05-06.xlsx`
+- `acceptance-report-v3-2026-05-06.md`
+- `manifest-v3-2026-05-06.md`
+
+**Implemented transformations:** v3 generator adds non-breaking columns, DDI narrative-quality scoring, row-level curator priorities, roles `Permission Grant Matrix`, source/version/licence placeholder columns, per-cohort curator JSON, cross-reference scan, synthetic blueprint fixtures, translation worklist, and v2-to-v3 change log.
+
+**Acceptance result:** Office ZIP integrity PASS; schema generation PASS; no-guesswork gate PASS. P0 curator queue FAIL by design until source verification clears 800 source-blocked P0 rows. Cross-reference resolution FAIL until unresolved reference tokens are mapped or corrected. `python -m engine validate healthcare-app-clinical-data` passes GATE-01 through GATE-09.
+
+**No-guesswork rule:** v3 artifacts intentionally retain `[P0 GAP - v3 source verification required]` / `[GAP - v3 research required]` where the implementation brief asks for legal, clinical, tariff, licence, translation, or external standard facts not already supported by the source corpus.
+
+### Phase 10 P0 overlay integration update (2026-05-06)
+
+**Sub-agent wave:** completed P0 research sessions for country-packs, drug-interactions, drugs, imaging, lab-tests, billing-tariffs, and roles-permissions. Outputs were embedded into the v3 package as source-backed workbook overlay sheets; keyed rows were promoted only where row keys or country codes matched safely.
+
+**Regenerated output:** `scripts/generate_medic8_v3_artifacts.py` now emits 142 files in `05-output/medic8-global-settings-v3/` and mirrors 142 files to `export/medic8-global-settings-v3/`. The transfer archive is `export/medic8-global-settings-v3-2026-05-06.zip`.
+
+**Integrated P0 evidence:** 31 source-backed research sheets embedded. Promoted rows: drug-interactions 6, imaging 50, drugs 63, billing-tariffs 62 new tariff rows, country-packs 10 country activation overlays. Roles-permissions includes the 28-role x 50-permission `Permission Grant Matrix`.
+
+**Acceptance result after overlay integration:** Office ZIP integrity PASS; schema generation PASS; P0 research overlay integration PASS; no-guesswork gate PASS. P0 curator queue remains FAIL with 904 source-blocked items and cross-reference resolution remains FAIL with 3,189 unresolved reference tokens. This is the correct fail-closed handoff state: implementation can build import, schema, curator, and acceptance-test tooling from the artifacts, but Medic8 must not activate unresolved P0 rows as go-live global settings.
+
+**Validation:** `python -m engine validate healthcare-app-clinical-data` passes GATE-01 through GATE-09 after the integrated rebuild.
