@@ -1,0 +1,9 @@
+root: forecasts
+required_fields:
+  - id
+  - question
+  - horizon
+  - probability
+  - resolution_source
+  - source_confidence
+  - status

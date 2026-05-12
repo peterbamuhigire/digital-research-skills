@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from .base import Finding, GateResult
+from ..registry.schemas import schema_for
+from ..registry.validation import has_items, validate_rows
 from ..workspace import Workspace
 
 
@@ -23,6 +25,17 @@ COUNTERCASE_MARKERS = (
     "limitation",
 )
 IMPLICATION_MARKERS = ("implication", "recommendation", "decision", "next action", "so what")
+ESTIMATIVE_MARKERS = (
+    "we assess",
+    "we estimate",
+    "likely",
+    "unlikely",
+    "probably",
+    "almost certainly",
+    "forecast",
+    "risk",
+    "warning",
+)
 
 
 class Gate04AnalysisTradecraft:
@@ -31,6 +44,11 @@ class Gate04AnalysisTradecraft:
 
     def run(self, workspace: Workspace) -> GateResult:
         findings = []
+        tradecraft_path = workspace.registry_path("tradecraft.yaml")
+        _, tradecraft_issues = validate_rows(tradecraft_path, schema_for("tradecraft.yaml"))
+        for issue in tradecraft_issues:
+            findings.append(Finding(self.gate_id, "blocker", issue.path, issue.message))
+
         analysis_files = list(workspace.root.glob("03-analysis/**/*.md"))
         if not analysis_files:
             findings.append(Finding(self.gate_id, "warning", workspace.root / "03-analysis", "no analysis markdown found"))
@@ -68,6 +86,15 @@ class Gate04AnalysisTradecraft:
                         "warning",
                         path,
                         "analysis does not visibly show: " + ", ".join(missing),
+                    )
+                )
+            if _contains_any(text, ESTIMATIVE_MARKERS) and not has_items(tradecraft_path, "tradecraft_records"):
+                findings.append(
+                    Finding(
+                        self.gate_id,
+                        "warning",
+                        tradecraft_path,
+                        "estimative language appears in analysis but tradecraft registry has no records",
                     )
                 )
         return GateResult(self.gate_id, self.title, tuple(findings))

@@ -19,7 +19,23 @@ def seed_output_family(workspace: Workspace, family: str) -> Path:
         intro.write_text(f"# {family.replace('-', ' ').title()}\n\nTODO: Draft this section.\n", encoding="utf-8")
     manifest = output_dir / "manifest.md"
     if not manifest.exists():
-        manifest.write_text("# Manifest\n\n- sections/01-introduction.md\n", encoding="utf-8")
+        manifest.write_text(
+            "\n".join(
+                [
+                    "# Manifest",
+                    "",
+                    f"output_family: {family}",
+                    "report_shape: TODO",
+                    "audience: TODO",
+                    "citation_regime: TODO",
+                    "verification_status: draft",
+                    "",
+                    "- sections/01-introduction.md",
+                    "",
+                ]
+            ),
+            encoding="utf-8",
+        )
     return manifest
 
 

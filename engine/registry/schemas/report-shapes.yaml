@@ -1,0 +1,10 @@
+root: report_shapes
+required_fields:
+  - id
+  - output_family
+  - shape
+  - audience
+  - action
+  - citation_regime
+  - verification_status
+  - status

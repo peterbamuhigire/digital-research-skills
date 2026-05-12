@@ -6,6 +6,9 @@ import unittest
 from pathlib import Path
 
 from engine.gates.gate04_analysis_tradecraft import Gate04AnalysisTradecraft
+from engine.gates.gate03_evidence_integrity import Gate03EvidenceIntegrity
+from engine.gates.gate05_synthesis_traceability import Gate05SynthesisTraceability
+from engine.gates.gate06_output_readiness import Gate06OutputReadiness
 from engine.gates import run_all_gates
 from engine.pack import build_pack
 from engine.registry import sync_workspace
@@ -70,6 +73,88 @@ class KernelTests(unittest.TestCase):
         result = Gate04AnalysisTradecraft().run(workspace)
 
         self.assertFalse(result.findings)
+
+    def test_evidence_integrity_blocks_missing_required_source_fields(self) -> None:
+        workspace = create_project(ScaffoldOptions("Source Schema Project", "market", "internal", "standard", self.tmp))
+        workspace.registry_path("sources.yaml").write_text(
+            "sources:\n"
+            "- id: SRC-0001\n"
+            "  title: Example source\n"
+            "  tier: \"1\"\n"
+            "  accessed: \"2026-05-12\"\n"
+            "  verification: checked\n"
+            "  confidence: high\n",
+            encoding="utf-8",
+        )
+
+        result = Gate03EvidenceIntegrity().run(workspace)
+
+        self.assertTrue(any("missing required field `ref`" in finding.message for finding in result.findings))
+
+    def test_synthesis_traceability_blocks_unknown_claim_source_links(self) -> None:
+        workspace = create_project(ScaffoldOptions("Trace Project", "market", "internal", "standard", self.tmp))
+        workspace.registry_path("sources.yaml").write_text(
+            "sources:\n"
+            "- id: SRC-0001\n"
+            "  title: Example source\n"
+            "  ref: https://example.com/source\n"
+            "  tier: \"1\"\n"
+            "  accessed: \"2026-05-12\"\n"
+            "  verification: checked\n"
+            "  confidence: high\n",
+            encoding="utf-8",
+        )
+        workspace.registry_path("claims.yaml").write_text(
+            "claims:\n"
+            "- id: CLM-0001\n"
+            "  claim: Example claim\n"
+            "  source_ids:\n"
+            "    - SRC-9999\n"
+            "  confidence: medium\n"
+            "  status: supported\n",
+            encoding="utf-8",
+        )
+        workspace.registry_path("synthesis-map.yaml").write_text(
+            "synthesis_map:\n"
+            "- id: SYN-0001\n"
+            "  synthesis: Example synthesis\n"
+            "  claim_ids:\n"
+            "    - CLM-0001\n"
+            "  status: draft\n",
+            encoding="utf-8",
+        )
+
+        result = Gate05SynthesisTraceability().run(workspace)
+
+        self.assertTrue(any("unknown source id `SRC-9999`" in finding.message for finding in result.findings))
+
+    def test_output_readiness_warns_on_missing_manifest_metadata(self) -> None:
+        workspace = create_project(ScaffoldOptions("Manifest Project", "market", "internal", "standard", self.tmp))
+        manifest = workspace.output_dir / "executive-report" / "manifest.md"
+        manifest.write_text("# Manifest\n\n- sections/01-introduction.md\n", encoding="utf-8")
+
+        result = Gate06OutputReadiness().run(workspace)
+
+        self.assertTrue(any("output manifest missing metadata" in finding.message for finding in result.findings))
+
+    def test_estimative_analysis_warns_without_tradecraft_record(self) -> None:
+        workspace = create_project(ScaffoldOptions("Estimative Project", "market", "internal", "standard", self.tmp))
+        analysis = workspace.root / "03-analysis" / "warning.md"
+        analysis.write_text(
+            "# Warning Analysis\n\n"
+            "## Argument Map\n"
+            "Claim: the risk is likely to increase in the next quarter.\n"
+            "Evidence: current source evidence and data support the claim.\n"
+            "Assumption: the policy environment remains unchanged.\n"
+            "Countercase: an alternative explanation is temporary reporting noise.\n"
+            "Implication: next action is additional monitoring.\n"
+            + "This analysis is intentionally long enough to trigger the substantive tradecraft gate. " * 6,
+            encoding="utf-8",
+        )
+
+        result = Gate04AnalysisTradecraft().run(workspace)
+
+        self.assertTrue(any("tradecraft registry has no records" in finding.message for finding in result.findings))
 
     def test_pack_writes_zip(self) -> None:
         workspace = create_project(ScaffoldOptions("Pack Project", "market", "internal", "standard", self.tmp))

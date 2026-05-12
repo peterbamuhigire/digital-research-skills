@@ -67,10 +67,10 @@ def _import_legacy_sources(workspace: Workspace) -> int:
                 f"- id: SRC-{index:04d}",
                 f'  title: "{safe_source[:120]}"',
                 f'  ref: "{safe_source}"',
-                '  tier: "TODO"',
+                '  tier: "5"',
                 f'  accessed: "{today}"',
                 '  verification: "imported-from-legacy-sources-md"',
-                '  confidence: "TODO"',
+                '  confidence: "low"',
             ]
         )
     sources_path.write_text("\n".join(rows) + "\n", encoding="utf-8")
