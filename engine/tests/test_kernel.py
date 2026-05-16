@@ -14,6 +14,7 @@ from engine.pack import build_pack
 from engine.registry import sync_workspace
 from engine.scaffold import ScaffoldOptions, create_project
 from engine.workspace import Workspace
+from tools.osint_tool_index import append_tool_index_records, build_source_record, extract_tool_leads
 
 
 class KernelTests(unittest.TestCase):
@@ -34,6 +35,35 @@ class KernelTests(unittest.TestCase):
         result = sync_workspace(workspace)
         self.assertEqual(len(result.created), 1)
         self.assertTrue(workspace.registry_path("claims.yaml").exists())
+
+    def test_scaffold_includes_osint_tool_index_registry(self) -> None:
+        workspace = create_project(ScaffoldOptions("OSINT Project", "osint", "internal", "standard", self.tmp))
+        self.assertTrue(workspace.registry_path("osint-tool-index.yaml").exists())
+
+    def test_osint_tool_index_records_candidate_links_with_source_trace(self) -> None:
+        workspace = create_project(ScaffoldOptions("Tool Index Project", "osint", "internal", "standard", self.tmp))
+        html = """
+        <html><body>
+          <h3>Open Data Portals</h3>
+          <ul>
+            <li><a href="https://example.gov/data">Example Data Portal</a></li>
+            <li><a href="/internal">Same-site note</a></li>
+          </ul>
+          <h3>Company Registries</h3>
+          <a href="https://registry.example.org">Example Registry</a>
+        </body></html>
+        """
+        source = build_source_record("https://source.example/post", title="Example OSINT toolkit", source_id="SRC-OSINT-TEST")
+        leads = extract_tool_leads(html, base_url="https://source.example/post", source_id=source["id"], geography="testland")
+
+        result = append_tool_index_records(workspace.root, source, leads)
+
+        self.assertTrue(result.source_added)
+        self.assertEqual(result.tools_added, 2)
+        content = workspace.registry_path("osint-tool-index.yaml").read_text(encoding="utf-8")
+        self.assertIn("Example Data Portal", content)
+        self.assertIn("SRC-OSINT-TEST", content)
+        self.assertIn("primary-site verification pending", content)
 
     def test_fresh_project_has_validation_blockers(self) -> None:
         workspace = create_project(ScaffoldOptions("Gate Project", "market", "internal", "standard", self.tmp))

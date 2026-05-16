@@ -232,7 +232,14 @@ Golden path:
 The canonical workspace contract is documented in `docs/pathing-model.md`.
 Output manifests are documented in `docs/output-manifests.md`. Release packs are
 documented in `docs/release-pack-spec.md`. Legacy migration notes are in
-`docs/migration-notes.md`.
+`docs/migration-notes.md`. Candidate OSINT tool indexing is documented in
+`docs/osint-tool-index.md`.
+
+Optional OSINT toolkit ingestion:
+
+```powershell
+python -m engine index-osint-tools <project-id> <url>
+```
 
 Repo-level validation:
 

@@ -34,6 +34,7 @@ REGISTRY_FILES = {
     "report-shapes.yaml": "report_shapes: []\n",
     "productization-manifest.yaml": "productization_assets: []\n",
     "calibration-log.yaml": "forecasts: []\n",
+    "osint-tool-index.yaml": "osint_tools: []\n",
     "sign-offs.yaml": "sign_offs: []\n",
     "waivers.yaml": "waivers: []\n",
     "release-ledger.yaml": "releases: []\n",
