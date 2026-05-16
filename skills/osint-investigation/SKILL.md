@@ -1,6 +1,6 @@
 ---
 name: osint-investigation
-description: Use as the entry point for open-source intelligence research — stakeholder reconnaissance, social-media source extraction, adverse-media investigation, skip-tracing for individuals, chronology construction. Lawful, civilian, defensible OSINT only. Not for state-intelligence or surveillance work. Six references; load only what the investigation needs.
+description: Use as the entry point for open-source intelligence research — stakeholder reconnaissance, social-media source extraction, adverse-media investigation, skip-tracing for individuals, chronology construction, case-vault management, and source triage. Lawful, civilian, defensible OSINT only. Not for state-intelligence or surveillance work. Load only what the investigation needs.
 metadata:
   portable: true
   compatible_with:
@@ -24,7 +24,9 @@ Single entry skill for open-source intelligence work — civilian, lawful, defen
 | Build a chronology of events from heterogeneous sources | `references/chronology-construction.md` |
 | Verify images / videos / documents | load `source-evaluation` skill, `references/silverman-media-forensics.md` |
 | Run a phased investigation with client-facing cost / consent gates | `references/osint-methodology.md` § Hetherington Phased Approach |
+| Build a repeatable case notebook / graph / evidence vault | `references/osint-case-vaults.md` |
 | Reach for a technique not covered by the standard references (deep / dark web, geospatial, email tracing, metadata, crypto, IoT, ML, disinformation) | `references/advanced-osint-techniques.md` |
+| Use automated source or claim reliability scoring for high-volume triage | `source-evaluation/references/automated-reliability-triage.md` |
 
 ## The OSINT cycle (universal)
 
@@ -61,6 +63,8 @@ A single-tier-5 OSINT report is not an OSINT report; it is a rumour log.
 | `references/osint-doctrine-and-history.md` | Institutional lineage (FBIS → OSC), four competing definitions of OSINT (OSC / Congress-Simmons / NATO-Steele / historical), distinctions vs. clandestine INTs / journalism / SOCMINT, the engine's adopted definition. Bean, *No More Secrets* (Tier 1). |
 | `references/osint-validation-and-anti-patterns.md` | OSINT validation cycle, six named tensions (speed/verification, volume/signal, secret/open, commercial/analytic, privacy, tradecraft/scientific), source-vetting standards, positive cases (SARS / Burundi), anti-patterns (over-classification, "Googlification", factory-line outsourcing, single-advocate evidence gaps). Bean, *No More Secrets* (Tier 1). |
 | `references/advanced-osint-techniques.md` | Topic atlas for techniques beyond the standard references — deep/dark web, geospatial intelligence, email tracing, metadata/forensics, cryptocurrency / blockchain, IoT, ML-augmented OSINT, disinformation analysis, big-data sources. Botwright, *Advanced OSINT Strategies* (4-volume bundle), with engine guardrails. |
+| `references/osint-case-vaults.md` | Markdown-first case vaults, Obsidian-style templates, entity/source/case note separation, activity logs, asset custody, graph/canvas use, and local-first storage posture. |
+| `source-evaluation/references/automated-reliability-triage.md` | Automated source / claim scoring for high-volume triage only; requires axis-level signals, source-independence checks, calibration, and human-review flags. |
 
 ## Lawful / unlawful boundary (engine refuses)
 

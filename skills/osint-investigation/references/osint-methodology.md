@@ -35,6 +35,108 @@ Open-source intelligence is research with **operational consequence**. The findi
 - **Document temporal context.** Information dates fast in OSINT — every finding gets a timestamp.
 - **Distinguish association from causation.** "X follows Y on Twitter" ≠ "X works for Y".
 
+## Field-practitioner methodology overlay
+
+The sources in this section are practitioner blogs / directories, not primary
+standards. Use them as workflow prompts and report-shape checks; do not treat
+them as proof of a factual claim about a target.
+
+### Start with an answerable requirement
+
+Dutch OSINT Guy argues that OSINT starts with an answerable research question,
+not a tool search. AaronCTI likewise starts with subject identity, what is
+already known, and the investigation's aims. CQCore frames the same point as the
+task: ask what the client wants to achieve before collecting anything.
+
+Engine adoption:
+
+- Reject vague tasks such as "find everything" until converted into answerable
+  questions.
+- Record the main question, sub-questions, scope, legal / ethical bounds, and
+  stop conditions before collection.
+- Treat "no public source found" and "partial answer only" as valid findings.
+
+Sources: Dutch OSINT Guy, 2018-01-14
+`https://medium.com/@Dutchosintguy/osint-as-a-mindset-7d42ad72113d`;
+AaronCTI, 2024-05-02
+`https://aaroncti.com/my-osint-blueprint-methodology-and-tools-part-one/`;
+CQCore, 2024-05-09 `https://www.cqcore.uk/osint-methodology/`.
+
+### Prefer passive collection and avoid contamination
+
+AaronCTI states his blueprint is passive OSINT and excludes hacking, social
+engineering, and unethical or illegal interaction. CQCore makes a similar
+passive-exploratory point: research without touching the subject's digital
+footprint where possible.
+
+Engine adoption:
+
+- Use passive lookups first.
+- Do not interact with a target account.
+- If a workflow would require account creation, sockpuppets, contact import, or
+  platform interaction, mark the legal / ethical / ToS issue before proceeding.
+- Never treat account existence, contact-discovery output, or tool hits as
+  verified identity without independent corroboration.
+
+Sources: AaronCTI, 2024-05-02 and 2024-10-06
+`https://aaroncti.com/my-osint-blueprint-methodology-and-tools-part-one/`,
+`https://aaroncti.com/my-osint-blueprint-methodology-and-tools-part-two/`;
+CQCore, 2024-05-09 `https://www.cqcore.uk/osint-methodology/`.
+
+### Pivot from known identifiers, then verify
+
+AaronCTI's blueprint begins from already-known identifiers such as email
+addresses, phone numbers, known social profiles, images, locations, and
+associates. CQCore demonstrates low-friction username pivots through social
+profile aggregation sites and warns that username tools return false positives.
+
+Engine adoption:
+
+- Start with known identifiers and record provenance for each.
+- For every pivot, state why it follows from the previous identifier.
+- Username, email, phone, image, and breach-data hits are leads until verified.
+- Correlate identity by multiple factors such as avatar, location, writing
+  style, profile links, platform-specific IDs, timestamps, and independent
+  records.
+- A tool screenshot is never enough; extract the underlying source URL or record
+  and verify it.
+
+Sources: AaronCTI, 2024-05-02 and 2024-10-06; CQCore, 2024-05-09.
+
+### Document activities so another analyst can repeat them
+
+Sector035's methodology issue highlights documentation, verification,
+reporting, and uncertainties. It also points to report sections covering
+objectives, methodology, activities, sources, uncertainties, and results.
+
+Engine adoption:
+
+- Keep an activity log with date/time, query, tool, source, result, and next
+  pivot.
+- Put uncertainties and gaps in the report body, not only in notes.
+- Keep facts separate from assumptions and scenarios.
+- Include methodology in proportion to the audience: enough for independent
+  review, without unnecessary technical noise.
+
+Source: Sector035, 2023-02-13 `https://sector035.nl/articles/2023-06`.
+
+### Use automated reliability scoring only as triage
+
+The user-provided 2026-05-16 implementation note describes a useful scoring
+pattern: evaluate domain reputation, content recency, and cross-source
+confirmation separately; expose the axis breakdown; tune weights against real
+labelled cases; and escalate article-vs-domain variance or weak independence to
+human review.
+
+Engine adoption:
+
+- Load `source-evaluation/references/automated-reliability-triage.md` for
+  high-volume scoring.
+- Do not collapse source reliability into a single hidden number.
+- Count independent confirmation clusters, not URLs.
+- Category-specific freshness beats a single recency rule.
+- A score can prioritise review; it cannot certify a claim.
+
 ## Output structure
 
 - `<project>/research/osint-targets.md` — target list with disambiguation
