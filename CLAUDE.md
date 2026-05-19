@@ -97,8 +97,23 @@ Use these commands for project-managed work:
 7. `python -m engine assemble <project-id> <output-family>`
 8. `python -m engine pack <project-id> --out export/<project-id>.zip`
 
+## Proposal-output trigger
+
+When a research project's output is a **proposal** — donor investment case, policy memorandum, bid response, expression of interest, pitch deck, Cabinet memo, Parliamentary briefing, white paper, or other persuasive document for an external audience — route the final-drafting stage through the `proposal-skills` library, which is included as a git submodule at `skills/proposal-skills/`.
+
+- Parent router: `skills/proposal-skills/skills/SKILL.md`
+- Section sub-skills: `skills/proposal-skills/skills/01-cover-letter/` through `10-financial-proposal/`
+- Cross-cutting domain skills: `skills/proposal-skills/skills/{methodology,monitoring-and-evaluation,risk-management,gender-and-social-inclusion,sustainability-planning,change-management,critical-analysis-business-logic,premium-commercial-writing}/`
+- Profiles: `skills/proposal-skills/skills/profiles/` — load one profile before drafting
+- Language standards: British English; East African professional tone; day-month-year dates; avoid the banned AI-vocabulary list in `skills/proposal-skills/CLAUDE.md`
+
+The proposal-skills library evolves in its own repository. To pull updates: `git submodule update --remote skills/proposal-skills`. After a fresh clone of the engine, run `git submodule update --init --recursive` to populate it.
+
+The research evidence corpus produced by the engine (under `projects/<project-id>/02-research/`, `04-synthesis/`) is the input to the proposal-skills drafting pipeline; the proposal document is written into `projects/<project-id>/05-output/` and exported via the standard `research-report-builder` → `python-document-generation` chain.
+
 ## See also
 
 - `AGENTS.md` — Codex / generic-agent equivalent of this file
 - `PROJECT_BRIEF.md` — engine mission & direction
 - `skills/source-evaluation/SKILL.md` + `skills/source-evaluation/references/evidence-discipline.md` — the rule that precedes everything else
+- `skills/proposal-skills/` — proposal-writing skills (git submodule) for projects whose output is a proposal

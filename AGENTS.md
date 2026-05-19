@@ -16,7 +16,8 @@ Read `skills/source-evaluation/SKILL.md` and `skills/source-evaluation/reference
 4. After each wave: run `source-verification` and `gap-analysis`
 5. Before synthesis or final drafting: run `skills/critical-reasoning-and-argument/SKILL.md` so claims, warrants, assumptions, countercases, implications, and business-sense checks are visible
 6. After all waves: run `cross-cohort-synthesis` (orchestrator only)
-7. Generate Word doc via `research-report-builder` → `python-document-generation`
+7. If the final output is a **proposal** (donor investment case, policy memo, bid, EoI, pitch deck, Cabinet memo, Parliamentary briefing, white paper): route the drafting stage through `skills/proposal-skills/skills/SKILL.md` (parent router) and the relevant section sub-skills (`01-cover-letter` through `10-financial-proposal`) plus cross-cutting domain skills (methodology, M&E, risk, GESI, sustainability, change-management, critical-analysis-business-logic, premium-commercial-writing). Load exactly one profile under `skills/proposal-skills/skills/profiles/` before drafting.
+8. Generate Word doc via `research-report-builder` → `python-document-generation`
 
 ## Skill loading
 
