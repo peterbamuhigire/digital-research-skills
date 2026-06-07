@@ -29,11 +29,13 @@ Triggered by user requests like "research X", "find pain points of Y", "do anoth
 8. **Write outputs** to `projects/<project-id>/<cohort>/research/`, `analysis/`, `opportunities/` — append (don't overwrite) when merging Wave-2 findings.
 9. **After all cohorts complete**, run `cross-cohort-synthesis` (orchestrator does this — never delegate).
 10. **Generate the Word doc** via `research-report-builder` → `professional-word-output` or `python-document-generation`.
+11. **Run the anti-slop ship gate.** Before delivering any report or `.docx`, run `ai-slop-audit` on it. The output must read as if a professional human researcher wrote it: sourced at every claim, with authored judgement, varied structure, no banned vocabulary, and the counter-case shown. Grade F (a fabricated stat/citation, a viewpoint-free section, template uniformity) blocks delivery until fixed.
 
 ## Skill priority order
 
 For any non-trivial task:
 
+0. `anti-ai-slop` — real-time, every output, every time. The quality counterpart to evidence-discipline: a report can be fully sourced and still read as slop (generic, voiceless, template-uniform). Apply continuously while writing. Run `ai-slop-audit` after each major iteration (drafted section, completed cohort, synthesis, generated .docx); grade F blocks progression.
 1. `evidence-discipline` — every output, every time
 2. `research-orchestration` — coordinates the rest
 3. The specialist skill matching the task (e.g., `regulatory-landscape-mapping` for legal research)
