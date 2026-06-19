@@ -14,8 +14,11 @@ Read `skills/source-evaluation/SKILL.md` and `skills/source-evaluation/reference
 2. Load `skills/research-orchestration/SKILL.md` → drives wave planning
 3. For each cohort: dispatch a research sub-task with the standard brief structure
 4. After each wave: run `source-verification` and `gap-analysis`
-5. After all waves: run `cross-cohort-synthesis` (orchestrator only)
-6. Generate Word doc via `research-report-builder` → `python-document-generation`
+5. Before synthesis or final drafting: run `skills/critical-reasoning-and-argument/SKILL.md` so claims, warrants, assumptions, countercases, implications, and business-sense checks are visible
+6. After all waves: run `cross-cohort-synthesis` (orchestrator only)
+7. If the final output is a **proposal** (donor investment case, policy memo, bid, EoI, pitch deck, Cabinet memo, Parliamentary briefing, white paper): route the drafting stage through `skills/proposal-skills/skills/SKILL.md` (parent router) and the relevant section sub-skills (`01-cover-letter` through `10-financial-proposal`) plus cross-cutting domain skills (methodology, M&E, risk, GESI, sustainability, change-management, critical-analysis-business-logic, premium-commercial-writing). Load exactly one profile under `skills/proposal-skills/skills/profiles/` before drafting.
+8. Generate Word doc via `research-report-builder` → `python-document-generation`
+9. Apply `skills/anti-ai-slop/SKILL.md` in real time on every output, and run `skills/ai-slop-audit/SKILL.md` after each major iteration and as the final ship gate. Outputs must read as if a professional human researcher wrote them; grade F (fabricated stat/citation, viewpoint-free section, template uniformity, banned vocabulary) blocks delivery.
 
 ## Skill loading
 

@@ -6,10 +6,48 @@ metadata:
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
 ---
 
 # Research Orchestration
+
+<!-- dual-compat-start -->
+
+## Use When
+
+- Use as the first step on any non-trivial research project, planned research wave, multi-cohort investigation, gap-fill pass, verification pass, or synthesis pass.
+
+## Do Not Use When
+
+- Do not use for a single known fact lookup, URL check, or short target read that does not need orchestration.
+
+## Required Inputs
+
+- Research goal, scope, audience, decision context, cohorts, constraints, source expectations, and desired output.
+
+## Workflow
+
+- Run the type, discipline, and reading-mode routers before wave dispatch.
+- Select companion skills for evidence discipline, research design, methods, source evaluation, and output form.
+- Dispatch planned waves, verify before merging, and reserve final synthesis for the orchestrator.
+
+## Quality Standards
+
+- Research waves must be scoped, source-aware, evidence-disciplined, and designed to produce insight rather than volume.
+
+## Anti-Patterns
+
+- Do not run a single mega-search when cohorts, source classes, or verification needs differ.
+- Do not delegate cross-cohort synthesis to wave agents.
+
+## Outputs
+
+- Wave plan, agent brief, companion-skill route, verification plan, synthesis route, and output storage contract.
+
+## References
+
+- Use the routers and companion-skill table below.
+
+<!-- dual-compat-end -->
 
 The first skill loaded on any research project. Decides what kind of research is being run, what discipline its language and sources come from, what reading mode each retrieved source warrants, and how to dispatch the work as planned waves.
 
@@ -42,7 +80,7 @@ Skipping these is the most common cause of research that produces volume but not
 | Source vetting (always) | `source-evaluation` |
 | Web data needed | `web-scraping-foundations` |
 | Specific technique (gap analysis, brachiation, pearl-growing, crosswalk, mini-analysis, search-operator grammar, controlled vocabulary, etc.) | `research-techniques` |
-| Formal research design (historical method, trend analysis, MROC, knowledge-lifecycle, design document, report builder) | `research-design` |
+| Formal research design (historical method, trend analysis, MROC, knowledge-lifecycle, Universal Methods of Design router, design document, report builder) | `research-design` |
 | Dataset discovery / quality | `data-quality-pipeline`, `dataset-discovery-and-analysis` |
 
 ## The wave model
@@ -113,6 +151,6 @@ Wave 2 outputs append a `# Pass 2 — Gap-fill addendum` section to the existing
 ## See also
 
 - `research-techniques` — gap analysis, mini-analysis, crosswalk matrix, cross-cohort synthesis, reference interview, controlled vocabulary, search-operator grammar, pearl-growing, brachiation, etc. (load when a Wave needs a specific technique)
-- `research-design` — historical methods, trend analysis, MROC, knowledge lifecycle, research design document, report builder (load when the project needs formal design or a final assembled report)
+- `research-design` — historical methods, trend analysis, MROC, knowledge lifecycle, Universal Methods of Design router, research design document, report builder (load when the project needs formal design, design-method selection, or a final assembled report)
 - `source-evaluation` — Wave-3 verification logic; mandatory pairing for every source
 - `academic-writing`, `report-and-proposal-craft`, `business-writing` — output containers

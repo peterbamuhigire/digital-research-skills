@@ -25,22 +25,26 @@ Triggered by user requests like "research X", "find pain points of Y", "do anoth
 4. **Use background mode (`run_in_background: true`)** for waves >2 minutes.
 5. **Never read sub-agent transcripts directly with the shell tool** — they overflow context. Use the structured `<result>` block in the completion notification.
 6. **Verify before merging.** Spot-check 10% of stats, 5 quotes, all court cases / statute citations.
-7. **Write outputs** to `projects/<project-id>/<cohort>/research/`, `analysis/`, `opportunities/` — append (don't overwrite) when merging Wave-2 findings.
-8. **After all cohorts complete**, run `cross-cohort-synthesis` (orchestrator does this — never delegate).
-9. **Generate the Word doc** via `research-report-builder` → `professional-word-output` or `python-document-generation`.
+7. **Run critical reasoning before synthesis or final drafting.** Use `skills/critical-reasoning-and-argument/SKILL.md` to make claims, warrants, assumptions, countercases, implications, and business-sense checks visible.
+8. **Write outputs** to `projects/<project-id>/<cohort>/research/`, `analysis/`, `opportunities/` — append (don't overwrite) when merging Wave-2 findings.
+9. **After all cohorts complete**, run `cross-cohort-synthesis` (orchestrator does this — never delegate).
+10. **Generate the Word doc** via `research-report-builder` → `professional-word-output` or `python-document-generation`.
+11. **Run the anti-slop ship gate.** Before delivering any report or `.docx`, run `ai-slop-audit` on it. The output must read as if a professional human researcher wrote it: sourced at every claim, with authored judgement, varied structure, no banned vocabulary, and the counter-case shown. Grade F (a fabricated stat/citation, a viewpoint-free section, template uniformity) blocks delivery until fixed.
 
 ## Skill priority order
 
 For any non-trivial task:
 
+0. `anti-ai-slop` — real-time, every output, every time. The quality counterpart to evidence-discipline: a report can be fully sourced and still read as slop (generic, voiceless, template-uniform). Apply continuously while writing. Run `ai-slop-audit` after each major iteration (drafted section, completed cohort, synthesis, generated .docx); grade F blocks progression.
 1. `evidence-discipline` — every output, every time
 2. `research-orchestration` — coordinates the rest
 3. The specialist skill matching the task (e.g., `regulatory-landscape-mapping` for legal research)
 4. `source-verification` + `quote-extraction` after every wave
-5. `gap-analysis` before any "is this complete?" claim
-6. `pain-point-taxonomy` after evidence is gathered
-7. `cross-cohort-synthesis` only when ≥2 cohorts complete
-8. `research-report-builder` last
+5. `critical-reasoning-and-argument` before synthesis, recommendation, business analysis, or final output
+6. `gap-analysis` before any "is this complete?" claim
+7. `pain-point-taxonomy` after evidence is gathered
+8. `cross-cohort-synthesis` only when ≥2 cohorts complete
+9. `research-report-builder` last
 
 ## File-write conventions
 
@@ -95,8 +99,23 @@ Use these commands for project-managed work:
 7. `python -m engine assemble <project-id> <output-family>`
 8. `python -m engine pack <project-id> --out export/<project-id>.zip`
 
+## Proposal-output trigger
+
+When a research project's output is a **proposal** — donor investment case, policy memorandum, bid response, expression of interest, pitch deck, Cabinet memo, Parliamentary briefing, white paper, or other persuasive document for an external audience — route the final-drafting stage through the `proposal-skills` library, which is included as a git submodule at `skills/proposal-skills/`.
+
+- Parent router: `skills/proposal-skills/skills/SKILL.md`
+- Section sub-skills: `skills/proposal-skills/skills/01-cover-letter/` through `10-financial-proposal/`
+- Cross-cutting domain skills: `skills/proposal-skills/skills/{methodology,monitoring-and-evaluation,risk-management,gender-and-social-inclusion,sustainability-planning,change-management,critical-analysis-business-logic,premium-commercial-writing}/`
+- Profiles: `skills/proposal-skills/skills/profiles/` — load one profile before drafting
+- Language standards: British English; East African professional tone; day-month-year dates; avoid the banned AI-vocabulary list in `skills/proposal-skills/CLAUDE.md`
+
+The proposal-skills library evolves in its own repository. To pull updates: `git submodule update --remote skills/proposal-skills`. After a fresh clone of the engine, run `git submodule update --init --recursive` to populate it.
+
+The research evidence corpus produced by the engine (under `projects/<project-id>/02-research/`, `04-synthesis/`) is the input to the proposal-skills drafting pipeline; the proposal document is written into `projects/<project-id>/05-output/` and exported via the standard `research-report-builder` → `python-document-generation` chain.
+
 ## See also
 
 - `AGENTS.md` — Codex / generic-agent equivalent of this file
 - `PROJECT_BRIEF.md` — engine mission & direction
 - `skills/source-evaluation/SKILL.md` + `skills/source-evaluation/references/evidence-discipline.md` — the rule that precedes everything else
+- `skills/proposal-skills/` — proposal-writing skills (git submodule) for projects whose output is a proposal

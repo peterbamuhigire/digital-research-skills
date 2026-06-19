@@ -1,7 +1,8 @@
 from __future__ import annotations
 
-from .base import Finding, GateResult, registry_has_items, root_key_present
+from .base import Finding, GateResult
 from ..registry.schemas import SCHEMAS
+from ..registry.validation import has_items, validate_rows
 from ..workspace import Workspace
 
 
@@ -13,8 +14,9 @@ class Gate03EvidenceIntegrity:
         findings = []
         for schema in SCHEMAS:
             path = workspace.registry_path(schema.filename)
-            if not root_key_present(path, schema.root_key):
-                findings.append(Finding(self.gate_id, "blocker", path, f"registry root key missing: {schema.root_key}"))
-        if not registry_has_items(workspace.registry_path("sources.yaml")):
+            _, issues = validate_rows(path, schema)
+            for issue in issues:
+                findings.append(Finding(self.gate_id, "blocker", issue.path, issue.message))
+        if not has_items(workspace.registry_path("sources.yaml"), "sources"):
             findings.append(Finding(self.gate_id, "blocker", workspace.registry_path("sources.yaml"), "source registry has no entries"))
         return GateResult(self.gate_id, self.title, tuple(findings))

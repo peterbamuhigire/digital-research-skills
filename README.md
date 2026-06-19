@@ -20,6 +20,8 @@ Given a research question, the engine runs:
 ## Non-negotiable rule
 
 > **The AI agents in this engine MUST NOT hallucinate.** No statistic, quote, name, court case, statute, organisation, or URL appears in any output unless traceable to a real, verified source. See `skills/source-evaluation/SKILL.md` — the engine's evidence-discipline clause. It precedes every other skill.
+>
+> **And the agents MUST NOT produce AI slop.** Truth is necessary but not sufficient: a fully-sourced report can still read as generic, voiceless, template-extruded slop. `skills/anti-ai-slop/SKILL.md` is the real-time quality guardrail applied to every output; `skills/ai-slop-audit/SKILL.md` runs after each major iteration and as the ship gate, grading the artefact A/B/C/F. Every report must read as if a professional human researcher wrote it.
 
 ## The four operating layers
 
@@ -55,6 +57,8 @@ Layer 1 — DISCIPLINE FOUNDATION
 ```
 skills/
 ├── source-evaluation/                  Layer 1 — anti-hallucination + 5-tier credibility
+├── anti-ai-slop/             [NEW]      Layer 1 — real-time quality guardrail (the slop counterpart to evidence-discipline)
+├── ai-slop-audit/            [NEW]      Layer 1 — per-iteration slop auditor; grades A/B/C/F; F blocks delivery
 ├── research-orchestration/             Layer 1 — wave dispatch, multi-agent coordination
 ├── research-techniques/                Layer 1 — search craft (incl. MacLeod + Russell references)
 ├── research-design/                    Layer 1 — historical, trend, MROC, design-doc, report-builder
@@ -232,7 +236,14 @@ Golden path:
 The canonical workspace contract is documented in `docs/pathing-model.md`.
 Output manifests are documented in `docs/output-manifests.md`. Release packs are
 documented in `docs/release-pack-spec.md`. Legacy migration notes are in
-`docs/migration-notes.md`.
+`docs/migration-notes.md`. Candidate OSINT tool indexing is documented in
+`docs/osint-tool-index.md`.
+
+Optional OSINT toolkit ingestion:
+
+```powershell
+python -m engine index-osint-tools <project-id> <url>
+```
 
 Repo-level validation:
 

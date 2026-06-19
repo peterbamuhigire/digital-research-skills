@@ -50,6 +50,15 @@ def build_parser() -> argparse.ArgumentParser:
     pack.add_argument("project", help="project id or path")
     pack.add_argument("--out", required=True, help="zip path to write")
 
+    index_osint = subcommands.add_parser("index-osint-tools", help="extract candidate OSINT tool links into the registry")
+    index_osint.add_argument("project", help="project id or path")
+    index_osint.add_argument("url", help="public toolkit/source page URL")
+    index_osint.add_argument("--source-id", help="optional source registry id")
+    index_osint.add_argument("--source-title", help="optional source title")
+    index_osint.add_argument("--geography", default="global", help="geographic scope to stamp on extracted candidates")
+    index_osint.add_argument("--limit", type=int, default=250, help="maximum candidate links to import")
+    index_osint.add_argument("--no-robots", action="store_true", help="do not check robots.txt before fetching")
+
     return parser
 
 
@@ -73,6 +82,8 @@ def main(argv: list[str] | None = None) -> int:
         return _assemble(args.project, args.family, args.out)
     if args.command == "pack":
         return _pack(args.project, args.out)
+    if args.command == "index-osint-tools":
+        return _index_osint_tools(args)
 
     parser.print_help()
     return 0
@@ -171,6 +182,44 @@ def _pack(project: str, out: str) -> int:
     print(f"Release pack: {result.path}")
     print(f"- files: {result.files}")
     print(f"- validation blockers: {result.blockers}")
+    return 0
+
+
+def _index_osint_tools(args: argparse.Namespace) -> int:
+    try:
+        workspace = Workspace.load(args.project)
+    except WorkspaceError as exc:
+        print(f"Workspace invalid: {exc}")
+        return 1
+
+    from tools.osint_tool_index import (
+        append_tool_index_records,
+        build_source_record,
+        extract_tool_leads,
+        fetch_source_html,
+    )
+
+    try:
+        html, final_url = fetch_source_html(args.url, respect_robots=not args.no_robots)
+    except Exception as exc:
+        print(f"Could not fetch OSINT toolkit source: {exc}")
+        return 1
+
+    source_record = build_source_record(final_url, title=args.source_title, source_id=args.source_id)
+    leads = extract_tool_leads(
+        html,
+        base_url=final_url,
+        source_id=source_record["id"],
+        geography=args.geography,
+        limit=args.limit,
+    )
+    result = append_tool_index_records(workspace.root, source_record, leads)
+
+    print(f"OSINT tool index updated: {workspace.project_id}")
+    print(f"- source added: {'yes' if result.source_added else 'no'}")
+    print(f"- candidate links seen: {result.tools_seen}")
+    print(f"- candidate links added: {result.tools_added}")
+    print("- status: candidates only; verify primary sites before using as evidence")
     return 0
 
 

@@ -1,0 +1,10 @@
+root: productization_assets
+required_fields:
+  - id
+  - asset
+  - audience
+  - reuse_status
+  - provenance
+  - sensitivity
+  - commercial_claim_bounds
+  - status

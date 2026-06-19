@@ -1,0 +1,11 @@
+root: tradecraft_records
+required_fields:
+  - id
+  - judgment
+  - hypothesis_set
+  - evidence
+  - biases_considered
+  - confidence_judgment
+  - confidence_source
+  - indicators
+  - status

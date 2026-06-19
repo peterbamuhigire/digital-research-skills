@@ -22,7 +22,9 @@ def retry_request(
     for attempt in range(retries + 1):
         try:
             return fn()
-        except _RetryableError as e:  # type: ignore[name-defined]
+        except Exception as e:
+            if not _is_retryable(e):
+                raise
             last_err = e
             if attempt < retries:
                 delay = min(backoff_base ** attempt, max_backoff)
@@ -33,18 +35,18 @@ def retry_request(
     raise last_err
 
 
-# Local alias so we can extend without circular import. The http_client module
-# raises ScrapeError for retryable 5xx; this is intentionally narrower than
-# generic Exception — silent broad retry is the anti-pattern Lawson warns against.
-class _RetryableError(Exception):
-    pass
+def _is_retryable(exc: Exception) -> bool:
+    """Retry only explicit transient scrape failures.
 
+    ``ScrapeError`` is also used by the HTTP wrapper for 401/403 blocks, so the
+    retry gate checks the classified message rather than catching the base class
+    unconditionally.
+    """
 
-# At import time, register http_client's retryable errors. Lazy because they
-# import this module too.
-try:
-    from .http_client import ScrapeError, RateLimited
-    _RetryableError.register(ScrapeError)  # type: ignore[arg-type]
-    _RetryableError.register(RateLimited)  # type: ignore[arg-type]
-except ImportError:
-    pass
+    name = exc.__class__.__name__
+    if name == "RateLimited":
+        return True
+    if name != "ScrapeError":
+        return False
+    message = str(exc)
+    return any(message.startswith(f"{status} ") for status in ("500", "502", "503", "504"))

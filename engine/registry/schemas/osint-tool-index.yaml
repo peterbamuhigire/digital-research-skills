@@ -1,0 +1,14 @@
+root: osint_tools
+required_fields:
+  - id
+  - name
+  - url
+  - category
+  - geography
+  - source_ids
+  - access_model
+  - legal_notes
+  - verification
+  - confidence
+  - status
+  - last_checked

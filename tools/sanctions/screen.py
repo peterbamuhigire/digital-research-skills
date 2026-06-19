@@ -12,6 +12,8 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass, field
 from pathlib import Path
+from difflib import SequenceMatcher
+from xml.etree import ElementTree as ET
 from typing import Optional
 
 
@@ -55,7 +57,18 @@ def screen_name(
     Per Hetherington's rule: high-confidence + DOB-or-nationality match → escalate;
     medium-confidence → triangulate; low-confidence → log only.
     """
-    from rapidfuzz import fuzz  # lazy import
+    try:
+        from rapidfuzz import fuzz  # type: ignore
+
+        def _score(left: str, right: str) -> float:
+            return fuzz.token_sort_ratio(left, right) / 100.0
+
+    except ModuleNotFoundError:
+
+        def _score(left: str, right: str) -> float:
+            left_tokens = " ".join(sorted(left.split()))
+            right_tokens = " ".join(sorted(right.split()))
+            return SequenceMatcher(None, left_tokens, right_tokens).ratio()
 
     cache_dir = Path(cache_dir)
     if not cache_dir.exists():
@@ -82,7 +95,7 @@ def screen_name(
             best_match = ""
             for q in queries:
                 for en in entry_names:
-                    s = fuzz.token_sort_ratio(q.lower(), en.lower()) / 100.0
+                    s = _score(q.lower(), en.lower())
                     if s > best:
                         best = s
                         best_match = en
@@ -99,6 +112,7 @@ def screen_name(
                 program=_first(entry, ("program", "topics", "sanctions")),
                 similarity=best,
                 raw=entry,
+                record_url=_first(entry, ("record_url", "uid")),
             )
 
             # Refine confidence with DOB / nationality boost
@@ -125,6 +139,8 @@ def screen_name(
 
 def _load(path: Path) -> list[dict]:
     """Load a cached list file. Supports FTM/JSONL, JSON, and rudimentary XML."""
+    if path.suffix == ".xml":
+        return _load_xml(path)
     if path.suffix == ".json":
         text = path.read_text(encoding="utf-8")
         # FollowTheMoney FTM is JSONL-ish: one JSON per line.
@@ -142,6 +158,91 @@ def _load(path: Path) -> list[dict]:
         except json.JSONDecodeError:
             pass
     return []
+
+
+def _load_xml(path: Path) -> list[dict]:
+    root = ET.parse(path).getroot()
+    root_name = _tag(root)
+    if root_name == "ArrayOfFinancialSanctionsTarget":
+        return [_uk_record(node) for node in root if _tag(node) == "FinancialSanctionsTarget"]
+    if root_name == "sdnList":
+        return [_ofac_record(node) for node in root.iter() if _tag(node) == "sdnEntry"]
+    if root_name == "CONSOLIDATED_LIST":
+        return [_un_record(node) for node in root.iter() if _tag(node) in {"INDIVIDUAL", "ENTITY"}]
+    return []
+
+
+def _uk_record(node: ET.Element) -> dict:
+    fields = _children(node)
+    parts = [fields.get(key, "") for key in ("name1", "name2", "name3", "name4", "name5", "Name6")]
+    names = [" ".join(part for part in parts if part).strip()]
+    if fields.get("Name6"):
+        names.append(fields["Name6"])
+    return {
+        "name": names[0] if names else "",
+        "aliases": [name for name in names if name],
+        "schema": fields.get("GroupTypeDescription", "unknown"),
+        "birthDate": fields.get("Individual_DateOfBirth"),
+        "nationality": fields.get("Individual_Nationality"),
+        "program": fields.get("RegimeName"),
+        "record_url": fields.get("UKSanctionsListRef"),
+        "raw": fields,
+    }
+
+
+def _ofac_record(node: ET.Element) -> dict:
+    fields = _children(node)
+    names = [" ".join(part for part in (fields.get("firstName", ""), fields.get("lastName", "")) if part).strip()]
+    for aka in node.iter():
+        if _tag(aka) != "aka":
+            continue
+        aka_fields = _children(aka)
+        names.append(" ".join(part for part in (aka_fields.get("firstName", ""), aka_fields.get("lastName", "")) if part).strip())
+    programs = [child.text.strip() for child in node.iter() if _tag(child) == "program" and child.text]
+    return {
+        "name": names[0] if names else "",
+        "aliases": [name for name in names if name],
+        "schema": fields.get("sdnType", "unknown"),
+        "program": programs[0] if programs else None,
+        "record_url": fields.get("uid"),
+        "raw": fields,
+    }
+
+
+def _un_record(node: ET.Element) -> dict:
+    fields = _children(node)
+    names = []
+    if _tag(node) == "INDIVIDUAL":
+        parts = [fields.get(key, "") for key in ("FIRST_NAME", "SECOND_NAME", "THIRD_NAME", "FOURTH_NAME")]
+        names.append(" ".join(part for part in parts if part).strip())
+    else:
+        names.append(fields.get("FIRST_NAME", ""))
+    for alias in node.iter():
+        if _tag(alias) == "ALIAS_NAME" and alias.text:
+            names.append(alias.text.strip())
+    return {
+        "name": names[0] if names else "",
+        "aliases": [name for name in names if name],
+        "schema": _tag(node).lower(),
+        "birthDate": fields.get("DATE_OF_BIRTH"),
+        "nationality": fields.get("NATIONALITY"),
+        "program": fields.get("UN_LIST_TYPE"),
+        "record_url": fields.get("REFERENCE_NUMBER"),
+        "raw": fields,
+    }
+
+
+def _children(node: ET.Element) -> dict[str, str]:
+    out: dict[str, str] = {}
+    for child in node:
+        text = (child.text or "").strip()
+        if text:
+            out[_tag(child)] = text
+    return out
+
+
+def _tag(node: ET.Element) -> str:
+    return node.tag.rsplit("}", 1)[-1]
 
 
 def _names_in(entry: dict) -> list[str]:

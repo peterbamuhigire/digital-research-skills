@@ -1,0 +1,13 @@
+DDInter 2.0 Bulk Import Statistics
+Date: 2026-05-04T07:24:40.351130
+
+ATC Universe: 522 codes
+Drug-to-ATC mappings: 414 unique ATCs
+Total pairs parsed from DDInter CSVs: 17254
+Pairs deduped against EAC (52 existing): 17252
+Severity breakdown of new pairs:
+  MAJOR: 1254
+  MODERATE: 6942
+  MINOR: 9056
+
+Total after import: 17304 pairs

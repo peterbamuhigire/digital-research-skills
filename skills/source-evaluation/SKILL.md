@@ -1,6 +1,6 @@
 ---
 name: source-evaluation
-description: NON-NEGOTIABLE — use on every source the engine consults. Carries the engine's anti-hallucination guardrail (evidence discipline), the 5-tier credibility ladder, the Burke five-term source-doubt pentad, the Tudor twelve-point rubric for media/journalism, and Silverman/Bellingcat media-forensics workflow. Five references; load only what the source type demands.
+description: NON-NEGOTIABLE — use on every source the engine consults. Carries the engine's anti-hallucination guardrail (evidence discipline), the 5-tier credibility ladder, the Burke five-term source-doubt pentad, the Tudor twelve-point rubric for media/journalism, Silverman/Bellingcat media-forensics workflow, and automated reliability triage. Load only what the source type demands.
 metadata:
   portable: true
   compatible_with:
@@ -30,6 +30,7 @@ Always load `references/evidence-discipline.md`. The engine's first rule: **no c
 | **Encyclopaedic / reference work** | `references/credibility-ladder.md` (tier 4: tertiary) |
 | **Social media post / forum / comment** | `references/tudor-twelve-points.md` + `references/silverman-media-forensics.md` (provenance) |
 | **Statistic / dataset** | `references/credibility-ladder.md` + Walker four-axis (`data-quality-assessment`) |
+| **Automated source / claim reliability triage** | `references/automated-reliability-triage.md` + `references/credibility-ladder.md` |
 
 ## The 5-tier credibility ladder (universal)
 
@@ -100,9 +101,16 @@ Every cited claim in engine output carries:
 
 If any of those is missing, the claim does not ship.
 
+If automated reliability scoring was used, the output must also expose the
+axis-level breakdown and human-review flags from
+`references/automated-reliability-triage.md`. A composite score alone is not
+evidence.
+
 ## Universal anti-patterns
 
 - Trusting a tier-5 claim without triangulation.
+- Treating an automated reliability score as a source verdict instead of a
+  triage signal.
 - "Studies show" without footnote.
 - Citing a stat older than 3 years without flagging.
 - Single-source paragraph on contested terrain.
