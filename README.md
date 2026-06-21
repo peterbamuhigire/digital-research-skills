@@ -6,6 +6,15 @@ This is not a document-generator. It is a skills engine that runs investigations
 
 > **Repository:** https://github.com/peterbamuhigire/digital-research-skills
 
+## Architecture & cross-cutting engines (updated 2026-06-21)
+
+This engine no longer relies on native skill discovery — **no engine on this machine is natively discovered anymore.** Every engine, including this one, is consulted through the global routing table by globbing its `SKILL.md` files and reading them directly (resolve each engine's path per-device from the routing table; never assume an absolute path). Consult these cross-cutting engines **in addition** to this one:
+
+- **`design-system-skills`** — the single home for ALL design, typography, UI/UX, visual-identity, and visual-formatting skills, plus the **visual/typographic** anti-AI-slop doctrine. **Referenced, not mirrored** — resolve its path per-device. As of 2026-06-21 this engine's **`data-visualization` skill migrated out into `design-system-skills`**, which now holds the canonical, more complete copy. This engine **references** `design-system-skills` for all canonical font/typography/colour/chart doctrine rather than holding its own.
+- **`chwezi-accounting-doctrine`** — cross-cutting finance/accounting engine. **Referenced, not mirrored.** Consult for any financial-statement, valuation, or budget work alongside this engine.
+
+**What stays here:** the *textual* anti-AI-slop discipline. `anti-ai-slop` (real-time guardrail) and `ai-slop-audit` (per-iteration auditor, grades A/B/C/F, F blocks delivery) remain core to this engine — textual slop (clichés, hedging, preambles, voiceless template prose) is this engine's domain. **Visual/typographic** slop is the design engine's domain. When a deliverable needs charts or visual formatting, the evidence and narrative stay here and route their visual build to `design-system-skills`.
+
 ## What this engine does
 
 Given a research question, the engine runs:
@@ -31,7 +40,7 @@ The engine's skills compose into four layers:
 Layer 4 — OUTPUT CRAFT
           executive-communication (Pyramid + Zelazny)
           academic-reporting-standards (Brause + EQUATOR)
-          data-visualization (perceptual rankings + style guide + redesign)
+          [data-visualization → migrated to design-system-skills 2026-06-21]
           report-and-proposal-craft, business-writing
           professional-word-output, python-document-generation
 
@@ -82,7 +91,7 @@ skills/
 │
 ├── executive-communication/  [NEW]     Layer 4 — Pyramid + SCQA + action titles + Zelazny
 ├── academic-reporting-standards/ [NEW] Layer 4 — Brause + PRISMA/CONSORT/STROBE/MOOSE/GRADE/Cochrane/TOP
-├── data-visualization/      [NEW]      Layer 4 — chart selection, perceptual ranking, redesign
+│   (data-visualization MIGRATED OUT → design-system-skills 2026-06-21; canonical copy lives there)
 ├── report-and-proposal-craft/          Layer 4 — long-form scaffolding
 ├── business-writing/                   Layer 4 — email, memo, letter, blog, proposal
 ├── professional-word-output/           Layer 4 — .docx generation + branding
@@ -168,7 +177,7 @@ See `RESEARCH_CRAFT_INTEGRATION.md` for the per-book → engine-skill mapping.
 
 The engine ran a self-evaluation — dogfooding the orchestration model on itself — comparing its current capabilities against the published standards of McKinsey / Bain / BCG, Big 4 + Gartner / Forrester / IDC, U.S. intelligence-community analytic tradecraft (ICD 203, Heuer/Pherson SATs), PI / investigative-journalism / academic-reporting standards (ASIS, ICIJ, OCCRP, PRISMA, CONSORT, STROBE, MOOSE, GRADE, Cochrane, TOP).
 
-Result: **62 / 100 baseline → 65 / 100 after the 2026-04-26 build session** that shipped `executive-communication`, `analytic-tradecraft`, `academic-reporting-standards` (full skills) plus enhancements to `research-techniques` and `osint-investigation`. This repository revision extends that path with `primary-research`, `consulting-delivery`, `knowledge-productization`, and `data-visualization`.
+Result: **62 / 100 baseline → 65 / 100 after the 2026-04-26 build session** that shipped `executive-communication`, `analytic-tradecraft`, `academic-reporting-standards` (full skills) plus enhancements to `research-techniques` and `osint-investigation`. This repository revision extends that path with `primary-research`, `consulting-delivery`, and `knowledge-productization`. (`data-visualization`, shipped in an earlier revision, was migrated out to `design-system-skills` on 2026-06-21 — see **Architecture & cross-cutting engines** above.)
 
 See `docs/analysis/initial-evaluation/` — eight documents:
 - `00-executive-summary.md`, `01-methodology.md`, `02-benchmark-standards.md`, `03-engine-current-state.md`, `04-recommendations.md`, `05-implementation-roadmap.md`, `06-scorecard.md`, `99-sources.md`, plus `research-inputs/` for traceability.
