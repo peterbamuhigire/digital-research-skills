@@ -4,4 +4,4 @@ claims:
   source_ids:
     - SRC-0001
   confidence: "high"
-  status: "fixture"
+  status: "supported"

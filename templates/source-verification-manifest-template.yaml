@@ -1,0 +1,33 @@
+# Source verification manifest template
+# Copy into a project registry and replace sample IDs with project IDs.
+
+sources:
+  - id: src-001
+    title: Official report or dataset title
+    url: https://example.org/source
+    archive_url:
+    publisher: Publisher name
+    tier: 1
+    accessed_utc: 2026-07-08T00:00:00Z
+    verification_method: credibility-ladder
+    confidence: high
+
+claims:
+  - id: claim-001
+    text: A concise factual claim that appears in the draft.
+    source_ids:
+      - src-001
+    claim_type: fact
+
+quotes:
+  - id: quote-001
+    text: Exact quoted text from the source.
+    source_id: src-001
+    source_text_path: projects/example/_registry/source-text/src-001.txt
+
+statistics:
+  - id: stat-001
+    value: 42%
+    claim_id: claim-001
+    source_id: src-001
+    source_text_path: projects/example/_registry/source-text/src-001.txt

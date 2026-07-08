@@ -1,0 +1,116 @@
+version: "2026-07-08"
+standard: "Digital Research Engine analytic-tradecraft fixtures using ICD 203-style standards and Heuer/Pherson structured analytic techniques"
+last_verified: "2026-07-08"
+running_example: "docs/world-class-exemplars/running-example.md"
+
+fixtures:
+  - id: ach-cross-border-trade-pilot
+    technique: ACH
+    prompt: "Assess whether a 12-month digital trade facilitation pilot should proceed at selected East African border points."
+    hypotheses:
+      H1: "Proceed with a limited pilot after evidence-gap closure."
+      H2: "Delay until legal and operational readiness are proven."
+      H3: "Do not proceed; non-digital bottlenecks dominate."
+    evidence:
+      - id: E1
+        text: "Stakeholder interviews indicate paperwork complexity as a recurring pain point."
+        type: synthesis
+        source_tier: 3
+        diagnosticity:
+          H1: consistent
+          H2: consistent
+          H3: neutral
+      - id: E2
+        text: "No verified current data has been found on trader smartphone access at the target border points."
+        type: gap
+        source_tier: 0
+        diagnosticity:
+          H1: inconsistent
+          H2: consistent
+          H3: consistent
+      - id: E3
+        text: "Regulatory responsibilities are split across multiple agencies."
+        type: fact
+        source_tier: 2
+        diagnosticity:
+          H1: neutral
+          H2: consistent
+          H3: consistent
+    expected:
+      finding: "H2 should remain the working judgment until smartphone access, agency mandate, and pilot-operating conditions are verified."
+      confidence: "moderate"
+      required_flags:
+        - "gap"
+        - "alternative hypothesis"
+        - "assumption requiring verification"
+      failure_if:
+        - "states H1 as fact"
+        - "omits E2"
+        - "uses high confidence"
+
+  - id: kac-source-coverage
+    technique: KAC
+    prompt: "Run a key assumptions check on the same pilot recommendation."
+    assumptions:
+      - id: A1
+        text: "Informal traders will use a digital service if it reduces paperwork burden."
+        vulnerability: high
+        evidence_status: weak
+      - id: A2
+        text: "Border agencies will accept pilot data as operationally useful."
+        vulnerability: high
+        evidence_status: unverified
+      - id: A3
+        text: "A donor-funded pilot can operate without distorting fees or enforcement incentives."
+        vulnerability: medium
+        evidence_status: weak
+    expected:
+      finding: "The recommendation is assumption-sensitive; A1 and A2 must be converted into testable pilot-entry conditions."
+      confidence: "low-to-moderate until A1 and A2 are verified"
+      required_flags:
+        - "load-bearing assumption"
+        - "verification condition"
+      failure_if:
+        - "treats assumptions as established facts"
+        - "does not rank assumptions by vulnerability"
+
+  - id: premortem-pilot-failure
+    technique: pre-mortem
+    prompt: "Assume the pilot failed after 12 months. Identify plausible causes and early warning indicators."
+    failure_story: "The pilot launched, but uptake stayed low and agencies did not use the data."
+    expected_causes:
+      - "Trader onboarding friction was underestimated."
+      - "Agency incentives were misread."
+      - "Connectivity, device access, or language support blocked practical use."
+      - "No baseline metrics existed, so success could not be proven."
+    expected_indicators:
+      - "Low repeat usage after registration."
+      - "Agency staff continue parallel manual process."
+      - "High unresolved support requests in first month."
+      - "No verified baseline before launch."
+    failure_if:
+      - "lists generic project-management risks only"
+      - "omits indicators"
+      - "does not connect cause to evidence-gathering action"
+
+  - id: estimative-language
+    technique: estimative-language
+    prompt: "Write the confidence sentence for a recommendation constrained by mixed evidence."
+    inputs:
+      evidence_strength: "mixed"
+      source_reliability: "medium"
+      gaps:
+        - "current trader device access"
+        - "agency acceptance"
+      judgment: "limited pilot may be justified after gap closure"
+    expected:
+      acceptable_sentence: "We judge with moderate confidence that a limited pilot may be justified if device-access and agency-acceptance gaps are closed before procurement."
+      prohibited_phrases:
+        - "will succeed"
+        - "clearly proves"
+        - "guarantees impact"
+        - "it is obvious"
+      required_elements:
+        - "confidence level"
+        - "condition"
+        - "named gaps"

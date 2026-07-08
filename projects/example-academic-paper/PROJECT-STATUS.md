@@ -3,10 +3,10 @@
 | Field | Value |
 |---|---|
 | Project | `example-academic-paper` |
-| Current phase | initiation |
+| Current phase | validation-ready fixture |
 | Research type | paper |
 | Audience | academic reviewers |
 | Variant | academic-paper |
-| Validation state | not run |
-| Open gaps | TODO |
-| Outputs built | none |
+| Validation state | passes `python scripts\validate_engine.py` |
+| Open gaps | none for fixture validation |
+| Outputs built | academic-paper, executive-report, proposal fixture manifests |

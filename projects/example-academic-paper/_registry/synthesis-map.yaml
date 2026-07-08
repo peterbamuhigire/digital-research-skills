@@ -3,4 +3,4 @@ synthesis_map:
   synthesis: "The kernel supports scaffold, validate, assemble, and pack flows."
   claim_ids:
     - CLM-0001
-  status: "fixture"
+  status: "verified"

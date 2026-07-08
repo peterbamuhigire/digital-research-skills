@@ -276,4 +276,22 @@ gates, manifest-driven output assembly, evidence-pack export, three example
 projects, and a repo-level validator. See
 `docs/plans/engine-tune/01-project-kernel-implementation-plan.md`.
 
+## July 2026 upgrade status
+
+The July 2026 engine upgrade added a root `SKILL.md` router, release-blocking
+quality gates, source-register conventions, a Chwezi Core Systems running
+example, schema A-S exemplars, evidence-pack templates, analytic-tradecraft
+fixtures, a unified source verifier, and a citation-density dashboard. The
+upgrade record is in `docs/engine-upgrade-july-2026/FINAL-UPGRADE-REPORT.md`.
+
+Validation status:
+
+```powershell
+python scripts\validate_engine.py
+```
+
+The validator now passes cleanly across the three bundled example workspaces:
+`example-market-landscape`, `example-due-diligence-dossier`, and
+`example-academic-paper`.
+
 Maintained by Peter Bamuhigire.

@@ -40,6 +40,22 @@ metadata:
 7. Quarantine unverified claims and log failures.
 8. Produce a verification manifest for release.
 
+## Tooling
+
+Use the unified verifier when a project has a machine-readable source manifest:
+
+```powershell
+python tools\verification\source_verifier.py projects\<project-id>\_registry\verification-manifest.yaml --out projects\<project-id>\_registry\verification-report.md
+```
+
+Use the citation-density dashboard on any Markdown draft before release:
+
+```powershell
+python tools\reports\citation_density_dashboard.py projects\<project-id>\05-output\<output-family>\draft.md --manifest projects\<project-id>\_registry\verification-manifest.yaml --out projects\<project-id>\_registry\citation-density.md
+```
+
+Both tools return a non-zero exit code when release readiness fails.
+
 ## Quality Standards
 
 - Verification is independent of the agent that collected the source.
@@ -79,3 +95,4 @@ metadata:
 - `source-evaluation` defines source credibility.
 - `evidence-claim-graph` defines claim-source relationships.
 - `agentic-research-operations` uses this skill for merge/reject decisions.
+- `docs/quality-gates/release-blocking-gates.md` defines ship/no-ship criteria.
