@@ -1,8 +1,6 @@
 ---
 name: skill-safety-audit
-description: Scan new or updated skills for unsafe or malicious instructions (unknown
-  tools, external installers, credential harvesting) before accepting them into the
-  repository.
+description: Use when performing a read-only safety review of a new or changed skill for credential harvesting, unsafe installers, hidden mutation, excessive permissions, unknown tools, or instruction conflicts; use skill-writing for structural quality and source-verification for factual claims.
 metadata:
   portable: true
   compatible_with:
@@ -11,6 +9,41 @@ metadata:
 ---
 
 # Skill Safety Audit
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Skill directory and changed-file diff | Repository and requester | Stop; no safety verdict without the artifact and change scope. |
+| Declared tools, references, and permissions | Skill contract and linked files | Mark inaccessible items unassessed and block acceptance. |
+
+## Capability Contract
+
+Default to read-only. Do not install tools, run untrusted code, edit the skill, access credentials, or contact external systems during the audit unless separately authorised remediation is requested.
+
+## Degraded Mode
+
+If linked files, tool definitions, or provenance cannot be inspected, issue a partial report with those checks marked unassessed. An unassessed check is never a pass.
+
+## Decision Rules
+
+| Finding | Action | Failure/risk avoided |
+|---|---|---|
+| Credential request or exfiltration instruction | Block acceptance | Secret theft |
+| Unknown installer or executable | Quarantine pending provenance review | Supply-chain compromise |
+| Safe but excessive permission | Require least-privilege rewrite | Unnecessary blast radius |
+
+## Preliminary Safety Corrections
+
+- Executing the artifact under review. Fix: inspect statically by default.
+- Calling an unknown URL safe. Fix: verify ownership and purpose.
+- Treating obfuscation as style. Fix: block pending explanation.
+- Editing during diagnosis. Fix: separate remediation authority.
+- Passing inaccessible checks. Fix: mark them unassessed.
+
+## Worked Example
+
+A skill that asks for a shell-downloaded installer and environment credentials is blocked; cite the exact instructions and require a verified dependency path and least-privilege alternative.
 Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 <!-- dual-compat-start -->
@@ -24,12 +57,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The task is unrelated to `skill-safety-audit` or would be better handled by a more specific companion skill.
 - The request only needs a trivial answer and none of this skill's constraints or references materially help.
 
-## Required Inputs
+## Audit Source Requirements
 
 - Gather relevant project context, constraints, and the concrete problem to solve.
 - Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
 
-## Workflow
+## Audit Method Summary
 
 - Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
 - Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
@@ -41,12 +74,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
 - Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
 
-## Anti-Patterns
+## Legacy Audit Warnings
 
 - Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
 - Loading every reference file by default instead of using progressive disclosure.
 
-## Outputs
+## Initial Audit Deliverables
 
 - A concrete result that fits the task: implementation guidance, review findings, architecture decisions, templates, or generated artifacts.
 - Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
@@ -176,3 +209,25 @@ When using this skill, report:
 ## Notes
 
 This skill is about **preventing unsafe instructions** from entering the repository. It does **not** replace code review or security testing for application code.
+
+## Workflow
+
+1. Confirm the artifact, diff, linked files, and permissions; stop if required material is missing.
+2. Inspect instructions, tools, installers, URLs, credentials, mutation, and conflicts without execution.
+3. Classify each finding by exact evidence and risk.
+4. Block unsafe or unassessed critical behavior.
+5. Recover through authorised remediation, then repeat the read-only audit.
+
+## Outputs
+
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| Safety audit report | Maintainer or reviewer | Every finding cites text, severity, risk, correction, and assessed status. |
+
+## Anti-Patterns
+
+- Executing the reviewed artifact. Fix: inspect statically.
+- Trusting unknown URLs. Fix: verify provenance.
+- Ignoring obfuscation. Fix: block pending explanation.
+- Editing during diagnosis. Fix: obtain remediation authority.
+- Passing inaccessible checks. Fix: mark them unassessed.

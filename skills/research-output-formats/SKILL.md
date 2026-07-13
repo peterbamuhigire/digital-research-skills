@@ -1,21 +1,94 @@
 ---
 name: research-output-formats
-description: Use when the engine has to deliver a research or knowledge-mining output and the question "what kind of document is this?" matters — covers essays, papers, pamphlets, white papers, theses, dissertations, research proposals, intelligence reports, market analyses, market research reports, legal opinions, product descriptions, policy briefs, case studies, feasibility studies, literature reviews, and op-eds. Each format has academic and non-academic variants; pick the variant before drafting. Five references, load only the family the deliverable belongs to.
+description: Use when selecting the document form and academic or non-academic variant for a research deliverable such as a paper, thesis, policy brief, intelligence report, market analysis, legal opinion, case study, or feasibility study; use report-and-proposal-craft for the persuasion mechanics of business reports and proposals.
 metadata:
   portable: true
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
   priority: high
-  depends_on:
-    - source-evaluation
-    - report-and-proposal-craft
-    - academic-writing
-    - business-writing
 ---
 
 # Research output formats
+
+<!-- dual-compat-start -->
+
+## Use When
+
+- Select a research deliverable family and its academic or non-academic variant after the audience and decision are known.
+
+## Do Not Use When
+
+- Do not use for method selection or to override a mandatory commissioning template.
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Audience, decision, channel, length, and mandated format | Requester or institution | Stop selection and record the missing constraint. |
+| Verified findings and citation regime | Research registry and style guide | Return an outline with evidence gaps. |
+
+## Workflow
+
+1. Identify the reader action and check for a mandated form.
+2. Select one format and variant; stop if governing requirements conflict.
+3. Load that reference, map sections, draft from verified findings, and test compliance.
+4. If rendering or citation checks fail, recover through correction and rerun the checks.
+
+## Outputs
+
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| Format decision and section map | Writer and reviewer | One justified format/variant and all mandatory sections are named. |
+| Formatted deliverable | Intended audience | Voice, evidence density, structure, and citations fit the selected form. |
+
+## Evidence Produced
+
+| Category | Artifact | Acceptance condition |
+|---|---|---|
+| Correctness | Format-compliance checklist | Each mandatory element passes or is marked not applicable with reason. |
+
+## Capability Contract
+
+Selection and review default to read-only. Editing/rendering requires authority; submission, publication, legal sign-off, or representation as counsel/expert requires explicit authority and qualification.
+
+## Degraded Mode
+
+Without the mandate, style guide, sources, or renderer, provide a defensible section map and mark unassessed checks. Do not certify compliance.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Mandatory template exists | Follow it before generic guidance | Administrative rejection |
+| Short decision document needed | Select the matching brief | Academic overproduction |
+| Legal opinion lacks authorised counsel | Provide research support only | Unauthorised claim |
+
+## Quality Standards
+
+The selected form is explicit, source-traceable, and tested against its governing audience or template.
+
+## Anti-Patterns
+
+- Choosing by title alone. Fix: route from audience and decision.
+- Mixing two structures. Fix: select one mandate.
+- Ignoring a supplied template. Fix: map it first.
+- Drafting before citation selection. Fix: choose the variant first.
+- Certifying without authority. Fix: state the review boundary.
+
+## Worked Example
+
+A ministerial decision request routes to a policy brief rather than an academic paper; map recommendation and evidence sections and reserve technical depth for annexes.
+
+## References
+
+- [Academic formats](references/academic-formats.md)
+- [Advocacy and public formats](references/advocacy-and-public-formats.md)
+- [Commercial formats](references/commercial-formats.md)
+- [Analytical and professional formats](references/analytical-and-professional-formats.md)
+- [Academic and non-academic variants](references/academic-vs-nonacademic-variants.md)
+
+<!-- dual-compat-end -->
 
 The engine produces many document types. They share evidence discipline but differ in **purpose, audience, structure, voice, and citation regime**. Picking the wrong format is the most common reason a technically correct piece of research lands badly.
 

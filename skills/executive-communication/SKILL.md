@@ -1,13 +1,11 @@
 ---
 name: executive-communication
-description: Output craft for executive-grade artefacts. Covers the Minto Pyramid Principle (SCQA opener, single governing thought, MECE decomposition), the McKinsey ghost-deck and action-title discipline, the Bain "answer-first" pattern, and the Zelazny chart-selection rule. Use on every report, memo, deck, and one-pager intended for a senior reader. Six references; load only what the artefact demands.
+description: Use when verified research must become an answer-first memo, report, deck, or one-pager for senior readers; this skill structures the argument and page messages, while critical-reasoning-and-argument tests the underlying claims.
 metadata:
   portable: true
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
-  priority: high
 ---
 
 # Executive Communication
@@ -80,8 +78,8 @@ Before any executive artefact ships, every box must be ticked:
 - [ ] **No claim is unsourced** — every fact still ties back to the upstream research manifest.
 - [ ] Confidence-and-uncertainty discipline preserved from upstream (see `analytic-tradecraft` for estimative-probability vocabulary).
 
-## Anti-patterns
 
+## Executive Communication Additional Failure Modes
 - **Topic titles.** "Market overview", "Methodology", "Findings" — these are skeletons, not titles. Replace with a complete sentence stating what the section concludes.
 - **Buried lede.** The decision-maker reads the first paragraph and the last paragraph. If the answer is in the middle, the artefact has failed.
 - **3-card-monte structure.** Every section title says the same thing in different words. The reader can't navigate; the writer hasn't decomposed MECE.
@@ -109,3 +107,83 @@ Before any executive artefact ships, every box must be ticked:
 - Rasiel, Ethan M. and Friga, Paul N. *The McKinsey Mind*. McGraw-Hill, 2001. Tier 1.
 
 The verbatim attribution discipline applies: claims in the references that paraphrase Minto / Zelazny / Rasiel are labelled as paraphrase and tied back to the canonical book.
+
+<!-- dual-compat-start -->
+## Use When
+
+- Use for a senior-reader memo, report, deck, executive summary, or one-pager built from verified analysis.
+
+## Do Not Use When
+
+- Do not use to invent strategy or repair unsupported reasoning; route argument testing to `critical-reasoning-and-argument`.
+
+## Inputs
+
+| Artefact | Source or provider | Required? | If absent |
+|---|---|---|---|
+| Verified findings, argument map, audience decision, and format constraints | Research workflow and requester | required | Return a missing-input brief; do not manufacture a governing thought |
+
+## Workflow
+
+1. State the audience decision and tested governing thought.
+2. Choose SCQA, pyramid, ghost deck, or chart form from the reference router.
+3. Build mutually exclusive message groups and action titles; stop if a load-bearing claim lacks evidence.
+4. Test the answer-first flow and recover by exposing unresolved gaps rather than smoothing them away.
+
+## Capability contract
+
+Read and search are required. Default to read-only restructuring; edit or publish only with explicit authority.
+
+## Degraded mode
+
+Without the argument map or source manifest, return an annotated outline and mark unsupported pages as gaps.
+
+## Decision rules
+
+| Choice | Action | Failure avoided |
+|---|---|---|
+| Reader must decide quickly | Lead with the tested answer and implication | Chronological evidence dump |
+| Evidence does not support one governing thought | Surface competing conclusions | False certainty |
+
+## Outputs
+
+| Artefact | Consumer | Observable acceptance condition |
+|---|---|---|
+| Executive outline or finished artefact | Senior reader and release owner | One tested message per section or page; every load-bearing claim traces to evidence |
+
+
+## Executive Communication Evidence Notes
+- Preserve source identifiers in notes and record the ship-gate result.
+
+## Quality Standards
+
+Make the decision visible, keep claims and implications distinct, and retain uncertainty that matters.
+
+## Anti-Patterns
+
+- Opening with process history. Fix: lead with the decision and answer.
+- Using an action title that merely names a topic. Fix: state the evidenced message.
+- Forcing MECE categories that overlap. Fix: revise the grouping.
+- Selecting a chart for decoration. Fix: match it to the comparison being made.
+- Hiding a material caveat in an appendix. Fix: place it beside the affected conclusion.
+
+## Worked example
+
+Turn three verified findings into one governing thought, two non-overlapping support groups, and action titles that state the implication without adding claims.
+
+## References
+
+- [Pyramid principle](references/pyramid-principle.md)
+- [Ghost deck pattern](references/ghost-deck-pattern.md)
+- [Chart selection](references/zelazny-chart-selection.md)
+<!-- dual-compat-end -->
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance |
+|---|---|---|
+| Executive-structure review record | Release owner | Claim traceability and ship-gate results are recorded |
+
+## Reference Index
+
+- [Action titles](references/action-titles.md); [executive-summary template](references/executive-summary-template.md); [SCQA opener](references/scqa-opener.md)

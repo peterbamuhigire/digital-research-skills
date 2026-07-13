@@ -1,12 +1,11 @@
 ---
 name: analytic-tradecraft
-description: Structured analytic discipline for any forward-looking judgment or contested-evidence question. Encodes ICD 203 nine standards, the Heuer/Pherson Structured Analytic Techniques (ACH, KAC, Devil's Advocacy, Red Cell, Pre-Mortem, What-If, High-Impact/Low-Probability), the Kent estimative-probability lexicon, the Heuer/Bruce cognitive-bias checklist, and the NATO Admiralty Code source-grading overlay. Five references; load only what the question demands.
+description: Use when a forward-looking judgment or contested-evidence question needs structured analytic techniques, bias checks, sourcing discipline, alternatives, and calibrated estimative language; use critical-reasoning-and-argument for general claim and warrant testing.
 metadata:
   portable: true
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
   priority: critical
 ---
 
@@ -103,6 +102,80 @@ Before any estimative output ships, every box must be ticked:
 
 ## Sources for this skill
 
+<!-- dual-compat-start -->
+## Use When
+
+Use for contested evidence, alternative hypotheses, warning, deception, or forward-looking judgments.
+
+## Do Not Use When
+
+Use `critical-reasoning-and-argument` for ordinary argument review without an estimative problem.
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Question, hypotheses, evidence, decision horizon | Analyst and verified corpus | Stop judgment and return gaps |
+| Source reliability and confidence notes | Source evaluation | Do not substitute reliability for judgment confidence |
+
+## Workflow
+
+1. Frame the question and plausible alternatives.
+2. Select the smallest fitting analytic technique.
+3. Test evidence, assumptions, bias, deception, countercases, and indicators.
+4. Stop on unsupported load-bearing claims; recover with a qualified gap.
+5. Express the judgment with calibrated confidence and revision indicators.
+
+## Outputs
+
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Analytic judgment and technique record | Decision-maker and reviewer | Alternatives, evidence, assumptions, confidence, indicators, and dissent are explicit |
+
+## Tradecraft Evidence Guidance
+
+The technique worksheet, evidence matrix, assumption log, and confidence rationale support the judgment.
+
+## Capability Contract
+
+Analysis is read-only by default. Collection, surveillance, operational action, publication, or source-record changes require explicit authority.
+
+## Degraded Mode
+
+With limited evidence or tools, provide conditional hypotheses and collection gaps; do not manufacture probability or resolution.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Multiple explanations fit | Compare hypotheses | Premature closure |
+| Low-likelihood outcome has high impact | Add indicators and warning threshold | Risk blindness |
+| Deception is plausible | Test source independence and motive | Manipulated judgment |
+
+## Tradecraft Quality Notes
+
+Judgments distinguish evidence, inference, assumptions, source reliability, and analytic confidence.
+
+## Tradecraft Pitfalls
+
+- Choosing a technique by habit; match the question.
+- Hiding alternatives; show them.
+- Conflating confidence with source quality; report both.
+- Assigning unsupported precision; qualify it.
+- Omitting disconfirming evidence; record it.
+
+## Tradecraft Scenario
+
+Two explanations supported by overlapping sources remain separate until independent evidence discriminates between them.
+
+## References
+
+- [Structured analytic techniques](references/heuer-pherson-sats.md)
+- [Cognitive bias checklist](references/cognitive-bias-checklist.md)
+<!-- dual-compat-end -->
+
+## Sources for this skill
+
 - George, Roger Z., and Bruce, James B., eds. *Analyzing Intelligence: Origins, Obstacles, and Innovations*. Georgetown University Press, 2008. Tier 1. (Local extract: `extracted-books/analyzing-intelligence.txt`.)
 - ODNI Intelligence Community Directive 203 — Analytic Standards. January 2015. https://www.dni.gov/files/documents/ICD/ICD-203.pdf. Tier 1.
 - Heuer, Richards J., Jr. *Psychology of Intelligence Analysis*. CIA Center for the Study of Intelligence, 1999. https://www.cia.gov/resources/csi/books-monographs/psychology-of-intelligence-analysis-2/. Tier 1.
@@ -113,3 +186,25 @@ Before any estimative output ships, every box must be ticked:
 - National Research Council. *Intelligence Analysis for Tomorrow: Advances from the Behavioral and Social Sciences*. National Academies Press, 2011. Tier 1.
 
 The verbatim attribution discipline applies in full: claims in the references that paraphrase George/Bruce, Heuer, Pherson, Kent are labelled as paraphrase and tied back to the canonical source. Quotations carry chapter/page where the source allows.
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance condition |
+|---|---|---|
+| Technique worksheet, hypothesis matrix, and assumption log | Decision-maker and analytic reviewer | Each judgment separates evidence, inference, assumptions, confidence, alternatives, and indicators |
+
+## Quality Standards
+
+The judgment exposes disconfirming evidence, distinguishes source reliability from analytic confidence, and states observable indicators that would change the assessment.
+
+## Anti-Patterns
+
+- Choosing a technique by habit. **Fix:** match it to the estimative question.
+- Hiding plausible alternatives. **Fix:** test them explicitly.
+- Conflating confidence with source quality. **Fix:** report both dimensions.
+- Assigning unsupported precision. **Fix:** use calibrated qualified language.
+- Omitting disconfirming evidence. **Fix:** record and weigh it before judgment.
+
+## Worked Example
+
+When two explanations depend on the same reporting chain, the analyst keeps both hypotheses open until independent evidence discriminates between them.

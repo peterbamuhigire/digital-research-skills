@@ -22,14 +22,14 @@ metadata:
 - The task is a single deliverable with no reuse path.
 - The work is still too early and the evidence base is not yet stable.
 
-## Required Inputs
 
+## Knowledge Productization Required Context
 - The core research corpus or asset inventory.
 - Intended audiences or buyers.
 - Reuse, sensitivity, and confidentiality constraints.
 
-## Workflow
 
+## Knowledge Productization Method Detail 2
 - Read this `SKILL.md` first, then load only the needed reference file.
 - Audit the knowledge corpus before choosing wrappers.
 - Preserve provenance while creating variants and offers.
@@ -40,19 +40,53 @@ metadata:
 - Audience variants are intentional.
 - Commercial claims stay inside validated evidence.
 
-## Anti-Patterns
 
+## Knowledge Productization Existing Failure Notes
 - Rewriting from scratch when a reusable core exists.
 - Packaging confidential details into reusable IP.
 - Monetizing ideas that have not survived verification.
 
-## Outputs
 
+## Knowledge Productization Core Deliverables
 - A knowledge audit, audience-variant plan, asset ladder, or monetization-ready packaging plan.
 
 ## References
 
 - Use the `references/` files for audit, audience planning, and productization.
+## Inputs
+
+| Artefact | Source or provider | Requirement | If absent |
+|---|---|---|---|
+| Verified knowledge assets and audience need | knowledge-mining and requester | required | Return an asset-gap assessment when either is absent |
+
+## Capability contract
+
+Read access to the verified asset library and audience brief is required. Variant creation, pricing, licensing, publication, or commercial release needs explicit owner authority.
+
+## Degraded mode
+
+Fallback when rights, audience evidence, or asset access is unavailable: return a qualified product concept and gap register; do not label demand, rights, or release readiness as assessed.
+
+## Decision rules
+
+| Choice | Action | Failure avoided |
+|---|---|---|
+| Same evidence serves a distinct audience decision | Create a controlled variant | Copy proliferation without purpose |
+
+
+## Outputs
+| Artefact | Consumer | Observable acceptance condition |
+|---|---|---|
+| Productization plan and audience variants | owner, editor, or commercial team | Each variant retains claim provenance and names its buyer or user decision |
+
+
+## Knowledge Productization Evidence Notes
+- Record source-asset identifiers, audience decision, rights status, variant changes, refresh ownership, and pilot evidence.
+
+## Worked example
+
+Reuse one verified claim library for an executive brief and a training note, changing structure and explanation but retaining the same source identifiers.
+
 <!-- dual-compat-end -->
 
 This skill treats research output as an asset portfolio, not just a finished report. It helps the engine preserve, package, and repurpose insight across clients, sectors, and output forms without breaking provenance.
@@ -80,8 +114,8 @@ This skill treats research output as an asset portfolio, not just a finished rep
 | Planning variants for different audiences | `references/audience-variant-planning.md` |
 | Designing monetizable assets and offers | `references/productization-and-monetization.md` |
 
-## Workflow
 
+## Knowledge Productization Core Method Notes
 1. Inventory the corpus: findings, methods, visuals, frameworks, templates, data assets.
 2. Classify what is reusable, sensitive, client-specific, or obsolete.
 3. Choose the asset ladder: memo, report, white paper, proposal, workshop, dashboard, thesis, book.
@@ -97,8 +131,8 @@ This skill treats research output as an asset portfolio, not just a finished rep
 - [ ] Source traceability survives repackaging
 - [ ] Commercial claims stay inside validated evidence
 
-## Anti-patterns
 
+## Knowledge Productization Additional Failure Modes 2
 - Treating every finished report as a dead end
 - Rewriting from scratch when a reusable core exists
 - Packaging confidential client specifics into supposedly reusable IP
@@ -117,3 +151,28 @@ This skill treats research output as an asset portfolio, not just a finished rep
 - Hackos, JoAnn T. *The Complete Guide to Knowledge Management*. Tier 1.
 - *Knowledge Management and Business Strategies*. Tier 1.
 - *Developments in Information and Knowledge Management Systems for Business Applications*. Tier 1.
+
+
+## Workflow
+1. Audit verified assets, rights, freshness, audience, and decision need.
+2. Select the smallest useful product and define its provenance-preserving variant rules.
+3. Stop when rights, evidence, or buyer need is unresolved.
+4. Pilot and review; recover by returning to the knowledge audit and narrowing scope.
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance |
+|---|---|---|
+| Productization decision and provenance register | Owner and release reviewer | Each variant names its source assets, audience, use, and gaps |
+
+
+## Anti-Patterns
+- Packaging an unverified claim library. Fix: verify or remove unsupported assets.
+- Creating variants without a distinct audience decision. Fix: keep one source product.
+- Copying content until provenance drifts. Fix: use controlled source identifiers.
+- Claiming demand without evidence. Fix: label it as a hypothesis and test it.
+- Ignoring refresh cost. Fix: define ownership and cadence before release.
+
+## Reference Index
+
+- [Knowledge audit](references/knowledge-audit.md); [audience-variant planning](references/audience-variant-planning.md); [productization and monetization](references/productization-and-monetization.md)

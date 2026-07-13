@@ -1,8 +1,6 @@
 ---
 name: excel-spreadsheets
-description: 'Generate world-class, professionally designed Microsoft Excel spreadsheets
-  and handle all Excel/spreadsheet workflows. Use when: generating .xlsx files from
-  apps or scripts (openpyxl, xlsxwriter, PhpSpreadsheet, pandas), importing or parsing...'
+description: Use when creating, importing, repairing, or validating Excel workbooks with formulas, tables, charts, controls, and professional formatting; use python-document-generation for multi-format application exports.
 metadata:
   portable: true
   compatible_with:
@@ -24,13 +22,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The task is unrelated to `excel-spreadsheets` or would be better handled by a more specific companion skill.
 - The request only needs a trivial answer and none of this skill's constraints or references materially help.
 
-## Required Inputs
 
+## Excel Spreadsheets Required Context
 - Gather relevant project context, constraints, and the concrete problem to solve; load `references` only as needed.
 - Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
 
-## Workflow
 
+## Excel Spreadsheets Core Method Notes
 - Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
 - Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
 - Produce the deliverable with assumptions, risks, and follow-up work made explicit when they matter.
@@ -41,13 +39,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
 - Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
 
-## Anti-Patterns
 
+## Excel Spreadsheets Existing Failure Notes
 - Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
 - Loading every reference file by default instead of using progressive disclosure.
 
-## Outputs
 
+## Excel Spreadsheets Core Deliverables
 - A concrete result that fits the task: implementation guidance, review findings, architecture decisions, templates, or generated artifacts.
 - Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
 - References used, companion skills, or follow-up actions when they materially improve execution.
@@ -61,6 +59,40 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 ## References
 
 - Use the `references/` directory for deep detail after reading the core workflow below.
+## Inputs
+
+| Artefact | Source or provider | Requirement | If absent |
+|---|---|---|---|
+| Data, workbook purpose, and calculation rules | requester or verified source files | required | Return a schema and unresolved-input list if absent |
+
+## Capability contract
+
+Read access to the workbook and calculation rules is required. Formula, format, macro, or data edits need explicit authority; external connections and workbook publication require a separately confirmed boundary.
+
+## Degraded mode
+
+Fallback without spreadsheet execution or rendering: return a qualified workbook plan or patch, list formula and visual checks as unassessed, and do not treat an unopened file as accepted.
+
+## Decision rules
+
+| Choice | Action | Failure avoided |
+|---|---|---|
+| Existing workbook must retain formulas | Edit in place and regression-check formula cells | Silent calculation loss |
+
+
+## Outputs
+| Artefact | Consumer | Observable acceptance condition |
+|---|---|---|
+| Validated workbook and QA record | decision-maker or application user | Opens cleanly; formulas, formats, filters, and required sheets are checked |
+
+
+## Excel Spreadsheets Evidence Notes 1
+- Record source totals, preserved formulas, workbook changes, reconciliation variances, and sheet-level visual checks.
+
+## Worked example
+
+For a monthly tracker, preserve the raw-data sheet, add a table-backed summary, use explicit number formats, and record formula and visual checks.
+
 <!-- dual-compat-end -->
 Excel done right looks like a financial analyst and a graphic designer collaborated on it. Done wrong, it's a wall of unformatted data nobody trusts. This skill covers both the code that generates Excel files and the design standards that make them world-class.
 
@@ -350,3 +382,29 @@ Read `references/vba-macros.md` for full VBA patterns and keyboard shortcuts.
 | Python automation & =PY() | `references/python-automation.md` |
 | VBA macros & keyboard shortcuts | `references/vba-macros.md` |
 | Pre-delivery checks | `references/quality-checklist.md` |
+
+
+## Workflow
+1. Confirm workbook purpose, consumers, source data, formulas, and required compatibility.
+2. Preserve raw data and existing calculations before making authorised changes.
+3. Stop when source totals, calculation rules, or workbook protection cannot be verified.
+4. Generate or repair, then inspect formulas and rendered sheets; recover from a failed check by reverting the affected change and isolating the defect.
+
+
+## Excel Spreadsheets Evidence Notes 2
+| Evidence | Consumer | Acceptance |
+|---|---|---|
+| Workbook QA and reconciliation record | Release owner | Formula, totals, structure, formatting, and visual checks are recorded |
+
+
+## Anti-Patterns
+- Overwriting formulas with displayed values. Fix: preserve and regression-check formula cells.
+- Leaving numeric cells on General. Fix: apply explicit semantic formats.
+- Mixing source data and presentation logic. Fix: separate raw, calculation, and output sheets.
+- Shipping without opening and inspecting the workbook. Fix: run structural and visual checks.
+- Hiding an unreconciled total. Fix: stop release and record the variance.
+
+## Reference Index
+
+- [Design standards](references/design-standards.md); [formulas](references/formulas-functions.md); [charts and pivots](references/charts-pivot.md); [financial modelling](references/financial-modeling.md)
+- [Programmatic generation](references/programmatic-generation.md); [Python automation](references/python-automation.md); [VBA macros](references/vba-macros.md); [quality checklist](references/quality-checklist.md)

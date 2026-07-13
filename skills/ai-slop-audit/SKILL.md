@@ -1,12 +1,11 @@
 ---
 name: ai-slop-audit
-description: Analyse, evaluate, and audit any artefact for AI slop and grade it. Runs after EACH major iteration of research work (a drafted section, a completed cohort, a synthesis, a generated .docx) and auto-runs whenever the user asks to analyse, review, evaluate, audit, critique, score, or "de-slop" any report, dossier, document, app, website, business plan, SRS, proposal, blog post, image, or codebase — or asks "does this look AI-generated?". Produces a graded slop report — per-marker findings with severity, evidence, and a concrete fix. Pairs with anti-ai-slop (real-time prevention).
+description: Use when auditing a concrete artefact for AI slop after a major iteration or before release, with evidence-backed findings, fixes, genericness score, and A/B/C/F verdict; use anti-ai-slop during production rather than for retrospective grading.
 metadata:
   portable: true
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
   priority: high
   source: ai-slop-detector research (2026-06-07), verified
 ---
@@ -104,6 +103,108 @@ Artefact type(s): <...>
 - Every finding cites concrete evidence from the artefact (a quote, line number, colour value, region, URL). No evidence, no finding.
 - Do not invent a flaw to pad the report. "This artefact is clean" is a valid, wanted verdict.
 - Mark inferences "(inference)".
+
+## See also
+
+<!-- dual-compat-start -->
+## Use When
+
+Use after a concrete iteration exists and before release.
+
+## Do Not Use When
+
+Do not use to generate the artefact or edit it without separate remediation authority.
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Concrete artefact, purpose, audience | Requester or workspace | Stop; no artefact means no auditable evidence |
+| Applicable source, dependency, render, or state evidence | Owner and available tools | Mark unavailable checks `not assessed` |
+
+## Audit Core Method
+
+1. Classify the artefact and applicable checks.
+2. Run machine-checkable gates before judgment checks.
+3. Cite exact evidence for each finding and stop on any blocking marker.
+4. Grade consistently; name unavailable checks rather than passing them.
+
+## Outputs
+
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Graded audit report | Author or release owner | Every finding has location, severity, evidence, fix, and unassessed checks |
+
+## Audit Evidence Guidance
+
+The audit report, check results, and evidence locations support the verdict.
+
+## Capability Contract
+
+Default to read-only. Editing, publication, destructive action, spending, and certification require separate explicit authority.
+
+## Degraded Mode
+
+Report inaccessible checks as `not assessed`; do not lower risk, invent findings, or issue a clean verdict that depends on them.
+
+## Decision Rules
+
+| Evidence | Action | Failure/risk avoided |
+|---|---|---|
+| Blocking factual, security, citation, or accessibility defect | Grade F and block | Harmful release |
+| Supported non-blocking marker | Grade B or C and prescribe fix | Vague critique |
+| No supported finding | Preserve clean verdict | Invented debt |
+
+## Audit Quality Notes
+
+Verdicts follow evidence, not preference, and unavailable checks remain visible.
+
+## Audit Pitfalls
+
+- Reporting an “AI feel”; cite a marker.
+- Inventing flaws to fill sections; allow a clean audit.
+- Editing during diagnosis; request authority.
+- Treating inaccessible checks as passes; mark them.
+- Removing authored specificity; list what to preserve.
+
+## Audit Scenario
+
+An inaccessible rendered page is marked `not assessed`; text-only findings do not imply a visual pass.
+
+## References
+
+- [Production-time prevention](../anti-ai-slop/SKILL.md)
+<!-- dual-compat-end -->
+
+## Workflow
+
+1. Classify the artefact and list every applicable machine and judgment check.
+2. Run objective checks first and preserve exact locations for each hit.
+3. Stop and grade F when a blocking defect is supported by evidence.
+4. Recover unavailable checks by marking them `not assessed`; retry when the required artefact or tool becomes available.
+5. Assign the verdict from the evidence and preserve authored material that should survive remediation.
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance condition |
+|---|---|---|
+| Audit report and check log | Author and release owner | Every finding has an exact location, severity, supporting evidence, and concrete correction |
+
+## Quality Standards
+
+Every verdict agrees with its blocking markers, every finding cites observable evidence, and every unavailable check remains explicitly unassessed.
+
+## Anti-Patterns
+
+- Reporting an undefined “AI feel.” **Fix:** cite the exact marker and location.
+- Inventing defects to fill the report. **Fix:** allow a clean verdict when evidence supports it.
+- Editing during diagnosis. **Fix:** request separate remediation authority.
+- Passing an inaccessible check. **Fix:** mark it `not assessed`.
+- Removing useful authored specificity. **Fix:** identify material that remediation must preserve.
+
+## Worked Example
+
+If a document page cannot be rendered, the audit marks visual checks unassessed while still reporting separately evidenced citation and prose findings.
 
 ## See also
 - `anti-ai-slop` — real-time prevention companion.

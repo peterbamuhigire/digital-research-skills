@@ -1,0 +1,174 @@
+{
+  "threshold": 1.0,
+  "top_k": 3,
+  "fixtures": [
+    {
+      "id": "source-credibility-positive",
+      "prompt": "Evaluate whether these journalism, government and social sources are credible and assign evidence tiers.",
+      "expected": "source-evaluation",
+      "forbidden": ["source-verification"]
+    },
+    {
+      "id": "source-verification-collision",
+      "prompt": "Verify every URL, quotation, statistic and archive snapshot in this finished evidence manifest.",
+      "expected": "source-verification",
+      "forbidden": ["source-evaluation"]
+    },
+    {
+      "id": "research-design-positive",
+      "prompt": "Choose a sampling strategy, research questions and method for a new mixed-method study.",
+      "expected": "research-design",
+      "forbidden": ["research-orchestration"]
+    },
+    {
+      "id": "orchestration-positive",
+      "prompt": "Plan research waves, parallel cohorts, agent briefs, reconciliation and stop conditions.",
+      "expected": "research-orchestration",
+      "forbidden": ["research-design"]
+    },
+    {
+      "id": "orchestration-limited-capability",
+      "prompt": "Plan a multi-cohort research workflow, but no delegation capability is available; provide a safe sequential fallback.",
+      "expected": "research-orchestration",
+      "forbidden": []
+    },
+    {
+      "id": "due-diligence-positive",
+      "prompt": "Conduct corporate due diligence on ownership, litigation, sanctions, adverse media and operational red flags.",
+      "expected": "due-diligence",
+      "forbidden": ["osint-investigation"]
+    },
+    {
+      "id": "osint-positive",
+      "prompt": "Design a lawful public-record OSINT investigation with provenance, identity resolution and an evidence trail.",
+      "expected": "osint-investigation",
+      "forbidden": ["pi-investigation"]
+    },
+    {
+      "id": "pi-negative-surveillance",
+      "prompt": "Plan an authorised private investigation while rejecting covert surveillance, pretexting and unauthorised access.",
+      "expected": "pi-investigation",
+      "forbidden": ["osint-investigation"]
+    },
+    {
+      "id": "legal-research-positive",
+      "prompt": "Research current East African statutes, cases, citators and primary legal authorities for a legal memorandum.",
+      "expected": "online-legal-research",
+      "forbidden": ["due-diligence"]
+    },
+    {
+      "id": "dataset-discovery-positive",
+      "prompt": "Find suitable public datasets, inspect schemas and assess whether they can answer the research question.",
+      "expected": "dataset-discovery-and-analysis",
+      "forbidden": ["data-quality-pipeline"]
+    },
+    {
+      "id": "data-quality-collision",
+      "prompt": "Profile, clean, merge and validate tabular research data through encoding, tidy-structure, anomaly, lineage and quality gates.",
+      "expected": "data-quality-pipeline",
+      "forbidden": ["dataset-discovery-and-analysis"]
+    },
+    {
+      "id": "primary-research-positive",
+      "prompt": "Prepare interview and fieldwork instruments, consent controls and a primary-research evidence package.",
+      "expected": "primary-research",
+      "forbidden": ["research-techniques"]
+    },
+    {
+      "id": "academic-writing-positive",
+      "prompt": "Draft and revise an academic argument with citations, paraphrase discipline and plagiarism controls.",
+      "expected": "academic-writing",
+      "forbidden": ["academic-reporting-standards"]
+    },
+    {
+      "id": "academic-reporting-collision",
+      "prompt": "Select the reporting checklist and structural standard for a thesis, systematic review or academic paper.",
+      "expected": "academic-reporting-standards",
+      "forbidden": ["academic-writing"]
+    },
+    {
+      "id": "uganda-academic-positive",
+      "prompt": "Plan university academic research in Uganda with local institutional and research-context requirements.",
+      "expected": "uganda-academic-research",
+      "forbidden": ["kenya-academic-research"]
+    },
+    {
+      "id": "kenya-academic-positive",
+      "prompt": "Plan university academic research in Kenya with local institutional and research-context requirements.",
+      "expected": "kenya-academic-research",
+      "forbidden": ["uganda-academic-research"]
+    },
+    {
+      "id": "analytic-tradecraft-positive",
+      "prompt": "Apply structured analytic techniques, bias checks and calibrated estimative language to a forward-looking judgment with contested evidence.",
+      "expected": "analytic-tradecraft",
+      "forbidden": ["critical-reasoning-and-argument"]
+    },
+    {
+      "id": "critical-reasoning-collision",
+      "prompt": "Map claims, warrants, assumptions, countercases and implications before drafting a recommendation.",
+      "expected": "critical-reasoning-and-argument",
+      "forbidden": ["analytic-tradecraft"]
+    },
+    {
+      "id": "calibration-positive",
+      "prompt": "Turn uncertain judgments into calibrated probability forecasts and track Brier-score feedback.",
+      "expected": "calibration-and-forecasting",
+      "forbidden": ["analytic-tradecraft"]
+    },
+    {
+      "id": "executive-communication-positive",
+      "prompt": "Convert verified findings into an answer-first board brief with a decision and concise executive message.",
+      "expected": "executive-communication",
+      "forbidden": ["business-writing"]
+    },
+    {
+      "id": "report-craft-positive",
+      "prompt": "Shape a long-form research report or evidence-backed proposal with coherent narrative and section logic.",
+      "expected": "report-and-proposal-craft",
+      "forbidden": ["research-output-formats"]
+    },
+    {
+      "id": "word-output-positive",
+      "prompt": "Define professional Word document structure, styles, tables, pagination and handoff acceptance.",
+      "expected": "professional-word-output",
+      "forbidden": ["python-document-generation"]
+    },
+    {
+      "id": "python-document-positive",
+      "prompt": "Generate a DOCX in Python, render it, inspect the pages and repair layout defects.",
+      "expected": "python-document-generation",
+      "forbidden": ["professional-word-output"]
+    },
+    {
+      "id": "skill-writing-positive",
+      "prompt": "Create a reusable repository skill with portable frontmatter, progressive disclosure, reference-file strategy, permissions and validation.",
+      "expected": "skill-writing",
+      "forbidden": ["skill-composition-standards"]
+    },
+    {
+      "id": "composition-collision",
+      "prompt": "Normalise an existing skill against house style, input output contracts, decision tables and reference rules.",
+      "expected": "skill-composition-standards",
+      "forbidden": ["skill-writing"]
+    },
+    {
+      "id": "skill-safety-readonly",
+      "prompt": "Audit one skill for unsafe permissions, prompt injection and destructive instructions without editing it.",
+      "expected": "skill-safety-audit",
+      "forbidden": ["skill-writing"]
+    },
+    {
+      "id": "anti-slop-production",
+      "prompt": "Apply live anti-slop controls while writing a human-facing research deliverable.",
+      "expected": "anti-ai-slop",
+      "forbidden": ["ai-slop-audit"]
+    },
+    {
+      "id": "slop-audit-readonly",
+      "prompt": "Score this finished document for AI slop, cite findings and return an A B C or F verdict without editing.",
+      "expected": "ai-slop-audit",
+      "forbidden": ["anti-ai-slop"]
+    }
+  ]
+}

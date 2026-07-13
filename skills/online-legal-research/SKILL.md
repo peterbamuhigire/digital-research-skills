@@ -1,17 +1,11 @@
 ---
 name: online-legal-research
-description: Use when a research question turns on statutes, regulations, case law, court decisions, treaties, legal authority, or jurisdictional analysis — covers identifying primary vs secondary sources, online search strategy, citator/currency validation, IRAC analysis, and citation discipline. Method-first and jurisdiction-agnostic at the core, with an East African overlay (Uganda, Kenya, EAC) as the engine's home jurisdictions. Five references, load only what the question demands.
+description: Use when a question turns on statutes, regulations, cases, treaties, legal authority, or jurisdiction-specific analysis; use source-evaluation for general source quality and refuse to treat unverified currency or secondary commentary as controlling law.
 metadata:
   portable: true
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
-  priority: high
-  derived_from:
-    - "Putman & Albright, Legal Research, Analysis and Writing (Cengage, 2018)"
-    - "Long, Legal Research Using the Internet"
-    - "Legal Research (anonymous compendium)"
 ---
 
 # Online legal research
@@ -23,6 +17,76 @@ Method skill for any research that touches binding legal authority. The engine's
 Embed the `source-evaluation` evidence-discipline clause verbatim in every sub-agent legal-research brief:
 
 ```
+
+<!-- dual-compat-start -->
+## Use When
+
+- Use when the answer depends on legal authority, jurisdiction, currency, or treatment by a court.
+
+## Do Not Use When
+
+- Do not use for general policy research that does not require legal authority, or present research as legal advice.
+
+## Inputs
+
+| Artefact | Source or provider | Required? | If absent |
+|---|---|---|---|
+| Legal question, jurisdiction, material date, and authorised source access | Requester and official legal repositories | required | Return search terms and authority gaps; no legal conclusion |
+
+## Workflow
+
+1. Frame the legal issue, jurisdiction, date, and required authority level.
+2. Search primary authority first, then use secondary material only to locate or interpret it.
+3. Verify text, currency, treatment, and pinpoint location; stop when controlling authority cannot be confirmed.
+4. Analyse authority and facts separately, state counter-authority, and recover with a qualified research note when access is incomplete.
+
+## Capability contract
+
+Default to read-only research. Network access may retrieve public law; filing, contacting parties, or changing legal records is outside scope without explicit authority.
+
+
+## Online Legal Research Fallback Notes
+Without authoritative access or currency checking, provide no definitive legal conclusion; list unverified authorities and checks still required.
+
+## Decision rules
+
+| Choice | Action | Failure avoided |
+|---|---|---|
+| Binding current primary authority exists | Centre the analysis on it | Secondary source treated as law |
+| Authority is persuasive or treatment is unclear | Label status and qualify conclusion | Overstated legal certainty |
+
+## Outputs
+
+| Artefact | Consumer | Observable acceptance condition |
+|---|---|---|
+| Authority table and legal research memorandum | Researcher or counsel | Each proposition has jurisdiction, status, pinpoint citation, URL, and currency note |
+
+
+## Online Legal Research Evidence Notes
+- Preserve authority copies or locators, search date, treatment checks, quotations, and unresolved gaps.
+
+## Quality Standards
+
+Quote exactly, distinguish holding from commentary, and never invent a statute, case, court, citation, or URL.
+
+## Anti-Patterns
+
+- Relying on a search snippet. Fix: open and verify the authority.
+- Citing a case without treatment checking. Fix: verify current status.
+- Mixing jurisdictions without labels. Fix: identify binding and persuasive authority.
+- Quoting without a pinpoint locator. Fix: cite the paragraph or section.
+- Presenting an access gap as no law. Fix: report no source found and the search limits.
+
+## Worked example
+
+For a statutory question, identify the governing jurisdiction and date, retrieve the official text, verify amendments, then connect each conclusion to a section locator.
+
+## References
+
+- [Source hierarchy](references/source-hierarchy-and-authority.md)
+- [Online workflow](references/online-research-workflow.md)
+- [Citation discipline](references/citation-and-quoting-discipline.md)
+<!-- dual-compat-end -->
 HARD CONSTRAINT — NO HALLUCINATION:
 - Do NOT invent statistics, names, organisations, court cases, statutes, or URLs.
 - Cite every numeric claim and every direct quote at the point it appears.
@@ -126,3 +190,17 @@ JURISDICTION CONSTRAINT:
 - Pinpoint cite to paragraph (judgments) or section (statutes), never a generic page.
 - Provide a verifiable URL (with archive snapshot) for every authority.
 ```
+
+## Degraded Mode
+
+Without authoritative access or currency checks, return a narrow qualified research note and mark each unavailable check not assessed.
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance |
+|---|---|---|
+| Authority and currency register | Researcher or counsel | Each proposition has a source locator, status, search date, and gap notation |
+
+## Reference Index
+
+- [East African overlay](references/east-african-overlay.md); [IRAC analysis](references/legal-analysis-irac.md)

@@ -1,6 +1,6 @@
 ---
 name: data-quality-pipeline
-description: Use when handling any tabular data the engine consumes — raw → encoding repair → tidy check → cleaning → outlier panel → merge audit → four-axis quality score → manifest. Carries the engine's data-discipline pipeline as one entry skill with six references (Walker quality, Wickham tidy, Chen merge, encoding-and-unicode, anomaly panel, cleaning recipes). Pair with dataset-discovery-and-analysis when the data still needs to be found.
+description: Use when profiling, cleaning, merging, or validating tabular research data through encoding, tidy-structure, anomaly, lineage, and quality gates; use dataset-discovery-and-analysis first when the dataset still needs to be found or retrieved.
 metadata:
   portable: true
   compatible_with:
@@ -21,12 +21,12 @@ metadata:
 
 - Do not use when the task is pure prose and no dataset is involved.
 
-## Required Inputs
+## Data Intake Guidance
 
 - Raw dataset path or source, intended claim or decision, expected grain, and source
   reliability context.
 
-## Workflow
+## Data Method Detail
 
 - Run the pipeline below in order and load only the reference needed for the current
   stage.
@@ -36,11 +36,11 @@ metadata:
 - Every dataset must preserve provenance, row-count changes, quality scores, and
   analysis limitations.
 
-## Anti-Patterns
+## Legacy Data Pitfalls
 
 - Do not skip encoding, tidy checks, merge validation, or manifest creation.
 
-## Outputs
+## Data Deliverable Detail
 
 - Clean dataset, profile, quality score, manifest, or blocker report.
 
@@ -149,6 +149,43 @@ Without the manifest, the data is not shippable.
 
 ## Companion skills
 
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Raw dataset, schema, provenance, intended analysis | Data owner and retrieval record | Stop transformation; request source and purpose |
+| Quality thresholds and join keys | Analysis plan | Profile first and mark thresholds undecided |
+
+## Capability Contract
+
+Profiling is read-only by default. Cleaning, overwriting, deleting, merging, publishing, or certifying data requires explicit authority and preserved raw inputs.
+
+## Degraded Mode
+
+Without executable tools or complete metadata, return a manual profile with unassessed axes and never label the dataset clean or fit for use.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Encoding damage is reversible | Repair on a copy and log mapping | Silent corruption |
+| Join cardinality differs from expectation | Stop merge | Row multiplication |
+| Quality threshold fails | Block downstream analysis | Misleading result |
+
+## Data Correction Examples
+
+- Editing the raw file; preserve it.
+- Dropping outliers automatically; investigate them.
+- Merging without cardinality checks; audit keys.
+- Treating blanks as zeros; preserve semantics.
+- Passing an unassessed axis; mark it.
+
+## Data Quality Scenario
+
+A many-to-many join that was expected to be one-to-one stops before output and records the duplicate keys.
+
+## Companion skills
+
 - `dataset-discovery-and-analysis` — find the data before this pipeline runs.
 - `source-evaluation` — reliability axis depends on this.
 - `web-scraping-foundations` — when the data has to be scraped.
@@ -156,3 +193,35 @@ Without the manifest, the data is not shippable.
 - `report-and-proposal-craft`, `academic-writing` — when the data feeds a written artifact.
 
 <!-- dual-compat-end -->
+
+## Workflow
+
+1. Preserve raw data, provenance, schema, intended use, and checksum.
+2. Profile encoding, structure, missingness, duplicates, ranges, keys, and anomalies.
+3. Stop when provenance is absent, a join violates cardinality, or a quality gate fails.
+4. Recover on a copy by repairing documented defects and rerunning the affected profile.
+5. Release the cleaned data, manifest, quality score, and issue register together.
+
+## Outputs
+
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Clean dataset, manifest, profile, and issue register | Analyst and downstream workflow | Raw data is preserved and every transformation, join, exception, and unassessed axis is recorded |
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance condition |
+|---|---|---|
+| Before-and-after profiles, checksum, and transformation log | Data reviewer and release owner | Results reproduce from the preserved raw input and logged operations |
+
+## Anti-Patterns
+
+- Editing the raw file. **Fix:** transform an immutable copy.
+- Dropping outliers automatically. **Fix:** investigate and document disposition.
+- Merging without cardinality checks. **Fix:** assert key relationships first.
+- Treating blanks as zeros. **Fix:** preserve missing-value semantics.
+- Passing an unassessed axis. **Fix:** mark it unassessed and block dependent claims.
+
+## Worked Example
+
+A many-to-many join expected to be one-to-one stops before output, records duplicate keys, repairs the mapping, and reruns validation.

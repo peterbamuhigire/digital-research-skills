@@ -112,7 +112,7 @@ Final self-assessed score: 97/100.
 
 ## 6. Residual Gaps
 
-No blocking gap remains from the July 2026 backlog. The repo validator passes cleanly across the bundled example workspaces. The next depth improvement is to add automated regression tests that execute every exemplar and fixture in CI; the tools and fixtures are present, but no CI workflow was requested or added.
+No blocking capability gap remained from this upgrade backlog. The later July 2026 conformance pass added push and pull-request CI, a zero-debt skill-contract baseline, and routing regression tests; see `conformance-normalisation.md`. Project workspaces are intentionally untracked and are validated separately, while repository CI runs the kernel unit tests. Further research methods, output families, and case libraries are capability expansion rather than conformance repair.
 
 ## 7. Maintenance Instructions
 

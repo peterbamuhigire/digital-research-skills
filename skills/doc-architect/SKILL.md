@@ -1,8 +1,6 @@
 ---
 name: doc-architect
-description: Generate Triple-Layer AGENTS.md documentation by scanning a project for
-  its tech stack, data directory, and planning directory. Use when the user asks to
-  standardize project documentation, generate agent files, or create AGENTS.md guides.
+description: Use when generating or revising a project's triple-layer AGENTS.md documentation from observed workspace structure, technology, data, and planning evidence; do not use for general technical documentation or a single ad hoc README edit.
 metadata:
   portable: true
   compatible_with:
@@ -28,12 +26,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The task is unrelated to `doc-architect` or would be better handled by a more specific companion skill.
 - The request only needs a trivial answer and none of this skill's constraints or references materially help.
 
-## Required Inputs
+## Documentation Intake Guidance
 
 - Gather relevant project context, constraints, and the concrete problem to solve; load `references, templates, protocols` only as needed.
 - Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
 
-## Workflow
+## Documentation Method Detail
 
 - Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
 - Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
@@ -45,12 +43,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
 - Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
 
-## Anti-Patterns
+## Legacy Documentation Pitfalls
 
 - Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
 - Loading every reference file by default instead of using progressive disclosure.
 
-## Outputs
+## Documentation Deliverable Detail
 
 - A concrete result that fits the task: implementation guidance, review findings, architecture decisions, templates, or generated artifacts.
 - Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
@@ -79,6 +77,43 @@ When generated documentation must describe system boundaries, workflows, require
 - **Two-tier structure**: High-level TOC (Tier 1) + Deep dive docs (Tier 2)
 - **Smart subdirectory grouping** for related documentation
 - **See `doc-standards.md` for complete requirements**
+
+## Core Outcome
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Repository structure, manifests, existing instructions | Workspace inspection | Mark the technology or directory unknown; do not invent it |
+| Authority to create or update AGENTS.md files | Requester | Return a plan only |
+
+## Capability Contract
+
+Inspection is read-only by default. Creating directories or changing instruction files requires explicit authority; deletion and unrelated documentation changes are out of scope.
+
+## Documentation Fallback Notes
+
+Without full workspace access, produce a partial documented map with unknown areas named; do not claim the three layers are complete.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Data directory is evidenced | Place data instructions there | Arbitrary path |
+| No planning directory exists | Propose location before creation | Unauthorised structure |
+| Rules conflict | Escalate and preserve both sources | Silent contradiction |
+
+## Documentation Correction Examples
+
+- Inventing a technology stack; inspect manifests.
+- Copying generic rules; bind them to evidence.
+- Placing files arbitrarily; use discovered boundaries.
+- Editing without authority; return a plan.
+- Hiding conflicting instructions; escalate them.
+
+## Worked Example
+
+If no schema directory exists, the output proposes a data-layer location and records the gap instead of creating one silently.
 
 ## Core Outcome
 
@@ -189,3 +224,29 @@ docs/
 ```
 
 **Integration Rule:** When generating the Planning AGENTS.md (`docs/plans/AGENTS.md`), include references to any SDLC documentation directories that exist alongside the plans directory.
+
+## Workflow
+
+1. Inspect manifests, instructions, data paths, planning paths, and boundaries read-only.
+2. Map evidence to root, data, and planning instruction layers.
+3. Stop when authority is absent, instructions conflict, or a location lacks evidence.
+4. Recover with a qualified plan, mark unassessed areas, and request resolution before mutation.
+5. Generate authorised files and verify consistency, links, placement, and line limits.
+
+## Outputs
+
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Root, data, and planning AGENTS.md set | Repository agents and maintainers | Each rule is evidence-based, scoped, non-conflicting, linked, and within limits |
+
+## Degraded Mode
+
+Without full workspace access, return a qualified partial map, preserve unassessed directories, and do not claim the three-layer set is complete.
+
+## Anti-Patterns
+
+- Inventing a technology stack. **Fix:** inspect manifests and source files.
+- Copying generic rules. **Fix:** bind each rule to repository evidence.
+- Placing files arbitrarily. **Fix:** use responsibility boundaries.
+- Editing without authority. **Fix:** return a proposed file plan.
+- Hiding conflicting instructions. **Fix:** stop and request resolution.

@@ -25,13 +25,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The domain is genuinely novel (no row applies). Flag the gap and ask the user to clarify; do not guess by stretching an unrelated row.
 - A specialist skill's own `Use When` already covers the situation completely. The matrix is for stack composition, not single-skill triggering.
 
-## Required Inputs
+## Routing Intake Guidance
 
 - The technology domain or domains in scope (web, mobile, API, AI, etc.).
 - A clear sense of whether the work is greenfield or brownfield (changes which Foundation skills apply).
 - Awareness that Validation entries here are pulled from `validation-contract`'s seven evidence categories.
 
-## Workflow
+## Routing Method Detail
 
 - Identify the matrix row(s) that match the work.
 - Load every skill in the row's Foundation column first, then Implementation, then Validation.
@@ -44,13 +44,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Never load a skill from the matrix without also reading its `Use When` to confirm the situation actually matches.
 - Flag missing rows. The matrix is not exhaustive; an unknown domain is a signal to ask, not to improvise.
 
-## Anti-Patterns
+## Legacy Routing Pitfalls
 
 - Loading every skill in a row without reading their `Use When` triggers — the matrix recommends, the skill triggers gate.
 - Treating Validation column entries as the *only* validation needed — `validation-contract` defines the full evidence requirement; the matrix lists the canonical contributors per domain.
 - Inventing a new row inline rather than updating this skill. The matrix is the single source of truth.
 
-## Outputs
+## Routing Deliverable Detail
 
 - A loaded skill stack tailored to the domain, ordered Foundation → Implementation → Validation → Companions.
 - A clear statement when the matrix has no row for the work, prompting the user to clarify the domain.
@@ -119,6 +119,77 @@ Some verticals add a small set of skills on top of whatever rows apply:
 ## Evidence-contract note
 
 The Validation column in every row pulls skills that are themselves declared `validation-contract` contributors. This matrix tells you *which* validation skills apply per domain; `validation-contract` defines *what evidence* those skills must produce at ship time. Always load `validation-contract` alongside the matrix when shipping is in scope.
+
+## Companion Skills
+
+## Workflow
+
+1. Discover active entrypoints and identify the task's domain, phase, and deliverable.
+2. Select the minimum foundation, implementation, and validation route.
+3. Stop when no active skill matches or required capabilities are unavailable.
+4. Recover with a qualified route and named gap instead of inventing an entrypoint.
+5. Add companions only for mandatory cross-domain controls.
+
+## Outputs
+
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Ordered minimum skill route | Orchestrator and task owner | Every selected skill has a stated role and no neighbour is loaded redundantly |
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance condition |
+|---|---|---|
+| Discovery record and routing rationale | Maintainer and reviewer | All route names resolve to active entrypoints and every companion has a documented need |
+
+## Capability Contract
+
+Minimum capability is read-only access to active skill roots and task context. Changing routers, skills, files, or permissions requires explicit authorisation.
+
+## Routing Correction Examples
+
+- Loading every related skill. **Fix:** choose the minimum complete stack.
+- Trusting a cached catalogue. **Fix:** discover active files at routing time.
+- Routing by keyword alone. **Fix:** use intent, phase, and output.
+- Inventing an entrypoint. **Fix:** report a capability gap.
+- Omitting validation. **Fix:** include the applicable release gate.
+
+## Routing Scenario
+
+A dataset-cleaning request routes to the data-quality pipeline and validation gate, not the entire report-production and orchestration stack.
+
+## Companion Skills
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Task, domain, lifecycle phase, deliverable | Requester and repository | Ask for the missing domain or route provisionally |
+| Available skills and capabilities | Filesystem discovery and runtime | Report unmatched capability; do not invent a skill |
+
+## Degraded Mode
+
+Fallback when catalogue or runtime state is incomplete: return the smallest qualified route with missing capabilities named and mark unavailable checks `not assessed`.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| One domain clearly owns the task | Route foundation to validation | Skill sprawl |
+| Cross-domain control is mandatory | Add one companion | Missing gate |
+| No matching active skill exists | Report a capability gap | Fabricated route |
+
+## Anti-Patterns
+
+- Loading every related skill. **Fix:** choose the minimum complete stack.
+- Trusting a cached catalogue. **Fix:** discover active files at routing time.
+- Routing by keyword alone. **Fix:** use intent, lifecycle phase, and output.
+- Inventing an entrypoint. **Fix:** report the capability gap.
+- Omitting validation. **Fix:** include the applicable release gate.
+
+## Worked Example
+
+A dataset-cleaning request routes to the data-quality pipeline and its validation gate, while unrelated report-production and research-orchestration skills remain unloaded.
 
 ## Companion Skills
 

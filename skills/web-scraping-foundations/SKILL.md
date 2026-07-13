@@ -1,15 +1,92 @@
 ---
 name: web-scraping-foundations
-description: Use as the single entry point for any web-scraping task. Carries the decision tree (API → JSON XHR → HTML → headless), structured-data shortcuts, parser/HTTP stack choices, error taxonomy, and orchestration rules across politeness, troubleshooting, and browser-automation references. Backed by tools/scraping/.
+description: Use when choosing and validating the least invasive acquisition path for web data across published APIs, JSON endpoints, structured HTML, or browser automation, including politeness and error handling; use scraping-engineering-python when a Python crawl needs caching, concurrency, resumability, or Scrapy.
 metadata:
   portable: true
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
 ---
 
 # Web Scraping Foundations
+
+<!-- dual-compat-start -->
+
+## Use When
+
+- Choose the least invasive authorised acquisition path for web data and validate politeness, structure, and failure handling.
+
+## Do Not Use When
+
+- Use dataset-discovery first when published data may exist and scraping-engineering-python only after scaling needs are observed.
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Target, fields, purpose, volume, freshness, and authority | Requester and target terms | Stop requests and return an acquisition plan. |
+| Robots/politeness result and representative pages | Target site | Do not scrape until assessed. |
+
+## Workflow
+
+1. Confirm authority and check published APIs/datasets.
+2. Inspect response HTML, JSON endpoints, and structured data in order.
+3. Choose the cheapest working stack and define typed failures.
+4. Test representative records; stop on blocks, consent barriers, or unstable selectors.
+5. Recover by narrowing scope, slowing requests, or returning a gap; escalate to engineering only when justified.
+
+## Outputs
+
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| Acquisition decision and extraction plan | Implementer/operator | Selected path, authority, politeness, schema, errors, and stop conditions are explicit. |
+| Validated sample dataset | Analyst | Expected fields, null handling, provenance, and observed errors are recorded. |
+
+## Evidence Produced
+
+| Category | Artifact | Acceptance condition |
+|---|---|---|
+| Correctness | Representative extraction test | Sample records match source values and missing fields are explicit. |
+
+## Capability Contract
+
+Planning and review default to read-only. Network requests, browser control, account/session use, form submission, persistent storage, or production crawling require explicit authority. Never bypass access controls.
+
+## Degraded Mode
+
+Without network, browser, credentials, or target permission, return a design and offline parser test where possible. Mark live politeness, rendering, and extraction checks unassessed.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Published API/dataset exists | Use it instead of scraping | Fragile duplicate collection |
+| JSON endpoint supplies data | Call it directly | Browser overhead |
+| Block or consent challenge appears | Stop and notify | Circumvention |
+
+## Quality Standards
+
+The route is authorised, least invasive, polite, source-traceable, failure-aware, and proven on representative records.
+
+## Anti-Patterns
+
+- Starting with a browser. Fix: run the decision tree.
+- Ignoring robots/politeness. Fix: assess before requests.
+- Retrying all errors. Fix: classify failures.
+- Positional selectors. Fix: use semantic selectors.
+- Claiming success from one happy record. Fix: test representative variation.
+
+## Worked Example
+
+If a page exposes the needed records through a documented JSON endpoint, choose it over browser automation, test null and pagination behaviour, and stop if the service signals blocking.
+
+## References
+
+- [Politeness and rate limiting](references/politeness-and-ratelimiting.md)
+- [Troubleshooting](references/troubleshooting-brody.md)
+- [Browser automation](references/browser-automation-playwright.md)
+
+<!-- dual-compat-end -->
 
 The single entry skill for web scraping. Encodes the decision tree, stack choices, and orchestration rules. Detailed sub-disciplines live in `references/` and are loaded only when the situation demands them.
 

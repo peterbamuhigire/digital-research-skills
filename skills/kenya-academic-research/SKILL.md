@@ -1,6 +1,11 @@
 ---
 name: kenya-academic-research
-description: Kenyan academic and research-organization standards for proposals, theses, dissertations, projects, final oral defence, plagiarism checks, research conduct, research data, authorship, publication, and institutional review. Use when Codex is drafting, reviewing, formatting, or quality-checking academic research artefacts against Kenya-based handbooks such as Kenyatta University School of Hospitality, Adventist University of Africa, or the Regional Centre on Groundwater Resources.
+description: Use when an academic proposal, thesis, dissertation, project, defence, or research-governance artefact must be checked against a named Kenya-based handbook; use primary-research for fieldwork design and source-evaluation for evidence quality.
+metadata:
+  portable: true
+  compatible_with:
+    - claude-code
+    - codex
 ---
 
 # Kenya Academic Research
@@ -35,3 +40,77 @@ Always load `source-evaluation/references/evidence-discipline.md` first. All han
 - `academic-writing` for APA, plagiarism prevention, paraphrase, and academic register.
 - `research-design` for research design and report-building.
 - `source-evaluation` for source credibility and anti-hallucination discipline.
+
+<!-- dual-compat-start -->
+## Use When
+
+- Use when a named Kenya-based handbook governs an academic or research artefact.
+
+## Do Not Use When
+
+- Do not assume one institution's rules apply to another; use general academic skills when no Kenya-specific handbook governs.
+
+## Inputs
+
+| Artefact | Source or provider | Required? | If absent |
+|---|---|---|---|
+| Target institution, artefact, applicable handbook edition, and source register | Requester and verified handbook sources | required | Apply only general academic structure and mark institutional rules as gaps |
+
+## Workflow
+
+1. Identify institution, programme, artefact type, and handbook edition.
+2. Load the matching section of the handbook standards reference and map each requirement to the draft.
+3. Stop on conflicting, missing, or stale rules; verify before recommending a change.
+4. Review in read-only mode, then edit only when authorised; recover from a missing rule by preserving the gap in the disposition record.
+
+## Capability contract
+
+Default to read-only review. Search and network verification may confirm current handbooks; editing, submission, or certification claims require explicit authority.
+
+## Degraded mode
+
+If the governing handbook cannot be accessed, return a general academic checklist with every institution-specific check marked not assessed.
+
+## Decision rules
+
+| Choice | Action | Failure avoided |
+|---|---|---|
+| Named handbook contains an explicit requirement | Apply and cite that requirement | Unsupported institutional rule |
+| Handbooks conflict | Follow the governing institution and flag the conflict | Blended rule set |
+
+## Outputs
+
+| Artefact | Consumer | Observable acceptance condition |
+|---|---|---|
+| Compliance matrix and authorised revision | Student, supervisor, or researcher | Each institutional finding cites the handbook section or is marked not assessed |
+
+
+## Kenya Academic Research Evidence Notes
+- Record handbook identity, requirement location, finding, disposition, and unresolved gap.
+
+## Quality Standards
+
+Do not claim institutional compliance from a generic checklist; preserve academic integrity and exact source traceability.
+
+## Anti-Patterns
+
+- Applying one university's format to another. Fix: identify the governing handbook.
+- Citing a handbook without a requirement location. Fix: record the section or page locator.
+- Treating a missing rule as permission. Fix: mark it as a gap.
+- Editing before a read-only review is accepted. Fix: separate findings from remediation.
+- Certifying plagiarism or ethics compliance without evidence. Fix: report only checks actually performed.
+
+## Worked example
+
+For a thesis review, map each heading and submission requirement to the named handbook section and leave unavailable defence rules marked not assessed.
+
+## References
+
+- [Kenya handbook standards](references/kenya-handbook-standards.md)
+<!-- dual-compat-end -->
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance |
+|---|---|---|
+| Handbook compliance matrix | Student, supervisor, or researcher | Each finding has a handbook locator or not-assessed status |

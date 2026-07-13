@@ -23,12 +23,12 @@ metadata:
 - A small task already has a prescribed single-skill workflow.
 - The user asks for a narrow source check or code edit.
 
-## Required Inputs
+## Doctrine Intake Guidance
 
 - Project type, audience, output family, cohorts, evidence risk, and decision stakes.
 - Existing project context and registry state.
 
-## Workflow
+## Doctrine Method Detail
 
 1. Start with evidence discipline and source evaluation.
 2. Define research design, cohorts, scope, and outputs.
@@ -49,14 +49,14 @@ metadata:
 - No recommendation occurs before reasoning and tradecraft checks.
 - No monetization claim outruns the evidence base.
 
-## Anti-Patterns
+## Legacy Doctrine Pitfalls
 
 - Jumping from source collection to polished report.
 - Running report design before knowing the decision and evidence maturity.
 - Treating source verification as optional.
 - Productizing unverified claims.
 
-## Outputs
+## Doctrine Deliverable Detail
 
 - Mandatory skill route.
 - Wave-to-gate crosswalk.
@@ -77,6 +77,69 @@ metadata:
 
 ## Companion Skills
 
+## Capability Contract
+
+Routing and audit are read-only by default. Changing routers, skills, project state, publication, or release requires explicit authority.
+
+## Degraded Mode
+
+If project state or a mandatory gate is unavailable, return the verified prefix of the route and mark later gates blocked; never infer readiness.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Evidence is unverified | Hold synthesis | Unsupported claim |
+| Output recommends action | Add reasoning and decision support | Advice without logic |
+| Reusable product is proposed | Verify before productization | Scaling error |
+
+## Doctrine Correction Examples
+
+- Skipping verification; hold synthesis.
+- Drafting before the decision is known; return to intake.
+- Monetising unverified claims; block productization.
+- Treating optional craft as a mandatory gate; justify route.
+- Claiming release with missing evidence; mark blocked.
+
+## Doctrine Scenario
+
+A verified descriptive brief may skip forecasting, but cannot skip evidence discipline or source verification.
+
+## Companion Skills
+
 - `research-orchestration` runs the wave model.
 - `source-verification` enforces verification before synthesis.
 - `analytical-report-shapes` selects the final artifact.
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Project type, audience, decision, risk, output family | Brief and registry | Stop and request missing decision context |
+| Gate status and active catalogue | Project evidence and filesystem | Return only the verified route prefix |
+
+## Workflow
+
+1. Establish evidence discipline, project design, audience, decision, and output.
+2. Sequence collection, verification, reasoning, and applicable downstream gates.
+3. Stop when a mandatory upstream gate fails or its evidence is unavailable.
+4. Recover by repairing the failed gate and resuming from its checkpoint.
+5. Release only when every included gate has an observable pass condition.
+
+## Outputs
+
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Mandatory route and gate crosswalk | Orchestrator and release reviewer | Every stage has an owner, predecessor, evidence output, stop condition, and acceptance gate |
+
+## Anti-Patterns
+
+- Skipping verification. **Fix:** hold synthesis until claims pass.
+- Drafting before the decision. **Fix:** return to intake.
+- Productising unverified claims. **Fix:** block reuse.
+- Making every skill mandatory. **Fix:** justify the minimum route.
+- Claiming release without evidence. **Fix:** mark the route blocked.
+
+## Worked Example
+
+A verified descriptive brief may omit forecasting, but still passes evidence discipline, verification, reasoning, output-shape, and release gates.

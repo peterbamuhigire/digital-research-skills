@@ -1,14 +1,11 @@
 ---
 name: digital-research-engine
-description: Top-level router for evidence-disciplined digital research. Use for research intake, source evaluation, web search, OSINT, due diligence, academic reviews, policy/regulatory research, executive synthesis, evidence packs, verification, and final research deliverables.
+description: Use when routing evidence-disciplined research across intake, source evaluation, web search, OSINT, due diligence, academic review, policy research, synthesis, verification, and final deliverables.
 metadata:
   portable: true
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
-  standard_version: Digital Research Engine July 2026 Upgrade
-  last_verified: 2026-07-08
 ---
 
 # Digital Research Engine Router
@@ -67,6 +64,7 @@ Stop and ask for clarification when the request lacks the decision/audience, ask
 
 ## See also
 
+- `docs/skill-authoring-standard.md`
 - `docs/pathing-model-engine-vs-projects.md`
 - `docs/quality-gates/release-blocking-gates.md`
 - `docs/source-registers/research-standards-register.md`

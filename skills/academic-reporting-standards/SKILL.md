@@ -1,12 +1,11 @@
 ---
 name: academic-reporting-standards
-description: Academic-output discipline at Ivy / Oxford / Cambridge / LSE quality. Three layers — practical-craft (Brause's "invisible rules", chapter-by-chapter dissertation template, viva preparation, examiner expectations), institution-specific examination conventions (Cambridge, Oxford, LSE, Harvard, Yale, Princeton), and formal-reporting (PRISMA 2020, CONSORT 2025, STROBE, MOOSE, GRADE, Cochrane Handbook, TOP Guidelines, EQUATOR Network). Use on any thesis, dissertation, journal article, systematic review, or examinable academic artefact. Load only what the artefact demands.
+description: Use when an academic paper, thesis, dissertation, journal article, systematic review, or examinable artefact must follow a named reporting or examination standard; use academic-writing instead for prose craft without a reporting-standard decision.
 metadata:
   portable: true
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
   priority: critical
 ---
 
@@ -131,3 +130,93 @@ The verbatim attribution discipline applies. References to Brause carry chapter;
 ## Wave-2 task: institution-specific examination conventions
 
 Completed in `references/oxbridge-ivy-examination-conventions.md`. Refresh this reference before high-stakes use because institutional regulations can change annually. The refresh must use current institutional primary sources and preserve the rule that missing word-count rules are marked as gaps, not inferred.
+
+<!-- dual-compat-start -->
+## Use When
+
+Use when the artefact type or institution creates a formal reporting or examination requirement.
+
+## Do Not Use When
+
+Use `academic-writing` when the need is argument, prose, citation, or synthesis craft without a standards-selection problem.
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Artefact and study design | Author or protocol | Stop before selecting a checklist |
+| Institution, venue, and current rules | Primary institutional or publisher source | Mark the rule unverified and do not assert compliance |
+
+## Workflow
+
+1. Classify the artefact and study design.
+2. Select only the applicable reporting and examination references.
+3. Map each requirement to manuscript evidence; stop on a missing mandatory item.
+4. Recover from unavailable current rules by reporting a standards gap, then issue a qualified checklist.
+
+## Outputs
+
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Standards crosswalk | Author, supervisor, or examiner | Every applicable item maps to a location, gap, or justified non-applicability |
+
+## Reporting Evidence Guidance
+
+The completed crosswalk, source register for current rules, and unresolved-item log support the compliance claim.
+
+## Assessment Capability Notes
+
+Assessment is read-only by default. Editing a manuscript or submitting to an institution requires separate authority; this skill cannot certify acceptance.
+
+## Degraded Mode
+
+When current institutional rules cannot be verified, apply only stable craft guidance and label institution-specific checks `not assessed`.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Study design matches a named guideline | Apply its checklist | Wrong reporting standard |
+| Local rule conflicts with generic craft | Follow verified local rule | Examination non-compliance |
+| Rule is unavailable or stale | Mark not assessed | False compliance claim |
+
+## Quality Standards
+
+Requirements are current, directly sourced, artefact-specific, and never inferred from another institution.
+
+## Reporting Pitfalls
+
+- Applying every checklist; select by design.
+- Treating guidance as regulation; label authority.
+- Inferring a missing word limit; record a gap.
+- Claiming compliance from manuscript quality alone; complete the crosswalk.
+- Editing during a read-only assessment; obtain authority.
+
+## Worked Example
+
+A systematic review receives the applicable reporting crosswalk plus verified venue rules; an unavailable local word limit remains `not assessed`.
+
+## References
+
+- [Reporting decision tree](references/equator-decision-tree.md)
+- [Methodology justification checklist](references/methodology-justification-checklist.md)
+- [Examination conventions](references/oxbridge-ivy-examination-conventions.md)
+<!-- dual-compat-end -->
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance condition |
+|---|---|---|
+| Standards crosswalk and current-rule register | Author, supervisor, or examiner | Each applicable requirement maps to manuscript evidence, a justified exclusion, or a visible gap |
+
+## Capability Contract
+
+Minimum capability is read-only access to the artefact and verified rules. Assessment defaults to read-only; editing, submission, mutation, publication, or certification requires explicit authorisation.
+
+## Anti-Patterns
+
+- Applying every checklist. **Fix:** select only those matching the artefact and study design.
+- Treating guidance as regulation. **Fix:** label the authority and binding status of each rule.
+- Inferring a missing word limit. **Fix:** verify it from the institution or mark a gap.
+- Claiming compliance from prose quality. **Fix:** complete the requirement-to-evidence crosswalk.
+- Editing during assessment. **Fix:** obtain separate mutation authority before changing the manuscript.

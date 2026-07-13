@@ -99,6 +99,14 @@ Use these commands for project-managed work:
 7. `python -m engine assemble <project-id> <output-family>`
 8. `python -m engine pack <project-id> --out export/<project-id>.zip`
 
+## Skill authoring and release gates
+
+- Discover active skills from the filesystem below `skills/`; exclude the `skills/proposal-skills` Git submodule because it is a separate engine. Do not use a README table as inventory.
+- Follow `docs/skill-authoring-standard.md` and begin new skills from `templates/skill-template/SKILL.md`.
+- Preserve the 58-skill active catalogue unless an independently justified routing change requires a count change.
+- Run `python -X utf8 scripts/skill_contract_validator.py --baseline tests/skill-engine/quality-baseline.json`, `python -X utf8 scripts/routing_smoke_test.py`, and `python -X utf8 scripts/validate_engine.py` before release.
+- Run the canonical `quick_validate.py` against every changed skill directory. A missing capability or unavailable check is `not assessed`, never passed.
+
 ## Proposal-output trigger
 
 When a research project's output is a **proposal** — donor investment case, policy memorandum, bid response, expression of interest, pitch deck, Cabinet memo, Parliamentary briefing, white paper, or other persuasive document for an external audience — route the final-drafting stage through the `proposal-skills` library, which is included as a git submodule at `skills/proposal-skills/`.

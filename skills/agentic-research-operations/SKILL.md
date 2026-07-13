@@ -23,13 +23,13 @@ metadata:
 - A single local edit or fact-check needs no orchestration.
 - The user explicitly asks not to delegate or parallelize.
 
-## Required Inputs
+## Operations Intake Guidance
 
 - Research goal, cohorts, source classes, outputs, risks, tools, time horizon, and verification standard.
 - Current project context and any prior wave outputs.
 - The hard evidence-discipline boilerplate for every sub-agent prompt.
 
-## Workflow
+## Legacy Operations Method
 
 1. Decide whether agents help: split only independent work with clear boundaries and verifiable outputs.
 2. Define roles: researcher, verifier, gap analyst, red-team reviewer, synthesizer, renderer, or code worker.
@@ -56,7 +56,7 @@ metadata:
 - Accepting sub-agent citations without verification.
 - Hiding failures instead of logging them.
 
-## Outputs
+## Legacy Operations Deliverables
 
 - Agent wave plan.
 - Standard brief.
@@ -80,7 +80,54 @@ metadata:
 
 ## Companion Skills
 
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Research plan, cohort boundaries, evidence clause | Orchestrator and project files | Stop dispatch until boundaries and evidence rules exist |
+| Runtime capabilities and permissions | Host runtime | Use the least-capable read-only route and mark unavailable work |
+
+## Capability Contract
+
+Agents default to read-only research. File mutation, external messages, publication, destructive action, spending, and certification require explicit authority and bounded ownership.
+
+## Degraded Mode
+
+If delegation or tools are unavailable, run waves sequentially and return partial evidence with unassessed tasks and recovery checkpoints named.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Workstreams are independent | Delegate with non-overlapping ownership | Merge conflict |
+| Shared file is involved | Keep with orchestrator | Concurrent overwrite |
+| Agent violates evidence clause | Quarantine output and reverify | Fabricated evidence |
+
+## Legacy Operations Scenario
+
+Separate source-discovery cohorts may run concurrently, while the shared synthesis register remains under orchestrator ownership.
+
+## Companion Skills
+
 - `research-orchestration` supplies research wave structure.
 - `source-evaluation` supplies mandatory evidence constraints.
 - `evidence-claim-graph` supplies merge substrate.
 - `skill-writing` applies when agent operations are encoded into skills.
+
+## Workflow
+
+1. Partition independent work and reserve shared files for the orchestrator.
+2. Brief each agent with exact ownership, inputs, outputs, permissions, and the evidence clause.
+3. Stop a cohort when evidence rules are violated, ownership overlaps, or required inputs are absent.
+4. Recover by quarantining suspect output, repairing the brief, and retrying only the failed bounded task.
+5. Verify checkpoint evidence before merging results into the shared synthesis substrate.
+
+## Outputs
+
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Agent briefs, checkpoints, and verified merge packet | Orchestrator and synthesis workflow | Ownership is non-overlapping and every accepted claim retains its evidence trail |
+
+## Worked Example
+
+Two source-discovery cohorts may run concurrently, but the orchestrator alone edits the shared claim register and rejects any checkpoint missing source links.

@@ -1,12 +1,11 @@
 ---
 name: anti-ai-slop
-description: NON-NEGOTIABLE real-time production guardrail. Apply on EVERY generated research output — report, dossier, market landscape, due-diligence memo, academic paper, proposal, brief, slide, table, or .docx — so nothing the engine ships reads as "AI slop". Carries the verified definition, the seven universal slop markers each paired with an avoidance rule, the banned-vocabulary list, and a ship-gate checklist. Complements source-evaluation/evidence-discipline (which governs truth); this governs quality and voice. Load first.
+description: Use when producing or revising any research artefact to prevent generic, unsupported, repetitive, or mechanically styled output in real time; use ai-slop-audit to grade a concrete completed iteration independently.
 metadata:
   portable: true
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
   priority: critical
   source: ai-slop-detector research (2026-06-07), verified
 ---
@@ -74,6 +73,97 @@ ANTI-SLOP GUARDRAIL (inherit in every output):
 - [ ] When in doubt, run `ai-slop-audit` on the draft.
 
 If any box is unticked, the output is not ready to ship.
+
+## See also
+
+<!-- dual-compat-start -->
+## Use When
+
+Use throughout production and revision of every research artefact.
+
+## Do Not Use When
+
+Do not substitute it for the independent `ai-slop-audit` release verdict.
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Draft artefact, purpose, audience | Producing workflow | Stop generic generation and request context |
+| Verifiable facts and dependencies | Evidence register | Remove or qualify unsupported specificity |
+
+## Workflow
+
+1. Identify the artefact type and intended action.
+2. Apply specificity, verification, voice, hard-case, and variation controls while drafting.
+3. Stop on fabricated or unverifiable content and recover by removing it or marking a gap.
+4. Run the domain ship gate, then route the iteration to `ai-slop-audit`.
+
+## Outputs
+
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Guarded artefact | Requesting workflow | Every section earns its place and all claims are verified or qualified |
+
+## Production Evidence Guidance
+
+The completed ship gate and verification-gap log support release review.
+
+## Production Capability Notes
+
+Apply only capabilities authorised for the parent task. Mutation, publication, destructive action, spending, or certification requires explicit authority.
+
+## Degraded Mode
+
+Fallback when a fact, dependency, citation, or visual check is unavailable: name the gap and return the narrowest useful qualified artefact; never turn an unassessed check into a pass.
+
+## Decision Rules
+
+| Finding | Action | Failure/risk avoided |
+|---|---|---|
+| Unsupported specificity | Verify, qualify, or remove | Hallucination |
+| Generic non-blocking prose | Rewrite or cut | Superficial content |
+| Intentional verified material | Preserve | Destructive over-editing |
+
+## Quality Standards
+
+Every claim is verified or qualified, every section carries intent, and errors, empty states, risks, and countercases are addressed where applicable.
+
+## Production Pitfalls
+
+- Inventing a number for specificity; verify or remove it.
+- Keeping polished filler; add substance or cut it.
+- Waiting for the final audit; apply controls live.
+- Flattening authored voice; preserve intentional choices.
+- Hiding an unavailable check; name the gap.
+
+## Worked Example
+
+If a current market figure cannot be verified, the draft records the evidence gap instead of inserting a plausible estimate.
+
+## References
+
+- [Independent audit](../ai-slop-audit/SKILL.md)
+- [Evidence discipline](../source-evaluation/references/evidence-discipline.md)
+<!-- dual-compat-end -->
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance condition |
+|---|---|---|
+| Completed ship gate and verification-gap log | Producing workflow and release reviewer | Every section has intentional substance and every claim is verified, qualified, or removed |
+
+## Capability Contract
+
+Minimum capability is read-only access to the draft, facts, and dependencies. Any editing, mutation, publication, destructive action, spending, or certification requires explicit authorisation from the parent task.
+
+## Anti-Patterns
+
+- Inventing a number for specificity. **Fix:** verify it or remove it.
+- Keeping polished filler. **Fix:** add a decision or evidence, otherwise cut it.
+- Waiting for the final audit. **Fix:** apply controls during production.
+- Flattening an intentional voice. **Fix:** preserve authored choices that serve the audience.
+- Hiding an unavailable check. **Fix:** name the gap and its release consequence.
 
 ## See also
 - `ai-slop-audit` — the per-iteration detection/audit companion.

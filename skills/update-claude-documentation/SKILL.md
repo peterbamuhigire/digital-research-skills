@@ -1,8 +1,6 @@
 ---
 name: update-claude-documentation
-description: Update project documentation files (README.md, PROJECT_BRIEF.md, TECH_STACK.md,
-  ARCHITECTURE.md, docs/API.md, docs/DATABASE.md, CLAUDE.md, docs/plans/NEXT_FEATURES.md)
-  when significant changes occur. MANDATORY at end of each work session to...
+description: Use when an authorised implementation or repository change requires affected project documentation, agent guidance, architecture notes, API/database docs, examples, or status records to be reconciled with the current code; use skill-writing for skill contracts rather than project documentation.
 metadata:
   portable: true
   compatible_with:
@@ -15,6 +13,41 @@ metadata:
 - Optional helper plugins may help in some environments, but they must not be treated as required for this skill.
 
 # Update Claude Documentation
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Authorised change diff and affected documentation map | Repository and change owner | Stop updates until implementation truth and scope are available. |
+| Current code/configuration and existing docs | Repository | Mark inaccessible areas and do not assert their state. |
+
+## Preliminary Permission Guidance
+
+Review defaults to read-only. Documentation edits require repository authority; code changes, release publication, remote push, or deletion require separate authority.
+
+## Preliminary Documentation Fallback
+
+Without the complete diff, current implementation, or validation commands, return an impact map and draft changes with unverified items marked. Do not claim documentation is synchronised.
+
+## Decision Rules
+
+| Change | Action | Failure/risk avoided |
+|---|---|---|
+| Public interface changed | Update precise API/spec docs before summaries | Contradictory examples |
+| Agent behaviour changed | Update AGENTS/CLAUDE routing and gates | Stale automation |
+| Historical record remains accurate | Preserve it and add a current-status note | Rewritten history |
+
+## Preliminary Documentation Corrections
+
+- Updating README only. Fix: map all affected docs.
+- Copying implementation claims without checking code. Fix: inspect truth.
+- Rewriting unrelated history. Fix: scope edits.
+- Leaving old examples. Fix: run or validate them.
+- Claiming sync without diff review. Fix: reconcile terminology and paths.
+
+## Worked Example
+
+When an API route changes, update the API reference and examples first, then architecture and agent guidance, then README summaries; verify every path against the implementation.
 Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 <!-- dual-compat-start -->
@@ -28,12 +61,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The task is unrelated to `update-claude-documentation` or would be better handled by a more specific companion skill.
 - The request only needs a trivial answer and none of this skill's constraints or references materially help.
 
-## Required Inputs
+## Documentation Source Requirements
 
 - Gather relevant project context, constraints, and the concrete problem to solve; load `references` only as needed.
 - Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
 
-## Workflow
+## Documentation Method Summary
 
 - Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
 - Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
@@ -45,12 +78,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
 - Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
 
-## Anti-Patterns
+## Legacy Documentation Warnings
 
 - Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
 - Loading every reference file by default instead of using progressive disclosure.
 
-## Outputs
+## Initial Documentation Deliverables
 
 - A concrete result that fits the task: implementation guidance, review findings, architecture decisions, templates, or generated artifacts.
 - Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
@@ -379,3 +412,33 @@ Major refactor: 45-60 min
 6. One reality, multiple perspectives
 
 **Remember:** Documentation debt compounds fast. Update immediately when making changes.
+
+## Workflow
+
+1. Read the authorised diff, implementation, and affected docs; stop if scope is incomplete.
+2. Map each change to precise documentation before summary files.
+3. Update terminology, interfaces, examples, agent guidance, and status in dependency order.
+4. Validate links, examples, paths, and contradictions.
+5. Recover from failed checks by correcting the source-specific doc first and propagating the fix.
+
+## Outputs
+
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| Reconciled documentation set | Maintainers, users, and agents | Changed behavior, terminology, paths, and examples agree with implementation. |
+
+## Capability Contract
+
+Minimum capability is read access to the diff, implementation, and affected docs. Documentation mutation must be explicitly authorised; code changes, publication, push, or deletion requires separate permission.
+
+## Degraded Mode
+
+If the diff, implementation, or validators are unavailable, return a qualified impact map with checks marked unassessed. Do not claim documentation is synchronised.
+
+## Anti-Patterns
+
+- Updating README only. Fix: map all docs.
+- Copying unchecked claims. Fix: inspect code.
+- Rewriting unrelated history. Fix: limit scope.
+- Leaving stale examples. Fix: validate them.
+- Claiming sync without checks. Fix: mark unassessed.

@@ -1,8 +1,6 @@
 ---
 name: project-requirements
-description: Guided interview to create comprehensive project requirements documentation
-  (requirements.md, business-rules.md, user-types.md, workflows.md) for a new SaaS
-  project. Use before bootstrapping the SaaS Seeder Template. Pair with `systems-process-requirements` when requirements need formal scope, workflow, data, interface, state, traceability, or acceptance-criteria discipline.
+description: Use when a guided discovery interview must produce requirements, business rules, user types, and workflows for a new SaaS project; use systems-process-requirements when formal traceability, interfaces, states, and acceptance criteria are the primary need.
 metadata:
   portable: true
   compatible_with:
@@ -28,13 +26,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The task is unrelated to `project-requirements` or would be better handled by a more specific companion skill.
 - The request only needs a trivial answer and none of this skill's constraints or references materially help.
 
-## Required Inputs
 
+## Project Requirements Required Context
 - Gather relevant project context, constraints, and the concrete problem to solve.
 - Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
 
-## Workflow
 
+## Project Requirements Core Method Notes
 - Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
 - Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
 - Produce the deliverable with assumptions, risks, and follow-up work made explicit when they matter.
@@ -45,13 +43,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
 - Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
 
-## Anti-Patterns
 
+## Project Requirements Existing Failure Notes
 - Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
 - Loading every reference file by default instead of using progressive disclosure.
 
-## Outputs
 
+## Project Requirements Core Deliverables
 - A concrete result that fits the task: implementation guidance, review findings, architecture decisions, templates, or generated artifacts.
 - Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
 - References used, companion skills, or follow-up actions when they materially improve execution.
@@ -62,8 +60,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 |----------|----------|--------|---------|
 | Release evidence | Requirements documentation set | Markdown docs covering requirements.md, business-rules.md, and user-types.md per the guided interview | `docs/requirements/requirements.md` |
 
-## References
 
+## Project Requirements Source Notes
 - Use the links and companion skills already referenced in this file when deeper context is needed.
 <!-- dual-compat-end -->
 Create comprehensive requirements documentation for a new SaaS project through a guided AI-assisted interview process.
@@ -274,7 +272,7 @@ AI: "For each feature, let's capture:
   Let's start with your first feature..."
 ```
 
-## Quality Standards
+## Requirements Quality Standards
 
 ### Good Requirements
 
@@ -334,42 +332,6 @@ Let's start with your project overview...
    ```
    "Using the saas-seeder skill, prepare this repository for [Project Name]"
    ```
-
-## Example Interview Flow
-
-```
-AI: "Let's create your project requirements! What's your SaaS project about?"
-User: "A school management system"
-
-AI: "Great! Let's start with the basics:
-  1. What's the name of your SaaS?
-  2. What types of schools? (Primary, Secondary, University, All)
-  3. Who will use it? (Teachers, Students, Parents, Admins)"
-
-User: "EduTrack SaaS. For all school types. Teachers, students, parents, and school admins."
-
-AI: "Perfect! Let's identify your core features.
-  What's the #1 most important feature?"
-
-User: "Student enrollment"
-
-AI: "Let's detail that. When a student enrolls:
-  - Who creates the enrollment? (Admin, Parent, or Self-registration)
-  - What information is collected?
-  - What happens after enrollment?
-  - Any approval process?"
-
-... (continue interview)
-
-AI: "Excellent! I've created your requirements.md.
-  Now let's talk about business rules.
-  For student enrollment, are there any restrictions?
-  - Age limits?
-  - Class capacity limits?
-  - Document requirements?"
-
-... (continue for all phases)
-```
 
 ## Validation Checklist
 
@@ -469,3 +431,55 @@ sdlc-testing
 sdlc-user-deploy
     ↓ User Manual, Ops Guide, Training, Release Notes, Maintenance, README
 ```
+
+## Inputs
+
+| Artefact | Source or provider | Required? | If absent |
+|---|---|---|---|
+| Product objective, sponsor, users, constraints, and known business rules | Sponsor and discovery participants | required | Begin with bounded discovery and record every unresolved item as a gap |
+
+
+## Workflow
+1. Confirm sponsor, decision, scope boundary, users, constraints, and output location.
+2. Interview from outcomes to workflows, data, rules, permissions, states, errors, and acceptance.
+3. Stop when a decision owner is absent or conflicting rules cannot be resolved.
+4. Draft and play back each section; recover by logging open questions, owners, and a resumption point.
+
+
+## Outputs
+| Artefact | Consumer | Acceptance |
+|---|---|---|
+| Requirements, business rules, user types, and workflows | Architecture, planning, and delivery teams | Scope, rules, actors, states, exceptions, and acceptance criteria are traceable and approved |
+
+
+## Project Requirements Evidence Notes
+| Evidence | Consumer | Acceptance |
+|---|---|---|
+| Discovery log, decision register, traceability matrix, and approval record | Sponsor and delivery lead | Each requirement has a source, owner, status, and acceptance test |
+
+## Capability Contract
+
+Default to read-only discovery and analysis. Read and search are required; editing repository requirements or creating downstream artefacts requires explicit authority.
+
+## Degraded Mode
+
+If stakeholders, repository access, or decision authority are unavailable, return the narrowest qualified draft with gaps and unassessed approval checks.
+
+## Decision Rules
+
+| Choice | Action | Failure avoided |
+|---|---|---|
+| Requirement changes formal scope, interface, state, or traceability | Route through `systems-process-requirements` | Informal scope hidden in notes |
+| Stakeholders disagree on a business rule | Record alternatives and decision owner; stop finalisation | Invented consensus |
+
+
+## Anti-Patterns
+- Assuming a requirement from a familiar SaaS pattern. Fix: confirm it with a source owner.
+- Asking many compound questions at once. Fix: use one decision-focused question.
+- Writing vague acceptance criteria. Fix: state observable preconditions, action, and result.
+- Omitting error and empty states. Fix: inspect each workflow branch.
+- Treating an open question as approved scope. Fix: keep it in the gap and decision register.
+
+## Worked Example
+
+For an enrolment feature, identify the authorised actor, required data, validation failures, approval state, success event, and acceptance test, then link each item to the interview source.

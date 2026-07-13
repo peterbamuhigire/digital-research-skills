@@ -1,7 +1,6 @@
 ---
 name: markdown-lint-cleanup
-description: Fix markdown lint warnings by enforcing headings, blank lines around
-  lists, and language-tagged code fences for clean documentation.
+description: Use when Markdown files need mechanical lint repair for headings, list spacing, fences, and whitespace without changing meaning; use a writing or editing skill when prose or structure needs substantive revision.
 metadata:
   portable: true
   compatible_with:
@@ -27,13 +26,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The task is unrelated to `markdown-lint-cleanup` or would be better handled by a more specific companion skill.
 - The request only needs a trivial answer and none of this skill's constraints or references materially help.
 
-## Required Inputs
 
+## Markdown Lint Cleanup Required Context
 - Gather relevant project context, constraints, and the concrete problem to solve.
 - Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
 
-## Workflow
 
+## Markdown Lint Cleanup Core Method Notes
 - Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
 - Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
 - Produce the deliverable with assumptions, risks, and follow-up work made explicit when they matter.
@@ -44,13 +43,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
 - Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
 
-## Anti-Patterns
 
+## Markdown Lint Cleanup Existing Failure Notes
 - Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
 - Loading every reference file by default instead of using progressive disclosure.
 
-## Outputs
 
+## Markdown Lint Cleanup Core Deliverables
 - A concrete result that fits the task: implementation guidance, review findings, architecture decisions, templates, or generated artifacts.
 - Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
 - References used, companion skills, or follow-up actions when they materially improve execution.
@@ -64,6 +63,40 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 ## References
 
 - Use the links and companion skills already referenced in this file when deeper context is needed.
+## Inputs
+
+| Artefact | Source or provider | Requirement | If absent |
+|---|---|---|---|
+| Markdown files and lint configuration | repository | required | Return a proposed patch if edit or execution is unavailable |
+
+## Capability contract
+
+Read access to Markdown and its lint configuration is required. File edits need explicit authority and must remain mechanical; generated sources or substantive prose changes stay outside that permission.
+
+## Degraded mode
+
+If lint execution or editing is unavailable, return a qualified finding list or patch and mark the final lint result unassessed rather than claiming a clean document.
+
+## Decision rules
+
+| Choice | Action | Failure avoided |
+|---|---|---|
+| A warning can only be fixed by rewriting meaning | Stop and request editorial authority | Mechanical cleanup changes content |
+
+
+## Outputs
+| Artefact | Consumer | Observable acceptance condition |
+|---|---|---|
+| Lint-clean Markdown and check result | maintainers and CI | Intended meaning is unchanged and configured lint passes |
+
+
+## Markdown Lint Cleanup Evidence Notes 1
+- Preserve the lint configuration, before-and-after rule findings, reviewed diff, and any warning withheld to avoid changing meaning.
+
+## Worked example
+
+Add a language tag to a known shell fence and blank lines around a list; do not guess the language of an ambiguous snippet.
+
 <!-- dual-compat-end -->
 ## Overview
 
@@ -154,3 +187,24 @@ php scripts/verify_uom_system.php
 - No markdown lint warnings
 - No content meaning changes
 - Consistent formatting across documents
+
+
+## Workflow
+1. Read the repository lint configuration and define the authorised files.
+2. Run or inspect lint findings and separate mechanical fixes from editorial changes.
+3. Stop when a fix would change meaning or the code-fence language is unknown.
+4. Apply mechanical repairs and rerun checks; recover by reverting the affected hunk and reporting the unresolved rule.
+
+
+## Markdown Lint Cleanup Evidence Notes 2
+| Evidence | Consumer | Acceptance |
+|---|---|---|
+| Lint result and reviewed diff | Maintainer and CI | Configured lint passes and semantic changes are absent or authorised |
+
+
+## Anti-Patterns
+- Guessing a code-fence language. Fix: inspect the snippet or leave a flagged gap.
+- Reflowing prose during lint cleanup. Fix: keep changes mechanical.
+- Renumbering intentional examples blindly. Fix: preserve semantic numbering.
+- Editing generated Markdown. Fix: repair its source generator.
+- Declaring success without rerunning lint. Fix: record the final check result.

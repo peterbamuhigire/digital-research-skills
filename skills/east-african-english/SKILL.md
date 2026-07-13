@@ -1,6 +1,11 @@
 ---
 name: east-african-english
-description: Language and tone standard for all written content. Enforces authentic East African English as used in Uganda, Kenya, and Tanzania  formal, clear, respectful, British-influenced, and professionally courteous. Apply to every piece of text generated for the website.
+description: Use when English content must sound natural and professional for East African readers; apply British-influenced regional usage after the content-owning skill, but route translation or substantive content strategy elsewhere.
+metadata:
+  portable: true
+  compatible_with:
+    - claude-code
+    - codex
 ---
 
 # East African English  Language & Tone Skill
@@ -21,15 +26,15 @@ Use this skill as the English-language tone layer for East African audiences. It
 - Do not flatten local tone into stiff textbook formalism.
 - Do not override a client's established voice without reason.
 
-## Required Inputs
 
+## East African English Required Context
 - Draft text or content task
 - Target country or audience within East Africa where relevant
 - Brand or client tone expectations
 - Any terminology that must remain fixed
 
-## Workflow
 
+## East African English Core Method Notes
 1. Identify the reader, purpose, and expected level of formality.
 2. Draft or revise the text into authentic East African professional English.
 3. Keep the tone respectful, clear, and commercially credible.
@@ -44,15 +49,15 @@ Use this skill as the English-language tone layer for East African audiences. It
 - British spelling and regional conventions are applied consistently where appropriate.
 - The wording supports trust and readability.
 
-## Anti-Patterns
 
+## East African English Existing Failure Notes
 - Uncritical use of American corporate phrasing.
 - Artificially “local” slang that reduces professionalism.
 - Over-formal bureaucratic prose that hides the message.
 - Inconsistent spelling or register within the same artifact.
 
-## Outputs
 
+## East African English Core Deliverables
 - East African English-aligned copy or edits
 - Tone corrections and language-consistency improvements
 - Any unresolved voice or localisation questions
@@ -259,3 +264,65 @@ Use this as a benchmark for tone and rhythm:
 - **Any generated email templates or contact responses**
 
 This skill runs alongside every other skill. The design-system chooses how text looks; this skill governs what it says and how it sounds.
+
+<!-- dual-compat-start -->
+## Inputs
+
+| Artefact | Source or provider | Required? | If absent |
+|---|---|---|---|
+| Approved English draft, audience, country context, and purpose | Content-owning skill or requester | required | Ask for the draft and context; do not invent content |
+
+
+## Workflow
+1. Identify audience, country context, medium, and content owner.
+2. Preserve meaning and evidence while applying British spelling and locally natural courtesy.
+3. Stop and refer substantive claim, translation, or legal-language changes to the owning skill.
+4. Review register, idiom, dates, currency, headings, calls to action, and error text; recover from uncertainty by offering a neutral wording and flagging the choice.
+
+## Capability contract
+
+Default to read-only review. Edit only the supplied copy when authorised; publishing and production mutation require separate authority.
+
+## Degraded mode
+
+Without country or audience context, apply neutral East African professional English and label country-specific language as unassessed.
+
+## Decision rules
+
+| Choice | Action | Failure avoided |
+|---|---|---|
+| Regional wording is clear across the audience | Keep it | Unnecessary standardisation |
+| Idiom may be country-specific or ambiguous | Use neutral wording or ask | False regional authenticity |
+
+
+## Outputs
+| Artefact | Consumer | Observable acceptance condition |
+|---|---|---|
+| Revised copy and language notes | Content owner | Meaning is preserved; spelling, register, and country-sensitive choices are consistent |
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance |
+|---|---|---|
+| Language decision and gap record | Content owner | Material wording choices and unresolved country context are recorded |
+
+## Quality Standards
+
+Keep the voice respectful and direct; preserve verified names and quotations exactly; never invent a regional expression.
+
+
+## Anti-Patterns
+- Adding dialect spellings to sound local. Fix: use verified standard professional usage.
+- Rewriting a factual claim during tone editing. Fix: return it to the content owner.
+- Treating East Africa as linguistically uniform. Fix: name the target country or use neutral wording.
+- Converting British spelling to American spelling. Fix: apply the declared house style consistently.
+- Making error messages terse or blaming. Fix: state the problem and next action courteously.
+
+## Worked example
+
+For a Uganda-facing service notice, retain the approved facts, apply British spelling, and replace an abrupt error with a courteous instruction; do not add local slang.
+
+## References
+
+- Use the country and vocabulary guidance already contained in this entrypoint.
+<!-- dual-compat-end -->

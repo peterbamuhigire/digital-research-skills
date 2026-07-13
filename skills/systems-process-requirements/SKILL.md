@@ -1,9 +1,94 @@
 ---
 name: systems-process-requirements
-description: Use when research, analysis, documentation, or product work needs to describe a system, process, workflow, requirements set, scope boundary, data architecture, interface, state model, business rule set, user journey, design system, component library, or operating model. Produces clear, testable, traceable descriptions using requirements engineering, business analysis, scope management, data modeling, and design-system documentation practices.
+description: Use when describing a system, process, workflow, scope boundary, requirements set, interface, state model, data architecture, business rules, user journey, operating model, or design system in testable and traceable form; use spec-architect for a coding-ready feature specification.
+metadata:
+  portable: true
+  compatible_with:
+    - claude-code
+    - codex
 ---
 
 # Systems Process Requirements
+
+<!-- dual-compat-start -->
+
+## Use When
+
+- Describe current or target systems, processes, requirements, states, interfaces, data, scope, or operating rules.
+
+## Do Not Use When
+
+- Use spec-architect for an end-to-end coding-ready feature spec and systems-thinking for causal feedback analysis.
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Stakeholders, purpose, boundary, current artifacts, and constraints | Owners and repository | Stop boundary-sensitive modelling and list missing authorities. |
+| Rules, events, data definitions, and interfaces | Process owners and source systems | Mark unknowns; do not invent behaviour. |
+
+## Workflow
+
+1. Choose the artifact type and establish system boundary and owner.
+2. Elicit actors, triggers, states, rules, exceptions, data, and interfaces.
+3. Model traceable requirements and acceptance conditions.
+4. Validate with owners or source artifacts; stop on unresolved contradictions.
+5. Recover by narrowing scope and issuing a decision/gap log.
+
+## Outputs
+
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| Process/system model and requirements set | Owners, designers, implementers | Boundaries, branches, errors, data, rules, and traceability are observable. |
+
+## Evidence Produced
+
+| Category | Artifact | Acceptance condition |
+|---|---|---|
+| Correctness | Traceability and validation record | Each requirement maps to source, owner, and acceptance condition. |
+
+## Capability Contract
+
+Analysis defaults to read-only. Editing authoritative specifications or operating processes must be explicitly authorised by the owner; implementing, deploying, or changing production data requires separate explicit authorisation.
+
+## Degraded Mode
+
+Without owner access, current artifacts, or modelling tools, return a qualified text/table model with assumptions and unassessed decisions. Do not certify it as current-state truth or approved future state.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Current behaviour is disputed | Preserve variants and seek owner decision | Invented consensus |
+| Requirement lacks acceptance evidence | Rewrite or classify as open | Untestable scope |
+| Boundary crosses another system | Document interface and ownership | Orphan responsibility |
+
+## Quality Standards
+
+Models are bounded, source-traceable, testable, explicit about errors and exceptions, and understandable by their named consumer.
+
+## Preliminary Modelling Corrections
+
+- Modelling without a boundary. Fix: name in/out scope.
+- Happy path only. Fix: add exceptions and recovery.
+- Mixing current and future state. Fix: label both.
+- Requirement without source. Fix: add owner/provenance.
+- Diagram without definitions. Fix: add a glossary/data dictionary.
+
+## Worked Example
+
+For an approval workflow, identify trigger, actors, states, decision rules, rejection and timeout paths, audit data, interfaces, and acceptance tests; keep unresolved ownership in the gap log.
+
+## References
+
+- [Modelling router](references/modeling-router.md)
+- [Process and system description](references/process-system-description.md)
+- [Requirements and scope](references/requirements-and-scope.md)
+- [Data architecture](references/data-architecture-modeling.md)
+- [Design-system documentation](references/design-system-documentation.md)
+- [Source register](references/source-register.md)
+
+<!-- dual-compat-end -->
 
 Use this skill when the engine must explain how something works, how it should work, what its boundaries are, what users/stakeholders need, what data/entities it handles, what rules constrain it, or how its components/processes fit together.
 
@@ -71,7 +156,7 @@ Use the lightest artifact that explains the system without hiding important comp
 - Design-system component inventory.
 - Current-state / future-state comparison.
 
-## Anti-Patterns
+## Extended Modelling Failure Modes
 
 - Treating "requirements gathering" as passive note-taking.
 - Describing UI clicks before explaining the user goal and system responsibility.
@@ -108,3 +193,11 @@ Use the lightest artifact that explains the system without hiding important comp
 - `data-quality-pipeline` and `data-quality-assessment` - when operational data and data governance are central.
 - `executive-communication` - executive version of system/process findings.
 - `critical-reasoning-and-argument` - causal diagnosis, recommendations, prioritization, and tradeoff logic.
+
+## Anti-Patterns
+
+- Modelling without a boundary. Fix: name in-scope and out-of-scope elements.
+- Documenting only the happy path. Fix: add errors, exceptions, and recovery.
+- Mixing current and future state. Fix: label each model.
+- Writing requirements without provenance. Fix: name the owner or source.
+- Drawing entities without definitions. Fix: add a glossary and data dictionary.

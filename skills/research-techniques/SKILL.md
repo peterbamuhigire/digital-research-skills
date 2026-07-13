@@ -6,10 +6,93 @@ metadata:
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
 ---
 
 # Research Techniques
+
+<!-- dual-compat-start -->
+
+## Use When
+
+- A defined research plan needs one named analysis, synthesis, interview, taxonomy, vocabulary, or search technique.
+
+## Do Not Use When
+
+- Use research-orchestration for waves and research-design for a full method portfolio.
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Defined question and technique objective | Research plan or analyst | Stop and clarify the supported decision. |
+| Corpus or interview/search access | Evidence registry or provider | Return a technique plan and access gaps. |
+
+## Workflow
+
+1. Match the question to one technique and load its reference.
+2. Confirm corpus, fields, permissions, and stop conditions.
+3. Execute read-only, recording exclusions and contradictions.
+4. Validate the artifact and recover by routing gaps back to orchestration.
+
+## Outputs
+
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| Technique-specific matrix, taxonomy, record, query set, or synthesis | Analyst and orchestrator | Inputs, method, exclusions, findings, and gaps are visible. |
+
+## Evidence Produced
+
+| Category | Artifact | Acceptance condition |
+|---|---|---|
+| Correctness | Reproducible technique record | A reviewer can trace corpus, operations, and findings. |
+
+## Capability Contract
+
+Analysis defaults to read-only. Interviews, paid APIs, account use, external contact, file edits, or publication require explicit authority.
+
+## Degraded Mode
+
+With incomplete corpora, unavailable APIs, or inaccessible interviewees, produce the smallest supported artifact and label coverage gaps. Never infer missing counts or quotations.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Heterogeneous sources | Use a crosswalk matrix | Hidden gaps |
+| Missing evidence shapes next wave | Use gap analysis | Repeated searches |
+| Cross-cohort patterns requested | Verify before synthesis | Unsupported generalisation |
+
+## Quality Standards
+
+The technique answers a named question, preserves provenance, exposes exclusions, and yields a reusable artifact.
+
+## Anti-Patterns
+
+- Technique without a question. Fix: start from the decision.
+- Counting uncoded fragments. Fix: define a codebook.
+- Synthesising unverified cohorts. Fix: verify checkpoints.
+- Hiding empty cells. Fix: mark gaps.
+- Treating search results as findings. Fix: evaluate sources.
+
+## Worked Example
+
+When cohort reports use different labels, build a shared-dimension crosswalk, preserve unmapped cells as gaps, and synthesise only after verification.
+
+## References
+
+- [Mini-analysis](references/minianalysis-engine.md)
+- [Crosswalk matrix](references/crosswalk-matrix.md)
+- [Cross-cohort synthesis](references/cross-cohort-synthesis.md)
+- [Gap analysis](references/gap-analysis.md)
+- [Reference interview](references/reference-interview.md)
+- [Controlled vocabulary](references/controlled-vocabulary-builder.md)
+- [Pain-point taxonomy](references/pain-point-taxonomy.md)
+- [Search operators](references/search-operator-grammar.md)
+- [Google search API](references/google-search-api-operator.md)
+- [Search mastery](references/macleod-search-mastery.md)
+- [Search literacy](references/russell-search-literacy.md)
+
+<!-- dual-compat-end -->
 
 Library of named research techniques the engine applies on demand. The orchestrator (`research-orchestration`) decides *what kind* of research is being run; this skill provides the *specific tools* used inside the waves.
 
@@ -74,7 +157,7 @@ Any artifact with a conclusion also includes the evidence-to-claim link, counter
 
 A technique that does not produce a structured artifact has been used incorrectly.
 
-## Anti-patterns
+## Technique Failure Modes
 
 - Loading all references at once instead of the matching one.
 - Using a search-operator grammar reference to write English prose.

@@ -10,6 +10,41 @@ metadata:
 
 # Source Verification
 
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Claim-source registry with URLs, quotes, statistics, and citations | Research project | Stop verification and report the missing registry. |
+| Source access and archive/provider tools | Source providers | Mark unreachable checks unassessed and seek an authorised alternative. |
+
+## Capability Contract
+
+Verification defaults to read-only. Network access may inspect sources when authorised; archive writes, source contact, registry edits, or publication require explicit authority.
+
+## Degraded Mode
+
+If a URL, archive, provider, or tool is unavailable, report the claim as unverified with the attempted check. Never convert inaccessibility into confirmation.
+
+## Decision Rules
+
+| Finding | Action | Failure/risk avoided |
+|---|---|---|
+| Quote or number differs from source | Reject or correct with provenance | Misquotation |
+| URL resolves but does not support claim | Reject claim-source link | Citation laundering |
+| Source unavailable and no archive exists | Mark unresolved | False verification |
+
+## Preliminary Verification Corrections
+
+- Checking URL status only. Fix: verify claim support.
+- Paraphrasing during quote verification. Fix: compare exact text.
+- Accepting a secondary citation when primary is available. Fix: trace origin.
+- Treating archive absence as falsity. Fix: mark unresolved.
+- Editing evidence during read-only review. Fix: separate remediation.
+
+## Worked Example
+
+For a quoted statistic, open the cited source, confirm definition, period, unit, and exact value, record the supporting location, and reject the citation if any material element differs.
+
 <!-- dual-compat-start -->
 
 ## Use When
@@ -23,13 +58,13 @@ metadata:
 - The task is initial source quality assessment; use `source-evaluation` first.
 - The output contains no source-backed claims.
 
-## Required Inputs
+## Verification Source Requirements
 
 - Source registry, claim registry, quote registry, synthesis map, and draft output.
 - Source files, URLs, document locators, and access dates.
 - Any source-evaluation notes, credibility tiers, and verification trails.
 
-## Workflow
+## Verification Method Detail
 
 1. Validate registry shape: roots, required fields, allowed values, and no placeholder values.
 2. Check source liveness and archive references.
@@ -63,14 +98,14 @@ Both tools return a non-zero exit code when release readiness fails.
 - Dead URLs are replaced, archived, or removed.
 - Claims with missing source links do not ship.
 
-## Anti-Patterns
+## Verification Failure Catalogue
 
 - Treating a bibliography as verification.
 - Checking only that a URL exists, not that it supports the claim.
 - Accepting a quote without locator or exact-match check.
 - Allowing imported legacy sources to appear release-ready without audit.
 
-## Outputs
+## Verification Artifact Detail
 
 - Verification manifest.
 - Rejected-claim log.
@@ -96,3 +131,25 @@ Both tools return a non-zero exit code when release readiness fails.
 - `evidence-claim-graph` defines claim-source relationships.
 - `agentic-research-operations` uses this skill for merge/reject decisions.
 - `docs/quality-gates/release-blocking-gates.md` defines ship/no-ship criteria.
+
+## Workflow
+
+1. Confirm the claim-source registry and accessible evidence; stop if the registry is absent.
+2. Verify URL identity, source content, quotations, definitions, periods, units, and claim support.
+3. Record exact supporting locations and contradictions.
+4. Reject fabricated, mismatched, or unsupported links.
+5. Recover from unavailable sources through authorised archives or mark the claim unassessed.
+
+## Outputs
+
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| Verification manifest | Researcher and release gate | Every claim is verified, rejected, or explicitly unassessed with attempted checks. |
+
+## Anti-Patterns
+
+- Checking status only. Fix: verify support.
+- Paraphrasing a quote. Fix: compare exact text.
+- Stopping at secondary citation. Fix: trace origin.
+- Treating archive absence as falsity. Fix: mark unresolved.
+- Editing evidence in review. Fix: separate remediation.

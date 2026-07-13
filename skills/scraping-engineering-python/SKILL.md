@@ -6,10 +6,85 @@ metadata:
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
 ---
 
 # Scraping Engineering — Python (Lawson)
+
+<!-- dual-compat-start -->
+
+## Use When
+
+- A Python acquisition pipeline needs caching, concurrency, resumability, browser integration, form handling, or Scrapy coordination.
+
+## Do Not Use When
+
+- Use web-scraping-foundations first; do not scale a simple request without observed need.
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Authorised targets, fields, volume, and freshness | Requester and target terms | Stop network execution and return a design plan. |
+| Robots/politeness result and sample responses | Target and foundations check | Do not crawl until assessed. |
+
+## Workflow
+
+1. Confirm scraping is authorised and foundations selected it.
+2. Choose cache, concurrency, rendering, framework, and storage from observed needs.
+3. Add checkpoints, typed errors, provenance, and bounded retries.
+4. Test a representative sample; stop on blocks, consent barriers, or drift.
+5. Scale gradually; recover from failed samples by reducing scope or concurrency and revalidate records.
+
+## Outputs
+
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| Resumable Python pipeline | Operator | Restarts safely, honours limits, surfaces failures, and preserves provenance. |
+| Data batch and manifest | Analyst | Schema, source, fetch time, failures, and selector version are recorded. |
+
+## Evidence Produced
+
+| Category | Artifact | Acceptance condition |
+|---|---|---|
+| Correctness | Extraction and restart test | Fields and checkpoint recovery pass on representative pages. |
+
+## Capability Contract
+
+Review and design default to read-only. Network requests, account/session use, form submission, CAPTCHA handling, storage, or production execution require explicit authority. Never bypass access controls.
+
+## Degraded Mode
+
+Without network, browser, storage, credentials, or permission, return reviewed code and a dry-run plan. Mark live behaviour unassessed.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| HTTP/JSON path works | Exclude browser automation | Fragile runtime |
+| Blocking or consent challenge | Stop and notify | Circumvention |
+| Crawl must resume | Use durable checkpoints and idempotent writes | Duplicate records |
+
+## Quality Standards
+
+The pipeline is polite, bounded, restartable, observable, and tested on representative pages.
+
+## Anti-Patterns
+
+- Concurrency before a baseline passes. Fix: validate sequentially.
+- Retrying every status. Fix: classify failures.
+- Rows without provenance. Fix: store metadata.
+- Empty strings for missing fields. Fix: use nulls.
+- Untested resumability. Fix: interrupt and restart.
+
+## Worked Example
+
+For an authorised resumable catalogue crawl, validate a cached sequential sample, add bounded concurrency and idempotent storage, then interrupt and restart without duplicates.
+
+## References
+
+- [Web scraping foundations](../web-scraping-foundations/SKILL.md)
+
+<!-- dual-compat-end -->
 
 Encodes Richard Lawson's *Web Scraping with Python* (Packt) as the engine's engineering layer for production-grade Python scrapers. Pair with `scraping-troubleshooting-brody` (etiquette and debugging) and `web-scraping-foundations` (basics). For non-Python pipelines, the patterns transfer; the libraries change.
 

@@ -1,9 +1,6 @@
 ---
 name: python-document-generation
-description: Use when generating downloadable Excel dashboards, Word documents, or
-  PDF reports from Python for end users of web, Android, and iOS SaaS apps — designer-grade
-  branded output with charts, tables, formulas, conditional formatting, and multi-page
-  layouts.
+description: Use when Python must generate downloadable Excel, Word, or PDF artefacts for application users with branding, charts, tables, formulas, and delivery controls; use the format-specific skill when only one document type needs manual production.
 metadata:
   portable: true
   compatible_with:
@@ -25,13 +22,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The task is unrelated to `python-document-generation` or would be better handled by a more specific companion skill.
 - The request only needs a trivial answer and none of this skill's constraints or references materially help.
 
-## Required Inputs
 
+## Python Document Generation Required Context
 - Gather relevant project context, constraints, and the concrete problem to solve; load `references` only as needed.
 - Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
 
-## Workflow
 
+## Python Document Generation Core Method Notes
 - Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
 - Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
 - Produce the deliverable with assumptions, risks, and follow-up work made explicit when they matter.
@@ -42,13 +39,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
 - Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
 
-## Anti-Patterns
 
+## Python Document Generation Existing Failure Notes
 - Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
 - Loading every reference file by default instead of using progressive disclosure.
 
-## Outputs
 
+## Python Document Generation Core Deliverables
 - A concrete result that fits the task: implementation guidance, review findings, architecture decisions, templates, or generated artifacts.
 - Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
 - References used, companion skills, or follow-up actions when they materially improve execution.
@@ -59,9 +56,43 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 |----------|----------|--------|---------|
 | Correctness | Document export test plan | Markdown doc covering Excel/Word/PDF rendering for layout, fonts, images, and pagination | `docs/python/doc-gen-tests.md` |
 
-## References
 
+## Python Document Generation Source Notes
 - Use the `references/` directory for deep detail after reading the core workflow below.
+## Inputs
+
+| Artefact | Source or provider | Requirement | If absent |
+|---|---|---|---|
+| Verified data, output schema, brand assets, and delivery constraints | application and content owner | required | Return a generator contract if execution or rendering is unavailable |
+
+## Capability contract
+
+Read access to source data, generator code, brand assets, and delivery constraints is required. Code edits and execution need explicit authority; deployment, storage writes, and user delivery require separate production permission.
+
+## Degraded mode
+
+If dependencies, execution, or rendering are unavailable, return a qualified generator contract or patch, identify untested formats, and leave reconciliation and visual checks unassessed.
+
+## Decision rules
+
+| Choice | Action | Failure avoided |
+|---|---|---|
+| Large or slow document may exceed request limits | Queue generation and expose status | Request timeout or duplicate generation |
+
+
+## Outputs
+| Artefact | Consumer | Observable acceptance condition |
+|---|---|---|
+| Generator, generated artefact, and validation evidence | application user and engineering team | File opens, data reconciles, and format-specific render checks pass |
+
+
+## Python Document Generation Evidence Notes 1
+- Preserve fixture identifiers, library choice, source reconciliation, performance observations, generated-file checks, and render results.
+
+## Worked example
+
+Generate a branded report from fixed test data, verify totals against the source, render representative pages, and test the download response.
+
 <!-- dual-compat-end -->
 How we produce beautiful, branded, downloadable Excel / Word / PDF files from Python. These are end-user artifacts — professional enough to send to clients, file with auditors, or hand to executives.
 
@@ -294,8 +325,8 @@ Always write the file to a temp path first, then atomic-rename on success. Never
 
 See `references/performance.md`.
 
-## Anti-patterns
 
+## Python Document Generation Additional Failure Modes 2
 - Generating a 10,000-row Excel inside a web request — use the worker.
 - Embedding raw bytes of a huge image per row — link to external resource or resize to thumbnail.
 - Not closing matplotlib figures — OOM after many jobs.
@@ -323,3 +354,30 @@ See `references/performance.md`.
 - `professional-word-output` skill — design principles for Word documents.
 - `data-visualization` skill — Knaflic's storytelling principles; apply these to every chart.
 - `report-print-pdf` skill — HTML/mPDF counterpart in PHP.
+
+
+## Workflow
+1. Confirm output formats, verified data, brand assets, delivery limits, and test fixtures.
+2. Choose the format library and synchronous or queued delivery path.
+3. Stop when data totals, required fonts, or output schema cannot be verified.
+4. Generate, reconcile, open, and render the artefact; recover by isolating the failing format or returning a qualified generator contract.
+
+
+## Python Document Generation Evidence Notes 2
+| Evidence | Consumer | Acceptance |
+|---|---|---|
+| Generator tests, reconciliation, and render-QA record | Engineering and release owner | Files open, source totals match, and format checks are recorded |
+
+
+## Anti-Patterns
+- Choosing a library before checking format needs. Fix: decide from required features.
+- Trusting generated totals without reconciliation. Fix: compare against source fixtures.
+- Blocking a request with a large document. Fix: queue it and expose status.
+- Shipping a file that was never opened or rendered. Fix: inspect representative outputs.
+- Hiding an unavailable font or renderer. Fix: mark the visual check not assessed.
+
+## Reference Index
+
+- [Branding system](references/branding-system.md); [embedded charts](references/charts-for-embedding.md); [delivery](references/delivery-and-downloads.md)
+- [Excel dashboards](references/excel-dashboard-patterns.md); [Excel library choice](references/excel-openpyxl-vs-xlsxwriter.md); [Word generation](references/word-python-docx.md)
+- [ReportLab](references/pdf-reportlab.md); [WeasyPrint](references/pdf-weasyprint.md); [performance](references/performance.md)

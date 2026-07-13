@@ -23,14 +23,14 @@ metadata:
 - The task is a single fact lookup with no downstream reuse.
 - The corpus is too immature; run source collection and evaluation first.
 
-## Required Inputs
 
+## Evidence Claim Graph Required Context
 - Source registry, extracted quotes, notes, claims, hypotheses, and gaps.
 - Intended output family and audience.
 - Evidence discipline from source evaluation.
 
-## Workflow
 
+## Evidence Claim Graph Core Method Notes
 1. Atomize sources into evidence items: one quote, statistic, observation, dataset field, or document fact per item.
 2. Convert prose notes into explicit claims with scope, status, and source IDs.
 3. Add warrants: why the evidence supports the claim.
@@ -55,8 +55,8 @@ metadata:
 - Deleting contradictory evidence because it complicates the story.
 - Treating gaps as failures instead of research objects.
 
-## Outputs
 
+## Evidence Claim Graph Core Deliverables
 - Evidence-claim graph table.
 - Claim register rows.
 - Contradiction map.
@@ -75,6 +75,40 @@ metadata:
 - Load `references/graph-schema.md` for node and edge types.
 - Load `references/claim-promotion-gate.md` before synthesis or final drafting.
 
+## Inputs
+
+| Artefact | Source or provider | Requirement | If absent |
+|---|---|---|---|
+| Verified source register | source-evaluation and source-verification | required | Stop and record a gap if provenance is absent |
+
+## Capability contract
+
+Read and graph-search access are required to resolve node provenance. Graph mutation needs explicit authority; source records remain immutable, and publication waits for relationship validation.
+
+## Degraded mode
+
+If graph storage or validation is unavailable, return a qualified node-and-edge draft, mark integrity checks unassessed, and retain unsupported propositions as gaps.
+
+## Decision rules
+
+| Choice | Action | Failure avoided |
+|---|---|---|
+| Evidence supports wording directly | Link evidence to claim | Unsupported promotion |
+
+
+## Outputs
+| Artefact | Consumer | Observable acceptance condition |
+|---|---|---|
+| Evidence-claim graph | synthesis and report builders | Every claim node has source or explicit inference/synthesis status |
+
+
+## Evidence Claim Graph Evidence Notes 1
+- Preserve node identifiers, source locators, promotion decisions, contradictions, and the graph-integrity result.
+
+## Worked example
+
+A paragraph that combines two verified sources becomes a synthesis node linked to both evidence nodes; an unresolved discrepancy becomes a contradiction node, not a finding.
+
 <!-- dual-compat-end -->
 
 ## Companion Skills
@@ -83,3 +117,21 @@ metadata:
 - `critical-reasoning-and-argument` supplies warrants and inference tests.
 - `research-techniques` supplies gap analysis and synthesis methods.
 - `knowledge-productization` reuses graph assets in monetizable outputs.
+
+
+## Workflow
+1. Register sources and evidence before creating claims.
+2. Link warrants, inference, synthesis, gaps, and contradictions explicitly.
+3. Stop claim promotion when provenance or support is absent.
+4. Validate graph integrity; recover by demoting unsupported claims to gaps.
+
+
+## Evidence Claim Graph Evidence Notes 2
+| Evidence | Consumer | Acceptance |
+|---|---|---|
+| Graph validation record | Synthesis and release review | Provenance, gap status, and relationship checks are recorded |
+
+## Reference Index
+
+- [Graph schema](references/graph-schema.md)
+- [Claim promotion gate](references/claim-promotion-gate.md)

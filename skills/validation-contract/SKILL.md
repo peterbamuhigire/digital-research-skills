@@ -9,6 +9,41 @@ metadata:
 ---
 
 # Validation Contract
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Artifact/release scope, risk, acceptance criteria, and applicable categories | Owner and specialist skills | Stop release assessment and request the missing scope or criteria. |
+| Concrete validation artifacts | Tests, audits, runbooks, scans, and reviewers | Mark the category missing or not applicable with reason; never fabricate evidence. |
+
+## Capability Contract
+
+Assessment defaults to read-only. Running safe validators requires execution authority; editing evidence, deploying, approving release, or making certification claims requires separate explicit authority.
+
+## Degraded Mode
+
+If a tool, environment, artifact, or reviewer is unavailable, mark that category unassessed and block any claim that depends on it. Produce the partial bundle and recovery action.
+
+## Decision Rules
+
+| Finding | Action | Failure/risk avoided |
+|---|---|---|
+| Required category has no artifact | Block ship | Evidence-free readiness claim |
+| Category truly does not apply | Record N/A with same-line reason | Empty compliance theatre |
+| Artifact contradicts acceptance criteria | Fail and remediate | Selective reporting |
+
+## Preliminary Evidence Corrections
+
+- Treating a checklist tick as evidence. Fix: link the artifact.
+- Filling every category just for symmetry. Fix: map actual risks.
+- Using unexplained N/A. Fix: state the reason.
+- Writing the bundle after release. Fix: gate before ship.
+- Editing evidence during review. Fix: preserve provenance.
+
+## Worked Example
+
+For a medium-risk release, map each applicable category to a concrete artifact, justify any N/A on the same line, block missing required evidence, and release only after the bundle matches acceptance criteria.
 Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 <!-- dual-compat-start -->
@@ -25,13 +60,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The skill being authored is a baseline, process, or pure index skill. Those do not declare evidence.
 - The task is unrelated to validation planning or shipping readiness.
 
-## Required Inputs
+## Validation Source Requirements
 
 - The specialist skill or feature being validated, including its intended scope and risk tier.
 - Access to the repository's existing validation skills (`advanced-testing-strategy`, `vibe-security-skill`, `observability-monitoring`, etc.) as the source of category-specific "how to validate" content.
 - Awareness of the 14 canonical artifact templates in `skill-composition-standards/references/` so evidence rows can cite existing formats.
 
-## Workflow
+## Validation Method Summary
 
 - Identify whether the skill or feature in scope is specialist (declares evidence) or baseline/process (does not).
 - For specialist skills: map each artifact the skill produces to one of the seven evidence categories.
@@ -44,14 +79,14 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Evidence declarations cite existing artifact templates where possible instead of inventing new formats.
 - Release Evidence Bundles never carry empty cells. Every cell links evidence or carries an `N/A — <reason>` line.
 
-## Anti-Patterns
+## Legacy Validation Warnings
 
 - Declaring every category on every skill "just in case". This kills the signal.
 - Writing prose validation notes instead of linking concrete artifacts in a Release Evidence Bundle.
 - Permitting unjustified `N/A` on Correctness, Security, Data safety, Operability, or Release evidence in high-risk releases.
 - Treating the Release Evidence Bundle as a retrospective summary written after ship. It is produced before ship.
 
-## Outputs
+## Initial Validation Deliverables
 
 - A specialist skill with a validated `## Evidence Produced` section declaring one or more of the seven categories.
 - A Release Evidence Bundle in the project's `docs/` tree linking evidence for every applicable category at ship time.
@@ -156,3 +191,25 @@ The rollout in [references/integration-rollout.md](references/integration-rollou
 - `skill-composition-standards` — Standards 1 and 2. Load this before `validation-contract`.
 - `world-class-engineering` — repository production-readiness bar. This contract makes the evidence of meeting that bar a first-class artifact.
 - Category-specific skills — the source of truth for *how* to validate within each category (see [references/evidence-categories.md](references/evidence-categories.md)).
+
+## Workflow
+
+1. Confirm release scope, risk, acceptance criteria, and categories; stop if any is unknown.
+2. Map each category to a concrete artifact and named consumer.
+3. Review artifact provenance and acceptance evidence without altering it.
+4. Block missing or contradictory required evidence.
+5. Recover through authorised remediation and rebuild the bundle before ship.
+
+## Outputs
+
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| Release Evidence Bundle | Release owner and reviewer | Every applicable category links accepted evidence or carries justified N/A. |
+
+## Anti-Patterns
+
+- Checklist ticks as evidence. Fix: link artifacts.
+- Every category by default. Fix: map risk.
+- Unexplained N/A. Fix: give reason.
+- Bundle after release. Fix: gate before ship.
+- Editing evidence during review. Fix: preserve provenance.

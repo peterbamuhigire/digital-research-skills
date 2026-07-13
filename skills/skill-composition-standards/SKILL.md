@@ -1,10 +1,6 @@
 ---
 name: skill-composition-standards
-description: Use when authoring a new skill, normalising an older skill, or reviewing
-  a skill PR — defines the repository-wide house style (frontmatter, decision rules,
-  anti-patterns, references), the output contracts each baseline-skill type must produce,
-  and the input contracts each specialist skill must declare. This is the enforcement
-  spine that makes the repository compose as a system, not a library of linked documents.
+description: Use when defining or reviewing how multiple skills compose through shared house style, input/output artifacts, evidence declarations, and reference boundaries; use skill-writing for one skill's authoring workflow and skill-taxonomy-and-routing for catalogue placement.
 metadata:
   portable: true
   compatible_with:
@@ -13,6 +9,32 @@ metadata:
 ---
 
 # Skill Composition Standards
+
+## Capability Contract
+
+Composition review defaults to read-only. Editing skills, routers, templates, baselines, or CI requires explicit repository authority; publishing and deleting skills requires separate authority.
+
+## Degraded Mode
+
+If validators, neighbouring skills, or templates are unavailable, return a contract gap report and mark routing or link checks unassessed. Do not declare conformance.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Content is routing-critical | Keep it in the entrypoint | Hidden activation logic |
+| Detail exceeds a focused pass | Extract to a linked reference | Overlong entrypoint |
+| Neighbours overlap | Add positive and negative triggers | Routing collision |
+
+## Evidence Produced
+
+| Category | Artifact | Acceptance condition |
+|---|---|---|
+| Correctness | Composition review record | Each applicable contract is passed or has a concrete finding. |
+
+## Worked Example
+
+For a long schema catalogue, retain selection decisions and acceptance conditions in SKILL.md, extract the catalogue to references, link both directions, and rerun routing and link checks.
 Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 <!-- dual-compat-start -->
@@ -26,12 +48,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The task is unrelated to `skill-composition-standards` or would be better handled by a more specific companion skill.
 - The request only needs a trivial answer and none of this skill's constraints or references materially help.
 
-## Required Inputs
+## Composition Prerequisites
 
 - Gather relevant project context, constraints, and the concrete problem to solve; load `references` only as needed.
 - Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
 
-## Workflow
+## Composition Entry Sequence
 
 - Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
 - Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
@@ -43,18 +65,18 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
 - Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
 
-## Anti-Patterns
+## Early Composition Warnings
 
 - Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
 - Loading every reference file by default instead of using progressive disclosure.
 
-## Outputs
+## Initial Composition Artifacts
 
 - A concrete result that fits the task: implementation guidance, review findings, architecture decisions, templates, or generated artifacts.
 - Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
 - References used, companion skills, or follow-up actions when they materially improve execution.
 
-## References
+## Core Reference Guidance
 
 - Use the `references/` directory for deep detail after reading the core workflow below.
 <!-- dual-compat-end -->
@@ -152,7 +174,7 @@ Beyond Inputs and Outputs, specialist skills also declare which of seven fixed v
 Every SKILL.md has an **Inputs** and an **Outputs** section with a table:
 
 ```markdown
-## Inputs
+### Inputs Table Example
 
 | Artifact | Produced by | Required? | Why |
 |---|---|---|---|
@@ -160,7 +182,7 @@ Every SKILL.md has an **Inputs** and an **Outputs** section with a table:
 | Access pattern list | `database-design-engineering` | required | shapes the API contract |
 | Threat model | `vibe-security-skill` | optional | informs auth rules |
 
-## Outputs
+### Outputs Table Example
 
 | Artifact | Consumed by | Template |
 |---|---|---|
@@ -172,7 +194,7 @@ Every SKILL.md has an **Inputs** and an **Outputs** section with a table:
 If a skill does not depend on any upstream artifact, its Inputs section says so:
 
 ```markdown
-## Inputs
+### No-Input Declaration Example
 
 None. This skill is a foundational baseline.
 ```
@@ -288,7 +310,7 @@ This skill is **advisory in mechanism, mandatory in convention**. There is no CI
 
 Future work: a CI hook that parses Inputs / Outputs tables and warns when a claimed upstream artifact is not declared by any upstream skill.
 
-## Anti-patterns
+## Composition Failure Catalogue
 
 - A skill with no Outputs declaration (every skill produces something).
 - A skill that claims an input that no upstream skill produces — the input does not actually exist.
@@ -321,3 +343,32 @@ Future work: a CI hook that parses Inputs / Outputs tables and warns when a clai
 - `references/rollback-plan-template.md`
 - `references/runbook-template.md`
 - `references/test-plan-template.md`
+
+## Workflow
+
+1. Discover the live skill and neighbours; stop if scope or ownership is unclear.
+2. Evaluate frontmatter, triggers, contracts, references, examples, and line count.
+3. Separate mechanical repairs from domain judgement and preserve substantive content.
+4. Run structural, link, and routing checks.
+5. Recover from failed gates by repairing the cited contract and rerunning the full set.
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Target skill, live neighbours, repository contract, and routing fixtures | Filesystem and maintainer | Stop conformance review and report the missing catalogue or contract. |
+| Relevant templates, references, and validator output | Repository tools | Mark unavailable checks unassessed and do not declare conformance. |
+
+## Outputs
+
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| Normalised skill contract | Maintainer and routing engine | Required sections, references, validation, and routing fixtures pass. |
+
+## Anti-Patterns
+
+- Copying generic boilerplate. Fix: write domain decisions.
+- Hiding routing logic in references. Fix: keep it in SKILL.md.
+- Waiving findings in a baseline. Fix: clear the debt.
+- Extracting content without a link. Fix: link both directions.
+- Declaring success without tests. Fix: rerun structural and routing gates.

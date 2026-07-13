@@ -1,12 +1,11 @@
 ---
 name: business-writing
-description: Use as the entry point for non-academic prose — emails, memos, letters, plans, blog articles, web copy, internal comms, fundraising letters, speeches, resumes, executive briefings. Carries the channel router, the seven-step process, the master "don't mumble" rule, and orchestration across six craft references (Maxwell 7 steps, Roman/Raphaelson principles, persuasion/narrative, web copywriting, blog publishing, multi-language standards).
+description: Use when drafting or revising non-academic prose such as emails, memos, letters, plans, articles, web copy, speeches, resumes, or executive briefs; use academic-writing for scholarly outputs and executive-communication for decision-led executive synthesis.
 metadata:
   portable: true
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
 ---
 
 # Business Writing
@@ -112,6 +111,98 @@ Every sentence carries its point at full volume. Hedge soup, Latinate fog, and b
 - [ ] Channel-specific rule applied (subject line, F-pattern, slide discipline, etc.).
 - [ ] Mechanical proof on paper / out loud; two human eyes for external artifacts.
 - [ ] Multi-language: per-language register rules verified.
+
+## Companion skills
+
+<!-- dual-compat-start -->
+## Use When
+
+Use for non-academic prose where channel, audience, purpose, and action determine the form.
+
+## Do Not Use When
+
+Use `academic-writing` for scholarship and `report-and-proposal-craft` for formal long reports or proposals.
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Audience, channel, purpose, desired action | Requester | Stop and clarify the communication task |
+| Facts, voice, constraints | Approved sources and organisation | Mark gaps; do not invent authority or examples |
+
+## Workflow
+
+1. Select the channel and desired reader action.
+2. Gather verified substance and choose the fitting reference.
+3. Draft answer-first in the requested voice.
+4. Stop on unsupported persuasion; recover by qualifying or removing it.
+5. Test clarity, accuracy, tone, and actionability.
+
+## Outputs
+
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Channel-ready draft | Intended reader and sender | Purpose, evidence, voice, and requested action are clear |
+
+## Writing Evidence Guidance
+
+The source notes, audience/action decision, and final checklist support the draft.
+
+## Writing Capability Notes
+
+Drafting is allowed only when requested. Sending, publishing, impersonation, spending, or binding commitments require explicit authority.
+
+## Degraded Mode
+
+Fallback without facts or voice guidance: provide a labelled draft with gaps and placeholders; mark unavailable checks `not assessed` and do not present it as send-ready.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Reader needs a decision | Lead with the ask | Buried action |
+| Claim is persuasive but unsupported | Remove or source it | Misrepresentation |
+| Formal long-form deliverable | Route to report craft | Wrong structure |
+
+## Quality Standards
+
+The piece is specific to its reader and channel, factually traceable, concise enough for the purpose, and clear about the next action.
+
+## Business Writing Pitfalls
+
+- Writing before naming the reader; define them.
+- Burying the ask; lead with it.
+- Inflating weak evidence; qualify it.
+- Copying one voice across channels; adapt deliberately.
+- Sending a draft without authority; keep it unsent.
+
+## Worked Example
+
+A decision email opens with the requested approval and deadline, then gives only the evidence needed to decide.
+
+## References
+
+- [Seven-step process](references/maxwell-7-steps.md)
+- [Channel scenarios](references/scenario-playbooks.md)
+<!-- dual-compat-end -->
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance condition |
+|---|---|---|
+| Audience-action decision and source notes | Sender, editor, and approver | The draft's facts, voice, channel, and requested action trace to approved inputs |
+
+## Capability Contract
+
+Minimum capability is read-only access to the brief, approved facts, and voice guidance. Drafting, editing, sending, publishing, spending, or binding commitments require explicit authorisation.
+
+## Anti-Patterns
+
+- Writing before identifying the reader. **Fix:** define the reader and desired action.
+- Burying the ask. **Fix:** lead with the decision or response required.
+- Inflating weak evidence. **Fix:** source, qualify, or remove the claim.
+- Copying one voice across channels. **Fix:** adapt register deliberately.
+- Sending an unapproved draft. **Fix:** keep it labelled as a draft until authorised.
 
 ## Companion skills
 

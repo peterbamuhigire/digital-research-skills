@@ -1,15 +1,16 @@
 ---
 name: report-and-proposal-craft
-description: Use for long-form persuasion artifacts — business reports (informational, analytical, recommendation, progress, feasibility, audit, formal research), business plans, formal proposals (internal and external), and B2B white papers (backgrounder, numbered list, problem/solution). Carries the artifact router, the audience-grid + purpose-statement + SCQA spine, and orchestration across three craft references (Forsyth, Clippinger, Graham).
+description: Use when choosing and drafting a long-form business report, proposal, business plan, bid response, or white paper whose evidence, persuasion structure, and reader decision must be explicit; use business-writing for short emails, memos, blogs, or web copy.
 metadata:
   portable: true
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
 ---
 
 # Report & Proposal Craft
+
+<!-- dual-compat-start -->
 
 Single entry skill for the engine's long-form business persuasion artifacts. For shorter forms (email, memo, blog, web copy), load `business-writing` instead.
 
@@ -164,3 +165,78 @@ For any report >10 pages, the executive summary stands alone. Stand-alone test: 
 - `academic-writing` — papers, essays, theses, dissertations.
 - `data-quality-assessment` — score the data behind report findings.
 - `dataset-discovery-and-analysis` — for evidence-driven reports.
+
+## Use When
+
+- The artifact is a long-form report, business plan, proposal, bid response, or white paper with a defined reader decision.
+
+## Do Not Use When
+
+- Use business-writing for short correspondence and academic-writing for examiner-facing scholarship.
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Brief, audience, decision, and required format | Requester or procurement pack | Stop before drafting and record the missing decision or format. |
+| Findings and claim-level sources | Verified research corpus | Mark evidence gaps; never manufacture supporting facts. |
+
+## Workflow
+
+1. Classify the artifact and stop if the format or decision is unknown.
+2. Build the audience grid, purpose statement, and evidence-to-claim map.
+3. Choose the matching reference; separate findings, conclusions, and recommendations.
+4. Draft, reconcile numbers and citations, test objections, then run the ship gate.
+5. If evidence fails, recover by removing or qualifying the claim and return to research.
+
+## Outputs
+
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| Decision-ready report or proposal | Named reader or evaluator | Format matches the selected type; claims are traceable; ask, risks, and next action are explicit. |
+
+## Evidence Produced
+
+| Category | Artifact | Acceptance condition |
+|---|---|---|
+| Correctness | Claim-source and number-reconciliation record | Every material claim and repeated figure resolves to the same verified source/value. |
+
+## Capability Contract
+
+Planning and review default to read-only. Draft or edit only with artifact authority; submission, signature, pricing commitment, publication, or client contact requires separate explicit authority.
+
+## Degraded Mode
+
+If sources, required templates, rendering, or approval data are unavailable, return the outline, verified sections, and a named gap list. Do not present an unrendered, unverified, or unsigned artifact as final.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Artifact type uncertain | Stop and resolve the reader decision and mandated structure | Hybrid document that satisfies no evaluator |
+| Evidence contradicts the recommendation | Surface the countercase and revise | Persuasion that outruns evidence |
+| Procurement format supplied | Mirror its order and build a compliance check | Administrative rejection |
+
+## Worked Example
+
+Given an external proposal and an RFP, select the bid-response route, map every mandatory item before drafting, and return a compliance matrix plus the proposal; do not substitute a generic sales document.
+
+## Anti-Patterns
+
+- Mixing artifact types. Fix: select one governing structure.
+- Burying the decision. Fix: state the answer early.
+- Merging finding and recommendation. Fix: separate the reasoning stages.
+- Using untraceable evidence. Fix: remove or verify the claim.
+- Submitting without format review. Fix: run the compliance gate.
+
+## Quality Standards
+
+The artifact matches one selected form, separates evidence from interpretation and action, reconciles material figures, and gives the named reader an explicit decision path.
+
+## References
+
+- [Forsyth reports and proposals](references/forsyth-reports-proposals.md)
+- [Clippinger business reports](references/clippinger-business-reports.md)
+- [Graham white papers](references/graham-white-papers.md)
+
+<!-- dual-compat-end -->

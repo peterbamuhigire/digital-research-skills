@@ -1,12 +1,11 @@
 ---
 name: due-diligence
-description: Use for corporate, financial, sanctions, regulatory, and background-check due-diligence work. Carries the Hetherington CRAWL framework, the DD report architecture (CARA), corporate-veil tracing, sanctions/PEP screening, jurisdictional registry atlas, regulatory landscape mapping, and the background-check workflow. Lawful, defensible, audit-ready.
+description: Use when conducting lawful corporate, financial, sanctions, regulatory, ownership, or background-check due diligence that needs an auditable finding trail and CARA resolution; use osint-investigation for broader open-source inquiry without a diligence decision.
 metadata:
   portable: true
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
 ---
 
 # Due Diligence
@@ -105,6 +104,107 @@ A finding without those fields does not ship.
 - [ ] Engine-level guardrail (`source-evaluation/references/evidence-discipline.md`) run.
 - [ ] No legal advice; counsel boundary respected.
 - [ ] Report container conforms to `report-and-proposal-craft` formal-report standards.
+
+## Companion skills
+
+<!-- dual-compat-start -->
+## Use When
+
+Use for lawful diligence supporting proceed, conditions, decline, or escalation decisions.
+
+## Do Not Use When
+
+Use `osint-investigation` for broad inquiry without a diligence subject and decision; do not use for unlawful surveillance or legal advice.
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Subject identifiers, scope, jurisdictions, cut-off date, authority | Client and engagement record | Stop collection |
+| Registry, sanctions, court, regulator, media evidence | Verified primary and secondary sources | Mark `no source found` or unresolved; do not clear the subject |
+
+## Diligence Core Method
+
+1. Confirm lawful authority, identifiers, scope, jurisdictions, and decision.
+2. Collect and log sources under CRAWL with provenance and cut-off dates.
+3. Resolve identity matches before treating any hit as relevant.
+4. Analyse each allegation, countercase, and evidence limit; stop on unsafe attribution.
+5. Issue CARA findings and actions with unresolved gaps visible.
+
+## Outputs
+
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Diligence report and evidence log | Authorised decision-maker | Each finding has subject match, source trail, confidence, resolution, and action |
+
+## Diligence Evidence Guidance
+
+The search log, source captures, identity-resolution record, ownership trace, allegation matrix, and CARA report form the diligence evidence.
+
+## Diligence Capability Notes
+
+Default to lawful public-record review. Private-data access, contacting subjects, surveillance, paid searches, publication, or adverse action requires explicit authority and applicable legal review.
+
+## Degraded Mode
+
+Fallback when registries, matches, or screens are unavailable: keep them unresolved, return a scoped partial result, mark checks `not assessed`, and never convert absence of evidence into clearance.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Identity match is ambiguous | Hold and seek discriminators | False positive |
+| Evidence is contested or single-source | Mark unresolved and triangulate | Defamatory overstatement |
+| Opacity blocks ownership trace | Report the barrier | False beneficial-owner claim |
+
+## Quality Standards
+
+Every finding is lawful, attributable, identity-resolved, source-tiered, time-bounded, and proportionate to the evidence.
+
+## Diligence Pitfalls
+
+- Treating a name match as identity; resolve identifiers.
+- Equating no hit with clearance; state coverage.
+- Presenting an allegation as fact; apply CARA.
+- Stopping at a nominee; trace or flag opacity.
+- Recommending legal conclusions; preserve counsel boundary.
+
+## Worked Example
+
+An adverse-media name match without a second identifier remains unresolved and cannot support a decline recommendation by itself.
+
+## References
+
+- [CRAWL framework](references/dd-framework-hetherington.md)
+- [CARA report architecture](references/dd-report-architecture.md)
+- [Sanctions and PEP screening](references/sanctions-pep-screening.md)
+<!-- dual-compat-end -->
+
+## Workflow
+
+1. Confirm lawful authority, identifiers, scope, jurisdictions, decision, and cut-off date.
+2. Collect and log public-record evidence with provenance and coverage.
+3. Stop when identity is ambiguous, attribution is unsafe, or a required source cannot be assessed.
+4. Recover by seeking discriminating identifiers, triangulating the claim, or preserving an unresolved finding.
+5. Resolve findings through CARA and issue proportionate actions with gaps visible.
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance condition |
+|---|---|---|
+| Search log, identity record, ownership trace, allegation matrix, and CARA report | Authorised decision-maker and reviewer | Every finding is identity-resolved, sourced, time-bounded, confidence-rated, and actionable |
+
+## Capability Contract
+
+Minimum capability is read-only access to lawful public records and authorised identifiers. Private-data access, contact, surveillance, spending, publication, or adverse action requires explicit authorisation and legal review.
+
+## Anti-Patterns
+
+- Treating a name match as identity. **Fix:** resolve discriminating identifiers.
+- Equating no hit with clearance. **Fix:** state lists, dates, and coverage.
+- Presenting an allegation as fact. **Fix:** apply CARA resolution.
+- Stopping at a nominee. **Fix:** trace ownership or flag opacity.
+- Recommending legal conclusions. **Fix:** preserve the counsel boundary.
 
 ## Companion skills
 

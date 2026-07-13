@@ -1,9 +1,6 @@
 ---
 name: manual-guide
-description: Generate end-user manuals and reference guides for ERP modules. Use when
-  the user asks to document a feature, write a user manual, or sync a reference guide.
-  This skill is explicitly separate from doc-architect (which manages AI guidance
-  docs...
+description: Use when creating or updating an end-user manual or reference guide for an ERP or SaaS feature; use project-requirements for product scope and professional-word-output for final DOCX production.
 metadata:
   portable: true
   compatible_with:
@@ -29,13 +26,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The task is unrelated to `manual-guide` or would be better handled by a more specific companion skill.
 - The request only needs a trivial answer and none of this skill's constraints or references materially help.
 
-## Required Inputs
 
+## Manual Guide Required Context
 - Gather relevant project context, constraints, and the concrete problem to solve.
 - Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
 
-## Workflow
 
+## Manual Guide Core Method Notes
 - Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
 - Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
 - Produce the deliverable with assumptions, risks, and follow-up work made explicit when they matter.
@@ -46,13 +43,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
 - Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
 
-## Anti-Patterns
 
+## Manual Guide Existing Failure Notes
 - Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
 - Loading every reference file by default instead of using progressive disclosure.
 
-## Outputs
 
+## Manual Guide Core Deliverables
 - A concrete result that fits the task: implementation guidance, review findings, architecture decisions, templates, or generated artifacts.
 - Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
 - References used, companion skills, or follow-up actions when they materially improve execution.
@@ -66,6 +63,40 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 ## References
 
 - Use the links and companion skills already referenced in this file when deeper context is needed.
+## Inputs
+
+| Artefact | Source or provider | Requirement | If absent |
+|---|---|---|---|
+| Verified product behaviour, UI states, roles, and screenshots | product repository or product owner | required | Produce a missing-evidence checklist, not invented steps |
+
+## Capability contract
+
+Read access to product behaviour, role rules, and the current interface is required. Manual edits need explicit authority; screenshot capture, product mutation, and publication require their own approval.
+
+## Degraded mode
+
+Fallback without product access, screenshots, or render capability: return a qualified procedure outline, mark affected steps and page checks unassessed, and withhold invented instructions.
+
+## Decision rules
+
+| Choice | Action | Failure avoided |
+|---|---|---|
+| Observed behaviour conflicts with draft manual | Stop and verify the product | Publishing unsafe instructions |
+
+
+## Outputs
+| Artefact | Consumer | Observable acceptance condition |
+|---|---|---|
+| User manual source and verification record | end users and support team | Each procedure matches the product and covers errors, permissions, and recovery |
+
+
+## Manual Guide Evidence Notes 1
+- Record verified screens, roles, procedure test results, screenshot versions, error-path checks, and render gaps.
+
+## Worked example
+
+Document invoice creation as a numbered task, identify the required role, show the success state, and include recovery for validation failure.
+
 <!-- dual-compat-end -->
 Create **end-user manuals** and **reference guides**. This is **not** for AI instruction documents. Do **not** edit or generate AGENTS.md or other AI guidance files when this skill is used.
 
@@ -243,6 +274,27 @@ Organize manuals with a clear hierarchy:
 
 ---
 
-**Back to:** [Skills Repository](../CLAUDE.md)
-**Related:** [sdlc-user-deploy](../sdlc-user-deploy/SKILL.md) | [doc-architect](../doc-architect/SKILL.md) | [feature-planning](../feature-planning/SKILL.md)
+**Back to:** [Skills Repository](../../CLAUDE.md)
+**Related:** route to the active SDLC documentation, architecture, or feature-planning skill through the repository router.
 **Last Updated:** 2026-02-20
+
+
+## Workflow
+1. Identify audience, role, task, verified product behaviour, and delivery format.
+2. Map procedures to real screens, permissions, success states, and failure recovery.
+3. Stop when product behaviour or a required screenshot cannot be verified.
+4. Draft and test procedures; recover by recording the missing evidence and withholding the affected instruction.
+
+
+## Manual Guide Evidence Notes 2
+| Evidence | Consumer | Acceptance |
+|---|---|---|
+| Procedure verification and render-QA record | Support team and release owner | Each procedure is checked against the product and its error path |
+
+
+## Anti-Patterns
+- Inventing a button or menu. Fix: verify the product state.
+- Omitting role prerequisites. Fix: state permissions before each task.
+- Documenting only the happy path. Fix: include errors and recovery.
+- Using stale screenshots without warning. Fix: recapture or label the version gap.
+- Publishing an untested procedure. Fix: execute or mark it not assessed.

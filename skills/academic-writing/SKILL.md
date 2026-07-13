@@ -1,12 +1,11 @@
 ---
 name: academic-writing
-description: Use as the single entry point for any academic output — paper, essay, thesis, or dissertation, in either the academic or popular variant. Carries the output-type router, the source-away workflow, the originality gate, and orchestration rules across thirteen craft references (paraphrase, plagiarism prevention, citation styles, voice & register, note discipline, source synthesis, etc.).
+description: Use when drafting or revising an academic paper, essay, thesis, or dissertation with source-away composition, originality, citation, synthesis, voice, and register controls; use academic-reporting-standards for selecting formal study-reporting rules.
 metadata:
   portable: true
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
   priority: critical
 ---
 
@@ -154,3 +153,90 @@ The references and findings are the same. The argument, voice, and structure are
 ## See also (within this skill)
 
 The thirteen `references/` files together encode the body of academic-writing craft from Eco, Bailey, Trzeciak, and the engine's own discipline. Load only what the current task requires; do not load the entire references set by default.
+
+<!-- dual-compat-start -->
+## Use When
+
+Use for source-grounded academic drafting, revision, synthesis, citation, paraphrase, and originality control.
+
+## Do Not Use When
+
+Do not use as the reporting-standard selector; route that decision to `academic-reporting-standards`.
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Research question, audience, genre | Author or brief | Stop and clarify the argument task |
+| Verified source notes and citation style | Project corpus and venue rules | Produce an outline with gaps; do not invent citations |
+
+## Workflow
+
+1. Define the question, contribution, genre, and citation convention.
+2. Build claim-to-source notes and separate quotation, paraphrase, synthesis, and inference.
+3. Draft source-away from notes, then reconcile every claim to its source.
+4. Stop on unattributed text or unsupported claims; recover by removing or marking the gap.
+5. Run originality, structure, citation, and voice gates.
+
+## Outputs
+
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Academic draft and claim-source notes | Author, supervisor, or reviewer | Claims are traceable, citations conform, and originality checks expose no unresolved borrowing |
+
+## Writing Evidence Guidance
+
+Claim-source notes, quotation checks, citation audit, and originality checklist provide the writing evidence.
+
+## Capability Contract
+
+Review is read-only by default. Drafting or editing requires explicit authority; submission, authorship claims, and certification remain with the author.
+
+## Degraded Mode
+
+Without sources or citation rules, return a structured outline and explicit evidence gaps, not polished unsupported prose.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Exact wording matters | Quote and verify verbatim | Citation drift |
+| Ideas combine across sources | Mark synthesis and cite all inputs | False single-source attribution |
+| Claim lacks evidence | Remove or mark gap | Fabrication |
+
+## Quality Standards
+
+The argument answers the research question, sources support the claims attributed to them, and prose retains the author's defensible voice.
+
+## Academic Writing Pitfalls
+
+- Drafting from an open source paragraph; write from notes.
+- Swapping synonyms to disguise copying; reconstruct the idea.
+- Citation dumping; state each source's role.
+- Inventing a bridge claim; mark synthesis or gap.
+- Treating fluent prose as originality evidence; run the audit.
+
+## Worked Example
+
+Two sources supporting different parts of one conclusion are cited together and the resulting claim is marked `(synthesis)`.
+
+## References
+
+- [Source synthesis](references/source-synthesis.md)
+- [Paraphrase discipline](references/paraphrase-discipline.md)
+- [Plagiarism prevention](references/plagiarism-prevention.md)
+<!-- dual-compat-end -->
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance condition |
+|---|---|---|
+| Claim-source notes and originality audit | Author, supervisor, or reviewer | Quotations, paraphrases, syntheses, and inferences remain distinguishable and traceable |
+
+## Anti-Patterns
+
+- Drafting from an open source paragraph. **Fix:** close the source and draft from verified notes.
+- Swapping synonyms to conceal copying. **Fix:** reconstruct the idea and cite its source.
+- Dumping citations after unsupported claims. **Fix:** explain the evidentiary role of each citation.
+- Inventing a bridge claim. **Fix:** mark it as synthesis or record an evidence gap.
+- Treating fluency as originality evidence. **Fix:** run the source-away and originality checks.

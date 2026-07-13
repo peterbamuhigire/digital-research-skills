@@ -22,14 +22,14 @@ metadata:
 - The work is purely secondary-source research.
 - The task is about writing up existing findings rather than designing or interpreting primary evidence.
 
-## Required Inputs
 
+## Primary Research Required Context
 - Decision or question the fieldwork must inform.
 - Proposed respondent / setting universe and access constraints.
 - Expected output form and evidence-sensitivity level.
 
-## Workflow
 
+## Primary Research Method Detail 2
 - Read this `SKILL.md` first, then load only the relevant reference file for the method being used.
 - Design the instrument and sampling logic before collection.
 - Preserve traceability from raw material to codes, themes, and final claims.
@@ -40,19 +40,53 @@ metadata:
 - Notes distinguish quote, paraphrase, observation, and inference.
 - Findings are theme-based, not anecdote-based.
 
-## Anti-Patterns
 
+## Primary Research Additional Failure Modes
 - Casual interviews with no guide.
 - Treating vivid respondent anecdotes as representative evidence.
 - Coding only what confirms the working theory.
 
-## Outputs
 
+## Primary Research Core Deliverables
 - A defensible primary-research design, collection plan, coding approach, or interpretation with traceable claims.
 
 ## References
 
 - Use the `references/` files for the specific method being run.
+## Inputs
+
+| Artefact | Source or provider | Requirement | If absent |
+|---|---|---|---|
+| Research question, participant criteria, consent basis, and field constraints | study sponsor and approved protocol | required | Stop fieldwork design when ethics or consent is unresolved |
+
+## Capability contract
+
+Read access to the approved protocol, consent basis, and field records is required. Participant contact, recording, field collection, data editing, or publication needs explicit ethical and sponsor authority.
+
+## Degraded mode
+
+Fallback if consent, field access, transcription, or coding tools are unavailable: return a qualified protocol or partial analysis, name the evidence gap, and mark credibility checks unassessed.
+
+## Decision rules
+
+| Choice | Action | Failure avoided |
+|---|---|---|
+| Question can be answered from existing verified evidence | Use desk research instead | Unnecessary participant burden |
+
+
+## Outputs
+| Artefact | Consumer | Observable acceptance condition |
+|---|---|---|
+| Protocol, field records, coded findings, and limitations | research team and synthesis workflow | Consent, provenance, coding decisions, and dissenting evidence are traceable |
+
+
+## Primary Research Evidence Notes
+- Preserve consent status, participant criteria, field deviations, codebook decisions, dissenting evidence, and credibility checks.
+
+## Worked example
+
+For interviews, record consent, ask the approved open question, code responses against a documented codebook, and preserve contradictory responses.
+
 <!-- dual-compat-end -->
 
 This skill governs evidence the engine helps design or interpret when the source is a person, a setting, or a live interaction rather than a published document.
@@ -88,8 +122,8 @@ Do not use this skill for purely secondary-source work. Pair it with `research-o
 | Quality / rigor / defensibility of findings | `references/credibility-and-quality.md` |
 | Longitudinal online community research | `research-design/references/mroc-design-and-management.md` |
 
-## Workflow
 
+## Primary Research Core Method Notes
 1. Define the decision the fieldwork must inform.
 2. Build the sample frame: who must be heard, who may be heard, who is excluded.
 3. Draft the instrument: interview guide, observation sheet, or discussion prompts.
@@ -128,3 +162,21 @@ Do not use this skill for purely secondary-source work. Pair it with `research-o
 
 - Patton, Michael Quinn. *Qualitative Research & Evaluation Methods: Integrating Theory and Practice*. 4th ed., SAGE, 2015. Tier 1.
 - Poynter, Ray. *The Handbook of Online and Social Media Research*. Tier 1 for MROC and online qualitative practice.
+
+
+## Workflow
+1. Confirm the decision, participant criteria, consent basis, and approved protocol.
+2. Collect the minimum first-hand evidence with field provenance and safeguarding controls.
+3. Stop when consent, participant safety, or protocol authority is unresolved.
+4. Code and challenge findings; recover by documenting deviations and limiting claims to usable evidence.
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance |
+|---|---|---|
+| Consent, field, coding, and limitation records | Research team and synthesis workflow | Each finding traces to authorised field evidence and records dissent |
+
+## Reference Index
+
+- [Credibility and quality](references/credibility-and-quality.md); [interview protocols](references/interview-protocols.md)
+- [Observation and fieldwork](references/observation-and-fieldwork.md); [qualitative coding](references/qualitative-coding-and-analysis.md)

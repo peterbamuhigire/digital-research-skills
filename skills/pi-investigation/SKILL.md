@@ -1,12 +1,11 @@
 ---
 name: pi-investigation
-description: Use for licensed private-investigator workflows where the artifact must survive evidentiary scrutiny — chain-of-custody, lawful collection methods, jurisdiction-specific licensure, McMahon's 10-section formal PI report. Three references; engine refuses unlicensed surveillance, harassment-enabling work, and any output that would put a private individual at risk.
+description: Use when an authorised licensed private-investigator workflow needs lawful collection, chain of custody, and an evidentiary report; use osint-investigation for public-source reconnaissance and refuse unlicensed surveillance or harm-enabling requests.
 metadata:
   portable: true
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
 ---
 
 # PI Investigation
@@ -26,8 +25,8 @@ If none of these applies, do not invoke this skill — `osint-investigation` is 
 
 **Load `references/legal-and-ethical-bounds.md` before any planning.** Every jurisdiction has different licensure, recording-consent, GPS-tracking, and pretexting rules. The engine refuses outputs that violate the relevant jurisdiction's PI law.
 
-## Workflow
 
+## Pi Investigation Core Method Notes
 | Stage | Reference | Output |
 |---|---|---|
 | Engagement scoping (legal posture, jurisdiction, licensure) | `references/legal-and-ethical-bounds.md` | Engagement letter; jurisdiction matrix |
@@ -129,3 +128,79 @@ Items missing any of those are excluded from the evidentiary section; they may a
 - `osint-investigation` — for the open-source layer.
 - `due-diligence` — for corporate / financial diligence layered into a PI engagement.
 - `report-and-proposal-craft` — for the report container.
+
+<!-- dual-compat-start -->
+## Use When
+
+- Use only for an authorised licensed-PI engagement requiring evidentiary collection or reporting.
+
+## Do Not Use When
+
+- Do not assist unlicensed surveillance, harassment, stalking, unlawful entry, access-control bypass, or work that puts a private person at risk.
+
+## Inputs
+
+| Artefact | Source or provider | Required? | If absent |
+|---|---|---|---|
+| Engagement authority, licence basis, jurisdiction, lawful methods, scope, and evidence protocol | Licensed investigator or authorised client | required | Stop; provide no operational collection guidance |
+
+
+## Workflow
+1. Verify engagement authority, licensure, jurisdiction, proportionality, and prohibited methods.
+2. Approve a collection plan and chain-of-custody record before gathering evidence.
+3. Preserve originals, identifiers, transfers, and notes; stop on custody break or unlawful instruction.
+4. Draft the report, separate observation from inference, and recover by marking unavailable evidence or uncertain custody.
+
+## Capability Contract
+
+Default to read-only planning and review. Field collection, contact, surveillance, evidence handling, submission, or publication requires explicit lawful authority and competent licensed personnel.
+
+## Degraded Mode
+
+Without verified licence, engagement authority, or custody evidence, return only a legal-and-ethical gap list and refuse operational steps.
+
+## Decision Rules
+
+| Choice | Action | Failure avoided |
+|---|---|---|
+| Authority or method legality is unresolved | Stop and obtain competent jurisdictional confirmation | Unlawful investigation |
+| Custody record has a break | Label the item compromised and segregate it | False evidentiary reliability |
+
+## Outputs
+
+| Artefact | Consumer | Acceptance |
+|---|---|---|
+| Investigation plan, custody register, and formal report | Licensed investigator, counsel, or authorised client | Authority is recorded; each item has provenance and custody status; inference is labelled |
+
+
+## Pi Investigation Evidence Notes
+- Preserve authority, method approvals, collection logs, custody transfers, original-item identifiers, and review disposition.
+
+## Quality Standards
+
+Protect subjects, preserve originals, report limitations, and never imply admissibility or legality that has not been competently established.
+
+## Anti-Patterns
+
+- Beginning before licence and authority checks. Fix: stop at intake.
+- Mixing original evidence with working copies. Fix: preserve and identify both.
+- Filling a custody gap from memory. Fix: mark the break explicitly.
+- Reporting inference as observation. Fix: label and explain the reasoning.
+- Including unrelated private data. Fix: minimise and redact.
+
+## Worked Example
+
+For an authorised evidence review, assign each supplied item an identifier, record each transfer, preserve the original, and state any custody limitation.
+
+## References
+
+- [Evidence custody](references/evidence-custody.md)
+- [Legal and ethical bounds](references/legal-and-ethical-bounds.md)
+- [PI report structure](references/mcmahon-pi-report.md)
+<!-- dual-compat-end -->
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance |
+|---|---|---|
+| Authority and custody record | Licensed investigator or counsel | Each item has provenance, transfers, and custody status |

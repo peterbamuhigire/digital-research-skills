@@ -23,12 +23,12 @@ metadata:
 - The task is a one-off research answer.
 - There is no repeatable workflow to evaluate.
 
-## Required Inputs
+## Evaluation Intake Guidance
 
 - Workflow under test, expected outputs, failure examples, user feedback, source material, and acceptance criteria.
 - Metrics that matter: correctness, citation integrity, cost, latency, coverage, and usability.
 
-## Workflow
+## Evaluation Core Method
 
 1. Define the task class and quality criteria.
 2. Collect representative examples and known failures.
@@ -45,14 +45,14 @@ metadata:
 - Improvements are measured against a stable baseline.
 - Synthetic data is labelled and does not replace real failure cases.
 
-## Anti-Patterns
+## Evaluation Pitfalls
 
 - Changing prompts without evals.
 - Treating polished prose as correctness.
 - Measuring only pass/fail when failures need categories.
 - Adding user feedback without verification.
 
-## Outputs
+## Evaluation Deliverables Guidance
 
 - Eval set.
 - Failure taxonomy.
@@ -74,6 +74,65 @@ metadata:
 
 ## Companion Skills
 
+## Capability Contract
+
+Evaluation is read-only by default. Capturing feedback or changing datasets, prompts, models, production traffic, or release gates requires explicit authority and versioned rollback evidence.
+
+## Degraded Mode
+
+Without executable models or representative data, return an evaluation design and mark performance, regression, and safety outcomes `not assessed`.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Failure is reproducible | Add a minimal versioned case | Anecdote-driven tuning |
+| Synthetic case lacks provenance | Quarantine it | Contaminated benchmark |
+| Regression gate fails | Block release | Known quality regression |
+
+## Flywheel Failure Modes
+
+- Optimising one headline score; retain slice metrics.
+- Training on the test set; separate datasets.
+- Adding unverified synthetic examples; record provenance.
+- Erasing failures after fixes; retain regression cases.
+- Mutating production from an evaluation run; require authority.
+
+## Worked Example
+
+A citation error becomes a versioned regression case with expected evidence fields before any prompt change is accepted.
+
+## Companion Skills
+
 - `agentic-research-operations` supplies agent workflow design.
 - `validation-contract` supplies release evidence standards.
 - `source-verification` supplies citation-integrity checks.
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Evaluated workflow, failure taxonomy, representative cases | Product owner and verified run logs | Stop scoring and return an evaluation-design gap |
+| Versioned prompts, models, datasets, and expected outcomes | Evaluation registry | Quarantine results whose tested configuration cannot be identified |
+
+## Workflow
+
+1. Define the decision, failure taxonomy, slices, and release threshold before running cases.
+2. Execute representative cases and preserve raw outputs with configuration identifiers.
+3. Stop when provenance is missing, test data leaks into training, or a release gate fails.
+4. Recover by quarantining contaminated cases, restoring clean versions, and rerunning the affected slices.
+5. Add reproducible failures to the regression set only after human verification.
+
+## Outputs
+
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Evaluation report and versioned regression set | AI workflow owner and release reviewer | Every metric maps to cases, slices, configuration, expected result, and observed result |
+
+## Anti-Patterns
+
+- Optimising one headline score. **Fix:** retain failure slices and guardrail metrics.
+- Training on the test set. **Fix:** enforce versioned separation and contamination checks.
+- Adding unverified synthetic cases. **Fix:** record provenance and human acceptance.
+- Deleting fixed failures. **Fix:** keep them as regression cases.
+- Mutating production during evaluation. **Fix:** require separate deployment authority and rollback evidence.

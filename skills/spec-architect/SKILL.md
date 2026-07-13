@@ -1,8 +1,6 @@
 ---
 name: spec-architect
-description: 'Spec-driven development: write feature specs, plan modules, produce
-  SRS sections before coding. Use when asked to plan a feature, write a spec, or design
-  a new module. Pair with `systems-process-requirements` when the spec needs formal workflow, state, interface, data, scope, business-rule, acceptance-criteria, or traceability modeling.'
+description: Use when planning a feature or module and producing a coding-ready specification with scope, requirements, architecture choices, acceptance criteria, and risks; pair with systems-process-requirements for formal workflow, state, interface, data, business-rule, or traceability models.
 metadata:
   portable: true
   compatible_with:
@@ -11,6 +9,47 @@ metadata:
 ---
 
 # Skill: Spec Architect
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Problem, users, scope, constraints, and acceptance intent | Product owner or brief | Stop detailed specification and return clarification questions. |
+| Existing architecture, interfaces, data, and standards | Repository and system owners | Mark assumptions and avoid incompatible design claims. |
+
+## Capability Contract
+
+Specification and review default to read-only. Editing project files requires authority; implementation, deployment, data mutation, procurement, or approval claims require separate explicit authority.
+
+## Degraded Mode
+
+Without repository access, system owners, or executable validation, return a bounded draft with assumptions and unassessed feasibility. Do not label it coding-ready.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Existing contract governs behaviour | Preserve or version it explicitly | Breaking integration |
+| Requirement is ambiguous | Stop and resolve acceptance criteria | Unverifiable implementation |
+| Workflow/data model is complex | Pair systems-process-requirements | Missing state or traceability |
+
+## Evidence Produced
+
+| Category | Artifact | Acceptance condition |
+|---|---|---|
+| Correctness | Requirement-to-acceptance matrix | Each requirement maps to observable acceptance evidence. |
+
+## Preliminary Specification Corrections
+
+- Designing before reading existing architecture. Fix: inspect first.
+- Vague quality adjectives. Fix: define observable thresholds or behaviours.
+- Happy-path-only requirements. Fix: add error and recovery states.
+- Mixing implementation tasks with requirements. Fix: separate what from how.
+- Calling an unvalidated draft coding-ready. Fix: mark feasibility gaps.
+
+## Worked Example
+
+For a new import module, specify accepted files, validation failures, idempotency, partial-failure recovery, interfaces, and acceptance tests before proposing implementation tasks.
 Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 <!-- dual-compat-start -->
@@ -24,12 +63,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The task is unrelated to `spec-architect` or would be better handled by a more specific companion skill.
 - The request only needs a trivial answer and none of this skill's constraints or references materially help.
 
-## Required Inputs
+## Specification Source Requirements
 
 - Gather relevant project context, constraints, and the concrete problem to solve.
 - Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
 
-## Workflow
+## Specification Method Summary
 
 - Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
 - Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
@@ -41,12 +80,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
 - Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
 
-## Anti-Patterns
+## Legacy Specification Warnings
 
 - Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
 - Loading every reference file by default instead of using progressive disclosure.
 
-## Outputs
+## Initial Specification Deliverables
 
 - A concrete result that fits the task: implementation guidance, review findings, architecture decisions, templates, or generated artifacts.
 - Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
@@ -161,6 +200,28 @@ sdlc-user-deploy / manual-guide → Document for users
 
 ---
 
-**Back to:** [Skills Repository](../CLAUDE.md)
-**Related:** [feature-planning](../feature-planning/SKILL.md) | [sdlc-planning](../sdlc-planning/SKILL.md) | [manual-guide](../manual-guide/SKILL.md)
+**Back to:** [Skills Repository](../../CLAUDE.md)
+**Related:** feature-planning | sdlc-planning | manual-guide
 **Last Updated:** 2026-02-20
+
+## Workflow
+
+1. Read the problem, users, repository, and contracts; stop if scope or owner is unknown.
+2. Define requirements, boundaries, interfaces, data, states, errors, and acceptance evidence.
+3. Compare design options and record decisions and risks.
+4. Validate traceability and feasibility with repository evidence.
+5. Recover from unknowns by narrowing scope, recording assumptions, and requesting the decision.
+
+## Outputs
+
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| Coding-ready feature specification | Implementer and reviewer | Scope, requirements, decisions, errors, interfaces, and tests are traceable and feasible. |
+
+## Anti-Patterns
+
+- Designing before inspection. Fix: read the repository.
+- Vague requirements. Fix: make acceptance observable.
+- Happy path only. Fix: specify errors and recovery.
+- Mixing tasks and requirements. Fix: separate them.
+- Calling assumptions facts. Fix: label and resolve them.

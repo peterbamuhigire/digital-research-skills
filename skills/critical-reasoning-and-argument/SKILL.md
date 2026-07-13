@@ -1,6 +1,6 @@
 ---
 name: critical-reasoning-and-argument
-description: Universal reasoning and argument discipline for any output that makes claims, explanations, interpretations, judgments, recommendations, forecasts, or persuasive conclusions. Use for academic writing, intelligence reports, market analyses, history essays, business cases, policy notes, due diligence, executive briefs, legal/policy argument, and technical recommendations before drafting or final delivery.
+description: Use when an output makes claims, explanations, interpretations, judgments, recommendations, forecasts, or persuasive conclusions that need explicit warrants, assumptions, countercases, and implications; use analytic-tradecraft for estimative or contested-evidence methods.
 metadata:
   portable: true
   compatible_with:
@@ -25,7 +25,7 @@ Use this skill for all forms of writing and reporting that contain a claim or co
 - The output contains no claim, recommendation, interpretation, evaluation, forecast, or decision support.
 - A domain skill already handles a narrow factual extraction and no conclusion is being drawn.
 
-## Required Inputs
+## Reasoning Intake Guidance
 
 - The user's real question, decision, audience, and output type.
 - Available sources, data, notes, or draft text.
@@ -38,7 +38,7 @@ No conclusion ships until it has passed the reasoning protocol in `references/re
 
 For research work, this skill operates after `source-evaluation`: source quality determines what can be used as evidence; this skill determines whether the evidence supports the conclusion. For intelligence or forward-looking work, run `analytic-tradecraft` after this skill to add probability language, hypothesis handling, and uncertainty discipline.
 
-## Workflow
+## Reasoning Method Detail
 
 1. **Frame the real question.** Convert the prompt into a precise question the output must answer. If the prompt asks for "a report", infer the decision, controversy, interpretation, or action the report is meant to support.
 2. **Define scope and terms.** Identify key terms, boundaries, jurisdiction, time period, population, market, method, or discipline. Flag ambiguous or loaded language.
@@ -101,7 +101,7 @@ Every output using this skill must be:
 - Counterargument dismissed by tone instead of defeated by evidence and reasoning.
 - "It is clear that" language where evidence is partial, contested, stale, or indirect.
 
-## Outputs
+## Reasoning Deliverable Detail
 
 - A precise core question and scope.
 - Argument map for each load-bearing conclusion.
@@ -129,6 +129,35 @@ Every output using this skill must be:
 
 ## Companion Skills
 
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Claims, conclusion, audience, decision | Draft or brief | Stop and identify the proposition |
+| Evidence, warrants, assumptions, countercases | Verified corpus and analyst | Mark missing support as a gap |
+
+## Capability Contract
+
+Critique defaults to read-only. Rewriting, publishing, operational decisions, or certifying correctness requires explicit authority.
+
+## Degraded Mode
+
+With incomplete evidence, return a qualified argument map and unresolved questions; do not convert plausibility into proof.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Claim lacks a warrant | Supply or remove it | Non sequitur |
+| Strong countercase survives | Qualify conclusion | Overclaim |
+| Evidence cannot discriminate | Preserve uncertainty | False resolution |
+
+## Reasoning Scenario
+
+A recommendation supported only by correlation is qualified until the causal warrant is established.
+
+## Companion Skills
+
 - `source-evaluation` - mandatory for source-backed research; establishes evidence discipline.
 - `analytic-tradecraft` - intelligence, uncertainty, forecasts, contested evidence, and adversarial settings.
 - `academic-writing` - academic form, originality, citation, synthesis, register, and source-away composition.
@@ -139,3 +168,27 @@ Every output using this skill must be:
 - `research-design` - research questions, methods, and contribution logic.
 - `research-techniques` - source mining, gap analysis, synthesis, and verification workflows.
 - `systems-process-requirements` - systems, processes, workflows, requirements, scope, interfaces, data architecture, and design-system descriptions.
+
+## Workflow
+
+1. State the conclusion, audience, decision, and standard of proof.
+2. Map claims to evidence, warrants, assumptions, countercases, and implications.
+3. Stop when a load-bearing claim lacks a warrant or supporting evidence.
+4. Recover by sourcing, qualifying, restructuring, or removing the failed claim before resuming.
+5. Test the strongest countercase and calibrate the final conclusion.
+
+## Outputs
+
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Argument map and qualified conclusion | Author, analyst, and decision-maker | Every load-bearing claim has evidence, warrant, assumptions, countercase treatment, and implication |
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance condition |
+|---|---|---|
+| Claim-warrant-countercase register | Reviewer and downstream writer | Unsupported links and unresolved assumptions remain visible |
+
+## Worked Example
+
+A recommendation based only on correlation is qualified until a defensible causal warrant or explicitly limited decision rationale is supplied.

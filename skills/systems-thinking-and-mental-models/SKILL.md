@@ -1,20 +1,93 @@
 ---
 name: systems-thinking-and-mental-models
-description: Use when mapping system behaviour, stakeholder dynamics, root cause, feedback loops, leverage points, or when an analyst needs a structured mental-model checklist or decision-science heuristic for forecasting and judgement. Routes to systemigrams (Boardman & Sauser) for behaviour/stakeholder mapping; causal loop diagrams and the Iceberg Model for dynamics and policy; a mental-models catalog for analyst reasoning; and decision-science heuristics for prediction and judgement under uncertainty. Four references; SKILL.md is a router.
+description: Use when analysing system behaviour, stakeholder dynamics, root causes, feedback loops, leverage points, or judgement under uncertainty with systemigrams, causal loops, mental models, or decision heuristics; use systems-process-requirements for normative process or requirements documentation.
 metadata:
   portable: true
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
   priority: high
-  derived_from:
-    - "Boardman & Sauser, Systemic Thinking — Building Maps for Worlds of Systems"
-    - "Thinking in Systems and Mental Models (anonymous primer)"
-    - "Brockman (ed.), Thinking — The New Science of Decision-Making, Problem-Solving, and Prediction"
 ---
 
 # Systems thinking and mental models
+
+<!-- dual-compat-start -->
+
+## Use When
+
+- Analyse observed behaviour through stakeholders, feedback, root causes, leverage points, base rates, or judgement heuristics.
+
+## Do Not Use When
+
+- Use systems-process-requirements to prescribe a workflow or requirements set.
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Focal behaviour, boundary, timeframe, actors, and evidence | Research brief and verified corpus | Stop mapping and define the missing frame. |
+| Competing explanations and uncertainties | Analysts and sources | Mark the map provisional and seek counterevidence. |
+
+## Workflow
+
+1. Define behaviour over time, boundary, and decision.
+2. Choose one toolkit based on the question.
+3. Map evidence separately from inference; test feedback and alternatives.
+4. Stop if causal direction is unsupported; recover with a hypothesis/gap map.
+5. Validate implications and limitations before recommending intervention.
+
+## Outputs
+
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| System map or decision-analysis record | Analyst and decision-maker | Boundary, evidence, inferred links, alternatives, leverage points, and limits are explicit. |
+
+## Evidence Produced
+
+| Category | Artifact | Acceptance condition |
+|---|---|---|
+| Correctness | Evidence-to-link register | Every factual node/link has a source; inference is labelled. |
+
+## Capability Contract
+
+Analysis defaults to read-only. Stakeholder contact, data collection, intervention, policy change, or publication requires explicit authority.
+
+## Degraded Mode
+
+With sparse time-series, stakeholder, or causal evidence, return a qualified provisional map with unsupported links and unassessed checks labelled as hypotheses. Do not claim causality or predict outcomes.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Stakeholder flows dominate | Use a systemigram | Actor relationships hidden |
+| Feedback over time dominates | Use causal loops | Static root-cause story |
+| Forecast judgement dominates | Use base rates and calibration | Inside-view bias |
+
+## Quality Standards
+
+The map distinguishes observation from inference, includes countercases, states its boundary, and avoids causal claims unsupported by evidence.
+
+## Anti-Patterns
+
+- Drawing arrows without evidence. Fix: label hypotheses.
+- Treating a map as reality. Fix: state boundary and omissions.
+- Finding one root cause. Fix: test feedback and alternatives.
+- Recommending a leverage point without side effects. Fix: model counter-response.
+- Ignoring base rates. Fix: compare the reference class.
+
+## Worked Example
+
+For recurring service delays, map observed queue behaviour and stakeholder flows, label suspected reinforcing loops as hypotheses, test alternative causes, and recommend no intervention until the critical link is supported.
+
+## References
+
+- [Systemigrams](references/systemigrams.md)
+- [Causal loops and leverage points](references/causal-loops-and-leverage-points.md)
+- [Mental-model catalogue](references/mental-models-catalog.md)
+- [Decision-science heuristics](references/decision-science-heuristics.md)
+
+<!-- dual-compat-end -->
 
 The engine handles complex, interlinked, often political domains: regulatory landscapes, organisational pain points, market dynamics, academic synthesis. None of these reduce to a flat list of facts — they have structure, feedback, and observer effects. This skill gives the analyst four toolkits and a router for picking the right one.
 

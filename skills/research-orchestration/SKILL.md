@@ -1,6 +1,6 @@
 ---
 name: research-orchestration
-description: Use as the FIRST step on any new research project — picks the research type, the discipline strategy, the reading mode, and the wave dispatch. Carries the multi-agent orchestrator (planned waves), the type/discipline/reading routers as references, and the orchestrator-output contract. Routes to companion skills (academic-writing, source-evaluation, web-scraping-foundations, research-techniques, research-design) as needed.
+description: Use when starting or replanning a multi-source research project that needs a research-type choice, discipline strategy, reading mode, wave plan, verification, gap filling, and synthesis; use research-design for formal method design and research-techniques for one bounded technique.
 metadata:
   portable: true
   compatible_with:
@@ -20,11 +20,11 @@ metadata:
 
 - Do not use for a single known fact lookup, URL check, or short target read that does not need orchestration.
 
-## Required Inputs
+## Orchestration Prerequisites
 
 - Research goal, scope, audience, decision context, cohorts, constraints, source expectations, and desired output.
 
-## Workflow
+## Orchestration Entry Sequence
 
 - Run the type, discipline, and reading-mode routers before wave dispatch.
 - Select companion skills for evidence discipline, research design, methods, source evaluation, and output form.
@@ -34,12 +34,12 @@ metadata:
 
 - Research waves must be scoped, source-aware, evidence-disciplined, and designed to produce insight rather than volume.
 
-## Anti-Patterns
+## Early Orchestration Warnings
 
 - Do not run a single mega-search when cohorts, source classes, or verification needs differ.
 - Do not delegate cross-cohort synthesis to wave agents.
 
-## Outputs
+## Initial Orchestration Artifacts
 
 - Wave plan, agent brief, companion-skill route, verification plan, synthesis route, and output storage contract.
 
@@ -105,7 +105,7 @@ Trigger on:
 
 Do **not** use for: single-question lookups, fact-checks, or known-target reads.
 
-## Decision rules
+## Wave Choice Rules
 
 - **One cohort per agent.** Don't ask one agent to research students AND landlords. Split.
 - **Run waves in parallel where independent.** A student-side gap-fill and an owner-side gap-fill have no shared state — fire them simultaneously.
@@ -141,7 +141,7 @@ After each wave, the orchestrator writes:
 
 Wave 2 outputs append a `# Pass 2 — Gap-fill addendum` section to the existing files rather than overwrite.
 
-## Anti-patterns
+## Wave Failure Modes
 
 - Single-shot research with one mega-prompt — produces shallow coverage, missing perspective splits
 - Re-running Wave 1 instead of running Wave 2 — wastes context, duplicates known
@@ -154,3 +154,59 @@ Wave 2 outputs append a `# Pass 2 — Gap-fill addendum` section to the existing
 - `research-design` — historical methods, trend analysis, MROC, knowledge lifecycle, Universal Methods of Design router, research design document, report builder (load when the project needs formal design, design-method selection, or a final assembled report)
 - `source-evaluation` — Wave-3 verification logic; mandatory pairing for every source
 - `academic-writing`, `report-and-proposal-craft`, `business-writing` — output containers
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Research question, decision, audience, scope, and deadline | Requester or project brief | Stop wave dispatch and return the missing framing fields. |
+| Existing corpus, registries, and constraints | Project filesystem and source providers | Start with discovery; record unavailable sources as gaps. |
+
+## Outputs
+
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| Wave plan and agent briefs | Research team | Cohorts do not overlap, every brief has evidence rules, and verification/gap passes are scheduled. |
+| Synthesis-ready evidence registry | Synthesiser | Claims, sources, contradictions, and gaps are traceable by cohort. |
+
+## Evidence Produced
+
+| Category | Artifact | Acceptance condition |
+|---|---|---|
+| Correctness | Wave checkpoint record | Each cohort reports sources, verification status, gaps, and unresolved conflicts. |
+
+## Capability Contract
+
+Planning and review are read-only. Delegation is permitted only when the runtime and task authorise it; external contact, publishing, spending, or destructive actions require explicit authority.
+
+## Degraded Mode
+
+Without delegation, network, or provider access, run waves sequentially and return the verified local result plus named gaps. Never collapse skipped verification into a pass.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Small bounded question | Use one research pass, then verify | Coordination overhead |
+| Multiple independent cohorts | Dispatch non-overlapping briefs, then verify each wave | Duplicated effort |
+| Contradictions remain | Hold synthesis and issue a gap-fill brief | False consensus |
+
+## Worked Example
+
+For a multi-region market question, assign one cohort per region, require the same comparison fields and evidence discipline, verify each checkpoint, then synthesise only reconciled claims.
+
+## Workflow
+
+1. Define the question, cohorts, deadline, and evidence standard; stop if scope is unresolved.
+2. Select research type, discipline, reading mode, and non-overlapping wave briefs.
+3. Run each wave and verify its checkpoint before the next.
+4. Dispatch gap-fill work where evidence conflicts or coverage is incomplete.
+5. Recover from unavailable agents or providers by running sequentially and preserving unassessed gaps.
+
+## Anti-Patterns
+
+- Overlapping cohort briefs. Fix: assign exclusive boundaries.
+- Synthesising before verification. Fix: gate each checkpoint.
+- Omitting the evidence clause. Fix: include it verbatim.
+- Treating no result as absence. Fix: report no source found.
+- Hiding provider failure. Fix: mark it unassessed and recover sequentially.

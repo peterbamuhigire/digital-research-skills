@@ -20,12 +20,12 @@ metadata:
 
 - Do not use when the task only needs literature or narrative sources.
 
-## Required Inputs
+## Dataset Intake Guidance
 
 - Research question, geography, period, discipline, preferred source types, and required
   output.
 
-## Workflow
+## Dataset Method Detail
 
 - Discover, retrieve, profile, cite, and hand off datasets using the three-step process
   below.
@@ -35,11 +35,11 @@ metadata:
 - Prefer official or primary datasets, record version/licence/SHA-256, and profile before
   analysis.
 
-## Anti-Patterns
+## Dataset Failure Notes
 
 - Do not cite a chart without tracing the underlying dataset.
 
-## Outputs
+## Dataset Deliverable Detail
 
 - Dataset shortlist, retrieved dataset, profile, quality notes, or citation-ready source
   record.
@@ -106,7 +106,7 @@ The profile applies Segnini's **five-step verification** (Verification Handbook)
 4. **Integrity** — sample values surfaced for human review
 5. **Codes / acronyms** — build a glossary if columns use codes
 
-## Decision rules
+## Legacy Dataset Decision Notes
 
 - **Always profile before analysing.** Treat the profile as the dataset's `five-term-source-doubt` equivalent.
 - **Document SHA-256 in the source citation.** Datasets change; lock the exact version you used.
@@ -130,7 +130,7 @@ The profile applies Segnini's **five-step verification** (Verification Handbook)
 | `crosswalk-matrix` | Datasets occupy a column in the matrix |
 | `research-report-builder` | Methodology section names the dataset + version + license |
 
-## Anti-patterns
+## Dataset Source Pitfalls
 
 - Citing a chart without finding the underlying dataset
 - Downloading without recording SHA-256 — dataset versions drift silently
@@ -151,6 +151,27 @@ The profile applies Segnini's **five-step verification** (Verification Handbook)
 
 ## See also
 
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Research question, variables, geography, period | Research brief | Stop search and clarify the need |
+| Source, version, licence, checksum or retrieval metadata | Dataset publisher | Quarantine retrieval and report the gap |
+
+## Capability Contract
+
+Discovery and profiling default to read-only. Downloading restricted data, accepting licences, modifying source data, publishing, or certifying fitness requires explicit authority.
+
+## Degraded Mode
+
+Without network or analysis tools, return a verified candidate register or manual profile and mark retrieval, integrity, and analysis checks `not assessed`.
+
+## Dataset Scenario
+
+A promising dataset without version or licence metadata remains a candidate and is not passed to analysis.
+
+## See also
+
 - `tools/datasets/registry.py` — full host list with API URLs
 - `tools/datasets/search.py` — federated search
 - `tools/datasets/retrieve.py` — download with integrity
@@ -158,3 +179,43 @@ The profile applies Segnini's **five-step verification** (Verification Handbook)
 - `evidence-discipline` — every dataset citation must include version + URL + license + access date
 
 <!-- dual-compat-end -->
+
+## Workflow
+
+1. Translate the question into variables, geography, period, granularity, and licence constraints.
+2. Search authoritative catalogues and record publisher, version, date, and licence.
+3. Stop when provenance, licence, version, or integrity evidence is missing.
+4. Recover by seeking an authoritative copy or retaining an unassessed candidate.
+5. Retrieve, profile quality, and hand accepted data to the quality pipeline.
+
+## Outputs
+
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Candidate register, dataset, and quality profile | Researcher and data-quality workflow | Selected data includes provenance, version, licence, integrity, and limitations |
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance condition |
+|---|---|---|
+| Search log, manifest, checksum, and profile | Reviewer and downstream analyst | The dataset can be located, identified, and checked independently |
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Candidate lacks version or licence | Quarantine it | Unlawful or irreproducible use |
+| Integrity check fails | Stop retrieval | Corrupted analysis input |
+| Coverage misses the question | Reject or qualify it | Invalid inference |
+
+## Anti-Patterns
+
+- Choosing the first result. **Fix:** compare coverage and authority.
+- Ignoring licence terms. **Fix:** record and comply before use.
+- Analysing an unidentified version. **Fix:** capture release metadata.
+- Treating missing values as absence. **Fix:** inspect codebooks.
+- Claiming fitness from a filename. **Fix:** run the profile.
+
+## Worked Example
+
+A promising dataset without version and licence metadata remains a candidate until an authoritative release supplies both and passes integrity checks.

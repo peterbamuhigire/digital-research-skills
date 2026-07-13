@@ -1,16 +1,11 @@
 ---
 name: mind-mapping-and-synthesis
-description: Use when synthesising a literature pass, taxonomising findings across cohorts, planning a research wave, decomposing a brief, or compressing a large corpus into a navigable map. Teaches Buzan's mind-mapping method (radial organisation, BOIs, Laws of Mind Mapping) adapted for analyst use, plus Mermaid `mindmap` patterns as the engine-native artifact. Three references; method-first with concrete diagram templates.
+description: Use when a verified corpus or brief must be compressed into a navigable mind map for synthesis, taxonomy, wave planning, or decomposition; use cross-cohort-synthesis for final comparative findings and knowledge-mining for reusable claim assets.
 metadata:
   portable: true
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
-  priority: medium
-  derived_from:
-    - "Tony Buzan, Mind Map Mastery — The Complete Guide to Learning and Using the Most Powerful Thinking Tool in the Universe"
-    - "Tony Buzan, Buzan Study Skills Handbook (the EPUB is image-only; method is taken from Mind Map Mastery, which covers the same content)"
 ---
 
 # Mind mapping and synthesis
@@ -136,3 +131,82 @@ Some sub-agent tasks should return a mind map rather than (or in addition to) a 
 - "map the relationships between …"
 
 When dispatching such a task, request the deliverable as a Mermaid `mindmap` block plus a short prose key. The brief still includes the evidence-discipline clause from `source-evaluation`.
+
+<!-- dual-compat-start -->
+## Use When
+
+- Use to organise a verified corpus, decompose a brief, or expose relationships before synthesis.
+
+## Do Not Use When
+
+- Do not use a mind map as evidence or as a substitute for a tested cross-cohort conclusion.
+
+## Inputs
+
+| Artefact | Source or provider | Required? | If absent |
+|---|---|---|---|
+| Verified corpus or brief, source identifiers, and mapping question | Research workflow | required | Return a proposed branch scheme only |
+
+## Workflow
+
+1. State the central question and mapping purpose.
+2. Extract branch candidates from the supplied material and retain source identifiers.
+3. Choose radial map depth; stop when a branch would assert an unsupported relationship.
+4. Render the Mermaid map, check syntax and coverage, and recover by supplying a plain hierarchy if rendering is unavailable.
+
+## Capability contract
+
+Default to read-only synthesis. Editing the source corpus, publishing, or executing a renderer requires explicit authority.
+
+## Degraded mode
+
+Without rendering, return valid Mermaid source plus a plain-text tree and mark visual inspection not assessed.
+
+## Decision rules
+
+| Choice | Action | Failure avoided |
+|---|---|---|
+| Material has one organising question and associative branches | Use a mind map | Forced linear hierarchy |
+| Final answer requires comparative claims | Route to cross-cohort synthesis | Diagram mistaken for conclusion |
+
+## Outputs
+
+| Artefact | Consumer | Observable acceptance condition |
+|---|---|---|
+| Mermaid mind map and prose key | Analyst or research orchestrator | Branches trace to inputs; syntax is checked or marked not assessed |
+
+
+## Mind Mapping And Synthesis Evidence Notes
+- Record corpus scope, branch-to-source mapping, omitted material, and rendering result.
+
+## Quality Standards
+
+Keep branch labels concise, preserve dissent and gaps, and distinguish source material from analyst inference.
+
+## Anti-Patterns
+
+- Treating branch proximity as proof. Fix: state relationships in the key with evidence.
+- Mixing unrelated central questions. Fix: create separate maps.
+- Copying paragraphs into branches. Fix: use concise organising labels.
+- Omitting contradictory material. Fix: add a contradiction or gap branch.
+- Claiming render success without viewing it. Fix: mark visual inspection not assessed.
+
+## Worked example
+
+Map a verified policy corpus around one decision, branch by stakeholder and issue, attach source identifiers in the key, and preserve contradictions as their own branch.
+
+## References
+
+- [Mind-map construction](references/mind-map-construction.md)
+- [Mermaid patterns](references/mermaid-mindmap-patterns.md)
+<!-- dual-compat-end -->
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance |
+|---|---|---|
+| Branch-to-source map and render result | Research orchestrator | Omissions, gaps, and unassessed rendering are explicit |
+
+## Reference Index
+
+- [Study and recall techniques](references/study-and-recall-techniques.md)

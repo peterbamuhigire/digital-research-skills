@@ -1,12 +1,11 @@
 ---
 name: osint-investigation
-description: Use as the entry point for open-source intelligence research — stakeholder reconnaissance, social-media source extraction, adverse-media investigation, skip-tracing for individuals, chronology construction, case-vault management, and source triage. Lawful, civilian, defensible OSINT only. Not for state-intelligence or surveillance work. Load only what the investigation needs.
+description: Use when lawful public-source investigation needs stakeholder reconnaissance, adverse-media review, chronology, source capture, or case-vault discipline; use pi-investigation only for authorised licensed-PI work and refuse surveillance, harassment, stalking, or doxxing.
 metadata:
   portable: true
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
 ---
 
 # OSINT Investigation
@@ -130,3 +129,85 @@ Claims that fail the rule do not ship.
 - `pi-investigation` — when licensed-PI workflows apply (chain-of-custody, formal report).
 - `web-scraping-foundations` — when collection requires automation.
 - `report-and-proposal-craft` — for the artifact form.
+
+<!-- dual-compat-start -->
+## Use When
+
+- Use for a lawful civilian investigation based on publicly available sources.
+
+## Do Not Use When
+
+- Refuse surveillance, stalking, harassment, doxxing, credential theft, impersonation, or targeting that could expose a private person to harm.
+
+## Inputs
+
+| Artefact | Source or provider | Required? | If absent |
+|---|---|---|---|
+| Lawful purpose, subject scope, jurisdiction, risk boundary, and collection plan | Requester and investigation lead | required | Stop and request scope; do not begin collection |
+
+## Workflow
+
+1. Confirm purpose, legality, proportionality, subject risk, and stop conditions.
+2. Define questions and collect the minimum necessary public material with provenance.
+3. Corroborate identity and claims; stop on private-data exposure, unlawful access, or material misidentification risk.
+4. Build chronology and findings; recover from blocked access by recording no source found and narrowing conclusions.
+
+## Capability Contract
+
+Default to read-only public-source research. Network collection must stay within authorised lawful scope; contact, bypass, surveillance, or publication of personal data requires separate lawful authority and may be refused.
+
+## Degraded Mode
+
+Without source access or identity corroboration, return a collection plan and explicit gaps, not a speculative profile.
+
+## Decision Rules
+
+| Choice | Action | Failure avoided |
+|---|---|---|
+| Collection creates a credible harm or misidentification risk | Stop, minimise, and escalate | Harm to a private person |
+| Public claim has independent corroboration | Include with provenance and confidence | Single-source allegation treated as fact |
+
+## Outputs
+
+| Artefact | Consumer | Acceptance |
+|---|---|---|
+| Case log, source register, chronology, and qualified findings | Investigation lead or authorised client | Every item has provenance, collection time, confidence, and lawful-purpose link |
+
+
+## Osint Investigation Evidence Notes
+- Preserve URLs, lawful captures, identity-resolution notes, contradictions, and no-source-found results.
+
+## Quality Standards
+
+Minimise personal data, separate allegation from verified fact, and make confidence and limitations visible.
+
+## Anti-Patterns
+
+- Treating a matching name as identity proof. Fix: corroborate independent identifiers.
+- Republishing unnecessary personal data. Fix: redact and minimise.
+- Using one adverse-media item as fact. Fix: verify and label allegation status.
+- Bypassing an access control. Fix: stop and use lawful public routes.
+- Hiding a failed search. Fix: report no source found and the search scope.
+
+## Worked Example
+
+For an authorised stakeholder review, corroborate public organisational roles across independent sources, log dates and URLs, and omit unrelated private details.
+
+## References
+
+- [OSINT methodology](references/osint-methodology.md)
+- [Validation and anti-patterns](references/osint-validation-and-anti-patterns.md)
+- [Chronology construction](references/chronology-construction.md)
+<!-- dual-compat-end -->
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance |
+|---|---|---|
+| Source and collection register | Investigation lead | Provenance, collection time, confidence, and gaps are recorded |
+
+## Reference Index
+
+- [Advanced techniques](references/advanced-osint-techniques.md); [adverse media](references/adverse-media-investigation.md); [stakeholder reconnaissance](references/google-stakeholder-recon.md)
+- [Investigative search](references/macleod-investigative-search.md); [case vaults](references/osint-case-vaults.md); [doctrine and history](references/osint-doctrine-and-history.md)
+- [Skip tracing](references/skip-tracing-craft.md); [social-source extraction](references/social-source-extraction.md)

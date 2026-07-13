@@ -1,16 +1,96 @@
 ---
 name: source-evaluation
-description: NON-NEGOTIABLE — use on every source the engine consults. Carries the engine's anti-hallucination guardrail (evidence discipline), the 5-tier credibility ladder, the Burke five-term source-doubt pentad, the Tudor twelve-point rubric for media/journalism, Silverman/Bellingcat media-forensics workflow, and automated reliability triage. Load only what the source type demands.
+description: Use when admitting any source into research and assessing its provenance, authority, independence, timeliness, bias, media integrity, and fit for a claim; use source-verification afterward to test URLs, quotes, statistics, claim links, and release readiness.
 metadata:
   portable: true
   compatible_with:
     - claude-code
     - codex
-    - generic-agent
   priority: critical
 ---
 
 # Source Evaluation
+
+<!-- dual-compat-start -->
+
+## Use When
+
+- Assess every candidate source before its claims enter the evidence corpus.
+
+## Do Not Use When
+
+- Do not use as the final URL, quotation, statistic, or claim-link check; use source-verification after evaluation.
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Source artifact, provenance, date, author/publisher, and intended claim | Provider and research brief | Exclude or mark the source unresolved; never invent metadata. |
+| Corroborating sources where the claim is material or contested | Independent providers | Record the corroboration gap and narrow the claim. |
+
+## Workflow
+
+1. Load evidence-discipline and classify the source type.
+2. Apply the credibility ladder and matching source rubric.
+3. Separate source content from analyst inference and record contradictions.
+4. Admit, qualify, or reject the source for each intended claim.
+5. Route admitted claims to source-verification; stop on fabricated material and recover from untraceable claims by removing them or recording a gap.
+
+## Outputs
+
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| Source evaluation record | Researcher and verifier | Provenance, rubric, claim fit, limitations, and admission decision are explicit. |
+
+## Evidence Produced
+
+| Category | Artifact | Acceptance condition |
+|---|---|---|
+| Correctness | Claim-level source assessment | Every admitted claim identifies a real source and qualification. |
+
+## Capability Contract
+
+Evaluation defaults to read-only. Network lookup may verify provenance when authorised; downloading restricted material, contacting sources, altering evidence, or publishing findings requires explicit authority.
+
+## Degraded Mode
+
+If provenance, network, media-forensics tools, or corroboration are unavailable, mark the relevant checks unassessed and return the narrowest qualified assessment. Never upgrade an unassessed source.
+
+## Decision Rules
+
+| Evidence | Action | Failure/risk avoided |
+|---|---|---|
+| Primary authoritative source fits claim | Prefer and verify it | Citation laundering |
+| Material conflict between credible sources | Preserve conflict and investigate | False certainty |
+| Provenance cannot be established | Exclude or label unresolved | Fabricated attribution |
+
+## Quality Standards
+
+Every admission decision is claim-specific, traceable, explicit about limitations, and independent of whether the source supports the desired conclusion.
+
+## Anti-Patterns
+
+- Scoring a source without its intended claim. Fix: evaluate claim fit.
+- Equating official with infallible. Fix: test incentives and method.
+- Hiding credible contradiction. Fix: preserve it.
+- Treating popularity as authority. Fix: assess provenance.
+- Filling missing metadata from memory. Fix: mark a gap.
+
+## Worked Example
+
+For a statistic quoted by a news article, locate the originating dataset or publication, evaluate that source for the precise statistic, record any definition mismatch, and send the claim-source pair to verification.
+
+## References
+
+- [Evidence discipline](references/evidence-discipline.md)
+- [Credibility ladder](references/credibility-ladder.md)
+- [Primary-source doubt](references/burke-five-term-doubt.md)
+- [Media evaluation](references/tudor-twelve-points.md)
+- [Misinformation and bias](references/misinformation-and-bias-checks.md)
+- [Media forensics](references/silverman-media-forensics.md)
+- [Automated triage](references/automated-reliability-triage.md)
+
+<!-- dual-compat-end -->
 
 Single entry skill for vetting any source the engine consults. Plagiarism prevention is in `academic-writing`; this skill governs **whether a source is trustworthy in the first place** and whether claims drawn from it have hallucinated detail.
 

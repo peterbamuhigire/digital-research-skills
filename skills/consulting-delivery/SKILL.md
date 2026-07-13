@@ -22,13 +22,13 @@ metadata:
 - The task is purely academic writing or pure source collection with no client decision attached.
 - The work only needs prose polish rather than consulting problem-structuring.
 
-## Required Inputs
+## Consulting Intake Guidance
 
 - Client or decision-owner question.
 - Time horizon and constraints.
 - Expected deliverable and implementation ambition.
 
-## Workflow
+## Consulting Method Detail
 
 - Read this `SKILL.md` first, then load only the relevant reference file for the current phase.
 - Structure the problem before expanding the workplan.
@@ -40,13 +40,13 @@ metadata:
 - Issue tree and hypotheses are visible.
 - Recommendation includes value, risk, and implementation implications.
 
-## Anti-Patterns
+## Consulting Failure Notes
 
 - Workstreams with no governing client question.
 - Recommendations with no owner or sequence.
 - Treating stakeholder politics as outside the analysis.
 
-## Outputs
+## Consulting Deliverable Detail
 
 - A consulting-grade problem frame, workplan, recommendation structure, or implementation path.
 
@@ -103,13 +103,42 @@ Consulting output must be more than polished slides. Run `critical-reasoning-and
 - [ ] Recommendation includes assumptions, risks, and implementation path
 - [ ] Metrics or KPIs identified for tracking progress
 
-## Anti-patterns
+## Consulting Source Pitfalls
 
 - Research with no client decision attached
 - Workstream explosion because the problem was never decomposed
 - Elegant recommendation with no owner or sequencing
 - Treating stakeholder politics as outside the scope of strategy
 - Confusing slide polish with problem solving
+
+## Companion skills
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Client question, decision, stakeholders, constraints | Engagement brief | Stop framing and request the decision |
+| Verified evidence and implementation context | Research corpus and client | Mark assumptions and evidence gaps |
+
+## Capability Contract
+
+Analysis and planning default to read-only. Client commitments, messages, implementation changes, procurement, spending, or publication require explicit authority.
+
+## Consulting Fallback Notes
+
+Without client access or implementation data, return a hypothesis-led workplan with assumptions and untested branches, not a transformation claim.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Problem is ambiguous | Build and test an issue tree | Solution jumping |
+| Evidence disproves a hypothesis | Close or revise the branch | Confirmation bias |
+| Recommendation lacks owner or dependency | Hold it | Non-executable advice |
+
+## Consulting Scenario
+
+A cost problem is decomposed into testable drivers before interviews or recommendations are scheduled.
 
 ## Companion skills
 
@@ -127,3 +156,39 @@ Consulting output must be more than polished slides. Run `critical-reasoning-and
 - *Inside the Minds: Leading Consultants*. Tier 1.
 - Hattori, Shu. *The McKinsey Edge*. Tier 1.
 - *Rewired: The McKinsey Guide to Outcompeting in the Age of Digital and AI*. Tier 1.
+
+## Workflow
+
+1. Define the client decision, stakeholders, constraints, and measurable outcome.
+2. Build an issue tree and convert branches into testable hypotheses.
+3. Stop when a recommendation lacks evidence, ownership, dependencies, or feasibility.
+4. Recover by returning to the failed branch, recording the gap, and revising the workplan.
+5. Translate supported findings into actions, owners, risks, and decisions.
+
+## Outputs
+
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Issue tree, workplan, and recommendation | Client decision-maker and delivery lead | Each recommendation traces to evidence, an owner, dependency, risk, and next decision |
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance condition |
+|---|---|---|
+| Hypothesis log and recommendation trace | Reviewer and client sponsor | Closed, revised, and open branches are distinguishable and evidence-linked |
+
+## Degraded Mode
+
+Without client access or implementation data, return a qualified workplan, preserve unassessed branches, and do not claim transformation feasibility.
+
+## Anti-Patterns
+
+- Jumping to a solution. **Fix:** frame the decision and issue tree first.
+- Keeping a disproved hypothesis. **Fix:** close or revise the branch.
+- Producing ownerless recommendations. **Fix:** assign an accountable role.
+- Hiding evidence gaps. **Fix:** expose them in the trace.
+- Promising implementation without context. **Fix:** mark feasibility unassessed.
+
+## Worked Example
+
+A cost problem is decomposed into testable drivers, and only branches supported by verified analysis proceed to implementation recommendations.

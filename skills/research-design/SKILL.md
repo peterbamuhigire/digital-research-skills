@@ -1,6 +1,6 @@
 ---
 name: research-design
-description: Use when a research project needs formal design discipline, method selection, design-research methods, historical research, trend analysis, MROC (Market Research Online Community), knowledge-lifecycle modelling, the canonical research-design document, or the final structured report-builder pipeline. Companion to research-orchestration; load only the design layer the project demands.
+description: Use when a research project needs formal questions, method selection, case logic, historical or trend design, MROC design, knowledge-lifecycle modelling, or a research-design document; use research-orchestration for wave planning and research-techniques for a single named technique.
 metadata:
   portable: true
   compatible_with:
@@ -23,24 +23,24 @@ metadata:
 
 - Do not use for a quick source lookup that does not need formal research design.
 
-## Required Inputs
+## Initial Design Inputs
 
 - Research topic, intended output, timeframe, audience, evidence types, and constraints.
 
-## Workflow
+## Design Entry Sequence
 
 - Select the relevant design layer below and pair with research-orchestration for
   long-running projects.
 
-## Quality Standards
+## Design Principle
 
 - Research questions, methods, evidence, and contribution must be explicitly connected.
 
-## Anti-Patterns
+## Early Design Warnings
 
 - Do not skip the design document on multi-week projects or overclaim from weak data.
 
-## Outputs
+## Initial Design Deliverables
 
 - Research design document, method plan, case-selection logic, trend-analysis design, or
   report-builder route.
@@ -147,3 +147,62 @@ new long-running research project
 - `data-quality-pipeline`, `dataset-discovery-and-analysis` — for empirical projects.
 
 <!-- dual-compat-end -->
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Research question, audience, timeframe, and constraints | Sponsor or research brief | Stop formal design and produce a clarification/gap note. |
+| Candidate evidence and access conditions | Source register and providers | Select only feasible methods and flag inaccessible records. |
+
+## Outputs
+
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| Research design and method plan | Researchers and reviewers | Questions, method, evidence, case logic, limitations, and contribution are traceable. |
+
+## Evidence Produced
+
+| Category | Artifact | Acceptance condition |
+|---|---|---|
+| Correctness | Design traceability matrix | Each question maps to evidence, method, limitation, and intended analysis. |
+
+## Capability Contract
+
+Design and critique default to read-only. Recruitment, participant contact, data collection, ethics submission, file mutation, or publication requires explicit authority and applicable approval.
+
+## Degraded Mode
+
+When evidence access, participants, tools, or institutional rules are unavailable, return a qualified design with infeasible methods removed and gaps marked. Do not treat an untested method or missing ethics check as approved.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| One bounded lookup | Skip formal design and use the research router | Disproportionate process |
+| Causal claim with observational evidence only | Narrow the claim or add a defensible identification strategy | Unsupported causal inference |
+| Named institution governs format or ethics | Load its verified handbook route | Generic rule presented as policy |
+
+## Worked Example
+
+For a historical case study, map the question to archival and secondary sources, select the historical-method and case-selection references, state missing-record limitations, and preserve the chain from evidence to contribution.
+
+## Anti-Patterns
+
+- Designing without an answerable question. Fix: resolve the puzzle and question.
+- Selecting a method by fashion. Fix: map method to evidence need.
+- Ignoring infeasible access. Fix: revise the design.
+- Claiming causality from weak design. Fix: narrow the claim.
+- Treating missing ethics review as approval. Fix: mark it unresolved.
+
+## Workflow
+
+1. Define the question, audience, timeframe, and contribution; stop if the question is not answerable.
+2. Select methods and cases that can produce the required evidence.
+3. Map each question to evidence, analysis, limitation, and output.
+4. Test feasibility, ethics, and contradictory evidence.
+5. Recover from missing access by narrowing the question, changing method, and recording the gap.
+
+## Quality Standards
+
+Every question maps observably to a feasible method, evidence source, analysis step, limitation, and intended contribution; unresolved ethics or access checks block approval.

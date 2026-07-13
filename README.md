@@ -257,7 +257,9 @@ python -m engine index-osint-tools <project-id> <url>
 Repo-level validation:
 
 ```powershell
-python scripts\validate_engine.py
+python -X utf8 scripts\skill_contract_validator.py --baseline tests\skill-engine\quality-baseline.json
+python -X utf8 scripts\routing_smoke_test.py
+python -X utf8 scripts\validate_engine.py
 ```
 
 ## Current projects
@@ -278,20 +280,24 @@ projects, and a repo-level validator. See
 
 ## July 2026 upgrade status
 
-The July 2026 engine upgrade added a root `SKILL.md` router, release-blocking
-quality gates, source-register conventions, a Chwezi Core Systems running
-example, schema A-S exemplars, evidence-pack templates, analytic-tradecraft
-fixtures, a unified source verifier, and a citation-density dashboard. The
-upgrade record is in `docs/engine-upgrade-july-2026/FINAL-UPGRADE-REPORT.md`.
+The July 2026 engine has 58 active skills discovered below `skills/`; the
+`skills/proposal-skills` Git submodule is a separate engine. Each active skill
+follows the portable authoring contract in `docs/skill-authoring-standard.md`.
+The zero-debt baseline, routing fixtures, and push/pull-request CI prevent
+contract or routing regressions. The conformance record is in
+`docs/engine-upgrade-july-2026/conformance-normalisation.md`; the earlier
+capability upgrade remains documented in `FINAL-UPGRADE-REPORT.md`.
 
 Validation status:
 
 ```powershell
-python scripts\validate_engine.py
+python -X utf8 scripts\skill_contract_validator.py --baseline tests\skill-engine\quality-baseline.json
+python -X utf8 scripts\routing_smoke_test.py
+python -X utf8 scripts\validate_engine.py
 ```
 
-The validator now passes cleanly across the three bundled example workspaces:
-`example-market-landscape`, `example-due-diligence-dossier`, and
-`example-academic-paper`.
+The release gate covers all 58 active skills, routing fixtures, the engine doctor,
+and kernel unit tests. Project workspaces are intentionally untracked; validate a
+local workspace separately with `python -m engine validate <project-id>`.
 
 Maintained by Peter Bamuhigire.

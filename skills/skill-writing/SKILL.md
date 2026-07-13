@@ -11,6 +11,39 @@ metadata:
 ---
 
 # Skill Writing
+
+## Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Requested capability, target directory, and neighbouring skills | Requester and live catalogue | Stop drafting and identify the missing scope or neighbours. |
+| Local contract, template, validators, and fixtures | Repository | Use the canonical contract only if authorised; mark unavailable gates. |
+
+## Capability Contract
+
+Review and planning default to read-only. Creating or editing skills, references, routers, fixtures, baselines, or CI requires explicit repository authority; deleting or publishing requires separate authority.
+
+## Degraded Mode
+
+Without the live catalogue, validators, or linked references, produce a draft contract and gap list only. Do not claim the skill is routable, linked, or release-ready.
+
+## Decision Rules
+
+| Choice | Action | Failure/risk avoided |
+|---|---|---|
+| Behaviour selects and executes a distinct workflow | Use a skill entrypoint | Hidden routing contract |
+| Content is background or catalogue depth | Use a linked reference | Bloated SKILL.md |
+| Description collides with neighbour | Rewrite positive and negative triggers | Wrong activation |
+
+## Evidence Produced
+
+| Category | Artifact | Acceptance condition |
+|---|---|---|
+| Correctness | Validation and routing record | Structural, link, and expected-route checks pass. |
+
+## Worked Example
+
+For a new source-analysis capability, inspect source-evaluation and source-verification first, define the distinct trigger and stop boundary, then add one positive, one negative, and one collision fixture.
 Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 <!-- dual-compat-start -->
@@ -24,12 +57,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The task is unrelated to `skill-writing` or would be better handled by a more specific companion skill.
 - The request only needs a trivial answer and none of this skill's constraints or references materially help.
 
-## Required Inputs
+## Authoring Source Requirements
 
 - Gather relevant project context, constraints, and the concrete problem to solve; load `references, scripts` only as needed.
 - Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
 
-## Workflow
+## Authoring Method Summary
 
 - Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
 - Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
@@ -41,12 +74,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
 - Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
 
-## Anti-Patterns
+## Legacy Authoring Warnings
 
 - Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
 - Loading every reference file by default instead of using progressive disclosure.
 
-## Outputs
+## Initial Authoring Deliverables
 
 - A concrete result that fits the task: implementation guidance, review findings, architecture decisions, templates, or generated artifacts.
 - Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
@@ -178,7 +211,7 @@ After creating or updating a skill:
 4. Sanity-check the skill against a realistic prompt.
 5. Ensure the skill still reads cleanly when loaded on its own.
 
-## Anti-Patterns
+## Authoring Failure Catalogue
 
 - Huge `SKILL.md` files that act like textbooks.
 - Trigger descriptions that are too broad to be useful.
@@ -190,3 +223,25 @@ After creating or updating a skill:
 
 - Load `world-class-engineering` when authoring engineering skills.
 - Load `skill-safety-audit` before sharing high-impact or security-sensitive skills.
+
+## Workflow
+
+1. Confirm capability, directory, neighbours, and repository rules; stop if scope is ambiguous.
+2. Draft neighbour-aware frontmatter and every required contract section.
+3. Preserve domain content and extract only deep reference material.
+4. Run quick, local, link, line-count, and routing checks.
+5. Recover from failures by correcting the named contract and rerunning all gates.
+
+## Outputs
+
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| Production-ready skill directory | Maintainer and router | Frontmatter, contracts, references, examples, and routing checks pass. |
+
+## Anti-Patterns
+
+- Generic trigger text. Fix: distinguish neighbours.
+- Invented decision content. Fix: use domain evidence.
+- Missing absent-input behavior. Fix: state stop/recovery.
+- Reference dump. Fix: link only required depth.
+- Claiming readiness without validation. Fix: run all gates.

@@ -3,14 +3,14 @@
 from __future__ import annotations
 
 import subprocess
+import sys
 
 
 COMMANDS = (
-    ["python", "-m", "engine", "doctor"],
-    ["python", "-m", "unittest", "discover", "-s", "engine\\tests"],
-    ["python", "-m", "engine", "validate", "example-market-landscape"],
-    ["python", "-m", "engine", "validate", "example-due-diligence-dossier"],
-    ["python", "-m", "engine", "validate", "example-academic-paper"],
+    [sys.executable, "-X", "utf8", "scripts/skill_contract_validator.py", "--baseline", "tests/skill-engine/quality-baseline.json"],
+    [sys.executable, "-X", "utf8", "scripts/routing_smoke_test.py"],
+    [sys.executable, "-m", "engine", "doctor"],
+    [sys.executable, "-m", "unittest", "discover", "-s", "engine/tests"],
 )
 
 

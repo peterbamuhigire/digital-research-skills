@@ -1,9 +1,6 @@
 ---
 name: professional-word-output
-description: 'Generate world-class, professionally designed Microsoft Word (.docx)
-  documents that look like a designer and communications specialist worked on them
-  together — not AI output. Use when producing any .docx file: reports, proposals,
-  manuals...'
+description: Use when producing or quality-checking a polished Microsoft Word document with controlled styles, pagination, tables, figures, and render evidence; use manual-guide for end-user content and python-document-generation for automated multi-format exports.
 metadata:
   portable: true
   compatible_with:
@@ -25,13 +22,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The task is unrelated to `professional-word-output` or would be better handled by a more specific companion skill.
 - The request only needs a trivial answer and none of this skill's constraints or references materially help.
 
-## Required Inputs
 
+## Professional Word Output Required Context
 - Gather relevant project context, constraints, and the concrete problem to solve; load `references` only as needed.
 - Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
 
-## Workflow
 
+## Professional Word Output Core Method Notes
 - Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
 - Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
 - Produce the deliverable with assumptions, risks, and follow-up work made explicit when they matter.
@@ -42,13 +39,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
 - Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
 
-## Anti-Patterns
 
+## Professional Word Output Existing Failure Notes
 - Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
 - Loading every reference file by default instead of using progressive disclosure.
 
-## Outputs
 
+## Professional Word Output Core Deliverables
 - A concrete result that fits the task: implementation guidance, review findings, architecture decisions, templates, or generated artifacts.
 - Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
 - References used, companion skills, or follow-up actions when they materially improve execution.
@@ -62,6 +59,40 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 ## References
 
 - Use the `references/` directory for deep detail after reading the core workflow below.
+## Inputs
+
+| Artefact | Source or provider | Requirement | If absent |
+|---|---|---|---|
+| Approved content, brand rules, and delivery format | content owner and design system | required | Return an unrendered source plan when fonts or rendering are unavailable |
+
+## Capability contract
+
+Read access to approved content, brand rules, and document constraints is required. DOCX edits need explicit authority; replacing content, installing fonts, or publishing the file requires separate approval.
+
+## Degraded mode
+
+Without required fonts or page rendering, return a qualified DOCX source or layout specification and mark pagination, clipping, and visual quality unassessed.
+
+## Decision rules
+
+| Choice | Action | Failure avoided |
+|---|---|---|
+| Document will be edited repeatedly | Use styles and fields throughout | Manual formatting drifts |
+
+
+## Outputs
+| Artefact | Consumer | Observable acceptance condition |
+|---|---|---|
+| DOCX and render-QA record | named reader and release owner | Styles are controlled and every page is visually inspected for overflow and breaks |
+
+
+## Professional Word Output Evidence Notes 1
+- Record style definitions, font substitutions, field updates, structural checks, page-render findings, and unresolved layout defects.
+
+## Worked example
+
+Build a report with named heading and table styles, update fields, render all pages, and correct widows, clipped tables, and orphaned headings before delivery.
+
 <!-- dual-compat-end -->
 Two things kill document quality equally: bad design and bad writing. A document must pass **both** tests. This skill addresses both.
 
@@ -414,3 +445,28 @@ Rebuild after changes:
 python scripts/create-reference-docx.py
 bash scripts/build-doc.sh <doc-dir> <output-name>
 ```
+
+
+## Workflow
+1. Confirm audience, approved content, brand rules, page constraints, and delivery format.
+2. Build controlled styles, sections, tables, figures, fields, and accessibility properties.
+3. Stop when content approval, fonts, or required assets are unavailable.
+4. Generate and render every page; recover from overflow, clipping, or bad breaks by repairing styles or pagination and rendering again.
+
+
+## Professional Word Output Evidence Notes 2
+| Evidence | Consumer | Acceptance |
+|---|---|---|
+| DOCX structural and page-render QA record | Release owner | Every page is inspected and defects are resolved or marked not assessed |
+
+
+## Anti-Patterns
+- Formatting headings manually. Fix: use named styles.
+- Using spaces or blank lines for layout. Fix: use paragraph and section controls.
+- Splitting a table row across pages unintentionally. Fix: set row behaviour and render-check it.
+- Shipping without updating fields. Fix: refresh and inspect the final document.
+- Claiming visual quality without rendering. Fix: mark it not assessed until pages are viewed.
+
+## Reference Index
+
+- [Typography and layout](references/typography-layout.md); [Word features](references/word-features.md); [written communication](references/written-communication.md); [quality checklist](references/quality-checklist.md)
