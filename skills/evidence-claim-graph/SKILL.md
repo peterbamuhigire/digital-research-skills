@@ -24,13 +24,16 @@ metadata:
 - The corpus is too immature; run source collection and evaluation first.
 
 
-## Evidence Claim Graph Required Context
-- Source registry, extracted quotes, notes, claims, hypotheses, and gaps.
-- Intended output family and audience.
-- Evidence discipline from source evaluation.
+## Required Inputs
+
+| Input | Source/provider | If absent |
+|---|---|---|
+| Source registry, extracted quotes, notes, claims, hypotheses, and gaps | Research project | Stop and record a provenance gap |
+| Intended output family and audience | Research brief | Narrow the graph scope |
+| Evidence discipline from source evaluation | Source-evaluation skill | Stop claim promotion |
 
 
-## Evidence Claim Graph Core Method Notes
+## Workflow
 1. Atomize sources into evidence items: one quote, statistic, observation, dataset field, or document fact per item.
 2. Convert prose notes into explicit claims with scope, status, and source IDs.
 3. Add warrants: why the evidence supports the claim.
@@ -39,6 +42,12 @@ metadata:
 6. Promote only verified, warranted claims into findings.
 7. Preserve gaps as first-class nodes with owner, next search path, and decision impact.
 8. Export registry-ready entries for source, claim, quote, and synthesis registries.
+9. Stop promotion when provenance, support, or relationship validation is missing.
+10. Recover by demoting unsupported propositions to explicit gaps and retaining the failed evidence trail.
+
+## Learning and experiment nodes
+
+For a process or product improvement, add explicit `hypothesis`, `experiment`, `measurement`, and `learning` records linked to the affected source, claim, gap, or finding. A learning record must state the baseline, guardrail, result, uncertainty, failed-path result, and standardisation decision. Do not promote an experiment result to a general claim without a source or a clearly labelled inference.
 
 ## Quality Standards
 
@@ -75,7 +84,7 @@ metadata:
 - Load `references/graph-schema.md` for node and edge types.
 - Load `references/claim-promotion-gate.md` before synthesis or final drafting.
 
-## Inputs
+## Graph storage inputs
 
 | Artefact | Source or provider | Requirement | If absent |
 |---|---|---|---|
@@ -119,7 +128,7 @@ A paragraph that combines two verified sources becomes a synthesis node linked t
 - `knowledge-productization` reuses graph assets in monetizable outputs.
 
 
-## Workflow
+## Graph export workflow
 1. Register sources and evidence before creating claims.
 2. Link warrants, inference, synthesis, gaps, and contradictions explicitly.
 3. Stop claim promotion when provenance or support is absent.

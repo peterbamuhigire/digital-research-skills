@@ -10,7 +10,7 @@ metadata:
 
 # Source Verification
 
-## Inputs
+## Verification inputs
 
 | Input | Source/provider | If absent |
 |---|---|---|
@@ -58,13 +58,15 @@ For a quoted statistic, open the cited source, confirm definition, period, unit,
 - The task is initial source quality assessment; use `source-evaluation` first.
 - The output contains no source-backed claims.
 
-## Verification Source Requirements
+## Required Inputs
 
-- Source registry, claim registry, quote registry, synthesis map, and draft output.
-- Source files, URLs, document locators, and access dates.
-- Any source-evaluation notes, credibility tiers, and verification trails.
+| Input | Source/provider | If absent |
+|---|---|---|
+| Source, claim, quote, synthesis registries, and draft output | Research project | Stop verification and report the missing registry |
+| Source files, URLs, document locators, and access dates | Source providers | Mark checks unassessed |
+| Source-evaluation notes, credibility tiers, and verification trails | Source-evaluation skill | Narrow the verification claim |
 
-## Verification Method Detail
+## Workflow
 
 1. Validate registry shape: roots, required fields, allowed values, and no placeholder values.
 2. Check source liveness and archive references.
@@ -74,6 +76,8 @@ For a quoted statistic, open the cited source, confirm definition, period, unit,
 6. Confirm every synthesis references valid claim IDs.
 7. Quarantine unverified claims and log failures.
 8. Produce a verification manifest for release.
+9. Stop release when material support is missing or unresolved.
+10. Recover through an authorised archive or mark the claim unassessed; never convert inaccessibility into confirmation.
 
 ## Tooling
 
@@ -98,19 +102,19 @@ Both tools return a non-zero exit code when release readiness fails.
 - Dead URLs are replaced, archived, or removed.
 - Claims with missing source links do not ship.
 
-## Verification Failure Catalogue
+## Anti-Patterns
 
-- Treating a bibliography as verification.
-- Checking only that a URL exists, not that it supports the claim.
-- Accepting a quote without locator or exact-match check.
-- Allowing imported legacy sources to appear release-ready without audit.
+- Treating a bibliography as verification. Fix: check claim support at the cited locator.
+- Checking only that a URL exists, not that it supports the claim. Fix: verify content and scope.
+- Accepting a quote without locator or exact-match check. Fix: compare the exact source text.
+- Allowing imported legacy sources to appear release-ready without audit. Fix: classify freshness and uncertainty.
+- Editing evidence during review. Fix: separate remediation from the read-only verification record.
 
-## Verification Artifact Detail
+## Outputs
 
-- Verification manifest.
-- Rejected-claim log.
-- Quote/stat spot-check notes.
-- Registry repair list.
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| Verification manifest, rejected-claim log, quote/stat spot-check notes, and registry repair list | Researcher and release gate | Every claim is verified, rejected, or explicitly unassessed with attempted checks |
 
 ## Evidence Produced
 
@@ -122,6 +126,7 @@ Both tools return a non-zero exit code when release readiness fails.
 ## References
 
 - Load `references/verification-routine.md` for the verification checklist and manifest.
+- Load `references/research-product-audit.md` before release of a research product.
 
 <!-- dual-compat-end -->
 
@@ -132,7 +137,13 @@ Both tools return a non-zero exit code when release readiness fails.
 - `agentic-research-operations` uses this skill for merge/reject decisions.
 - `docs/quality-gates/release-blocking-gates.md` defines ship/no-ship criteria.
 
-## Workflow
+## Freshness, uncertainty, and product audit
+
+Verification must check not only whether a source is reachable, but whether it is complete enough, current enough, and context-matched for the exact claim. Record publication/revision/access dates, locator, source status, and uncertainty. Historical, early-release, inaccessible, or corrupted material must remain visibly qualified. Before release, run `references/research-product-audit.md`; its raw score is shown but the published audit is capped at 65/100, and every remediation plan targets 95/100 with acceptance evidence.
+
+After each verification wave, capture one process defect or waste category, define a reversible hypothesis, compare the same verification measures, and standardise only a demonstrated improvement. Do not edit source evidence during the audit; change claim status or the process in a separate remediation step.
+
+## Extended verification workflow
 
 1. Confirm the claim-source registry and accessible evidence; stop if the registry is absent.
 2. Verify URL identity, source content, quotations, definitions, periods, units, and claim support.
@@ -140,13 +151,13 @@ Both tools return a non-zero exit code when release readiness fails.
 4. Reject fabricated, mismatched, or unsupported links.
 5. Recover from unavailable sources through authorised archives or mark the claim unassessed.
 
-## Outputs
+## Extended verification outputs
 
 | Artifact | Consumer | Acceptance condition |
 |---|---|---|
 | Verification manifest | Researcher and release gate | Every claim is verified, rejected, or explicitly unassessed with attempted checks. |
 
-## Anti-Patterns
+## Extended verification anti-patterns
 
 - Checking status only. Fix: verify support.
 - Paraphrasing a quote. Fix: compare exact text.

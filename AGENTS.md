@@ -10,6 +10,11 @@ Read `skills/source-evaluation/SKILL.md` and `skills/source-evaluation/reference
 
 ## Standard workflow
 
+Kaizen is mandatory for this engine and every research product. Load
+`docs/continuous-improvement/portfolio-kaizen-standard-2026-08.md`; publish audits at a hard
+maximum of 65/100 and remediation plans targeting 95/100. For book or source intake, record
+provenance, completeness, limitations, and whether the material is current before synthesis.
+
 1. Load `skills/source-evaluation/SKILL.md` + `skills/source-evaluation/references/evidence-discipline.md` → enforce throughout
 2. Load `skills/research-orchestration/SKILL.md` → drives wave planning
 3. For each cohort: dispatch a research sub-task with the standard brief structure

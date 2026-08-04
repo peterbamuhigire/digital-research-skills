@@ -20,6 +20,13 @@ Always load these before research work:
 2. `skills/source-evaluation/references/evidence-discipline.md`
 3. `skills/anti-ai-slop/SKILL.md`
 
+4. `docs/continuous-improvement/portfolio-kaizen-standard-2026-08.md` for every engine or
+   research-product audit, improvement plan, or book-study integration.
+
+All engines may route here for current-source verification. This engine also audits its own
+research outputs: use `skills/00-meta-initialization/references/kaizen-engine-and-product-audit.md`,
+publish the current audit at a maximum of 65/100, and produce a remediation plan targeting 95/100.
+
 Every sub-agent prompt must include the hard-constraint clause from `evidence-discipline.md` verbatim.
 
 ## Route by user intent
@@ -41,6 +48,7 @@ Every sub-agent prompt must include the hard-constraint clause from `evidence-di
 | Final report or proposal craft | `skills/report-and-proposal-craft/SKILL.md` | `skills/research-output-formats/SKILL.md`, `skills/professional-word-output/SKILL.md` |
 | Word, PDF, Excel, or rendered deliverable | `skills/python-document-generation/SKILL.md` | `skills/professional-word-output/SKILL.md`, design-system-skills engine |
 | Skill authoring or engine extension | `skills/skill-writing/SKILL.md` | `skills/skill-composition-standards/SKILL.md` |
+| Engine or product improvement audit | `skills/00-meta-initialization/references/kaizen-engine-and-product-audit.md` | `skills/source-evaluation/SKILL.md`, `skills/source-verification/SKILL.md` |
 
 ## Running example
 

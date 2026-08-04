@@ -21,7 +21,7 @@ metadata:
 
 - Do not use as the final URL, quotation, statistic, or claim-link check; use source-verification after evaluation.
 
-## Inputs
+## Required Inputs
 
 | Input | Source/provider | If absent |
 |---|---|---|
@@ -82,6 +82,7 @@ For a statistic quoted by a news article, locate the originating dataset or publ
 
 ## References
 
+- [Freshness and uncertainty](references/freshness-and-uncertainty.md)
 - [Evidence discipline](references/evidence-discipline.md)
 - [Credibility ladder](references/credibility-ladder.md)
 - [Primary-source doubt](references/burke-five-term-doubt.md)
@@ -89,6 +90,14 @@ For a statistic quoted by a news article, locate the originating dataset or publ
 - [Misinformation and bias](references/misinformation-and-bias-checks.md)
 - [Media forensics](references/silverman-media-forensics.md)
 - [Automated triage](references/automated-reliability-triage.md)
+
+## Freshness and uncertainty gate
+
+Before admitting a material source, classify the intended claim as stable, context-bound, time-sensitive, partial/early-release, or unusable using `references/freshness-and-uncertainty.md`. Record the source status, completeness, access date, and next verification trigger in the source register. A historical source may support a historical claim but must not silently support a current command, law, product capability, benchmark, price, safety instruction, or platform fact. When evidence is incomplete, narrow the wording and mark the claim `unassessed`, `partial`, or `historical-only`; never fill a gap from memory.
+
+## Research improvement handoff
+
+After a research wave, send source defects, duplication, verification failures, access gaps, and analyst toil to the Kaizen research loop in `../research-orchestration/references/kaizen-research-loop.md`. The experiment must preserve source immutability and use a guardrail such as verification coverage, source independence, or unresolved-claim count.
 
 <!-- dual-compat-end -->
 

@@ -17,6 +17,8 @@ Single-cohort research finds problems. Cross-cohort synthesis finds **leverage**
 - **Two-sided product ideas** (idea relieves both cohort pains) get tagged in both `opportunities/product-ideas.md` files.
 - **Cascade pains get a directional arrow** — A → B, not just "shared".
 - **Contradictions are documented**, not hidden. Reader needs to see disagreement.
+- **Uncertainty travels with the synthesis.** Preserve historical-only, partial, inaccessible, and unassessed source states; do not average them into confidence.
+- **Every leverage claim has a warrant.** Link the shared pain or pattern to evidence and state what remains inference.
 
 ## Output target
 
@@ -27,6 +29,8 @@ A top-level synthesis section (in the project README or a dedicated `SYNTHESIS.m
 - Symmetric-pains list
 - Two-sided product opportunities
 - Highest-leverage interventions ranked by cohort-coverage
+- Evidence and uncertainty register for the synthesis
+- Improvement record for the next research wave
 
 ## Anti-patterns
 
@@ -35,6 +39,8 @@ A top-level synthesis section (in the project README or a dedicated `SYNTHESIS.m
 - Not surfacing cascades — leaves leverage unidentified
 - Cherry-picking shared pains; ignoring contradictions
 - Counting a pain as "shared" without checking the underlying mechanism is the same
+- Treating a faster synthesis as better when verification coverage falls
+- Treating a partial or historical source as current evidence
 
 ## See also
 

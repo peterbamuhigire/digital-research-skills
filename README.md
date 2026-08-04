@@ -301,3 +301,20 @@ and kernel unit tests. Project workspaces are intentionally untracked; validate 
 local workspace separately with `python -m engine validate <project-id>`.
 
 Maintained by Peter Bamuhigire.
+
+## Book-derived 2026 capability upgrade
+
+LEAN, Applying the Kaizen in Africa, Facility Move Playbook, Platform Enterprise, Designing for
+AI, and MSC Software Magazine strengthen research orchestration with hypothesis/experiment/evidence
+loops, source freshness, uncertainty, claim graphs, reproducibility, process learning, and
+research-product audits. Historical, partial, corrupted, or unreadable inputs remain explicitly
+labelled and cannot masquerade as current standards.
+
+## Kaizen and product-audit contract
+
+The research cycle is `Observe -> Baseline -> Select -> Experiment -> Check -> Standardise ->
+Teach -> Re-measure`. Research-engine and research-product audits publish `min(raw_score, 65)` and
+produce 95/100 plans with evidence, owner, measure, risk, rollback, and re-audit. This engine is
+the portfolio route for current or uncertain claims, including legal, regulatory, tax, market,
+security, safety, platform, vendor, and scientific claims. See `docs/continuous-improvement/` and
+`skills/00-meta-initialization/references/kaizen-engine-and-product-audit.md`.

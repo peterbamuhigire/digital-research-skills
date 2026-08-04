@@ -20,32 +20,42 @@ metadata:
 
 - Do not use for a single known fact lookup, URL check, or short target read that does not need orchestration.
 
-## Orchestration Prerequisites
+## Required Inputs
 
-- Research goal, scope, audience, decision context, cohorts, constraints, source expectations, and desired output.
+| Input | Source/provider | If absent |
+|---|---|---|
+| Research goal, scope, audience, decision context, cohorts, constraints, source expectations, and desired output | Requester or project brief | Stop wave dispatch and define the missing framing |
 
-## Orchestration Entry Sequence
+## Workflow
 
-- Run the type, discipline, and reading-mode routers before wave dispatch.
-- Select companion skills for evidence discipline, research design, methods, source evaluation, and output form.
-- Dispatch planned waves, verify before merging, and reserve final synthesis for the orchestrator.
+1. Run the type, discipline, and reading-mode routers before wave dispatch.
+2. Select companion skills for evidence discipline, research design, methods, source evaluation, and output form.
+3. Dispatch planned waves, verify before merging, and reserve final synthesis for the orchestrator.
+4. Stop when scope, evidence rules, or verification ownership is unresolved.
+5. Recover from unavailable agents or providers by running sequentially and preserving unassessed gaps.
 
 ## Quality Standards
 
 - Research waves must be scoped, source-aware, evidence-disciplined, and designed to produce insight rather than volume.
 
-## Early Orchestration Warnings
+## Anti-Patterns
 
-- Do not run a single mega-search when cohorts, source classes, or verification needs differ.
-- Do not delegate cross-cohort synthesis to wave agents.
+- Do not run a single mega-search when cohorts, source classes, or verification needs differ. Fix: split non-overlapping waves.
+- Do not delegate cross-cohort synthesis to wave agents. Fix: reserve synthesis for the orchestrator.
+- Do not merge an unverified wave. Fix: quarantine claims and schedule verification.
+- Do not hide provider failure. Fix: label the gap and preserve the attempted path.
+- Do not optimise speed at the expense of source diversity. Fix: keep a quality guardrail.
 
-## Initial Orchestration Artifacts
+## Outputs
 
-- Wave plan, agent brief, companion-skill route, verification plan, synthesis route, and output storage contract.
+| Artifact | Consumer | Acceptance condition |
+|---|---|---|
+| Wave plan, agent briefs, companion-skill route, verification plan, synthesis route, and output storage contract | Research team and orchestrator | Non-overlapping waves, evidence rules, verification ownership, and handoff are explicit |
 
 ## References
 
 - Use the routers and companion-skill table below.
+- Use `references/kaizen-research-loop.md` after each wave and before release.
 
 <!-- dual-compat-end -->
 
@@ -93,6 +103,10 @@ A research engine never runs as a single search. It runs as **planned waves**:
 4. **Wave 4 — synthesis.** Cross-cohort patterns; product/policy inferences.
 
 This skill defines when each wave fires and how outputs are stored.
+
+## Kaizen after every wave
+
+Every wave must leave a short learning record: observation, reproducible baseline, one hypothesis, smallest reversible experiment, guardrail, result, failed-path result, and standardisation decision. Useful measures include source admission rate, verified-claim coverage, unresolved-claim count, contradiction count, duplicate-search rate, and time-to-verified-finding. These are measures to collect, not values to invent. If the experiment improves speed but weakens source diversity, independence, or verification coverage, reject it and preserve the prior standard.
 
 ## When to use
 
@@ -155,14 +169,14 @@ Wave 2 outputs append a `# Pass 2 — Gap-fill addendum` section to the existing
 - `source-evaluation` — Wave-3 verification logic; mandatory pairing for every source
 - `academic-writing`, `report-and-proposal-craft`, `business-writing` — output containers
 
-## Inputs
+## Orchestration detail inputs
 
 | Input | Source/provider | If absent |
 |---|---|---|
 | Research question, decision, audience, scope, and deadline | Requester or project brief | Stop wave dispatch and return the missing framing fields. |
 | Existing corpus, registries, and constraints | Project filesystem and source providers | Start with discovery; record unavailable sources as gaps. |
 
-## Outputs
+## Orchestrator outputs
 
 | Artifact | Consumer | Acceptance condition |
 |---|---|---|
@@ -195,7 +209,7 @@ Without delegation, network, or provider access, run waves sequentially and retu
 
 For a multi-region market question, assign one cohort per region, require the same comparison fields and evidence discipline, verify each checkpoint, then synthesise only reconciled claims.
 
-## Workflow
+## Wave workflow
 
 1. Define the question, cohorts, deadline, and evidence standard; stop if scope is unresolved.
 2. Select research type, discipline, reading mode, and non-overlapping wave briefs.
@@ -203,7 +217,7 @@ For a multi-region market question, assign one cohort per region, require the sa
 4. Dispatch gap-fill work where evidence conflicts or coverage is incomplete.
 5. Recover from unavailable agents or providers by running sequentially and preserving unassessed gaps.
 
-## Anti-Patterns
+## Wave anti-patterns
 
 - Overlapping cohort briefs. Fix: assign exclusive boundaries.
 - Synthesising before verification. Fix: gate each checkpoint.
