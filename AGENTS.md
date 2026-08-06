@@ -25,7 +25,7 @@ provenance, completeness, limitations, and whether the material is current befor
 4. After each wave: run `source-verification` and `gap-analysis`
 5. Before synthesis or final drafting: run `skills/critical-reasoning-and-argument/SKILL.md` so claims, warrants, assumptions, countercases, implications, and business-sense checks are visible
 6. After all waves: run `cross-cohort-synthesis` (orchestrator only)
-7. If the final output is a **proposal** (donor investment case, policy memo, bid, EoI, pitch deck, Cabinet memo, Parliamentary briefing, white paper): route the drafting stage through `skills/proposal-skills/skills/SKILL.md` (parent router) and the relevant section sub-skills (`01-cover-letter` through `10-financial-proposal`) plus cross-cutting domain skills (methodology, M&E, risk, GESI, sustainability, change-management, critical-analysis-business-logic, premium-commercial-writing). Load exactly one profile under `skills/proposal-skills/skills/profiles/` before drafting.
+7. If the final output is a **proposal** (donor investment case, policy memo, bid, EoI, pitch deck, Cabinet memo, Parliamentary briefing, white paper): route the drafting stage through the standalone proposal engine at `C:\wamp64\www\proposal-skills\skills\SKILL.md`, then follow its section and cross-cutting routes. Load exactly one profile from `C:\wamp64\www\proposal-skills\skills\profiles-sectors\profiles\SKILL.md` before drafting.
 8. Generate Word doc via `research-report-builder` → `python-document-generation`
 9. Apply `skills/anti-ai-slop/SKILL.md` in real time on every output, and run `skills/ai-slop-audit/SKILL.md` after each major iteration and as the final ship gate. Outputs must read as if a professional human researcher wrote them; grade F (fabricated stat/citation, viewpoint-free section, template uniformity, banned vocabulary) blocks delivery.
 
@@ -81,7 +81,7 @@ Run `python -X utf8 scripts/validate_source_currency.py tests/fixtures/source-cu
 for the deterministic currentness gate. Time-sensitive source records require
 verification and review dates; overdue records block release.
 
-- Discover active skills from the filesystem below `skills/`; exclude the `skills/proposal-skills` Git submodule because it is a separate engine. Do not use a README table as inventory.
+- Discover active skills from the filesystem below `skills/`. The standalone proposal engine is routed through the global engine table and is not part of this repository's catalogue. Do not use a README table as inventory.
 - Follow `docs/skill-authoring-standard.md` and begin new skills from `templates/skill-template/SKILL.md`.
 - Preserve the 58-skill active catalogue unless an independently justified routing change requires a count change.
 - Run `python -X utf8 scripts/skill_contract_validator.py --baseline tests/skill-engine/quality-baseline.json`, `python -X utf8 scripts/routing_smoke_test.py`, and `python -X utf8 scripts/validate_engine.py` before release.

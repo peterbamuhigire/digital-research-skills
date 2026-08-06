@@ -4,7 +4,7 @@ Changes to this engine must preserve evidence discipline and pass the zero-debt 
 
 ## Skill changes
 
-Start from [the local authoring standard](docs/skill-authoring-standard.md) and [skill template](templates/skill-template/SKILL.md). Read the target skill and its directly linked references before editing. Compare the nearest neighbours so the positive and negative triggers remain distinct. Do not edit the `skills/proposal-skills` submodule as part of this engine.
+Start from [the local authoring standard](docs/skill-authoring-standard.md) and [skill template](templates/skill-template/SKILL.md). Read the target skill and its directly linked references before editing. Compare the nearest neighbours so the positive and negative triggers remain distinct. Proposal-engine changes belong in the standalone repository at `C:\wamp64\www\proposal-skills`.
 
 Add or update routing fixtures for trigger changes. Fixtures must cover the positive route, a negative or neighbouring route, limited capabilities, and a failure or stop path where applicable.
 

@@ -15,7 +15,6 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 ACTIVE_ROOTS = (Path("skills"),)
-EXCLUDED_TREES = (Path("skills/proposal-skills"),)
 TEMPLATE_ROOTS = (Path("templates"),)
 ALLOWED_FRONTMATTER = {"name", "description", "license", "allowed-tools", "metadata"}
 ALLOWED_METADATA = {"portable", "compatible_with", "priority", "source"}
@@ -241,7 +240,7 @@ def assess(root: Path, path: Path) -> list[tuple[str, str]]:
 
 
 def run(root: Path) -> dict:
-    active = discover(root, ACTIVE_ROOTS, EXCLUDED_TREES)
+    active = discover(root, ACTIVE_ROOTS)
     templates = discover(root, TEMPLATE_ROOTS)
     all_findings: list[tuple[str, str]] = []
     names: defaultdict[str, list[str]] = defaultdict(list)

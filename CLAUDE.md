@@ -101,7 +101,7 @@ Use these commands for project-managed work:
 
 ## Skill authoring and release gates
 
-- Discover active skills from the filesystem below `skills/`; exclude the `skills/proposal-skills` Git submodule because it is a separate engine. Do not use a README table as inventory.
+- Discover active skills from the filesystem below `skills/`. The standalone proposal engine is routed through the global engine table and is not part of this repository's catalogue. Do not use a README table as inventory.
 - Follow `docs/skill-authoring-standard.md` and begin new skills from `templates/skill-template/SKILL.md`.
 - Preserve the 58-skill active catalogue unless an independently justified routing change requires a count change.
 - Run `python -X utf8 scripts/skill_contract_validator.py --baseline tests/skill-engine/quality-baseline.json`, `python -X utf8 scripts/routing_smoke_test.py`, and `python -X utf8 scripts/validate_engine.py` before release.
@@ -109,15 +109,15 @@ Use these commands for project-managed work:
 
 ## Proposal-output trigger
 
-When a research project's output is a **proposal** — donor investment case, policy memorandum, bid response, expression of interest, pitch deck, Cabinet memo, Parliamentary briefing, white paper, or other persuasive document for an external audience — route the final-drafting stage through the `proposal-skills` library, which is included as a git submodule at `skills/proposal-skills/`.
+When a research project's output is a **proposal** — donor investment case, policy memorandum, bid response, expression of interest, pitch deck, Cabinet memo, Parliamentary briefing, white paper, or other persuasive document for an external audience — route the final-drafting stage through the standalone proposal engine at `C:\wamp64\www\proposal-skills`.
 
-- Parent router: `skills/proposal-skills/skills/SKILL.md`
-- Section sub-skills: `skills/proposal-skills/skills/01-cover-letter/` through `10-financial-proposal/`
-- Cross-cutting domain skills: `skills/proposal-skills/skills/{methodology,monitoring-and-evaluation,risk-management,gender-and-social-inclusion,sustainability-planning,change-management,critical-analysis-business-logic,premium-commercial-writing}/`
-- Profiles: `skills/proposal-skills/skills/profiles/` — load one profile before drafting
-- Language standards: British English; East African professional tone; day-month-year dates; avoid the banned AI-vocabulary list in `skills/proposal-skills/CLAUDE.md`
+- Parent router: `C:\wamp64\www\proposal-skills\skills\SKILL.md`
+- Section sub-skills: `C:\wamp64\www\proposal-skills\skills\pipeline\01-cover-letter\` through `10-financial-proposal\`
+- Cross-cutting skills: follow the parent router into `domain-delivery`, `strategy-positioning`, `writing-content`, and other applicable families.
+- Profiles: load `C:\wamp64\www\proposal-skills\skills\profiles-sectors\profiles\SKILL.md` before drafting.
+- Language standards: British English; East African professional tone; day-month-year dates; apply the proposal engine's anti-slop and language gates.
 
-The proposal-skills library evolves in its own repository. To pull updates: `git submodule update --remote skills/proposal-skills`. After a fresh clone of the engine, run `git submodule update --init --recursive` to populate it.
+The proposal engine evolves in its own repository and is updated independently from `C:\wamp64\www\proposal-skills`.
 
 The research evidence corpus produced by the engine (under `projects/<project-id>/02-research/`, `04-synthesis/`) is the input to the proposal-skills drafting pipeline; the proposal document is written into `projects/<project-id>/05-output/` and exported via the standard `research-report-builder` → `python-document-generation` chain.
 
@@ -126,7 +126,7 @@ The research evidence corpus produced by the engine (under `projects/<project-id
 - `AGENTS.md` — Codex / generic-agent equivalent of this file
 - `PROJECT_BRIEF.md` — engine mission & direction
 - `skills/source-evaluation/SKILL.md` + `skills/source-evaluation/references/evidence-discipline.md` — the rule that precedes everything else
-- `skills/proposal-skills/` — proposal-writing skills (git submodule) for projects whose output is a proposal
+- `C:\wamp64\www\proposal-skills` — standalone proposal engine for projects whose output is a proposal
 
 <!-- design-system-skills:trigger v1 -->
 ### Design / typography / UI/UX (cross-cutting — consult IN ADDITION)

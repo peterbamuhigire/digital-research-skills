@@ -3,7 +3,7 @@
 ## 1. Engine Identity
 
 Engine: digital-research-engine
-Root path: `C:\wamp64\www\digital-research-skills`
+Root path: `C:\wamp64\www\digital-research-engine`
 Upgrade date: 2026-07-08
 Builder: Codex execution agent
 

@@ -3,7 +3,7 @@
 **Date:** 2026-05-01
 **Owner:** Peter Bamuhigire
 **Target repo (subject):** `C:\wamp64\www\srs-skills`
-**Producer repo (this engine):** `C:\wamp64\www\digital-research-skills`
+**Producer repo (this engine):** `C:\wamp64\www\digital-research-engine`
 **Source evaluation:** `C:\wamp64\www\srs-skills\docs\evaluation\2026-04-12\`
 
 ## 1. Goal

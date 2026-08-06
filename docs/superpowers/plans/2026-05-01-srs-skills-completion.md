@@ -4,7 +4,7 @@
 
 **Goal:** Produce `srs-skills-completion-2026-v1.docx` — 17 Depth-2 implementation specs that the srs-skills dev team executes to close Stages 1–3 of the 2026-04-12 remediation roadmap, projecting 8.1 → ~9.0 / 10.
 
-**Architecture:** Research-orchestration project under `digital-research-skills/projects/`. Five waves: scaffold (W0), four parallel cohort agents (W1), verification (W2), cross-cohort synthesis (W3), Word doc assembly (W4). Mirrors `webdevskills-engine-completion-2026` structure exactly.
+**Architecture:** Research-orchestration project under `digital-research-engine/projects/`. Five waves: scaffold (W0), four parallel cohort agents (W1), verification (W2), cross-cohort synthesis (W3), Word doc assembly (W4). Mirrors `webdevskills-engine-completion-2026` structure exactly.
 
 **Tech Stack:** Markdown corpus → `professional-word-output` skill → `.docx`. Sub-agents via `Agent` tool with `subagent_type: content-marketing:search-specialist` (fallback `general-purpose`), `run_in_background: true`. Evidence discipline enforced via verbatim hard-constraint clause from `skills/source-evaluation/references/evidence-discipline.md`.
 

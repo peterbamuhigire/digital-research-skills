@@ -27,7 +27,7 @@ This is an independent operational synthesis of the sixteen user-provided files.
 
 | Book cluster | Primary engines | Secondary engines |
 |---|---|---|
-| XP 2026, Lean, Tech Lead, Platform Enterprise | skills-web-dev; srs-skills | business-plan-skills; proposal-skills; digital-research-skills; linux-skills; website-skills; social-media-skills |
+| XP 2026, Lean, Tech Lead, Platform Enterprise | skills-web-dev; srs-skills | business-plan-skills; proposal-skills; digital-research-engine; linux-skills; website-skills; social-media-skills |
 | Digital Storytelling, Video Game Storytelling, AI for Game Developers, Dynamic Characters | skills-web-dev game family; srs game documentation; design-system-skills | website routing; proposals/business plans for game products; social storytelling |
 | Designing for AI | skills-web-dev AI/UX; website-skills | srs-skills AI specs; business-plan-skills digital transformation; proposal-skills AI transformation; digital research; social AI governance |
 | Nonprofit Guide, Facility Move Playbook | business-plan-skills; proposal-skills | srs-skills; accounting doctrine; linux-skills; website/social communication |

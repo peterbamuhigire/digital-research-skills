@@ -1,7 +1,7 @@
 # Phase 2 Completion Report
 
 Engine: digital-research-engine
-Root path: `C:\wamp64\www\digital-research-skills`
+Root path: `C:\wamp64\www\digital-research-engine`
 Date: 2026-07-08
 
 ## Phase 2 Exit Criteria

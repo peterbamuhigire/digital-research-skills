@@ -73,7 +73,7 @@ Products include websites, web/mobile/desktop apps, games, databases, designs, d
 
 ## Research and source discipline
 
-All engines may reach `C:\wamp64\www\digital-research-skills`. Current, contested, legal, regulatory, platform, safety, market, or standards claims must use `source-evaluation` and `source-verification`. Book-informed guidance is an independent synthesis: do not copy raw books, OCR, long extracts, or reconstructive chapter text into an engine.
+All engines may reach `C:\wamp64\www\digital-research-engine`. Current, contested, legal, regulatory, platform, safety, market, or standards claims must use `source-evaluation` and `source-verification`. Book-informed guidance is an independent synthesis: do not copy raw books, OCR, long extracts, or reconstructive chapter text into an engine.
 
 ## Cadence
 

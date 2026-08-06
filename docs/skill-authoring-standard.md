@@ -4,7 +4,7 @@ This is the local, executable form of Peter Bamuhigire's July 2026 skill-writing
 
 ## Catalogue boundary
 
-Active skills are filesystem-discovered `SKILL.md` files below `skills/`, excluding the `skills/proposal-skills` Git submodule because it is a separate engine. Skill templates live below `templates/` and never enter active-skill metrics. Do not use README tables as inventory.
+Active skills are filesystem-discovered `SKILL.md` files below `skills/`. The standalone proposal engine at `C:\wamp64\www\proposal-skills` is outside this repository and never enters its active-skill metrics. Skill templates live below `templates/` and never enter active-skill metrics. Do not use README tables as inventory.
 
 ## Entrypoint contract
 
