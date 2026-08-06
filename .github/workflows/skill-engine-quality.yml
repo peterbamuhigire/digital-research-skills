@@ -19,3 +19,4 @@ jobs:
       - run: python -X utf8 scripts/skill_contract_validator.py --baseline tests/skill-engine/quality-baseline.json
       - run: python -X utf8 scripts/routing_smoke_test.py
       - run: python -X utf8 scripts/validate_engine.py
+      - run: python -X utf8 scripts/validate_source_currency.py tests/fixtures/source-currency.json --as-of 2026-08-06

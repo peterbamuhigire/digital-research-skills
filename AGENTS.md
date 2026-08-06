@@ -1,5 +1,9 @@
 # AGENTS.md — digital-research-engine
 
+The shared agent, command, hook, evidence, and handoff contract is adapted to
+research in [`docs/control-plane-adoption.md`](docs/control-plane-adoption.md);
+the central registry lives in `C:\wamp64\www\skills-web-dev\docs\engine-control-plane.json`.
+
 Operating instructions for Codex and other agent runtimes that load skills via `AGENTS.md`.
 
 ## The one rule that overrides everything
@@ -72,6 +76,10 @@ projects/<project-id>/report-v<N>-<date>.docx
 7. `python -m engine pack <project-id> --out export/<project-id>.zip`
 
 ## Skill authoring and release gates
+
+Run `python -X utf8 scripts/validate_source_currency.py tests/fixtures/source-currency.json`
+for the deterministic currentness gate. Time-sensitive source records require
+verification and review dates; overdue records block release.
 
 - Discover active skills from the filesystem below `skills/`; exclude the `skills/proposal-skills` Git submodule because it is a separate engine. Do not use a README table as inventory.
 - Follow `docs/skill-authoring-standard.md` and begin new skills from `templates/skill-template/SKILL.md`.

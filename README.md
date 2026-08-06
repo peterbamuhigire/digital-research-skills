@@ -1,5 +1,9 @@
 # digital-research-engine
 
+See [`docs/control-plane-adoption.md`](docs/control-plane-adoption.md) for
+research agents, thin commands, evidence/currentness hooks, citation gates,
+and resumable handoffs.
+
 A **world-class research operating system** — multi-agent, evidence-disciplined, portable across AI runtimes — that produces research, status, intelligence, evaluation, and decision-support reports for diverse audiences and purposes.
 
 This is not a document-generator. It is a skills engine that runs investigations, applies discipline, and produces the right report shape for the right audience.
@@ -267,6 +271,10 @@ python -X utf8 scripts\validate_engine.py
 - **`projects/east-africa-property-hostel/`** — pain points across students, hostel owners, residential landlords, and ordinary tenants in Uganda, Kenya, Tanzania, Rwanda, Burundi, South Sudan. 250+ sources across 4 cohorts; first project to ship at engine-grade evidence discipline.
 
 ## Status
+
+The source-currentness adapter is `scripts/validate_source_currency.py`.
+It fails closed for missing verification/review metadata and overdue
+time-sensitive sources before a current claim can be released.
 
 Engine v0.2 — initial self-evaluation complete; analytic + output + academic-reporting layers shipped. First project complete through Wave 2 on student & owner cohorts; Wave 1 on landlord & tenant cohorts. Final Word document not yet generated. See `docs/analysis/initial-evaluation/05-implementation-roadmap.md` for the next-six-months build plan.
 

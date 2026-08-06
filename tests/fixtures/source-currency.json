@@ -1,0 +1,16 @@
+{
+  "sources": [
+    {
+      "id": "src-current-001",
+      "title": "Fixture current source",
+      "ref": "https://example.org/current",
+      "tier": 1,
+      "accessed": "2026-08-01",
+      "verified_at": "2026-08-02",
+      "review_after": "2026-12-01",
+      "freshness_class": "current",
+      "publication_date": "2026-07-15"
+    }
+  ],
+  "claims": [{"id": "claim-current-001", "requires_currentness": true, "source_ids": ["src-current-001"]}]
+}

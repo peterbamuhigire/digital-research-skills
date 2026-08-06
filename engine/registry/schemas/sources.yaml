@@ -7,3 +7,6 @@ required_fields:
   - accessed
   - verification
   - confidence
+  - verified_at
+  - review_after
+  - freshness_class
