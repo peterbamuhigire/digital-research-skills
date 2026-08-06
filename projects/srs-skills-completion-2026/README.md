@@ -43,7 +43,7 @@ Produce a single Word document delivering 17 Depth-2 implementation specs that t
 
 - Stages 4–6 of the remediation roadmap (traceability schema, runtime evidence ingestion, semantic correctness, AI hallucination scoring)
 - New skills outside the existing 240 in the catalog
-- Direct edits to `C:\wamp64\www\srs-skills\` (this is a spec-only deliverable)
+- Direct edits to the [SRS Skills repository](https://github.com/peterbamuhigire/srs-skills) (this is a spec-only deliverable)
 - Cost estimates, vendor selection, hiring plans
 - Score promises above 9.1/10 (the ceiling is honest)
 

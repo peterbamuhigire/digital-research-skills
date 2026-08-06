@@ -289,7 +289,7 @@ projects, and a repo-level validator. See
 ## July 2026 upgrade status
 
 The July 2026 engine has 58 active skills discovered below `skills/`; the
-proposal engine is maintained independently at `C:\wamp64\www\proposal-skills`. Each active skill
+proposal engine is maintained independently in the [Proposal Skills repository](https://github.com/peterbamuhigire/proposal-skills). Each active skill
 follows the portable authoring contract in `docs/skill-authoring-standard.md`.
 The zero-debt baseline, routing fixtures, and push/pull-request CI prevent
 contract or routing regressions. The conformance record is in

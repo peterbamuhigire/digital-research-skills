@@ -1,6 +1,6 @@
 # Reference — Brause Dissertation Craft
 
-**Canonical source:** Brause, Rita S. *Writing Your Doctoral Dissertation: Invisible Rules for Success*. Falmer Press / RoutledgeFalmer, 1999. Tier 1. Local extract: `extracted-books/doctoral-dissertation.txt`.
+**Canonical source:** Brause, Rita S. *Writing Your Doctoral Dissertation: Invisible Rules for Success*. Falmer Press / RoutledgeFalmer, 1999. Tier 1.
 
 This reference is the practical-craft layer of `academic-reporting-standards`. It encodes the unwritten conventions every Ivy / Oxbridge / LSE-equivalent examination committee assumes the candidate already knows. The formal-reporting layer (PRISMA, CONSORT, STROBE, MOOSE, GRADE, Cochrane, TOP) is in `equator-decision-tree.md`.
 

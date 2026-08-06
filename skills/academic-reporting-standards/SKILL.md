@@ -114,7 +114,7 @@ Before any academic artefact ships, every box must be ticked:
 
 ## Sources for this skill
 
-- Brause, Rita S. *Writing Your Doctoral Dissertation: Invisible Rules for Success*. Falmer Press / RoutledgeFalmer, 1999. Tier 1. (Local extract: `extracted-books/doctoral-dissertation.txt`.)
+- Brause, Rita S. *Writing Your Doctoral Dissertation: Invisible Rules for Success*. Falmer Press / RoutledgeFalmer, 1999. Tier 1.
 - EQUATOR Network. *Enhancing the QUAlity and Transparency Of health Research*. https://www.equator-network.org/. Tier 1.
 - PRISMA 2020. https://www.equator-network.org/reporting-guidelines/prisma/. Tier 1.
 - CONSORT 2025. https://www.equator-network.org/reporting-guidelines/consort/. Tier 1.

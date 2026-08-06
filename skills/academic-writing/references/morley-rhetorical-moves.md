@@ -1,6 +1,6 @@
 # Reference — Morley Rhetorical Moves (Academic Phrasebank)
 
-**Canonical source:** Morley, John. *The Academic Phrasebank: An Academic Writing Resource for Students and Researchers*. Kindle 4th edition, 2017. University of Manchester. Tier 1. Local extract: `extracted-books/academic-phrasebank.txt`. Built on Swales' (1990) CARS genre-analysis "moves" model and corpus-linguistic phraseology (Sinclair; Pawley & Syder).
+**Canonical source:** Morley, John. *The Academic Phrasebank: An Academic Writing Resource for Students and Researchers*. Kindle 4th edition, 2017. University of Manchester. Tier 1. Built on Swales' (1990) CARS genre-analysis "moves" model and corpus-linguistic phraseology (Sinclair; Pawley & Syder).
 
 **Reuse permission.** Per Morley's Preface: "*The phrases are content neutral and generic in nature; in using them, therefore, you are not stealing other people's ideas and this does not constitute plagiarism.*" The Davis & Morley (2015) acceptability rule still binds: a reused phrase should not have a unique or original construction; should not exceed ~9 words; should not contain more than 4 generic content words; and should not express another writer's distinct viewpoint.
 

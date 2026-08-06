@@ -1,6 +1,6 @@
 # Reference — Case Study Method
 
-**Canonical source:** Hancock, Dawson R., and Algozzine, Bob. *Doing Case Study Research: A Practical Guide for Beginning Researchers*. Teachers College Press, Columbia University, 2006 (1st ed.; later editions 2011, 2017). Tier 1. Local extract: `extracted-books/case-study-research.txt`.
+**Canonical source:** Hancock, Dawson R., and Algozzine, Bob. *Doing Case Study Research: A Practical Guide for Beginning Researchers*. Teachers College Press, Columbia University, 2006 (1st ed.; later editions 2011, 2017). Tier 1.
 
 **Companion sources** referenced by Hancock & Algozzine (Tier 1, separate works):
 - Yin, Robert K. *Case Study Research: Design and Methods*. Sage, 5th ed. 2014. (Provides the construct/internal/external/reliability validity framework, pattern-matching, explanation-building, time-series analytic moves not deeply elaborated by Hancock & Algozzine.)

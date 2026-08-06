@@ -1,6 +1,6 @@
 # Reference — MacLeod Search Mastery
 
-**Canonical source:** MacLeod, Don. *How to Find Out Anything: From Extreme Google Searches to Scouring Government Documents, a Guide to Uncovering Anything About Everyone and Everything*. Prentice Hall Press, 2012. Tier 1. Local extract: `extracted-books/macleod-find-anything.txt`.
+**Canonical source:** MacLeod, Don. *How to Find Out Anything: From Extreme Google Searches to Scouring Government Documents, a Guide to Uncovering Anything About Everyone and Everything*. Prentice Hall Press, 2012. Tier 1.
 
 This reference covers the **general search-craft** layer — operator catalog, search heuristics, the deep web, the reference-interview discipline, and the limits of Google. The **investigative** application of this material (government records, people-finding, company records, FOIA, public records aggregators) lives in `osint-investigation/references/macleod-investigative-search.md`.
 

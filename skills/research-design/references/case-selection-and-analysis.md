@@ -1,6 +1,6 @@
 # Reference — Case Selection and Analysis
 
-**Canonical source:** Hancock, D. R., and Algozzine, B. *Doing Case Study Research: A Practical Guide for Beginning Researchers*. Teachers College Press, 2006. Tier 1. Local extract: `extracted-books/case-study-research.txt`.
+**Canonical source:** Hancock, D. R., and Algozzine, B. *Doing Case Study Research: A Practical Guide for Beginning Researchers*. Teachers College Press, 2006. Tier 1.
 
 This reference is the **operating** companion to `references/case-study-method.md`. Use this when actually executing a case study — sampling, gatekeeper engagement, interview-protocol design, content analysis, member checking.
 

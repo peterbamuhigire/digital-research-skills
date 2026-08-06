@@ -1,6 +1,6 @@
 # Reference — OSINT Validation and Anti-Patterns
 
-**Canonical source:** Bean, Hamilton. *No More Secrets: Open Source Information and the Reshaping of U.S. Intelligence*. Praeger Security International / ABC-CLIO, 2011. Tier 1. Local extract: `extracted-books/no-more-secrets.txt`.
+**Canonical source:** Bean, Hamilton. *No More Secrets: Open Source Information and the Reshaping of U.S. Intelligence*. Praeger Security International / ABC-CLIO, 2011. Tier 1.
 
 This reference is the **operating discipline** companion to `references/osint-doctrine-and-history.md`. It encodes the validation cycle, the named tensions (speed vs. verification, volume vs. signal, secret vs. open, commercial vs. analytic), the case studies that show OSINT working and failing, and the anti-patterns Bean catalogs.
 

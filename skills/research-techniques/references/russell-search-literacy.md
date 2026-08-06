@@ -1,6 +1,6 @@
 # Reference — Russell Search Literacy
 
-**Canonical source:** Russell, Daniel M. *The Joy of Search: A Google Insider's Guide to Going Beyond the Basics*. MIT Press, 2019. Tier 1. Local extract: `extracted-books/joy-of-search.txt`. Russell ran Google's "search literacy" research program for 13+ years.
+**Canonical source:** Russell, Daniel M. *The Joy of Search: A Google Insider's Guide to Going Beyond the Basics*. MIT Press, 2019. Tier 1. Russell ran Google's "search literacy" research program for 13+ years.
 
 This reference complements MacLeod's structural layer (`references/macleod-search-mastery.md`) with **metacognitive discipline** — how to think about searching, when to stop, how to recognise a dead end, when to reframe.
 

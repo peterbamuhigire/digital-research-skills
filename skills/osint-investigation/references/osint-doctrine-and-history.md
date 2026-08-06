@@ -1,6 +1,6 @@
 # Reference — OSINT Doctrine and History
 
-**Canonical source:** Bean, Hamilton. *No More Secrets: Open Source Information and the Reshaping of U.S. Intelligence*. Praeger Security International / ABC-CLIO, 2011. Foreword by Senator Gary Hart. Tier 1. Local extract: `extracted-books/no-more-secrets.txt`.
+**Canonical source:** Bean, Hamilton. *No More Secrets: Open Source Information and the Reshaping of U.S. Intelligence*. Praeger Security International / ABC-CLIO, 2011. Foreword by Senator Gary Hart. Tier 1.
 
 This reference encodes the **institutional lineage** of OSINT and its **competing definitions**. The operating-discipline companion is `references/osint-validation-and-anti-patterns.md`.
 

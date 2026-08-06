@@ -1,6 +1,6 @@
 # Reference — Morley Reporting Verbs and Hedges
 
-**Canonical source:** Morley, John. *The Academic Phrasebank* (Kindle 4e, 2017), University of Manchester. Tier 1. Local extract: `extracted-books/academic-phrasebank.txt`.
+**Canonical source:** Morley, John. *The Academic Phrasebank* (Kindle 4e, 2017), University of Manchester. Tier 1.
 
 This reference codifies two of Morley's most consequential disciplines: (1) **reporting-verb selection** (the verb the writer chooses signals stance toward the cited work) and (2) **hedging** (the writer's calibration of certainty to the evidence). Both are non-negotiable for any academic artefact at Ivy / Oxbridge / LSE-equivalent quality.
 
