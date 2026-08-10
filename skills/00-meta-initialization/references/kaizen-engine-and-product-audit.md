@@ -22,6 +22,17 @@ Adapt the checklist to research reports, evidence packs, due-diligence files, da
 
 For every dimension below 95, create a P0/P1/P2 action. Each action needs a named file or validator, an owner, an expected measure, and acceptance evidence. The plan is incomplete if it adds prose without a fixture, test, source register, or reviewer result.
 
+## Mandatory 65-to-95 gate
+
+The initial analysis must show raw findings but publish a hard-capped score:
+`capped_score = min(raw_score, 65)`. Keep missing evidence, defects, and stop
+conditions visible; the cap never waives them. Only after recording that baseline
+may the researcher run the improvement cycle toward 95/100. Each cycle item needs
+a root cause, reversible intervention, owner, measure, guardrail, stop/rollback,
+acceptance evidence, standardisation location, and re-audit date. Apply this both
+to the research engine and to every report, evidence pack, dataset, dashboard,
+proposal, Word/PDF, or other research product it produces.
+
 ## Research-specific measures
 
 Useful measures include: percentage of load-bearing claims with verified source IDs; percentage of numeric claims spot-checked; unresolved-claim count; citation-density defects; source-register completeness; reproducibility of search and synthesis; reviewer agreement; and time from finding to standardised fix. These are measures to collect, not invented baselines.
