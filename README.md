@@ -320,6 +320,8 @@ labelled and cannot masquerade as current standards.
 
 ## Kaizen and product-audit contract
 
+For a ready-to-run product or project operation, use [`prompts/full-kaizen-operation.md`](prompts/full-kaizen-operation.md).
+
 The research cycle is `Observe -> Baseline -> Select -> Experiment -> Check -> Standardise ->
 Teach -> Re-measure`. Research-engine and research-product audits publish `min(raw_score, 65)` and
 produce 95/100 plans with evidence, owner, measure, risk, rollback, and re-audit. This engine is
