@@ -18,6 +18,12 @@ claims:
     source_ids:
       - src-001
     claim_type: fact
+    support_review:
+      # This is human review input, not automated semantic certification.
+      state: supported
+      reviewer: named reviewer or test-labelled reviewer
+      basis: brief human review basis
+      reviewed_at: 2026-08-11
 
 quotes:
   - id: quote-001

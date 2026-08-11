@@ -45,6 +45,19 @@ If a URL, archive, provider, or tool is unavailable, report the claim as unverif
 
 For a quoted statistic, open the cited source, confirm definition, period, unit, and exact value, record the supporting location, and reject the citation if any material element differs.
 
+## Semantic claim-support boundary
+
+Every release-bound claim should carry a `support_review` record with `state`
+set to `supported`, `unsupported`, `synthesis`, `inference`, or `no-source`,
+plus a reviewer, basis, and parseable review date. `source_ids` must be an
+explicit list: use `[]` only with `no-source`, and use at least one known source
+ID for every other state. The verifier rejects malformed state/source
+combinations and non-list manifest collections. It does not decide whether the
+wording is semantically supported. Every support state remains non-certifying;
+metadata cannot promote an unsupported, no-source, or inference claim to
+release-ready. Use `tests/fixtures/claim-support-review.json` and its
+deterministic tests as the contract fixture.
+
 <!-- dual-compat-start -->
 
 ## Use When
@@ -72,7 +85,7 @@ For a quoted statistic, open the cited source, confirm definition, period, unit,
 2. Check source liveness and archive references.
 3. Verify quotes against cited locators.
 4. Spot-check statistics and numeric claims against source text.
-5. Confirm every claim references valid source IDs.
+5. Confirm every claim has a correctly shaped source-ID list, references valid source IDs, and carries an explicit semantic support-review state.
 6. Confirm every synthesis references valid claim IDs.
 7. Quarantine unverified claims and log failures.
 8. Produce a verification manifest for release.

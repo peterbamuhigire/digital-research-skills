@@ -1,111 +1,79 @@
-# `tools/` — runtime utilities for the engine
+# `tools/` - runtime utilities for the engine
 
-Real Python code (not just skill documentation). The skills tell agents *what* to do; these tools are *how* they do it.
+These Python modules implement the operations described by the skills. The
+layout below is filesystem-backed; planned modules are not advertised here.
 
 ## Layout
 
 ```
 tools/
-├── scraping/         core scraping infrastructure (Layer 0)
-│   ├── http_client.py        requests / httpx / curl-cffi wrapper with retries + throttling
-│   ├── throttle.py           per-host rate limiting
-│   ├── robots.py             robots.txt + sitemap parsing
-│   ├── retry.py              exponential-backoff retry decorator
-│   ├── cache.py              raw-HTML cache (disk / S3 / SQLite)
-│   ├── pagination.py         offset / cursor / XHR pagination iterators
-│   ├── auth.py               session + CSRF + browser-cookie import
-│   ├── headless.py           Playwright fetcher with XHR capture
-│   ├── storage.py            CSV / SQLite / Postgres / S3 sinks
-│   ├── cleaning.py           text / money / URL canonicalisation
-│   ├── dedup.py              URL + content-hash dedup
-│   ├── ethics.py              robots-allow + identification headers
-│   ├── monitoring.py         success-rate per source, block-rate signal
-│   └── extractors/
-│       ├── soup.py           BeautifulSoup safe extraction helpers
-│       ├── jsonld.py         Schema.org JSON-LD extraction
-│       ├── opengraph.py      OG / Twitter Card meta extraction
-│       └── feeds.py          RSS / Atom / sitemap parsing
-│
-├── google/           Google power-search utilities (Brown)
-│   ├── search_api.py         Custom Search JSON + SerpAPI fan-out
-│   ├── stakeholder.py        Stakeholder-first SERP recon
-│   └── tld_atlas.py          TLD / state-domain / county-domain matrix
-│
-└── verification/     Investigative verification utilities (Silverman)
-    ├── exif.py               EXIF + GPS extraction; metadata-stripped detector
-    ├── reverse_image.py      TinEye + Google Images + Yandex + Bing fan-out
-    ├── shadow_time.py        Solar-position-from-shadow time inference
-    ├── provenance.py         Earliest-known-timestamp tracer
-    ├── whois_cluster.py      Whois cluster + shared-infrastructure detector
-    └── archive.py            Wayback / archive.today resurrector
+|-- academic/             academic prose and citation helpers
+|-- data/                 data-quality and tidy-data helpers
+|-- datasets/             dataset search, registry, retrieval, and analysis
+|-- dd/                   due-diligence helpers
+|-- google/               search and stakeholder-recon helpers
+|-- pi/                   licensed private-investigation records
+|-- reports/              citation-density reporting
+|-- sanctions/            sanctions-list screening helpers
+|-- scraping/             HTTP, robots, throttling, retry, caching, and extraction
+|   `-- extractors/       feed, JSON-LD, OpenGraph, and HTML extraction
+|-- verification/         archive, provenance, EXIF, and source verification
+`-- osint_tool_index.py   candidate OSINT-tool index support
 ```
+
+### Implemented module groups
+
+- `scraping/`: `http_client.py`, `throttle.py`, `robots.py`, `retry.py`,
+  `cache.py`, `pagination.py`, `cleaning.py`, `headless.py`, and the
+  `extractors/` modules.
+- `verification/`: `archive.py`, `exif.py`, `provenance.py`, and
+  `source_verifier.py`.
+- `google/`: `search_api.py`, `stakeholder.py`, and `tld_atlas.py`.
+- `dd/`, `datasets/`, `data/`, `academic/`, `pi/`, `sanctions/`, and
+  `reports/`: use the files present in each directory as the module index.
 
 ## Dependency baseline
 
-Optional dependencies are imported *inside functions*, not at module top, so importing `tools.scraping` doesn't require Playwright unless you call a Playwright function.
+Optional dependencies are not proof that a runtime or provider is available.
+Install only through the repository's approved environment and record an
+unavailable check as `not assessed`.
 
-Suggested `requirements.txt`:
-
+```text
+Core: httpx, requests, beautifulsoup4, lxml, selectolax, tenacity,
+      python-dateutil, charset-normalizer, ftfy
+Optional browser/crawler: playwright, curl-cffi, aiohttp, scrapy,
+                          scrapy-playwright
+Optional extraction/storage: extruct, feedparser, pyarrow, pydantic,
+                              boto3, psycopg
+Optional verification: exifread, piexif, ephem, python-whois, waybackpy
 ```
-# core
-httpx>=0.27
-requests>=2.31
-beautifulsoup4>=4.12
-lxml>=5.0
-selectolax>=0.3
-tenacity>=8.2
-python-dateutil>=2.8
-charset-normalizer>=3.3
-ftfy>=6.1
 
-# headless / async (optional)
-playwright>=1.45
-curl-cffi>=0.7
-aiohttp>=3.9
-
-# crawler (optional)
-scrapy>=2.11
-scrapy-playwright>=0.0.34
-
-# extraction
-extruct>=0.16
-feedparser>=6.0
-
-# storage
-pyarrow>=15.0
-pydantic>=2.6
-boto3>=1.34
-psycopg[binary]>=3.1
-
-# google
-google-api-python-client>=2.120
-
-# verification
-exifread>=3.0
-piexif>=1.1
-ephem>=4.1            # solar position
-python-whois>=0.9
-waybackpy>=3.0
-```
+Optional dependencies are imported inside functions where practical. Importing
+a package does not prove that its optional runtime is installed or that a
+network, archive, browser, or third-party provider is available.
 
 ## Engineering principles
 
-1. **Lazy imports.** Heavy deps (Playwright, Scrapy, Selenium) imported inside functions.
-2. **Type hints everywhere.** PEP 695 syntax preferred (`def f(x: str) -> str:`).
-3. **Async by default for I/O.** `httpx.AsyncClient`, `asyncio.gather`, `aiolimiter`.
-4. **Fail loudly with classified errors.** `ScrapeError`, `RobotsBlocked`, `RateLimited`, `SoftBlock` (CAPTCHA/200-with-block-page).
-5. **No silent retries on 4xx** — only 5xx and connection errors.
-6. **Identification header by default** — `User-Agent: digital-research-engine/0.1 (+https://github.com/peterbamuhigire/digital-research-skills)` unless explicitly overridden.
-7. **Robots.txt respected by default** — must explicitly opt out per call.
-8. **Tests are first-class.** Each module ships with a `__tests__/test_<module>.py`.
+1. Use lazy imports for optional dependencies.
+2. Type public functions and classify operational errors.
+3. Respect robots.txt and host rate limits by default.
+4. Do not silently retry client errors or bypass CAPTCHA controls.
+5. Keep source provenance, verification status, and unresolved gaps visible.
+6. Treat personal-data handling as a lawful, scope-limited operation.
+7. Test modules at the smallest layer that proves the named risk.
 
 ## Anti-patterns
 
-- `time.sleep()` as a wait strategy — use `WebDriverWait` / Playwright `wait_for_*`
-- `verify=False` as a habit — only for self-signed dev hosts
-- Hard-coded selectors with no graceful fallback
-- Silent retries on 403/429
-- Bypassing CAPTCHA on third-party sites
-- Storing personal data without lawful basis (GDPR / Uganda DPPA)
+- Advertise a module that is not present. Fix: derive this index from the tree
+  or update it in the same change as the module.
+- Treat URL liveness as semantic claim support. Fix: use the source verifier's
+  explicit human support-review boundary.
+- Store personal data without a lawful basis or retention boundary. Fix: stop
+  and obtain the required authority before collection.
+- Bypass robots, CAPTCHA, access controls, or provider terms. Fix: record the
+  unavailable source as a gap and use an authorised alternative.
+- Claim a browser, archive, or provider check passed when it was unavailable.
+  Fix: mark that check `not assessed`.
 
-See `skills/web-scraping-foundations/SKILL.md`, `skills/scraping-politeness-and-ratelimiting/SKILL.md`, and `skills/scraping-legal-and-ethical-bounds/SKILL.md` for full discipline.
+See the relevant skill and module docstring for inputs, permissions, failure
+handling, and evidence requirements.
