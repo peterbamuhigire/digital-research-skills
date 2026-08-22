@@ -39,3 +39,10 @@ facts or unsupported synthesis.
 No source, date, citation, or verification result is PASS merely because an
 agent reports confidence. Missing evidence is `NOT ASSESSED` and blocks the
 affected conclusion.
+
+## Human approval adapter
+
+Claim and evidence-release controls are detailed in
+[`approval-enforcement.md`](approval-enforcement.md) and catalogued in
+[`approval-adapter.json`](approval-adapter.json). Publication and sensitive
+recommendations must call the shared gate after the final evidence preview.

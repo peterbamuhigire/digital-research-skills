@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "engine": "digital-research",
+  "policy_version": "approval-policy-1.0.0",
+  "actions": [
+    {"action_type":"research.source.collect","class":"L0","side_effect":"read-only-retrieval","owner":"research-owner","allowed_approver_roles":["none"],"requires_dual_approval":false,"preview_required":false,"approval_ttl_seconds":null,"idempotency_required":false,"rollback":"not-applicable","verification":"source-identity-check","sensitive_fields":["personal-data"]},
+    {"action_type":"research.evidence-pack.draft","class":"L1","side_effect":"local-evidence-draft","owner":"research-owner","allowed_approver_roles":["research-owner"],"requires_dual_approval":false,"preview_required":true,"approval_ttl_seconds":null,"idempotency_required":true,"rollback":"discard-draft","verification":"provenance-and-citation-check","sensitive_fields":["personal-data"]},
+    {"action_type":"research.claim.publish","class":"L3","side_effect":"external-factual-publication","owner":"research-owner","allowed_approver_roles":["research-reviewer","content-owner"],"requires_dual_approval":false,"preview_required":true,"approval_ttl_seconds":900,"idempotency_required":true,"rollback":"correct-or-withdraw-claim","verification":"citation-and-publication-check","sensitive_fields":["source-identities"]},
+    {"action_type":"research.sensitive-profile.release","class":"L3","side_effect":"reputational-personal-data-release","owner":"research-owner","allowed_approver_roles":["research-reviewer","privacy-owner"],"requires_dual_approval":true,"preview_required":true,"approval_ttl_seconds":900,"idempotency_required":true,"rollback":"withdraw-and-notify","verification":"privacy-and-evidence-review","sensitive_fields":["personal-data","allegations"]},
+    {"action_type":"research.high-impact.recommendation.release","class":"L3","side_effect":"high-impact-decision-support","owner":"research-owner","allowed_approver_roles":["research-reviewer","domain-owner"],"requires_dual_approval":true,"preview_required":true,"approval_ttl_seconds":900,"idempotency_required":true,"rollback":"issue-correction-and-reassessment","verification":"claim-map-and-uncertainty-check","sensitive_fields":["legal-claims","financial-claims"]},
+    {"action_type":"research.evidence-pack.release","class":"L3","side_effect":"client-or-decision-maker-release","owner":"research-owner","allowed_approver_roles":["research-reviewer","client-owner"],"requires_dual_approval":false,"preview_required":true,"approval_ttl_seconds":900,"idempotency_required":true,"rollback":"recall-and-reissue-pack","verification":"evidence-manifest-and-recipient-check","sensitive_fields":["confidential-sources"]}
+  ]
+}
