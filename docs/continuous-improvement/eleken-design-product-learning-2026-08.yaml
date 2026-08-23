@@ -1,0 +1,217 @@
+﻿sources:
+  - id: eleken-design-system
+    title: Design System Checklist For Faster Team Design Work
+    url: https://www.eleken.co/blog-posts/design-system-checklist
+    publisher: Eleken
+    tier: 5
+    accessed_utc: 2026-08-23T00:00:00Z
+    verification_method: credibility-ladder
+    confidence: medium
+  - id: eleken-onboarding
+    title: Mobile App Onboarding Best Practices for App Success
+    url: https://www.eleken.co/blog-posts/mobile-app-onboarding-best-practices
+    publisher: Eleken
+    tier: 5
+    accessed_utc: 2026-08-23T00:00:00Z
+    verification_method: credibility-ladder
+    confidence: medium
+  - id: eleken-validation
+    title: "How to Validate Product Ideas: A 5-Step Guide"
+    url: https://www.eleken.co/blog-posts/how-to-validate-product-ideas
+    publisher: Eleken
+    tier: 5
+    accessed_utc: 2026-08-23T00:00:00Z
+    verification_method: credibility-ladder
+    confidence: medium
+  - id: eleken-cases
+    title: 70+ UX Case Studies from Leading SaaS & Product Design Teams
+    url: https://www.eleken.co/cases
+    publisher: Eleken
+    tier: 5
+    accessed_utc: 2026-08-23T00:00:00Z
+    verification_method: credibility-ladder
+    confidence: low
+  - id: eleken-banking
+    title: How Banking Apps Use UX Design To Build Trust
+    url: https://www.eleken.co/blog-posts/banking-app-design
+    publisher: Eleken
+    tier: 5
+    accessed_utc: 2026-08-23T00:00:00Z
+    verification_method: credibility-ladder
+    confidence: medium
+  - id: eleken-dashboard
+    title: 16 Best Dashboard Design Examples
+    url: https://www.eleken.co/blog-posts/dashboard-design-examples-that-catch-the-eye
+    publisher: Eleken
+    tier: 5
+    accessed_utc: 2026-08-23T00:00:00Z
+    verification_method: credibility-ladder
+    confidence: medium
+  - id: eleken-saas-launch
+    title: How to Launch a SaaS Business
+    url: https://www.eleken.co/blog-posts/how-to-launch-a-saas-business
+    publisher: Eleken
+    tier: 5
+    accessed_utc: 2026-08-23T00:00:00Z
+    verification_method: credibility-ladder
+    confidence: medium
+  - id: eleken-scaling
+    title: "How to Scale a Startup: A Product Design Perspective"
+    url: https://www.eleken.co/blog-posts/scaling-your-startup-how-it-looks-from-the-product-design-perspective
+    publisher: Eleken
+    tier: 5
+    accessed_utc: 2026-08-23T00:00:00Z
+    verification_method: credibility-ladder
+    confidence: medium
+  - id: eleken-ai-design-workflow
+    title: AI Design Workflow That Actually Works in 2026
+    url: https://www.eleken.co/blog-posts/ai-design-workflow
+    publisher: Eleken
+    tier: 5
+    accessed_utc: 2026-08-23T00:00:00Z
+    verification_method: credibility-ladder
+    confidence: medium
+  - id: eleken-design-consistency
+    title: "Design Consistency: Why It Builds Trust and Better UX"
+    url: https://www.eleken.co/blog-posts/design-consistency
+    publisher: Eleken
+    tier: 5
+    accessed_utc: 2026-08-23T00:00:00Z
+    verification_method: credibility-ladder
+    confidence: medium
+  - id: eleken-ux-ideas
+    title: 15 UX Design Ideas That Make SaaS Products Easier To Use
+    url: https://www.eleken.co/blog-posts/ux-design-ideas
+    publisher: Eleken
+    tier: 5
+    accessed_utc: 2026-08-23T00:00:00Z
+    verification_method: credibility-ladder
+    confidence: medium
+  - id: w3c-wcag22
+    title: Web Content Accessibility Guidelines (WCAG) 2.2
+    url: https://www.w3.org/TR/WCAG22/
+    publisher: W3C
+    tier: 1
+    accessed_utc: 2026-08-23T00:00:00Z
+    verification_method: primary-authority
+    confidence: high
+  - id: apple-onboarding
+    title: Onboarding â€” Human Interface Guidelines
+    url: https://developer.apple.com/design/human-interface-guidelines/onboarding
+    publisher: Apple
+    tier: 1
+    accessed_utc: 2026-08-23T00:00:00Z
+    verification_method: primary-authority
+    confidence: high
+  - id: govuk-prototypes
+    title: Making prototypes â€” Service Manual
+    url: https://www.gov.uk/service-manual/design/making-prototypes
+    publisher: GOV.UK Government Digital Service
+    tier: 1
+    accessed_utc: 2026-08-23T00:00:00Z
+    verification_method: primary-authority
+    confidence: high
+  - id: govuk-research
+    title: Plan user research for your service â€” Service Manual
+    url: https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service
+    publisher: GOV.UK Government Digital Service
+    tier: 1
+    accessed_utc: 2026-08-23T00:00:00Z
+    verification_method: primary-authority
+    confidence: high
+
+claims:
+  - id: learning-system-lifecycle
+    text: Design-system guidance should include scope, ownership, documentation, contribution, release, and measurement controls.
+    source_ids: [eleken-design-system]
+    claim_type: synthesis
+    support_review:
+      state: synthesis
+      reviewer: Codex
+      basis: Repeated operating controls were extracted from the Eleken checklist and independently expressed; no Eleken outcome or benchmark is asserted.
+      reviewed_at: "2026-08-23"
+  - id: learning-first-value
+    text: Onboarding guidance should optimise a named first-value event and use optional or contextual teaching while deferring nonessential setup.
+    source_ids: [eleken-onboarding, apple-onboarding]
+    claim_type: synthesis
+    support_review:
+      state: synthesis
+      reviewer: Codex
+      basis: The practitioner pattern is corroborated by Apple first-party onboarding guidance; the engine standard remains a design decision, not a universal conversion claim.
+      reviewed_at: "2026-08-23"
+  - id: learning-iterative-validation
+    text: Product discovery should use hypotheses, prototypes, research, and progressively stronger behavioural evidence before irreversible investment.
+    source_ids: [eleken-validation, govuk-prototypes, govuk-research]
+    claim_type: synthesis
+    support_review:
+      state: synthesis
+      reviewer: Codex
+      basis: Eleken supplies the practitioner ladder; GOV.UK corroborates hypothesis-led research and prototype testing before commitment.
+      reviewed_at: "2026-08-23"
+  - id: learning-accessibility
+    text: Accessibility controls in the affected skills should remain tied to WCAG 2.2 rather than agency-authored thresholds.
+    source_ids: [w3c-wcag22, eleken-design-system]
+    claim_type: synthesis
+    support_review:
+      state: synthesis
+      reviewer: Codex
+      basis: W3C is the standards authority; the Eleken article is used only to identify where teams commonly place component-level checks.
+      reviewed_at: "2026-08-23"
+  - id: learning-trust-flow
+    text: Trust-sensitive financial flows should make material costs, status, control, and recovery visible at the decision point.
+    source_ids: [eleken-banking]
+    claim_type: synthesis
+    support_review:
+      state: synthesis
+      reviewer: Codex
+      basis: Standardised as a cautious UX control; no regulatory or security conclusion is inferred from the practitioner source.
+      reviewed_at: "2026-08-23"
+  - id: learning-decision-dashboard
+    text: Dashboard design should begin with a named decision and preserve clarity across hierarchy, freshness, empty states, and progressive introduction.
+    source_ids: [eleken-dashboard]
+    claim_type: synthesis
+    support_review:
+      state: synthesis
+      reviewer: Codex
+      basis: Standardised as a design-review prompt; visual examples are not treated as performance evidence.
+      reviewed_at: "2026-08-23"
+  - id: learning-scale-gate
+    text: SaaS launch and scale planning should require product evidence, measurable outcomes, delivery capacity, and a next reversible learning cycle.
+    source_ids: [eleken-saas-launch, eleken-scaling]
+    claim_type: synthesis
+    support_review:
+      state: synthesis
+      reviewer: Codex
+      basis: Only the general operating logic is retained; market statistics, growth claims, and case outcomes are explicitly excluded.
+      reviewed_at: "2026-08-23"
+  - id: learning-ai-design-boundary
+    text: AI-assisted design should preserve source context, decision ownership, verification, scoped iteration, and human review.
+    source_ids: [eleken-ai-design-workflow]
+    claim_type: synthesis
+    support_review:
+      state: synthesis
+      reviewer: Codex
+      basis: The articleâ€™s useful workflow controls were retained; time-saving figures, tool superiority, and autonomous judgement were excluded.
+      reviewed_at: "2026-08-23"
+  - id: learning-consistency-layers
+    text: Consistency audits should cover visual, functional, content, layout, and motion behaviour and should feed a maintained system of tokens, components, documentation, and QA.
+    source_ids: [eleken-design-consistency, eleken-design-system]
+    claim_type: synthesis
+    support_review:
+      state: synthesis
+      reviewer: Codex
+      basis: Repeated practitioner guidance was converted into an audit lens and linked to existing design-system controls; no business outcome is asserted.
+      reviewed_at: "2026-08-23"
+  - id: learning-friction-led-ux
+    text: UX opportunity discovery should begin with observed friction such as hesitation, errors, abandonment, repeated work, and support requests.
+    source_ids: [eleken-ux-ideas, govuk-research]
+    claim_type: synthesis
+    support_review:
+      state: synthesis
+      reviewer: Codex
+      basis: The Eleken prompt is corroborated by GOV.UKâ€™s evidence-led user research practice; pattern selection remains context-dependent.
+      reviewed_at: "2026-08-23"
+
+quotes: []
+statistics: []
+
