@@ -1,5 +1,11 @@
 # AGENTS.md — digital-research-engine
 
+## Universal agent integration
+
+See `.skills-engine/engine-manifest.yaml` for the declarative contract used by the optional universal coordination package. The router and domain SKILL.md files remain authoritative.
+
+The package may read the router, discover skills, inspect Git, and run only declared checks. Missing evidence is NOT ASSESSED; writes, pulls, publication, submissions, ledger/filing changes, deployment, or control changes require explicit approval.
+
 The shared agent, command, hook, evidence, and handoff contract is adapted to
 research in [`docs/control-plane-adoption.md`](docs/control-plane-adoption.md);
 the central registry lives in `C:\wamp64\www\skills-web-dev\docs\engine-control-plane.json`.

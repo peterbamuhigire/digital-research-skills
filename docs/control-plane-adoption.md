@@ -1,48 +1,9 @@
-# Control-plane adoption
+# Skills-engine control-plane adoption
 
-This engine adopts the shared ten-engine contract from
-`C:\wamp64\www\skills-web-dev\docs\engine-control-plane.md`. Digital
-research remains the source of truth for source evaluation, currentness,
-OSINT, standards checks, benchmarking, evidence grading, and citation audit.
+This repository exposes the digital-research-engine engine through the declarative .skills-engine/engine-manifest.yaml contract.
 
-## Local roles and commands
+The engine remains independently usable. Its router and domain SKILL.md files are authoritative. Universal coordination may read the router, discover skills, inspect Git, and review declared validators.
 
-| Role | Responsibility | Required output |
-|---|---|---|
-| Research planner | Define the decision, claims, populations, jurisdictions, and search plan. | Research plan and claim map. |
-| Source verifier | Check identity, authority, date, method, access, and claim support. | Source register. |
-| Evidence grader | Grade strength, uncertainty, conflict, and freshness. | Evidence grades and caveats. |
-| Citation auditor | Reconcile claims, citations, quotations, links, and output references. | Citation-audit report. |
+Missing dependency, platform, source, or approval evidence is NOT ASSESSED. Writes, pulls, publication, submissions, ledger/filing changes, deployment, and control changes require explicit approval.
 
-Route thin commands `research-plan`, `source-audit`, `synthesis`, and
-`citation-audit` to canonical research workflows. The deterministic
-`scripts/validate_source_currency.py` adapter enforces currentness metadata
-before time-sensitive claims are released. Sub-agents receive the
-engine's evidence-discipline clause and return sourced findings, not invented
-facts or unsupported synthesis.
-
-## Hook and release contract
-
-- `preflight` records question, cutoff date, jurisdiction, source access,
-  sensitivity, and output standard.
-- `context` loads project evidence register, prior claims, source dates,
-  exclusions, and unresolved contradictions before searching.
-- `before_write` checks claim provenance, quote limits, currentness, identity,
-  and uncertainty before a finding enters the report.
-- `after_write` runs source, currency, claim-map, citation, and anti-slop
-  checks and records the evidence grade.
-- `release` requires source register, currency check, claim map, citation
-  audit, uncertainty statement, and independent review where risk warrants.
-- `stop` preserves search state, inaccessible sources, unresolved conflicts,
-  stale claims, and the next research owner.
-
-No source, date, citation, or verification result is PASS merely because an
-agent reports confidence. Missing evidence is `NOT ASSESSED` and blocks the
-affected conclusion.
-
-## Human approval adapter
-
-Claim and evidence-release controls are detailed in
-[`approval-enforcement.md`](approval-enforcement.md) and catalogued in
-[`approval-adapter.json`](approval-adapter.json). Publication and sensitive
-recommendations must call the shared gate after the final evidence preview.
+MCP-safe operations are read-only discovery, router read, skill read, and documented-check inspection. Forks are inspected from their own checkout; no validator is invented when the repository is not catalogued.
