@@ -114,3 +114,9 @@ engine; presentation comes from design-system-skills. Hard rule: never use a ban
 (Inter, Geist, Roboto, Arial, Open Sans, Lato, Space Grotesk, bare system stacks) as primary
 type — state the chosen typeface and reason before producing any artifact.
 <!-- /design-system-skills:trigger -->
+
+## Human-English editorial standard (2026-08 Kaizen)
+
+Load [`extracted-books/human-english-craft-synthesis-2026.md`](extracted-books/human-english-craft-synthesis-2026.md) for every human-facing research output, together with `skills/business-writing/`, `skills/academic-writing/`, `skills/anti-ai-slop/`, and the applicable output-format skill. Apply the five passes—reader/purpose, genre/spine, evidence/inference, sentence/paragraph revision, and proof/read-aloud—throughout collection, analysis, synthesis, and drafting.
+
+Research prose must be exact, sourced, candid about inference, and enjoyable to read. Do not use language polish to conceal a source gap. Record the reader, purpose, source status, inference labels, terms checked, proof status, unresolved gaps, reviewer, and date in the output evidence record.

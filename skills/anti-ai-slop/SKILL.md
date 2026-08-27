@@ -85,7 +85,7 @@ Use throughout production and revision of every research artefact.
 
 Do not substitute it for the independent `ai-slop-audit` release verdict.
 
-## Inputs
+## Required Inputs
 
 | Input | Source/provider | If absent |
 |---|---|---|
@@ -129,13 +129,13 @@ Fallback when a fact, dependency, citation, or visual check is unavailable: name
 
 Every claim is verified or qualified, every section carries intent, and errors, empty states, risks, and countercases are addressed where applicable.
 
-## Production Pitfalls
+## Anti-Patterns
 
-- Inventing a number for specificity; verify or remove it.
-- Keeping polished filler; add substance or cut it.
-- Waiting for the final audit; apply controls live.
-- Flattening authored voice; preserve intentional choices.
-- Hiding an unavailable check; name the gap.
+- Inventing a number for specificity. **Fix:** verify it or remove it.
+- Keeping polished filler. **Fix:** add a sourced judgement or cut it.
+- Waiting for the final audit. **Fix:** apply controls live.
+- Flattening authored voice. **Fix:** preserve intentional choices.
+- Hiding an unavailable check. **Fix:** name the gap and its release consequence.
 
 ## Worked Example
 
@@ -145,6 +145,7 @@ If a current market figure cannot be verified, the draft records the evidence ga
 
 - [Independent audit](../ai-slop-audit/SKILL.md)
 - [Evidence discipline](../source-evaluation/references/evidence-discipline.md)
+- `extracted-books/human-english-craft-synthesis-2026.md` — human-English reader, genre, rhythm, grammar, and proof overlay; routed from the engine-level `AGENTS.md`.
 <!-- dual-compat-end -->
 
 ## Evidence Produced
@@ -157,7 +158,7 @@ If a current market figure cannot be verified, the draft records the evidence ga
 
 Minimum capability is read-only access to the draft, facts, and dependencies. Any editing, mutation, publication, destructive action, spending, or certification requires explicit authorisation from the parent task.
 
-## Anti-Patterns
+## Production Pitfalls
 
 - Inventing a number for specificity. **Fix:** verify it or remove it.
 - Keeping polished filler. **Fix:** add a decision or evidence, otherwise cut it.

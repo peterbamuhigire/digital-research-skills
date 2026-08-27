@@ -75,6 +75,7 @@ Every sentence carries its point at full volume. Hedge soup, Latinate fog, and b
 | `references/scenario-playbooks.md` | One-off communication artefacts where the message is hard — bad news, decline, apology, discourteous reply, policy change (Ramsey four-axis frame) |
 | `references/extended-channels.md` | Pitch decks, one-pagers, training material, business plans, grant proposals, performance appraisals (Henwood / Lindsell-Roberts / Garner) |
 | `references/long-form-business-journalism.md` | Long-form magazine writing — essay, investigative, profile, explainer — with craft lessons drawn from *The Best Business Writing 2014* (Starkman et al.) |
+| `../../extracted-books/human-english-craft-synthesis-2026.md` | Cross-channel reader-centred English: genre register, grammar, collocation, rhythm, evidence-aware revision, and proof/read-aloud |
 | `../../extracted-books/growth-profit-disruption-research-notes.txt` | Business growth, product-led growth, profit improvement, disruption, creativity, and commercial research productization |
 
 ## Universal anti-patterns
