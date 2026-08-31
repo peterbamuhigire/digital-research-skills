@@ -207,6 +207,10 @@ See `docs/analysis/initial-evaluation/` — eight documents:
 
 Variant rules: thesis / dissertation default to academic; paper defaults to academic; essay must be specified by the user. Academic outputs (L–S academic variants) are subject to the **Ivy / Oxford / Cambridge / LSE bar** encoded in `academic-reporting-standards`.
 
+## September 2026 book-driven Kaizen wave
+
+See [`docs/continuous-improvement/book-driven-kaizen-2026-09-01.md`](docs/continuous-improvement/book-driven-kaizen-2026-09-01.md) for the new dissertation-writing process route and evidence workflow.
+
 ## Cross-tool compatibility
 
 Every skill ships with:
@@ -286,7 +290,7 @@ projects, and a repo-level validator. See
 
 ## July 2026 upgrade status
 
-The July 2026 engine has 58 active skills discovered below `skills/`; the
+The September 2026 engine has 59 active skills discovered below `skills/`; the
 proposal engine is maintained independently in the <a href="https://github.com/peterbamuhigire/proposal-skills" target="_blank" rel="noopener noreferrer">Proposal Skills repository</a>. Each active skill
 follows the portable authoring contract in `docs/skill-authoring-standard.md`.
 The zero-debt baseline, routing fixtures, and push/pull-request CI prevent
@@ -302,7 +306,7 @@ python -X utf8 scripts\routing_smoke_test.py
 python -X utf8 scripts\validate_engine.py
 ```
 
-The release gate covers all 58 active skills, routing fixtures, the engine doctor,
+The release gate covers all 59 active skills, routing fixtures, the engine doctor,
 and kernel unit tests. Project workspaces are intentionally untracked; validate a
 local workspace separately with `python -m engine validate <project-id>`.
 

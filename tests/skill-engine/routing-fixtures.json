@@ -81,6 +81,12 @@
       "forbidden": ["academic-reporting-standards"]
     },
     {
+      "id": "dissertation-process-positive",
+      "prompt": "Plan a dissertation from research question through literature review, methodology, findings, discussion, citations and institutional formatting.",
+      "expected": "dissertation-writing-process",
+      "forbidden": ["academic-writing", "research-design"]
+    },
+    {
       "id": "academic-reporting-collision",
       "prompt": "Select the reporting checklist and structural standard for a thesis, systematic review or academic paper.",
       "expected": "academic-reporting-standards",

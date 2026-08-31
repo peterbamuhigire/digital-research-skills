@@ -45,6 +45,11 @@ metadata:
 - Research design document, method plan, case-selection logic, trend-analysis design, or
   report-builder route.
 
+## Book-derived additions
+
+Pair with `dissertation-writing-process` when a formal research design must be
+carried through literature, methods, findings, discussion, and submission gates.
+
 ## References
 
 - Use the routing table below to load only the relevant design reference.

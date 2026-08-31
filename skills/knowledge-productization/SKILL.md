@@ -50,6 +50,12 @@ metadata:
 ## Knowledge Productization Core Deliverables
 - A knowledge audit, audience-variant plan, asset ladder, or monetization-ready packaging plan.
 
+## Book-derived additions
+
+For a dissertation or research corpus that must become reusable, audience-bound
+knowledge products, load `dissertation-writing-process` and retain provenance,
+originality, and rights checks.
+
 ## References
 
 - Use the `references/` files for audit, audience planning, and productization.

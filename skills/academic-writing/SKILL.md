@@ -220,6 +220,11 @@ The argument answers the research question, sources support the claims attribute
 
 Two sources supporting different parts of one conclusion are cited together and the resulting claim is marked `(synthesis)`.
 
+## Book-derived additions
+
+Use `dissertation-writing-process` when the deliverable spans chapter planning,
+question-to-conclusion traceability, institutional formatting, and AI-use review.
+
 ## References
 
 - [Source synthesis](references/source-synthesis.md)
