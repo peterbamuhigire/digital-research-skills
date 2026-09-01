@@ -136,3 +136,4 @@ Represent an uncertain driver as low, base, and high sourced assumptions; show t
 ## Reference Index
 
 - [Model audit checklist](references/model-audit-checklist.md)
+- `../source-evaluation/references/book-driven-source-admission-and-currentness.md` - currentness and evidence requirements for time-sensitive inputs.

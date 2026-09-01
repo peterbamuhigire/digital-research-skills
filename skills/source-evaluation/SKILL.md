@@ -213,6 +213,8 @@ evidence.
 
 ## Universal ship gate
 
+For book-informed work, apply [book-driven source admission and currentness](references/book-driven-source-admission-and-currentness.md) before admitting any time-sensitive claim.
+
 - [ ] `evidence-discipline.md` audit run on every claim.
 - [ ] Every source assigned a tier (1–5).
 - [ ] Every primary document has Burke pentad notes.

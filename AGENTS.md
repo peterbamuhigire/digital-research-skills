@@ -10,6 +10,22 @@ The shared agent, command, hook, evidence, and handoff contract is adapted to
 research in [`docs/control-plane-adoption.md`](docs/control-plane-adoption.md);
 the central registry lives in `C:\wamp64\www\skills-web-dev\docs\engine-control-plane.json`.
 
+## Mandatory Digital Research currentness gate for Kaizen
+
+Every Kaizen audit, skill edit, reference update, validator change, and
+standardisation decision MUST begin with this Digital Research Engine at
+`C:\wamp64\www\digital-research-skills`. Read the `source-evaluation` and
+`source-verification` skills and
+`docs/continuous-improvement/kaizen-currentness-gate.md` before admitting a
+current claim.
+
+Record source scope, publication/version date, access date, freshness class,
+review date, support status, and uncertainty for every standard, policy, law,
+technology, platform capability, software version, command, security control,
+benchmark, or lifecycle claim. Use current authoritative primary sources;
+quarantine stale/ambiguous/unsupported claims and mark them `NOT_ASSESSED`.
+Books are durable concept inputs only.
+
 Operating instructions for Codex and other agent runtimes that load skills via `AGENTS.md`.
 
 ## The one rule that overrides everything
