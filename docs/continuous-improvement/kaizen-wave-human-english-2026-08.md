@@ -17,6 +17,16 @@ Truth and prose quality were governed by strong but separate surfaces. A sourced
 - Routed it through `AGENTS.md`, `skills/business-writing/`, and `skills/anti-ai-slop/`.
 - Kept source-evaluation authoritative: language polish never upgrades an unsupported or unverified claim.
 
+## Follow-on language upgrade - 2026-09-02
+
+The follow-on study adds the two supplied English books as durable concept inputs
+only. The detailed synthesis is now maintained at
+`english-collocations-and-lexical-precision-2026-09-02.md`, with an engine-local
+business-writing reference. The broken historical `extracted-books/` human-English
+path is no longer used for this route. The deep overlay is limited to SRS, business
+plans, websites, social media, proposals, digital research, and the engineering
+catalogue; design, accounting, Linux, and Windows remain non-authoring consumers.
+
 ## Engine-level experiment and evidence
 
 Experiment: verify that the local reference exists and is linked from the router, business-writing, and anti-slop gate.

@@ -71,11 +71,12 @@ Every sentence carries its point at full volume. Hedge soup, Latinate fog, and b
 | `references/web-copywriting.md` | Web pages, marketing copy, landing pages, blog post structure |
 | `references/blog-publishing-workflow.md` | Producing a full blog article (topic dev, drafting, on-page structure, image prep, site integration) |
 | `references/language-standards-en-fr-sw.md` | Multi-language artifacts: English (British/East African), French (Francophone African), Kiswahili (East African) |
+| `references/english-collocations-and-lexical-precision-2026-09-02.md` | Collocation, register, lexical precision, idiom restraint, calibrated claims, and human-quality proof |
 | `references/ai-assisted-writing.md` | Any deliverable where an LLM is in the production chain — WI/AI division of labour, prompt design, fact-check discipline (Lindsell-Roberts) |
 | `references/scenario-playbooks.md` | One-off communication artefacts where the message is hard — bad news, decline, apology, discourteous reply, policy change (Ramsey four-axis frame) |
 | `references/extended-channels.md` | Pitch decks, one-pagers, training material, business plans, grant proposals, performance appraisals (Henwood / Lindsell-Roberts / Garner) |
 | `references/long-form-business-journalism.md` | Long-form magazine writing — essay, investigative, profile, explainer — with craft lessons drawn from *The Best Business Writing 2014* (Starkman et al.) |
-| `../../extracted-books/human-english-craft-synthesis-2026.md` | Cross-channel reader-centred English: genre register, grammar, collocation, rhythm, evidence-aware revision, and proof/read-aloud |
+| `../../docs/continuous-improvement/english-collocations-and-lexical-precision-2026-09-02.md` | Cross-channel reader-centred English: genre register, grammar, collocation, lexical precision, idiom restraint, evidence-aware revision, and proof/read-aloud |
 | `../../extracted-books/growth-profit-disruption-research-notes.txt` | Business growth, product-led growth, profit improvement, disruption, creativity, and commercial research productization |
 
 ## Universal anti-patterns

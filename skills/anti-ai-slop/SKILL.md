@@ -145,7 +145,7 @@ If a current market figure cannot be verified, the draft records the evidence ga
 
 - [Independent audit](../ai-slop-audit/SKILL.md)
 - [Evidence discipline](../source-evaluation/references/evidence-discipline.md)
-- `extracted-books/human-english-craft-synthesis-2026.md` — human-English reader, genre, rhythm, grammar, and proof overlay; routed from the engine-level `AGENTS.md`.
+- `docs/continuous-improvement/english-collocations-and-lexical-precision-2026-09-02.md` — human-English reader, genre, rhythm, grammar, collocation, lexical precision, and proof overlay; routed from the engine-level `AGENTS.md`.
 <!-- dual-compat-end -->
 
 ## Evidence Produced
