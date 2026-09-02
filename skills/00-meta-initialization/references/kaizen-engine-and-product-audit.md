@@ -36,3 +36,10 @@ proposal, Word/PDF, or other research product it produces.
 ## Research-specific measures
 
 Useful measures include: percentage of load-bearing claims with verified source IDs; percentage of numeric claims spot-checked; unresolved-claim count; citation-density defects; source-register completeness; reproducibility of search and synthesis; reviewer agreement; and time from finding to standardised fix. These are measures to collect, not invented baselines.
+
+## Book-driven Kaizen Wave 3
+
+Apply the [18-source cross-engine study](book-driven-kaizen-wave-3-2026-09-02.md) when a
+book-derived improvement is proposed. Admit durable concepts as hypotheses, verify volatile
+claims against current primary sources, preserve access and safety boundaries, and keep the
+prompt-engineering source `NOT_ASSESSED` until a valid artifact is supplied.
