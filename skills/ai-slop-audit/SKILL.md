@@ -56,6 +56,15 @@ Run every applicable check; a hit on a blocking marker ([BLOCK]) fails the artef
 Do not issue a semantic finding from a keyword count alone. If the context or reviewer cannot
 establish the meaning delta, record `NOT_ASSESSED`.
 
+#### Impeccable-derived overlay review
+
+For visual or interface artefacts, review AS1-AS7 and record the evidence mode (`cli`, `browser`,
+`llm_only`, or `human_review`). Treat purple gradients, glassmorphism, neon glow, AI-beige defaults,
+decorative editorial scaffolding, and decorative motion as blocking visual findings unless a
+functional state, accessibility need, data encoding, or approved design-system reason is recorded.
+For non-visual artefacts, mark visual checks `not_applicable`; unavailable render or browser evidence
+is `NOT_ASSESSED`.
+
 **UI/UX**
 - [auto] Indigo/purple-gradient default (HSL 250-280deg, sat 70%+); Inter/Roboto/Poppins-only; uniform border-radius; glassmorphism; gradient text; shadcn coloured card-border.
 - [BLOCK] [auto] Body/dark-mode contrast <4.5:1 (WCAG fail); missing states (error/empty/loading/focus/disabled).
@@ -104,6 +113,9 @@ Artefact type(s): <...>
 
 ## Machine-error findings
 - <ME1-ME7> <unit> · evidence: <affected units or recurrence> · delta: <what is missing> · action: <keep/merge/cut/rewrite/not_assessed>
+
+## Anti-slop overlay findings
+- <AS1-AS7> <unit> · evidence mode: <cli/browser/llm_only/human_review> · task value or exception: <...> · action: <keep/reduce/remove/rewrite/not_applicable/not_assessed>
 
 ## Slop findings (by severity)
 - [marker] <finding> · evidence: <...> · fix: <...>

@@ -54,6 +54,24 @@ vocabulary, or safe operation.
 | ME6 | Has a rhetorical device become a repeated tic? |
 | ME7 | What claim, warrant, evidence, or decision earns this paragraph's space? |
 
+## Impeccable-derived overlay
+
+Apply the shared [AS1-AS7 overlay](../../docs/continuous-improvement/machine-errors-editorial-gate-2026-09-03.md)
+when the output includes an interface, website, presentation, rendered document, or visual system.
+For web development, websites, and design, use all seven checks: default convergence, unearned
+hierarchy, module monoculture, decorative attention, placeholder material, copy tells, and
+polish-covered delivery debt. Other outputs use only applicable checks and mark unavailable or
+non-applicable visual evidence explicitly.
+
+Visual no-ship choices for those visual scopes are purple gradients, glassmorphism, neon glow,
+AI-beige defaults, decorative editorial scaffolding, and decorative motion. Functional states,
+accessibility affordances, and required data encodings need a recorded task reason; they are not
+decorative exceptions by implication.
+AS1-AS7 coverage is explicit: AS2, AS3, AS4, AS5, and AS7 are `not_applicable` for a text-only
+research output, while visual or rendered deliverables require the full overlay.
+AS6 remains applicable to every human-facing research output: remove recurring buzzword, em-dash,
+aphoristic, or theatrical cadence.
+
 ## Banned / high-risk vocabulary (the lexical tells)
 
 Over-produced by LLMs (FSU/COLING-2025; PubMed "delve" +400%, verified). Allowed only when genuinely the precise term, never as default register.
@@ -90,6 +108,8 @@ ANTI-SLOP GUARDRAIL (inherit in every output):
 - [ ] Counter-case, limitation, or gap addressed (U6).
 - [ ] Sentence and section structure varied; no rule-of-three reflex, no antithesis formula, no em-dash flood (U7).
 - [ ] ME1-ME7 reviewed; every retained unit has a semantic delta or a documented functional exception.
+- [ ] AS1-AS7 reviewed when applicable; every retained visual choice has a task, state, accessibility, brand, or evidence reason.
+- [ ] Visual no-ship boundary passed: no purple gradients, glassmorphism, neon glow, AI-beige defaults, decorative editorial scaffolding, or decorative motion.
 - [ ] For .docx, `professional-word-output` standard applied.
 - [ ] When in doubt, run `ai-slop-audit` on the draft.
 

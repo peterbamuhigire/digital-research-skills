@@ -1,13 +1,19 @@
 # Anti-Slop Governance for Digital Research Outputs
 
-Last verified: 2026-07-08
-Standard/version: Digital Research Engine July 2026 anti-slop gate
+Last verified: 2026-09-03
+Standard/version: Digital Research Engine September 2026 anti-slop gate
 
 This file governs research prose quality. Visual formatting routes to the design-system-skills engine; this engine owns evidence, reasoning, and language quality.
 
 Apply the dated [Machine-Error Editorial Gate](../continuous-improvement/machine-errors-editorial-gate-2026-09-03.md)
 in addition to the evidence and reasoning controls below. A polished sentence is not automatically
 useful: every retained unit needs a semantic delta or a documented functional exception.
+
+The same gate supplies the Impeccable-derived AS1-AS7 overlay. For websites, web products,
+presentations, and design artefacts, purple gradients, glassmorphism, neon glow, AI-beige defaults,
+decorative editorial scaffolding, and decorative motion are no-ship choices unless the record shows
+a functional state, accessibility need, data encoding, or approved design-system reason. Other
+engine outputs apply only the relevant checks and mark unavailable evidence `NOT_ASSESSED`.
 
 ## Prohibited output patterns
 

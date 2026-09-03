@@ -16,6 +16,7 @@
 - Treat the Impeccable page as first-party evidence for its own taxonomy, not universal prevalence evidence.
 - Do not add Impeccable as a required package or network dependency.
 - Missing render, browser, tool, context, or reviewer evidence is `NOT_ASSESSED`, never a pass.
+- In visual scopes, purple gradients, glassmorphism, neon glow, AI-beige defaults, decorative editorial scaffolding, and decorative motion are no-ship choices.
 - Use `apply_patch` for authored file edits and do not stage pre-existing generated cache files.
 - Run native validators and `git diff --check` before each repository commit.
 

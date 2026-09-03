@@ -1,6 +1,16 @@
 {
-  "required_ids": ["ME1", "ME2", "ME3", "ME4", "ME5", "ME6", "ME7"],
+  "required_ids": ["ME1", "ME2", "ME3", "ME4", "ME5", "ME6", "ME7", "AS1", "AS2", "AS3", "AS4", "AS5", "AS6", "AS7"],
   "shared_reference": "docs/continuous-improvement/machine-errors-editorial-gate-2026-09-03.md",
+  "overlay_pressure_fixture": "tests/fixtures/anti-slop-overlay-pressure-fixture.md",
+  "overlay_ids": ["AS1", "AS2", "AS3", "AS4", "AS5", "AS6", "AS7"],
+  "visual_hard_ban_phrases": ["purple gradient", "glassmorphism", "neon glow", "AI-beige", "editorial scaffolding", "decorative motion"],
+  "visual_targets": [
+    {"engine": "engineering-visual", "path": "C:/wamp64/www/skills-web-dev/skills/sdlc-meta/anti-ai-slop/SKILL.md"},
+    {"engine": "website-design", "path": "C:/wamp64/www/website-skills/skills/build/design-system/references/ai-slop-prevention.md"},
+    {"engine": "website-visual-qa", "path": "C:/wamp64/www/website-skills/skills/quality-gates/visual-qa/references/slop-rules.md"},
+    {"engine": "design-taxonomy", "path": "C:/wamp64/www/design-system-skills/doctrine/references/ai-slop-taxonomy.md"},
+    {"engine": "design-audit", "path": "C:/wamp64/www/design-system-skills/skills/00-cross-cutting-ops-qa-a11y/visual-product-slop-audit/SKILL.md"}
+  ],
   "targets": [
     {"engine": "srs", "path": "C:/wamp64/www/srs-skills/09-governance-compliance/28-anti-ai-slop/SKILL.md"},
     {"engine": "business-plan", "path": "C:/wamp64/www/business-plan-skills/skills/meta-utility/anti-ai-slop/SKILL.md"},

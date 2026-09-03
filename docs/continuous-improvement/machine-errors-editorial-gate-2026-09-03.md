@@ -33,6 +33,37 @@ or a necessary reader safeguard. Otherwise cut it, merge it, or label the missin
 | ME6 | Rhetorical mannerism | Does the same device recur often enough to announce the generator or author rather than the idea? | Vary the construction or use plain prose. Count recurrence in the audit. |
 | ME7 | Insight-shaped filler | Does the paragraph contain a claim, warrant, evidence, comparison, implication, or decision that earns its space? | Add the missing work from a real source or cut the paragraph. |
 
+## Impeccable-derived anti-slop overlay
+
+The [Impeccable Slop catalog](https://impeccable.style/slop/) is first-party evidence for its own
+web-interface detector taxonomy. It distinguishes deterministic CLI checks, browser-layout checks,
+and LLM-only judgements. Use the following overlay as scoped review guidance; it is not evidence
+that a pattern is universally machine-generated and it is not a blanket visual taste ban.
+
+| ID | Overlay | Recognition test | Default correction |
+|---|---|---|---|
+| AS1 | Default convergence | Is a common palette, typeface, layout, or copy pattern present without a recorded project reason? | Keep only with a brief-specific reason; otherwise choose a deliberate alternative. |
+| AS2 | Unearned hierarchy | Do eyebrows, chips, badges, icon tiles, hero metrics, or numbered labels imply importance without improving the task? | Remove, integrate into useful content, or document the hierarchy reason. |
+| AS3 | Module monoculture | Are identical cards, nested cards, or uniform spacing flattening distinctions between items? | Vary structure by information need, flatten nesting, or preserve it with a hierarchy rationale. |
+| AS4 | Decorative attention | Does glow, gradient, marquee, cursor, pulse, bounce, hover transform, or similar motion lack state or task value? | Remove, reduce, or tie it to a real state/action; respect accessibility preferences. |
+| AS5 | Placeholder material | Is an image, illustration, example, icon, or asset generic, shape-assembled, washed out, missing, or placeholder-valued? | Use traceable purposeful material or remove the slot. Never invent provenance. |
+| AS6 | Copy tell | Do buzzwords, repeated em-dashes, manufactured aphorisms, or theatrical framing recur as a house cadence? | Replace with literal verbs/nouns and varied plain prose; count recurrence in the audit. |
+| AS7 | Polish-covered delivery debt | Is content invisible, unreadable, cramped, overflowing, clipped, broken, or structurally invalid beneath the visual polish? | Fix the defect before judging style; record browser or render evidence. |
+
+Apply the full overlay to web development, website, and design work. Other engines use only the
+applicable content, structure, or delivery checks and must label non-applicable visual checks
+`not_applicable`; unavailable browser, render, tool, context, or reviewer evidence is
+`NOT_ASSESSED`, never a pass.
+
+### Visual no-ship boundary
+
+For websites, web products, presentations, and design artifacts, the following decorative choices
+are no-ship: purple gradients, glassmorphism, neon glow, AI-beige defaults, decorative editorial
+scaffolding, and decorative motion. This is a hard anti-convergence boundary, not a ban on a
+functional status transition, an accessibility affordance, or a data-encoding colour when the
+recorded task requires it. A retained exception must name the task, state, accessibility need, or
+approved brand/design-system token.
+
 ## Apply in production
 
 Run the checks while drafting, not only at the end:
@@ -66,6 +97,21 @@ A semantic finding is not established by a keyword hit alone. The reviewer must 
 units and explain the missing delta. When the artefact, context, or reviewer access is incomplete,
 mark the check `NOT_ASSESSED`.
 
+For AS findings, also record the evidence mode:
+
+```yaml
+- id: AS4
+  unit: "hero status indicator"
+  evidence_mode: "cli | browser | llm_only | human_review"
+  new_information_or_task_value: "none | stated value"
+  evidence_or_decision: "state change, task benefit, accessibility need, or none"
+  action: "keep | reduce | remove | rewrite | not_applicable | not_assessed"
+  severity: "minor | major | blocking"
+  exception: "documented functional reason if retained"
+  reviewer: "name or role"
+  date: "YYYY-MM-DD"
+```
+
 ## Domain exceptions
 
 - **Requirements and code:** repeated identifiers, acceptance criteria, error states, and trace links
@@ -78,6 +124,11 @@ mark the check `NOT_ASSESSED`.
   may be necessary for safe use.
 - **Design and interfaces:** repeated components are acceptable when hierarchy, scanning, or state
   consistency is the reason; identical modules with no information hierarchy are a convergence tell.
+- **Visual defaults:** a font, palette, radius, layout, or motion choice is not a defect merely
+  because it is common; retain it when the project design system, audience, brand, or task gives a
+  documented reason.
+- **External detectors:** an unavailable Impeccable or equivalent detector is `NOT_ASSESSED`; do
+  not turn a missing tool into a clean result.
 
 ## Release rule
 

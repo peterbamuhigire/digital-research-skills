@@ -38,6 +38,20 @@ def validate(contract: dict) -> list[str]:
         missing = [check_id for check_id in required_ids if check_id not in text]
         if missing:
             errors.append(f"{target['engine']}: missing {', '.join(missing)}: {path}")
+
+    overlay_fixture_value = contract.get("overlay_pressure_fixture")
+    overlay_ids = contract.get("overlay_ids", [])
+    if overlay_fixture_value and overlay_ids:
+        overlay_fixture = ROOT / overlay_fixture_value
+        if not overlay_fixture.exists():
+            errors.append(f"overlay pressure fixture missing: {overlay_fixture}")
+        else:
+            fixture_text = overlay_fixture.read_text(encoding="utf-8")
+            for check_id in overlay_ids:
+                if f"{check_id}:" not in fixture_text:
+                    errors.append(f"overlay pressure fixture missing {check_id}: {overlay_fixture}")
+            if "functional exception" not in fixture_text.lower():
+                errors.append(f"overlay pressure fixture missing functional exception: {overlay_fixture}")
     return errors
 
 

@@ -5,6 +5,13 @@
 **Owner:** Peter Bamuhigire
 **Scope:** all 12 registered skill engines, with full treatment in web development, website, and design
 
+## Requirement amendment: visual no-ship layer
+
+The owner requires a stricter visual boundary for websites, web products, design artifacts, and
+presentations. Purple gradients, glassmorphism, neon glow, AI-beige defaults, decorative editorial
+scaffolding, and decorative motion are no-ship choices in those scopes. The rule is about
+decorative convergence, not functional state, accessibility affordance, or data encoding.
+
 ## Source and currentness record
 
 | Field | Record |
