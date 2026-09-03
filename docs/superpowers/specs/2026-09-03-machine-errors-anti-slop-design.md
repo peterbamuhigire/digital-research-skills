@@ -1,8 +1,8 @@
 # Machine-Error Anti-Slop Gate Design
 
-**Date:** 2026-09-03  
-**Status:** Approved for specification review  
-**Owner:** Peter Bamuhigire  
+**Date:** 2026-09-03
+**Status:** Approved for specification review
+**Owner:** Peter Bamuhigire
 **Scope:** The 12 registered skill engines and their human-facing editorial or presentation gates
 
 ## Problem

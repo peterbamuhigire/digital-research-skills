@@ -1,9 +1,9 @@
 # Machine-Error Editorial Gate
 
-**Status:** active cross-engine Kaizen standard  
-**Checked:** 2026-09-03  
-**Owner:** Peter Bamuhigire  
-**Currentness:** `NO_TIME_SENSITIVE_CLAIMS`  
+**Status:** active cross-engine Kaizen standard
+**Checked:** 2026-09-03
+**Owner:** Peter Bamuhigire
+**Currentness:** `NO_TIME_SENSITIVE_CLAIMS`
 **Input:** owner-provided editorial concept in the Kaizen request
 
 ## Why this gate exists
