@@ -1,0 +1,18 @@
+{
+  "required_ids": ["ME1", "ME2", "ME3", "ME4", "ME5", "ME6", "ME7"],
+  "shared_reference": "docs/continuous-improvement/machine-errors-editorial-gate-2026-09-03.md",
+  "targets": [
+    {"engine": "srs", "path": "C:/wamp64/www/srs-skills/09-governance-compliance/28-anti-ai-slop/SKILL.md"},
+    {"engine": "business-plan", "path": "C:/wamp64/www/business-plan-skills/skills/meta-utility/anti-ai-slop/SKILL.md"},
+    {"engine": "website-copy", "path": "C:/wamp64/www/website-skills/skills/content-copy/premium-commercial-writing/references/genuine-writing-and-ai-slop-gate.md"},
+    {"engine": "social-media", "path": "C:/wamp64/www/social-media-skills/skills/ai-marketing/anti-ai-slop/SKILL.md"},
+    {"engine": "linux", "path": "C:/wamp64/www/linux-skills/AGENTS.md"},
+    {"engine": "proposal", "path": "C:/wamp64/www/proposal-skills/skills/meta/anti-ai-slop/SKILL.md"},
+    {"engine": "engineering", "path": "C:/wamp64/www/skills-web-dev/skills/sdlc-meta/anti-ai-slop/SKILL.md"},
+    {"engine": "accounting", "path": "C:/wamp64/www/chwezi-accounting-doctrine/governance/anti-slop-finance-output.md"},
+    {"engine": "design", "path": "C:/wamp64/www/design-system-skills/doctrine/references/ai-slop-taxonomy.md"},
+    {"engine": "digital-research", "path": "C:/wamp64/www/digital-research-skills/skills/anti-ai-slop/SKILL.md"},
+    {"engine": "windows", "path": "C:/wamp64/www/windows-admin-engine-skills/AGENTS.md"},
+    {"engine": "political", "path": "D:/political-skills/skills/political-essay-doctrine/SKILL.md"}
+  ]
+}

@@ -34,6 +34,26 @@ Low-quality content produced in quantity by generative AI and pushed at people w
 | U6 | Skipping the hard parts | Address the counter-case, the limitation, the contradicting source, the gap — not just the confirming evidence. |
 | U7 | Mechanical uniformity | Vary sentence and section structure. No rule-of-three reflex, no "it's not X, it's Y" formula, no em-dash flood, no uniform paragraph length. |
 
+## Machine-error editorial gate
+
+Apply the shared [Machine-Error Editorial Gate](../../docs/continuous-improvement/machine-errors-editorial-gate-2026-09-03.md)
+while drafting. For every sentence and paragraph, check ME1-7: semantic repetition, artificial
+symmetry, over-explanation, inflated significance, generic examples, rhetorical mannerisms, and
+insight-shaped filler. Ask what new information, evidence, judgement, decision, constraint, or
+instruction the unit contributes. If there is no delta, merge or cut it. Record a functional
+exception when repetition is required for legal precision, accessibility, traceability, controlled
+vocabulary, or safe operation.
+
+| ID | Live production question |
+|---|---|
+| ME1 | What new proposition does this unit add? |
+| ME2 | Is the parallel structure meaningful or decorative? |
+| ME3 | Can the reader act or decide before the next explanation? |
+| ME4 | Does the rhetoric exceed the evidence or consequence? |
+| ME5 | Is the example traceable to this reader and decision? |
+| ME6 | Has a rhetorical device become a repeated tic? |
+| ME7 | What claim, warrant, evidence, or decision earns this paragraph's space? |
+
 ## Banned / high-risk vocabulary (the lexical tells)
 
 Over-produced by LLMs (FSU/COLING-2025; PubMed "delve" +400%, verified). Allowed only when genuinely the precise term, never as default register.
@@ -69,6 +89,7 @@ ANTI-SLOP GUARDRAIL (inherit in every output):
 - [ ] Output states an analytic judgement; no viewpoint-free summary, no sycophancy (U5).
 - [ ] Counter-case, limitation, or gap addressed (U6).
 - [ ] Sentence and section structure varied; no rule-of-three reflex, no antithesis formula, no em-dash flood (U7).
+- [ ] ME1-ME7 reviewed; every retained unit has a semantic delta or a documented functional exception.
 - [ ] For .docx, `professional-word-output` standard applied.
 - [ ] When in doubt, run `ai-slop-audit` on the draft.
 

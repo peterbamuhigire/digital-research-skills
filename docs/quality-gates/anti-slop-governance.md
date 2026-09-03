@@ -5,6 +5,10 @@ Standard/version: Digital Research Engine July 2026 anti-slop gate
 
 This file governs research prose quality. Visual formatting routes to the design-system-skills engine; this engine owns evidence, reasoning, and language quality.
 
+Apply the dated [Machine-Error Editorial Gate](../continuous-improvement/machine-errors-editorial-gate-2026-09-03.md)
+in addition to the evidence and reasoning controls below. A polished sentence is not automatically
+useful: every retained unit needs a semantic delta or a documented functional exception.
+
 ## Prohibited output patterns
 
 - Generic openings that announce the topic instead of stating the decision problem.
@@ -14,6 +18,8 @@ This file governs research prose quality. Visual formatting routes to the design
 - Quotes used as colour when they are not verified.
 - "Comprehensive" claims when the search strategy was bounded.
 - Executive summaries that summarize sections instead of giving the answer.
+- Semantic repetition, decorative symmetry, over-explanation, inflated significance, generic examples,
+  rhetorical mannerisms, and insight-shaped filler.
 
 ## Required polish criteria
 
@@ -22,6 +28,8 @@ This file governs research prose quality. Visual formatting routes to the design
 - Each recommendation must name the condition under which it changes.
 - Each caveat must be material, not ritual.
 - Tables must reduce complexity; they must not bury weak reasoning.
+- Every major paragraph has an identified claim, warrant, evidence, implication, or decision; otherwise
+  cut it or record the missing evidence as a gap.
 
 ## Release-blocking slop failures
 

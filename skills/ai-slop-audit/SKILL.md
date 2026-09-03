@@ -43,6 +43,19 @@ Run every applicable check; a hit on a blocking marker ([BLOCK]) fails the artef
 - [auto] Mechanical formatting: Title-Case headers, excess bold, decorative emoji, leftover tool markup ("oaicite", "contentReference").
 - [BLOCK] [auto] Broken/fake citations: dead URLs, invalid DOI/ISBN, fabricated stats, "studies show" with no named study, source missing at point of claim.
 
+#### Machine-error review (human-evidence required)
+
+- [ME1] Compare adjacent units for repeated meaning, not only repeated words; cite both units and the missing delta.
+- [ME2] Identify decorative symmetry, antithesis, or evenly shaped lists that do not express a real distinction.
+- [ME3] Mark explanation that continues after the reader can act or decide.
+- [ME4] Mark significance language that exceeds the evidence, scale, or consequence.
+- [ME5] Mark examples that could be moved to another context unchanged; require a traceable replacement or removal.
+- [ME6] Count repeated rhetorical devices and report the recurrence that makes them mannerisms.
+- [ME7] Mark paragraphs with no claim, warrant, evidence, comparison, implication, or decision.
+
+Do not issue a semantic finding from a keyword count alone. If the context or reviewer cannot
+establish the meaning delta, record `NOT_ASSESSED`.
+
 **UI/UX**
 - [auto] Indigo/purple-gradient default (HSL 250-280deg, sat 70%+); Inter/Roboto/Poppins-only; uniform border-radius; glassmorphism; gradient text; shadcn coloured card-border.
 - [BLOCK] [auto] Body/dark-mode contrast <4.5:1 (WCAG fail); missing states (error/empty/loading/focus/disabled).
@@ -88,6 +101,9 @@ Artefact type(s): <...>
 
 ## Blocking findings ([BLOCK]) — must fix
 - [marker] <finding> · evidence: <quote/line/URL/colour/region> · fix: <action>
+
+## Machine-error findings
+- <ME1-ME7> <unit> · evidence: <affected units or recurrence> · delta: <what is missing> · action: <keep/merge/cut/rewrite/not_assessed>
 
 ## Slop findings (by severity)
 - [marker] <finding> · evidence: <...> · fix: <...>
