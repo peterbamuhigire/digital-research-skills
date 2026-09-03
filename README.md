@@ -8,6 +8,17 @@ It helps teams verify claims, expose uncertainty, close evidence gaps, and produ
 
 > **Repository:** <a href="https://github.com/peterbamuhigire/digital-research-skills" target="_blank" rel="noopener noreferrer">Digital Research Skills</a>
 
+## Capability map
+
+| Need | Primary route |
+|---|---|
+| Source evaluation, provenance, currentness, and verification | `skills/source-evaluation/` and `skills/source-verification/` |
+| Research design, search, orchestration, and primary research | `skills/research-design/`, `skills/research-techniques/`, `skills/research-orchestration/`, and `skills/primary-research/` |
+| Due diligence, OSINT, legal, policy, and investigative work | `skills/due-diligence/`, `skills/osint-investigation/`, `skills/online-legal-research/`, and related routes |
+| Analysis, systems thinking, synthesis, and decision support | `skills/analytic-tradecraft/`, `skills/systems-thinking-and-mental-models/`, and `skills/mind-mapping-and-synthesis/` |
+| Academic, executive, consulting, proposal, and business writing | `skills/academic-writing/`, `skills/executive-communication/`, `skills/consulting-delivery/`, and output routes |
+| Data quality, datasets, scraping, and research products | `skills/data-quality-pipeline/`, `skills/dataset-discovery-and-analysis/`, and `skills/web-scraping-foundations/` |
+
 ## Architecture & cross-cutting engines (updated 2026-06-21)
 
 This engine no longer relies on native skill discovery — **no engine on this machine is natively discovered anymore.** Every engine, including this one, is consulted through the global routing table by globbing its `SKILL.md` files and reading them directly (resolve each engine's path per-device from the routing table; never assume an absolute path). Consult these cross-cutting engines **in addition** to this one:
