@@ -1,6 +1,6 @@
 # digital-research-engine
 
-This engine supports evidence-disciplined research from question to decision-ready output. It coordinates research skills and thin commands around source evaluation, currentness checks, citation gates, and resumable handoffs, with Markdown as the canonical working format.
+This engine turns a defined question into a decision-ready research product through claim-level source evaluation, currentness checks, verification, uncertainty handling, synthesis, and resumable handoffs. It works in small evidence-bearing waves and claim sets, preserving provenance and contradiction rather than using a long report or polished citation list as a substitute for verified understanding.
 
 Researchers, analysts, consultants, journalists, academics, policy and programme teams, product and investment decision-makers, and client-facing teams use it for investigations, due diligence, OSINT, market and trend work, policy and regulatory research, comparative analysis, primary research, and academic or executive reporting. It routes each question to an appropriate research type, cohort, method, and audience rather than treating every request as the same report.
 
