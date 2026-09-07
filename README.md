@@ -378,3 +378,10 @@ statistical validity, or the quality of a client decision. Those remain
 reproducible end-to-end engagement exist. The next planned experiment is a
 consumer-facing coverage decision record, followed by the merge population
 reconciliation fixture.
+
+## Agent runtime safety — 2026-09-07
+
+[`docs/agent-runtime-safety.md`](docs/agent-runtime-safety.md) adds a
+runner-neutral research boundary for quarantining untrusted sources, disposable
+memory, claim-level verification checkpoints, least agency, collection
+observability, and correction by superseding cited synthesis.
