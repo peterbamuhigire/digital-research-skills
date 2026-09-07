@@ -17,7 +17,11 @@ class ListSpec:
     refresh_cadence: str  # "daily" | "weekly" | "irregular"
     issuer: str           # e.g. "US Treasury OFAC"
     coverage: str
+    # Download availability is not a commercial redistribution entitlement.
+    # Keep the legacy field for callers, and require a separate licence review
+    # before using a source in a paid product.
     free: bool = True
+    licence_state: str = "unassessed"  # verified | restricted | unassessed
 
 
 LIST_REGISTRY: list[ListSpec] = [

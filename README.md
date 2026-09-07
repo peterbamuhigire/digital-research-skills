@@ -341,3 +341,40 @@ produce 95/100 plans with evidence, owner, measure, risk, rollback, and re-audit
 the portfolio route for current or uncertain claims, including legal, regulatory, tax, market,
 security, safety, platform, vendor, and scientific claims. See `docs/continuous-improvement/` and
 `skills/00-meta-initialization/references/kaizen-engine-and-product-audit.md`.
+
+## September 2026 execution update
+
+The first implementation wave from the portfolio Kaizen plan is now applied to
+the research tools. Sanctions screening reports coverage separately from
+matches: an empty cache is `failed`, a valid scoped empty source is
+`complete`, and mixed valid/invalid sources are `partial`. Parse and format
+errors are retained in `ScreeningResult.source_errors` instead of being
+silently treated as a clean no-hit result. The legacy `free` list field is
+retained for compatibility, but every list now carries `licence_state`, which
+starts as `unassessed`; download availability is not treated as resale
+permission.
+
+The merge helper now computes distinct-key coverage before the requested join.
+`MergeAuditReport.left_input_only`, `right_input_only`, and
+`input_key_overlap` expose records discarded by an intentional inner/right
+join, while the existing output indicators continue to describe the returned
+frame. The caller must still declare whether an exclusion is analytically
+approved; a warning is evidence for review, not an automatic data-quality
+verdict.
+
+Validation for this wave:
+
+```powershell
+python -m pytest tests/test_sanctions_coverage_contract.py tests/test_merge_population_conservation.py
+python -X utf8 scripts/skill_contract_validator.py --baseline tests/skill-engine/quality-baseline.json
+python -X utf8 scripts/routing_smoke_test.py
+python -X utf8 scripts/validate_engine.py
+```
+
+These checks cover the new local contracts and repository structure. They do
+not establish live sanctions-list completeness, licensing, legal clearance,
+statistical validity, or the quality of a client decision. Those remain
+`NOT_ASSESSED` until a scoped source register, authorised reviewer and
+reproducible end-to-end engagement exist. The next planned experiment is a
+consumer-facing coverage decision record, followed by the merge population
+reconciliation fixture.

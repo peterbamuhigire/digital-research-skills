@@ -26,6 +26,11 @@ class MergeAuditReport:
     sample_left_only: list[dict] = field(default_factory=list)
     sample_right_only: list[dict] = field(default_factory=list)
     warnings: list[str] = field(default_factory=list)
+    # Counts computed from inputs before the requested join.  Indicator rows
+    # alone cannot describe records discarded by an inner/right join.
+    left_input_only: int = 0
+    right_input_only: int = 0
+    input_key_overlap: int = 0
 
     def passes(self, *, max_left_only_rate: float = 0.10, max_fan_out: float = 1.5) -> bool:
         """Default thresholds: ≤10% left-only rows, ≤1.5x fan-out."""
@@ -56,7 +61,16 @@ def check_merge(
 
     on_cols = [on] if isinstance(on, str) else list(on)
 
-    # Run the merge with indicator
+    # Compute key coverage before the merge.  The merged indicator cannot show
+    # rows that an inner/right join has already discarded.
+    left_keys = left[on_cols].drop_duplicates()
+    right_keys = right[on_cols].drop_duplicates()
+    key_probe = pd.merge(left_keys, right_keys, on=on_cols, how="outer", indicator=True)
+    input_left_only = int((key_probe["_merge"] == "left_only").sum())
+    input_right_only = int((key_probe["_merge"] == "right_only").sum())
+    input_overlap = int((key_probe["_merge"] == "both").sum())
+
+    # Run the requested merge with indicator
     merged = pd.merge(left, right, on=on_cols, how=how, indicator=True, validate=validate)
 
     # Audit using indicator
@@ -78,6 +92,10 @@ def check_merge(
         warnings.append(f"{left_only} left-only rows DROPPED by how={how!r}")
     if right_only and how in ("inner", "left"):
         warnings.append(f"{right_only} right-only rows DROPPED by how={how!r}")
+    if input_left_only and how in ("inner", "right"):
+        warnings.append(f"{input_left_only} distinct left keys DROPPED by how={how!r}")
+    if input_right_only and how in ("inner", "left"):
+        warnings.append(f"{input_right_only} distinct right keys DROPPED by how={how!r}")
     if fan_out > 1.5:
         warnings.append(f"fan-out factor {fan_out:.2f}x — right side has duplicate keys, fix or accept multiplication")
 
@@ -96,5 +114,8 @@ def check_merge(
         sample_left_only=sample_left,
         sample_right_only=sample_right,
         warnings=warnings,
+        left_input_only=input_left_only,
+        right_input_only=input_right_only,
+        input_key_overlap=input_overlap,
     )
     return merged, report

@@ -40,6 +40,12 @@ class ScreeningResult:
     high_confidence_hits: list[ScreeningHit] = field(default_factory=list)
     medium_confidence_hits: list[ScreeningHit] = field(default_factory=list)
     low_confidence_hits: list[ScreeningHit] = field(default_factory=list)
+    # Coverage is separate from matching.  A zero-hit result is meaningful only
+    # when at least one declared source was successfully read.
+    coverage_state: str = "not-run"  # complete | partial | failed | not-run
+    sources_attempted: int = 0
+    sources_loaded: int = 0
+    source_errors: list[str] = field(default_factory=list)
 
 
 def screen_name(
@@ -77,6 +83,9 @@ def screen_name(
     high: list[ScreeningHit] = []
     medium: list[ScreeningHit] = []
     low: list[ScreeningHit] = []
+    sources_attempted = 0
+    sources_loaded = 0
+    source_errors: list[str] = []
 
     queries = [name] + (aliases or [])
 
@@ -84,10 +93,15 @@ def screen_name(
         if not path.is_file():
             continue
         list_name = path.stem.replace("_", " ")
+        sources_attempted += 1
         try:
-            entries = _load(path)
-        except Exception:
+            entries, load_error = _load_with_status(path)
+        except Exception as exc:
+            entries, load_error = [], f"{path.name}: {exc}"
+        if load_error:
+            source_errors.append(load_error)
             continue
+        sources_loaded += 1
 
         for entry in entries:
             entry_names = _names_in(entry)
@@ -128,36 +142,75 @@ def screen_name(
             else:
                 low.append(hit)
 
+    if not sources_attempted:
+        coverage_state = "failed"
+        source_errors.append("no cached source files were available")
+    elif sources_loaded == sources_attempted:
+        coverage_state = "complete"
+    elif sources_loaded:
+        coverage_state = "partial"
+    else:
+        coverage_state = "failed"
+
     return ScreeningResult(
         query_name=name, query_dob=dob, query_nationality=nationality,
         total_hits=len(high) + len(medium) + len(low),
         high_confidence_hits=high,
         medium_confidence_hits=medium,
         low_confidence_hits=low,
+        coverage_state=coverage_state,
+        sources_attempted=sources_attempted,
+        sources_loaded=sources_loaded,
+        source_errors=source_errors,
     )
 
 
 def _load(path: Path) -> list[dict]:
     """Load a cached list file. Supports FTM/JSONL, JSON, and rudimentary XML."""
-    if path.suffix == ".xml":
-        return _load_xml(path)
-    if path.suffix == ".json":
-        text = path.read_text(encoding="utf-8")
-        # FollowTheMoney FTM is JSONL-ish: one JSON per line.
-        if "\n" in text and text.lstrip().startswith("{"):
+    return _load_with_status(path)[0]
+
+
+def _load_with_status(path: Path) -> tuple[list[dict], str | None]:
+    """Load a list while preserving parse/format failures for coverage.
+
+    ``([], None)`` is a valid, successfully processed empty source.  It is
+    deliberately different from ``([], error)`` so callers cannot report a
+    corrupt or unsupported cache as a clean no-hit screen.
+    """
+    if path.suffix.lower() == ".xml":
+        try:
+            return _load_xml(path), None
+        except Exception as exc:
+            return [], f"{path.name}: XML parse failed: {exc}"
+    if path.suffix.lower() == ".json":
+        try:
+            text = path.read_text(encoding="utf-8")
+        except Exception as exc:
+            return [], f"{path.name}: read failed: {exc}"
+        if not text.strip():
+            return [], f"{path.name}: empty file"
+        # FollowTheMoney FTM is JSONL-ish: one JSON object per line.
+        lines = [line for line in text.splitlines() if line.strip()]
+        if len(lines) > 1 and all(line.lstrip().startswith("{") for line in lines):
             try:
-                return [json.loads(line) for line in text.splitlines() if line.strip()]
-            except json.JSONDecodeError:
-                pass
+                values = [json.loads(line) for line in lines]
+            except json.JSONDecodeError as exc:
+                return [], f"{path.name}: JSONL parse failed: {exc}"
+            if not all(isinstance(value, dict) for value in values):
+                return [], f"{path.name}: JSONL entries must be objects"
+            return values, None
         try:
             data = json.loads(text)
-            if isinstance(data, list):
-                return data
-            if isinstance(data, dict) and "entities" in data:
-                return data["entities"]
-        except json.JSONDecodeError:
-            pass
-    return []
+        except json.JSONDecodeError as exc:
+            return [], f"{path.name}: JSON parse failed: {exc}"
+        if isinstance(data, list) and all(isinstance(value, dict) for value in data):
+            return data, None
+        if isinstance(data, dict) and isinstance(data.get("entities"), list):
+            entities = data["entities"]
+            if all(isinstance(value, dict) for value in entities):
+                return entities, None
+        return [], f"{path.name}: unsupported JSON schema"
+    return [], f"{path.name}: unsupported list format"
 
 
 def _load_xml(path: Path) -> list[dict]:
