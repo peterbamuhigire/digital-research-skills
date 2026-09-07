@@ -17,6 +17,23 @@ Before analysis or implementation, enumerate every claim that could have changed
 
 Read the Digital Research `source-evaluation` and `source-verification` skills. Use authoritative primary sources first, then record why a secondary source is necessary. If the work contains no time-sensitive claims, record `NO_TIME_SENSITIVE_CLAIMS` and still complete the preflight.
 
+### Mandatory model-currentness review
+
+At the start of every Kaizen cycle, check the latest official model releases
+and the active runner's actual model catalogue. Record the provider, exact model
+IDs, access/review dates, account/runtime availability, relevant quality,
+cost and latency evidence, uncertainty, and the retain/change decision. A new
+release is a trigger to compare task fit, not proof that it is better.
+If this review cannot run, record `NOT_ASSESSED` and retain the open action;
+do not claim that model-currentness passed.
+
+For Codex, follow the engine's `.codex/model-policy.md` and its portable setup
+check: Astra owns orchestration/review and Luna is pinned for execution until
+Peter authorises a verified replacement. These Codex pins do not apply to
+Claude. Claude and other consumers retain their own model selection, tools,
+permissions and complete access to the domain skills. Do not install or run
+the Codex adapter from a Claude session.
+
 ## Evidence record
 
 Every admitted current claim must be traceable to an evidence record containing:
@@ -28,6 +45,11 @@ Use the central register at `C:\wamp64\www\skills-web-dev\docs\source-registers\
 ## Freshness and disposition
 
 Classify each claim as `stable`, `context-bound`, `time-sensitive`, `partial`, or `unusable`. Re-check time-sensitive claims at or before their review date and whenever the task changes the target platform, jurisdiction, version, or risk profile.
+
+The source-metadata validator accepts `context-bound` records only with a
+nonblank `scope` and publication, revision, or snapshot (`as_of`) date, alongside
+the required access, verification, and review dates. A metadata pass does not
+verify claim support or permit use beyond the recorded scope.
 
 - `verified`: source scope matches the claim and the evidence is within its review window;
 - `context-bound`: usable only with the recorded jurisdiction, version, date, or environment;

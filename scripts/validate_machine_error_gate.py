@@ -1,4 +1,4 @@
-"""Check that every registered engine exposes the shared machine-error gate."""
+"""Check textual gate identifier presence, not semantic, editorial or visual quality."""
 
 from __future__ import annotations
 
@@ -16,9 +16,14 @@ def load_contract(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def validate(contract: dict) -> list[str]:
+def validate(contract: dict, engines: set[str] | None = None) -> list[str]:
     required_ids = contract["required_ids"]
     errors: list[str] = []
+    known = {target["engine"] for target in contract["targets"]}
+    if not contract["targets"]:
+        return ["targets must not be empty"]
+    if engines is not None and (not engines or engines - known):
+        return ["engine selection must be non-empty and contain only registered engines"]
     shared = ROOT / contract["shared_reference"]
     if not shared.exists():
         errors.append(f"shared reference missing: {shared}")
@@ -30,8 +35,10 @@ def validate(contract: dict) -> list[str]:
             errors.append(f"shared reference missing {check_id}: {shared}")
 
     for target in contract["targets"]:
+        if engines is not None and target["engine"] not in engines:
+            continue
         path = Path(target["path"])
-        if not path.exists():
+        if not path.is_file():
             errors.append(f"{target['engine']}: target missing: {path}")
             continue
         text = path.read_text(encoding="utf-8")
@@ -58,16 +65,22 @@ def validate(contract: dict) -> list[str]:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("fixture", nargs="?", type=Path, default=DEFAULT_FIXTURE)
+    parser.add_argument("--engine", action="append", help="Select textual gate targets only; repeat for each engine. Omit to require all textual targets. Visual hard-ban adapters have a separate all-visual integration gate.")
     args = parser.parse_args()
-    errors = validate(load_contract(args.fixture))
+    contract = load_contract(args.fixture)
+    selected = set(args.engine) if args.engine else None
+    errors = validate(contract, selected)
     if errors:
         print("MACHINE_ERROR_GATE: FAIL")
         for error in errors:
             print(f"- {error}")
         return 1
-    print("MACHINE_ERROR_GATE: PASS")
-    print(f"- checks: {', '.join(load_contract(args.fixture)['required_ids'])}")
-    print(f"- engines: {len(load_contract(args.fixture)['targets'])}")
+    print("MACHINE_ERROR_GATE: PASS (identifier presence only)")
+    print("- semantic, editorial and visual verification: NOT ASSESSED")
+    print("- visual hard-ban adapters: separate all-visual integration gate; not checked by this command")
+    print(f"- checks: {', '.join(contract['required_ids'])}")
+    print(f"- engines: {len(selected) if selected is not None else len(contract['targets'])}")
+    print("- textual scope: " + (", ".join(sorted(selected)) if selected is not None else "all registered textual targets"))
     return 0
 
 
