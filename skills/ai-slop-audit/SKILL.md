@@ -132,6 +132,20 @@ Artefact type(s): <...>
 - Do not invent a flaw to pad the report. "This artefact is clean" is a valid, wanted verdict.
 - Mark inferences "(inference)".
 
+## Responsibility and evidence review
+
+The supplied 25 signs are not an authorship classifier. A finding requires exact artefact evidence
+and a demonstrated loss of clarity, usefulness, accuracy, or trust. Verify claim scope, date,
+source fit, transformation, limitation, and decision effect; verify that examples are labelled
+hypothetical when applicable. Keep stylistic concerns separate from fabricated evidence,
+unsupported statistics, provenance failures, and authorship questions. If evidence is unavailable,
+record `NOT_ASSESSED` rather than assuming a pass or a machine origin.
+
+## Shared references
+
+- [Responsible publishing standard](../../../skills-web-dev/references/ai-slop-responsible-publishing-standard-2026-09-11.md)
+- [25-claim responsibility assessment](../../docs/continuous-improvement/ai-slop-responsibility-assessment-2026-09-11.md)
+
 ## See also
 
 <!-- dual-compat-start -->

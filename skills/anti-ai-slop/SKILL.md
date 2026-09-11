@@ -115,6 +115,20 @@ ANTI-SLOP GUARDRAIL (inherit in every output):
 
 If any box is unticked, the output is not ready to ship.
 
+## Responsibility overlay
+
+Use the 25 signs as revision prompts only. Do not infer authorship from punctuation, bullet
+counts, ordinary vocabulary, headings, plausible names, or a detector score. For every consequential
+claim, retain scope, date, source fit, transformation, limitation, and decision consequence.
+Label hypothetical examples, preserve justified uncertainty, and remove unsupported specificity.
+Ask what the reader loses if each unit disappears, then apply ME1-ME7 with exact evidence. Keep
+style, factual, provenance, and authorship questions in separate audit fields.
+
+## Shared references
+
+- [Responsible publishing standard](../../../skills-web-dev/references/ai-slop-responsible-publishing-standard-2026-09-11.md)
+- [25-claim responsibility assessment](../../docs/continuous-improvement/ai-slop-responsibility-assessment-2026-09-11.md)
+
 ## See also
 
 <!-- dual-compat-start -->
