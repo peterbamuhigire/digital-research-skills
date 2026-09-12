@@ -104,6 +104,46 @@ A research engine never runs as a single search. It runs as **planned waves**:
 
 This skill defines when each wave fires and how outputs are stored.
 
+## Article SEO and SERP evidence standard
+
+Apply this standard before drafting any article, blog post, thought-leadership
+piece, or other search-discoverable long-form content. Search visibility is a
+research input, not evidence of a factual claim, and no research wave promises
+a ranking, citation, traffic level, or search volume.
+
+### Three-wave article study
+
+1. **Wave 1 — intent and query map.** Define the reader, decision, market,
+   language and page job. Build 3–7 related query clusters from buyer language,
+   questions, geography and the decision the article must support. Record the
+   date, provider/tool and exact queries. Collect up to five leading results per
+   cluster using an approved search/API tool; do not scrape Google result pages
+   directly and do not invent volume data.
+2. **Wave 2 — top-five reading and gap map.** Read each accessible result in the
+   chosen set, not only its snippet. Record the title, headings, format,
+   audience, evidence, sources, local relevance, calls to action, strengths and
+   missing reader jobs. Mark blocked, paywalled or otherwise unread results
+   `UNASSESSED`; never treat a snippet as a verified source.
+3. **Wave 3 — evidence-led synthesis.** Compare the result set by intent and
+   content gap, then choose a defensible angle, outline, keyword map, internal
+   links and answer-first sections. Verify every material fact against primary
+   or otherwise authoritative sources. Separate a competitor pattern from a
+   factual source, and record what remains unknown or needs later measurement.
+
+### Required article research record
+
+Store a dated record containing: market and language; decision and audience;
+exact queries and clusters; provider and access date; five-result URLs per
+cluster with read/blocked status; recurring competitor patterns; content and
+AI-answer gaps; primary evidence sources; selected terms and intent; planned
+outline/internal links; unresolved checks; and the limitation that rankings,
+citations and volumes are not guaranteed. For bilingual work, run and record
+the English and French query maps separately; translate intent, not just words.
+
+Any article request routes through this standard before drafting. Social or
+distribution copy supporting an article inherits its verified intent and source
+map, but does not turn a competitor page into proof.
+
 ## Kaizen after every wave
 
 Every wave must leave a short learning record: observation, reproducible baseline, one hypothesis, smallest reversible experiment, guardrail, result, failed-path result, and standardisation decision. Useful measures include source admission rate, verified-claim coverage, unresolved-claim count, contradiction count, duplicate-search rate, and time-to-verified-finding. These are measures to collect, not values to invent. If the experiment improves speed but weakens source diversity, independence, or verification coverage, reject it and preserve the prior standard.
