@@ -21,7 +21,9 @@ It helps teams verify claims, expose uncertainty, close evidence gaps, and produ
 
 ## Architecture & cross-cutting engines (updated 2026-06-21)
 
-## Prompt-generation capability — September 2026
+## Prompt-generation capability — 2026-09-17
+
+This release adds evidence-first candidate testing, failure-slice review, and explicit `NOT_ASSESSED` handling for volatile prompt claims.
 
 Research prompts now carry a claim-level question, source boundary, freshness
 requirement, verification method, uncertainty treatment, output schema, and

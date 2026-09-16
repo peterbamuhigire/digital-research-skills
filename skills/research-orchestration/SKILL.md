@@ -148,6 +148,10 @@ map, but does not turn a competitor page into proof.
 
 Every wave must leave a short learning record: observation, reproducible baseline, one hypothesis, smallest reversible experiment, guardrail, result, failed-path result, and standardisation decision. Useful measures include source admission rate, verified-claim coverage, unresolved-claim count, contradiction count, duplicate-search rate, and time-to-verified-finding. These are measures to collect, not values to invent. If the experiment improves speed but weakens source diversity, independence, or verification coverage, reject it and preserve the prior standard.
 
+### Prompt-engineering source intake
+
+When books or other long-form prompt material are supplied, record completeness, provenance, rights/access status, and intended use before synthesis. Admit only durable practices that add a distinct capability, or volatile claims supported by a current authoritative source. Quarantine universal performance claims, platform/model syntax, prices, context limits, framework mandates, and named-tool behaviour unless current primary evidence supports the exact scope. For a proposed engine rule, compare a baseline with a small representative fixture set, inspect failure slices and safety/accessibility effects, and record the evaluator, adapter/model, result, cost/latency effect, rollback path, and review date. An incomplete source is `NOT_ASSESSED`, not evidence.
+
 ## When to use
 
 Trigger on:
