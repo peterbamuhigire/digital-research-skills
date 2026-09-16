@@ -21,6 +21,13 @@ It helps teams verify claims, expose uncertainty, close evidence gaps, and produ
 
 ## Architecture & cross-cutting engines (updated 2026-06-21)
 
+## Prompt-generation capability — September 2026
+
+Research prompts now carry a claim-level question, source boundary, freshness
+requirement, verification method, uncertainty treatment, output schema, and
+failure status through the local [domain prompt contract](docs/ai-prompting/domain-prompt-compilation-contract.md).
+Currentness remains this engine's gate before claims are promoted.
+
 This engine no longer relies on native skill discovery — **no engine on this machine is natively discovered anymore.** Every engine, including this one, is consulted through the global routing table by globbing its `SKILL.md` files and reading them directly (resolve each engine's path per-device from the routing table; never assume an absolute path). Consult these cross-cutting engines **in addition** to this one:
 
 - **<a href="https://github.com/peterbamuhigire/design-system-skills" target="_blank" rel="noopener noreferrer">Design System Skills</a>** — the single home for ALL design, typography, UI/UX, visual-identity, and visual-formatting skills, plus the **visual/typographic** anti-AI-slop doctrine. **Referenced, not mirrored.** As of 2026-06-21 this engine's **`data-visualization` skill migrated out into Design System Skills**, which now holds the canonical, more complete copy. This engine references that repository for all canonical font/typography/colour/chart doctrine rather than holding its own.

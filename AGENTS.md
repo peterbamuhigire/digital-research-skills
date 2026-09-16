@@ -162,6 +162,10 @@ Load [`docs/continuous-improvement/english-collocations-and-lexical-precision-20
 
 Research prose must be exact, sourced, candid about inference, and enjoyable to read. Do not use language polish to conceal a source gap. Record the reader, purpose, source status, inference labels, terms checked, proof status, unresolved gaps, reviewer, and date in the output evidence record.
 
+## DOMAIN PROMPT GENERATION CONTRACT
+
+For a prompt handoff, read the local [domain prompt contract](docs/ai-prompting/domain-prompt-compilation-contract.md). Generate a ready-to-paste research prompt with decision, question, scope, time window, source boundary, evidence requirements, source method, uncertainty, support states, locators, confidence, review date, and acceptance checks. Never invent sources, quotes, dates, statistics, or currentness. **Ready-to-paste prompt:** include source IDs, assumptions, and NOT ASSESSED gaps. **Failure action:** quarantine the unsupported claim and narrow or re-research it.
+
 ## PORTFOLIO CRAFT CONTRACT
 
 Load `C:\wamp64\www\chwezi-engine-agents\docs\operations\portfolio-craft-standard-2026-09-04.md` when available. Research in small claim-bearing waves: frame the decision and evidence boundary, select one cohort or claim set, inspect provenance and contradictions, collect and evaluate sources, verify support, write the smallest useful synthesis, challenge it, refine, and record the result. No report, bibliography, or recommendation is complete because it is long; every load-bearing claim needs a source, support state, uncertainty, and verification trail. Apply `Observe -> Baseline -> Select -> Experiment -> Check -> Standardise -> Teach -> Re-measure` to kaizen itself. Missing source, locator, currentness, reviewer, or product evidence is `NOT ASSESSED`, never a pass.
