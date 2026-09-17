@@ -38,7 +38,7 @@ the central registry lives in `C:\wamp64\www\skills-web-dev\docs\engine-control-
 
 Every Kaizen audit, skill edit, reference update, validator change, and
 standardisation decision MUST begin with this Digital Research Engine at
-`C:\wamp64\www\digital-research-skills`. Read the `source-evaluation` and
+`C:\wamp64\www\digital-research-engine`. Read the `source-evaluation` and
 `source-verification` skills and
 `docs/continuous-improvement/kaizen-currentness-gate.md` before admitting a
 current claim.
@@ -68,11 +68,11 @@ provenance, completeness, limitations, and whether the material is current befor
 1. Load `skills/source-evaluation/SKILL.md` + `skills/source-evaluation/references/evidence-discipline.md` → enforce throughout
 2. Load `skills/research-orchestration/SKILL.md` → drives wave planning
 3. For each cohort: dispatch a research sub-task with the standard brief structure
-4. After each wave: run `source-verification` and `gap-analysis`
+4. After each wave: run `source-verification` and gap analysis via `analytic-tradecraft`
 5. Before synthesis or final drafting: run `skills/critical-reasoning-and-argument/SKILL.md` so claims, warrants, assumptions, countercases, implications, and business-sense checks are visible
-6. After all waves: run `cross-cohort-synthesis` (orchestrator only)
+6. After all waves: run cross-cohort synthesis via `mind-mapping-and-synthesis` (orchestrator only)
 7. If the final output is a **proposal** (donor investment case, policy memo, bid, EoI, pitch deck, Cabinet memo, Parliamentary briefing, white paper): route the drafting stage through the standalone proposal engine at `C:\wamp64\www\proposal-skills\skills\SKILL.md`, then follow its section and cross-cutting routes. Load exactly one profile from `C:\wamp64\www\proposal-skills\skills\profiles-sectors\profiles\SKILL.md` before drafting.
-8. Generate Word doc via `research-report-builder` → `python-document-generation`
+8. Generate Word doc via `research-output-formats` → `python-document-generation`
 9. Apply `skills/anti-ai-slop/SKILL.md` in real time on every output, and run `skills/ai-slop-audit/SKILL.md` after each major iteration and as the final ship gate. Outputs must read as if a professional human researcher wrote them; grade F (fabricated stat/citation, viewpoint-free section, template uniformity, banned vocabulary) blocks delivery.
 
 ## Skill loading
@@ -129,7 +129,7 @@ verification and review dates; overdue records block release.
 
 - Discover active skills from the filesystem below `skills/`. The standalone proposal engine is routed through the global engine table and is not part of this repository's catalogue. Do not use a README table as inventory.
 - Follow `docs/skill-authoring-standard.md` and begin new skills from `templates/skill-template/SKILL.md`.
-- Preserve the 58-skill active catalogue unless an independently justified routing change requires a count change.
+- Preserve the 59-skill active catalogue unless an independently justified routing change requires a count change.
 - Run `python -X utf8 scripts/skill_contract_validator.py --baseline tests/skill-engine/quality-baseline.json`, `python -X utf8 scripts/routing_smoke_test.py`, and `python -X utf8 scripts/validate_engine.py` before release.
 - Run the canonical `quick_validate.py` against every changed skill directory. A missing capability or unavailable check is `not assessed`, never passed.
 - Run `python -X utf8 scripts/validate_machine_error_gate.py` after any anti-slop, editorial, or cross-engine gate change. The validator checks ME1-ME7 and AS1-AS7 coverage plus the visual pressure fixture; semantic and visual findings still require human evidence review.

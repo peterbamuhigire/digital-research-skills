@@ -239,7 +239,7 @@ Organize manuals with a clear hierarchy:
 
 ## Tool Permissions
 
-- Allowed: `read_file`, `list_dir`, `grep_search`, `file_search`, `create_file`, `apply_patch`
+- Allowed: file reading, directory listing, content search, file search, file creation, and file editing (Claude Code: `Read`, `Glob`, `Grep`, `Write`, `Edit`)
 - Use edits only for manuals and `/public/user-manuals.php` scaffolding
 
 ## Output Formatting
