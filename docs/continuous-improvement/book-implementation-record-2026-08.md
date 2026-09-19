@@ -39,3 +39,29 @@ This record documents what was implemented from the seven books selected for the
 
 Historical and partial sources remain labeled. No raw book text, OCR, or reconstructed content was copied into either repository. Commands and current platform/security/legal claims remain subject to live source verification and real-host validation.
 
+## Phase 1 Kaizen implementation slice — 2026-09-19
+
+The bounded research-engine slice implements B09-A01, B13-A03, and the
+research-owned portion of B14-A01. B09-A01 adds the index-layer evidence
+contract and hash-preservation check. B13-A03 adds the objection-response gate:
+missing objections and alternatives block, while an unresolved objection stays
+visible and lowers confidence. B14-A01 adds AI-search claim disposition with
+distinct mention/citation/referral/conversion observation types, fail-closed
+guarantees, weak-evidence quarantine, and stale-currentness handling.
+
+The implementation is deliberately read-only and synthetic. The owning helper,
+fixture, focused test, and routes are documented in the repository README. The
+focused command is:
+
+```powershell
+python -m unittest -v engine.tests.test_kaizen_contracts
+```
+
+The source-evaluation, source-verification, and critical-reasoning references
+remain the human review contracts; a passing shape check does not certify
+semantic support, current platform behaviour, or ethical judgement. B14-A02 is
+not implemented here because the plan assigns its canonical path to
+`website-skills`. Live model-release/catalogue evidence for this Kaizen run is
+`NOT_ASSESSED`; the local Codex policy check passed and no model policy or
+configuration was changed.
+

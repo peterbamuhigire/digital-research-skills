@@ -139,6 +139,7 @@ Both tools return a non-zero exit code when release readiness fails.
 ## References
 
 - Load `references/verification-routine.md` for the verification checklist and manifest.
+- Load `references/ai-search-claim-disposition.md` when an observation or recommendation concerns AI-search mentions, citations, referrals, or conversions.
 - Load `references/research-product-audit.md` before release of a research product.
 
 <!-- dual-compat-end -->

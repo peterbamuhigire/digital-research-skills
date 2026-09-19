@@ -1,0 +1,121 @@
+{
+  "known_source_ids": ["SRC-KAIZEN-001", "SRC-KAIZEN-002"],
+  "index_records": {
+    "valid": {
+      "subject_unit": "claim",
+      "representation_method": "reviewed index record",
+      "context": {"scope": "TEST ONLY: bounded fixture", "as_of": "2026-09-19"},
+      "index_version": "idx-2026-09-19.1",
+      "blind_spots": [{"description": "TEST ONLY: no live source access", "owner": "fixture reviewer"}],
+      "source": {"source_id": "SRC-KAIZEN-001", "source_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
+      "interpretations": [{
+        "id": "INT-KAIZEN-001",
+        "text": "TEST ONLY: interpretation linked to a bounded source.",
+        "source_id": "SRC-KAIZEN-001",
+        "source_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "locator": {"kind": "line", "value": "L10-L12"}
+      }]
+    },
+    "missing_context": {
+      "subject_unit": "claim",
+      "representation_method": "reviewed index record",
+      "context": {},
+      "index_version": "idx-2026-09-19.1",
+      "blind_spots": [{"description": "TEST ONLY: bounded fixture", "owner": "fixture reviewer"}],
+      "source": {"source_id": "SRC-KAIZEN-001", "source_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
+      "interpretations": [{
+        "id": "INT-KAIZEN-002",
+        "text": "TEST ONLY: context is intentionally absent.",
+        "source_id": "SRC-KAIZEN-001",
+        "source_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "locator": {"kind": "line", "value": "L10-L12"}
+      }]
+    },
+    "unsupported_locator": {
+      "subject_unit": "claim",
+      "representation_method": "reviewed index record",
+      "context": {"scope": "TEST ONLY: bounded fixture"},
+      "index_version": "idx-2026-09-19.1",
+      "blind_spots": [{"description": "TEST ONLY: bounded fixture", "owner": "fixture reviewer"}],
+      "source": {"source_id": "SRC-KAIZEN-001", "source_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
+      "interpretations": [{
+        "id": "INT-KAIZEN-003",
+        "text": "TEST ONLY: unsupported locator vocabulary.",
+        "source_id": "SRC-KAIZEN-001",
+        "source_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "locator": {"kind": "screen-coordinate", "value": "x=2,y=4"}
+      }]
+    }
+  },
+  "objection_records": {
+    "valid": {
+      "conclusion": "TEST ONLY: bounded conclusion.",
+      "strongest_objection": "TEST ONLY: knowledgeable dissent challenges the conclusion.",
+      "alternative": "TEST ONLY: a competing explanation is retained.",
+      "response": {"outcome": "limits", "text": "TEST ONLY: evidence narrows the conclusion."},
+      "source_ids": ["SRC-KAIZEN-001"]
+    },
+    "missing_objection": {
+      "conclusion": "TEST ONLY: bounded conclusion.",
+      "alternative": "TEST ONLY: a competing explanation is retained.",
+      "response": {"outcome": "limits", "text": "TEST ONLY: response is present."},
+      "source_ids": ["SRC-KAIZEN-001"]
+    },
+    "unresolved": {
+      "conclusion": "TEST ONLY: bounded conclusion.",
+      "strongest_objection": "TEST ONLY: objection remains live.",
+      "alternative": "TEST ONLY: competing explanation remains live.",
+      "response": {"outcome": "open", "text": "TEST ONLY: evidence does not resolve this."},
+      "source_ids": ["SRC-KAIZEN-001"]
+    },
+    "fabricated_source": {
+      "conclusion": "TEST ONLY: bounded conclusion.",
+      "strongest_objection": "TEST ONLY: objection is recorded.",
+      "alternative": "TEST ONLY: alternative is recorded.",
+      "response": {"outcome": "defeats", "text": "TEST ONLY: response is recorded."},
+      "source_ids": ["SRC-NOT-IN-REGISTER"]
+    }
+  },
+  "ai_search_claims": {
+    "valid": {
+      "text": "TEST ONLY: a citation was observed for the bounded prompt set.",
+      "disposition": "current_supported",
+      "observation_type": "citation",
+      "source_ids": ["SRC-KAIZEN-001"],
+      "source_scope": "TEST ONLY: synthetic prompt observation",
+      "accessed_at": "2026-09-19",
+      "review_after": "2026-12-19",
+      "limitation": "TEST ONLY: directional fixture; no market-share inference.",
+      "evidence_strength": "moderate"
+    },
+    "weak_evidence": {
+      "text": "TEST ONLY: a weak prompt sample is retained as a gap.",
+      "disposition": "partial",
+      "observation_type": "mention",
+      "source_ids": ["SRC-KAIZEN-001"],
+      "evidence_strength": "weak"
+    },
+    "stale": {
+      "text": "TEST ONLY: a current claim with an overdue review date.",
+      "disposition": "current_supported",
+      "observation_type": "referral",
+      "source_ids": ["SRC-KAIZEN-001"],
+      "source_scope": "TEST ONLY: synthetic referral observation",
+      "accessed_at": "2026-09-01",
+      "review_after": "2026-09-18",
+      "limitation": "TEST ONLY: stale fixture.",
+      "evidence_strength": "moderate"
+    },
+    "guarantee": {
+      "text": "TEST ONLY: this tactic guarantees recommendation inclusion.",
+      "disposition": "current_supported",
+      "observation_type": "mention",
+      "source_ids": ["SRC-KAIZEN-001"],
+      "source_scope": "TEST ONLY: synthetic observation",
+      "accessed_at": "2026-09-19",
+      "review_after": "2026-12-19",
+      "limitation": "TEST ONLY: guarantees are prohibited.",
+      "evidence_strength": "strong"
+    }
+  }
+}

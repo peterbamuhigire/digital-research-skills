@@ -388,6 +388,46 @@ reproducible end-to-end engagement exist. The next planned experiment is a
 consumer-facing coverage decision record, followed by the merge population
 reconciliation fixture.
 
+### Phase 1 Kaizen routes (2026-09-19)
+
+The research engine now owns three bounded book-study contracts. The
+source-evaluation route uses
+`skills/source-evaluation/references/index-layer-evidence.md` for subject unit,
+representation method, context, index version, blind spots, source hash and
+source locators. The critical-reasoning route uses
+`skills/critical-reasoning-and-argument/references/objection-response-gate.md`
+to preserve the strongest objection and alternative; unresolved objections
+lower confidence and unknown source references block release. The
+source-verification route uses
+`skills/source-verification/references/ai-search-claim-disposition.md` to keep
+durable synthesis, current-supported claims, inference, partial evidence and
+`NOT_ASSESSED` separate, with mention, citation, referral and conversion as
+distinct observations.
+
+The deterministic shape checks are read-only and live in
+`tools/verification/kaizen_contracts.py`. Synthetic normal and failure cases
+are in `tests/fixtures/kaizen-contracts.json` and
+`engine/tests/test_kaizen_contracts.py`. Run the focused contract checks with:
+
+```powershell
+python -m unittest -v engine.tests.test_kaizen_contracts
+```
+
+The full native checks remain:
+
+```powershell
+python -X utf8 scripts\skill_contract_validator.py --baseline tests\skill-engine\quality-baseline.json
+python -X utf8 scripts\routing_smoke_test.py
+python -X utf8 scripts\validate_engine.py
+python -X utf8 scripts\validate_source_currency.py tests\fixtures\source-currency.json
+```
+
+B14-A02 is intentionally out of scope for this repository because its
+proposed owning path is in `website-skills`; no cross-engine file was changed.
+Semantic source support, live AI-search behaviour, and the mandatory current
+model-release/catalogue comparison remain `NOT_ASSESSED` until an authorised
+reviewer and current primary evidence are available.
+
 ## Agent runtime safety — 2026-09-07
 
 [`docs/agent-runtime-safety.md`](docs/agent-runtime-safety.md) adds a

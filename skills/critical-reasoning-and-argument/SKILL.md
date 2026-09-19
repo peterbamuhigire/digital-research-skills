@@ -67,6 +67,7 @@ Every output using this skill must be:
 | Reference | Load when |
 |---|---|
 | `references/reasoning-protocol.md` | Always; universal argument map, inference tests, fallacy audit, and ship gate |
+| `references/objection-response-gate.md` | Material findings, recommendations, comparisons, or causal claims that require a documented strongest objection and alternative |
 | `references/essential-questions-mental-models-strategic-logic.md` | High-stakes research, business analysis, proposals, plans, recommendations, strategy, design thinking, feasibility, and any output that must show serious analysis |
 | `references/audience-action-forms.md` | Choosing structure, tone, and delivery form for academic, intelligence, market, history, business, policy, legal, technical, or executive outputs |
 | `references/literature-review-and-thesis-hardening.md` | Academic writing, literature reviews, proposals, theses, dissertations, and postgraduate research design |
