@@ -20,6 +20,17 @@ cd digital-research-engine
 
 This engine is the one every other domain engine names as a cross-cutting dependency, so its own natural sister engines run the other direction — the engines that route claims *into* it. Three of them, each an independent, optional install, never a hard dependency: **`chwezi-accounting-doctrine`**, to which this engine's own README already routes finance and accounting work outside its remit ("finance and accounting work should be routed with the Chwezi Accounting Doctrine, which remains the source of truth for that domain"); **`proposal-skills`**, which this engine's own `CLAUDE.md` names directly under its Proposal-output trigger — final-drafting for a donor investment case, bid response, EOI, or white paper is handed to the standalone proposal engine once research is complete; and **`design-system-skills`**, consulted for all font, layout, colour, and visual-formatting decisions on the DOCX research reports this engine generates via `professional-word-output`/`python-document-generation`.
 
+## Content integrity
+
+This repository contains no client names, client data, or project-specific
+work product; client and project directories are excluded from version
+control by design (see `.gitignore`). Users installing this engine should
+still exercise their own due diligence — you can ask Claude Code or Codex to
+run a security scan of this engine, its skills, and its reference files
+before relying on it in a sensitive environment (for example: "scan this
+repository for hardcoded secrets, personal paths, or unexpected network
+calls").
+
 ## Capabilities
 
 | Category | Skills | What it covers |

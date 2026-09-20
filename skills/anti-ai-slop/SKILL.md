@@ -126,7 +126,7 @@ style, factual, provenance, and authorship questions in separate audit fields.
 
 ## Shared references
 
-- [Responsible publishing standard](../../../skills-web-dev/references/ai-slop-responsible-publishing-standard-2026-09-11.md)
+- [Responsible publishing standard](../../../chwezi-dev-engine/references/ai-slop-responsible-publishing-standard-2026-09-11.md)
 - [25-claim responsibility assessment](../../docs/continuous-improvement/ai-slop-responsibility-assessment-2026-09-11.md)
 
 ## See also

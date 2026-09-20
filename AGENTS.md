@@ -32,7 +32,7 @@ The package may read the router, discover skills, inspect Git, and run only decl
 
 The shared agent, command, hook, evidence, and handoff contract is adapted to
 research in [`docs/control-plane-adoption.md`](docs/control-plane-adoption.md);
-the central registry lives in `C:\wamp64\www\skills-web-dev\docs\engine-control-plane.json`.
+the central registry lives in `C:\wamp64\www\chwezi-dev-engine\docs\engine-control-plane.json`.
 
 ## Rules
 

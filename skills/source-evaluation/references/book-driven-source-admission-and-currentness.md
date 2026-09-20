@@ -16,7 +16,7 @@ Use authoritative current sources for time-sensitive claims: standards bodies, r
 
 ## Portfolio register
 
-The 2026-09 book wave is controlled by the portfolio currentness register at `C:\wamp64\www\skills-web-dev\docs\source-registers\skills-engine-currentness-2026-09.json`. Validate it with `validate_source_currency.py` before release and refresh time-sensitive entries at or before their review dates.
+The 2026-09 book wave is controlled by the portfolio currentness register at `C:\wamp64\www\chwezi-dev-engine\docs\source-registers\skills-engine-currentness-2026-09.json`. Validate it with `validate_source_currency.py` before release and refresh time-sensitive entries at or before their review dates.
 
 ## Research output
 

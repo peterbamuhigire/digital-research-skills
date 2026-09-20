@@ -5,7 +5,7 @@
   "overlay_ids": ["AS1", "AS2", "AS3", "AS4", "AS5", "AS6", "AS7"],
   "visual_hard_ban_phrases": ["purple gradient", "glassmorphism", "neon glow", "AI-beige", "editorial scaffolding", "decorative motion"],
   "visual_targets": [
-    {"engine": "engineering-visual", "path": "C:/wamp64/www/skills-web-dev/skills/sdlc-meta/anti-ai-slop/SKILL.md"},
+    {"engine": "engineering-visual", "path": "C:/wamp64/www/chwezi-dev-engine/skills/sdlc-meta/anti-ai-slop/SKILL.md"},
     {"engine": "website-design", "path": "C:/wamp64/www/website-skills/skills/build/design-system/references/ai-slop-prevention.md"},
     {"engine": "website-visual-qa", "path": "C:/wamp64/www/website-skills/skills/quality-gates/visual-qa/references/slop-rules.md"},
     {"engine": "design-taxonomy", "path": "C:/wamp64/www/design-system-skills/doctrine/references/ai-slop-taxonomy.md"},
@@ -18,7 +18,7 @@
     {"engine": "social-media", "path": "C:/wamp64/www/social-media-skills/skills/ai-marketing/anti-ai-slop/SKILL.md"},
     {"engine": "linux", "path": "C:/wamp64/www/linux-skills/AGENTS.md"},
     {"engine": "proposal", "path": "C:/wamp64/www/proposal-skills/skills/meta/anti-ai-slop/SKILL.md"},
-    {"engine": "engineering", "path": "C:/wamp64/www/skills-web-dev/skills/sdlc-meta/anti-ai-slop/SKILL.md"},
+    {"engine": "engineering", "path": "C:/wamp64/www/chwezi-dev-engine/skills/sdlc-meta/anti-ai-slop/SKILL.md"},
     {"engine": "accounting", "path": "C:/wamp64/www/chwezi-accounting-doctrine/governance/anti-slop-finance-output.md"},
     {"engine": "design", "path": "C:/wamp64/www/design-system-skills/doctrine/references/ai-slop-taxonomy.md"},
     {"engine": "digital-research", "path": "C:/wamp64/www/digital-research-skills/skills/anti-ai-slop/SKILL.md"},
