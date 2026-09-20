@@ -1,0 +1,21 @@
+{
+  "name": "chwezi-research",
+  "owner": { "name": "Peter Bamuhigire", "email": "peter.bamuhigire@gmail.com" },
+  "metadata": { "description": "Chwezi digital research engine — source evaluation and verification, evidence-claim graphs, calibration, OSINT, literature review, and evidence-first research orchestration" },
+  "plugins": [
+    {
+      "name": "research",
+      "source": "./",
+      "description": "59 skills for evidence-first research: source evaluation/verification, evidence-claim graphs, calibration and forecasting, OSINT, literature review, and decision-support synthesis",
+      "version": "1.0.0",
+      "author": { "name": "Peter Bamuhigire" },
+      "homepage": "https://github.com/chwezi/digital-research-engine",
+      "repository": "https://github.com/chwezi/digital-research-engine",
+      "license": "MIT",
+      "keywords": ["research", "osint", "evidence", "source-verification", "literature-review"],
+      "category": "research",
+      "tags": ["research", "evidence", "osint"],
+      "strict": false
+    }
+  ]
+}

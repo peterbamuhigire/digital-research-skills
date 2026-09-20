@@ -10,6 +10,12 @@ metadata:
 
 # Dataset discovery and analysis
 
+> **Drift-prone skill.** Named portal, API, and hub endpoints (data.gov, KNBS, UBOS,
+> NBS, NISR, Eurostat, World Bank/IMF/OECD/WHO/UNICEF/FAOSTAT, HuggingFace Datasets,
+> Kaggle) change URLs, API shapes, auth requirements, and quotas over time. Verify the
+> current endpoint and API docs before promising coverage or quoting a live dataset
+> count.
+
 <!-- dual-compat-start -->
 ## Use When
 

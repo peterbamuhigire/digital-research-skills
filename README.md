@@ -1,23 +1,47 @@
 # digital-research-engine
 
-This engine turns a defined question into a decision-ready research product through claim-level source evaluation, currentness checks, verification, uncertainty handling, synthesis, and resumable handoffs. It works in small evidence-bearing waves and claim sets, preserving provenance and contradiction rather than using a long report or polished citation list as a substitute for verified understanding.
+**Digital Research Engine** (local folder `digital-research-engine`; GitHub repository `digital-research-skills`) is a 59-skill, flat (no category subfolders) engine that turns a defined question into a decision-ready research product through claim-level source evaluation, currentness checks, verification, uncertainty handling, synthesis, and resumable handoffs. It works in small evidence-bearing waves and claim sets, preserving provenance and contradiction rather than using a long report or polished citation list as a substitute for verified understanding; its one overriding rule is that no statistic, quote, name, court case, statute, organisation, or URL appears in output unless traceable to a real source, enforced by the mandatory `source-evaluation` skill and its evidence-discipline hard-constraint clause. Researchers, analysts, consultants, journalists, academics, policy and programme teams, product and investment decision-makers, and client-facing teams use it for investigations, due diligence, OSINT, market and trend work, policy and regulatory research, comparative analysis, primary research, and academic or executive reporting. Concrete use cases: running a multi-wave OSINT or due-diligence investigation with a tiered source register and an `EVIDENCE-AUDIT.md`; producing a calibrated forecast or Heuer/Pherson-style structured analytic-techniques assessment before a decision memo; building an academic dissertation or Kenya/Uganda-specific academic research output to local citation and formatting standards; and generating a client-ready Word-format research report that passes the mandatory `ai-slop-audit` ship gate. It is a cross-cutting engine — every domain engine in this registry consults it whenever current or uncertain external facts, source verification, benchmarking, literature review, or OSINT work is required, rather than fabricating or caching such claims locally.
 
-Researchers, analysts, consultants, journalists, academics, policy and programme teams, product and investment decision-makers, and client-facing teams use it for investigations, due diligence, OSINT, market and trend work, policy and regulatory research, comparative analysis, primary research, and academic or executive reporting. It routes each question to an appropriate research type, cohort, method, and audience rather than treating every request as the same report.
+## Installation
 
-It helps teams verify claims, expose uncertainty, close evidence gaps, and produce outputs suited to the decision and audience. It does not replace subject-matter, legal, accounting, tax, or other professional review; finance and accounting work should be routed with the <a href="https://github.com/peterbamuhigire/chwezi-accounting-doctrine" target="_blank" rel="noopener noreferrer">Chwezi Accounting Doctrine</a>, which remains the source of truth for that domain.
+```
+# Native Claude Code plugin
+/plugin marketplace add https://github.com/peterbamuhigire/digital-research-skills
+/plugin install research@chwezi-research
 
-> **Repository:** <a href="https://github.com/peterbamuhigire/digital-research-skills" target="_blank" rel="noopener noreferrer">Digital Research Skills</a>
+# npm-free, from a clone
+git clone https://github.com/peterbamuhigire/digital-research-skills
+cd digital-research-engine
+./install.sh --scope project      # macOS/Linux/Git Bash
+.\install.ps1 -scope project      # Windows PowerShell
+```
 
-## Capability map
+`install.sh`/`install.ps1` delegate to the vendored `scripts/install-engine.js` (Node ≥18), which also supports `--dry-run` (prints the plan, writes nothing), `--json`, and `--scope user` (default, `~/.claude`) as an alternative to `--scope project` (`.claude` under the current directory).
 
-| Need | Primary route |
-|---|---|
-| Source evaluation, provenance, currentness, and verification | `skills/source-evaluation/` and `skills/source-verification/` |
-| Research design, search, orchestration, and primary research | `skills/research-design/`, `skills/research-techniques/`, `skills/research-orchestration/`, and `skills/primary-research/` |
-| Due diligence, OSINT, legal, policy, and investigative work | `skills/due-diligence/`, `skills/osint-investigation/`, `skills/online-legal-research/`, and related routes |
-| Analysis, systems thinking, synthesis, and decision support | `skills/analytic-tradecraft/`, `skills/systems-thinking-and-mental-models/`, and `skills/mind-mapping-and-synthesis/` |
-| Academic, executive, consulting, proposal, and business writing | `skills/academic-writing/`, `skills/executive-communication/`, `skills/consulting-delivery/`, and output routes |
-| Data quality, datasets, scraping, and research products | `skills/data-quality-pipeline/`, `skills/dataset-discovery-and-analysis/`, and `skills/web-scraping-foundations/` |
+This engine is the one every other domain engine names as a cross-cutting dependency, so its own natural sister engines run the other direction — the engines that route claims *into* it. Three of them, each an independent, optional install, never a hard dependency: **`chwezi-accounting-doctrine`**, to which this engine's own README already routes finance and accounting work outside its remit ("finance and accounting work should be routed with the Chwezi Accounting Doctrine, which remains the source of truth for that domain"); **`proposal-skills`**, which this engine's own `CLAUDE.md` names directly under its Proposal-output trigger — final-drafting for a donor investment case, bid response, EOI, or white paper is handed to the standalone proposal engine once research is complete; and **`design-system-skills`**, consulted for all font, layout, colour, and visual-formatting decisions on the DOCX research reports this engine generates via `professional-word-output`/`python-document-generation`.
+
+## Capabilities
+
+| Category | Skills | What it covers |
+|---|---|---|
+| Core evidence & research orchestration | 14 | `research-orchestration`, `source-evaluation`, `source-verification`, `evidence-claim-graph`, `agentic-research-operations`, `research-design`, `research-techniques`, `primary-research`, `calibration-and-forecasting`, `decision-support-analysis`, `analytic-tradecraft`, `analytical-report-shapes`, `critical-reasoning-and-argument`, `systems-thinking-and-mental-models` |
+| Writing, editorial & output craft | 12 | `business-writing`, `executive-communication`, `report-and-proposal-craft`, `professional-word-output`, `python-document-generation`, `research-output-formats`, `manual-guide`, `doc-architect`, `east-african-english`, `mind-mapping-and-synthesis`, `knowledge-productization`, `consulting-delivery` |
+| Quality & governance gates | 11 | `anti-ai-slop`, `ai-slop-audit`, `skill-safety-audit`, `skill-writing`, `skill-composition-standards`, `skill-taxonomy-and-routing`, `validation-contract`, `doctrine-spine`, `capability-matrix`, `update-claude-documentation`, `markdown-lint-cleanup` |
+| Investigative specialisms | 10 | `osint-investigation`, `pi-investigation`, `online-legal-research`, `due-diligence`, `dataset-discovery-and-analysis`, `knowledge-mining`, `data-quality-pipeline`, `quantitative-modelling`, `scraping-engineering-python`, `web-scraping-foundations` |
+| Academic & regional research | 6 | `academic-writing`, `academic-reporting-standards`, `dissertation-writing-process`, `kenya-academic-research`, `uganda-academic-research`, `peer-review-loop` |
+| Engineering/requirements support | 6 | `00-meta-initialization`, `project-requirements`, `systems-process-requirements`, `spec-architect`, `excel-spreadsheets`, `ai-evaluation-and-data-flywheel` |
+
+Total: 59 `SKILL.md` files under `skills/` (flat — one directory per skill, no category subfolders).
+
+## References
+
+- Mustafa, A. et al. *Everything Claude Code* (ECC). GitHub: affaan-m/ECC, 2026. This engine adapts several named ECC skills: `skills/academic-reporting-standards/SKILL.md` states its literature-review approach comes from "ECC's `scientific-thinking-literature-review/SKILL.md`"; `skills/source-verification/SKILL.md` and `skills/web-scraping-foundations/SKILL.md` are grounded in "ECC's `market-research/SKILL.md`" (and, for web-scraping, also `deep-research/SKILL.md`); and `skills/peer-review-loop/references/review-protocol.md` states its batch-sampling verification approach is "adapted" from "ECC's `santa-method` skill," including ECC's own reported ~15-20% verification-cost reduction figure for that pattern.
+- Heuer, Richards J. Jr., and Pherson, Randolph H. *Structured Analytic Techniques for Intelligence Analysis*. CQ Press / SAGE, multiple editions. Tier 1 canonical source for `skills/analytic-tradecraft/references/heuer-pherson-sats.md`, which implements a runnable mini-protocol for the catalogue's engine-priority technique subset.
+- Companion sources named in that same reference file: Davis, Jack. "Why Bad Things Happen to Good Analysts," Ch. 10 in George, Roger Z., and Bruce, James B. (eds.), *Analyzing Intelligence* (2008); Heuer, Richards J. Jr., Ch. 16 of the same volume (computer-aided ACH); Bruce, James B., Ch. 11 of the same volume (Iraq WMD case).
+- Heuer, Richards J. Jr. *Psychology of Intelligence Analysis*. CIA Center for the Study of Intelligence — named in `docs/analysis/initial-evaluation/99-sources.md`'s Tier 1 consolidated source list alongside Sherman Kent's *Words of Estimative Probability* (CIA), used as foundational tradecraft input for this engine's calibration and analytic-tradecraft doctrine.
+- Tetlock, Philip E. *Expert Political Judgment: How Good Is It? How Can We Know?* (New edition) — named as a research input in `docs/analysis/initial-evaluation/99-sources.md`'s consolidated source list, underpinning the engine's calibration-and-forecasting doctrine.
+
+This engine has no `book-extractions/` directory (unlike `business-plan-skills` and `srs-skills`); its non-ECC citations instead live in skill `references/` files and `docs/analysis/initial-evaluation/99-sources.md`, both cited above with what those files state.
 
 ## Architecture & cross-cutting engines (updated 2026-06-21)
 

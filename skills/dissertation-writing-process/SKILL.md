@@ -78,7 +78,9 @@ responsible use of generative AI.
    reader: chronological, big-to-small, or cause-and-effect.
 4. Write the literature review as an argument. Group sources by the research
    problem, theory, method, or contradiction; do not produce a source-by-source
-   catalogue.
+   catalogue. Decide the rigor level first — see `academic-reporting-standards`'
+   rigor-level defaulting: scoping review by default for exploratory work,
+   systematic review for publication-bound or clinical claims.
 5. Write the methodology so another researcher can understand design,
    population, sampling, measures or instruments, collection, analysis,
    ethics, positionality, and limits.

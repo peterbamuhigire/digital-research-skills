@@ -34,6 +34,13 @@ The shared agent, command, hook, evidence, and handoff contract is adapted to
 research in [`docs/control-plane-adoption.md`](docs/control-plane-adoption.md);
 the central registry lives in `C:\wamp64\www\skills-web-dev\docs\engine-control-plane.json`.
 
+## Rules
+
+Always-on cross-cutting principles live in `rules/` — see `rules/README.md`.
+Load `rules/common/core.md` alongside the routed skill for any non-trivial task;
+it is short and does not replace the skill, only sets the baseline the skill
+operates within.
+
 ## Mandatory Digital Research currentness gate for Kaizen
 
 Every Kaizen audit, skill edit, reference update, validator change, and

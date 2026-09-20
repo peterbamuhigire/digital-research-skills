@@ -44,6 +44,11 @@ metadata:
 - Dissent is preserved until resolved.
 - Every accepted change has a reason.
 - Every rejected challenge has a reason.
+- When a rubric-based review (source audit, method review, or the dual-reviewer
+  pass/fail contract) includes a criterion that does not apply to the artefact under
+  review, the reviewer marks it `N/A` explicitly and states why. A criterion is never
+  silently scored as if it applied, and `N/A` is never used to avoid scoring a
+  criterion that does apply.
 
 
 ## Peer Review Loop Existing Failure Notes
@@ -69,6 +74,15 @@ metadata:
 ## References
 
 - Load `references/review-protocol.md` for review modes and disposition.
+- Load `references/review-protocol.md`'s **Dual-Reviewer Convergence Contract** and
+  **Stratified Batch Sampling** sections whenever the review mandate reduces to a
+  pass/fail rubric (citation checks, claim-source audits, compliance sweeps): two
+  independent reviewers with no shared context, both must PASS, fresh reviewers each
+  fix round, max 3 iterations then escalate to a human. Use stratified sampling
+  (10-15% of the batch, failure-type classification, batch-fix the pattern, re-sample)
+  instead of all-or-nothing verification once a citation batch exceeds roughly 30-50
+  items — see the reference for the escalation conditions that still require full
+  verification.
 
 ## Inputs
 

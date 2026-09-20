@@ -58,6 +58,29 @@ Do **not** use on: executive summaries (use `executive-communication`), business
 | **Research proposal** | `references/brause-dissertation-craft.md` + `references/originality-claim.md` + `references/methodology-justification-checklist.md` |
 | **Journal article (any)** | Reporting-standard for the study type + `references/findings-interpretation-criteria.md` |
 
+## Rigor-level defaulting for literature review
+
+Source: ECC's `scientific-thinking-literature-review/SKILL.md`. Before the literature
+review step in a dissertation chapter (Brause step 4 above), a standalone review, or
+any `research-design` literature-scan task, decide the rigor level up front instead
+of leaving it ambiguous — the level determines whether PRISMA applies and how the
+search must be logged:
+
+- **Narrative review** — broad synthesis for orientation; no reproducible protocol
+  required.
+- **Scoping review** — maps concepts, methods, and evidence gaps; default for
+  exploratory work with no publication or clinical claim attached.
+- **Systematic review** — predefined protocol, reproducible search, explicit
+  screening and exclusion criteria, PRISMA-compliant (`references/equator-decision-tree.md`).
+  Default for any work intended for publication or carrying a clinical claim.
+- **Meta-analysis** — systematic review plus quantitative effect aggregation.
+
+Ask the user which level is needed when the task is ambiguous. If unspecified,
+**default to a scoping review for exploratory work and a systematic review for
+publication-bound or clinical-claim work** — do not proceed with an undeclared rigor
+level, since the reproducibility and citation-audit burden differs materially between
+the two.
+
 ## The Brause practical-craft layer — one-paragraph summary
 
 Rita S. Brause's *Writing Your Doctoral Dissertation: Invisible Rules for Success* (1999) names the unwritten conventions that determine completion at Ivy / Oxbridge / LSE-equivalent institutions. Faculty see the dissertation as an apprenticeship (proof of capacity for scholarly work), not as a final examination on coursework. The chair-student relationship is quasi-parental and quasi-political; choice of chair predicts completion more than choice of topic. Students self-initiate every interaction; silence is interpreted as progress. Work in parallel — never wait for a chapter to come back. The proposal is a contract once approved, but new administrations can change the rules; finish fast. ABD is a trap. Pilot everything. The process is recursive; linear plans fail. Reference: `references/brause-dissertation-craft.md`.

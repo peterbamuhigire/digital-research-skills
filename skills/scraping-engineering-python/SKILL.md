@@ -10,6 +10,12 @@ metadata:
 
 # Scraping Engineering — Python (Lawson)
 
+> **Drift-prone skill.** Library APIs, headless-browser stealth techniques, and
+> anti-bot countermeasures (Playwright/Selenium internals, CAPTCHA services,
+> TLS-fingerprint tooling like `curl-cffi`) change frequently as sites update
+> detection. Verify current library versions and site behavior before promising a
+> given approach still works.
+
 <!-- dual-compat-start -->
 
 ## Use When

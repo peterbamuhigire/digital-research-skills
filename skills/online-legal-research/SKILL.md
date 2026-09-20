@@ -10,6 +10,11 @@ metadata:
 
 # Online legal research
 
+> **Drift-prone skill.** Named repositories (KenyaLaw, ULII, eCase, EACJ, court and
+> gazette sites) change URL structures, search interfaces, and coverage over time, and
+> free-vs-paid database access shifts. Verify the current repository URL and coverage
+> before promising a source is reachable or citing a specific database as current.
+
 Method skill for any research that touches binding legal authority. The engine's domain is largely **East African / Commonwealth** (Uganda, Kenya, EAC), but the core methodology is jurisdiction-agnostic and the legal source-books are US-faithful. The skill therefore separates **method** (universally portable) from **examples** (often US, retained as illustration only) and supplies an **East African overlay** for application in the engine's home jurisdictions.
 
 ## The non-negotiable guardrail
