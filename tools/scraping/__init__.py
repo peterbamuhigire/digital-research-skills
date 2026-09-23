@@ -27,6 +27,7 @@ from .extractors.soup import parse_html, select, select_all, extract_text, extra
 from .extractors.jsonld import extract_jsonld
 from .extractors.opengraph import extract_opengraph
 from .cleaning import clean_text, parse_money, canonicalize_url
+from .research_scraper import ResearchScraper, ScrapeRecord, ScrapeRun, scrape_urls
 
 __all__ = [
     "fetch", "fetch_async",
@@ -39,4 +40,5 @@ __all__ = [
     "parse_html", "select", "select_all", "extract_text", "extract_links",
     "extract_jsonld", "extract_opengraph",
     "clean_text", "parse_money", "canonicalize_url",
+    "ResearchScraper", "ScrapeRecord", "ScrapeRun", "scrape_urls",
 ]

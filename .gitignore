@@ -21,3 +21,6 @@ skills/_extraction-cache/
 # Per-project research, drafts, evidence, and outputs live under projects/<id>/
 # and stay on the operator's machine.
 projects/
+
+# Local scrape runs may contain raw source material and must not be committed.
+runs/
