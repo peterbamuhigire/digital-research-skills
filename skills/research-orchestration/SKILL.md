@@ -148,6 +148,26 @@ map, but does not turn a competitor page into proof.
 
 Every wave must leave a short learning record: observation, reproducible baseline, one hypothesis, smallest reversible experiment, guardrail, result, failed-path result, and standardisation decision. Useful measures include source admission rate, verified-claim coverage, unresolved-claim count, contradiction count, duplicate-search rate, and time-to-verified-finding. These are measures to collect, not values to invent. If the experiment improves speed but weakens source diversity, independence, or verification coverage, reject it and preserve the prior standard.
 
+## Decision-led market sensing and honest long-book coverage (Kaizen adoption)
+
+Start a sensing wave with the decision it must support, the decision owner, the reversible choice
+under consideration, and the evidence that would change that choice (synthesis). Search and read
+for decision-relevant signals, then report observations, inferences, and unassessed evidence in
+separate fields. A competitor or provider page can reveal a market pattern; it is not independent
+proof of the provider's claimed results.
+
+For every long-form source, keep a coverage ledger with its locator, provenance, access date,
+fingerprint when available, read ranges, defects, and status: complete, partial, blocked, or
+unread. If a file or provider disappears, preserve the last verified ledger entry, do not recreate
+or silently complete missing prose, mark affected claims `NOT_ASSESSED`, and recover by reopening an
+immutable copy or the original provider before rerunning evaluation and verification. Synthesis
+must state its evidence boundary and must not treat a partial cohort as a completed read.
+
+Apply the [kaizen research loop](references/kaizen-research-loop.md) after each sensing wave. The
+[Bain strategy page](https://www.bain.com/consulting-services/strategy/) is a framing reference
+(accessed 2026-09-22) for linking choices to execution; it is an advertised consulting page, not
+independent evidence of capability or outcomes.
+
 ### Prompt-engineering source intake
 
 When books or other long-form prompt material are supplied, record completeness, provenance, rights/access status, and intended use before synthesis. Admit only durable practices that add a distinct capability, or volatile claims supported by a current authoritative source. Quarantine universal performance claims, platform/model syntax, prices, context limits, framework mandates, and named-tool behaviour unless current primary evidence supports the exact scope. For a proposed engine rule, compare a baseline with a small representative fixture set, inspect failure slices and safety/accessibility effects, and record the evaluator, adapter/model, result, cost/latency effect, rollback path, and review date. An incomplete source is `NOT_ASSESSED`, not evidence.

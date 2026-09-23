@@ -1,0 +1,776 @@
+{
+  "purpose": "Current evidence for premium-service Kaizen; source support is not client release certification",
+  "access_date": "2026-09-22",
+  "sources": [
+    {
+      "id": "MCK",
+      "title": "Growth, Marketing & Sales",
+      "ref": "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/how-we-help-clients",
+      "tier": 1,
+      "scope": "Exact public page and stated claim only",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "How we help clients",
+      "support_status": "source-text-checked",
+      "confidence": "high for narrow source description; no outcome assurance",
+      "limitations": "Public self-description only; no comparative results admitted.",
+      "archive_status": "NOT_ASSESSED; no verified external archive snapshot",
+      "owner": "engine maintainer",
+      "reviewer": "root source-content inspection",
+      "publication_date_note": "unknown"
+    },
+    {
+      "id": "BAIN",
+      "title": "Strategy",
+      "ref": "https://www.bain.com/consulting-services/strategy/",
+      "tier": 1,
+      "scope": "Exact public page and stated claim only",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Five principles; How We Can Help",
+      "support_status": "source-text-checked",
+      "confidence": "high for narrow source description; no outcome assurance",
+      "limitations": "Service-description benchmark; performance figures not adopted.",
+      "archive_status": "NOT_ASSESSED; no verified external archive snapshot",
+      "owner": "engine maintainer",
+      "reviewer": "root source-content inspection",
+      "publication_date_note": "unknown"
+    },
+    {
+      "id": "INSTRUMENT",
+      "title": "About Instrument",
+      "ref": "https://www.instrument.com/about",
+      "tier": 1,
+      "scope": "Exact public page and stated claim only",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "How we work",
+      "support_status": "source-text-checked",
+      "confidence": "high for narrow source description; no outcome assurance",
+      "limitations": "Self-description, not independent proof of delivery quality.",
+      "archive_status": "NOT_ASSESSED; no verified external archive snapshot",
+      "owner": "engine maintainer",
+      "reviewer": "root source-content inspection",
+      "publication_date_note": "unknown"
+    },
+    {
+      "id": "APPLE",
+      "title": "Accessibility",
+      "ref": "https://www.apple.com/accessibility/",
+      "tier": 1,
+      "scope": "Exact public page and stated claim only",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Innovation that is accessible by design",
+      "support_status": "source-text-checked",
+      "confidence": "high for narrow source description; no outcome assurance",
+      "limitations": "Benchmark principle only; not proof of conformance of every product.",
+      "archive_status": "NOT_ASSESSED; no verified external archive snapshot",
+      "owner": "engine maintainer",
+      "reviewer": "root source-content inspection",
+      "publication_date_note": "unknown"
+    },
+    {
+      "id": "SHIPLEY",
+      "title": "Proposal Assessment",
+      "ref": "https://www.shipleywins.com/consulting/proposal-assessment",
+      "tier": 1,
+      "scope": "Exact public page and stated claim only",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Our assessment identifies",
+      "support_status": "source-text-checked",
+      "confidence": "high for narrow source description; no outcome assurance",
+      "limitations": "Advertised scope only; no win-rate claim.",
+      "archive_status": "NOT_ASSESSED; no verified external archive snapshot",
+      "owner": "engine maintainer",
+      "reviewer": "root source-content inspection",
+      "publication_date_note": "unknown"
+    },
+    {
+      "id": "LI-POLICY",
+      "title": "Professional Community Policies",
+      "ref": "https://www.linkedin.com/legal/professional-community-policies",
+      "tier": 1,
+      "scope": "Exact public page and stated claim only",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Be trustworthy; Be professional",
+      "support_status": "source-text-checked",
+      "confidence": "high for narrow source description; no outcome assurance",
+      "limitations": "Policy text, not an account enforcement prediction.",
+      "archive_status": "NOT_ASSESSED; no verified external archive snapshot",
+      "owner": "engine maintainer",
+      "reviewer": "root source-content inspection",
+      "publication_date_note": "unknown"
+    },
+    {
+      "id": "LI-AGREEMENT",
+      "title": "User Agreement",
+      "ref": "https://www.linkedin.com/legal/user-agreement",
+      "tier": 1,
+      "scope": "Exact public page and stated claim only",
+      "publication_date": "2025-11-03",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Section 8 Dos and Donts",
+      "support_status": "source-text-checked",
+      "confidence": "high for narrow source description; no outcome assurance",
+      "limitations": "Effective date displayed 2025-11-03; exact action/account interpretation requires review.",
+      "archive_status": "NOT_ASSESSED; no verified external archive snapshot",
+      "owner": "engine maintainer",
+      "reviewer": "root source-content inspection"
+    },
+    {
+      "id": "GA4",
+      "title": "Select attribution settings",
+      "ref": "https://support.google.com/analytics/answer/10597962?hl=en",
+      "tier": 1,
+      "scope": "Exact public page and stated claim only",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Reporting attribution model",
+      "support_status": "source-text-checked",
+      "confidence": "high for narrow source description; no outcome assurance",
+      "limitations": "Does not describe every Google advertising product or confirm account settings.",
+      "archive_status": "NOT_ASSESSED; no verified external archive snapshot",
+      "owner": "engine maintainer",
+      "reviewer": "root source-content inspection",
+      "publication_date_note": "unknown"
+    },
+    {
+      "id": "WCAG",
+      "title": "WCAG 2.2",
+      "ref": "https://www.w3.org/TR/WCAG22/",
+      "tier": 1,
+      "scope": "Exact public page and stated claim only",
+      "publication_date": "2024-12-12",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Abstract; Conformance requirements",
+      "support_status": "source-text-checked",
+      "confidence": "high for narrow source description; no outcome assurance",
+      "limitations": "Recommendation dated 2024-12-12; criteria existence is not product compliance.",
+      "archive_status": "NOT_ASSESSED; no verified external archive snapshot",
+      "owner": "engine maintainer",
+      "reviewer": "root source-content inspection"
+    },
+    {
+      "id": "VITALS",
+      "title": "Web Vitals",
+      "ref": "https://web.dev/articles/vitals",
+      "tier": 1,
+      "scope": "Exact public page and stated claim only",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Measure Core Web Vitals; field and lab tools",
+      "support_status": "source-text-checked",
+      "confidence": "high for narrow source description; no outcome assurance",
+      "limitations": "No claim of conversion causality or guarantee from a score.",
+      "archive_status": "NOT_ASSESSED; no verified external archive snapshot",
+      "owner": "engine maintainer",
+      "reviewer": "root source-content inspection",
+      "publication_date_note": "unknown"
+    },
+    {
+      "id": "ICC",
+      "title": "ICC Advertising and Marketing Communications Code",
+      "ref": "https://iccwbo.org/business-solutions/the-icc-advertising-and-marketing-communications-code/",
+      "tier": 1,
+      "scope": "Exact public page and stated claim only",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "2024 update; How does self-regulation work",
+      "support_status": "source-text-checked",
+      "confidence": "high for narrow source description; no outcome assurance",
+      "limitations": "Not legislation or universal legal certification.",
+      "archive_status": "NOT_ASSESSED; no verified external archive snapshot",
+      "owner": "engine maintainer",
+      "reviewer": "root source-content inspection",
+      "publication_date_note": "2024"
+    },
+    {
+      "id": "PPDA",
+      "title": "Standard Bidding Documents",
+      "ref": "https://www.ppda.go.ug/standard-bidding-documents/",
+      "tier": 1,
+      "scope": "Exact public page and stated claim only",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Document index",
+      "support_status": "source-text-checked",
+      "confidence": "high for narrow source description; no outcome assurance",
+      "limitations": "Index only; actual solicitation, applicable document and addenda must be read.",
+      "archive_status": "NOT_ASSESSED; no verified external archive snapshot",
+      "owner": "engine maintainer",
+      "reviewer": "root source-content inspection",
+      "publication_date_note": "unknown"
+    },
+    {
+      "id": "TT-LIFT",
+      "title": "About Conversion Lift Study",
+      "ref": "https://ads.tiktok.com/resources/help/article/about-conversion-lift-study?lang=en",
+      "tier": 1,
+      "scope": "Exact public page and stated claim only",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Study overview",
+      "support_status": "source-text-checked",
+      "confidence": "high for narrow source description; no outcome assurance",
+      "limitations": "Availability/eligibility, study power and local account access remain unassessed.",
+      "archive_status": "NOT_ASSESSED; no verified external archive snapshot",
+      "owner": "engine maintainer",
+      "reviewer": "root source-content inspection",
+      "publication_date_note": "unknown"
+    },
+    {
+      "id": "META-REC",
+      "title": "Recommendation Guidelines",
+      "ref": "https://about.fb.com/news/2020/08/recommendation-guidelines/",
+      "tier": 1,
+      "scope": "Exact public page and stated claim only",
+      "publication_date": "2020-08-31",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Recommendation eligibility",
+      "support_status": "source-text-checked",
+      "confidence": "high for narrow source description; no outcome assurance",
+      "limitations": "Historical official explanation; current detailed policies must be checked before execution.",
+      "archive_status": "NOT_ASSESSED; no verified external archive snapshot",
+      "owner": "engine maintainer",
+      "reviewer": "root source-content inspection"
+    },
+    {
+      "id": "ESOMAR",
+      "title": "ICC/ESOMAR International Code 2025",
+      "ref": "https://standards.esomar.org/assets/documents/icc-esomar-code-2025.pdf",
+      "tier": 1,
+      "scope": "Exact public source and stated claim",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Articles 1-9; July 2025 update",
+      "support_status": "source-text-checked",
+      "confidence": "high for narrow source description",
+      "limitations": "Self-regulatory research guidance; applicable law and actual research compliance require separate checks.",
+      "archive_status": "NOT_ASSESSED",
+      "owner": "engine maintainer",
+      "reviewer": "root"
+    },
+    {
+      "id": "SBA",
+      "title": "Plan your business",
+      "ref": "https://www.sba.gov/counseling/plan-your-business/",
+      "tier": 1,
+      "scope": "Exact public source and stated claim",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Marketing and sales; financial projections",
+      "support_status": "source-text-checked",
+      "confidence": "high for narrow source description",
+      "limitations": "US guidance, not a universal bankability standard or Uganda compliance source.",
+      "archive_status": "NOT_ASSESSED",
+      "owner": "engine maintainer",
+      "reviewer": "root"
+    },
+    {
+      "id": "WB",
+      "title": "Project Procurement Framework",
+      "ref": "https://www.worldbank.org/ext/en/what-we-do/project-procurement/framework",
+      "tier": 1,
+      "scope": "Exact public source and stated claim",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Standard Procurement Documents; Consulting Services",
+      "support_status": "source-text-checked",
+      "confidence": "high for narrow source description",
+      "limitations": "Discovery route only; actual project rules and issued RFP govern.",
+      "archive_status": "NOT_ASSESSED",
+      "owner": "engine maintainer",
+      "reviewer": "root"
+    },
+    {
+      "id": "TT-MUSIC",
+      "title": "How to Use the Commercial Music Library",
+      "ref": "https://ads.tiktok.com/resources/help/article/how-to-use-the-commercial-music-library?lang=en-GB",
+      "tier": 1,
+      "scope": "Exact public source and stated claim",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Region selection and usable placements",
+      "support_status": "source-text-checked",
+      "confidence": "high for what the source states; transferability conditional",
+      "limitations": "Specific sound rights and intended use still require verification.",
+      "archive_status": "NOT_ASSESSED",
+      "owner": "engine maintainer",
+      "reviewer": "root independent reopening after researcher handoff"
+    },
+    {
+      "id": "TT-TEST",
+      "title": "Ad testing guide",
+      "ref": "https://ads.tiktok.com/business/en/guides/ad-testing-guide?redirected=1",
+      "tier": 1,
+      "scope": "Exact public source and stated claim",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Core strategies for ad testing",
+      "support_status": "source-text-checked",
+      "confidence": "high for what the source states; transferability conditional",
+      "limitations": "Vendor guidance, not proof of statistical validity or a guaranteed outcome.",
+      "archive_status": "NOT_ASSESSED",
+      "owner": "engine maintainer",
+      "reviewer": "root independent reopening after researcher handoff"
+    },
+    {
+      "id": "TT-PIXEL",
+      "title": "Set up and Verify Pixel",
+      "ref": "https://ads.tiktok.com/resources/help/article/get-started-pixel?lang=en",
+      "tier": 1,
+      "scope": "Exact public source and stated claim",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Events API; Test Events and Diagnostics",
+      "support_status": "source-text-checked",
+      "confidence": "high for what the source states; transferability conditional",
+      "limitations": "Actual implementation, data rights, account availability and event accuracy remain unassessed.",
+      "archive_status": "NOT_ASSESSED",
+      "owner": "engine maintainer",
+      "reviewer": "root independent reopening after researcher handoff"
+    },
+    {
+      "id": "META-ORIGINAL",
+      "title": "Rewarding Original Creators on Facebook",
+      "ref": "https://about.fb.com/news/2026/03/rewarding-original-creators-on-facebook/amp/",
+      "tier": 1,
+      "scope": "Exact public source and stated claim",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Original content and transformed content",
+      "support_status": "source-text-checked",
+      "confidence": "high for what the source states; transferability conditional",
+      "limitations": "Does not establish copyright clearance or guarantee distribution.",
+      "archive_status": "NOT_ASSESSED",
+      "owner": "engine maintainer",
+      "reviewer": "root independent reopening after researcher handoff"
+    },
+    {
+      "id": "LUXURY-2025",
+      "title": "State of Luxury 2025",
+      "ref": "https://www.mckinsey.com/industries/retail/our-insights/state-of-luxury-2025",
+      "tier": 3,
+      "scope": "Exact public source and stated claim",
+      "as_of": "2026-09-22",
+      "accessed": "2026-09-22",
+      "verified_at": "2026-09-22",
+      "review_after": "2026-10-22",
+      "freshness_class": "context-bound",
+      "locator": "Restore product excellence; Rethink client engagement",
+      "support_status": "source-text-checked",
+      "confidence": "high for what the source states; transferability conditional",
+      "limitations": "2025 luxury-goods analysis; transferable hypothesis, not a 2026 consulting price benchmark.",
+      "archive_status": "NOT_ASSESSED",
+      "owner": "engine maintainer",
+      "reviewer": "root",
+      "publication_date": "2025-01-13"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C-MCK",
+      "text": "Advertised service breadth includes insight, branding, lifecycle, pricing and digital marketing.",
+      "source_ids": [
+        "MCK"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "How we help clients; scope restricted by source limitations",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-BAIN",
+      "text": "Bain publicly connects customer focus, strategic choices and execution.",
+      "source_ids": [
+        "BAIN"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Five principles; How We Can Help; scope restricted by source limitations",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-INSTRUMENT",
+      "text": "Instrument describes connected strategy, design and technology execution.",
+      "source_ids": [
+        "INSTRUMENT"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "How we work; scope restricted by source limitations",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-APPLE",
+      "text": "Apple presents accessibility as integral to its products and services.",
+      "source_ids": [
+        "APPLE"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Innovation that is accessible by design; scope restricted by source limitations",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-SHIPLEY",
+      "text": "Assessment scope includes value proposition, compliance, clarity and visual effectiveness.",
+      "source_ids": [
+        "SHIPLEY"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Our assessment identifies; scope restricted by source limitations",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-LI-POLICY",
+      "text": "LinkedIn prohibits spam, misleading identity/credentials and artificial engagement, including prearranged likes or reshares.",
+      "source_ids": [
+        "LI-POLICY"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Be trustworthy; Be professional; scope restricted by source limitations",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-LI-AGREEMENT",
+      "text": "Verify authorised platform use and automation restrictions before execution.",
+      "source_ids": [
+        "LI-AGREEMENT"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Section 8 Dos and Donts; scope restricted by source limitations",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-GA4",
+      "text": "GA4 first-click, linear, time-decay and position-based reporting models are no longer available as of November 2023.",
+      "source_ids": [
+        "GA4"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Reporting attribution model; scope restricted by source limitations",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-WCAG",
+      "text": "WCAG 2.2 provides testable accessibility criteria and scoped conformance requirements.",
+      "source_ids": [
+        "WCAG"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Abstract; Conformance requirements; scope restricted by source limitations",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-VITALS",
+      "text": "Field and lab evidence have distinct roles in performance assessment.",
+      "source_ids": [
+        "VITALS"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Measure Core Web Vitals; field and lab tools; scope restricted by source limitations",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-ICC",
+      "text": "The 2024 code is self-regulatory marketing guidance covering modern advertising topics.",
+      "source_ids": [
+        "ICC"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "2024 update; How does self-regulation work; scope restricted by source limitations",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-PPDA",
+      "text": "PPDA provides an index for locating procurement documents.",
+      "source_ids": [
+        "PPDA"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Document index; scope restricted by source limitations",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-TT-LIFT",
+      "text": "TikTok documents a conversion lift study offering.",
+      "source_ids": [
+        "TT-LIFT"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Study overview; scope restricted by source limitations",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-META-REC",
+      "text": "Meta distinguishes content being allowed from eligibility for recommendation.",
+      "source_ids": [
+        "META-REC"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Recommendation eligibility; scope restricted by source limitations",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-ESOMAR",
+      "text": "Research guidance covers duty of care, data minimisation, fit for purpose and transparency.",
+      "source_ids": [
+        "ESOMAR"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Articles 1-9; July 2025 update",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-SBA",
+      "text": "SBA links customer acquisition and retention strategy to financial projections.",
+      "source_ids": [
+        "SBA"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Marketing and sales; financial projections",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-WB",
+      "text": "World Bank publishes consulting-services procurement document routes.",
+      "source_ids": [
+        "WB"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Standard Procurement Documents; Consulting Services",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-TT-MUSIC",
+      "text": "TikTok documents a commercial music library with region and placement selection.",
+      "source_ids": [
+        "TT-MUSIC"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Region selection and usable placements",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-TT-TEST",
+      "text": "TikTok recommends defined objectives and controlled creative-variable testing.",
+      "source_ids": [
+        "TT-TEST"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Core strategies for ad testing",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-TT-PIXEL",
+      "text": "TikTok documents event connections and checks.",
+      "source_ids": [
+        "TT-PIXEL"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Events API; Test Events and Diagnostics",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-META-ORIGINAL",
+      "text": "Meta distinguishes original or meaningfully transformed content from low-value reuse.",
+      "source_ids": [
+        "META-ORIGINAL"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Original content and transformed content",
+        "reviewed_at": "2026-09-22"
+      }
+    },
+    {
+      "id": "C-LUXURY-2025",
+      "text": "The report argues for aligning luxury value with product and service quality.",
+      "source_ids": [
+        "LUXURY-2025"
+      ],
+      "requires_currentness": true,
+      "support_review": {
+        "state": "supported",
+        "reviewer": "root",
+        "basis": "Restore product excellence; Rethink client engagement",
+        "reviewed_at": "2026-09-22"
+      }
+    }
+  ],
+  "gaps": [
+    {
+      "source": "https://transparency.meta.com/policies/ad-standards/",
+      "status": "NOT_ASSESSED",
+      "attempt": "web open returned internal error; platform researcher seeking alternatives"
+    },
+    {
+      "source": "https://pdpo.go.ug/media/2022/01/15122021123537-Guidance_note_on_lodging_complaints.pdf",
+      "status": "NOT_ASSESSED",
+      "attempt": "URL returned HTML with no readable content; no legal conclusion admitted"
+    },
+    {
+      "source": "https://media.ulii.org/media/legislation/18002/source_file/0219a99c6895b563/2019-9.pdf",
+      "status": "NOT_ASSESSED",
+      "attempt": "403; do not infer current legal obligations from search snippet"
+    },
+    {
+      "source": "external archives",
+      "status": "NOT_ASSESSED",
+      "attempt": "No verified archive snapshot retained; external publication gate remains open"
+    },
+    {
+      "source": "client outcome evidence",
+      "status": "NOT_ASSESSED",
+      "attempt": "No client campaign/site/price acceptance data supplied; no premium result claim"
+    }
+  ]
+}
