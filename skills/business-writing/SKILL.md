@@ -20,15 +20,15 @@ If the artifact describes how a system, process, workflow, operating model, inte
 
 | Channel | Right reference | Process spine |
 |---|---|---|
-| Email | `references/maxwell-7-steps.md` § email · `references/roman-raphaelson-principles.md` § email | Subject line carries verb; ask in first line; ≤200 words |
-| Memo | `references/roman-raphaelson-principles.md` § memos | Title, action recipient, obvious structure |
-| Letter (sales / fundraising / complaint / recommendation) | `references/roman-raphaelson-principles.md` § letters | Open with reader's interest; specific ask + deadline; PS line |
-| Plan / strategy | `references/persuasion-and-narrative.md` · `references/maxwell-7-steps.md` § organize | SCQA + plain English |
+| Email | `references/business-writing-process.md` § channel overlays · `references/plain-business-prose-and-tone.md` § email | Subject line carries verb; ask in first line; ≤200 words |
+| Memo | `references/plain-business-prose-and-tone.md` § memos | Title, action recipient, obvious structure |
+| Letter (sales / fundraising / complaint / recommendation) | `references/plain-business-prose-and-tone.md` § letters | Open with reader's interest; specific ask + deadline; PS line |
+| Plan / strategy | `references/persuasion-and-narrative.md` · `references/business-writing-process.md` § stage notes | SCQA + plain English |
 | Blog article | `references/blog-publishing-workflow.md` · `references/web-copywriting.md` | Hook → problem → solution → CTA |
 | Web copy / landing page | `references/web-copywriting.md` | F-pattern; value above fold; ≤400 words / page |
-| Speech / presentation | `references/roman-raphaelson-principles.md` § speeches | Tell-tell-tell; one idea / slide; one ask |
-| Resume / cover letter | `references/roman-raphaelson-principles.md` § resumes | Customised; achievements with numbers |
-| Internal comms (status, updates, FAQs) | `references/roman-raphaelson-principles.md` § memos · `references/persuasion-and-narrative.md` | Lead with the news; numbered structure |
+| Speech / presentation | `references/plain-business-prose-and-tone.md` § speeches | Tell-tell-tell; one idea / slide; one ask |
+| Resume / cover letter | `references/plain-business-prose-and-tone.md` § resumes | Customised; achievements with numbers |
+| Internal comms (status, updates, FAQs) | `references/plain-business-prose-and-tone.md` § memos · `references/persuasion-and-narrative.md` | Lead with the news; numbered structure |
 | Multi-language artifacts (EN / FR / SW) | `references/language-standards-en-fr-sw.md` | Apply per-language register rules |
 | Hard scenario (bad news, decline, apology, discourteous reply, policy change) | `references/scenario-playbooks.md` | Resolve the four axes before drafting; pick named scenario |
 | Pitch deck (investor / VC) | `references/extended-channels.md` § Pitch decks | Three critical questions; four-part structure; one visual per slide |
@@ -41,7 +41,7 @@ If the artifact describes how a system, process, workflow, operating model, inte
 | Long-form magazine piece — essay, criticism, investigative, profile, explainer | `references/long-form-business-journalism.md` | Pick the family (essay / investigative / profile / explainer) before choosing length |
 | Growth strategy / commercial memo | `references/growth-profit-and-disruption-analysis.md` · `references/persuasion-and-narrative.md` | Growth engine first; metrics and experiments support |
 
-## The seven-step process (load `references/maxwell-7-steps.md`)
+## The seven-step process (load `references/business-writing-process.md`)
 
 Every non-academic artifact runs through:
 
@@ -55,18 +55,16 @@ Every non-academic artifact runs through:
 
 Skipping a step or combining Steps 6 and 7 is the #1 quality failure.
 
-## The master rule (Roman & Raphaelson)
+## The master rule: say it at full strength
 
-> *"Don't mumble."*
-
-Every sentence carries its point at full volume. Hedge soup, Latinate fog, and bureaucrat voice are cardinal sins. Detail in `references/roman-raphaelson-principles.md` (the 18 principles).
+Every sentence carries its point plainly. Stacked hedges, Latinate fog and bureaucratic voice are cardinal sins. Detail in `references/plain-business-prose-and-tone.md`.
 
 ## Reference index
 
 | Reference | Load when |
 |---|---|
-| `references/maxwell-7-steps.md` | Always — process spine for every artifact, plus channel overlays |
-| `references/roman-raphaelson-principles.md` | Sentence-level prose discipline (18 principles, per-channel rules for email/memo/letter/plan/proposal/presentation/fund-raising/resume) |
+| `references/business-writing-process.md` | Always — process spine for every artifact, plus channel overlays |
+| `references/plain-business-prose-and-tone.md` | Sentence-level prose and tone: core decision rules, engine substitution list, channel rules for email/memo/letter/plan/proposal/presentation/fund-raising/resume, appraisals |
 | `references/persuasion-and-narrative.md` | Plans, pitches, fundraising, exec summaries — Hood plain English + Shiach persuasion + Geffner business style + Rubie/Provost narrative; also "make it sound less AI" |
 | `references/web-copywriting.md` | Web pages, marketing copy, landing pages, blog post structure |
 | `references/blog-publishing-workflow.md` | Producing a full blog article (topic dev, drafting, on-page structure, image prep, site integration) |
@@ -184,7 +182,7 @@ A decision email opens with the requested approval and deadline, then gives only
 
 ## References
 
-- [Seven-step process](references/maxwell-7-steps.md)
+- [Seven-step process](references/business-writing-process.md)
 - [Channel scenarios](references/scenario-playbooks.md)
 <!-- dual-compat-end -->
 

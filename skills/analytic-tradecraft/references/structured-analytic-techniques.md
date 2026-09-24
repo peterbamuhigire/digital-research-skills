@@ -1,10 +1,18 @@
-# Reference — Heuer/Pherson Structured Analytic Techniques
+# Structured Analytic Techniques
 
-**Canonical source:** Heuer, Richards J. Jr., and Pherson, Randolph H. *Structured Analytic Techniques for Intelligence Analysis*. CQ Press / SAGE, multiple editions. Tier 1.
+Use this guide to choose and run a structured analytic technique when a judgment is contested,
+high-stakes, inherited, forward-looking or about an adversary's behaviour. Each technique has a
+trigger, steps, output and pitfalls; the selection table at the end maps situations to techniques.
 
-**Companions:** Davis, Jack. "Why Bad Things Happen to Good Analysts," Ch 10 in George & Bruce, *Analyzing Intelligence*, 2008. Heuer, Ch 16, same volume (computer-aided ACH). Bruce, Ch 11, same volume (Iraq WMD case).
+## Inputs
 
-## The catalog (engine-priority subset)
+- The judgment or question in one sentence.
+- The evidence set with source tiers (`source-verification`).
+- The people available: a technique that needs a devil's advocate or a second team needs named
+  people with standing.
+- The decision deadline, which limits how many techniques are affordable.
+
+## Techniques (engine-priority subset)
 
 Each technique is documented with four fields: **trigger**, **steps**, **output**, **pitfalls**. The engine implements a runnable mini-protocol for each.
 
@@ -24,7 +32,7 @@ Each technique is documented with four fields: **trigger**, **steps**, **output*
 
 **Output.** Matrix attached to the judgment; ranked hypotheses with relative likelihood; named diagnostic gaps.
 
-**Pitfalls.** Garbage-in (a poor or biased hypothesis set produces a confident wrong answer). ACH treated as confirmation theatre (analyst marks evidence "consistent" with the hypothesis they already hold, ignoring inconsistencies). Ignoring weight / diagnosticity (some evidence is more diagnostic than others; weight accordingly). Bruce (Ch 11, p 182) on Iraq WMD: card-stacking — the absence of expected indicators was treated as evidence of D&D rather than as a hypothesis in its own right.
+**Pitfalls.** Garbage-in (a poor or biased hypothesis set produces a confident wrong answer). ACH treated as confirmation theatre (analyst marks evidence "consistent" with the hypothesis they already hold, ignoring inconsistencies). Ignoring weight / diagnosticity (some evidence is more diagnostic than others; weight accordingly). Treating the absence of expected indicators as proof of concealment, instead of testing "the thing is not there" as a hypothesis in its own right.
 
 ---
 
@@ -57,7 +65,7 @@ Each technique is documented with four fields: **trigger**, **steps**, **output*
 
 **Output.** Contrary memo or "box" inside the estimate; not a footnote.
 
-**Pitfalls.** Token / pro-forma exercise. Advocate without standing or budget. Advocate selected from team members least likely to disrupt — defeats the purpose. Davis Ch 10: "the Devil's Advocate must have the standing to be heard."
+**Pitfalls.** Token / pro-forma exercise. Advocate without standing or budget. Advocate selected from team members least likely to disrupt — defeats the purpose. The advocate needs enough standing that the contrary case is actually heard.
 
 ---
 
@@ -73,7 +81,7 @@ Each technique is documented with four fields: **trigger**, **steps**, **output*
 
 **Output.** Two competing estimates, presented in parallel; adjudication note.
 
-**Pitfalls.** Politicisation. The original 1976 Soviet Team B exercise is cited (George & Bruce, Davis Ch 10) as cautionary: Team B was loaded with political opponents of the existing estimate and produced a politicised counter-estimate that was later shown to be wrong on multiple key claims. Lesson: teams must be selected for analytic capability and genuinely different priors, not for predetermined conclusions.
+**Pitfalls.** Politicisation. A second team stacked with people committed to the opposite answer produces advocacy, not analysis. Teams must be selected for analytic capability and genuinely different priors, not for predetermined conclusions.
 
 ---
 
@@ -150,7 +158,7 @@ Each technique is documented with four fields: **trigger**, **steps**, **output*
 
 **Output.** Indicator list with thresholds and re-check schedule; trip log.
 
-**Pitfalls.** Davis Ch 10 cites the 1973 Yom Kippur failure: the analytic team kept moving the warning threshold ("X then Y then Z") until war began. Lesson: pre-commit to thresholds before evidence pressure builds.
+**Pitfalls.** Moving the warning threshold each time it is reached ("not yet, wait for X; now wait for Y") until the event happens. Pre-commit to thresholds before evidence pressure builds.
 
 ---
 
@@ -182,9 +190,17 @@ Each technique is documented with four fields: **trigger**, **steps**, **output*
 | Long-form judgment hard to defend | Argument Mapping | KAC on weakest nodes |
 | Pre-publication self-test | Pre-Mortem | ICD 203 ship-gate |
 
-## Sources
+## Original worked example
 
-- Heuer & Pherson, *Structured Analytic Techniques for Intelligence Analysis*. CQ Press / SAGE. Tier 1.
-- George & Bruce, *Analyzing Intelligence*, Davis Ch 10, Heuer Ch 16, Bruce Ch 11. Tier 1.
-- Pherson Associates whitepapers on individual SATs. https://pherson.org/. Tier 1.
-- Heuer, *Psychology of Intelligence Analysis*, CIA CSI. https://www.cia.gov/resources/csi/books-monographs/psychology-of-intelligence-analysis-2/. Tier 1.
+A Ugandan agribusiness client believes a competitor's sudden price cut on maize flour means the
+competitor is dumping stock before exiting the market. ACH hypotheses: (1) exit and stock
+clearance; (2) a new low-cost supply contract; (3) an attempt to take share before a planned
+expansion; (4) a data error in the price survey. Evidence scored for consistency: the competitor
+is still hiring drivers (inconsistent with 1), import records show a new regional supplier
+(consistent with 2 and 3), and prices were confirmed in three markets (inconsistent with 4).
+Hypothesis 1 carries the most inconsistencies and is dropped; the diagnostic gap between 2 and 3
+is whether the competitor has applied for new premises, which becomes the next collection task.
+
+Sources: Pherson and Heuer (2021) *Structured Analytic Techniques for Intelligence Analysis*,
+3rd ed.; Heuer (1999) *Psychology of Intelligence Analysis* (CIA Center for the Study of
+Intelligence, public); George and Bruce (eds.) (2008) *Analyzing Intelligence*.

@@ -32,4 +32,4 @@ Social evidence is useful here as an issue-discovery layer. It should not be con
 
 Status: pass as exemplar. Live report fails if social screenshots are treated as verified facts without provenance.
 
-See also: `skills/osint-investigation/SKILL.md`, `skills/source-evaluation/references/silverman-media-forensics.md`.
+See also: `skills/osint-investigation/SKILL.md`, `skills/source-evaluation/references/media-forensics-verification.md`.

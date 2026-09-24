@@ -91,7 +91,7 @@ Default to inductive at the section level. Reserve deductive for sub-sections wh
 - `references/scqa-opener.md` — how to construct the apex sentence and the opener.
 - `references/action-titles.md` — how to write group headings.
 - `references/ghost-deck-pattern.md` — how to build the pyramid for a slide deck.
-- `references/zelazny-chart-selection.md` — how to choose the chart that supports each group's evidence.
+- `references/chart-selection-by-message.md` — how to choose the chart that supports each group's evidence.
 - `references/executive-summary-template.md` — pyramid compressed to ≤ 300 words.
 
 ## Source

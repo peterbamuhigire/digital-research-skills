@@ -82,5 +82,5 @@ This is enough for the deck designer (or for the writer at design time) to build
 
 - `references/pyramid-principle.md` — the ghost deck is a pyramid laid flat.
 - `references/action-titles.md` — every ghost-deck entry leads with an action title.
-- `references/zelazny-chart-selection.md` — the chart-family note in each entry uses Zelazny's families.
+- `references/chart-selection-by-message.md` — the chart-family note in each entry uses Zelazny's families.
 - `references/scqa-opener.md` — the executive-summary slide opens with a compressed SCQA.

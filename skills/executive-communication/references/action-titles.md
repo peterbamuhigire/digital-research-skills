@@ -41,7 +41,7 @@ The rule extends to chart titles and table captions:
 - **Chart title (wrong):** "Market share by player, 2020–2026"
 - **Chart title (right):** "Acme's share has fallen 11pp since 2022; two new entrants captured most of it"
 
-The chart title says what the chart shows. The chart shows the evidence. Together they form one message (the Zelazny rule — see `references/zelazny-chart-selection.md`).
+The chart title says what the chart shows. The chart shows the evidence. Together they form one message (the Zelazny rule — see `references/chart-selection-by-message.md`).
 
 ## Action titles in an academic context
 
@@ -59,4 +59,4 @@ Academic papers use neutral topic headings ("Methods", "Results", "Discussion") 
 
 - `references/pyramid-principle.md` — the skim-path test depends on action titles.
 - `references/scqa-opener.md` — the Answer in SCQA is the governing thought; section action titles support it.
-- `references/zelazny-chart-selection.md` — chart titles follow the same rule.
+- `references/chart-selection-by-message.md` — chart titles follow the same rule.

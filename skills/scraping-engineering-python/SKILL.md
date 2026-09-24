@@ -92,7 +92,7 @@ For an authorised resumable catalogue crawl, validate a cached sequential sample
 
 <!-- dual-compat-end -->
 
-Encodes Richard Lawson's *Web Scraping with Python* (Packt) as the engine's engineering layer for production-grade Python scrapers. Pair with `scraping-troubleshooting-brody` (etiquette and debugging) and `web-scraping-foundations` (basics). For non-Python pipelines, the patterns transfer; the libraries change.
+Encodes Richard Lawson's *Web Scraping with Python* (Packt) as the engine's engineering layer for production-grade Python scrapers. Pair with `../web-scraping-foundations/references/scraper-troubleshooting-and-etiquette.md` (etiquette and debugging) and `web-scraping-foundations` (basics). For non-Python pipelines, the patterns transfer; the libraries change.
 
 ## 1. When to scale up
 
@@ -202,7 +202,7 @@ with ThreadPoolExecutor(max_workers=10) as ex:
         # process
 ```
 
-**Concurrency budget per host (Brody's etiquette still applies):**
+**Concurrency budget per host (the engine's politeness policy still applies):**
 
 | Site posture | Workers per host |
 |---|---|
@@ -375,7 +375,7 @@ For Scrapy: enable `JOBDIR` (`scrapy crawl example -s JOBDIR=jobs/example`) — 
 
 ## See also
 
-- `scraping-troubleshooting-brody` — etiquette and debugging
+- `web-scraping-foundations/references/scraper-troubleshooting-and-etiquette.md` — etiquette and debugging
 - `web-scraping-foundations` — HTTP/HTML basics
 - `scraping-politeness-and-ratelimiting` — politeness layer
 - `data-quality-assessment` — score scraped batches

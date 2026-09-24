@@ -48,7 +48,7 @@ The hardest scenario family. Eleven named pitfalls — every one is a real failu
 | One communication is enough | Single email about a sensitive change | Plan a series: pre-announcement, announcement, Q&A, follow-up |
 | Unrealistic expectations | "Brighter times ahead" hints when they are not | Say what you know; do not promise what you cannot deliver |
 
-Pair this list with the HBR "ease into bad news" letter pattern in `roman-raphaelson-principles.md` — that pattern is the **letter form**; this list is the **scenario discipline** that surrounds it.
+Pair this list with the HBR "ease into bad news" letter pattern in `plain-business-prose-and-tone.md` — that pattern is the **letter form**; this list is the **scenario discipline** that surrounds it.
 
 ## Responding to a discourteous communication
 
@@ -152,6 +152,6 @@ The revised version: shows the gift was personal; explains the labour involved; 
 
 ## See also
 
-- `references/roman-raphaelson-principles.md` — the underlying tone and bad-news letter pattern.
-- `references/maxwell-7-steps.md` — Step 1 audience-and-purpose discipline that the four axes implement.
+- `references/plain-business-prose-and-tone.md` — the underlying tone and bad-news letter pattern.
+- `references/business-writing-process.md` — Step 1 audience-and-purpose discipline that the four axes implement.
 - `report-and-proposal-craft` — for longer scenarios that escalate into a report or proposal.

@@ -82,4 +82,4 @@ If the claim is absent or vague in any of these locations, the examiner forms an
 ## Sources
 
 - Brause, *Writing Your Doctoral Dissertation: Invisible Rules for Success*, 1999, Chs 1, 6, 10. Tier 1.
-- Companion: `references/brause-dissertation-craft.md`, `references/methodology-justification-checklist.md`, `references/viva-defense-preparation.md`.
+- Companion: `references/dissertation-unwritten-conventions.md`, `references/methodology-justification-checklist.md`, `references/viva-defense-preparation.md`.

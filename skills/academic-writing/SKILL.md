@@ -23,8 +23,8 @@ The single entry skill for any academic artifact: **paper, essay, thesis, disser
 | **Essay (popular)** | 800–2,500 words | General readers | Fresh angle, no formal contribution | `references/conventions.md` § Essay (popular) |
 | **Paper (academic)** | 4,000–10,000 words | Peer-reviewed journal or conference | New finding, method, or argument | `references/conventions.md` § Paper |
 | **Paper (popular)** | 1,500–4,000 words | Magazine / serious blog / Substack | Accessible synthesis or insight | `references/conventions.md` § Paper (popular) |
-| **Thesis** | 15,000–30,000 words (Master's); discipline-dependent | Examiner committee | Master-level original contribution | `references/eco-thesis-craft.md` |
-| **Dissertation** | 60,000–100,000 words (PhD) | Examiner committee + future scholars | Substantial original contribution | `references/eco-thesis-craft.md` |
+| **Thesis** | 15,000–30,000 words (Master's); discipline-dependent | Examiner committee | Master-level original contribution | `references/thesis-topic-sources-and-quotation.md` |
+| **Dissertation** | 60,000–100,000 words (PhD) | Examiner committee + future scholars | Substantial original contribution | `references/thesis-topic-sources-and-quotation.md` |
 
 **Pick the type before drafting.** Mixing a thesis structure into an essay (or essay register into a paper) is the most common failure mode.
 
@@ -49,7 +49,7 @@ Sources → Extract notes → SOURCE-AWAY GATE → Compose → Originality check
 
 Each step has a non-negotiable rule:
 
-1. **Extract notes** — atomic note cards, fragments not sentences, with provenance per card. Load `references/trzeciak-note-discipline.md`.
+1. **Extract notes** — atomic note cards, fragments not sentences, with provenance per card. Load `references/source-away-note-cards.md`.
 2. **Source-away gate** — sources are removed from active context before composition begins. Trzeciak's law: *"You cannot copy what is not in front of you."*
 3. **Compose** — synthesize across notes using `references/source-synthesis.md` patterns. Three or more sources synthesized into one paragraph is the strongest plagiarism shield.
 4. **Originality check** — N-gram overlap audit against the source corpus. Load `references/originality-engine.md` and `references/plagiarism-prevention.md`. Any 7-word verbatim run is either restructured, quoted with attribution, or cited.
@@ -61,8 +61,8 @@ This pipeline is what makes the engine's "same prompt, three runs, three differe
 | Reference | Load when |
 |---|---|
 | `references/conventions.md` | Picking the structural template for the chosen output type |
-| `references/eco-thesis-craft.md` | Thesis or dissertation — Eco's topic-gate, index-card system, ten commandments of quotation, plagiarism gates, prose rules, pride/humility posture |
-| `references/trzeciak-note-discipline.md` | Always — pre-composition note-card discipline, source-away gate |
+| `references/thesis-topic-sources-and-quotation.md` | Thesis or dissertation: topic admission gate, narrowing, source classes, note system, provisional table of contents, quotation and paraphrase rules |
+| `references/source-away-note-cards.md` | Always — pre-composition note-card discipline, source-away gate |
 | `references/paraphrase-discipline.md` | Converting source material to engine prose — true paraphrase vs synonym-swap |
 | `references/source-synthesis.md` | Combining multiple sources into one argument — agreement, disagreement, supplementation, gap-naming patterns |
 | `references/quote-extraction.md` | Selecting and integrating direct quotations |
@@ -73,8 +73,8 @@ This pipeline is what makes the engine's "same prompt, three runs, three differe
 | `references/voice-and-register.md` | Hedging, modality, reporting verbs, signposting, register audit |
 | `references/originality-engine.md` | Pre-delivery N-gram overlap audit |
 | `references/plagiarism-prevention.md` | Pre-delivery five-rule audit (verbatim, structure, citation, quote-density, paraphrase fidelity) |
-| `references/morley-rhetorical-moves.md` | Need a phrase for a rhetorical move (introducing work, citing literature, describing methods, reporting results, discussing findings, writing conclusions, hedging, comparing, signposting). Morley *Academic Phrasebank* (Tier 1). |
-| `references/morley-reporting-verbs-and-hedges.md` | Choosing a reporting verb by stance (neutral / tentative / strong / critical) or selecting a hedge calibrated to evidence strength. Includes the Davis & Morley reuse-acceptability rule as a plagiarism-prevention guardrail. |
+| `references/academic-rhetorical-moves.md` | Choosing and signalling the rhetorical move for each section (introduction, literature, methods, results, discussion, conclusion) with engine-written frames and a reuse guardrail |
+| `references/reporting-verbs-and-hedging.md` | Choosing a reporting verb by stance or a hedge calibrated to evidence strength; phrase-reuse guardrail |
 | `references/critical-literature-review.md` | Hardening a literature review so it synthesizes disputes, gaps, methods, and implications rather than listing sources |
 | `references/thesis-production-hardening.md` | Thesis/dissertation planning, chapter logic, proposal checks, methodology justification, milestone and version discipline |
 

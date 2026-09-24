@@ -7,7 +7,7 @@ The user's specification: every dataset must be assessed for **completeness, use
 ### 1. Completeness
 - Cell-level complete rate (`1 - null_count / total_cells`)
 - Row-level complete rate (`1 - rows_with_any_null / total_rows`)
-- Walker's discipline: `df.isnull().sum(axis=0)` for column-wise, `df.isnull().sum(axis=1).value_counts()` for row-wise profile
+- Profile both directions: `df.isnull().sum(axis=0)` for column-wise, `df.isnull().sum(axis=1).value_counts()` for row-wise profile
 
 **Threshold**: 0.7 default for production research; 0.5 for exploratory.
 
@@ -20,7 +20,7 @@ The user's specification: every dataset must be assessed for **completeness, use
 **Threshold**: 0.7 default. Below 0.7 → escalate to operator with a list of missing capabilities.
 
 ### 3. Reliability
-Walker's five sub-axes collapsed:
+Five sub-axes collapsed:
 - **Accuracy** — verifiable against external truth (recompute from source)
 - **Consistency** — internal logical checks (cross-field implications)
 - **Validity** — type/range/format conformity
@@ -29,7 +29,7 @@ Walker's five sub-axes collapsed:
 
 The internal-signal score uses: duplicate-row rate, dtype-suspect column count, average IQR-outlier rate. External-truth verification (best) requires caller to supply a trusted reference.
 
-**Threshold**: 0.7 default. Below 0.7 → run Walker's diagnostic battery before using.
+**Threshold**: 0.7 default. Below 0.7 → run the diagnostic battery before using.
 
 ### 4. Relevance
 - Geographic scope match (does the dataset cover the target jurisdictions?)
@@ -46,7 +46,7 @@ import pandas as pd
 
 df = pd.read_parquet("projects/<id>/data/dataset.parquet")
 
-# Profile first — Walker + Chen probes
+# Profile first
 profile = profile_dataframe(df, source_path="dataset.parquet")
 profile.to_json("projects/<id>/data/profile.json")
 
@@ -78,7 +78,7 @@ if not dq.passes(threshold=0.7):
   - Find a different dataset
   - Limit the research question to what the data supports
   - Disclose the limitation explicitly in the final report
-- **The score is a starting point.** Walker: outliers may be real, missingness may be informative. Use the score to direct attention, not to auto-reject.
+- **The score is a starting point.** Outliers may be real, missingness may be informative. Use the score to direct attention, not to auto-reject.
 
 ## Outputs that travel with the dataset
 

@@ -22,7 +22,7 @@ reference governs how the analysis is run and reported once it passes.
    reporting.
 3. **Profile before cleaning.** Completeness, validity, accuracy, consistency, timeliness,
    referential integrity, relevance, and privacy/authorisation. Use
-   `../../data-quality-pipeline/references/quality-assessment-walker.md`.
+   `../../data-quality-pipeline/references/dataset-quality-four-axes.md`.
 4. **Clean with a trail.** Log every transformation with row counts before and after. Keep raw,
    cleaned, profile, and manifest artefacts separate. Joins follow
    `../../data-quality-pipeline/references/merge-discipline.md` (normalise grain first, assert

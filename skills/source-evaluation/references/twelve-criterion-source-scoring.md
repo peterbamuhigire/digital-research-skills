@@ -1,6 +1,6 @@
-# Tudor's twelve-point evaluation
+# Twelve-criterion source scoring
 
-Where `source-verification` tiers a source by class and `five-term-source-doubt` situates a primary document, Tudor's rubric scores any source — especially journalism, analyst reports, and grey literature — across twelve dimensions. From Dean Tudor via Robin Rowland's *Creative Guide to Research*.
+Where `source-verification` tiers a source by class and `five-term-source-doubt.md` situates a primary document, this rubric scores any source (especially journalism, analyst reports and grey literature) across twelve dimensions.
 
 ## The twelve criteria
 
@@ -21,7 +21,7 @@ Where `source-verification` tiers a source by class and `five-term-source-doubt`
 
 ## Three optional criteria for financial / business sources
 
-Rowland adds:
+Add these when the source is financial or corporate reporting:
 
 - **Understandability** — is the financial information accessible to non-specialists?
 - **Reliability / representational faithfulness** — does the report represent what it claims?
@@ -77,3 +77,5 @@ Recommended thresholds:
 - `five-term-source-doubt` — for primary documents specifically
 - `evidence-discipline` — the umbrella discipline
 - `gap-analysis` — low-scoring criteria are real gaps
+
+Sources: Rowland (2000) *The Creative Guide to Research* (drawing on Dean Tudor's evaluation criteria); IFRS Conceptual Framework qualitative characteristics for the financial extensions.

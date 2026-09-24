@@ -31,8 +31,8 @@ If the output is purely descriptive ("the regulator filed X on date Y"), this sk
 ## The five rules (load first)
 
 1. **ICD 203 nine standards.** Every estimative output must satisfy all nine before shipping. Reference: `references/icd-203-and-tradecraft-standards.md`.
-2. **Multiple competing hypotheses.** No load-bearing judgment ships from a single hypothesis without an Analysis of Competing Hypotheses (ACH) matrix run on it. Reference: `references/heuer-pherson-sats.md`.
-3. **Calibrated probability.** Forward-looking confidence is expressed in the Kent / ODNI lexicon with explicit numeric bands. **Confidence in the source** and **probability of the judgment** are stated separately. Reference: `references/kent-estimative-probability.md`.
+2. **Multiple competing hypotheses.** No load-bearing judgment ships from a single hypothesis without an Analysis of Competing Hypotheses (ACH) matrix run on it. Reference: `references/structured-analytic-techniques.md`.
+3. **Calibrated probability.** Forward-looking confidence is expressed in the Kent / ODNI lexicon with explicit numeric bands. **Confidence in the source** and **probability of the judgment** are stated separately. Reference: `references/estimative-probability-language.md`.
 4. **Cognitive-bias self-audit.** Before shipping, the analyst names which biases the conclusion is most exposed to and what mitigation was applied. Reference: `references/cognitive-bias-checklist.md`.
 5. **No single-source key judgment.** No key judgment may rest on a single uncorroborated stream. If only one source exists, the judgment ships as a hypothesis with a confidence label of LOW and an explicit indicator of what would corroborate it. Reference: `references/sourcing-and-deception.md`.
 
@@ -41,11 +41,11 @@ If the output is purely descriptive ("the regulator filed X on date Y"), this sk
 | Situation | Load |
 |---|---|
 | **Universal floor** | `references/icd-203-and-tradecraft-standards.md` (always) |
-| **Contested evidence; multiple plausible accounts** | `references/heuer-pherson-sats.md` (use ACH) |
-| **Strong consensus on a high-stakes call** | `references/heuer-pherson-sats.md` (Devil's Advocacy or Pre-Mortem) |
-| **Forecast / future-state judgment** | `references/heuer-pherson-sats.md` (What-If, High-Impact/Low-Probability, Indicators) + `references/kent-estimative-probability.md` |
-| **Inherited assumptions or "everyone knows" claim** | `references/heuer-pherson-sats.md` (Key Assumptions Check) |
-| **Adversary / competitor reasoning** | `references/heuer-pherson-sats.md` (Red Cell) + `references/sourcing-and-deception.md` (mirror-imaging, D&D) |
+| **Contested evidence; multiple plausible accounts** | `references/structured-analytic-techniques.md` (use ACH) |
+| **Strong consensus on a high-stakes call** | `references/structured-analytic-techniques.md` (Devil's Advocacy or Pre-Mortem) |
+| **Forecast / future-state judgment** | `references/structured-analytic-techniques.md` (What-If, High-Impact/Low-Probability, Indicators) + `references/estimative-probability-language.md` |
+| **Inherited assumptions or "everyone knows" claim** | `references/structured-analytic-techniques.md` (Key Assumptions Check) |
+| **Adversary / competitor reasoning** | `references/structured-analytic-techniques.md` (Red Cell) + `references/sourcing-and-deception.md` (mirror-imaging, D&D) |
 | **Single source / contested source** | `references/sourcing-and-deception.md` |
 | **Team design / analyst development / collaboration or communication breakdown** | `references/behavioral-science-for-analysis.md` |
 | **Pre-publication self-audit** | `references/cognitive-bias-checklist.md` |
@@ -56,11 +56,11 @@ The Office of the Director of National Intelligence's Intelligence Community Dir
 
 ## Structured Analytic Techniques — one-paragraph summary
 
-The catalog formalised by Richards Heuer Jr. and Randolph Pherson (Heuer & Pherson, *Structured Analytic Techniques for Intelligence Analysis*, CQ Press, 2010 and later editions) gives the analyst named, runnable mini-protocols — each with a trigger, step-by-step method, output template, and known pitfalls. The engine adopts: ACH, Key Assumptions Check, Devil's Advocacy, Team A / Team B, Red Cell, What-If, High-Impact/Low-Probability, Pre-Mortem, Indicators-and-Warning, Argument Mapping. Reference: `references/heuer-pherson-sats.md`.
+The catalog formalised by Richards Heuer Jr. and Randolph Pherson (Heuer & Pherson, *Structured Analytic Techniques for Intelligence Analysis*, CQ Press, 2010 and later editions) gives the analyst named, runnable mini-protocols — each with a trigger, step-by-step method, output template, and known pitfalls. The engine adopts: ACH, Key Assumptions Check, Devil's Advocacy, Team A / Team B, Red Cell, What-If, High-Impact/Low-Probability, Pre-Mortem, Indicators-and-Warning, Argument Mapping. Reference: `references/structured-analytic-techniques.md`.
 
 ## Estimative probability — one-paragraph summary
 
-Sherman Kent (Office of National Estimates, 1951–1973) observed that vague verbal probability ("possible", "likely") was read inconsistently across readers. He proposed pairing each verbal term with an explicit numeric band. The ODNI lexicon (almost certainly ≈ ≥95%; very likely ≈ 80–90%; likely ≈ 60–80%; probably ≈ 50–70%; might ≈ 20–50%; unlikely ≈ 10–20%; very unlikely ≤5%) is a direct descendant. The engine requires every estimative claim to use the lexicon and to **separate probability of the judgment from confidence in the source**. Reference: `references/kent-estimative-probability.md`.
+Sherman Kent (Office of National Estimates, 1951–1973) observed that vague verbal probability ("possible", "likely") was read inconsistently across readers. He proposed pairing each verbal term with an explicit numeric band. The ODNI ICD 203 scale (almost no chance 1–5%; very unlikely 5–20%; unlikely 20–45%; roughly even chance 45–55%; likely 55–80%; very likely 80–95%; almost certain 95–99%) is a direct descendant. The engine requires every estimative claim to use the lexicon and to **separate probability of the judgment from confidence in the source**. Reference: `references/estimative-probability-language.md`.
 
 ## Universal output ship-gate
 
@@ -170,7 +170,7 @@ Two explanations supported by overlapping sources remain separate until independ
 
 ## References
 
-- [Structured analytic techniques](references/heuer-pherson-sats.md)
+- [Structured analytic techniques](references/structured-analytic-techniques.md)
 - [Cognitive bias checklist](references/cognitive-bias-checklist.md)
 <!-- dual-compat-end -->
 

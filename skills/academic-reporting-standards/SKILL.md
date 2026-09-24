@@ -15,7 +15,7 @@ Single entry skill for any academic artefact intended for an examination committ
 
 This skill has three layers, all load-bearing:
 
-- **Practical craft** — the "invisible rules" Rita Brause articulates: dissertation as apprenticeship, chair-as-quasi-parental relationship, parallel work, pilot everything, recursive process. The unwritten conventions every examination committee assumes the candidate knows. Reference: `references/brause-dissertation-craft.md`.
+- **Practical craft** — the "invisible rules" Rita Brause articulates: dissertation as apprenticeship, chair-as-quasi-parental relationship, parallel work, pilot everything, recursive process. The unwritten conventions every examination committee assumes the candidate knows. Reference: `references/dissertation-unwritten-conventions.md`.
 - **Institutional examination conventions** — current published rules for Cambridge, Oxford, LSE, Harvard, Yale, and Princeton. This layer encodes word-count discipline, thesis-by-papers structures, original-contribution language, viva/defense procedures, examiner criteria, and explicit gaps where no central word-count cap is published. Reference: `references/oxbridge-ivy-examination-conventions.md`.
 - **Formal reporting** — the published study-type-specific checklists (PRISMA / CONSORT / STROBE / MOOSE / GRADE / Cochrane / TOP) hosted by the EQUATOR Network. The conventions every top journal and every doctoral committee require. Reference: `references/equator-decision-tree.md`.
 
@@ -37,7 +37,7 @@ Do **not** use on: executive summaries (use `executive-communication`), business
 
 ## The five rules (load first)
 
-1. **Genre-correct structure.** Academic artefacts use neutral topic headings (Introduction, Literature Review, Methodology, Findings, Discussion, Conclusion) — not action titles. Reference: `references/brause-dissertation-craft.md`.
+1. **Genre-correct structure.** Academic artefacts use neutral topic headings (Introduction, Literature Review, Methodology, Findings, Discussion, Conclusion) — not action titles. Reference: `references/dissertation-unwritten-conventions.md`.
 2. **Original contribution declared.** Every doctoral artefact states explicitly, in the abstract and in chapter 1, what is new. The contribution is gap-filling, inconsistency-resolving, conflict-clarifying, theory-testing, or theory-building. Reference: `references/originality-claim.md`.
 3. **Methodology justified, not described.** Every methodological choice carries its rationale, tied back to the theory or phenomenon under investigation. Reference: `references/methodology-justification-checklist.md`.
 4. **Reporting-standard compliance.** The artefact ships with the appropriate EQUATOR-network checklist completed and submitted. Reference: `references/equator-decision-tree.md`.
@@ -48,14 +48,14 @@ Do **not** use on: executive summaries (use `executive-communication`), business
 
 | Artefact type | Load |
 |---|---|
-| **Doctoral dissertation** | `references/brause-dissertation-craft.md` (always) + `references/oxbridge-ivy-examination-conventions.md` for Oxbridge/Ivy/LSE targets or the relevant regional skill (`uganda-academic-research`, `kenya-academic-research`) + `references/methodology-justification-checklist.md` + `references/originality-claim.md` + `references/viva-defense-preparation.md` |
+| **Doctoral dissertation** | `references/dissertation-unwritten-conventions.md` (always) + `references/oxbridge-ivy-examination-conventions.md` for Oxbridge/Ivy/LSE targets or the relevant regional skill (`uganda-academic-research`, `kenya-academic-research`) + `references/methodology-justification-checklist.md` + `references/originality-claim.md` + `references/viva-defense-preparation.md` |
 | **Master's research thesis / dissertation** | `references/oxbridge-ivy-examination-conventions.md` for Oxbridge/Ivy/LSE targets or the relevant regional skill (`uganda-academic-research`, `kenya-academic-research`) + `references/methodology-justification-checklist.md` + `references/originality-claim.md` where original research is required |
 | **Systematic review** | `references/equator-decision-tree.md` (PRISMA 2020 + Cochrane Handbook) + GRADE for evidence quality |
 | **Randomised controlled trial paper** | `references/equator-decision-tree.md` (CONSORT 2025) + GRADE |
 | **Observational study paper** | `references/equator-decision-tree.md` (STROBE) + GRADE |
 | **Meta-analysis of observational studies** | `references/equator-decision-tree.md` (MOOSE) + GRADE |
 | **Mixed-methods or qualitative study** | `references/equator-decision-tree.md` (Cochrane qualitative synthesis) |
-| **Research proposal** | `references/brause-dissertation-craft.md` + `references/originality-claim.md` + `references/methodology-justification-checklist.md` |
+| **Research proposal** | `references/dissertation-unwritten-conventions.md` + `references/originality-claim.md` + `references/methodology-justification-checklist.md` |
 | **Journal article (any)** | Reporting-standard for the study type + `references/findings-interpretation-criteria.md` |
 
 ## Rigor-level defaulting for literature review
@@ -83,7 +83,7 @@ the two.
 
 ## The Brause practical-craft layer — one-paragraph summary
 
-Rita S. Brause's *Writing Your Doctoral Dissertation: Invisible Rules for Success* (1999) names the unwritten conventions that determine completion at Ivy / Oxbridge / LSE-equivalent institutions. Faculty see the dissertation as an apprenticeship (proof of capacity for scholarly work), not as a final examination on coursework. The chair-student relationship is quasi-parental and quasi-political; choice of chair predicts completion more than choice of topic. Students self-initiate every interaction; silence is interpreted as progress. Work in parallel — never wait for a chapter to come back. The proposal is a contract once approved, but new administrations can change the rules; finish fast. ABD is a trap. Pilot everything. The process is recursive; linear plans fail. Reference: `references/brause-dissertation-craft.md`.
+Rita S. Brause's *Writing Your Doctoral Dissertation: Invisible Rules for Success* (1999) names the unwritten conventions that determine completion at Ivy / Oxbridge / LSE-equivalent institutions. Faculty see the dissertation as an apprenticeship (proof of capacity for scholarly work), not as a final examination on coursework. The chair-student relationship is quasi-parental and quasi-political; choice of chair predicts completion more than choice of topic. Students self-initiate every interaction; silence is interpreted as progress. Work in parallel — never wait for a chapter to come back. The proposal is a contract once approved, but new administrations can change the rules; finish fast. ABD is a trap. Pilot everything. The process is recursive; linear plans fail. Reference: `references/dissertation-unwritten-conventions.md`.
 
 ## The formal-reporting layer — one-paragraph summary
 
@@ -123,7 +123,7 @@ Before any academic artefact ships, every box must be ticked:
 - **Action titles in academic chapters.** The convention is neutral topic headings. Reserve action titles for the executive-summary version of the work (use `executive-communication` for that).
 - **Skipping the EQUATOR checklist.** Every top-tier journal requires the relevant reporting-standard checklist. Submitting without it signals amateur.
 - **Inventing a universal Ivy/Oxbridge word count.** Cambridge and Oxford vary by subject; Harvard/Yale/Princeton central guidance does not supply a universal cap in the mined sources. Use the exact department/programme rule or state the gap.
-- **Polemics in the discussion.** Brause Ch 14: "acknowledge biases and the bases for these, while recognising the possibility of other perspectives. Avoid polemics."
+- **Polemics in the discussion.** Acknowledge your biases and their basis, recognise other perspectives, and argue from evidence rather than advocacy.
 
 ## Companion skills
 
@@ -148,7 +148,7 @@ Before any academic artefact ships, every box must be ticked:
 - TOP Guidelines (Center for Open Science). https://www.cos.io/initiatives/top-guidelines. Tier 1.
 - Cambridge, Oxford, LSE, Harvard, Yale, Princeton institutional examination and dissertation guidance. See `references/oxbridge-ivy-examination-conventions.md`. Tier 1.
 
-The verbatim attribution discipline applies. References to Brause carry chapter; references to PRISMA / CONSORT / GRADE etc. carry the canonical institutional URL.
+The verbatim attribution discipline applies. References to books carry a short Author (Year) *Title* citation; references to PRISMA / CONSORT / GRADE etc. carry the canonical institutional URL.
 
 ## Wave-2 task: institution-specific examination conventions
 

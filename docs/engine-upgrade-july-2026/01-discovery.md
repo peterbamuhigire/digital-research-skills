@@ -533,7 +533,7 @@ The table quotes the discovered `name` and `description` frontmatter values. `[M
 | skills/academic-reporting-standards/CLAUDE.md | 14 | d225ac471372 | Claude-specific — academic-reporting-standards |
 | skills/academic-reporting-standards/README.md | 25 | 28b9f1130356 | academic-reporting-standards |
 | skills/academic-reporting-standards/SKILL.md | 134 | 8792ceae0067 | Academic Reporting Standards |
-| skills/academic-reporting-standards/references/brause-dissertation-craft.md | 127 | b405d90cc505 | Reference — Brause Dissertation Craft |
+| skills/academic-reporting-standards/references/dissertation-unwritten-conventions.md | 127 | b405d90cc505 | Reference — Brause Dissertation Craft |
 | skills/academic-reporting-standards/references/equator-decision-tree.md | 163 | 5b630d1aa99d | Reference — EQUATOR Decision Tree |
 | skills/academic-reporting-standards/references/findings-interpretation-criteria.md | 78 | 02663448da49 | Reference — Findings Interpretation Criteria |
 | skills/academic-reporting-standards/references/methodology-justification-checklist.md | 111 | ebf91f8c4eef | Reference — Methodology Justification Checklist |
@@ -566,7 +566,7 @@ The table quotes the discovered `name` and `description` frontmatter values. `[M
 | skills/data-quality-pipeline/references/cleaning-pandas.md | 124 | 2d0b76c0d7a1 | Data cleaning — pandas recipes |
 | skills/data-quality-pipeline/references/encoding-and-unicode.md | 76 | b253ce893fdd | Encoding and Unicode |
 | skills/data-quality-pipeline/references/merge-discipline.md | 113 | bc25d856864b | Merge discipline |
-| skills/data-quality-pipeline/references/quality-assessment-walker.md | 111 | 10b2a5e8afc8 | Data quality assessment — the four axes |
+| skills/data-quality-pipeline/references/dataset-quality-four-axes.md | 111 | 10b2a5e8afc8 | Data quality assessment — the four axes |
 | skills/data-quality-pipeline/references/tidy-data-craft.md | 95 | 9207dcabe3ae | Tidy data craft — Wickham's three rules |
 | skills/dataset-discovery-and-analysis/AGENTS.md | 21 | 36d662e8cec2 | Codex / generic-agent — dataset-discovery-and-analysis |
 | skills/dataset-discovery-and-analysis/CLAUDE.md | 8 | 582a609b1a26 | Claude-specific — dataset-discovery-and-analysis |

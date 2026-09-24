@@ -89,8 +89,8 @@ When cohort reports use different labels, build a shared-dimension crosswalk, pr
 - [Pain-point taxonomy](references/pain-point-taxonomy.md)
 - [Search operators](references/search-operator-grammar.md)
 - [Google search API](references/google-search-api-operator.md)
-- [Search mastery](references/macleod-search-mastery.md)
-- [Search literacy](references/russell-search-literacy.md)
+- [Search mastery](references/search-craft-and-deep-web.md)
+- [Search literacy](references/search-metacognition-and-verification.md)
 
 <!-- dual-compat-end -->
 
@@ -115,8 +115,8 @@ The orchestrator (or another skill) tells you the project needs a named techniqu
 | Build a taxonomy of pain points / complaints / use cases from raw qualitative data | `references/pain-point-taxonomy.md` | Code → cluster → name → counts → exemplar quotes |
 | Master Google / Bing / archive search operators | `references/search-operator-grammar.md` | site:, intitle:, inurl:, filetype:, before:, after:, allintext:, around:, exact phrase, exclusion, OR/AND |
 | Programmatic search via Google CSE / Bing Web Search APIs | `references/google-search-api-operator.md` | API setup, query budget, JSON parsing, rate limits |
-| MacLeod's full search-mastery layer — operator catalog, deep-web heuristics, anti-patterns, "never compile what's already compiled" | `references/macleod-search-mastery.md` | Don MacLeod, *How to Find Out Anything* (Tier 1) |
-| Russell's metacognitive layer — clarify the question, lateral reading, knowing when to stop, triangulation standards, leading-question lint | `references/russell-search-literacy.md` | Daniel M. Russell, *The Joy of Search* (Tier 1) |
+| MacLeod's full search-mastery layer — operator catalog, deep-web heuristics, anti-patterns, "never compile what's already compiled" | `references/search-craft-and-deep-web.md` | Don MacLeod, *How to Find Out Anything* (Tier 1) |
+| Russell's metacognitive layer — clarify the question, lateral reading, knowing when to stop, triangulation standards, leading-question lint | `references/search-metacognition-and-verification.md` | Daniel M. Russell, *The Joy of Search* (Tier 1) |
 
 ## Orchestration
 

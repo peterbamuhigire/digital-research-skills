@@ -21,7 +21,7 @@ Single entry skill for open-source intelligence work — civilian, lawful, defen
 | Profile an individual or entity for adverse media | `references/adverse-media-investigation.md` |
 | General OSINT methodology (planning, collection, analysis, dissemination) | `references/osint-methodology.md` |
 | Build a chronology of events from heterogeneous sources | `references/chronology-construction.md` |
-| Verify images / videos / documents | load `source-evaluation` skill, `references/silverman-media-forensics.md` |
+| Verify images / videos / documents | load `source-evaluation` skill, `references/media-forensics-verification.md` |
 | Run a phased investigation with client-facing cost / consent gates | `references/osint-methodology.md` § Hetherington Phased Approach |
 | Build a repeatable case notebook / graph / evidence vault | `references/osint-case-vaults.md` |
 | Reach for a technique not covered by the standard references (deep / dark web, geospatial, email tracing, metadata, crypto, IoT, ML, disinformation) | `references/advanced-osint-techniques.md` |
@@ -58,7 +58,7 @@ A single-tier-5 OSINT report is not an OSINT report; it is a rumour log.
 | `references/adverse-media-investigation.md` | Building an adverse-media file on an individual or entity (allegations, prosecutions, lawsuits, sanctions, regulator actions, scandals) |
 | `references/skip-tracing-craft.md` | Locating a person whose last-known contact details are stale — civilian/lawful skip tracing only |
 | `references/chronology-construction.md` | Building a timeline from heterogeneous sources, with confidence per event and gaps named explicitly |
-| `references/macleod-investigative-search.md` | Government-records / FOIA / court-docket / public-records-aggregator workflow + people-finding with legal sensitivities (DPPA, FCRA, GLBA, HIPAA flags). MacLeod, *How to Find Out Anything* (Tier 1). |
+| `references/public-records-investigative-search.md` | Government-records / FOIA / court-docket / public-records-aggregator workflow + people-finding with legal sensitivities (DPPA, FCRA, GLBA, HIPAA flags). MacLeod, *How to Find Out Anything* (Tier 1). |
 | `references/osint-doctrine-and-history.md` | Institutional lineage (FBIS → OSC), four competing definitions of OSINT (OSC / Congress-Simmons / NATO-Steele / historical), distinctions vs. clandestine INTs / journalism / SOCMINT, the engine's adopted definition. Bean, *No More Secrets* (Tier 1). |
 | `references/osint-validation-and-anti-patterns.md` | OSINT validation cycle, six named tensions (speed/verification, volume/signal, secret/open, commercial/analytic, privacy, tradecraft/scientific), source-vetting standards, positive cases (SARS / Burundi), anti-patterns (over-classification, "Googlification", factory-line outsourcing, single-advocate evidence gaps). Bean, *No More Secrets* (Tier 1). |
 | `references/advanced-osint-techniques.md` | Topic atlas for techniques beyond the standard references — deep/dark web, geospatial intelligence, email tracing, metadata/forensics, cryptocurrency / blockchain, IoT, ML-augmented OSINT, disinformation analysis, big-data sources. Botwright, *Advanced OSINT Strategies* (4-volume bundle), with engine guardrails. |
@@ -209,5 +209,5 @@ For an authorised stakeholder review, corroborate public organisational roles ac
 ## Reference Index
 
 - [Advanced techniques](references/advanced-osint-techniques.md); [adverse media](references/adverse-media-investigation.md); [stakeholder reconnaissance](references/google-stakeholder-recon.md)
-- [Investigative search](references/macleod-investigative-search.md); [case vaults](references/osint-case-vaults.md); [doctrine and history](references/osint-doctrine-and-history.md)
+- [Investigative search](references/public-records-investigative-search.md); [case vaults](references/osint-case-vaults.md); [doctrine and history](references/osint-doctrine-and-history.md)
 - [Skip tracing](references/skip-tracing-craft.md); [social-source extraction](references/social-source-extraction.md)

@@ -22,27 +22,27 @@ When a report or proposal describes a system, process, workflow, operating model
 
 | Artifact | Reference | Distinguishing feature |
 |---|---|---|
-| Informational report | `references/clippinger-business-reports.md` | No conclusions; just the facts |
-| Analytical report | `references/clippinger-business-reports.md` · `references/forsyth-reports-proposals.md` | Interprets data; conclusions but no required action |
-| Recommendation report | `references/forsyth-reports-proposals.md` · `references/clippinger-business-reports.md` | Numbered, owned, dated, costed recommendations |
-| Progress / status report | `references/clippinger-business-reports.md` · `references/forsyth-reports-proposals.md` § status | RAG status; variances; next-period plan |
-| Feasibility report | `references/clippinger-business-reports.md` | Criteria-based go / no-go |
-| Audit / compliance report | `references/clippinger-business-reports.md` | Findings ranked by severity; remediation plan |
-| Formal research report | `references/clippinger-business-reports.md` (full template) | Methodology section; replicability standard |
-| Business plan | `references/clippinger-business-reports.md` § business plan | Market analysis + financial projections + sensitivity |
-| Growth strategy report | `../business-writing/references/growth-profit-and-disruption-analysis.md` · `references/forsyth-reports-proposals.md` | Growth engine + constraints + experiments + KPI tree |
-| Internal proposal / business case | `references/forsyth-reports-proposals.md` § internal proposal | Recommendation upfront; options considered |
-| Formal external proposal | `references/forsyth-reports-proposals.md` § external proposal | Cover letter + situation + approach + price + risks |
-| Bid response (RFP) | `references/forsyth-reports-proposals.md` § bid | Mirror RFP order; compliance matrix as section 1 |
-| White paper — backgrounder | `references/graham-white-papers.md` § backgrounder | Late-funnel; vendor named throughout |
-| White paper — numbered list | `references/graham-white-papers.md` § numbered list | Early-funnel; light, scannable |
-| White paper — problem/solution | `references/graham-white-papers.md` § problem/solution | Mid-funnel; vendor only in About + CTA |
+| Informational report | `references/report-type-selection-and-formal-templates.md` | No conclusions; just the facts |
+| Analytical report | `references/report-type-selection-and-formal-templates.md` · `references/report-and-proposal-structure.md` | Interprets data; conclusions but no required action |
+| Recommendation report | `references/report-and-proposal-structure.md` · `references/report-type-selection-and-formal-templates.md` | Numbered, owned, dated, costed recommendations |
+| Progress / status report | `references/report-type-selection-and-formal-templates.md` · `references/report-and-proposal-structure.md` § status | RAG status; variances; next-period plan |
+| Feasibility report | `references/report-type-selection-and-formal-templates.md` | Criteria-based go / no-go |
+| Audit / compliance report | `references/report-type-selection-and-formal-templates.md` | Findings ranked by severity; remediation plan |
+| Formal research report | `references/report-type-selection-and-formal-templates.md` (full template) | Methodology section; replicability standard |
+| Business plan | `references/report-type-selection-and-formal-templates.md` § business plan | Market analysis + financial projections + sensitivity |
+| Growth strategy report | `../business-writing/references/growth-profit-and-disruption-analysis.md` · `references/report-and-proposal-structure.md` | Growth engine + constraints + experiments + KPI tree |
+| Internal proposal / business case | `references/report-and-proposal-structure.md` § internal proposal | Recommendation upfront; options considered |
+| Formal external proposal | `references/report-and-proposal-structure.md` § external proposal | Cover letter + situation + approach + price + risks |
+| Bid response (RFP) | `references/report-and-proposal-structure.md` § bid | Mirror RFP order; compliance matrix as section 1 |
+| White paper — backgrounder | `references/white-paper-types-and-drafting.md` § backgrounder | Late-funnel; vendor named throughout |
+| White paper — numbered list | `references/white-paper-types-and-drafting.md` § numbered list | Early-funnel; light, scannable |
+| White paper — problem/solution | `references/white-paper-types-and-drafting.md` § problem/solution | Mid-funnel; vendor only in About + CTA |
 
 **Hard rule:** pick the artifact type before drafting. Mixing types (e.g., audit body with recommendation framing, or backgrounder body with numbered-list opener) confuses readers and weakens both functions.
 
 ## The persuasion spine (universal)
 
-Every artifact in this skill rides the same four-move spine (Forsyth's SCQA, Minto-style):
+Every artifact in this skill rides the same four-move spine (situation, complication, question, answer):
 
 - **S — Situation** — stable, agreed background.
 - **C — Complication** — change, threat, or opportunity that destabilises it.
@@ -53,7 +53,7 @@ Building the case: state answer first → 3–5 MECE reasons → evidence per re
 
 ## Prerequisites (run before drafting any artifact)
 
-### 1. Audience grid (Forsyth)
+### 1. Audience grid
 
 | Role | Cares about | Decision power | What they must see | Likely objection |
 |---|---|---|---|---|
@@ -63,7 +63,7 @@ Building the case: state answer first → 3–5 MECE reasons → evidence per re
 | User | Day-to-day impact | Adoption | Transition plan | "Disrupts my team" |
 | Gatekeeper | Compliance, format | Stops document reaching decider | Required headings, format | "Wrong template" |
 
-### 2. Purpose statement (Forsyth)
+### 2. Purpose statement
 
 > *After reading this [report/proposal/white paper], [primary reader] will [decide / approve / fund / change / understand] **X**, because the document shows **Y**, and the next action they will take is **Z** by **[date]**.*
 
@@ -73,15 +73,11 @@ If X/Y/Z is vague, planning is incomplete. Do not draft.
 
 Load `critical-reasoning-and-argument` before drafting the body. Each finding, conclusion, recommendation, and option must have an argument map, strongest objection, implementation constraint, and confidence limit.
 
-### 4. White-paper mantra (Graham)
+### 4. White-paper purpose test
 
-For any white paper, the mantra test gates every section:
+For any white paper, every section must help a business reader understand an issue, solve a problem, or make a decision. If a section does none of those three, it is brochure or filler.
 
-> *"A truly effective white paper helps business people understand an issue, solve a problem, or make a decision."*
-
-If a section does none of those three, it is brochure or filler.
-
-## Three-way discipline (Clippinger) — applies to every report
+## Three-way discipline — applies to every report
 
 | Artifact | What it answers | Voice |
 |---|---|---|
@@ -95,9 +91,9 @@ Mixing them — a "finding" that recommends action, or a "conclusion" that intro
 
 | Reference | Source | Load when |
 |---|---|---|
-| `references/forsyth-reports-proposals.md` | Patrick Forsyth, *How to Write Reports and Proposals* (Kogan Page) | Any report or proposal — audience grid, X/Y/Z purpose, exec-summary stand-alone, SCQA, recommendation discipline, ship gate, 7 reusable templates |
-| `references/clippinger-business-reports.md` | Dorinda Clippinger, *Business Report Guides: Research Reports and Business Plans* | Formal research reports and business plans — full section templates, replicability standard, three-way discipline, front/back matter rules |
-| `references/graham-white-papers.md` | Gordon Graham, *White Papers For Dummies* | Any of the three white-paper flavors — flavor-picking, mantra, hook rules, evidence hierarchy, vendor-naming rules |
+| `references/report-and-proposal-structure.md` | Forsyth; Minto | Any report or proposal: inputs, reader map, purpose statement, report vs proposal rules, structures (long, short, status, external, internal, bid, briefing), executive summary, ship checklist |
+| `references/report-type-selection-and-formal-templates.md` | Clippinger | Picking the report type; formal research report and business plan procedures; replicability standard; front/back matter scaling |
+| `references/white-paper-types-and-drafting.md` | Graham | Any white paper: type selection (backgrounder, numbered list, problem/solution), opening rules, evidence rules, sponsor-naming rules |
 
 ## Executive summary discipline
 
@@ -235,8 +231,8 @@ The artifact matches one selected form, separates evidence from interpretation a
 
 ## References
 
-- [Forsyth reports and proposals](references/forsyth-reports-proposals.md)
-- [Clippinger business reports](references/clippinger-business-reports.md)
-- [Graham white papers](references/graham-white-papers.md)
+- [Report and proposal structure](references/report-and-proposal-structure.md)
+- [Report type selection and formal templates](references/report-type-selection-and-formal-templates.md)
+- [White paper types and drafting](references/white-paper-types-and-drafting.md)
 
 <!-- dual-compat-end -->

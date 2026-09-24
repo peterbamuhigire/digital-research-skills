@@ -64,7 +64,7 @@ clean DataFrame
 flagged DataFrame
    ↓ (5) merge audit         → references/merge-discipline.md   (only if joining)
 merged DataFrame
-   ↓ (6) quality score       → references/quality-assessment-walker.md
+   ↓ (6) quality score       → references/dataset-quality-four-axes.md
 DataQualityScore + manifest
    ↓ (7) ship gate
 output Parquet + manifest
@@ -81,7 +81,7 @@ Skipping a step produces silent data quality failures downstream.
 | 3. Cleaning | `references/cleaning-pandas.md` | Walker + Chen recipe library — types, missing values, duplicates, normalisation |
 | 4. Anomaly detection | `references/anomaly-detection.md` | IQR + z-score + Isolation Forest panel; skew-aware method selection |
 | 5. Merge audit | `references/merge-discipline.md` | Walker checkmerge + Chen `validate=` cardinality; mandatory before any join |
-| 6. Quality score | `references/quality-assessment-walker.md` | Four-axis composite (completeness · usefulness · reliability · relevance), default weights (0.25, 0.25, 0.30, 0.20), `passes(threshold=0.7)` gate |
+| 6. Quality score | `references/dataset-quality-four-axes.md` | Four-axis composite (completeness · usefulness · reliability · relevance), default weights (0.25, 0.25, 0.30, 0.20), `passes(threshold=0.7)` gate |
 | Analytics method gate | `references/analytics-quality-method-gate.md` | Descriptive / diagnostic / predictive / prescriptive method-fit gate before quantitative claims, forecasts, dashboards, or models |
 | Analysis run and reporting | `../research-design/references/quantitative-analytics-method.md` | After the gate passes: method choice, validation, chart choice, and the finding format |
 | Cross-cutting | `tools/data/profiler.py` | Profile DataFrame: dtypes, distributions, cardinality, skew/kurt hints |
@@ -120,7 +120,7 @@ Without the manifest, the data is not shippable.
 2. **Tidy before analysis.** Load `references/tidy-data-craft.md`; lint for the three Wickham violations; fix them.
 3. **`validate=` on every merge.** Load `references/merge-discipline.md`. Default `validate='one_to_one'` or `'one_to_many'` — never default-merge.
 4. **Outlier panel, not single test.** Load `references/anomaly-detection.md`. IQR for skewed; z-score for normal; Isolation Forest for high-dimensional. Consensus across 2+ methods before flag.
-5. **Score before ship.** Load `references/quality-assessment-walker.md`. Composite ≥ 0.70 default; sub-axis ≥ 0.50 each.
+5. **Score before ship.** Load `references/dataset-quality-four-axes.md`. Composite ≥ 0.70 default; sub-axis ≥ 0.50 each.
 6. **Manifest always.** No dataset ships without the provenance packet.
 7. **Method fit before claims.** Load `references/analytics-quality-method-gate.md`
    before statistical tests, forecasts, dashboards, or ML models. Downgrade the claim if

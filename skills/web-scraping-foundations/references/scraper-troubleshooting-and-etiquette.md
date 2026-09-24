@@ -1,49 +1,54 @@
-# Scraping Troubleshooting & Etiquette (Brody)
+# Scraper Troubleshooting and Etiquette
 
-Encodes Hartley Brody's *The Ultimate Guide to Web Scraping* (Leanpub, 2017) as the engine's operational layer for making scrapers reliable, polite, and debuggable. Pair with `web-scraping-foundations`, `scraping-politeness-and-ratelimiting`, and `scraping-engineering-python`.
+Use this guide to make a scraper reliable, polite and debuggable, and to diagnose one that has
+broken. It applies the engine's identification and rate policy in
+`politeness-and-ratelimiting.md`; where anything here seems to conflict, that policy wins.
 
-## 1. The eight operational tactics (Brody's checklist)
+## Inputs
 
-Every non-trivial scraper must address all eight before it ships:
+- Target site, its terms of use and `robots.txt`.
+- Authorisation basis for the collection (public data, licence, client permission) and any
+  personal data involved (route to `../../pi-investigation/references/legal-and-ethical-bounds.md`).
+- Volume, frequency and deadline.
+- The failing output, if troubleshooting: status code, headers, first bytes of body.
 
-1. **Spoof the User-Agent and other HTTP headers.**
-2. **Handle logins and session cookies.**
-3. **Handle hidden (but required) security fields on POST forms (CSRF tokens).**
-4. **Respect the website's robots.txt file.**
-5. **Slow down requests so you do not overwhelm the server.**
-6. **Distribute requests across multiple IP addresses when scale demands it.**
-7. **Guard against network errors.**
-8. **Gracefully handle missing HTML elements.**
+## 1. Eight operational concerns
 
-## 2. Header spoofing — the first move when content is missing or different
+Every non-trivial scraper addresses all eight before it ships:
 
-The default User-Agent of `requests`, `httpx`, `urllib`, etc. screams "this is a script." Many sites short-circuit to error pages or simplified content for default agents.
+1. Honest identification and correct request headers.
+2. Logins and session cookies, only where authorised.
+3. Hidden form fields such as CSRF tokens.
+4. `robots.txt` compliance.
+5. Request pacing so the server is never strained.
+6. Scale limits, including whether distributing load is justified at all.
+7. Network-error handling.
+8. Graceful handling of missing HTML elements.
 
-**Procedure:**
+## 2. Headers: identify honestly, send what a client normally sends
 
-1. Open the page in Chrome / Firefox dev tools → Network tab → click the document request → copy every request header (except `Cookie`).
-2. Build a headers dict in your scraper that mirrors the browser exactly.
-3. Set the `User-Agent` to a current real browser string.
-4. Re-issue the request.
+Default library headers can trigger error pages or stripped-down content. The fix is to send a
+complete, well-formed set of headers (`Accept`, `Accept-Language`, `Accept-Encoding`) and the
+engine's identifying User-Agent from `politeness-and-ratelimiting.md`, not to impersonate a
+browser. If a site serves different content to an honestly identified client, treat that as the
+site's access decision: look for an official API or data export, ask the owner, or record the
+source as not collectable. Do not combine user-agent impersonation, IP rotation and CAPTCHA
+solving to defeat access controls.
 
 ```python
 import requests
 
 headers = {
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Encoding": "gzip, deflate, br",
-    "Accept-Language": "en-US,en;q=0.8",
-    "Cache-Control": "no-cache",
-    "DNT": "1",
-    "Pragma": "no-cache",
-    "Upgrade-Insecure-Requests": "1",
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-                  "(KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "Accept-Language": "en-GB,en;q=0.8",
+    "User-Agent": "digital-research-engine/0.1 (+https://github.com/peterbamuhigire/digital-research-skills)",
 }
 r = requests.get(url, headers=headers, timeout=30)
 ```
 
-If content still differs from the browser, the data is loaded dynamically (see Section 8: rendered/XHR content) — header spoofing alone won't fix it.
+If content still differs from what a browser shows, the data is probably loaded by JavaScript
+(section 8).
 
 ## 3. Sessions and login cookies
 
@@ -86,7 +91,7 @@ Token expiry is real — fetch the form fresh just before submitting.
 
 ## 5. robots.txt — the de-facto contract
 
-The Robots Exclusion Standard at `/robots.txt` lets a site signal which paths are off-limits. Brody's stance: not legal advice, but **respect it as a baseline** — both for ethics and to reduce the chance of being blocked.
+The Robots Exclusion Protocol (standardised as RFC 9309 in 2022) at `/robots.txt` lets a site signal which paths are off-limits to automated clients. It is not an access-control mechanism or legal advice, but the engine **treats it as binding** — both for ethics and to reduce the chance of being blocked.
 
 ```python
 from urllib.robotparser import RobotFileParser
@@ -98,11 +103,11 @@ if rp.can_fetch("YourScraperUA/1.0", url):
     fetch(url)
 ```
 
-Cache the parsed robots.txt for the run; re-fetch on long-running jobs (24-hour TTL is typical). Honour `Crawl-delay:` if present.
+Cache the parsed robots.txt for the run; re-fetch on long-running jobs (RFC 9309 advises against using a cached copy for more than 24 hours). Honour `Crawl-delay:` if present.
 
 ## 6. Slowing down — be the polite user
 
-A real human does not fire 50 requests per second. Brody's guidance:
+A real person does not fire 50 requests per second. Working defaults:
 
 - **Default delay** between requests: 1–3 seconds, jittered.
 - **Concurrency** to a single host: ≤2 in-flight by default.
@@ -120,7 +125,7 @@ def polite_get(session, url):
 
 ## 7. Distributing across IPs (only when scale demands)
 
-When a single IP cannot finish the job inside the polite envelope, use a proxy pool. Brody's rule: **politeness still applies per host, regardless of IP rotation.** Rotation reduces ban risk; it does not license abuse.
+When a single IP cannot finish the job inside the polite envelope, consider a proxy pool only if the site's terms permit it. Rule: **politeness still applies per host, regardless of IP rotation.** Rotation reduces ban risk; it does not license abuse.
 
 - Use a managed proxy service (residential or datacentre) for production.
 - Track failures per proxy and bench bad ones.
@@ -159,7 +164,7 @@ Pages drift. A field present on 99 % of records may be missing on 1 %. Naive par
 - Log the URL when a field is missing; do not log a stack trace per row.
 - Schema-validate per row (Pandera/pydantic) at the end of each batch — failure rate is a quality signal.
 
-## 11. Pattern discovery — Brody's two skills
+## 11. Pattern discovery: two skills
 
 The two abilities a scraper needs:
 
@@ -173,7 +178,7 @@ The two abilities a scraper needs:
    - Pin selectors to **stable** attributes (`data-*`, semantic class names) over fragile ones (auto-generated hashes, deeply nested positions).
    - Verify selectors against ≥3 records before scaling.
 
-## 12. Troubleshooting workflow (Brody's approach)
+## 12. Troubleshooting workflow
 
 When a scraper breaks:
 
@@ -187,7 +192,7 @@ When a scraper breaks:
 
 ## 13. Anti-patterns
 
-- Scraping with the library's default User-Agent and wondering why content differs.
+- Impersonating a browser instead of identifying honestly, or ignoring the content difference that follows.
 - Sending cookies to sites that don't require login — invites tracking and bans.
 - POSTing directly to a form's submit URL without fetching hidden CSRF fields first.
 - Ignoring robots.txt because "it's not legally binding."
@@ -201,7 +206,7 @@ When a scraper breaks:
 
 ## 14. Ship gate
 
-- [ ] Realistic User-Agent set; full header dict mirrors a real browser.
+- [ ] Engine User-Agent with contact URL; complete, well-formed headers.
 - [ ] Sessions used only when login required; cookies stripped otherwise.
 - [ ] Hidden form fields fetched fresh and resubmitted.
 - [ ] robots.txt parsed; disallowed paths skipped; `Crawl-delay` honoured.
@@ -219,3 +224,11 @@ When a scraper breaks:
 - `scraping-politeness-and-ratelimiting` — extended politeness layer
 - `scraping-engineering-python` — caching, concurrency, dynamic content, Scrapy
 - `data-quality-assessment` — schema-validate scraped output
+
+Evidence and currentness: RFC 9309 *Robots Exclusion Protocol* (IETF, September 2022),
+rfc-editor.org/rfc/rfc9309 (not re-read on 2026-09-24; RFC status is stable);
+the `Crawl-delay` directive is not part of RFC 9309 and is honoured as a courtesy only.
+Legality of scraping any specific site: NOT_ASSESSED; route to `../../pi-investigation/references/legal-and-ethical-bounds.md`.
+
+Sources: Brody (2017) *The Ultimate Guide to Web Scraping*; Lawson (2015) *Web Scraping with
+Python*; IETF RFC 9309. Reorganised by task.

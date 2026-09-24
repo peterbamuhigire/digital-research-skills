@@ -6,7 +6,7 @@
 
 ## How to use this checklist
 
-Before any estimative output ships, the analyst writes — in the manifest, not just in their head — which biases the conclusion is most exposed to and what mitigation was applied. The "what mitigation" column tells the analyst which Heuer/Pherson SAT to deploy (see `references/heuer-pherson-sats.md`).
+Before any estimative output ships, the analyst writes — in the manifest, not just in their head — which biases the conclusion is most exposed to and what mitigation was applied. The "what mitigation" column tells the analyst which Heuer/Pherson SAT to deploy (see `references/structured-analytic-techniques.md`).
 
 A clean run of the checklist produces a one-line bias-audit entry per judgment. A failed run sends the judgment back for a SAT.
 

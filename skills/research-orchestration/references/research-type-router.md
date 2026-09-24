@@ -13,7 +13,7 @@ Different research types need different orchestration, source mixes, methodologi
 | **Market / industry landscape** | Size markets, map operators, find entry points | Investors, founders, strategists | `quantitative-modelling` + `research-design` | C |
 | **Comparative / benchmarking** | Compare ≥2 jurisdictions, products, organisations | Decision-makers, analysts | `research-techniques` (`references/cross-cohort-synthesis.md`) | D |
 | **Social-media / sentiment research** | What's being said about X | Comms, brand, policy-monitoring | `research-design` (`references/mroc-design-and-management.md`) + `osint-investigation` (`references/social-source-extraction.md` only for public-source collection) | E |
-| **Due diligence** | Pre-investment, pre-partnership, pre-hire investigation | Investors, M&A, compliance | `due-diligence` (`references/dd-framework-hetherington.md`) | F |
+| **Due diligence** | Pre-investment, pre-partnership, pre-hire investigation | Investors, M&A, compliance | `due-diligence` (`references/due-diligence-pillars.md`) | F |
 | **OSINT** | Open-source intelligence on persons / orgs / domains / infrastructure | Security, journalism, investigations | `osint-investigation` (`references/osint-methodology.md`) | G |
 | **Product research** | Inform a product hypothesis | Product, founders | `research-design` + `research-techniques` (`references/pain-point-taxonomy.md`) | H |
 | **Historical research** | Reconstruct past events from primary + secondary sources | Researchers, journalists, academics | `research-design` (`references/historical-research-methods.md`) | I |
@@ -138,7 +138,7 @@ time_horizon: present (with 5y backward)
 report_schema: F
 methodology_skills: [due-diligence, online-legal-research, source-verification]
 methodology_references:
-  - skills/due-diligence/references/dd-framework-hetherington.md
+  - skills/due-diligence/references/due-diligence-pillars.md
 out_of_scope: [non-Acorn EA student-housing operators]
 hard_constraints: [evidence-discipline, named-source-only, no inferred ownership]
 expected_waves: 3

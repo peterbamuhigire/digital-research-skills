@@ -107,4 +107,4 @@ Each sentence carries a rationale; nothing is described without justification.
 
 - Brause, *Writing Your Doctoral Dissertation*, 1999, Ch 10. Tier 1.
 - Glaser & Strauss, *The Discovery of Grounded Theory*, 1967. Tier 1.
-- Companion: `references/brause-dissertation-craft.md`, `references/findings-interpretation-criteria.md`, `references/viva-defense-preparation.md`.
+- Companion: `references/dissertation-unwritten-conventions.md`, `references/findings-interpretation-criteria.md`, `references/viva-defense-preparation.md`.

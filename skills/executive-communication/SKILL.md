@@ -33,7 +33,7 @@ Do **not** use this skill on raw research-corpus markdown, on internal scratchpa
 2. **SCQA opener.** Every artefact opens with **S**ituation → **C**omplication → **Q**uestion → **A**nswer. The answer is the governing thought. Reference: `references/scqa-opener.md`.
 3. **MECE decomposition.** Below the governing thought, support is broken into 3 (rarely 4) groups that are **Mutually Exclusive and Collectively Exhaustive**. No overlap; no gaps. Reference: `references/pyramid-principle.md`.
 4. **Action titles.** Every section heading, slide title, or table caption is a complete sentence stating the takeaway — not a topic label. "Market is consolidating" is wrong; "Top three players will hold 70% share by 2028" is right. Reference: `references/action-titles.md`.
-5. **One message per page; right chart for the message.** Each slide / section carries exactly one message; the chart serves the message. Use Zelazny's five chart families. Reference: `references/zelazny-chart-selection.md`.
+5. **One message per page; right chart for the message.** Each slide / section carries exactly one message; the chart serves the message. Use Zelazny's five chart families. Reference: `references/chart-selection-by-message.md`.
 
 ## Decision router — load the matching reference
 
@@ -41,7 +41,7 @@ Do **not** use this skill on raw research-corpus markdown, on internal scratchpa
 |---|---|
 | **Executive summary** | `references/scqa-opener.md` + `references/executive-summary-template.md` |
 | **One-pager** | `references/scqa-opener.md` + `references/executive-summary-template.md` (truncate to 5 sentences) |
-| **Slide deck** | `references/pyramid-principle.md` + `references/action-titles.md` + `references/zelazny-chart-selection.md` + `references/ghost-deck-pattern.md` |
+| **Slide deck** | `references/pyramid-principle.md` + `references/action-titles.md` + `references/chart-selection-by-message.md` + `references/ghost-deck-pattern.md` |
 | **Long-form report** | `references/pyramid-principle.md` + `references/scqa-opener.md` + `references/action-titles.md` |
 | **Cover memo / briefing note** | `references/scqa-opener.md` + `references/action-titles.md` |
 | **Proposal** | All references |
@@ -60,7 +60,7 @@ Bain trains consultants to **lead with the hypothesis** and then present only th
 
 ## Zelazny chart selection — one-paragraph summary
 
-Gene Zelazny, McKinsey's longtime Director of Visual Communications, reduced business charting to **five families**: component (pie / stacked bar), item (bar / column / scatter), time-series (line), frequency (histogram), correlation (scatter / bubble). The rule: **pick the chart for the message**, not the data. If the message is "Acme dominates", use a bar (item comparison). If the message is "Acme has lost share over time", use a line (time-series). One message → one chart → one slide → 60 seconds. (Zelazny, *Say It With Charts: The Executive's Guide to Visual Communication*, 4th ed. 2001. Reference: `references/zelazny-chart-selection.md`.)
+Gene Zelazny, McKinsey's longtime Director of Visual Communications, reduced business charting to **five families**: component (pie / stacked bar), item (bar / column / scatter), time-series (line), frequency (histogram), correlation (scatter / bubble). The rule: **pick the chart for the message**, not the data. If the message is "Acme dominates", use a bar (item comparison). If the message is "Acme has lost share over time", use a line (time-series). One message → one chart → one slide → 60 seconds. (Zelazny, *Say It With Charts: The Executive's Guide to Visual Communication*, 4th ed. 2001. Reference: `references/chart-selection-by-message.md`.)
 
 ## Universal output ship-gate
 
@@ -175,7 +175,7 @@ Turn three verified findings into one governing thought, two non-overlapping sup
 
 - [Pyramid principle](references/pyramid-principle.md)
 - [Ghost deck pattern](references/ghost-deck-pattern.md)
-- [Chart selection](references/zelazny-chart-selection.md)
+- [Chart selection](references/chart-selection-by-message.md)
 <!-- dual-compat-end -->
 
 ## Evidence Produced

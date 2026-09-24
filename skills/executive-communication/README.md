@@ -11,7 +11,7 @@ Output craft for executive-grade artefacts. Encodes the Minto Pyramid Principle,
 - `references/scqa-opener.md` — Situation / Complication / Question / Answer pattern
 - `references/action-titles.md` — how to convert topic labels to takeaway sentences
 - `references/ghost-deck-pattern.md` — McKinsey draft-before-design discipline
-- `references/zelazny-chart-selection.md` — five chart families and when to use each
+- `references/chart-selection-by-message.md` — five chart families and when to use each
 - `references/executive-summary-template.md` — ≤ 300-word template with worked example
 
 ## When to use

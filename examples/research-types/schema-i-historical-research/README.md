@@ -32,4 +32,4 @@ The historical section should not use the past as decorative background. It shou
 
 Status: pass as exemplar. Live report fails if dates, actors, or historical documents are unverified.
 
-See also: `skills/research-design/references/historical-research-methods.md`, `skills/source-evaluation/references/burke-five-term-doubt.md`.
+See also: `skills/research-design/references/historical-research-methods.md`, `skills/source-evaluation/references/five-term-source-doubt.md`.

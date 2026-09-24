@@ -7,7 +7,7 @@ Academic output discipline at Ivy / Oxford / Cambridge / LSE quality. Three laye
 - `SKILL.md` — entry skill (load first)
 - `CLAUDE.md` — Claude-specific instructions
 - `AGENTS.md` — generic-agent instructions
-- `references/brause-dissertation-craft.md` — invisible rules, chapter-by-chapter template, examiner expectations, viva preparation
+- `references/dissertation-unwritten-conventions.md` — invisible rules, chapter-by-chapter template, examiner expectations, viva preparation
 - `references/oxbridge-ivy-examination-conventions.md` — Cambridge, Oxford, LSE, Harvard, Yale, Princeton word-count and examination rules mined from institutional primary sources
 - `references/equator-decision-tree.md` — EQUATOR + PRISMA + CONSORT + STROBE + MOOSE + GRADE + Cochrane + TOP routing
 - `references/originality-claim.md` — how to articulate and defend the original-contribution-to-knowledge claim

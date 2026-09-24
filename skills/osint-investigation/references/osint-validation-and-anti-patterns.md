@@ -31,7 +31,7 @@ Bean treats these as live, unresolved tensions in IC OSINT. The engine inherits 
 
 Aspin-Brown noted open-source product "*took longer to produce, required validation, and failed to cover many key aspects critical to policymakers*" (Ch 2). Speed and verification trade off; both customers and analysts undervalue the trade-off.
 
-**Engine discipline.** Verification is non-negotiable; speed is the variable. If the customer's deadline does not allow verification, the product ships as a **HYPOTHESIS** at LOW confidence, with explicit indicators of what would corroborate (per `analytic-tradecraft/references/kent-estimative-probability.md`). The engine refuses to ship "verified" outputs that have not been verified.
+**Engine discipline.** Verification is non-negotiable; speed is the variable. If the customer's deadline does not allow verification, the product ships as a **HYPOTHESIS** at LOW confidence, with explicit indicators of what would corroborate (per `analytic-tradecraft/references/estimative-probability-language.md`). The engine refuses to ship "verified" outputs that have not been verified.
 
 ### Tension 2 — Volume vs. signal
 
@@ -87,7 +87,7 @@ Bean describes a live debate (Ch 4):
 - **Tradecraft camp** (analyst self-perception): "*more art and experience than anything else*"; idiosyncratic, novelty-promoting; recorded by Rob Johnston's ethnography.
 - **Scientific / systematized camp** (Johnston, WMD Commission): push for machine translation, advanced search, knowledge extraction, structured methods.
 
-**Engine adoption.** Both. The engine encodes structured methods (the Heuer/Pherson SATs from `analytic-tradecraft/references/heuer-pherson-sats.md`) **and** preserves the tradecraft of novel-hypothesis generation (the Pre-Mortem and What-If techniques from the same reference). The choice is not method *vs.* art; it is method *enabling* art.
+**Engine adoption.** Both. The engine encodes structured methods (the Heuer/Pherson SATs from `analytic-tradecraft/references/structured-analytic-techniques.md`) **and** preserves the tradecraft of novel-hypothesis generation (the Pre-Mortem and What-If techniques from the same reference). The choice is not method *vs.* art; it is method *enabling* art.
 
 ---
 
@@ -165,7 +165,7 @@ For policy / democracy:
 
 - `references/osint-doctrine-and-history.md` — institutional lineage and competing definitions.
 - `references/osint-methodology.md` — engine's own OSINT cycle (Plan → Collect → Analyse → Disseminate).
-- `references/macleod-investigative-search.md` — government-records / FOIA / public-records workflow.
+- `references/public-records-investigative-search.md` — government-records / FOIA / public-records workflow.
 - `analytic-tradecraft/references/sourcing-and-deception.md` — single-source rule, Admiralty Code, D&D framework. Bean's Johnston / WMD-Commission discussion bears directly on this.
 - `analytic-tradecraft/references/cognitive-bias-checklist.md` — bias mitigation in analysis.
 

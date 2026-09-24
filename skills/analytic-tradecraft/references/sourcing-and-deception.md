@@ -28,7 +28,7 @@ A single-source judgment ships as a **HYPOTHESIS** with explicit indicators of w
 
 ## The NATO Admiralty Code
 
-The Admiralty Code (NATO STANAG 2511, AJP-2.1) is a two-axis grading system widely used across NATO and allied services. It separates **source reliability** from **information credibility**, which addresses the conflation problem (see `kent-estimative-probability.md` on judgment vs. source confidence).
+The Admiralty Code (NATO STANAG 2511, AJP-2.1) is a two-axis grading system widely used across NATO and allied services. It separates **source reliability** from **information credibility**, which addresses the conflation problem (see `estimative-probability-language.md` on judgment vs. source confidence).
 
 **Source reliability scale (A–F):**
 

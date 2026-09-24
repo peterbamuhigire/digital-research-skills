@@ -30,7 +30,7 @@
 - Bain "answer-first" deck pattern
 - Zelazny chart-selection: 5 chart types (component, item, time-series, frequency, correlation), one chart / one message / one minute
 - Executive summary discipline: one page, 5 sentences max, a grandparent-test readability bar
-**References to ship:** `references/pyramid-principle.md`, `references/action-titles.md`, `references/zelazny-chart-selection.md`, `references/executive-summary-template.md`
+**References to ship:** `references/pyramid-principle.md`, `references/action-titles.md`, `references/chart-selection-by-message.md`, `references/executive-summary-template.md`
 **Sources:** Minto "Pyramid Principle"; Rasiel "The McKinsey Way" / "The McKinsey Mind"; Zelazny "Say It With Charts"; current McKinsey ghost-deck training material.
 
 ### A3. `academic-reporting-standards` — IVY / OXBRIDGE / LSE BAR

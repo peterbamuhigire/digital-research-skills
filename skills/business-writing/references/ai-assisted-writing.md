@@ -125,4 +125,4 @@ The first nine are WI failures. The tenth is an AI-adoption failure. Both are mi
 - Lindsell-Roberts, *Business Writing with AI for Dummies*, Wiley, 2024.
 - HBR, *HBR Guide to Better Business Writing*, Harvard Business Review Press, 2013 — chs. on planning, drafting, and tone (still the WI baseline).
 - `source-evaluation/references/evidence-discipline.md` — the engine's overriding hard rule.
-- `references/maxwell-7-steps.md` — the workflow AI plugs into.
+- `references/business-writing-process.md` — the workflow AI plugs into.

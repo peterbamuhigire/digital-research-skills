@@ -1,6 +1,6 @@
 # Extended channels
 
-Additional channel guides not covered in the original `roman-raphaelson-principles.md` and `web-copywriting.md`. Drawn from Henwood, *Business Writing for Innovators and Change-Makers* (2020); Lindsell-Roberts, *Business Writing with AI for Dummies* (2024); and Garner, *HBR Guide to Better Business Writing* (2013).
+Additional channel guides not covered in the original `plain-business-prose-and-tone.md` and `web-copywriting.md`. Drawn from Henwood, *Business Writing for Innovators and Change-Makers* (2020); Lindsell-Roberts, *Business Writing with AI for Dummies* (2024); and Garner, *HBR Guide to Better Business Writing* (2013).
 
 For longer-form forms (full reports, proposals, white papers in the strict B2B-publication sense, full grant applications), defer to `report-and-proposal-craft`.
 
@@ -42,7 +42,7 @@ Anchor sources: DocSend's 2019 study of 200 successful seed decks found an avera
 
 **Visual discipline.** Each slide centres on one compelling visual that (a) is crystal clear and (b) directly supports the slide's headline. Irrelevant visuals are the most common design failure.
 
-**Process.** Use the **accordion method** (`maxwell-7-steps.md` § Pipher / Henwood): expand to capture every detail, contract to fit the slide budget, expand again to restore load-bearing detail, contract once more.
+**Process.** Use the **accordion method** (`business-writing-process.md` § Pipher / Henwood): expand to capture every detail, contract to fit the slide budget, expand again to restore load-bearing detail, contract once more.
 
 **Get feedback before pitching.** Trusted readers with investor experience or who can role-play one. Most companies that successfully raise contact 20–30 investors first.
 

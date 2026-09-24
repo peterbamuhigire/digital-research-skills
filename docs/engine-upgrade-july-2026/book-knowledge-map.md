@@ -5,7 +5,7 @@ Engine: digital-research-engine
 
 The attached reference files were read for operational concepts and mapped to audit gaps or build-backlog items. The engine does not copy book content; it converts concepts into routing, tools, templates, quality gates, and exemplars.
 
-| Reference | Key concepts extracted | Gap / backlog mapping | Engine files informed | Operationalisation |
+| Reference | Concepts applied (named only) | Gap / backlog mapping | Engine files informed | Operationalisation |
 |---|---|---|---|---|
 | PRISMA 2020 checklist, examples, and flow diagrams | Transparent eligibility criteria, screening flow, checklist reporting, exclusion reasons, updated vs new review paths | Gap: complete exemplar outputs; currency registers. Backlog 3 | `examples/research-types/schema-n-paper-academic/README.md`, `docs/source-registers/research-standards-register.md` | Academic systematic-review exemplars require reproducible methods, screening decisions, and PRISMA-aware reporting. |
 | Structured Analytic Techniques for Intelligence Analysis | ACH, key assumptions check, indicators, pre-mortem, red-team reasoning, confidence discipline | Gap: analytic-tradecraft scoring fixtures. Backlog 4 | `tests/analytic-tradecraft/fixtures.yml`, `docs/quality-gates/release-blocking-gates.md` | Deterministic fixtures encode expected findings and failure modes for ACH, KAC, pre-mortem, and estimative language. |

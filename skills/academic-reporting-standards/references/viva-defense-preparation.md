@@ -104,4 +104,4 @@ Whatever the outcome (pass, pass with corrections, revise and resubmit, fail), t
 ## Sources
 
 - Brause, *Writing Your Doctoral Dissertation*, 1999, Ch 14. Tier 1.
-- Companion: `references/brause-dissertation-craft.md`, `references/originality-claim.md`, `references/methodology-justification-checklist.md`, `references/findings-interpretation-criteria.md`.
+- Companion: `references/dissertation-unwritten-conventions.md`, `references/originality-claim.md`, `references/methodology-justification-checklist.md`, `references/findings-interpretation-criteria.md`.

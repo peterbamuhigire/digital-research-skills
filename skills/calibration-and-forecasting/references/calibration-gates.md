@@ -29,4 +29,4 @@ Choose one scoring rule at project start and keep it stable. Brier-style scoring
 - `C:\Users\Peter\Downloads\Documents\res_markdown\Expert Political Judgment How Good Is It How Can We Know - New Edition (Philip E. Tetlock Philip E. Tetlock) (z-library.sk, 1lib.sk, z-lib.sk).md`
 - `C:\Users\Peter\Downloads\Documents\res_markdown\Psychology of Intelligence Analysis (Richard Heuer) (z-library.sk, 1lib.sk, z-lib.sk).md`
 - `C:\Users\Peter\Downloads\Documents\res_markdown\Structured analytic techniques for intelligence analysis (Heuer, Richards J, Pherson, Randolph H) (z-library.sk, 1lib.sk, z-lib.sk).md`
-- `skills/analytic-tradecraft/references/kent-estimative-probability.md`
+- `skills/analytic-tradecraft/references/estimative-probability-language.md`

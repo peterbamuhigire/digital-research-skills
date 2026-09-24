@@ -1,6 +1,6 @@
 # Media forensics verification
 
-Silverman + Bellingcat: the difference between investigative journalism and rumour amplification is **systematic forensic checks** on every claimed primary source.
+The difference between investigative journalism and rumour amplification is **systematic forensic checks** on every claimed primary source.
 
 ## The verification layers
 
@@ -30,7 +30,7 @@ Find earlier-known versions of the image — establishes provenance.
 Always check **all four** for important images. Different indices have different blind spots.
 
 ### 3. Geolocation by landmark
-Bellingcat technique:
+Open-source investigators' technique:
 1. Identify singular landmarks in the image — mosque, dome, sign, shop name, road network
 2. Search Google Earth / OpenStreetMap for the same arrangement
 3. Cross-reference with EXIF GPS if present (don't trust either alone)
@@ -126,7 +126,7 @@ For any claimed primary-source image / video:
 - VERDICT: time-of-day consistent with claim
 ```
 
-## Anti-patterns (Silverman)
+## Anti-patterns
 
 - Treating embedding as permission (legally distinct; ethically not)
 - "Cannot be independently verified" disclaimer abuse — state which of {source, date, location} you DID confirm
@@ -142,3 +142,5 @@ For any claimed primary-source image / video:
 - `evidence-discipline` — verification feeds discipline
 - `osint-methodology` — adjacent skill for entity profiling
 - `provenance-chain` (roadmap) — formalised earliest-known-timestamp protocol
+
+Sources: Silverman (ed.) (2015) *Verification Handbook for Investigative Reporting*; Bellingcat public guides. Reorganised by task.

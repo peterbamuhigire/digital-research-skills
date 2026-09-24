@@ -86,10 +86,10 @@ For a statistic quoted by a news article, locate the originating dataset or publ
 - [Index-layer evidence](references/index-layer-evidence.md) when a source is represented in an index, taxonomy, or evidence graph.
 - [Evidence discipline](references/evidence-discipline.md)
 - [Credibility ladder](references/credibility-ladder.md)
-- [Primary-source doubt](references/burke-five-term-doubt.md)
-- [Media evaluation](references/tudor-twelve-points.md)
+- [Primary-source doubt](references/five-term-source-doubt.md)
+- [Media evaluation](references/twelve-criterion-source-scoring.md)
 - [Misinformation and bias](references/misinformation-and-bias-checks.md)
-- [Media forensics](references/silverman-media-forensics.md)
+- [Media forensics](references/media-forensics-verification.md)
 - [Automated triage](references/automated-reliability-triage.md)
 
 ## Freshness and uncertainty gate
@@ -113,12 +113,12 @@ Always load `references/evidence-discipline.md`. The engine's first rule: **no c
 | Source type | Load |
 |---|---|
 | **Any source — the universal floor** | `references/evidence-discipline.md` (always) + `references/credibility-ladder.md` |
-| **Primary document** (archival record, legal filing, government publication, leaked file, manuscript) | `references/burke-five-term-doubt.md` |
-| **Media, journalism, analyst report, think-tank publication** | `references/tudor-twelve-points.md` |
-| **Misinformation-prone news / viral information stream** | `references/tudor-twelve-points.md` + `references/misinformation-and-bias-checks.md` |
-| **Image, video, audio, screenshot, suspect document** | `references/silverman-media-forensics.md` |
+| **Primary document** (archival record, legal filing, government publication, leaked file, manuscript) | `references/five-term-source-doubt.md` |
+| **Media, journalism, analyst report, think-tank publication** | `references/twelve-criterion-source-scoring.md` |
+| **Misinformation-prone news / viral information stream** | `references/twelve-criterion-source-scoring.md` + `references/misinformation-and-bias-checks.md` |
+| **Image, video, audio, screenshot, suspect document** | `references/media-forensics-verification.md` |
 | **Encyclopaedic / reference work** | `references/credibility-ladder.md` (tier 4: tertiary) |
-| **Social media post / forum / comment** | `references/tudor-twelve-points.md` + `references/silverman-media-forensics.md` (provenance) |
+| **Social media post / forum / comment** | `references/twelve-criterion-source-scoring.md` + `references/media-forensics-verification.md` (provenance) |
 | **Statistic / dataset** | `references/credibility-ladder.md` + Walker four-axis (`data-quality-assessment`) |
 | **Automated source / claim reliability triage** | `references/automated-reliability-triage.md` + `references/credibility-ladder.md` |
 
@@ -138,7 +138,7 @@ Detail in `references/credibility-ladder.md`. Quick reference:
 
 ## Burke's five-term source-doubt pentad (primary documents)
 
-Detail in `references/burke-five-term-doubt.md`. For every primary document, ask:
+Detail in `references/five-term-source-doubt.md`. For every primary document, ask:
 
 1. **Author** — who wrote it; what was their position, motive, knowledge?
 2. **Provenance** — chain of custody from creation to your hands; gaps; tampering opportunities.
@@ -150,7 +150,7 @@ A document that survives the pentad is **evidence with known limits.** A documen
 
 ## Tudor's twelve-point evaluation (media / journalism / analyst)
 
-Detail in `references/tudor-twelve-points.md`. Twelve criteria:
+Detail in `references/twelve-criterion-source-scoring.md`. Twelve criteria:
 
 1. Recency · 2. Relevancy · 3. Authority · 4. Completeness · 5. Accuracy · 6. Clarity · 7. Verifiability · 8. Statistical validity · 9. Internal consistency · 10. External consistency · 11. Context · 12. Comparative quality
 
@@ -168,7 +168,7 @@ Detail in `references/misinformation-and-bias-checks.md`. Before a contested or 
 
 ## Silverman / Bellingcat media-forensics (images, video, documents)
 
-Detail in `references/silverman-media-forensics.md`. Workflow:
+Detail in `references/media-forensics-verification.md`. Workflow:
 
 1. **EXIF extraction** — camera, GPS, timestamp.
 2. **Reverse image search** — Google Lens, Yandex, TinEye, Bing.

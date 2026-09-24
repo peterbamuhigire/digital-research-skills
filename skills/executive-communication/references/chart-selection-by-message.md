@@ -1,6 +1,13 @@
-# Reference — Zelazny Chart Selection
+# Chart Selection by Message
 
-**Canonical source:** Gene Zelazny, *Say It With Charts: The Executive's Guide to Visual Communication*, McGraw-Hill, 4th ed. 2001 (1st ed. 1985). Zelazny was Director of Visual Communications at McKinsey for over four decades.
+Use this guide when research findings need a chart in a report, deck or dashboard. The chart is
+chosen from the message the reader must take away, then built and checked.
+
+## Inputs
+
+- The message, written as a full-sentence action title.
+- The data, its source and date.
+- The medium (slide, printed report, screen) and whether colour will survive.
 
 ## The core rule
 
@@ -8,7 +15,7 @@
 
 Pick the chart for what you want the reader to conclude, not for what shape the data happens to take. If the message is "Acme dominates", a bar comparison says it. If the message is "Acme's lead is shrinking", a time-series line says it. The same data justifies both messages; the chart choice depends on which message you are landing.
 
-## Zelazny's five chart families
+## Five comparison types
 
 | Family | Use when the message is about… | Standard chart |
 |---|---|---|
@@ -67,8 +74,6 @@ Decide the family from the message verb:
 - `references/action-titles.md` — chart titles follow the action-title rule.
 - `references/ghost-deck-pattern.md` — chart family is decided at ghost-deck time, not at design time.
 
-## Sources
-
-- Zelazny, *Say It With Charts*, McGraw-Hill, 4th ed. 2001. Tier 1.
-- Zelazny, *Say It With Presentations*. McGraw-Hill, 2nd ed. 2006. Tier 1.
-- Tufte, Edward. *The Visual Display of Quantitative Information*, 2nd ed. 2001. Tier 1 — independent corroboration of "ink-to-data ratio" and chartjunk discipline.
+Sources: Zelazny (2001) *Say It With Charts*, 4th ed.; Tufte (2001) *The Visual Display of
+Quantitative Information*, 2nd ed.; Cleveland and McGill (1984) "Graphical perception", *Journal
+of the American Statistical Association* 79(387). The worked example is the engine's own.

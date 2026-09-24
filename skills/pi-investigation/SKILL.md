@@ -32,7 +32,7 @@ If none of these applies, do not invoke this skill — `osint-investigation` is 
 | Engagement scoping (legal posture, jurisdiction, licensure) | `references/legal-and-ethical-bounds.md` | Engagement letter; jurisdiction matrix |
 | Evidence collection | `references/evidence-custody.md` | Per-item custody log |
 | Chain-of-custody maintenance | `references/evidence-custody.md` | Hash chain, transfer log, storage record |
-| Final report | `references/mcmahon-pi-report.md` | McMahon 10-section PI report |
+| Final report | `references/investigator-report-structure.md` | McMahon 10-section PI report |
 
 ## Chain-of-custody discipline (universal)
 
@@ -48,7 +48,7 @@ A break in the chain disqualifies the artefact for evidentiary use.
 
 ## McMahon's 10-section PI report
 
-Detail in `references/mcmahon-pi-report.md`. The canonical structure:
+Detail in `references/investigator-report-structure.md`. The canonical structure:
 
 1. Title / engagement reference / classification.
 2. Investigator identity and licence number.
@@ -196,7 +196,7 @@ For an authorised evidence review, assign each supplied item an identifier, reco
 
 - [Evidence custody](references/evidence-custody.md)
 - [Legal and ethical bounds](references/legal-and-ethical-bounds.md)
-- [PI report structure](references/mcmahon-pi-report.md)
+- [PI report structure](references/investigator-report-structure.md)
 <!-- dual-compat-end -->
 
 ## Evidence Produced

@@ -87,7 +87,7 @@ If a page exposes the needed records through a documented JSON endpoint, choose 
 ## References
 
 - [Politeness and rate limiting](references/politeness-and-ratelimiting.md)
-- [Troubleshooting](references/troubleshooting-brody.md)
+- [Troubleshooting](references/scraper-troubleshooting-and-etiquette.md)
 - [Browser automation](references/browser-automation-playwright.md)
 
 <!-- dual-compat-end -->
@@ -105,7 +105,7 @@ When the situation matches the trigger, load the named reference verbatim. Do no
 | Reference | Load when |
 |---|---|
 | `references/politeness-and-ratelimiting.md` | Every non-trivial scrape — robots.txt, throttle, backoff, identification headers, block-detection signals |
-| `references/troubleshooting-brody.md` | Scraper returns empty/different content, gets blocked, or needs to behave like a real browser (header spoofing, session cookies, hidden CSRF tokens, missing-element resilience, debugging workflow) |
+| `references/scraper-troubleshooting-and-etiquette.md` | Scraper returns empty/different content, gets blocked, or needs to behave like a real browser (header spoofing, session cookies, hidden CSRF tokens, missing-element resilience, debugging workflow) |
 | `references/browser-automation-playwright.md` | Decision tree below has eliminated plain-HTTP options and JS rendering is required — Playwright recipes, wait strategies, login replay, network interception, stealth |
 
 ## 1. The decision tree (memorise — never skip)
@@ -175,7 +175,7 @@ new scraping task
 ├─ load this SKILL.md
 ├─ ALWAYS load references/politeness-and-ratelimiting.md before issuing requests
 ├─ Step 2 fails (content differs from browser, or empty)
-│   └─ load references/troubleshooting-brody.md
+│   └─ load references/scraper-troubleshooting-and-etiquette.md
 ├─ Step 5 fires (JS interaction required)
 │   └─ load references/browser-automation-playwright.md
 └─ Crawl exceeds 1,000 URLs / needs resumability / multi-domain

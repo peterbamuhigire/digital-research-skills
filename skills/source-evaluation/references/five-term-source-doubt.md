@@ -1,6 +1,6 @@
 # Five-term source doubt
 
-Abbott: *"You are the reader's agent, and you must be worthy of that trust."* Every primary document must answer five questions before it earns the right to be cited as evidence.
+The researcher acts as the reader's agent and must deserve that trust. Every primary document must answer five questions before it earns the right to be cited as evidence.
 
 ## The five terms (Burke pentad, adapted)
 
@@ -37,7 +37,7 @@ Abbott: *"You are the reader's agent, and you must be worthy of that trust."* Ev
 ## Decision rules
 
 - **Apply to every primary source before quoting.** Failure makes the citation hollow.
-- **Apply lightly to secondary sources.** The five-term doubt was designed for primary; secondary scholarship has its own evaluation rubric (see `tudor-twelve-point-evaluation`).
+- **Apply lightly to secondary sources.** The five-term doubt was designed for primary; secondary scholarship has its own evaluation rubric (see `twelve-criterion-source-scoring.md`).
 - **Document the answers.** A source citation should travel with at least a one-line summary of who/what/when/why.
 - **Surface gaps.** "Author unknown" is a real answer; record it as such.
 - **Watch the aims-vs-content gap.** When the document's apparent content doesn't match what its aims would predict, that's a finding.
@@ -57,7 +57,7 @@ This doesn't undermine the 80% statistic — it locates it. The number is reliab
 ## What this is not
 
 - It is not a tier-grading. Tiers come from `source-verification`.
-- It is not a 12-point evaluation. That's `tudor-twelve-point-evaluation` (for media especially).
+- It is not a 12-point evaluation. That is `twelve-criterion-source-scoring.md` (for media especially).
 - It is not a credibility score. It produces a structured note about the document's situatedness.
 
 ## Anti-patterns
@@ -70,6 +70,8 @@ This doesn't undermine the 80% statistic — it locates it. The number is reliab
 ## See also
 
 - `source-verification` — tier ladder + coverage axes
-- `tudor-twelve-point-evaluation` — media / journalism source rubric
+- `twelve-criterion-source-scoring.md` — media / journalism source rubric
 - `quote-extraction` — must run *after* five-term doubt, not before
 - `evidence-discipline` — the five-term framework is one of evidence-discipline's tools
+
+Sources: Abbott (2014) *Digital Paper*; Burke (1945) *A Grammar of Motives* (pentad, adapted).

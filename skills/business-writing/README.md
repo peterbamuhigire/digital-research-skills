@@ -4,8 +4,8 @@ Single entry skill for non-academic prose: emails, memos, letters, plans, blog a
 
 Channel router, seven-step process (compresses to Garner / Flowers MACJ), "don't mumble" master rule, and nine `references/`:
 
-- `maxwell-7-steps.md` — process spine; MACJ four-task compression; accordion method
-- `roman-raphaelson-principles.md` — sentence-level discipline; HBR / Garner bizspeak blacklist; tone, chronology, bad-news letter pattern, performance-appraisal scaffolding
+- `business-writing-process.md` — process spine; MACJ four-task compression; accordion method
+- `plain-business-prose-and-tone.md` — sentence-level discipline; HBR / Garner bizspeak blacklist; tone, chronology, bad-news letter pattern, performance-appraisal scaffolding
 - `persuasion-and-narrative.md` — Hood / Shiach / Geffner / Rubie & Provost; Lindsell-Roberts four pillars and story arc; Henwood story-vs-argument distinction
 - `web-copywriting.md` — F-pattern, scannability, landing pages
 - `blog-publishing-workflow.md` — full blog article workflow

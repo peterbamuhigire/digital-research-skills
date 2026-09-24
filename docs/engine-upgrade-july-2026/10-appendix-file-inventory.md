@@ -2776,7 +2776,7 @@ skills/
     README.md (1872 bytes)
     SKILL.md (15368 bytes)
     skills/academic-reporting-standards/references/
-      brause-dissertation-craft.md (10170 bytes)
+      dissertation-unwritten-conventions.md (10170 bytes)
       equator-decision-tree.md (8646 bytes)
       findings-interpretation-criteria.md (5718 bytes)
       methodology-justification-checklist.md (6555 bytes)
@@ -2793,9 +2793,9 @@ skills/
       citation-styles.md (6313 bytes)
       conventions.md (8846 bytes)
       critical-literature-review.md (1961 bytes)
-      eco-thesis-craft.md (10646 bytes)
-      morley-reporting-verbs-and-hedges.md (9620 bytes)
-      morley-rhetorical-moves.md (9457 bytes)
+      thesis-topic-sources-and-quotation.md (10646 bytes)
+      reporting-verbs-and-hedging.md (9620 bytes)
+      academic-rhetorical-moves.md (9457 bytes)
       originality-engine.md (3914 bytes)
       paraphrase-discipline.md (3718 bytes)
       pearl-growing.md (3326 bytes)
@@ -2804,7 +2804,7 @@ skills/
       source-mining.md (3025 bytes)
       source-synthesis.md (3863 bytes)
       thesis-production-hardening.md (1888 bytes)
-      trzeciak-note-discipline.md (4930 bytes)
+      source-away-note-cards.md (4930 bytes)
       voice-and-register.md (5001 bytes)
   skills/agentic-research-operations/
     SKILL.md (3566 bytes)
@@ -2825,9 +2825,9 @@ skills/
     skills/analytic-tradecraft/references/
       behavioral-science-for-analysis.md (1703 bytes)
       cognitive-bias-checklist.md (6674 bytes)
-      heuer-pherson-sats.md (9906 bytes)
+      structured-analytic-techniques.md (9906 bytes)
       icd-203-and-tradecraft-standards.md (5816 bytes)
-      kent-estimative-probability.md (6004 bytes)
+      estimative-probability-language.md (6004 bytes)
       sourcing-and-deception.md (7024 bytes)
   skills/analytical-report-shapes/
     SKILL.md (3383 bytes)
@@ -2847,9 +2847,9 @@ skills/
       extended-channels.md (16630 bytes)
       language-standards-en-fr-sw.md (21789 bytes)
       long-form-business-journalism.md (12003 bytes)
-      maxwell-7-steps.md (11774 bytes)
+      business-writing-process.md (11774 bytes)
       persuasion-and-narrative.md (14603 bytes)
-      roman-raphaelson-principles.md (15804 bytes)
+      plain-business-prose-and-tone.md (15804 bytes)
       scenario-playbooks.md (12194 bytes)
       web-copywriting.md (15850 bytes)
   skills/calibration-and-forecasting/
@@ -2893,7 +2893,7 @@ skills/
       cleaning-pandas.md (4201 bytes)
       encoding-and-unicode.md (2310 bytes)
       merge-discipline.md (4421 bytes)
-      quality-assessment-walker.md (5008 bytes)
+      dataset-quality-four-axes.md (5008 bytes)
       tidy-data-craft.md (2951 bytes)
   skills/dataset-discovery-and-analysis/
     AGENTS.md (451 bytes)
@@ -2928,7 +2928,7 @@ skills/
     skills/due-diligence/references/
       background-check-workflow.md (3951 bytes)
       corporate-veil.md (4469 bytes)
-      dd-framework-hetherington.md (3953 bytes)
+      due-diligence-pillars.md (3953 bytes)
       dd-report-architecture.md (5013 bytes)
       jurisdictional-registry-atlas.md (1924 bytes)
       regulatory-landscape-mapping.md (2994 bytes)
@@ -2962,7 +2962,7 @@ skills/
       ghost-deck-pattern.md (5409 bytes)
       pyramid-principle.md (6979 bytes)
       scqa-opener.md (4419 bytes)
-      zelazny-chart-selection.md (5026 bytes)
+      chart-selection-by-message.md (5026 bytes)
   skills/kenya-academic-research/
     AGENTS.md (419 bytes)
     CLAUDE.md (313 bytes)
@@ -3019,7 +3019,7 @@ skills/
       adverse-media-investigation.md (3551 bytes)
       chronology-construction.md (3339 bytes)
       google-stakeholder-recon.md (3551 bytes)
-      macleod-investigative-search.md (12760 bytes)
+      public-records-investigative-search.md (12760 bytes)
       osint-case-vaults.md (3975 bytes)
       osint-doctrine-and-history.md (8798 bytes)
       osint-methodology.md (13164 bytes)
@@ -3038,7 +3038,7 @@ skills/
     skills/pi-investigation/references/
       evidence-custody.md (3376 bytes)
       legal-and-ethical-bounds.md (4983 bytes)
-      mcmahon-pi-report.md (4557 bytes)
+      investigator-report-structure.md (4557 bytes)
   skills/primary-research/
     AGENTS.md (427 bytes)
     CLAUDE.md (271 bytes)
@@ -3657,9 +3657,9 @@ skills/
     README.md (555 bytes)
     SKILL.md (11527 bytes)
     skills/report-and-proposal-craft/references/
-      clippinger-business-reports.md (11910 bytes)
-      forsyth-reports-proposals.md (13272 bytes)
-      graham-white-papers.md (9031 bytes)
+      report-type-selection-and-formal-templates.md (11910 bytes)
+      report-and-proposal-structure.md (13272 bytes)
+      white-paper-types-and-drafting.md (9031 bytes)
   skills/research-design/
     AGENTS.md (558 bytes)
     CLAUDE.md (571 bytes)
@@ -3706,11 +3706,11 @@ skills/
       crosswalk-matrix.md (3668 bytes)
       gap-analysis.md (2723 bytes)
       google-search-api-operator.md (3926 bytes)
-      macleod-search-mastery.md (8470 bytes)
+      search-craft-and-deep-web.md (8470 bytes)
       minianalysis-engine.md (4366 bytes)
       pain-point-taxonomy.md (2353 bytes)
       reference-interview.md (3977 bytes)
-      russell-search-literacy.md (10770 bytes)
+      search-metacognition-and-verification.md (10770 bytes)
       search-operator-grammar.md (4089 bytes)
   skills/scraping-engineering-python/
     AGENTS.md (957 bytes)
@@ -3767,12 +3767,12 @@ skills/
     SKILL.md (8332 bytes)
     skills/source-evaluation/references/
       automated-reliability-triage.md (9499 bytes)
-      burke-five-term-doubt.md (3453 bytes)
+      five-term-source-doubt.md (3453 bytes)
       credibility-ladder.md (2683 bytes)
       evidence-discipline.md (5703 bytes)
       misinformation-and-bias-checks.md (1982 bytes)
-      silverman-media-forensics.md (5448 bytes)
-      tudor-twelve-points.md (4216 bytes)
+      media-forensics-verification.md (5448 bytes)
+      twelve-criterion-source-scoring.md (4216 bytes)
   skills/source-verification/
     SKILL.md (2814 bytes)
     skills/source-verification/references/
@@ -3828,7 +3828,7 @@ skills/
     skills/web-scraping-foundations/references/
       browser-automation-playwright.md (3532 bytes)
       politeness-and-ratelimiting.md (4438 bytes)
-      troubleshooting-brody.md (11178 bytes)
+      scraper-troubleshooting-and-etiquette.md (11178 bytes)
 tests/
   test_enriched_docx_structure.py (3795 bytes)
 tools/

@@ -18,7 +18,7 @@ Diligence conclusions are high-stakes judgments. Run `critical-reasoning-and-arg
 
 | Diligence goal | Load |
 |---|---|
-| Run the standard 3-phase DD investigation (planning → collection → analysis → reporting) | `references/dd-framework-hetherington.md` |
+| Run the standard 3-phase DD investigation (planning → collection → analysis → reporting) | `references/due-diligence-pillars.md` |
 | Architect the final DD report (CARA framework: Context, Allegations, Resolutions, Actions) | `references/dd-report-architecture.md` |
 | Trace beneficial ownership and pierce the corporate veil | `references/corporate-veil.md` |
 | Screen for sanctions, PEPs, watchlists | `references/sanctions-pep-screening.md` |
@@ -28,7 +28,7 @@ Diligence conclusions are high-stakes judgments. Run `critical-reasoning-and-arg
 
 ## CRAWL methodology (universal — Hetherington)
 
-Detail in `references/dd-framework-hetherington.md`. The engine's default DD process:
+Detail in `references/due-diligence-pillars.md`. The engine's default DD process:
 
 1. **C — Collect** the publicly available record (registries, sanctions lists, courts, regulators, media).
 2. **R — Review** for red flags (sanctions, litigation, regulatory action, adverse media, ownership opacity).
@@ -56,7 +56,7 @@ Detail in `references/dd-report-architecture.md`. Every formal DD report uses:
 
 | Reference | Load when |
 |---|---|
-| `references/dd-framework-hetherington.md` | Every DD engagement — CRAWL phases, planning, collection, analysis |
+| `references/due-diligence-pillars.md` | Every DD engagement — CRAWL phases, planning, collection, analysis |
 | `references/dd-report-architecture.md` | Producing a formal DD report — CARA structure, evidence ladders, recommendation discipline |
 | `references/corporate-veil.md` | Beneficial-ownership tracing, shell-company patterns, jurisdictional opacity, UBO discovery |
 | `references/sanctions-pep-screening.md` | Sanctions / PEP / watchlist screening — list inventory, fuzzy match discipline, adverse-hit handling |
@@ -175,7 +175,7 @@ An adverse-media name match without a second identifier remains unresolved and c
 
 ## References
 
-- [CRAWL framework](references/dd-framework-hetherington.md)
+- [CRAWL framework](references/due-diligence-pillars.md)
 - [CARA report architecture](references/dd-report-architecture.md)
 - [Sanctions and PEP screening](references/sanctions-pep-screening.md)
 <!-- dual-compat-end -->

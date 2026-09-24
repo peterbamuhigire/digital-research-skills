@@ -1,6 +1,6 @@
 # Note discipline — source-away composition
 
-Trzeciak: *"You cannot copy what is not in front of you."*
+Working rule: you cannot copy what is not in front of you.
 
 Plagiarism is structural, not moral. The defence is the **shape of the workflow**, not the intent of the writer. Notes that look like prose produce plagiarism. Notes that look like fragments produce paraphrase.
 
@@ -71,7 +71,7 @@ Run `plagiarism-prevention` against the original source corpus. Any 7+ word verb
 
 ## The personal-comment field
 
-Trzeciak's underrated insight: every paraphrase card carries a **personal comment** — the writer's reaction to the point. This becomes the **seed of the writer's own argument**.
+The underrated field: every paraphrase card carries a **personal comment** — the writer's reaction to the point. This becomes the **seed of the writer's own argument**.
 
 When composition reads a card, it sees both the cited fact AND the writer's reaction. The reaction shapes the surrounding prose, the framing, the comparative move. This is how the writer's voice emerges — not from style alone, but from the embedded analytical stance.
 
@@ -108,3 +108,5 @@ warnings = validate_note_card(card)
 
 - `tools/academic/note_card.py` — implementation
 - `evidence-discipline` — engine-wide rule above
+
+Sources: Trzeciak and Mackay (1994) *Study Skills for Academic Writing*; Bailey (2018) *Academic Writing*; engine house practice.

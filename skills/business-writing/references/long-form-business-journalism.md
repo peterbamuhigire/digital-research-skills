@@ -8,7 +8,7 @@ Use this reference when:
 - The brief invites narrative, voice, and scene rather than recommendation.
 - The writer needs an exemplar to anchor structure, voice, or pacing — and to see how master journalists handle the same craft problems the engine handles.
 
-It does **not** replace `roman-raphaelson-principles.md` (sentence-level discipline) or `persuasion-and-narrative.md` (the four pillars). It supplies the next octave above them: pieces of journalism that *use* those principles to do real work.
+It does **not** replace `plain-business-prose-and-tone.md` (sentence-level discipline) or `persuasion-and-narrative.md` (the four pillars). It supplies the next octave above them: pieces of journalism that *use* those principles to do real work.
 
 ## The four families in the anthology
 
@@ -116,7 +116,7 @@ Match the form to the evidence and the question; do not pick the form by length.
 ## Cross-skill dependencies
 
 - `references/persuasion-and-narrative.md` — the four pillars of storytelling sit underneath every long-form piece in this anthology.
-- `references/maxwell-7-steps.md` — long-form journalism still runs the seven steps; the Garner / Flowers MACJ four tasks are visible in the anthology pieces' planning.
+- `references/business-writing-process.md` — long-form journalism still runs the seven steps; the Garner / Flowers MACJ four tasks are visible in the anthology pieces' planning.
 - `research-output-formats/references/commercial-formats.md` § White paper — the explainer-feature family is the closest journalism analogue to the white paper.
 - `online-legal-research`, `osint-investigation`, `due-diligence` — the investigative family in the anthology relies on the source-discipline these skills enforce.
 

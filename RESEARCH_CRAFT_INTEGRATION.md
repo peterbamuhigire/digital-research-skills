@@ -1,12 +1,12 @@
 # Research-Craft Integration
 
-How twenty-one canonical books on research, search, knowledge management, scraping, verification, intelligence analysis, output craft, and academic discipline informed the engine's skill set.
+How the canonical books on research, search, knowledge management, scraping, verification, intelligence analysis, output craft, and academic discipline informed the engine's skill set.
 
 ## Pass 1 — research methodology (compiled 2026-04-25)
 
 | # | Book | Author | Year | What it brings |
 |---|---|---|---|---|
-| 1 | *Internet Research with Google* | Amanda Deason | recent | Operator-grammar field manual; deepest layer 0 |
+| 1 | *Internet Research with Google* | Amanda Deason | recent | Operator grammar |
 | 2 | *Essentials of Knowledge Management* | Bryan Bergeron | 2003 | KM frameworks, intellectual-capital valuation, monetisation |
 | 3 | *Librarian's Guide to Online Searching* (4th) | Suzanne S. Bell | 2015 | Searcher's Toolkit, vendor-syntax matrix, discipline-router |
 | 4 | *Digital Paper* | Andrew Abbott | 2014 | Project design, minianalysis, brachiation, reading-mode router |
@@ -30,11 +30,11 @@ How twenty-one canonical books on research, search, knowledge management, scrapi
 |---|---|---|---|---|---|
 | 13 | *Analyzing Intelligence: Origins, Obstacles, and Innovations* | Roger Z. George & James B. Bruce (eds.) | 2008 | ICD 203 lineage; Heuer/Pherson SATs; Sherman Kent estimative practice; cognitive-bias catalog; sourcing & deception (Curveball case); IC quality control | NEW skill `analytic-tradecraft` (5 references) |
 | 14 | *The Minto Pyramid Principle* | Barbara Minto | 1985 / 1996 | MECE decomposition; governing thought; SCQA opener; skim-path discipline | NEW skill `executive-communication` — `references/pyramid-principle.md` + `scqa-opener.md` |
-| 15 | *Say It With Charts* (4e) | Gene Zelazny | 2001 | Five chart families; one-message-per-slide; ink-to-data discipline | NEW skill `executive-communication` — `references/zelazny-chart-selection.md` |
-| 16 | *How to Find Out Anything* | Don MacLeod | 2012 | Google operator catalog; deep-web heuristics; FOIA / PACER / EDGAR / public-records aggregator workflow; people-finding with legal sensitivities (DPPA, FCRA, GLBA, HIPAA) | `research-techniques/references/macleod-search-mastery.md` + `osint-investigation/references/macleod-investigative-search.md` |
-| 17 | *The Joy of Search* | Daniel M. Russell | 2019 | Search literacy; metacognition; clarify-the-question discipline; lateral reading; triangulation standards; leading-question lint; `tools/google/` design recommendations | `research-techniques/references/russell-search-literacy.md` |
-| 18 | *Writing Your Doctoral Dissertation: Invisible Rules for Success* | Rita S. Brause | 1999 | Dissertation as apprenticeship; chair-as-quasi-parental; chapter-by-chapter template; original-contribution claim; methodology-justification chain; Brause's five tests for findings; viva preparation. Foundation of the **Ivy / Oxbridge / LSE bar**. | NEW skill `academic-reporting-standards` — `references/brause-dissertation-craft.md` + `originality-claim.md` + `methodology-justification-checklist.md` + `findings-interpretation-criteria.md` + `viva-defense-preparation.md` |
-| 19 | *The Academic Phrasebank* (4e) | John Morley | 2017 | Rhetorical-move catalog (introducing work / referring to literature / methods / results / discussion / conclusions); reporting-verb register (neutral / tentative / strong / critical); hedging device catalog; Davis & Morley reuse-acceptability rule | `academic-writing/references/morley-rhetorical-moves.md` + `morley-reporting-verbs-and-hedges.md` |
+| 15 | *Say It With Charts* (4e) | Gene Zelazny | 2001 | Five chart families; one-message-per-slide; ink-to-data discipline | NEW skill `executive-communication` — `references/chart-selection-by-message.md` |
+| 16 | *How to Find Out Anything* | Don MacLeod | 2012 | Google operator catalog; deep-web heuristics; FOIA / PACER / EDGAR / public-records aggregator workflow; people-finding with legal sensitivities (DPPA, FCRA, GLBA, HIPAA) | `research-techniques/references/search-craft-and-deep-web.md` + `osint-investigation/references/public-records-investigative-search.md` |
+| 17 | *The Joy of Search* | Daniel M. Russell | 2019 | Search literacy; metacognition; clarify-the-question discipline; lateral reading; triangulation standards; leading-question lint; `tools/google/` design recommendations | `research-techniques/references/search-metacognition-and-verification.md` |
+| 18 | *Writing Your Doctoral Dissertation: Invisible Rules for Success* | Rita S. Brause | 1999 | Dissertation as apprenticeship; chair-as-quasi-parental; chapter-by-chapter template; original-contribution claim; methodology-justification chain; Brause's five tests for findings; viva preparation. Foundation of the **Ivy / Oxbridge / LSE bar**. | NEW skill `academic-reporting-standards` — `references/dissertation-unwritten-conventions.md` + `originality-claim.md` + `methodology-justification-checklist.md` + `findings-interpretation-criteria.md` + `viva-defense-preparation.md` |
+| 19 | *The Academic Phrasebank* (4e) | John Morley | 2017 | Rhetorical-move catalog (introducing work / referring to literature / methods / results / discussion / conclusions); reporting-verb register (neutral / tentative / strong / critical); hedging device catalog; Davis & Morley reuse-acceptability rule | `academic-writing/references/academic-rhetorical-moves.md` + `reporting-verbs-and-hedging.md` |
 | 20 | *Doing Case Study Research: A Practical Guide* | Hancock & Algozzine | 2006 | Case-study definition; intrinsic / instrumental / collective × exploratory / explanatory / descriptive typologies; purposeful sampling; gatekeeper protocol; interview protocol; Berg's content-analysis stage model; member checking; Stake-derived narrative checklist | `research-design/references/case-study-method.md` + `case-selection-and-analysis.md` |
 | 21 | *No More Secrets: Open Source Information and the Reshaping of U.S. Intelligence* | Hamilton Bean | 2011 | OSINT institutional lineage (FBIS → OSC); four competing definitions; speed-vs-verification / volume-vs-signal / over-classification tensions; SARS and Aspin-Brown Burundi positive cases; over-classification and "Googlification" anti-patterns | `osint-investigation/references/osint-doctrine-and-history.md` + `osint-validation-and-anti-patterns.md` |
 
@@ -63,86 +63,12 @@ These are the highest-leverage additions because multiple authoritative sources 
 | Ethics for online research | Poynter (ESOMAR) + Rowland (FOIA) | folded into **mr-ethics-and-consent** + existing evidence-discipline |
 | Knowledge valuation / monetisation | Bergeron + Poynter (ROI / MROC pricing) | **knowledge-audit-engagement** + **research-monetisation-playbook** |
 
-## Per-book unique contributions (single-book-novel)
+## Per-book contributions
 
-### From Deason — *Internet Research with Google*
-- Web-search operator stack (Boolean × field × proximity × refinement)
-- URL anatomy as credibility heuristic
-- Deep-web failure taxonomy (7 categories of why a search returns nothing)
-- Grey-literature recipes (`site:.edu filetype:pdf`)
-- Cache + recovery fallbacks (`cache:`, archive.org)
-- Answer-card-first routing (calc/conv/def served without page fetch)
-
-### From Bergeron — *Essentials of Knowledge Management*
-- Eight-stage knowledge lifecycle (Creation → Disposal × 6 issue-axes)
-- DIKW-Plus ladder (Data → Information → **Metadata** → Knowledge → Instrumental Understanding)
-- Three-tier knowledge model (tacit / **implicit** / explicit) — implicit is highest-ROI capture
-- Intellectual capital decomposition (human / structural / customer)
-- Magic ↔ Technology continuum (19-attribute matrix for automate-vs-leave-to-human)
-- Process–practice gap detection
-- Balanced scorecard for intangible outcomes
-- Time-value-of-knowledge decay
-- Risk hexagon (Mgmt / Politics / Finance / Law / Tech / Marketing)
-- Five-phase implementation roadmap with Modify/Extend/Maintain/Disable exits
-
-### From Bell — *Librarian's Guide*
-- Searcher's Toolkit — 7 universal database primitives
-- Recall vs precision as explicit tuning dial
-- "Question behind the question" — 6 types of misstated query
-- Citation chasing forward + backward as named primitive
-- Bibliographic coupling — relevance via shared references, not shared words
-- Single-Citation-Matcher pattern for fragment recovery
-- Refine-panel snapshot — aggregate facets before reading individual hits
-- Six coverage axes for source evaluation
-- Discipline-specific strategy (sciences vs medicine vs social sciences vs humanities vs numerical)
-- Anti-pattern: NOT in commercial DBs, broaden-don't-narrow on sparse, black-box-corpora flagging
-
-### From Abbott — *Digital Paper*
-- Research as project management, not finding
-- Massive-parallel non-linear pipeline (7 concurrent activities)
-- Three-phase project lifecycle gated by artefacts
-- Empirical-puzzle vs theoretical-puzzle distinction (`why is X true?` vs competing accounts)
-- Establishment minianalysis as gate-keeping pre-flight check
-- Brachiation through citation graph (back-and-forth, expert-anchored, vintage-aware)
-- Five reading modes (narrative / meditative / scan / mastery / partial-mastery)
-- Five-term doubt framework (author / provenance / production / mechanics / aims)
-- Provenance-anchored 2–10 line atomic notes
-- Six-item rule for filing (cardinality discipline)
-- Six rhetorical structures (chronology / emblem / narrative / case / comparison / stages)
-- Anti-pattern: tag-everything-with-everything = "refusing to think"
-
-### From Poynter — *Online and Social Media Research*
-- MROC (Market Research Online Communities) design — short-term and long-term taxonomy
-- Online qualitative: bulletin-board groups, online focus groups, parallel IDIs, MEGs
-- Netnography / e-ethnography (Kozinets) — observational / interactive / WE-research
-- Panel quality (ESOMAR-26, ISO-26362, ARF Foundations of Quality)
-- River sampling and access-panel decision matrix
-- Listening pipeline (find → extract → analyse) for social-media listening
-- Sentiment / share-of-voice / authority ranking
-- Prediction markets as concept-test alternative
-- Mixed-purpose research (Category 6) protocol
-- International research localisation (internet-penetration-aware sampling)
-- B2B research patterns (LinkedIn, client DB, recognition-problem mitigation)
-- MR ethics: lurk-vs-announce, paraphrase-not-quote, sensitive-data classes, opt-in
-- Four MR-specific report shapes (static / interactive / dynamic / process)
-- Cost ladder: F2F = 100, telephone = 60, online = 36
-
-### From Rowland — *The Creative Guide to Research*
-- Pure-research vs applied-research two-phase model
-- 5W+ in 4 layers (traditional + narrative + personal + applied + Wish List)
-- Rashomon multi-perspective pass (≥3 conflicting accounts)
-- Tudor's 12-point evaluation rubric
-- "Interviewing the document" — 5W applied to static text
-- McGraw's three-round interview (official line / POV / accountability)
-- Spin detection + ratcheting (bridging / punting; off-record → on-record)
-- Cashore source-database (mandatory story-field, ~25 new sources + 25 to-dos per document)
-- Reverse-genealogy / endpoint pivot when forward search fails
-- Stack-serendipity / prepared-browsing budget for off-axis exploration
-- FOIA / FOI request engineering (narrow scope / broad form, briefing notes, exemption appeals)
-- Chronology-as-gap-detector (Cashore: "the heart of investigative journalism")
-- Untouched-corpus prioritizer (No-Gun-Ri lesson — un-indexed primary > re-crawled indexed)
-- Stop discipline (Tuchman: "one must stop before one has finished")
-- Training-Officer relationship — persistent practitioner mentor per domain
+Per-book concept lists were removed on 2026-09-24: this record names the books that informed the
+engine but does not store their content. The operational knowledge lives, reorganised by task,
+in the skills and `references/` files named in the tables above and below; each carries its own
+short Sources line.
 
 ## The 15 highest-leverage new skills scaffolded in this pass
 

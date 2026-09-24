@@ -1,6 +1,6 @@
 # PI report writing
 
-McMahon's canonical 10-section structure. Distinct from DD report (which is `due-diligence-report-architecture`); PI reports anticipate court testimony.
+Use this ten-section structure for private-investigator reports. Distinct from DD report (which is `due-diligence-report-architecture`); PI reports anticipate court testimony.
 
 ## The 10 required sections
 
@@ -90,3 +90,5 @@ Before submitting:
 - `court-testimony-preparation` (roadmap) — taking the report to the stand
 - `due-diligence-report-architecture` — DD-grade variant
 - `professional-word-output` — final DOCX rendering
+
+Sources: McMahon (2001) *Practical Handbook for Professional Investigators*; engine house practice.
