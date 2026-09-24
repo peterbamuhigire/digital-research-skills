@@ -615,8 +615,8 @@ The table quotes the discovered `name` and `description` frontmatter values. `[M
 | skills/proposal-skills/AGENTS.md | 91 | 4a68ed6b70e9 | Proposal Skills Repository |
 | skills/proposal-skills/CLAUDE.md | 233 | de28971755f2 | CLAUDE.md |
 | skills/proposal-skills/README.md | 264 | 6d5c076e50ed | Proposal Skills |
-| skills/proposal-skills/book-extractions/building-multi-tenant-saas-architectures-proposal-extraction.md | 66 | 5af63fbe207c | Building Multi-Tenant SaaS Architectures — Proposal Extraction (2026) |
-| skills/proposal-skills/book-extractions/building-multi-tenant-saas-architectures.md | 1695 | 9d18bc690e66 | Document Outline {#index_split_001.html_calibre_pb_0 .calibre5} |
+| skills/proposal-skills/(book-extraction file; since removed, path redacted) | 66 | 5af63fbe207c | Building Multi-Tenant SaaS Architectures — Proposal Extraction (2026) |
+| skills/proposal-skills/(book-extraction file; since removed, path redacted) | 1695 | 9d18bc690e66 | Document Outline {#index_split_001.html_calibre_pb_0 .calibre5} |
 | skills/proposal-skills/docs/evaluation/2026-04-13/README.md | 17 | b0eedea281b7 | Evaluation Bundle |
 | skills/proposal-skills/docs/march-12-evaluation/README.md | 48 | ce292edcc72a | Repository Completeness Evaluation — 12 March 2026 (Updated) |
 | skills/proposal-skills/skills/blog-writer/references/editorial-standards.md | 263 | 5ab6de79c336 | Editorial Standards Reference — Blog Writer Skill |

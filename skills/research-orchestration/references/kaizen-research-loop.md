@@ -34,3 +34,15 @@ Use this loop after every research wave and again before release. It turns a res
 - Keep source records immutable; remediate the process or claim status separately.
 - Route current legal, regulatory, platform, safety, vendor, and market assertions to current-source verification.
 
+## Source input status register
+
+Label every book, report, or dataset admitted as a process input before it shapes a standard:
+
+| Status | Treatment |
+|---|---|
+| Readable and current | Admissible for concepts; current facts still need primary-source verification |
+| Historical (older edition, dated platform or product claims) | Durable concepts only; replace versions, APIs, benchmarks, and legal claims with current sources |
+| Partial (early release, missing chapters) | Cite only what was available; never present it as a complete standard |
+| Unreadable or corrupted extraction | Not admitted; re-ingest a lawful readable copy before attributing anything to it |
+
+Book-derived knowledge enters the engine only as paraphrased, task-oriented skill references; staging notes and extractions stay outside the repository.

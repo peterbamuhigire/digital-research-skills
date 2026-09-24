@@ -52,7 +52,7 @@ Total: 59 `SKILL.md` files under `skills/` (flat — one directory per skill, no
 - Heuer, Richards J. Jr. *Psychology of Intelligence Analysis*. CIA Center for the Study of Intelligence — named in `docs/analysis/initial-evaluation/99-sources.md`'s Tier 1 consolidated source list alongside Sherman Kent's *Words of Estimative Probability* (CIA), used as foundational tradecraft input for this engine's calibration and analytic-tradecraft doctrine.
 - Tetlock, Philip E. *Expert Political Judgment: How Good Is It? How Can We Know?* (New edition) — named as a research input in `docs/analysis/initial-evaluation/99-sources.md`'s consolidated source list, underpinning the engine's calibration-and-forecasting doctrine.
 
-This engine has no `book-extractions/` directory (unlike `business-plan-skills` and `srs-skills`); its non-ECC citations instead live in skill `references/` files and `docs/analysis/initial-evaluation/99-sources.md`, both cited above with what those files state.
+This engine stores no book extractions: there is no `extracted-books/`, `book-extractions/` or `docs/book-study/` folder (the former `extracted-books/` notes were folded into paraphrased skill references and removed on 2026-09-24). Its non-ECC citations live in skill `references/` files and `docs/analysis/initial-evaluation/99-sources.md`. `scripts/check_no_book_extractions.py`, run by `scripts/validate_engine.py`, enforces the rule.
 
 ## Architecture & cross-cutting engines (updated 2026-06-21)
 

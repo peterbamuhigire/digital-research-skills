@@ -18,7 +18,7 @@
 
 ## Growth and profit product patterns
 
-Use `../../../extracted-books/growth-profit-disruption-research-notes.txt` when a research asset can become a commercial decision aid. Strong product candidates include:
+Load `../../business-writing/references/growth-profit-and-disruption-analysis.md` for the underlying growth, profit, and disruption method when a research asset can become a commercial decision aid. Strong product candidates include:
 
 - growth engine diagnostic;
 - revenue leak audit;

@@ -83,6 +83,7 @@ Skipping a step produces silent data quality failures downstream.
 | 5. Merge audit | `references/merge-discipline.md` | Walker checkmerge + Chen `validate=` cardinality; mandatory before any join |
 | 6. Quality score | `references/quality-assessment-walker.md` | Four-axis composite (completeness · usefulness · reliability · relevance), default weights (0.25, 0.25, 0.30, 0.20), `passes(threshold=0.7)` gate |
 | Analytics method gate | `references/analytics-quality-method-gate.md` | Descriptive / diagnostic / predictive / prescriptive method-fit gate before quantitative claims, forecasts, dashboards, or models |
+| Analysis run and reporting | `../research-design/references/quantitative-analytics-method.md` | After the gate passes: method choice, validation, chart choice, and the finding format |
 | Cross-cutting | `tools/data/profiler.py` | Profile DataFrame: dtypes, distributions, cardinality, skew/kurt hints |
 
 ## The four-axis quality score (engine's gate)

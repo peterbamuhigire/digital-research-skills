@@ -10,6 +10,20 @@ This is enforced by the `source-evaluation` skill — read `skills/source-evalua
 
 If a sub-agent returns content that violates evidence discipline, strike it. Do not paper over with fixes — log it in the project's `EVIDENCE-AUDIT.md` and adjust the next agent prompt.
 
+## Never store book extractions
+
+Book extractions, book summaries and chapter-by-chapter notes must never be stored in this
+repository (no `extracted-books/`, `book-extractions/` or `docs/book-study/` folder, no
+`*-extraction.md` files). Keeping them infringes copyright. Knowledge from purchased books enters
+only as paraphrased, task-oriented skill content and `references/` files (procedures, decision
+rules, checklists, templates, original worked examples) organised by task, not by chapter order,
+with a short citation (Author (Year) *Title*). Verbatim quotations stay rare and under 25 words.
+Staging notes live outside the repository and are never linked from skills.
+`scripts/check_no_book_extractions.py` (run by `scripts/validate_engine.py`) fails if an
+extraction folder exists or any tracked or untracked text file links into one; plan and audit
+documents may name books but not store their content. Research-technique files such as
+`quote-extraction.md` or social-source extraction references are methods, not book extractions.
+
 ## Standard research workflow
 
 Triggered by user requests like "research X", "find pain points of Y", "do another pass":

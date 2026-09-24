@@ -65,7 +65,7 @@ Research design starts with reasoning discipline. Use `critical-reasoning-and-ar
 | Reconstructing past events from primary and secondary sources | `references/historical-research-methods.md` |
 | Forecasting, time-series signal extraction, weak-signal surfacing | `references/trend-analysis.md` |
 | Selecting among the 100 Universal Methods of Design for complex problems, innovation, service design, product discovery, usability, journey mapping, or effective design recommendations | `references/universal-methods-of-design-router.md` |
-| Quantitative dataset analysis, dashboard evidence, forecasts, or model-backed findings | `../extracted-books/data-analytics-research-method-extraction.md` plus `data-quality-pipeline/references/analytics-quality-method-gate.md` |
+| Quantitative dataset analysis, dashboard evidence, forecasts, or model-backed findings | `references/quantitative-analytics-method.md` plus `../data-quality-pipeline/references/analytics-quality-method-gate.md` |
 | Recruiting and running a Market Research Online Community for 3+ days | `references/mroc-design-and-management.md` |
 | Modelling research artifacts as a state machine across the 8 lifecycle stages | `references/knowledge-lifecycle-pipeline.md` |
 | Authoring or maintaining the canonical research-design document (Abbott "north-star artefact") | `references/research-design-document.md` |

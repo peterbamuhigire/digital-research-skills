@@ -30,7 +30,7 @@ When a report or proposal describes a system, process, workflow, operating model
 | Audit / compliance report | `references/clippinger-business-reports.md` | Findings ranked by severity; remediation plan |
 | Formal research report | `references/clippinger-business-reports.md` (full template) | Methodology section; replicability standard |
 | Business plan | `references/clippinger-business-reports.md` § business plan | Market analysis + financial projections + sensitivity |
-| Growth strategy report | `../../extracted-books/growth-profit-disruption-research-notes.txt` · `references/forsyth-reports-proposals.md` | Growth engine + constraints + experiments + KPI tree |
+| Growth strategy report | `../business-writing/references/growth-profit-and-disruption-analysis.md` · `references/forsyth-reports-proposals.md` | Growth engine + constraints + experiments + KPI tree |
 | Internal proposal / business case | `references/forsyth-reports-proposals.md` § internal proposal | Recommendation upfront; options considered |
 | Formal external proposal | `references/forsyth-reports-proposals.md` § external proposal | Cover letter + situation + approach + price + risks |
 | Bid response (RFP) | `references/forsyth-reports-proposals.md` § bid | Mirror RFP order; compliance matrix as section 1 |

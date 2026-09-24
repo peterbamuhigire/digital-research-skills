@@ -9,6 +9,7 @@ import sys
 COMMANDS = (
     [sys.executable, "-X", "utf8", "scripts/skill_contract_validator.py", "--baseline", "tests/skill-engine/quality-baseline.json"],
     [sys.executable, "-X", "utf8", "scripts/routing_smoke_test.py"],
+    [sys.executable, "-X", "utf8", "scripts/check_no_book_extractions.py"],
     [sys.executable, "-m", "engine", "doctor"],
     [sys.executable, "-m", "unittest", "discover", "-s", "engine/tests"],
 )

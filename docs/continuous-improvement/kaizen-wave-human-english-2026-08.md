@@ -13,7 +13,7 @@ Truth and prose quality were governed by strong but separate surfaces. A sourced
 
 ## Improvement implemented
 
-- Added `extracted-books/human-english-craft-synthesis-2026.md` with provenance and limitations for all seven supplied files, five passes, research-output register, grammar/lexical checks, and anti-slop questions.
+- Added a local human-English synthesis (later folded into `skills/business-writing/references/english-collocations-and-lexical-precision-2026-09-02.md` and removed on 2026-09-24 under the no-book-extractions rule) with provenance and limitations for all seven supplied files, five passes, research-output register, grammar/lexical checks, and anti-slop questions.
 - Routed it through `AGENTS.md`, `skills/business-writing/`, and `skills/anti-ai-slop/`.
 - Kept source-evaluation authoritative: language polish never upgrades an unsupported or unverified claim.
 
