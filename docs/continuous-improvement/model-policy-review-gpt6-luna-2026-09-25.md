@@ -15,7 +15,7 @@
 
 The existing policy uses Luna for the root/orchestrator, reviewer, and bounded execution roles, all at high reasoning. GPT-6 Luna supports that reasoning level and OpenAI positions it for efficient, focused work, so the role assignment transfers without changing scope or reasoning effort. Published token pricing is lower than the checked GPT-5.6 Luna pricing.
 
-No controlled quality or latency comparison for this engine's representative work was available in the sources reviewed. Treat quality and latency deltas as **NOT_ASSESSED**; the change is authorized and matches the user's selected family, but this record does not claim GPT-6 Luna is better on those measures. Account/workspace entitlement remains **NOT_ASSESSED** until a new session successfully starts with the model.
+No controlled quality or latency comparison for this engine's representative work was available in the sources reviewed. Treat quality and latency deltas as **NOT_ASSESSED**; the change is authorized and matches the user's selected family, but this record does not claim GPT-6 Luna is better on those measures. The successful CLI run confirms access for that CLI/account context on 2026-09-25; access in another profile/workspace or future state remains **NOT_ASSESSED**.
 
 ## Decision and limits
 
