@@ -1,0 +1,164 @@
+{
+  "register_id": "skills-kaizen-wave2-2026-09",
+  "purpose": "Currentness evidence for the model-policy and plugin-documentation claims used in the internal Skills Kaizen execution log. This is not external certification or an engine-wide claim census.",
+  "as_of": "2026-09-26",
+  "sources": [
+    {
+      "id": "SRC-OAI-MODEL-CATALOGUE-2026-09-26",
+      "title": "OpenAI API models",
+      "url": "https://developers.openai.com/api/docs/models",
+      "publisher": "OpenAI",
+      "tier": 1,
+      "scope": "Model catalogue and provider-described task positioning for GPT-6 Astra and GPT-6 Luna",
+      "accessed": "2026-09-26",
+      "verified_at": "2026-09-26",
+      "review_after": "2026-10-03",
+      "freshness_class": "platform",
+      "as_of": "2026-09-26",
+      "confidence": "high for the provider's current published descriptions; not proof of local task superiority",
+      "archive_status": "NOT_ASSESSED"
+    },
+    {
+      "id": "SRC-OAI-ASTRA-MODEL-2026-09-26",
+      "title": "GPT-6 Astra model page",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "publisher": "OpenAI",
+      "tier": 1,
+      "scope": "Exact model ID and documented reasoning effort values",
+      "accessed": "2026-09-26",
+      "verified_at": "2026-09-26",
+      "review_after": "2026-10-03",
+      "freshness_class": "platform",
+      "as_of": "2026-09-26",
+      "confidence": "high for page content; local entitlement NOT_ASSESSED",
+      "archive_status": "NOT_ASSESSED"
+    },
+    {
+      "id": "SRC-OAI-LUNA-MODEL-2026-09-26",
+      "title": "GPT-6 Luna model page",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "publisher": "OpenAI",
+      "tier": 1,
+      "scope": "Exact model ID and documented API usage",
+      "accessed": "2026-09-26",
+      "verified_at": "2026-09-26",
+      "review_after": "2026-10-03",
+      "freshness_class": "platform",
+      "as_of": "2026-09-26",
+      "confidence": "high for the model page content; local account availability NOT_ASSESSED",
+      "archive_status": "NOT_ASSESSED"
+    },
+    {
+      "id": "SRC-OAI-API-PRICING-2026-09-26",
+      "title": "OpenAI API pricing",
+      "url": "https://developers.openai.com/api/docs/pricing",
+      "publisher": "OpenAI",
+      "tier": 1,
+      "scope": "Standard short-context API rates for gpt-6-astra and gpt-6-luna, per million tokens",
+      "accessed": "2026-09-26",
+      "verified_at": "2026-09-26",
+      "review_after": "2026-10-03",
+      "freshness_class": "platform",
+      "as_of": "2026-09-26",
+      "confidence": "high for listed API rates; not a ChatGPT subscription cost or measured task cost",
+      "archive_status": "NOT_ASSESSED"
+    },
+    {
+      "id": "SRC-CLAUDE-PLUGIN-MANIFEST-2026-09-26",
+      "title": "Claude Code plugin manifest reference",
+      "url": "https://code.claude.com/docs/en/plugins-reference",
+      "publisher": "Anthropic",
+      "tier": 1,
+      "scope": "Manifest optionality, required name field, agents/hooks support and strict-validation behavior",
+      "accessed": "2026-09-26",
+      "verified_at": "2026-09-26",
+      "review_after": "2026-10-03",
+      "freshness_class": "platform",
+      "as_of": "2026-09-26",
+      "confidence": "high for current documentation; installed-host behavior NOT_ASSESSED",
+      "archive_status": "NOT_ASSESSED"
+    }
+  ],
+  "claims": [
+    {
+      "id": "CLM-KZ-MODEL-POSITIONING-2026-09-26",
+      "text": "OpenAI currently describes GPT-6 Astra as its flagship for complex reasoning and coding and GPT-6 Luna as a cost-sensitive, high-volume model; these descriptions are provider positioning, not evidence of superior results on a local portfolio task.",
+      "requires_currentness": true,
+      "source_ids": ["SRC-OAI-MODEL-CATALOGUE-2026-09-26"],
+      "locators": ["Choosing a model, page lines 850-852 in the 2026-09-26 access snapshot"],
+      "reverification_trigger": "Recheck by 2026-10-03 and on a model-catalogue change",
+      "affected_artifact_paths": ["digital-research-engine/docs/continuous-improvement/kaizen-currentness-gate.md", "chwezi-engine-agents/docs/operations/skills-kaizen-execution-2026-09-26.md"],
+      "support_review": {
+        "state": "supported",
+        "reviewer": "Codex root agent; independent human review pending",
+        "basis": "Compared the model-selection guidance on the official Models page. Provider positioning is kept within the stated scope; no local quality or latency claim is made.",
+        "reviewed_at": "2026-09-26"
+      }
+    },
+    {
+      "id": "CLM-KZ-ASTRA-EFFORT-2026-09-26",
+      "text": "The official GPT-6 Astra model page documents the exact model ID gpt-6-astra and reasoning effort values low, medium, high, xhigh and max.",
+      "requires_currentness": true,
+      "source_ids": ["SRC-OAI-ASTRA-MODEL-2026-09-26"],
+      "locators": ["Model description and reasoning.effort, page lines 853-876 in the 2026-09-26 access snapshot"],
+      "reverification_trigger": "Recheck by 2026-10-03 and on a model-page or effort-enum change",
+      "affected_artifact_paths": ["digital-research-engine/docs/continuous-improvement/kaizen-currentness-gate.md", "chwezi-engine-agents/docs/operations/skills-kaizen-execution-2026-09-26.md"],
+      "support_review": {
+        "state": "supported",
+        "reviewer": "Codex root agent; independent human review pending",
+        "basis": "Checked the model page's model identifier and reasoning-effort section. Account/API entitlement is not inferred.",
+        "reviewed_at": "2026-09-26"
+      }
+    },
+    {
+      "id": "CLM-KZ-LUNA-MODEL-ID-2026-09-26",
+      "text": "OpenAI's GPT-6 Luna model page names the exact model ID gpt-6-luna and documents its API endpoint usage; this does not establish API entitlement for an individual account.",
+      "requires_currentness": true,
+      "source_ids": ["SRC-OAI-LUNA-MODEL-2026-09-26"],
+      "locators": ["Model heading/description, page lines 851-874; API request model identifier, lines 1072-1076 in the 2026-09-26 access snapshot"],
+      "reverification_trigger": "Recheck by 2026-10-03 and on a model-page or endpoint change",
+      "affected_artifact_paths": ["digital-research-engine/docs/continuous-improvement/kaizen-currentness-gate.md", "chwezi-engine-agents/docs/operations/skills-kaizen-execution-2026-09-26.md"],
+      "support_review": {
+        "state": "supported",
+        "reviewer": "Codex root agent; independent human review pending",
+        "basis": "Checked the model page's exact identifier and API usage section. Account-specific access remains NOT_ASSESSED.",
+        "reviewed_at": "2026-09-26"
+      }
+    },
+    {
+      "id": "CLM-KZ-API-RATES-2026-09-26",
+      "text": "OpenAI's standard short-context API pricing lists gpt-6-astra at USD 10 input and USD 50 output per million tokens, and gpt-6-luna at USD 0.10 input and USD 0.50 output per million tokens.",
+      "requires_currentness": true,
+      "source_ids": ["SRC-OAI-API-PRICING-2026-09-26"],
+      "locators": ["Standard pricing, short-context table, page lines 863-870 in the 2026-09-26 access snapshot"],
+      "reverification_trigger": "Recheck by 2026-10-03 and before any API cost estimate",
+      "affected_artifact_paths": ["chwezi-engine-agents/docs/operations/skills-kaizen-execution-2026-09-26.md"],
+      "support_review": {
+        "state": "supported",
+        "reviewer": "Codex root agent; independent human review pending",
+        "basis": "Checked the Standard, short-context price table. These are API rates; subscription billing and task-level costs are out of scope.",
+        "reviewed_at": "2026-09-26"
+      }
+    },
+    {
+      "id": "CLM-KZ-CLAUDE-MANIFEST-RULES-2026-09-26",
+      "text": "Claude Code's current plugin manifest reference says the manifest is optional, name is the only required manifest field, agents and hooks are supported, and strict validation can be requested.",
+      "requires_currentness": true,
+      "source_ids": ["SRC-CLAUDE-PLUGIN-MANIFEST-2026-09-26"],
+      "locators": ["Manifest optionality, lines 77-79; required field, lines 161-163; agents/hooks, lines 182-186; validation mode, lines 146-156 in the 2026-09-26 access snapshot"],
+      "reverification_trigger": "Recheck by 2026-10-03 and before altering generated manifests",
+      "affected_artifact_paths": ["chwezi-engine-agents/README.md", "chwezi-engine-agents/scripts/generate-plugin-manifest.js"],
+      "support_review": {
+        "state": "supported",
+        "reviewer": "Codex root agent; independent human review pending",
+        "basis": "Checked the manifest overview, fields table, hooks/agents entries and validation section. This records vendor documentation, not local installed-host behavior.",
+        "reviewed_at": "2026-09-26"
+      }
+    }
+  ],
+  "limitations": [
+    "The claims cover the narrow P00 model-policy and plugin-documentation work only, not the eleven-engine high-risk claim population.",
+    "Archive availability, account entitlement, measured quality/latency, and installed plugin behavior remain NOT_ASSESSED.",
+    "Support labels are provisional agent review and do not constitute independent human review or release certification."
+  ]
+}
