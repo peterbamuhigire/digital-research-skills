@@ -9,7 +9,7 @@
       "url": "https://developers.openai.com/api/docs/models",
       "publisher": "OpenAI",
       "tier": 1,
-      "scope": "Model catalogue and provider-described task positioning for GPT-6 Astra and GPT-6 Luna",
+      "scope": "Model catalogue and provider-described task positioning for GPT-6 Astra, GPT-6 Sol and GPT-6 Luna",
       "accessed": "2026-09-26",
       "verified_at": "2026-09-26",
       "review_after": "2026-10-03",
@@ -22,6 +22,21 @@
       "id": "SRC-OAI-ASTRA-MODEL-2026-09-26",
       "title": "GPT-6 Astra model page",
       "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "publisher": "OpenAI",
+      "tier": 1,
+      "scope": "Exact model ID and documented reasoning effort values",
+      "accessed": "2026-09-26",
+      "verified_at": "2026-09-26",
+      "review_after": "2026-10-03",
+      "freshness_class": "platform",
+      "as_of": "2026-09-26",
+      "confidence": "high for page content; local entitlement NOT_ASSESSED",
+      "archive_status": "NOT_ASSESSED"
+    },
+    {
+      "id": "SRC-OAI-SOL-MODEL-2026-09-26",
+      "title": "GPT-6 Sol model page",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
       "publisher": "OpenAI",
       "tier": 1,
       "scope": "Exact model ID and documented reasoning effort values",
@@ -54,7 +69,7 @@
       "url": "https://developers.openai.com/api/docs/pricing",
       "publisher": "OpenAI",
       "tier": 1,
-      "scope": "Standard short-context API rates for gpt-6-astra and gpt-6-luna, per million tokens",
+      "scope": "Standard short-context API rates for gpt-6-astra, gpt-6-sol and gpt-6-luna, per million tokens; not account/subscription costs",
       "accessed": "2026-09-26",
       "verified_at": "2026-09-26",
       "review_after": "2026-10-03",
@@ -82,12 +97,19 @@
   "claims": [
     {
       "id": "CLM-KZ-MODEL-POSITIONING-2026-09-26",
-      "text": "OpenAI currently describes GPT-6 Astra as its flagship for complex reasoning and coding and GPT-6 Luna as a cost-sensitive, high-volume model; these descriptions are provider positioning, not evidence of superior results on a local portfolio task.",
+      "text": "OpenAI currently describes GPT-6 Astra as its flagship for complex reasoning and coding, GPT-6 Sol as a balanced model for coding and agentic workflows, and GPT-6 Luna as an efficient model for focused or high-volume tasks; these descriptions are provider positioning, not evidence of superior results on a local portfolio task.",
       "requires_currentness": true,
-      "source_ids": ["SRC-OAI-MODEL-CATALOGUE-2026-09-26"],
-      "locators": ["Choosing a model, page lines 850-852 in the 2026-09-26 access snapshot"],
+      "source_ids": [
+        "SRC-OAI-MODEL-CATALOGUE-2026-09-26"
+      ],
+      "locators": [
+        "Choosing a model, page lines 850-852 in the 2026-09-26 access snapshot"
+      ],
       "reverification_trigger": "Recheck by 2026-10-03 and on a model-catalogue change",
-      "affected_artifact_paths": ["digital-research-engine/docs/continuous-improvement/kaizen-currentness-gate.md", "chwezi-engine-agents/docs/operations/skills-kaizen-execution-2026-09-26.md"],
+      "affected_artifact_paths": [
+        "digital-research-engine/docs/continuous-improvement/kaizen-currentness-gate.md",
+        "chwezi-engine-agents/docs/operations/skills-kaizen-execution-2026-09-26.md"
+      ],
       "support_review": {
         "state": "supported",
         "reviewer": "Codex root agent; independent human review pending",
@@ -99,10 +121,17 @@
       "id": "CLM-KZ-ASTRA-EFFORT-2026-09-26",
       "text": "The official GPT-6 Astra model page documents the exact model ID gpt-6-astra and reasoning effort values low, medium, high, xhigh and max.",
       "requires_currentness": true,
-      "source_ids": ["SRC-OAI-ASTRA-MODEL-2026-09-26"],
-      "locators": ["Model description and reasoning.effort, page lines 853-876 in the 2026-09-26 access snapshot"],
+      "source_ids": [
+        "SRC-OAI-ASTRA-MODEL-2026-09-26"
+      ],
+      "locators": [
+        "Model description and reasoning.effort, page lines 853-876 in the 2026-09-26 access snapshot"
+      ],
       "reverification_trigger": "Recheck by 2026-10-03 and on a model-page or effort-enum change",
-      "affected_artifact_paths": ["digital-research-engine/docs/continuous-improvement/kaizen-currentness-gate.md", "chwezi-engine-agents/docs/operations/skills-kaizen-execution-2026-09-26.md"],
+      "affected_artifact_paths": [
+        "digital-research-engine/docs/continuous-improvement/kaizen-currentness-gate.md",
+        "chwezi-engine-agents/docs/operations/skills-kaizen-execution-2026-09-26.md"
+      ],
       "support_review": {
         "state": "supported",
         "reviewer": "Codex root agent; independent human review pending",
@@ -111,13 +140,42 @@
       }
     },
     {
+      "id": "CLM-KZ-SOL-MODEL-ID-2026-09-26",
+      "text": "OpenAI's GPT-6 Sol model page names the exact model ID gpt-6-sol and documents its reasoning effort values; this does not establish API entitlement for an individual account.",
+      "requires_currentness": true,
+      "source_ids": [
+        "SRC-OAI-SOL-MODEL-2026-09-26"
+      ],
+      "locators": [
+        "Model identifier and reasoning-effort sections on the official GPT-6 Sol model page, checked 2026-09-26"
+      ],
+      "reverification_trigger": "Recheck by 2026-10-03 and on a model-page or effort-enum change",
+      "affected_artifact_paths": [
+        "digital-research-engine/docs/continuous-improvement/kaizen-currentness-gate.md",
+        "chwezi-engine-agents/docs/operations/skills-kaizen-execution-2026-09-26.md"
+      ],
+      "support_review": {
+        "state": "supported",
+        "reviewer": "Codex root agent; independent human review pending",
+        "basis": "Checked the official model page identifier and reasoning-effort information. Account/API entitlement is not inferred.",
+        "reviewed_at": "2026-09-26"
+      }
+    },
+    {
       "id": "CLM-KZ-LUNA-MODEL-ID-2026-09-26",
       "text": "OpenAI's GPT-6 Luna model page names the exact model ID gpt-6-luna and documents its API endpoint usage; this does not establish API entitlement for an individual account.",
       "requires_currentness": true,
-      "source_ids": ["SRC-OAI-LUNA-MODEL-2026-09-26"],
-      "locators": ["Model heading/description, page lines 851-874; API request model identifier, lines 1072-1076 in the 2026-09-26 access snapshot"],
+      "source_ids": [
+        "SRC-OAI-LUNA-MODEL-2026-09-26"
+      ],
+      "locators": [
+        "Model heading/description, page lines 851-874; API request model identifier, lines 1072-1076 in the 2026-09-26 access snapshot"
+      ],
       "reverification_trigger": "Recheck by 2026-10-03 and on a model-page or endpoint change",
-      "affected_artifact_paths": ["digital-research-engine/docs/continuous-improvement/kaizen-currentness-gate.md", "chwezi-engine-agents/docs/operations/skills-kaizen-execution-2026-09-26.md"],
+      "affected_artifact_paths": [
+        "digital-research-engine/docs/continuous-improvement/kaizen-currentness-gate.md",
+        "chwezi-engine-agents/docs/operations/skills-kaizen-execution-2026-09-26.md"
+      ],
       "support_review": {
         "state": "supported",
         "reviewer": "Codex root agent; independent human review pending",
@@ -127,16 +185,22 @@
     },
     {
       "id": "CLM-KZ-API-RATES-2026-09-26",
-      "text": "OpenAI's standard short-context API pricing lists gpt-6-astra at USD 10 input and USD 50 output per million tokens, and gpt-6-luna at USD 0.10 input and USD 0.50 output per million tokens.",
+      "text": "OpenAI's standard short-context API pricing lists gpt-6-astra at USD 10 input and USD 50 output, gpt-6-sol at USD 2 input and USD 10 output, and gpt-6-luna at USD 0.10 input and USD 0.50 output per million tokens. These are API prices, not ChatGPT/Codex account or subscription costs.",
       "requires_currentness": true,
-      "source_ids": ["SRC-OAI-API-PRICING-2026-09-26"],
-      "locators": ["Standard pricing, short-context table, page lines 863-870 in the 2026-09-26 access snapshot"],
+      "source_ids": [
+        "SRC-OAI-API-PRICING-2026-09-26"
+      ],
+      "locators": [
+        "Standard short-context pricing table on the official OpenAI API pricing page, checked 2026-09-26"
+      ],
       "reverification_trigger": "Recheck by 2026-10-03 and before any API cost estimate",
-      "affected_artifact_paths": ["chwezi-engine-agents/docs/operations/skills-kaizen-execution-2026-09-26.md"],
+      "affected_artifact_paths": [
+        "chwezi-engine-agents/docs/operations/skills-kaizen-execution-2026-09-26.md"
+      ],
       "support_review": {
         "state": "supported",
         "reviewer": "Codex root agent; independent human review pending",
-        "basis": "Checked the Standard, short-context price table. These are API rates; subscription billing and task-level costs are out of scope.",
+        "basis": "Checked the Standard short-context price table for all three GPT-6 models. These are API rates; subscription billing and task-level costs are out of scope.",
         "reviewed_at": "2026-09-26"
       }
     },
@@ -144,10 +208,17 @@
       "id": "CLM-KZ-CLAUDE-MANIFEST-RULES-2026-09-26",
       "text": "Claude Code's current plugin manifest reference says the manifest is optional, name is the only required manifest field, agents and hooks are supported, and strict validation can be requested.",
       "requires_currentness": true,
-      "source_ids": ["SRC-CLAUDE-PLUGIN-MANIFEST-2026-09-26"],
-      "locators": ["Manifest optionality, lines 77-79; required field, lines 161-163; agents/hooks, lines 182-186; validation mode, lines 146-156 in the 2026-09-26 access snapshot"],
+      "source_ids": [
+        "SRC-CLAUDE-PLUGIN-MANIFEST-2026-09-26"
+      ],
+      "locators": [
+        "Manifest optionality, lines 77-79; required field, lines 161-163; agents/hooks, lines 182-186; validation mode, lines 146-156 in the 2026-09-26 access snapshot"
+      ],
       "reverification_trigger": "Recheck by 2026-10-03 and before altering generated manifests",
-      "affected_artifact_paths": ["chwezi-engine-agents/README.md", "chwezi-engine-agents/scripts/generate-plugin-manifest.js"],
+      "affected_artifact_paths": [
+        "chwezi-engine-agents/README.md",
+        "chwezi-engine-agents/scripts/generate-plugin-manifest.js"
+      ],
       "support_review": {
         "state": "supported",
         "reviewer": "Codex root agent; independent human review pending",
