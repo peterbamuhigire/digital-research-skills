@@ -92,6 +92,20 @@ deterministic tests as the contract fixture.
 9. Stop release when material support is missing or unresolved.
 10. Recover through an authorised archive or mark the claim unassessed; never convert inaccessibility into confirmation.
 
+### Source expiry and future-effective evidence
+
+The unified verifier checks optional source fields `review_after` and
+`effective_from` against the current UTC date, or the reproducible `--as-of
+YYYY-MM-DD` date supplied to the CLI. A source whose review date has passed or
+whose effective date is in the future fails currentness; claims that cite it
+are quarantined. Add each affected `dependent_rule_ids` list to the claim so
+the report identifies downstream rules. Missing or malformed dependency IDs
+keep the claim blocked and report that the impact is not traceable. Date checks
+and dependency metadata do not verify semantic claim support, effective-law
+interpretation, or completeness of the dependency list; those require human
+source review. Sources without these optional fields receive no currentness
+verdict from this check.
+
 ## Tooling
 
 Use the unified verifier when a project has a machine-readable source manifest:
@@ -107,6 +121,9 @@ python tools\reports\citation_density_dashboard.py projects\<project-id>\05-outp
 ```
 
 Both tools return a non-zero exit code when release readiness fails.
+
+Use `--as-of YYYY-MM-DD` with `source_verifier.py` for deterministic
+expiry/effective-date checks and fixture replay.
 
 ## Quality Standards
 

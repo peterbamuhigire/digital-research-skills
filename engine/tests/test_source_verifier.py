@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import tempfile
 import unittest
+from datetime import date
 from pathlib import Path
 
 from tools.verification.source_verifier import verify_claim, verify_manifest
@@ -13,6 +14,77 @@ FIXTURE = ROOT / "tests" / "fixtures" / "claim-support-review.json"
 
 
 class SourceVerifierTests(unittest.TestCase):
+    def test_overdue_source_quarantines_claim_and_lists_every_dependent_rule(self) -> None:
+        manifest = {
+            "sources": [
+                {"id": "SRC-TEST-STALE", "tier": 1, "review_after": "2026-08-10"},
+                {"id": "SRC-TEST-CURRENT", "tier": 1, "review_after": "2026-08-11"},
+            ],
+            "claims": [
+                {
+                    "id": "CLM-TEST-STALE",
+                    "text": "TEST ONLY: stale source must quarantine downstream rules.",
+                    "source_ids": ["SRC-TEST-STALE", "SRC-TEST-CURRENT"],
+                    "dependent_rule_ids": ["RULE-TEST-A", "RULE-TEST-B", "RULE-TEST-A"],
+                    "support_review": {
+                        "state": "supported",
+                        "reviewer": "test-labelled reviewer",
+                        "basis": "TEST ONLY: fixture for source expiry quarantine.",
+                        "reviewed_at": "2026-08-11",
+                    },
+                }
+            ],
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "manifest.json"
+            path.write_text(json.dumps(manifest), encoding="utf-8")
+            report = verify_manifest(path, check_archives=False, as_of=date(2026, 8, 11))
+
+        stale_source = next(
+            result for result in report.results
+            if result.item_type == "source-currentness" and result.item_id == "SRC-TEST-STALE"
+        )
+        claim = next(result for result in report.results if result.item_type == "claim")
+        self.assertEqual(stale_source.status, "fail")
+        self.assertEqual(claim.status, "fail")
+        self.assertEqual(claim.gaps[1], "dependent rule IDs: RULE-TEST-A, RULE-TEST-B")
+        self.assertFalse(report.release_ready)
+
+    def test_future_effective_source_quarantines_claim(self) -> None:
+        result = verify_claim(
+            {
+                "id": "CLM-TEST-FUTURE",
+                "text": "TEST ONLY: a future-effective source cannot support use today.",
+                "source_ids": ["SRC-TEST-FUTURE"],
+                "dependent_rule_ids": ["RULE-TEST-FUTURE"],
+                "support_review": {
+                    "state": "supported",
+                    "reviewer": "test-labelled reviewer",
+                    "basis": "TEST ONLY: fixture for future-effective source quarantine.",
+                    "reviewed_at": "2026-08-11",
+                },
+            },
+            {"SRC-TEST-FUTURE": {"id": "SRC-TEST-FUTURE", "tier": 1, "effective_from": "2026-08-12"}},
+            as_of=date(2026, 8, 11),
+        )
+        self.assertEqual(result.status, "fail")
+        self.assertIn("RULE-TEST-FUTURE", result.gaps[-1])
+        self.assertIn("not effective until 2026-08-12", result.evidence)
+
+    def test_bad_dependency_shape_is_reported_when_source_is_stale(self) -> None:
+        result = verify_claim(
+            {
+                "id": "CLM-TEST-DEPENDENCY-GAP",
+                "text": "TEST ONLY: stale source without dependency IDs is untraceable.",
+                "source_ids": ["SRC-TEST-STALE"],
+                "dependent_rule_ids": "RULE-TEST-NOT-A-LIST",
+            },
+            {"SRC-TEST-STALE": {"id": "SRC-TEST-STALE", "tier": 1, "review_after": "2026-08-10"}},
+            as_of=date(2026, 8, 11),
+        )
+        self.assertEqual(result.status, "fail")
+        self.assertIn("dependent_rule_ids missing or malformed", result.gaps[-1])
+
     def test_claim_support_fixture_keeps_semantic_states_explicit(self) -> None:
         report = verify_manifest(FIXTURE, check_archives=False)
         claims = {result.item_id: result for result in report.results if result.item_type == "claim"}

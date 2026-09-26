@@ -40,7 +40,7 @@ import json
 import re
 import sys
 from dataclasses import asdict, dataclass, field
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
@@ -107,8 +107,15 @@ def load_manifest(path: Path) -> dict[str, Any]:
     return data
 
 
-def verify_manifest(path: Path, *, check_archives: bool = True, timeout: float = 20.0) -> VerificationReport:
+def verify_manifest(
+    path: Path,
+    *,
+    check_archives: bool = True,
+    timeout: float = 20.0,
+    as_of: date | None = None,
+) -> VerificationReport:
     manifest = load_manifest(path)
+    evaluation_date = as_of or datetime.now(timezone.utc).date()
     results: list[CheckResult] = []
     source_entries = manifest_entries(manifest, "sources", results)
     claim_entries = manifest_entries(manifest, "claims", results)
@@ -119,12 +126,15 @@ def verify_manifest(path: Path, *, check_archives: bool = True, timeout: float =
     for source in source_entries:
         if isinstance(source, dict):
             results.extend(verify_source(source, check_archives=check_archives, timeout=timeout))
+            currentness = verify_source_currentness(source, evaluation_date)
+            if currentness is not None:
+                results.append(currentness)
         else:
             results.append(CheckResult("source", "unknown", "fail", "low", "Source entry is not an object."))
 
     for claim in claim_entries:
         if isinstance(claim, dict):
-            results.append(verify_claim(claim, sources))
+            results.append(verify_claim(claim, sources, as_of=evaluation_date))
         else:
             results.append(CheckResult("claim", "unknown", "fail", "low", "Claim entry is not an object."))
 
@@ -158,6 +168,45 @@ def verify_manifest(path: Path, *, check_archives: bool = True, timeout: float =
         release_ready=release_ready,
         summary=summary,
         results=results,
+    )
+
+
+def verify_source_currentness(source: dict[str, Any], as_of: date) -> CheckResult | None:
+    """Check explicitly supplied review/effective dates without inferring support."""
+    fields = ("review_after", "effective_from")
+    present = {field: source[field] for field in fields if field in source}
+    if not present:
+        return None
+
+    source_id = str(source.get("id", "unknown"))
+    for field, raw_value in present.items():
+        if not isinstance(raw_value, str):
+            return CheckResult(
+                "source-currentness", source_id, "fail", "low",
+                f"Source {field} must be an ISO date string.", [f"invalid {field}"],
+            )
+        try:
+            parsed = date.fromisoformat(raw_value)
+        except ValueError:
+            return CheckResult(
+                "source-currentness", source_id, "fail", "low",
+                f"Source {field} must be an ISO date string.", [f"invalid {field}"],
+            )
+        if field == "review_after" and parsed < as_of:
+            return CheckResult(
+                "source-currentness", source_id, "fail", "low",
+                f"Source review date {parsed.isoformat()} is overdue as of {as_of.isoformat()}.",
+                ["quarantine dependent claims until review"],
+            )
+        if field == "effective_from" and parsed > as_of:
+            return CheckResult(
+                "source-currentness", source_id, "fail", "low",
+                f"Source is not effective until {parsed.isoformat()} (as of {as_of.isoformat()}).",
+                ["quarantine dependent claims until the effective date"],
+            )
+    return CheckResult(
+        "source-currentness", source_id, "pass", "high",
+        f"Supplied source dates are current as of {as_of.isoformat()}; semantic support is not assessed.",
     )
 
 
@@ -233,7 +282,12 @@ def check_archive(source_id: str, url: str, archive_url: Any) -> CheckResult:
     return CheckResult("source-archive", source_id, "warn", "medium", "No archive snapshot found.", ["archive missing"])
 
 
-def verify_claim(claim: dict[str, Any], sources: dict[str, dict[str, Any]]) -> CheckResult:
+def verify_claim(
+    claim: dict[str, Any],
+    sources: dict[str, dict[str, Any]],
+    *,
+    as_of: date | None = None,
+) -> CheckResult:
     claim_id = str(claim.get("id", "unknown"))
     raw_source_ids = claim.get("source_ids")
     if not isinstance(raw_source_ids, list):
@@ -263,6 +317,46 @@ def verify_claim(claim: dict[str, Any], sources: dict[str, dict[str, Any]]) -> C
             "low",
             "Claim source_ids must not contain duplicates.",
             ["retain each source ID once"],
+        )
+    missing = [sid for sid in source_ids if sid not in sources]
+    if missing:
+        return CheckResult(
+            "claim",
+            claim_id,
+            "fail",
+            "low",
+            "Claim references unknown source IDs.",
+            missing,
+        )
+
+    evaluation_date = as_of or datetime.now(timezone.utc).date()
+    unavailable_sources = [
+        (sid, verify_source_currentness(sources[sid], evaluation_date))
+        for sid in source_ids
+    ]
+    unavailable_sources = [
+        (sid, result) for sid, result in unavailable_sources
+        if result is not None and result.status != "pass"
+    ]
+    if unavailable_sources:
+        raw_dependencies = claim.get("dependent_rule_ids")
+        if isinstance(raw_dependencies, list) and all(
+            isinstance(rule_id, str) and rule_id.strip() for rule_id in raw_dependencies
+        ):
+            dependency_ids = list(dict.fromkeys(rule_id.strip() for rule_id in raw_dependencies))
+        else:
+            dependency_ids = []
+        causes = [f"{sid}: {result.evidence}" for sid, result in unavailable_sources]
+        gaps = ["quarantine this claim until its sources are current"]
+        if dependency_ids:
+            gaps.append("dependent rule IDs: " + ", ".join(dependency_ids))
+        else:
+            gaps.append("dependent_rule_ids missing or malformed; downstream impact is not traceable")
+        return CheckResult(
+            "claim", claim_id, "fail", "low",
+            "Claim depends on a source that is overdue, not yet effective, or has invalid currentness metadata: "
+            + "; ".join(causes),
+            gaps,
         )
     text = str(claim.get("text", "")).strip()
 
@@ -357,18 +451,6 @@ def verify_claim(claim: dict[str, Any], sources: dict[str, dict[str, Any]]) -> C
             "low",
             "Claim has no source_ids for its recorded support state.",
             ["add source_ids or use no-source"],
-            support_state=state,
-        )
-
-    missing = [sid for sid in source_ids if sid not in sources]
-    if missing:
-        return CheckResult(
-            "claim",
-            claim_id,
-            "fail",
-            "low",
-            "Claim references unknown source IDs.",
-            missing,
             support_state=state,
         )
 
@@ -491,9 +573,15 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--format", choices=["json", "md"], default="md")
     parser.add_argument("--no-archive", action="store_true", help="Skip archive lookup")
     parser.add_argument("--timeout", type=float, default=20.0)
+    parser.add_argument("--as-of", type=date.fromisoformat, help="Evaluation date (YYYY-MM-DD); defaults to current UTC date")
     args = parser.parse_args(argv)
 
-    report = verify_manifest(args.manifest, check_archives=not args.no_archive, timeout=args.timeout)
+    report = verify_manifest(
+        args.manifest,
+        check_archives=not args.no_archive,
+        timeout=args.timeout,
+        as_of=args.as_of,
+    )
     if args.format == "json":
         output = json.dumps(report.to_dict(), indent=2, ensure_ascii=False)
     else:
