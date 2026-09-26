@@ -1,4 +1,5 @@
 {
+  "name": "research",
   "version": "1.0.0",
   "skills": [
     "./skills/00-meta-initialization/",
