@@ -45,9 +45,11 @@ def load_policy(root: Path) -> tuple[dict, str, dict[str, bytes]]:
         raise PolicyError(f"cannot read shipped policy: {exc}") from exc
     if not isinstance(policy, dict) or any(not isinstance(policy.get(k), str) or not policy[k] for k in ("root_model", "review_model")):
         raise PolicyError("policy root_model/review_model must be non-empty strings")
+    if any(policy.get(key) != "gpt-6-luna" for key in ("root_model", "review_model", "execution_model")):
+        raise PolicyError("the Codex default model policy must pin root, review, and execution to gpt-6-luna")
     effort = policy.get("reasoning_effort")
-    if not isinstance(effort, str) or not effort:
-        raise PolicyError("policy reasoning_effort must be a non-empty string")
+    if effort != "high":
+        raise PolicyError("the Codex default reasoning_effort must be high")
     roles = policy.get("roles")
     if not isinstance(roles, list) or roles != ["default", "worker", "explorer", "tester", "researcher", "reviewer"]:
         raise PolicyError("policy roles must be the six supported roles in order")
@@ -237,7 +239,18 @@ def check(home: Path, root: Path) -> None:
     for role in policy["roles"]:
         role_path = home / "agents" / f"{role}.toml"
         safe_destination(role_path, home)
-        if not role_path.exists() or role_path.read_bytes() != templates[role]:
+        if not role_path.exists():
+            raise PolicyDrift(f"role template drift: {role}")
+        # Formatting and platform line endings do not change TOML semantics.
+        # expected() already rejects extra settings and changed developer
+        # instructions; compare parsed TOML here to avoid rewriting equivalent
+        # user files solely to normalize LF/CRLF.
+        try:
+            actual_role = tomllib.loads(role_path.read_text(encoding="utf-8"))
+            expected_role = tomllib.loads(templates[role].decode("utf-8"))
+        except (OSError, UnicodeError, tomllib.TOMLDecodeError) as exc:
+            raise PolicyError(f"invalid existing role file {role}: {exc}") from exc
+        if actual_role != expected_role:
             raise PolicyDrift(f"role template drift: {role}")
     doc = home / "AGENTS.md"
     if not doc.exists() or merge_agents_doc(doc.read_text(encoding="utf-8"), policy_text).encode() != doc.read_bytes():
