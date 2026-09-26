@@ -27,12 +27,13 @@ release is a trigger to compare task fit, not proof that it is better.
 If this review cannot run, record `NOT_ASSESSED` and retain the open action;
 do not claim that model-currentness passed.
 
-For Codex, follow the engine's `.codex/model-policy.md` and its portable setup
-check: Astra owns orchestration/review and Luna is pinned for execution until
-Peter authorises a verified replacement. These Codex pins do not apply to
-Claude. Claude and other consumers retain their own model selection, tools,
-permissions and complete access to the domain skills. Do not install or run
-the Codex adapter from a Claude session.
+For Codex, follow the active user-level model and delegation policy together
+with the engine's `.codex/model-policy.md` and portable setup check. As of
+2026-09-26, Luna/high is the default for orchestration, review and execution;
+Astra is used only when Peter explicitly selects it. These Codex pins do not
+apply to Claude. Claude and other consumers retain their own model selection,
+tools, permissions and complete access to the domain skills. Do not install or
+run the Codex adapter from a Claude session.
 
 ## Evidence record
 
@@ -40,7 +41,14 @@ Every admitted current claim must be traceable to an evidence record containing:
 
 `claim_id`, claim text, `source_id`, source tier, source scope, publication or version date, access date, verification date, freshness class, review date, support status, uncertainty or limitation, confidence, and owner.
 
-Use the central register at `C:\wamp64\www\skills-web-dev\docs\source-registers\skills-engine-currentness-2026-09.json` where a claim is portfolio-wide. Engine-local registers may add detail, but must not weaken the central evidence contract.
+Use the active portfolio source register when one is configured. For this
+engine, the canonical checkout is `C:\wamp64\www\digital-research-engine`;
+its current `docs/source-registers/` contains domain registers, not the previously
+referenced portfolio-wide register. Do not point users to the former
+`skills-web-dev` checkout or imply a nonexistent central register is available.
+Engine-local registers may add detail, but must not weaken the evidence
+contract. Until a maintained portfolio register is available, record the
+relevant claim and source in the consuming project's evidence register.
 
 ## Freshness and disposition
 
