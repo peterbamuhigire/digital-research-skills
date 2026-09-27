@@ -1,0 +1,34 @@
+{
+  "synthetic": true,
+  "candidate": {
+    "candidate_id": "SYN-CANDIDATE-001",
+    "primary_cause": "knowledge",
+    "symptom_tags": ["unsupported-claim"],
+    "affected_rule_ids": ["SYN-RULE-EFFECTIVE-DATE"],
+    "case_ids": ["SYN-CASE-A", "SYN-CASE-B", "SYN-CASE-C"],
+    "source_cluster_ids": ["SYN-ORIGIN-A", "SYN-ORIGIN-B", "SYN-ORIGIN-C"],
+    "rationale": "Three fictional examples suggest a possible effective-date clarification; this is synthetic and not a real defect claim.",
+    "proposed_change": "Hypothetical rule clarification for the fictional policy fixture only.",
+    "counterexamples": ["A fictional statement was historically correct under the former effective date."],
+    "scope": "Synthetic replay scenario only; no production applicability.",
+    "prior_guidance_sha256": "0000000000000000000000000000000000000000000000000000000000000001",
+    "candidate_sha256": "0000000000000000000000000000000000000000000000000000000000000002",
+    "routing_description_sha256": "0000000000000000000000000000000000000000000000000000000000000003",
+    "model_id": "NO_MODEL_SYNTHETIC_FIXTURE",
+    "runtime_id": "NO_RUNTIME_SYNTHETIC_FIXTURE",
+    "rollback_target": "fictional-baseline-guidance-v1",
+    "protected_labels_seen": false,
+    "synthetic": true
+  },
+  "controls": {
+    "routing_description_unchanged": true,
+    "model_runtime_unchanged": true,
+    "reviewed_labels_verified": false,
+    "independent_review": false,
+    "authorized_maintainer_decision": false
+  },
+  "distinct_reviewed_cases": 3,
+  "distinct_source_clusters": 3,
+  "emerging": {"cases": 3, "improved": 3, "critical_failures": 0, "critical_false_ready": 0},
+  "replay": {"cases": 2, "regressions": 1, "critical_failures": 0, "critical_false_ready": 0}
+}

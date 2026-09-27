@@ -227,7 +227,7 @@
       "version": "0.1.0",
       "owner": "ai-evaluation-and-data-flywheel",
       "guidance_path": "skills/ai-evaluation-and-data-flywheel/SKILL.md",
-      "guidance_sha256": "AEC2C25296F337CBAE42D458A000A2A2B530C9BE0392B14729D817E06E0AC8EB",
+      "guidance_sha256": "8B6E88D7D51642555F399540F97C9E6ECC2A8F5717E34FB75BB9D7B5D046BEB2",
       "trigger_tags": [
         "multi_source",
         "long_packet",

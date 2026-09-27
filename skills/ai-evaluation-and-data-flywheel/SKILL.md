@@ -23,12 +23,14 @@ metadata:
 - The task is a one-off research answer.
 - There is no repeatable workflow to evaluate.
 
-## Evaluation Intake Guidance
+## Required Inputs
 
-- Workflow under test, expected outputs, failure examples, user feedback, source material, and acceptance criteria.
-- Metrics that matter: correctness, citation integrity, cost, latency, coverage, and usability.
+| Input | Source/provider | If absent |
+|---|---|---|
+| Workflow, expected outputs, failure cases, source material, and acceptance criteria | Workflow owner and verified run records | Stop scoring and return an evaluation-design gap |
+| Correctness, citation integrity, cost, latency, coverage, and usability measures | Decision owner | Record the missing outcome; do not substitute a convenient metric |
 
-## Evaluation Core Method
+## Workflow
 
 1. Define the task class and quality criteria.
 2. Collect representative examples and known failures.
@@ -37,6 +39,7 @@ metadata:
 5. Tag failures by cause: retrieval, reasoning, tool, prompt, source, or format.
 6. Improve the workflow and rerun the same examples.
 7. Add production feedback to the eval set after human review.
+8. Stop when provenance is missing or a release gate fails; recover by quarantining affected cases and rerunning only with clean, versioned inputs.
 
 ## Quality Standards
 
@@ -45,19 +48,21 @@ metadata:
 - Improvements are measured against a stable baseline.
 - Synthetic data is labelled and does not replace real failure cases.
 
-## Evaluation Pitfalls
+## Anti-Patterns
 
 - Changing prompts without evals.
 - Treating polished prose as correctness.
 - Measuring only pass/fail when failures need categories.
 - Adding user feedback without verification.
+- Hiding critical regressions in aggregate scores. **Fix:** keep critical and ambiguous-case slices as independent release gates.
 
-## Evaluation Deliverables Guidance
+## Outputs
 
-- Eval set.
-- Failure taxonomy.
-- Regression report.
-- Data flywheel plan.
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Eval set and failure taxonomy | Evaluation owner | Cases have provenance, expected checks, cause labels, and split status |
+| Regression report | Release reviewer | Results identify configuration, baseline, slices, and unresolved failures |
+| Data flywheel plan | Workflow owner | Feedback admission and rollback rules are explicit |
 
 ## Evidence Produced
 
@@ -108,14 +113,14 @@ A citation error becomes a versioned regression case with expected evidence fiel
 - `validation-contract` supplies release evidence standards.
 - `source-verification` supplies citation-integrity checks.
 
-## Inputs
+## Evaluation Intake Fields
 
 | Input | Source/provider | If absent |
 |---|---|---|
 | Evaluated workflow, failure taxonomy, representative cases | Product owner and verified run logs | Stop scoring and return an evaluation-design gap |
 | Versioned prompts, models, datasets, and expected outcomes | Evaluation registry | Quarantine results whose tested configuration cannot be identified |
 
-## Workflow
+## Evaluation Run Workflow
 
 1. Define the decision, failure taxonomy, slices, and release threshold before running cases.
 2. Execute representative cases and preserve raw outputs with configuration identifiers.
@@ -123,13 +128,13 @@ A citation error becomes a versioned regression case with expected evidence fiel
 4. Recover by quarantining contaminated cases, restoring clean versions, and rerunning the affected slices.
 5. Add reproducible failures to the regression set only after human verification.
 
-## Outputs
+## Evaluation Report Outputs
 
 | Artefact | Consumer | Acceptance condition |
 |---|---|---|
 | Evaluation report and versioned regression set | AI workflow owner and release reviewer | Every metric maps to cases, slices, configuration, expected result, and observed result |
 
-## Anti-Patterns
+## Evaluation Failure Modes
 
 - Optimising one headline score. **Fix:** retain failure slices and guardrail metrics.
 - Training on the test set. **Fix:** enforce versioned separation and contamination checks.

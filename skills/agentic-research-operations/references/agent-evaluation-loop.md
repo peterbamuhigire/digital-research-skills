@@ -27,8 +27,10 @@ Reject or quarantine when:
 5. Log rejected claims or hallucination risks in the evidence audit.
 6. Update the next brief to prevent repeat failure.
 
-## Local Source Register
+## Failure attribution and revision provenance
 
-- `C:\Users\Peter\Downloads\Documents\res_markdown\AI Engineering (for True Epub).md`
-- `C:\Users\Peter\Downloads\Documents\res_markdown\Developing AI Applications - An Introduction.md`
-- `C:\Users\Peter\Downloads\Documents\res_markdown\Teaching with AI A practical guide to a new era of human learning.md`
+Keep the observed symptom tags and record one primary cause separately. Use `routing`, `knowledge`, `execution`, `source/tool`, `gold-label`, `mixed`, or `unknown`; an unclear disagreement stays `unknown` or `mixed` instead of becoming a guidance edit. Existing symptom tags remain valid: `retrieval-miss`, `citation-drift`, `quote-error`, `unsupported-claim`, `reasoning-gap`, `tool-failure`, `format-mismatch`, `latency-cost`, and `unsafe-output`.
+
+Only reviewer-confirmed recurring knowledge gaps enter a guidance-revision proposal. Routing, runtime, source/tool, and label errors go to their own repair paths. Keep a portable provenance record with source/evaluation case IDs, immutable locators or permitted snapshot hashes, reviewer/adjudication state, candidate diff and hash, unchanged routing-description/model identifiers, emerging-case results, historical replay results, and rollback target. Do not depend on local machine paths or store source/book extracts in this reference.
+
+The offline replay gate in `../ai-evaluation-and-data-flywheel/references/replay-gated-skill-revision.md` can reject a candidate on supplied, explicit regression labels. It cannot establish that those labels are true or authorize promotion. Protected labels remain unavailable to the proposer; automatic self-modification remains disabled.

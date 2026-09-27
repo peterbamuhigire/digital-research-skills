@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chwezi.example/schemas/skill-revision-candidate.schema.json",
+  "title": "Skill guidance revision candidate",
+  "description": "A separate proposed revision; never canonical guidance or automatic promotion.",
+  "type": "object",
+  "required": ["candidate_id", "primary_cause", "symptom_tags", "affected_rule_ids", "case_ids", "source_cluster_ids", "rationale", "proposed_change", "counterexamples", "scope", "prior_guidance_sha256", "candidate_sha256", "routing_description_sha256", "model_id", "runtime_id", "rollback_target", "protected_labels_seen", "synthetic"],
+  "properties": {
+    "candidate_id": {"type": "string", "minLength": 1},
+    "primary_cause": {"enum": ["routing", "knowledge", "execution", "source/tool", "gold-label", "mixed", "unknown"]},
+    "symptom_tags": {"type": "array", "items": {"type": "string"}},
+    "affected_rule_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "case_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "source_cluster_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "rationale": {"type": "string", "minLength": 1},
+    "proposed_change": {"type": "string", "minLength": 1},
+    "counterexamples": {"type": "array", "items": {"type": "string"}},
+    "scope": {"type": "string", "minLength": 1},
+    "prior_guidance_sha256": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+    "candidate_sha256": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+    "routing_description_sha256": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+    "model_id": {"type": "string", "minLength": 1},
+    "runtime_id": {"type": "string", "minLength": 1},
+    "rollback_target": {"type": "string", "minLength": 1},
+    "protected_labels_seen": {"type": "boolean"},
+    "synthetic": {"type": "boolean"}
+  }
+}

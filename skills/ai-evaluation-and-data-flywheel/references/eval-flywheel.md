@@ -46,7 +46,11 @@ Use a separate primary-cause label: `routing`, `knowledge`, `execution`, `source
 
 Freeze the model, runtime, evidence, and evaluation contract when comparing routing strategies. Keep mandatory provenance, currentness, security, privacy, and domain controls always-on. The candidate cannot inspect protected labels, mutate production, promote itself, or change canonical source records. Promotion requires independent review, zero new critical misses, protected emerging cases, historical replay, uncertainty and slice results, and an authorised maintainer decision.
 
+For portable failure provenance and explicit replay decision states, see [`replay-gated-skill-revision.md`](replay-gated-skill-revision.md). The offline gate in `tools/evaluation/replay_gate.py` can return `eligible_for_authorized_review`; that state is a human handoff, never automatic promotion.
+
 ## Failure Tags
+
+Primary cause is a separate field with values `routing`, `knowledge`, `execution`, `source/tool`, `gold-label`, `mixed`, or `unknown`; it does not replace the observed symptom tags below.
 
 - `retrieval-miss`
 - `citation-drift`

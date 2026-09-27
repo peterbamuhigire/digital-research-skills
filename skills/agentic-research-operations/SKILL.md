@@ -23,13 +23,15 @@ metadata:
 - A single local edit or fact-check needs no orchestration.
 - The user explicitly asks not to delegate or parallelize.
 
-## Operations Intake Guidance
+## Required Inputs
 
-- Research goal, cohorts, source classes, outputs, risks, tools, time horizon, and verification standard.
-- Current project context and any prior wave outputs.
-- The hard evidence-discipline boilerplate for every sub-agent prompt.
+| Input | Source/provider | If absent |
+|---|---|---|
+| Research goal, cohorts, source classes, outputs, risks, tools, horizon, and verification standard | User brief and project plan | Narrow the task or ask for the missing outcome before dispatch |
+| Current project context and prior wave outputs | Project records | Mark the missing context and do not synthesize across it |
+| Required evidence-discipline text and runtime permissions | Engine rules and host | Stop dispatch until required boundaries are available |
 
-## Legacy Operations Method
+## Workflow
 
 1. Decide whether agents help: split only independent work with clear boundaries and verifiable outputs.
 2. Define roles: researcher, verifier, gap analyst, red-team reviewer, synthesizer, renderer, or code worker.
@@ -39,6 +41,7 @@ metadata:
 6. Verify before merge: source liveness, quote checks, contradiction scan, and claim graph update.
 7. Keep cross-cohort synthesis with the orchestrator unless a task is explicitly a bounded synthesis subproblem.
 8. Record operational lessons in project status or evidence audit.
+9. Stop a cohort on evidence violations or overlapping ownership; recover by quarantining output, repairing its brief, and retrying only the failed bounded task.
 
 ## Quality Standards
 
@@ -56,13 +59,13 @@ metadata:
 - Accepting sub-agent citations without verification.
 - Hiding failures instead of logging them.
 
-## Legacy Operations Deliverables
+## Outputs
 
-- Agent wave plan.
-- Standard brief.
-- Verification checklist.
-- Merge/reject decision.
-- Operations lesson log.
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Agent wave plan and standard brief | Research orchestrator | Cohort boundaries, task ownership, evidence rules, and handoff are explicit |
+| Verification checklist and merge/reject decision | Verifier and synthesis owner | Claims, sources, gaps, and rejected output dispositions are traceable |
+| Operations lesson log | Next wave owner | Recurrent failure cause and corrective action are recorded |
 
 ## Evidence Produced
 
@@ -80,7 +83,7 @@ metadata:
 
 ## Companion Skills
 
-## Inputs
+## Intake Fields
 
 | Input | Source/provider | If absent |
 |---|---|---|
@@ -114,7 +117,7 @@ Separate source-discovery cohorts may run concurrently, while the shared synthes
 - `evidence-claim-graph` supplies merge substrate.
 - `skill-writing` applies when agent operations are encoded into skills.
 
-## Workflow
+## Operational Workflow
 
 1. Partition independent work and reserve shared files for the orchestrator.
 2. Brief each agent with exact ownership, inputs, outputs, permissions, and the evidence clause.
@@ -122,7 +125,7 @@ Separate source-discovery cohorts may run concurrently, while the shared synthes
 4. Recover by quarantining suspect output, repairing the brief, and retrying only the failed bounded task.
 5. Verify checkpoint evidence before merging results into the shared synthesis substrate.
 
-## Outputs
+## Merge Packet Outputs
 
 | Artefact | Consumer | Acceptance condition |
 |---|---|---|
