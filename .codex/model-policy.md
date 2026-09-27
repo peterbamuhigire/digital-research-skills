@@ -1,6 +1,6 @@
 ## Codex model and delegation policy
 
-Peter's rule, effective 2026-09-07. Apply only in Codex. Claude and other
+Peter's rule, effective 2026-09-26. Apply only in Codex. Claude and other
 consumers retain their own model selection and all domain-engine capabilities.
 
 - Root/orchestrator, final reviewer, and execution subagents default to
