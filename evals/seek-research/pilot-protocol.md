@@ -87,9 +87,13 @@ Before running: preregister hypotheses, case eligibility, fixed model/runtime, r
 
 ## Current decision and re-entry
 
-- **Accepted now:** design-only criterion map and protocol; no routing change, training, data collection, or release authority.
-- **Not yet accepted:** case schema implementation, labels, split IDs, performance thresholds, model configuration, or behavior claim.
+- **Accepted now:** design-only criterion map and protocol, plus the bounded synthetic-only schema/evaluator described below; no operational routing change, training, data collection, or release authority.
+- **Not yet accepted:** real-data labels, split IDs, performance thresholds, model configuration, or any behavior/performance claim.
 - **Required to mobilise:** approved evidence-use basis; enough diverse and reviewed cases; named independent reviewers; held-out data protection; fixed candidate runtime; preregistered comparison; and a separate critical-control sentinel set.
 - **Recovery:** if any source, label, split, runtime, or reviewer provenance is uncertain, quarantine it, preserve the current research workflow, and record the affected measure `NOT_ASSESSED`.
 
-P26 may implement a bounded schema/evaluator prototype only after its inputs are actually available. Until then, no case count, test accuracy, reviewer-time saving, or improvement is claimed.
+### P26 synthetic-only implementation boundary
+
+The offline prototype is in `schemas/research-evaluation-case.schema.json`, `schemas/research-evaluation-result.schema.json`, and `tools/evaluation/research_evaluator.py`. Two fictional fixtures under `evals/seek-research/fixtures/` exercise source-origin clustering, a target-period coverage gap, an unresolved contrary result, and a dynamic-route miss on a tax/currentness criterion while the mandatory currentness guard blocks readiness. Its modes (`dynamic`, `all`, `oracle`, `supplied`) are structural route comparisons only; no model is called and the oracle mode is limited to synthetic/development/calibration records. These fixtures do not satisfy the reviewed real-case, protected-split, independent-review, or behavior-comparison gates above.
+
+No real case count, routing quality, test accuracy, reviewer-time saving, cost/latency comparison, or improvement is claimed. `ready` means only that the recorded structural contract found no blocker; the evaluator is not a factual verifier or release authority.

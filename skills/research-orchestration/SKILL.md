@@ -54,6 +54,8 @@ metadata:
 
 ## References
 
+- For the offline research-evaluation prototype, use [the evaluation-routing contract](references/evaluation-routing-contract.md). It supplements this skill and cannot omit mandatory evidence or currentness controls.
+
 - Use the routers and companion-skill table below.
 - Use `references/kaizen-research-loop.md` after each wave and before release.
 

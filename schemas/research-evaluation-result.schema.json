@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chwezi.example/schemas/research-evaluation-result.schema.json",
+  "title": "Offline research evaluation result",
+  "description": "Structural packet review; never certifies semantic truth or grants release authority.",
+  "type": "object",
+  "required": ["case_id", "mode", "selected_criteria", "loaded_guidance", "findings", "source_origin_clusters", "subquestion_gaps", "unresolved_contradictions", "routing_misses", "blockers", "status", "certifies_truth"],
+  "properties": {
+    "case_id": {"type": "string"},
+    "mode": {"enum": ["dynamic", "all", "oracle", "supplied"]},
+    "selected_criteria": {"type": "array", "items": {"type": "string"}},
+    "loaded_guidance": {"type": "array", "items": {"type": "object", "required": ["id", "path", "sha256"], "properties": {"id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string"}}}},
+    "findings": {"type": "array", "items": {"type": "object", "required": ["id", "severity", "support_state", "source_ids", "claim_ids", "locator", "summary"], "properties": {"id": {"type": "string"}, "severity": {"enum": ["critical", "major", "minor", "info"]}, "support_state": {"enum": ["supported", "partial", "unsupported", "not_assessed"]}, "source_ids": {"type": "array", "items": {"type": "string"}}, "claim_ids": {"type": "array", "items": {"type": "string"}}, "locator": {"type": ["string", "null"]}, "summary": {"type": "string"}}}},
+    "source_origin_clusters": {"type": "array", "items": {"type": "object", "required": ["origin_cluster_id", "source_ids", "count"]}},
+    "subquestion_gaps": {"type": "array", "items": {"type": "string"}},
+    "unresolved_contradictions": {"type": "array", "items": {"type": "string"}},
+    "routing_misses": {"type": "array", "items": {"type": "string"}},
+    "blockers": {"type": "array", "items": {"type": "string"}},
+    "status": {"enum": ["ready", "blocked", "not_assessed"]},
+    "certifies_truth": {"const": false}
+  }
+}

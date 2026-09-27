@@ -2,6 +2,8 @@
 
 ## Eval Case
 
+The offline SEEK-inspired criterion registry and route contract are specified in [`criterion-bank.json`](criterion-bank.json), [`research-orchestration/references/evaluation-routing-contract.md`](../../research-orchestration/references/evaluation-routing-contract.md), and the pilot protocol at [`evals/seek-research/pilot-protocol.md`](../../../evals/seek-research/pilot-protocol.md). These are an opt-in prototype; the existing source-verification route remains authoritative.
+
 | Field | Requirement |
 |---|---|
 | id | Stable case ID |

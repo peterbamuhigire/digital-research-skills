@@ -1,0 +1,324 @@
+{
+  "bank_version": "0.1.0",
+  "status": "offline-prototype-not-routed",
+  "routing": {
+    "algorithm": "explicit-tag-multilabel",
+    "no_probability_claim": true,
+    "safe_minimum": [
+      "decision_fit",
+      "information_value"
+    ],
+    "empty_or_unknown_tags": "select-safe-minimum-and-mark-not-assessed",
+    "mandatory_guard_ids": [
+      "instruction_data_separation",
+      "source_provenance",
+      "claim_level_support",
+      "currentness_when_required",
+      "domain_controls_when_required"
+    ]
+  },
+  "mandatory_guards": [
+    {
+      "id": "instruction_data_separation",
+      "version": "0.1.0",
+      "owner": "digital-research-engine rules/common/core.md",
+      "guidance_path": "rules/common/core.md",
+      "guidance_sha256": "0A3D09F51B2C9E53BE981F50B07867F8A96AE1F2D16BA9A016693BE360A42F60",
+      "applies_when": "always",
+      "required_evidence": [
+        "source_text_is_data",
+        "no_embedded_instruction_authority"
+      ]
+    },
+    {
+      "id": "source_provenance",
+      "version": "0.1.0",
+      "owner": "source-evaluation",
+      "guidance_path": "skills/source-evaluation/references/evidence-discipline.md",
+      "guidance_sha256": "91D1CA3BEEC6DFF3A71142545655F1F9F7D59BA13AB76FE4EFFE9A015095DBBE",
+      "applies_when": "always",
+      "required_evidence": [
+        "source_ids",
+        "claim_locators"
+      ]
+    },
+    {
+      "id": "claim_level_support",
+      "version": "0.1.0",
+      "owner": "source-verification",
+      "guidance_path": "skills/source-verification/SKILL.md",
+      "guidance_sha256": "F9E9D0CDE365F44A7662BAB481BC5325287EF9846163BA2C9802D6DA74961425",
+      "applies_when": "every_material_claim",
+      "required_evidence": [
+        "source_ids",
+        "support_state",
+        "locator"
+      ]
+    },
+    {
+      "id": "currentness_when_required",
+      "version": "0.1.0",
+      "owner": "source-verification",
+      "guidance_path": "skills/source-verification/SKILL.md",
+      "guidance_sha256": "F9E9D0CDE365F44A7662BAB481BC5325287EF9846163BA2C9802D6DA74961425",
+      "applies_when": "case_or_claim_requires_currentness",
+      "required_evidence": [
+        "as_of",
+        "source_review_date",
+        "freshness_state",
+        "dependent_claim_ids"
+      ]
+    },
+    {
+      "id": "domain_controls_when_required",
+      "version": "0.1.0",
+      "owner": "source-evaluation and domain engine",
+      "guidance_path": "skills/source-evaluation/SKILL.md",
+      "guidance_sha256": "64F91C3D2B819E6009039DB2118E6C504DF39F5CBB4F15E525B94144B0163859",
+      "applies_when": "case_declares_domain_control_required",
+      "required_evidence": [
+        "control_id",
+        "scope",
+        "review_state"
+      ]
+    }
+  ],
+  "criteria": [
+    {
+      "id": "decision_fit",
+      "paper_criterion": "MainIntentMatch",
+      "version": "0.1.0",
+      "owner": "research-orchestration",
+      "guidance_path": "skills/research-orchestration/SKILL.md",
+      "guidance_sha256": "456E8752DF6A68901BE54D14194B513C01B088D62C56A02606C5C49538C5B9D8",
+      "trigger_tags": [
+        "decision",
+        "question",
+        "scope"
+      ],
+      "required_evidence": [
+        "question",
+        "decision",
+        "scope"
+      ],
+      "boundary": "Do not invent a decision or widen the supplied scope."
+    },
+    {
+      "id": "decision_usefulness",
+      "paper_criterion": "TaskNeedSatisfaction",
+      "version": "0.1.0",
+      "owner": "critical-reasoning-and-argument",
+      "guidance_path": "skills/critical-reasoning-and-argument/SKILL.md",
+      "guidance_sha256": "5AFBE65AA28A01C1A16404886A07E9E79DC69D7249E273FEF052839EDEE1F99D",
+      "trigger_tags": [
+        "decision",
+        "recommendation",
+        "action"
+      ],
+      "required_evidence": [
+        "decision",
+        "finding_ids",
+        "implications"
+      ],
+      "boundary": "Usefulness is not evidence truth or release authority."
+    },
+    {
+      "id": "evidence_prominence",
+      "paper_criterion": "RankingFaithfulness",
+      "version": "0.1.0",
+      "owner": "evidence-claim-graph",
+      "guidance_path": "skills/evidence-claim-graph/SKILL.md",
+      "guidance_sha256": "D4A330DC7FA90B81013375853522220E547DA081D6C310CF460CFD5DA477D0CB",
+      "trigger_tags": [
+        "ranking",
+        "priority",
+        "decision"
+      ],
+      "required_evidence": [
+        "claim_ids",
+        "source_ids",
+        "ordering_reason"
+      ],
+      "boundary": "Retrieval or presentation order does not establish authority."
+    },
+    {
+      "id": "information_value",
+      "paper_criterion": "InformationValueCheck",
+      "version": "0.1.0",
+      "owner": "critical-reasoning-and-argument",
+      "guidance_path": "skills/critical-reasoning-and-argument/SKILL.md",
+      "guidance_sha256": "5AFBE65AA28A01C1A16404886A07E9E79DC69D7249E273FEF052839EDEE1F99D",
+      "trigger_tags": [
+        "multi_source",
+        "long_packet",
+        "synthesis"
+      ],
+      "required_evidence": [
+        "distinct_propositions",
+        "source_links"
+      ],
+      "boundary": "Do not remove repeated wording when it carries distinct evidence."
+    },
+    {
+      "id": "factual_reliability",
+      "paper_criterion": "FactualReliabilityCheck",
+      "version": "0.1.0",
+      "owner": "source-verification",
+      "guidance_path": "skills/source-verification/SKILL.md",
+      "guidance_sha256": "F9E9D0CDE365F44A7662BAB481BC5325287EF9846163BA2C9802D6DA74961425",
+      "trigger_tags": [
+        "claim",
+        "citation",
+        "number",
+        "law",
+        "policy"
+      ],
+      "required_evidence": [
+        "claim_ids",
+        "source_ids",
+        "locators",
+        "support_state"
+      ],
+      "boundary": "Packet assessment never substitutes for exact claim verification."
+    },
+    {
+      "id": "risk_compliance",
+      "paper_criterion": "RiskComplianceCheck",
+      "version": "0.1.0",
+      "owner": "source-evaluation and domain engine",
+      "guidance_path": "skills/source-evaluation/SKILL.md",
+      "guidance_sha256": "64F91C3D2B819E6009039DB2118E6C504DF39F5CBB4F15E525B94144B0163859",
+      "trigger_tags": [
+        "tax",
+        "legal",
+        "safety",
+        "privacy",
+        "financial",
+        "regulated"
+      ],
+      "required_evidence": [
+        "risk_class",
+        "control_ids",
+        "review_state"
+      ],
+      "boundary": "Applicable domain controls are mandatory and cannot be probabilistically omitted."
+    },
+    {
+      "id": "source_independence",
+      "paper_criterion": "SourceDiversityCheck",
+      "version": "0.1.0",
+      "owner": "source-evaluation",
+      "guidance_path": "skills/source-evaluation/references/credibility-ladder.md",
+      "guidance_sha256": "017D6C675820EE4BCF70ADD9BF72ECA756BF0B6EC05872922B2FF31CCCE8E026",
+      "trigger_tags": [
+        "corroboration",
+        "multi_source",
+        "conflict"
+      ],
+      "required_evidence": [
+        "source_ids",
+        "origin_cluster_ids"
+      ],
+      "boundary": "Copied or syndicated sources do not count as independent corroboration."
+    },
+    {
+      "id": "template_duplication",
+      "paper_criterion": "TemplateDuplication",
+      "version": "0.1.0",
+      "owner": "ai-evaluation-and-data-flywheel",
+      "guidance_path": "skills/ai-evaluation-and-data-flywheel/SKILL.md",
+      "guidance_sha256": "AEC2C25296F337CBAE42D458A000A2A2B530C9BE0392B14729D817E06E0AC8EB",
+      "trigger_tags": [
+        "multi_source",
+        "long_packet",
+        "duplicate"
+      ],
+      "required_evidence": [
+        "origin_clusters",
+        "claim_ids",
+        "duplication_basis"
+      ],
+      "boundary": "A shared origin is a dependence signal, not proof every item is identical."
+    },
+    {
+      "id": "subquestion_coverage",
+      "paper_criterion": "SubIntentCoverageCheck",
+      "version": "0.1.0",
+      "owner": "research-orchestration",
+      "guidance_path": "skills/research-orchestration/SKILL.md",
+      "guidance_sha256": "456E8752DF6A68901BE54D14194B513C01B088D62C56A02606C5C49538C5B9D8",
+      "trigger_tags": [
+        "multi_part",
+        "recommendation",
+        "countercase",
+        "decision"
+      ],
+      "required_evidence": [
+        "required_subquestion_ids",
+        "covered_subquestion_ids",
+        "gap_ids"
+      ],
+      "boundary": "An uncovered question remains a gap; do not infer an answer."
+    },
+    {
+      "id": "claim_appropriate_authority",
+      "paper_criterion": "SourceAuthorityCheck",
+      "version": "0.1.0",
+      "owner": "source-evaluation",
+      "guidance_path": "skills/source-evaluation/SKILL.md",
+      "guidance_sha256": "64F91C3D2B819E6009039DB2118E6C504DF39F5CBB4F15E525B94144B0163859",
+      "trigger_tags": [
+        "expertise",
+        "legal",
+        "technical",
+        "statistical",
+        "claim"
+      ],
+      "required_evidence": [
+        "claim_ids",
+        "source_ids",
+        "authority_basis"
+      ],
+      "boundary": "Authority is claim-specific; official status is not infallibility."
+    },
+    {
+      "id": "method_expertise_fit",
+      "paper_criterion": "EvidenceProfessionalism",
+      "version": "0.1.0",
+      "owner": "source-verification and domain reviewer",
+      "guidance_path": "skills/source-verification/SKILL.md",
+      "guidance_sha256": "F9E9D0CDE365F44A7662BAB481BC5325287EF9846163BA2C9802D6DA74961425",
+      "trigger_tags": [
+        "technical",
+        "statistical",
+        "legal",
+        "causal"
+      ],
+      "required_evidence": [
+        "method",
+        "claim_ids",
+        "reviewer_basis"
+      ],
+      "boundary": "The adapter cannot replace qualified professional review."
+    },
+    {
+      "id": "evidence_complementarity",
+      "paper_criterion": "HeterogeneousFulfillment",
+      "version": "0.1.0",
+      "owner": "evidence-claim-graph",
+      "guidance_path": "skills/evidence-claim-graph/references/graph-schema.md",
+      "guidance_sha256": "2DCBDE74D4BE241B3C9AF057522D8F0BD0A779F6D312033970C5DCD6E6E24500",
+      "trigger_tags": [
+        "multi_source",
+        "mixed_evidence",
+        "decision"
+      ],
+      "required_evidence": [
+        "evidence_type",
+        "claim_ids",
+        "distinct_role"
+      ],
+      "boundary": "Different source types matter only when they support distinct decision needs."
+    }
+  ]
+}

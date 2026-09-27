@@ -1,0 +1,23 @@
+{
+  "case_id": "SYN-ROUTE-MISS-001",
+  "synthetic": true,
+  "question": "What current fictional tax rate applies to the fictional scenario?",
+  "decision": "Prepare a currentness-aware fictional research note.",
+  "scope": "Fictional tax scenario only; no real jurisdictions or rates.",
+  "tags": ["decision", "question", "scope"],
+  "currentness_required": true,
+  "domain_control_required": false,
+  "sources": [{"id": "SYN-TAX-S1", "origin_cluster_id": "SYN-TAX-ORIGIN", "title": "Fictional tax note", "locator": "paragraph 1", "date": "2031-01-01"}],
+  "claims": [{"id": "SYN-TAX-C1", "source_ids": ["SYN-TAX-S1"], "support_state": "not_assessed", "locator": "paragraph 1", "material": true}],
+  "required_subquestion_ids": ["current_rule"],
+  "covered_subquestion_ids": ["current_rule"],
+  "contradictions": [],
+  "mandatory_guards": {
+    "instruction_data_separation": "passed",
+    "source_provenance": "passed",
+    "claim_level_support": "passed",
+    "currentness_when_required": "failed",
+    "domain_controls_when_required": "not_applicable"
+  },
+  "diagnostic_expected_criteria": ["risk_compliance"]
+}

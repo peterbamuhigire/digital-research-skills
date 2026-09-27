@@ -155,6 +155,8 @@ expiry/effective-date checks and fixture replay.
 
 ## References
 
+- For a packet-level review alongside the unchanged claim-level verifier, see [the evidence-set review contract](references/evidence-set-review.md). It cannot promote or certify any claim.
+
 - Load `references/verification-routine.md` for the verification checklist and manifest.
 - Load `references/ai-search-claim-disposition.md` when an observation or recommendation concerns AI-search mentions, citations, referrals, or conversions.
 - Load `references/research-product-audit.md` before release of a research product.

@@ -1,0 +1,40 @@
+{
+  "case_id": "SYN-PACKET-001",
+  "synthetic": true,
+  "question": "Do the collected fictional records answer whether a fictional programme met its target-period objective?",
+  "decision": "Determine whether the fictional evidence is sufficient for a scoped summary.",
+  "scope": "Fictional target period 2030; synthetic entities and documents only.",
+  "tags": ["long_packet", "multi_source", "multi_part", "countercase", "decision"],
+  "currentness_required": true,
+  "domain_control_required": false,
+  "sources": [
+    {"id": "SYN-S1", "origin_cluster_id": "SYN-ORIGIN-A", "title": "Fictional original report", "locator": "page 2", "date": "2030-03-01"},
+    {"id": "SYN-S2", "origin_cluster_id": "SYN-ORIGIN-A", "title": "Fictional summary copy 1", "locator": "section 1", "date": "2030-03-02"},
+    {"id": "SYN-S3", "origin_cluster_id": "SYN-ORIGIN-A", "title": "Fictional summary copy 2", "locator": "section 1", "date": "2030-03-02"},
+    {"id": "SYN-S4", "origin_cluster_id": "SYN-ORIGIN-A", "title": "Fictional summary copy 3", "locator": "section 1", "date": "2030-03-02"},
+    {"id": "SYN-S5", "origin_cluster_id": "SYN-ORIGIN-A", "title": "Fictional summary copy 4", "locator": "section 1", "date": "2030-03-02"},
+    {"id": "SYN-S6", "origin_cluster_id": "SYN-ORIGIN-A", "title": "Fictional summary copy 5", "locator": "section 1", "date": "2030-03-02"},
+    {"id": "SYN-S7", "origin_cluster_id": "SYN-ORIGIN-A", "title": "Fictional summary copy 6", "locator": "section 1", "date": "2030-03-02"},
+    {"id": "SYN-S8", "origin_cluster_id": "SYN-ORIGIN-A", "title": "Fictional summary copy 7", "locator": "section 1", "date": "2030-03-02"},
+    {"id": "SYN-S9", "origin_cluster_id": "SYN-ORIGIN-A", "title": "Fictional summary copy 8", "locator": "section 1", "date": "2030-03-02"},
+    {"id": "SYN-S10", "origin_cluster_id": "SYN-ORIGIN-B", "title": "Fictional primary source outside target period", "locator": "table 4", "date": "2029-11-30"},
+    {"id": "SYN-S11", "origin_cluster_id": "SYN-ORIGIN-C", "title": "Fictional contrary result", "locator": "paragraph 7", "date": "2030-04-15"}
+  ],
+  "claims": [
+    {"id": "SYN-C1", "source_ids": ["SYN-S1", "SYN-S2"], "support_state": "partial", "locator": "SYN-S1 page 2", "material": true},
+    {"id": "SYN-C2", "source_ids": ["SYN-S10"], "support_state": "supported", "locator": "SYN-S10 table 4", "material": true},
+    {"id": "SYN-C3", "source_ids": ["SYN-S11"], "support_state": "not_assessed", "locator": "SYN-S11 paragraph 7", "material": true}
+  ],
+  "required_subquestion_ids": ["target_period_evidence", "contrary_result"],
+  "covered_subquestion_ids": ["contrary_result"],
+  "contradictions": [
+    {"id": "SYN-X1", "claim_id": "SYN-C1", "source_ids": ["SYN-S1", "SYN-S11"], "status": "unresolved", "decision_critical": true, "locator": "SYN-S11 paragraph 7"}
+  ],
+  "mandatory_guards": {
+    "instruction_data_separation": "passed",
+    "source_provenance": "passed",
+    "claim_level_support": "passed",
+    "currentness_when_required": "passed",
+    "domain_controls_when_required": "not_applicable"
+  }
+}

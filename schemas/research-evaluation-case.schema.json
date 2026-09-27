@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chwezi.example/schemas/research-evaluation-case.schema.json",
+  "title": "Offline research evaluation case",
+  "description": "Synthetic/development contract only; not a source-truth or release certificate.",
+  "type": "object",
+  "required": ["case_id", "synthetic", "question", "decision", "scope", "tags", "sources", "claims", "required_subquestion_ids", "covered_subquestion_ids", "mandatory_guards"],
+  "properties": {
+    "case_id": {"type": "string", "minLength": 1},
+    "synthetic": {"type": "boolean"},
+    "question": {"type": "string"},
+    "decision": {"type": "string"},
+    "scope": {"type": "string"},
+    "tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "currentness_required": {"type": "boolean", "default": false},
+    "domain_control_required": {"type": "boolean", "default": false},
+    "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}},
+    "claims": {"type": "array", "items": {"$ref": "#/$defs/claim"}},
+    "required_subquestion_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "covered_subquestion_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "contradictions": {"type": "array", "items": {"$ref": "#/$defs/contradiction"}},
+    "mandatory_guards": {"type": "object", "additionalProperties": {"enum": ["passed", "failed", "not_assessed", "not_applicable"]}},
+    "diagnostic_expected_criteria": {"type": "array", "items": {"type": "string"}, "description": "Synthetic/development-only expected set; never supplied to dynamic routing."}
+  },
+  "$defs": {
+    "source": {"type": "object", "required": ["id", "origin_cluster_id", "locator"], "properties": {"id": {"type": "string", "minLength": 1}, "origin_cluster_id": {"type": "string", "minLength": 1}, "title": {"type": "string"}, "locator": {"type": "string"}, "date": {"type": ["string", "null"]}}},
+    "claim": {"type": "object", "required": ["id", "source_ids", "support_state"], "properties": {"id": {"type": "string", "minLength": 1}, "source_ids": {"type": "array", "items": {"type": "string"}}, "support_state": {"enum": ["supported", "partial", "unsupported", "not_assessed"]}, "locator": {"type": ["string", "null"]}, "material": {"type": "boolean", "default": true}}},
+    "contradiction": {"type": "object", "required": ["id", "claim_id", "source_ids", "status", "decision_critical"], "properties": {"id": {"type": "string"}, "claim_id": {"type": "string"}, "source_ids": {"type": "array", "items": {"type": "string"}, "minItems": 2}, "status": {"enum": ["unresolved", "resolved", "not_assessed"]}, "decision_critical": {"type": "boolean"}, "locator": {"type": ["string", "null"]}}}
+  }
+}
