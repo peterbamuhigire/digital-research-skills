@@ -17,6 +17,7 @@ def evaluate(record: dict[str, Any]) -> dict[str, Any]:
     controls = record.get("controls", {})
     emerging = record.get("emerging", {})
     replay = record.get("replay", {})
+    ambiguous = record.get("ambiguous", {})
     def count(section: dict[str, Any], key: str, label: str) -> int:
         value = section.get(key, 0)
         if type(value) is not int or value < 0:
@@ -34,9 +35,11 @@ def evaluate(record: dict[str, Any]) -> dict[str, Any]:
         errors.append("routing description changed or not verified")
     if controls.get("model_runtime_unchanged") is not True:
         errors.append("model/runtime changed or not verified")
+    if controls.get("evaluation_contract_unchanged") is not True:
+        errors.append("evaluation contract changed or not verified")
 
     critical = count(emerging, "critical_failures", "emerging") + count(replay, "critical_failures", "replay")
-    false_ready = count(emerging, "critical_false_ready", "emerging") + count(replay, "critical_false_ready", "replay")
+    false_ready = count(emerging, "critical_false_ready", "emerging") + count(replay, "critical_false_ready", "replay") + count(ambiguous, "critical_false_ready", "ambiguous")
     regressions = count(replay, "regressions", "replay")
     reasons = list(errors)
     if critical:
@@ -70,6 +73,14 @@ def evaluate(record: dict[str, Any]) -> dict[str, Any]:
             missing.append("no historical replay evidence")
         if controls.get("independent_review") is not True:
             missing.append("independent review absent")
+        if controls.get("semantic_review_complete") is not True:
+            missing.append("semantic review incomplete")
+        if controls.get("uncertainty_reported") is not True:
+            missing.append("paired uncertainty evidence absent")
+        if count(ambiguous, "cases", "ambiguous") < 1:
+            missing.append("ambiguous/needs-work slice is not assessed")
+        if ambiguous.get("noninferiority_pass") is not True:
+            missing.append("predeclared ambiguous-slice noninferiority gate not passed")
         if missing:
             status = "rejected" if errors else "not_assessed"
             reasons.extend(errors)

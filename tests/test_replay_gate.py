@@ -48,7 +48,8 @@ class ReplayGateTests(unittest.TestCase):
         record["synthetic"] = False
         record["candidate"]["synthetic"] = False
         record["replay"]["regressions"] = 0
-        record["controls"].update({"reviewed_labels_verified": True, "independent_review": True, "authorized_maintainer_decision": True})
+        record["controls"].update({"reviewed_labels_verified": True, "independent_review": True, "semantic_review_complete": True, "uncertainty_reported": True, "evaluation_contract_unchanged": True, "authorized_maintainer_decision": True})
+        record["ambiguous"] = {"cases": 1, "critical_false_ready": 0, "noninferiority_pass": True}
         result = evaluate(record)
         self.assertEqual("eligible_for_authorized_review", result["status"])
         self.assertFalse(result["promotion_performed"])

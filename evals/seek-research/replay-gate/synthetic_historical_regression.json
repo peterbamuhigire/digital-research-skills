@@ -23,6 +23,7 @@
   "controls": {
     "routing_description_unchanged": true,
     "model_runtime_unchanged": true,
+    "evaluation_contract_unchanged": true,
     "reviewed_labels_verified": false,
     "independent_review": false,
     "authorized_maintainer_decision": false
