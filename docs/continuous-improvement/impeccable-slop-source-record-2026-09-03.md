@@ -1,5 +1,10 @@
 # Source Record: Impeccable Slop Catalog
 
+> **Superseded on 2026-09-29** by
+> [`impeccable-slop-source-record-2026-09-29.md`](impeccable-slop-source-record-2026-09-29.md),
+> which pins the repository commit `114ea1d` (Apache-2.0) and records v4's removal of the register
+> and per-domain references. This record is kept unchanged below as the 2026-09-03 history.
+
 | Field | Value |
 |---|---|
 | `source_id` | `impeccable-slop-page-2026-09-03` |
