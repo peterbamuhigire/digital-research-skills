@@ -19,13 +19,20 @@ Read the Digital Research `source-evaluation` and `source-verification` skills. 
 
 ### Mandatory model-currentness review
 
-At the start of every Kaizen cycle, check the latest official model releases
-and the active runner's actual model catalogue. Record the provider, exact model
-IDs, access/review dates, account/runtime availability, relevant quality,
-cost and latency evidence, uncertainty, and the retain/change decision. A new
-release is a trigger to compare task fit, not proof that it is better.
-If this review cannot run, record `NOT_ASSESSED` and retain the open action;
+On every Kaizen operation, check the latest official model releases and the
+active runner's actual model catalogue before retaining or proposing a
+model-policy change. Complete a full task-fit, cost, latency, and quality
+comparison at least every three months, and sooner after a relevant model
+release, a proposed policy change, or a concrete runtime-availability problem.
+Between triggers, reuse the latest dated comparison only when the release and
+catalogue checks find no relevant change. Record the provider, exact model IDs,
+access/review dates, account/runtime availability, quality, cost and latency
+evidence, uncertainty, and retain/change decision. A new release triggers
+evaluation; recency alone does not justify replacement. If a required check
+cannot run, mark model currentness `NOT_ASSESSED`, retain the open action, and
 do not claim that model-currentness passed.
+
+Latest full review: [`model-policy-review-gpt6-luna-2026-09-28.md`](model-policy-review-gpt6-luna-2026-09-28.md).
 
 For Codex, follow the active user-level model and delegation policy together
 with the engine's `.codex/model-policy.md` and portable setup check. As of

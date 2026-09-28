@@ -17,12 +17,17 @@ default for orchestration, research, audit, review, and implementation. Use Astr
 Peter explicitly selects it for the task; never select or fall back to GPT-5.6. Report unavailable required GPT-6
 models. A running session may need restarting for root settings to apply.
 
-Every Kaizen cycle MUST check latest official model releases and actual
-runtime availability, record dated evidence and a retain/change decision,
-and evaluate better candidates before recommending replacement. Preserve the
-pins until Peter authorises a verified change. Missing model-currentness
-evidence is `NOT_ASSESSED`. This Codex adapter must not change CLAUDE.md,
-Claude configuration, domain doctrine, permission settings or skill access.
+Check official model releases and the active runtime/account model catalogue
+on every Kaizen operation before retaining or proposing a model-policy change.
+Complete a full task-fit, cost, latency, and quality comparison at least every
+three months, and sooner after a relevant model release, a proposed policy
+change, or a concrete runtime-availability problem. Reuse the latest dated
+comparison between triggers only when the release and catalogue checks find no
+relevant change. Record dated evidence and a retain/change decision before
+recommending replacement. Preserve the pins until Peter authorises a verified
+change. If a required check cannot run, mark model-currentness `NOT_ASSESSED`.
+This Codex adapter must not change CLAUDE.md, Claude configuration, domain
+doctrine, permission settings or skill access.
 
 ## Universal agent integration
 
