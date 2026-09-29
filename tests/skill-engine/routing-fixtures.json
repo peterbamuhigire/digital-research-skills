@@ -6,25 +6,33 @@
       "id": "source-credibility-positive",
       "prompt": "Evaluate whether these journalism, government and social sources are credible and assign evidence tiers.",
       "expected": "source-evaluation",
-      "forbidden": ["source-verification"]
+      "forbidden": [
+        "source-verification"
+      ]
     },
     {
       "id": "source-verification-collision",
       "prompt": "Verify every URL, quotation, statistic and archive snapshot in this finished evidence manifest.",
       "expected": "source-verification",
-      "forbidden": ["source-evaluation"]
+      "forbidden": [
+        "source-evaluation"
+      ]
     },
     {
       "id": "research-design-positive",
       "prompt": "Choose a sampling strategy, research questions and method for a new mixed-method study.",
       "expected": "research-design",
-      "forbidden": ["research-orchestration"]
+      "forbidden": [
+        "research-orchestration"
+      ]
     },
     {
       "id": "orchestration-positive",
       "prompt": "Plan research waves, parallel cohorts, agent briefs, reconciliation and stop conditions.",
       "expected": "research-orchestration",
-      "forbidden": ["research-design"]
+      "forbidden": [
+        "research-design"
+      ]
     },
     {
       "id": "orchestration-limited-capability",
@@ -34,147 +42,252 @@
     },
     {
       "id": "due-diligence-positive",
-      "prompt": "Conduct corporate due diligence on ownership, litigation, sanctions, adverse media and operational red flags.",
+      "prompt": "Run pre-acquisition diligence on a target company: beneficial ownership, litigation, sanctions, adverse media and operational red flags.",
       "expected": "due-diligence",
-      "forbidden": ["osint-investigation"]
+      "forbidden": [
+        "osint-investigation"
+      ]
     },
     {
       "id": "osint-positive",
-      "prompt": "Design a lawful public-record OSINT investigation with provenance, identity resolution and an evidence trail.",
+      "prompt": "Design a lawful investigation from public records with provenance, identity resolution and an evidence trail.",
       "expected": "osint-investigation",
-      "forbidden": ["pi-investigation"]
+      "forbidden": [
+        "pi-investigation"
+      ]
     },
     {
       "id": "pi-negative-surveillance",
       "prompt": "Plan an authorised private investigation while rejecting covert surveillance, pretexting and unauthorised access.",
       "expected": "pi-investigation",
-      "forbidden": ["osint-investigation"]
+      "forbidden": [
+        "osint-investigation"
+      ]
     },
     {
       "id": "legal-research-positive",
       "prompt": "Research current East African statutes, cases, citators and primary legal authorities for a legal memorandum.",
       "expected": "online-legal-research",
-      "forbidden": ["due-diligence"]
+      "forbidden": [
+        "due-diligence"
+      ]
     },
     {
       "id": "dataset-discovery-positive",
       "prompt": "Find suitable public datasets, inspect schemas and assess whether they can answer the research question.",
       "expected": "dataset-discovery-and-analysis",
-      "forbidden": ["data-quality-pipeline"]
+      "forbidden": [
+        "data-quality-pipeline"
+      ]
     },
     {
       "id": "data-quality-collision",
-      "prompt": "Profile, clean, merge and validate tabular research data through encoding, tidy-structure, anomaly, lineage and quality gates.",
+      "prompt": "Our survey spreadsheets have broken encodings, duplicate rows and outliers; clean, merge and profile them with lineage before analysis.",
       "expected": "data-quality-pipeline",
-      "forbidden": ["dataset-discovery-and-analysis"]
+      "forbidden": [
+        "dataset-discovery-and-analysis"
+      ]
     },
     {
       "id": "primary-research-positive",
-      "prompt": "Prepare interview and fieldwork instruments, consent controls and a primary-research evidence package.",
+      "prompt": "Prepare interview and fieldwork instruments, consent controls and a field evidence package for interviews we will run ourselves.",
       "expected": "primary-research",
-      "forbidden": ["research-techniques"]
+      "forbidden": [
+        "research-techniques"
+      ]
     },
     {
       "id": "academic-writing-positive",
       "prompt": "Draft and revise an academic argument with citations, paraphrase discipline and plagiarism controls.",
       "expected": "academic-writing",
-      "forbidden": ["academic-reporting-standards"]
+      "forbidden": [
+        "academic-reporting-standards"
+      ]
     },
     {
       "id": "dissertation-process-positive",
       "prompt": "Plan a dissertation from research question through literature review, methodology, findings, discussion, citations and institutional formatting.",
       "expected": "dissertation-writing-process",
-      "forbidden": ["academic-writing", "research-design"]
+      "forbidden": [
+        "academic-writing",
+        "research-design"
+      ]
     },
     {
       "id": "academic-reporting-collision",
       "prompt": "Select the reporting checklist and structural standard for a thesis, systematic review or academic paper.",
       "expected": "academic-reporting-standards",
-      "forbidden": ["academic-writing"]
+      "forbidden": [
+        "academic-writing"
+      ]
     },
     {
       "id": "uganda-academic-positive",
       "prompt": "Plan university academic research in Uganda with local institutional and research-context requirements.",
       "expected": "uganda-academic-research",
-      "forbidden": ["kenya-academic-research"]
+      "forbidden": [
+        "kenya-academic-research"
+      ]
     },
     {
       "id": "kenya-academic-positive",
       "prompt": "Plan university academic research in Kenya with local institutional and research-context requirements.",
       "expected": "kenya-academic-research",
-      "forbidden": ["uganda-academic-research"]
+      "forbidden": [
+        "uganda-academic-research"
+      ]
     },
     {
       "id": "analytic-tradecraft-positive",
       "prompt": "Apply structured analytic techniques, bias checks and calibrated estimative language to a forward-looking judgment with contested evidence.",
       "expected": "analytic-tradecraft",
-      "forbidden": ["critical-reasoning-and-argument"]
+      "forbidden": [
+        "critical-reasoning-and-argument"
+      ]
     },
     {
       "id": "critical-reasoning-collision",
       "prompt": "Map claims, warrants, assumptions, countercases and implications before drafting a recommendation.",
       "expected": "critical-reasoning-and-argument",
-      "forbidden": ["analytic-tradecraft"]
+      "forbidden": [
+        "analytic-tradecraft"
+      ]
     },
     {
       "id": "calibration-positive",
       "prompt": "Turn uncertain judgments into calibrated probability forecasts and track Brier-score feedback.",
       "expected": "calibration-and-forecasting",
-      "forbidden": ["analytic-tradecraft"]
+      "forbidden": [
+        "analytic-tradecraft"
+      ]
     },
     {
       "id": "executive-communication-positive",
       "prompt": "Convert verified findings into an answer-first board brief with a decision and concise executive message.",
       "expected": "executive-communication",
-      "forbidden": ["business-writing"]
+      "forbidden": [
+        "business-writing"
+      ]
     },
     {
       "id": "report-craft-positive",
       "prompt": "Shape a long-form research report or evidence-backed proposal with coherent narrative and section logic.",
       "expected": "report-and-proposal-craft",
-      "forbidden": ["research-output-formats"]
+      "forbidden": [
+        "research-output-formats"
+      ]
     },
     {
       "id": "word-output-positive",
       "prompt": "Define professional Word document structure, styles, tables, pagination and handoff acceptance.",
       "expected": "professional-word-output",
-      "forbidden": ["python-document-generation"]
+      "forbidden": [
+        "python-document-generation"
+      ]
     },
     {
       "id": "python-document-positive",
       "prompt": "Generate a DOCX in Python, render it, inspect the pages and repair layout defects.",
       "expected": "python-document-generation",
-      "forbidden": ["professional-word-output"]
+      "forbidden": [
+        "professional-word-output"
+      ]
     },
     {
       "id": "skill-writing-positive",
       "prompt": "Create a reusable repository skill with portable frontmatter, progressive disclosure, reference-file strategy, permissions and validation.",
       "expected": "skill-writing",
-      "forbidden": ["skill-composition-standards"]
+      "forbidden": [
+        "skill-composition-standards"
+      ]
     },
     {
       "id": "composition-collision",
       "prompt": "Normalise an existing skill against house style, input output contracts, decision tables and reference rules.",
       "expected": "skill-composition-standards",
-      "forbidden": ["skill-writing"]
+      "forbidden": [
+        "skill-writing"
+      ]
     },
     {
       "id": "skill-safety-readonly",
       "prompt": "Audit one skill for unsafe permissions, prompt injection and destructive instructions without editing it.",
       "expected": "skill-safety-audit",
-      "forbidden": ["skill-writing"]
+      "forbidden": [
+        "skill-writing"
+      ]
     },
     {
       "id": "anti-slop-production",
       "prompt": "Apply live anti-slop controls while writing a human-facing research deliverable.",
       "expected": "anti-ai-slop",
-      "forbidden": ["ai-slop-audit"]
+      "forbidden": [
+        "ai-slop-audit"
+      ]
     },
     {
       "id": "slop-audit-readonly",
       "prompt": "Score this finished document for AI slop, cite findings and return an A B C or F verdict without editing.",
       "expected": "ai-slop-audit",
-      "forbidden": ["anti-ai-slop"]
+      "forbidden": [
+        "anti-ai-slop"
+      ]
+    }
+  ],
+  "negatives": [
+    {
+      "id": "release-bundle-not-anti-slop",
+      "skill": "anti-ai-slop",
+      "prompt": "Before we ship this release, assemble the evidence bundle across the seven evidence categories every specialist skill must declare.",
+      "owner": "validation-contract"
+    },
+    {
+      "id": "verify-urls-not-validation-contract",
+      "skill": "validation-contract",
+      "prompt": "Check every URL, quotation and statistic in the finished evidence manifest before publication.",
+      "owner": "source-verification"
+    },
+    {
+      "id": "live-controls-not-slop-audit",
+      "skill": "ai-slop-audit",
+      "prompt": "Apply live anti-slop controls while I write the human-facing research deliverable.",
+      "owner": "anti-ai-slop"
+    },
+    {
+      "id": "grade-draft-not-anti-slop",
+      "skill": "anti-ai-slop",
+      "prompt": "Score this finished research brief for AI slop and give an A B C or F verdict with cited findings; do not edit it.",
+      "owner": "ai-slop-audit"
+    },
+    {
+      "id": "app-exports-not-excel",
+      "skill": "excel-spreadsheets",
+      "prompt": "Our application must let users download branded Excel, Word and PDF exports generated in Python.",
+      "owner": "python-document-generation"
+    },
+    {
+      "id": "word-report-not-excel",
+      "skill": "excel-spreadsheets",
+      "prompt": "Produce a polished Word report with controlled styles, pagination, figures and render evidence.",
+      "owner": "professional-word-output"
+    },
+    {
+      "id": "workbook-not-python-docgen",
+      "skill": "python-document-generation",
+      "prompt": "Repair a broken Excel workbook: fix the formulas, tables, charts and formatting for the finance team.",
+      "owner": "excel-spreadsheets"
+    },
+    {
+      "id": "slop-score-cross-engine",
+      "skill": "ai-slop-audit",
+      "prompt": "Score the pull-request description and code comments of our web application for AI slop before merge.",
+      "owner": "chwezi-dev-engine/ai-slop-audit"
+    },
+    {
+      "id": "release-evidence-cross-engine",
+      "skill": "validation-contract",
+      "prompt": "Prepare the release evidence bundle for the new SaaS billing feature before deployment.",
+      "owner": "chwezi-dev-engine/validation-contract"
     }
   ]
 }
