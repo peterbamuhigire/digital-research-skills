@@ -39,6 +39,8 @@ The shared agent, command, hook, evidence, and handoff contract is adapted to
 research in [`docs/control-plane-adoption.md`](docs/control-plane-adoption.md);
 the central registry lives in `C:\wamp64\www\chwezi-dev-engine\docs\engine-control-plane.json`.
 
+Project context: if the working project root holds a `PROJECT.md` with `project_schema: 1`, read it before planning. It points to this engine's own context sources and never replaces them.
+
 ## Rules
 
 Always-on cross-cutting principles live in `rules/` — see `rules/README.md`.
