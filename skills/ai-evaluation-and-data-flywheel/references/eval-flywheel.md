@@ -40,6 +40,19 @@ Create development, calibration, emerging-pattern holdout, and historical replay
 
 Sample sizes and acceptance margins are not defaults. Set them from observed prevalence, consequence, variance, reviewer capacity, and the planned comparison. If evidence is too small to distinguish safe from unsafe changes, retain the current workflow and report the affected acceptance slice `NOT_ASSESSED`.
 
+### Evidence rungs for improvement claims
+
+Any efficiency, savings, cost, speed or quality-delta claim names the rung of evidence behind it, strongest first:
+
+1. `deterministic_remeasure`: the same fixed input measured again by a deterministic check (a checker, a counter, a byte or token count) before and after the change.
+2. `controlled_holdout`: paired arms on a frozen holdout, with the model, runtime and evaluation contract pinned and the run count stated.
+3. `counterfactual_replay`: recorded traces or cases replayed through the old and new workflow.
+4. `before_after`: an uncontrolled comparison of two periods (including an interrupted time series); the weakest rung.
+
+Report each rung as its own figure. Never add, average or blend numbers from different rungs into one headline, and never present a lower-rung figure as if it came from a higher one. Every claim lists its known confounders (model or runtime version change, case mix, reviewer change, seasonality, n and variance) and its unexecuted slices as `NOT_ASSESSED`. A claim with no rung stated is treated as unsupported.
+
+Adapted from JuliusBrussee/caveman evidence vocabulary (MIT, https://github.com/JuliusBrussee/caveman, commit 2fd153c); only the MIT skill-side text informed the idea, paraphrased with no text copied.
+
 ### Failure attribution and revision boundary
 
 Use a separate primary-cause label: `routing`, `knowledge`, `execution`, `source/tool`, `gold-label`, `mixed`, or `unknown`. A failed outcome is not automatically a knowledge gap. Preserve the original symptom tags and source records. Only a reviewed, recurring knowledge gap may propose a guidance edit; routing, tool/source, execution, or gold-label errors have their own repair paths.
