@@ -18,7 +18,7 @@ cd digital-research-skills
 .\install.ps1 --scope project     # Windows PowerShell
 ```
 
-## Skills
+## Capabilities
 
 The 59 active skill files are grouped below by workflow. The [skills directory](skills/) is the complete live inventory; the [engine router](SKILL.md) sets the research sequence and directs selection of task-specific skills.
 
