@@ -12,7 +12,22 @@ from pathlib import Path
 import yaml
 
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+def _find_repo_root() -> Path:
+    """Return the engine root that holds this skill, whatever its depth.
+
+    Engine copies of this script are byte-identical mirrors of the canonical
+    chwezi-dev-engine file, so the root is found by walking up to the first
+    directory with a ``.git`` entry or an ``AGENTS.md`` router instead of a
+    fixed ``parents[n]`` depth.
+    """
+    here = Path(__file__).resolve()
+    for parent in here.parents[1:]:
+        if (parent / ".git").exists() or (parent / "AGENTS.md").is_file():
+            return parent
+    return here.parents[min(4, len(here.parents) - 1)]
+
+
+REPO_ROOT = _find_repo_root()
 ALLOWED_FRONTMATTER_KEYS = {"name", "description", "license", "allowed-tools", "metadata"}
 REQUIRED_SECTIONS = [
     "Use When",
@@ -28,7 +43,6 @@ MAX_MARKDOWN_LINES = 500
 DUAL_COMPAT_START = "<!-- dual-compat-start -->"
 DUAL_COMPAT_END = "<!-- dual-compat-end -->"
 NONPORTABLE_SNIPPETS = {
-    "skills/": "Do not assume a top-level `skills/` directory inside skill content.",
     ".github/copilot-instructions.md": "Do not reference unavailable repo-local Copilot instructions.",
     "chat.customAgentInSubagent.enabled": "Do not require VS Code-specific settings in portable skills.",
     "latest VS Code Insiders build": "Do not require a specific editor build in portable skills.",
@@ -118,8 +132,10 @@ def validate_frontmatter(frontmatter: dict, skill_dir: Path, errors: list[str]) 
             errors.append("`description` must not be empty.")
         if "<" in stripped or ">" in stripped:
             errors.append("`description` cannot contain angle brackets.")
-        if len(stripped) > 1024:
-            errors.append("`description` exceeds 1024 characters.")
+        if len(stripped) > 350:
+            errors.append("`description` exceeds the repository limit of 350 characters.")
+        if not stripped.lower().startswith("use when"):
+            errors.append("`description` must start with 'Use when'.")
 
     metadata = frontmatter.get("metadata")
     if not isinstance(metadata, dict):
@@ -130,28 +146,55 @@ def validate_frontmatter(frontmatter: dict, skill_dir: Path, errors: list[str]) 
         errors.append("`metadata.portable` must be `true`.")
 
     compatible = metadata.get("compatible_with")
-    if compatible != ["claude-code", "codex"]:
-        errors.append("`metadata.compatible_with` must equal ['claude-code', 'codex'].")
+    if not (
+        isinstance(compatible, list)
+        and all(isinstance(item, str) and item.strip() for item in compatible)
+        and len(compatible) == len(set(compatible))
+        and {"claude-code", "codex"} <= set(compatible)
+    ):
+        errors.append("`metadata.compatible_with` must list unique runtime names including 'claude-code' and 'codex'.")
+
+    invocation = metadata.get("invocation", "implicit")
+    if invocation not in {"implicit", "explicit", "both"}:
+        errors.append("`metadata.invocation` must be one of: implicit, explicit, both.")
+
+    if invocation == "explicit":
+        description = str(frontmatter.get("description", "")).lower()
+        if "explicit" not in description and "direct user" not in description:
+            errors.append("Explicit-invocation skills must state the direct/explicit user trigger in `description`.")
 
 
-def validate_portable_sections(body: str, errors: list[str]) -> None:
+def validate_portable_sections(frontmatter: dict, body: str, errors: list[str]) -> None:
     if DUAL_COMPAT_START not in body or DUAL_COMPAT_END not in body:
         errors.append("Portable contract markers are missing.")
         return
 
-    contract = re.search(
-        rf"{re.escape(DUAL_COMPAT_START)}(.*?){re.escape(DUAL_COMPAT_END)}",
+    if not re.search(
+        rf"{re.escape(DUAL_COMPAT_START)}.*?{re.escape(DUAL_COMPAT_END)}",
         body,
         re.DOTALL,
-    )
-    if not contract:
+    ):
         errors.append("Portable contract markers are malformed.")
         return
-
-    contract_text = contract.group(1)
-    for section in REQUIRED_SECTIONS:
-        if re.search(rf"^##\s+{re.escape(section)}\s*$", contract_text, re.MULTILINE) is None:
-            errors.append(f"Portable section missing: `## {section}`.")
+    metadata = frontmatter.get("metadata")
+    metadata = metadata if isinstance(metadata, dict) else {}
+    groups = {
+        "Use When": (["Use When"], "use_when"),
+        "Do Not Use When": (["Do Not Use When", "Degraded mode"], "do_not_use_when"),
+        "Required Inputs": (["Required Inputs", "Inputs"], "required_inputs"),
+        "Workflow": (["Workflow", "Operating contract", "Decision rules"], "workflow"),
+        "Quality Standards": (["Quality Standards", "Capability contract", "Capability and permission boundaries", "Non-negotiables"], "quality_standards"),
+        "Anti-Patterns": (["Anti-Patterns", "Domain anti-patterns"], "anti_patterns"),
+        "Outputs": (["Outputs"], "outputs"),
+        "References": (["References", "Read next", "Companion Skills", "Companion skills"], "references"),
+    }
+    for section, (aliases, metadata_key) in groups.items():
+        heading_exists = any(
+            re.search(rf"^##\s+{re.escape(alias)}\s*$", body, re.MULTILINE | re.IGNORECASE)
+            for alias in aliases
+        )
+        if not heading_exists and not metadata.get(metadata_key):
+            errors.append(f"Portable contract element missing: `{section}`.")
 
 
 def validate_markdown_file(path: Path, errors: list[str]) -> None:
@@ -178,7 +221,8 @@ def validate_local_links(skill_dir: Path, skill_md: Path, body: str, errors: lis
         try:
             resolved.relative_to(REPO_ROOT.resolve())
         except ValueError:
-            errors.append(f"Link points outside the repository: `{target}`.")
+            if not resolved.exists():
+                errors.append(f"External local link does not exist: `{target}`.")
             continue
 
         if not resolved.exists():
@@ -208,7 +252,7 @@ def validate_skill(skill_path: Path) -> tuple[bool, list[str]]:
         return False, [str(exc)]
 
     validate_frontmatter(frontmatter, skill_path, errors)
-    validate_portable_sections(body, errors)
+    validate_portable_sections(frontmatter, body, errors)
     validate_local_links(skill_path, skill_md, body, errors)
 
     for md_file in sorted(skill_path.rglob("*.md")):

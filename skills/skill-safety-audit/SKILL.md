@@ -94,6 +94,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 ## References
 
 - Use the links and companion skills already referenced in this file when deeper context is needed.
+- Vetting a third-party skill repository before borrowing from it: apply the canonical ecosystem-scan and intake procedure, `C:/wamp64/www/chwezi-dev-engine/skills/sdlc-meta/skill-engine-audit/references/ecosystem-scan-and-intake.md` (https://github.com/peterbamuhigire/chwezi-dev-engine), and record the verdict in `chwezi-engine-agents/docs/security/third-party-skill-register.json`.
 <!-- dual-compat-end -->
 ## Overview
 

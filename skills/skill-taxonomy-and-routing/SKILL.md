@@ -101,6 +101,7 @@ If two skills both claim research planning, reserve wave and cohort planning for
 ## References
 
 - Load `references/canonical-skill-map.md` for taxonomy decisions.
+- Vetting a third-party skill repository before borrowing from it: apply the canonical ecosystem-scan and intake procedure, `C:/wamp64/www/chwezi-dev-engine/skills/sdlc-meta/skill-engine-audit/references/ecosystem-scan-and-intake.md` (https://github.com/peterbamuhigire/chwezi-dev-engine), and record the verdict in `chwezi-engine-agents/docs/security/third-party-skill-register.json`.
 
 <!-- dual-compat-end -->
 
