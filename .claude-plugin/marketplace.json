@@ -11,7 +11,7 @@
       "author": { "name": "Peter Bamuhigire" },
       "homepage": "https://github.com/peterbamuhigire/digital-research-skills",
       "repository": "https://github.com/peterbamuhigire/digital-research-skills",
-      "license": "MIT",
+      "license": "GPL-3.0-only",
       "keywords": ["research", "osint", "evidence", "source-verification", "literature-review"],
       "category": "research",
       "tags": ["research", "evidence", "osint"],
