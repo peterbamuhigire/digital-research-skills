@@ -8,7 +8,7 @@ The default web row, deliberately generic. Foundation pulls `system-architecture
 
 ## Multi-tenant SaaS
 
-Specialised version of Web/SaaS. Foundation upgrades to `multi-tenant-saas-architecture` (tenant isolation, three-panel separation) and adds `saas-erp-system-design` because configurable workflows are common. Implementation includes `dual-auth-rbac` and `modular-saas-architecture` because RBAC and pluggable modules are near-universal in this domain. Companions include billing skills because multi-tenant SaaS almost always means subscription revenue.
+Specialised version of Web/SaaS. Foundation upgrades to `multi-tenant-saas-architecture` (tenant isolation, three-panel separation) and adds `saas-erp-system-design` because configurable workflows are common. Implementation includes `vibe-security-skill` and `modular-saas-architecture` because RBAC and pluggable modules are near-universal in this domain. Companions include billing skills because multi-tenant SaaS almost always means subscription revenue.
 
 ## iOS
 

@@ -19,13 +19,13 @@ Decision rules for when each cross-cutting Companion category attaches to whatev
 - `responsive-design` — when the surface must work across breakpoints.
 - `design-audit` — when reviewing existing UI.
 - `web-usability-krug` — when the surface is a public-facing web page.
-- `ux-principles-101` — for general UX hygiene during scoping.
+- `ux-psychology` (design-system-skills) — for general UX hygiene during scoping.
 - `lean-ux-validation` — when validating a feature hypothesis before build.
-- `ux-for-ai`, `ai-ux-patterns`, `ai-slop-prevention` — when the surface displays AI-generated output.
+- `ai-agent-ux` (design-system-skills), `ai-ux-patterns`, `ai-slop-prevention` — when the surface displays AI-generated output.
 - `healthcare-ui-design` — when the surface is clinical or patient-facing.
-- `pos-sales-ui-design`, `pos-restaurant-ui-standard` — for POS surfaces.
+- `finance-ui-pattern-library` (chwezi-accounting-doctrine) — for POS surfaces.
 - `form-ux-design` — when the surface is form-heavy.
-- `mobile-reports`, `mobile-report-tables` — for mobile reports and dashboards.
+- `professional-word-output`, `mobile-report-tables` — for mobile reports and dashboards.
 
 ## Content
 
@@ -63,7 +63,7 @@ Decision rules for when each cross-cutting Companion category attaches to whatev
 - `cicd-devsecops` — for pipeline hardening.
 - `linux-security-hardening`, `network-security` — for self-managed infrastructure.
 - `code-safety-scanner` — when scanning an unfamiliar codebase for safety issues.
-- `dpia-generator`, `uganda-dppa-compliance` — when handling personal data under Uganda DPPA 2019.
+- `dpia-generator` — when handling personal data under Uganda DPPA 2019.
 
 ## Release
 

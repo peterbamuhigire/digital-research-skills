@@ -72,20 +72,20 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 | Domain | Foundation | Implementation | Validation | Companions |
 |--------|------------|----------------|------------|------------|
 | **Web/SaaS** | `system-architecture-design`, `database-design-engineering` | `php-modern-standards`, `nodejs-development` | `vibe-security-skill`, `web-app-security-audit`, `frontend-performance` | `git-collaboration-workflow`, `ux-writing` |
-| **Multi-tenant SaaS** | `multi-tenant-saas-architecture`, `database-design-engineering`, `saas-erp-system-design` | `php-modern-standards`, `dual-auth-rbac`, `modular-saas-architecture` | `vibe-security-skill`, `observability-monitoring` | `saas-business-metrics`, `subscription-billing`, `stripe-payments`, `feature-planning` |
-| **iOS** | `ios-development`, `ios-architecture-advanced` | `swiftui-design`, `ios-data-persistence`, `ios-networking-advanced` | `ios-tdd`, `ios-app-security`, `app-store-review` | `ios-pdf-export`, `ios-biometric-login`, `ios-rbac`, `ios-monetization` |
-| **Android** | `android-development` | `jetpack-compose-ui`, `android-data-persistence`, `android-room` | `android-tdd`, `google-play-store-review` | `android-pdf-export`, `android-biometric-login`, `mobile-rbac`, `mobile-custom-icons` |
+| **Multi-tenant SaaS** | `multi-tenant-saas-architecture`, `database-design-engineering`, `saas-erp-system-design` | `php-modern-standards`, `vibe-security-skill`, `modular-saas-architecture` | `vibe-security-skill`, `observability-monitoring` | `saas-business-metrics`, `subscription-billing`, `stripe-payments`, `feature-planning` |
+| **iOS** | `ios-development`, `ios-architecture-advanced` | `swiftui-design`, `ios-platform-capabilities`, `ios-networking-advanced` | `ios-tdd`, `ios-app-security`, `app-store-review` | `ios-pdf-export`, `ios-biometric-login`, `ios-rbac`, `ios-monetization` |
+| **Android** | `android-development` | `jetpack-compose-ui`, `android-room` | `google-play-store-review` | `android-pdf-export`, `android-biometric-login`, `mobile-rbac`, `mobile-custom-icons` |
 | **KMP / Compose Multiplatform** | `kmp-development` | `kmp-compose-multiplatform` | `kmp-tdd` | `ios-development`, `android-development` |
 | **API / HTTP** | `api-design-first`, `system-architecture-design` | `nodejs-development`, `php-modern-standards` | `api-testing-verification`, `vibe-security-skill`, `graphql-security` | `api-pagination`, `api-error-handling`, `realtime-systems` |
-| **Database (relational)** | `database-design-engineering`, `mysql-data-modeling` | `mysql-best-practices`, `postgresql-fundamentals` | `database-reliability`, `mysql-query-performance`, `postgresql-performance` | `mysql-administration`, `postgresql-administration`, `database-internals` |
+| **Database (relational)** | `database-design-engineering`, `mysql-data-modeling` | `mysql-best-practices`, `postgresql-fundamentals` | `database-reliability`, `mysql-query-performance`, `postgresql-performance` | `mysql-administration`, `postgresql-administration`, `database-design-engineering` |
 | **Frontend (React / Next)** | `nextjs-app-router`, `system-architecture-design` | `react-development`, `react-patterns`, `tailwind-css` | `frontend-performance`, `design-audit` | `grid-systems`, `practical-ui-design`, `interaction-design-patterns`, `motion-design`, `responsive-design`, `ux-writing`, `ai-slop-prevention` |
-| **AI Feature** | `ai-app-architecture`, `ai-feature-spec`, `ai-architecture-patterns` | `ai-llm-integration`, `ai-prompt-engineering` | `ai-evaluation`, `llm-security`, `ai-error-handling`, `ai-security` | `ai-ux-patterns`, `ux-for-ai`, `ai-cost-modeling`, `ai-slop-prevention` |
-| **LLM Integration** | `ai-llm-integration`, `ai-app-architecture` | `claude-api`, `deepseek-integration`, `openai-agents-sdk` | `llm-security`, `ai-evaluation`, `ai-error-handling` | `ai-prompt-engineering`, `ai-rag-patterns`, `ai-agents-tools`, `microservices-ai-integration` |
+| **AI Feature** | `ai-app-architecture`, `ai-feature-spec`, `ai-architecture-patterns` | `ai-llm-integration`, `ai-prompt-engineering` | `ai-evaluation`, `llm-security`, `ai-error-handling`, `ai-security` | `ai-ux-patterns`, `ai-agent-ux` (design-system-skills), `ai-cost-modeling`, `ai-slop-prevention` |
+| **LLM Integration** | `ai-llm-integration`, `ai-app-architecture` | `claude-api`, `deepseek-integration`, `openai-agents-sdk` | `llm-security`, `ai-evaluation`, `ai-error-handling` | `ai-prompt-engineering`, `ai-rag-patterns`, `ai-agents-tools`, `ai-app-architecture` |
 | **Python Service** | `python-modern-standards` | `python-saas-integration` | `advanced-testing-strategy` | `python-data-analytics`, `python-document-generation`, `python-ml-predictive`, `python-data-pipelines` |
 | **TypeScript Stack** | `typescript-mastery`, `typescript-effective` | `typescript-full-stack`, `typescript-design-patterns` | `api-testing-verification`, `advanced-testing-strategy` | `nodejs-development`, `react-development` |
 | **Kubernetes** | `kubernetes-fundamentals`, `system-architecture-design` | `kubernetes-production` | `observability-monitoring`, `reliability-engineering`, `network-security` | `kubernetes-saas-delivery`, `cicd-devsecops`, `cloud-architecture` |
 | **GIS** | `gis-mapping`, `gis-postgis-backend` | `gis-maps-integration` | `vibe-security-skill`, `frontend-performance` | `gis-enterprise-domain`, `database-design-engineering` |
-| **ERP / Business System** | `saas-erp-system-design`, `multi-tenant-saas-architecture` | `modular-saas-architecture`, `inventory-management`, `saas-accounting-system` | `vibe-security-skill`, `observability-monitoring`, `advanced-testing-strategy` | `form-ux-design`, `manual-guide`, `sdlc-design`, `feature-planning` |
+| **ERP / Business System** | `saas-erp-system-design`, `multi-tenant-saas-architecture` | `modular-saas-architecture`, `inventory-costing-and-stock-accounting` (chwezi-accounting-doctrine), `saas-accounting-system` | `vibe-security-skill`, `observability-monitoring`, `advanced-testing-strategy` | `form-ux-design`, `manual-guide`, `sdlc-design`, `feature-planning` |
 | **CI/CD pipeline** | `cicd-pipeline-design` | `cicd-pipelines`, `cicd-jenkins-debian` | `cicd-devsecops`, `deployment-release-engineering` | `cloud-architecture`, `kubernetes-fundamentals` |
 | **Observability / SRE** | `observability-monitoring` | `reliability-engineering`, `distributed-systems-patterns` | `advanced-testing-strategy`, `deployment-release-engineering` | `linux-security-hardening`, `network-security`, `database-reliability` |
 
@@ -105,11 +105,11 @@ When two rows could apply, load both and dedupe. Common combinations:
 Some verticals add a small set of skills on top of whatever rows apply:
 
 - **Healthcare** → add `healthcare-ui-design`.
-- **POS / Restaurant** → add `pos-sales-ui-design`, `pos-restaurant-ui-standard`.
+- **POS / Restaurant** → add `finance-ui-pattern-library` (chwezi-accounting-doctrine).
 - **Payments** → add `stripe-payments`, `subscription-billing`.
-- **Auth surface** → add `dual-auth-rbac`, `mobile-rbac`, `ios-rbac` as platform demands.
-- **East-African / Uganda compliance** → add `uganda-dppa-compliance`, `dpia-generator`, `language-standards`, `east-african-english`.
-- **Reporting / dashboards** → add `data-visualization`, `mobile-reports`, `mobile-report-tables`, `report-print-pdf` as platform demands.
+- **Auth surface** → add `vibe-security-skill`, `mobile-rbac`, `ios-rbac` as platform demands.
+- **East-African / Uganda compliance** → add `dpia-generator`, `language-standards`, `east-african-english`.
+- **Reporting / dashboards** → add `data-visualization`, `professional-word-output`, `mobile-report-tables`, `report-print-pdf` as platform demands.
 - **Photo / image handling** → add `photo-management`, `image-compression`.
 - **Real-time features** → add `realtime-systems`.
 - **PDF / document generation** → add `report-print-pdf`, `python-document-generation`, `ios-pdf-export`, `android-pdf-export`, `professional-word-output`, `excel-spreadsheets` as needed.
