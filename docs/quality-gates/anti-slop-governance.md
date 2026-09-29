@@ -3,7 +3,7 @@
 Last verified: 2026-09-03
 Standard/version: Digital Research Engine September 2026 anti-slop gate
 
-This file governs research prose quality. Visual formatting routes to the design-system-skills engine; this engine owns evidence, reasoning, and language quality.
+This file governs research prose quality. Visual formatting routes to the chwezi-design-engine engine; this engine owns evidence, reasoning, and language quality.
 
 Apply the dated [Machine-Error Editorial Gate](../continuous-improvement/machine-errors-editorial-gate-2026-09-03.md)
 in addition to the evidence and reasoning controls below. A polished sentence is not automatically

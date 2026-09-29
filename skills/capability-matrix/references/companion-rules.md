@@ -19,9 +19,9 @@ Decision rules for when each cross-cutting Companion category attaches to whatev
 - `responsive-design` — when the surface must work across breakpoints.
 - `design-audit` — when reviewing existing UI.
 - `web-usability-krug` — when the surface is a public-facing web page.
-- `ux-psychology` (design-system-skills) — for general UX hygiene during scoping.
+- `ux-psychology` (chwezi-design-engine) — for general UX hygiene during scoping.
 - `lean-ux-validation` — when validating a feature hypothesis before build.
-- `ai-agent-ux` (design-system-skills), `ai-ux-patterns`, `ai-slop-prevention` — when the surface displays AI-generated output.
+- `ai-agent-ux` (chwezi-design-engine), `ai-ux-patterns`, `ai-slop-prevention` — when the surface displays AI-generated output.
 - `healthcare-ui-design` — when the surface is clinical or patient-facing.
 - `finance-ui-pattern-library` (chwezi-accounting-doctrine) — for POS surfaces.
 - `form-ux-design` — when the surface is form-heavy.

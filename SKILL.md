@@ -46,7 +46,7 @@ Every sub-agent prompt must include the hard-constraint clause from `evidence-di
 | Forward-looking judgment, scenario, warning, risk call | `skills/analytic-tradecraft/SKILL.md` | `skills/calibration-and-forecasting/SKILL.md`, `skills/peer-review-loop/SKILL.md` |
 | Executive memo, board brief, consulting report | `skills/executive-communication/SKILL.md` | `skills/critical-reasoning-and-argument/SKILL.md` |
 | Final report or proposal craft | `skills/report-and-proposal-craft/SKILL.md` | `skills/research-output-formats/SKILL.md`, `skills/professional-word-output/SKILL.md` |
-| Word, PDF, Excel, or rendered deliverable | `skills/python-document-generation/SKILL.md` | `skills/professional-word-output/SKILL.md`, design-system-skills engine |
+| Word, PDF, Excel, or rendered deliverable | `skills/python-document-generation/SKILL.md` | `skills/professional-word-output/SKILL.md`, chwezi-design-engine engine |
 | Skill authoring or engine extension | `skills/skill-writing/SKILL.md` | `skills/skill-composition-standards/SKILL.md` |
 | Engine or product improvement audit | `skills/00-meta-initialization/references/kaizen-engine-and-product-audit.md` | `skills/source-evaluation/SKILL.md`, `skills/source-verification/SKILL.md` |
 
