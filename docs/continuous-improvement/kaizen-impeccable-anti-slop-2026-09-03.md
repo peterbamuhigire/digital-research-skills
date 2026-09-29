@@ -48,3 +48,12 @@ polish-covered delivery debt.
 
 Adopt AS1-AS7 as a scoped overlay. Keep Impeccable optional and source-bound; do not convert its
 catalog into a mandatory dependency or an aesthetic blacklist.
+
+## Re-audit log
+
+- 2026-09-29: Re-audit opened ahead of the 2026-10-03 due date, with detector-based evidence
+  under my-10-kaizen M10-09 (`chwezi-slop`, design engine). Record:
+  [`kaizen-impeccable-anti-slop-reaudit-2026-10.md`](kaizen-impeccable-anti-slop-reaudit-2026-10.md).
+  Decision: retain the overlay and add the `cli` and `browser` evidence modes. The decision was
+  taken by the orchestrator under Peter's delegated authority on 29 Sep 2026. Phase acceptance is
+  pending; until then, the interim status for anything not measured there stays `NOT_ASSESSED`.
