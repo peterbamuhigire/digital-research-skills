@@ -70,6 +70,8 @@ Operating instructions for Codex and other agent runtimes that load skills via `
 
 Read `skills/source-evaluation/SKILL.md` and `skills/source-evaluation/references/evidence-discipline.md` before any research work. The hard-constraint clause from that reference **must appear verbatim** in every sub-task agent prompt you dispatch.
 
+This rule is enforced by the `source-evaluation` skill. If a sub-agent returns content that violates evidence discipline, strike it. Do not paper over with fixes — log it in the project's `EVIDENCE-AUDIT.md` and adjust the next agent prompt.
+
 ## Never store book extractions
 
 Book extractions, book summaries and chapter-by-chapter notes must never be stored in this
@@ -100,6 +102,53 @@ provenance, completeness, limitations, and whether the material is current befor
 7. If the final output is a **proposal** (donor investment case, policy memo, bid, EoI, pitch deck, Cabinet memo, Parliamentary briefing, white paper): route the drafting stage through the standalone proposal engine at `C:\wamp64\www\proposal-skills\skills\SKILL.md`, then follow its section and cross-cutting routes. Load exactly one profile from `C:\wamp64\www\proposal-skills\skills\profiles-sectors\profiles\SKILL.md` before drafting.
 8. Generate Word doc via `research-output-formats` → `python-document-generation`
 9. Apply `skills/anti-ai-slop/SKILL.md` in real time on every output, and run `skills/ai-slop-audit/SKILL.md` after each major iteration and as the final ship gate. Outputs must read as if a professional human researcher wrote them; grade F (fabricated stat/citation, viewpoint-free section, template uniformity, banned vocabulary) blocks delivery.
+
+## Research wave discipline
+
+Triggered by user requests like "research X", "find pain points of Y", "do another pass":
+
+- **Brief each sub-task agent self-contained.** They don't see the conversation history. Include: goal, scope, out-of-scope; themes to cover (numbered); sources to mine (named); deliverable shape; and the **verbatim** hard-constraint clause from `source-evaluation/references/evidence-discipline.md`.
+- **Run in parallel where independent** (see Sequential fallback when parallel dispatch is unavailable).
+- **Verify before merging.** Spot-check 10% of stats, 5 quotes, all court cases / statute citations.
+- **Write outputs** to `projects/<project-id>/<cohort>/research/`, `analysis/`, `opportunities/` — append (don't overwrite) when merging Wave-2 findings.
+- **Generate the Word doc** via `research-output-formats` → `professional-word-output` or `python-document-generation`.
+- **Run the anti-slop ship gate.** Before delivering any report or `.docx`, run `ai-slop-audit` on it. The output must read as if a professional human researcher wrote it: sourced at every claim, with authored judgement, varied structure, no banned vocabulary, and the counter-case shown. Grade F (a fabricated stat/citation, a viewpoint-free section, template uniformity) blocks delivery until fixed.
+
+## Skill priority order
+
+For any non-trivial task:
+
+0. `anti-ai-slop` — real-time, every output, every time. The quality counterpart to evidence-discipline: a report can be fully sourced and still read as slop (generic, voiceless, template-uniform). Apply continuously while writing. Run `ai-slop-audit` after each major iteration (drafted section, completed cohort, synthesis, generated .docx); grade F blocks progression.
+1. `evidence-discipline` — every output, every time
+2. `research-orchestration` — coordinates the rest
+3. The specialist skill matching the task (e.g., `online-legal-research` for legal research)
+4. `source-verification` + `evidence-claim-graph` after every wave
+5. `critical-reasoning-and-argument` before synthesis, recommendation, business analysis, or final output
+6. gap analysis via `analytic-tradecraft` before any "is this complete?" claim
+7. pain-point mapping via `decision-support-analysis` after evidence is gathered
+8. cross-cohort synthesis via `mind-mapping-and-synthesis` only when ≥2 cohorts complete
+9. `research-output-formats` last
+
+## File-write conventions
+
+- **Append, don't overwrite** when merging Wave-2 findings into existing files. Use `# Pass 2 — Gap-fill addendum` headers.
+- **Never delete a sourced claim** without logging in `EVIDENCE-AUDIT.md`.
+- **Mark gaps explicitly** — "no source found" is a valid finding; filler text is not.
+- **Date every research file** at the top.
+- **List sources by tier** in `<cohort>/research/sources.md` (per `source-verification`).
+- **Do not edit `.docx` files directly** — markdown source is canonical, Word is generated.
+
+## Scope-exclusion discipline
+
+If the user has set a hard exclusion (e.g., "do not cover topic X"):
+
+- Restate it verbatim in every sub-agent brief
+- If a sub-agent returns it, filter before writing files
+- Track the exclusion in the project's `README.md` so it doesn't quietly close in later passes
+
+## When the user asks for elaboration
+
+Default reflex: find a new source. Acceptable alternatives: restate existing source more thoroughly, or acknowledge the gap. **Never embellish with plausible-sounding additions.**
 
 ## Skill loading
 
@@ -134,10 +183,13 @@ projects/<project-id>/report-v<N>-<date>.docx
 
 ## Project structure invariants
 
+- Every project lives under `projects/<project-id>/`
 - Every kernel project: `README.md`, `CLAUDE.md`, `PROJECT-STATUS.md`, `EVIDENCE-AUDIT.md`, `_context/`, `_registry/`, `01-initiation/` through `06-governance/`, `export/`
 - Every cohort sub-project: `README.md`, `CLAUDE.md`, `research/`, `analysis/`, `opportunities/`
 
 ## Kernel commands
+
+Use these commands for project-managed work. After step 2, run `00-meta-initialization` and complete `_context/` before `sync`.
 
 1. `python -m engine doctor`
 2. `python -m engine new-project "<name>" --type "<research-type>" --audience "<audience>" --variant "<variant>"`
@@ -160,9 +212,23 @@ verification and review dates; overdue records block release.
 - Run the canonical `quick_validate.py` against every changed skill directory. A missing capability or unavailable check is `not assessed`, never passed.
 - Run `python -X utf8 scripts/validate_machine_error_gate.py` after any anti-slop, editorial, or cross-engine gate change. The validator checks ME1-ME7 and AS1-AS7 coverage plus the visual pressure fixture; semantic and visual findings still require human evidence review.
 
+## Proposal-output trigger
+
+When a research project's output is a **proposal** — donor investment case, policy memorandum, bid response, expression of interest, pitch deck, Cabinet memo, Parliamentary briefing, white paper, or other persuasive document for an external audience — route the final-drafting stage through the standalone proposal engine at `C:\wamp64\www\proposal-skills`.
+
+- Parent router: `C:\wamp64\www\proposal-skills\skills\SKILL.md`
+- Section sub-skills: `C:\wamp64\www\proposal-skills\skills\pipeline\01-cover-letter\` through `10-financial-proposal\`
+- Cross-cutting skills: follow the parent router into `domain-delivery`, `strategy-positioning`, `writing-content`, and other applicable families.
+- Profiles: load `C:\wamp64\www\proposal-skills\skills\profiles-sectors\profiles\SKILL.md` before drafting.
+- Language standards: British English; East African professional tone; day-month-year dates; apply the proposal engine's anti-slop and language gates.
+
+The proposal engine evolves in its own repository and is updated independently from `C:\wamp64\www\proposal-skills`.
+
+The research evidence corpus produced by the engine (under `projects/<project-id>/02-research/`, `04-synthesis/`) is the input to the proposal-skills drafting pipeline; the proposal document is written into `projects/<project-id>/05-output/` and exported via the standard `research-output-formats` → `python-document-generation` chain.
+
 ## See also
 
-- `CLAUDE.md` — the Claude-Code-specific equivalent
+- `CLAUDE.md` — thin Claude Code bridge that imports this file (portfolio bridge contract, M10-02)
 - `PROJECT_BRIEF.md` — engine mission
 
 <!-- design-system-skills:trigger v2 -->

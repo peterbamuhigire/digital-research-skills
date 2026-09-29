@@ -2,6 +2,7 @@ schema_version: "1.0"
 engine_id: digital-research-skills
 display_name: Digital Research Engine
 contract_version: "1.0"
+version: "1.1.0"
 router:
   path: AGENTS.md
 skills:
@@ -26,3 +27,27 @@ source_of_truth:
   router: AGENTS.md
   skills: skills/**/SKILL.md
   references: references/**
+claude_only_block: |
+  - Dispatch research waves with the `Agent` tool, `subagent_type: content-marketing:search-specialist`
+    (or `general-purpose` if unavailable); one sub-agent per cohort.
+  - Run independent waves as multiple `Agent` tool calls in one message.
+  - Use background mode (`run_in_background: true`) for waves longer than 2 minutes.
+  - Never read sub-agent transcripts or output files directly with the shell tool (no `Bash`-based
+    tail) — they overflow context. Use the structured `<result>` block in the completion notification.
+  - Tools to use heavily: `Agent` for every research wave; `WebFetch` for URL verification, statistic
+    re-check and abstract retrieval; `Read` for cross-checking draft outputs; `Write` / `Edit` for the
+    markdown corpus; `Grep` for finding duplicate citations across cohorts (signals triangulation).
+invariants:
+  - id: british-english
+    phrase: "Language standards: British English; East African professional tone; day-month-year dates"
+  - id: book-extraction-ban
+    phrase: "Book extractions, book summaries and chapter-by-chapter notes must never be stored in this"
+  - id: not-assessed
+    phrase: "Missing source, locator, currentness, reviewer, or product evidence is `NOT ASSESSED`, never a pass."
+  - id: no-hallucination
+    phrase: "**Do not hallucinate.** No claim, statistic, quote, name, court case, statute, organisation, or URL"
+plugin_exclusions:
+  - path: "."
+    reason: "repository-level router SKILL.md; the plugin exposes the routed skills under skills/, and the router is read through AGENTS.md"
+  - path: "templates/skill-template"
+    reason: "authoring template copied when a new skill is created; not an active skill"
