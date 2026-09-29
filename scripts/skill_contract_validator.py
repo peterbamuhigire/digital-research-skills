@@ -125,12 +125,28 @@ def table_present(text: str) -> bool:
     return len(lines) >= 2 and any(re.search(r"\|\s*:?-{3,}", line) for line in lines)
 
 
+# Portable-link rule: CI checks out one repository, so a link that is host-absolute
+# (C:/..., /C:/..., file:) or that climbs out of the repository to a sibling engine
+# resolves only on the author's machine. Such links count as broken locally too, so a
+# local pass predicts the CI result; link to other engines by their GitHub URL instead.
+HOST_ABSOLUTE_LINK = re.compile(r"^(?:file:|/?[A-Za-z]:[\\/])", re.I)
+
+
+def portable_link_target(base: Path, root: Path, target: str) -> Path | None:
+    """Resolve a local link target, or return None when it is not portable."""
+    if HOST_ABSOLUTE_LINK.match(target):
+        return None
+    resolved = (base / target).resolve()
+    return resolved if resolved.is_relative_to(root.resolve()) else None
+
+
 def resolve_link(root: Path, skill: Path, target: str) -> bool:
     clean = target.strip().split("#", 1)[0]
     if not clean or clean.startswith(("http://", "https://", "mailto:", "#")):
         return True
     clean = clean.replace("%20", " ")
-    return (skill.parent / clean).resolve().exists() or (root / clean).resolve().exists()
+    candidates = (portable_link_target(skill.parent, root, clean), portable_link_target(root, root, clean))
+    return any(candidate is not None and candidate.exists() for candidate in candidates)
 
 
 def assess(root: Path, path: Path) -> list[tuple[str, str]]:
