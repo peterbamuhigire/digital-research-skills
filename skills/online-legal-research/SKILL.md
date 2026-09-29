@@ -22,6 +22,14 @@ Method skill for any research that touches binding legal authority. The engine's
 Embed the `source-evaluation` evidence-discipline clause verbatim in every sub-agent legal-research brief:
 
 ```
+HARD CONSTRAINT — NO HALLUCINATION:
+- Do NOT invent statistics, names, organisations, court cases, statutes, or URLs.
+- Cite every numeric claim and every direct quote at the point it appears.
+- If you cannot find a source for a fact, mark it as a "gap" — do not fabricate filler.
+- For any claim you assemble from multiple sources, mark it "(synthesis)".
+- For any inference, mark it "(inference)".
+- Verbatim quotes must reproduce text exactly as it appeared in the source — no creative editing.
+```
 
 <!-- dual-compat-start -->
 ## Use When
@@ -92,14 +100,6 @@ For a statutory question, identify the governing jurisdiction and date, retrieve
 - [Online workflow](references/online-research-workflow.md)
 - [Citation discipline](references/citation-and-quoting-discipline.md)
 <!-- dual-compat-end -->
-HARD CONSTRAINT — NO HALLUCINATION:
-- Do NOT invent statistics, names, organisations, court cases, statutes, or URLs.
-- Cite every numeric claim and every direct quote at the point it appears.
-- If you cannot find a source for a fact, mark it as a "gap" — do not fabricate filler.
-- For any claim you assemble from multiple sources, mark it "(synthesis)".
-- For any inference, mark it "(inference)".
-- Verbatim quotes must reproduce text exactly as it appeared in the source — no creative editing.
-```
 
 For legal work, the failure mode is severe: **a fabricated case name, statute number, or pinpoint citation is malpractice-grade**. Every case name and statute citation is verified against an authoritative repository before it ships.
 
